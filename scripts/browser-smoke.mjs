@@ -486,7 +486,7 @@ try {
   assert(await evaluate("getComputedStyle(document.querySelector('.lesson-top-title')).display === 'none' && document.querySelectorAll('.roadmap-unit').length === 3"), "ICT must open directly on its three-unit roadmap without the repeated subject heading");
   await evaluate("document.querySelector('.lesson-back').click()");
   await waitFor("location.search === '?page=learn' && !document.querySelector('.lesson-view').classList.contains('is-visible')", "return from the ICT status view");
-  assert(await evaluate("document.activeElement === document.querySelector('[data-subject=\"ict\"]')"), "closing a subject must restore focus to its button");
+  await waitFor("document.activeElement === document.querySelector('[data-subject=\"ict\"]')", "focus returning to the ICT subject button");
 
   await navigate(`${appUrl}?day=37`);
   await waitFor("Boolean(document.querySelector('.visitor-landing'))", "obsolete day route returning to visitor entry");
