@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 188" role="img" aria-labelledby="title description">
+  <title id="title">رموز الفرع الأدبي</title>
+  <desc id="description">كتاب مفتوح وريشة وكتب متراصة ومبنى تاريخي مرتبة حول عنوان الفرع.</desc>
+  <defs>
+    <linearGradient id="literary-brown" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9f5d32"/>
+      <stop offset="1" stop-color="#ca8d5c"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8ed"/>
+      <stop offset="1" stop-color="#f3dcc2"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 31q20-7 39 3 19-10 39-3v47q-20-6-39 4-19-10-39-4Z" fill="#a8653a"/>
+    <path d="M33 27q18-6 35 5v43q-17-9-35-3Zm35 5q17-11 35-5v45q-18-6-35 3Z" fill="url(#paper)" stroke="#f2e0ca" stroke-width="1.5"/>
+    <g fill="none" stroke="#d9baa0" stroke-width="2.5">
+      <path d="M42 39q9-2 18 2M42 48q9-2 18 2M42 57q9-2 18 2"/>
+      <path d="M77 41q9-4 18-2M77 50q9-4 18-2M77 59q9-4 18-2"/>
+    </g>
+
+    <path d="M187 18c-17 4-31 15-38 31-6 13-5 23-1 30 8-2 19-10 27-22 8-13 12-26 12-39Z" fill="url(#literary-brown)"/>
+    <path d="M143 82c12-25 25-44 40-59" fill="none" stroke="#efd4bb" stroke-width="3"/>
+    <path d="m166 43-12 3m21-13-11 3m4 18-14 7m9 4-13 8" fill="none" stroke="#efd4bb" stroke-width="2.5"/>
+
+    <g fill="url(#literary-brown)">
+      <path d="M26 123h58v17H26q-6 0-6-6v-5q0-6 6-6Z"/>
+      <path d="M26 143h62v17H26q-6 0-6-6v-5q0-6 6-6Z"/>
+    </g>
+    <path d="M31 128h42q-4 3-4 7t4 5H31Zm0 20h47q-4 3-4 7t4 5H31Z" fill="#fff4e5"/>
+
+    <g fill="#c98f61">
+      <path d="m167 119 23 14h-46Z"/>
+      <path d="M148 135h38v6h-38zM151 160h32v5h-32zM145 167h44v6h-44z"/>
+      <path d="M153 141h6v19h-6zM164 141h6v19h-6zM175 141h6v19h-6z"/>
+    </g>
+  </g>
+</svg>

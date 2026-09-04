@@ -1,0 +1,36 @@
+.course-units { display:block; }
+.subject-map { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; width:100%; padding:0 0 44px; }
+.subject-card { --subject-start:#2563eb; --subject-end:#06b6d4; --subject-shadow:rgba(37,99,235,.28); position:relative; min-height:clamp(150px,18vw,210px); display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:clamp(22px,3vw,34px); overflow:hidden; border:0; border-radius:24px; background:linear-gradient(135deg,var(--subject-start),var(--subject-end)); box-shadow:0 12px 28px var(--subject-shadow); color:#fff; text-align:start; cursor:pointer; transition:transform 160ms ease,box-shadow 160ms ease,filter 160ms ease; }
+.subject-card:hover { transform:translateY(-4px); box-shadow:0 18px 34px var(--subject-shadow); filter:saturate(1.08); }
+.subject-card:active { transform:translateY(1px) scale(.99); box-shadow:0 7px 18px var(--subject-shadow); }
+.subject-card:focus-visible { outline:4px solid #111827; outline-offset:4px; }
+.subject-card__content { display:grid; justify-items:start; gap:13px; }
+.subject-card h2 { margin:0; color:inherit; font:800 clamp(22px,2.2vw,30px)/1.25 "Nunito",sans-serif; }
+.subject-card__action { width:max-content; min-height:38px; display:inline-flex; align-items:center; justify-content:center; padding:0 15px; border-radius:12px; background:rgba(255,255,255,.94); box-shadow:0 4px 0 rgba(15,23,42,.16); color:var(--subject-start); font:900 13px/1 "Nunito",sans-serif; }
+.subject-card__lock { position:absolute; inset-block-start:50%; inset-inline-end:20px; width:68px; height:68px; display:grid; place-items:center; transform:translateY(-50%); }
+.subject-card__lock img { display:block; width:100%; height:100%; object-fit:contain; }
+.subject-card--locked { --subject-start:#8a929c; --subject-end:#aab0b7; --subject-shadow:rgba(72,79,87,.14); border-color:#d9dde2; background:linear-gradient(135deg,#eef0f2,#e1e4e7); box-shadow:none; color:#767e87; cursor:not-allowed; }
+.subject-card--locked:is(:hover,:active) { border-color:#d9dde2; background:linear-gradient(135deg,#eef0f2,#e1e4e7); box-shadow:none; filter:none; transform:none; }
+.subject-card--locked .subject-card__content { max-width:calc(100% - 88px); }
+.subject-card--locked .subject-card__action { background:rgba(255,255,255,.68); box-shadow:none; color:#858d96; }
+.subject-card__progress[hidden] { display:none; }
+.subject-card__progress { --subject-progress:0; position:absolute; inset-block-start:50%; inset-inline-end:18px; width:72px; height:72px; display:grid; place-items:center; border-radius:50%; background:#f2f4f6; color:#44515e; font:900 14px/1 "Nunito",sans-serif; transform:translateY(-50%); }
+.subject-card__progress svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; transform:rotate(-90deg); }
+.subject-card__progress circle { fill:none; stroke-linecap:round; }
+.subject-progress-track { stroke:#cbd2d9; stroke-width:12; }
+.subject-progress-value,.subject-progress-gloss { stroke-dasharray:var(--subject-progress) 100; }
+.subject-progress-value { stroke:#58cc02; stroke-width:12; }
+.subject-progress-gloss { stroke:rgba(255,255,255,.62); stroke-width:2.5; }
+.subject-card__progress.is-empty :is(.subject-progress-value,.subject-progress-gloss) { display:none; }
+.subject-card__progress bdi { position:relative; z-index:1; direction:ltr; unicode-bidi:isolate; }
+.subject-card--personalized { min-height:140px; padding:18px; }
+.subject-card--personalized .subject-card__content { max-width:calc(100% - 88px); gap:9px; }
+.subject-card--personalized h2 { font-size:clamp(19px,2vw,23px); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="mathematics"] { --subject-start:#2563eb; --subject-end:#06b6d4; --subject-shadow:rgba(37,99,235,.3); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="physics"] { --subject-start:#7c3aed; --subject-end:#c026d3; --subject-shadow:rgba(124,58,237,.3); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="biology"] { --subject-start:#059669; --subject-end:#22c55e; --subject-shadow:rgba(5,150,105,.3); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="chemistry"] { --subject-start:#e11d48; --subject-end:#f97316; --subject-shadow:rgba(225,29,72,.3); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="ict"] { --subject-start:#0284c7; --subject-end:#4f46e5; --subject-shadow:rgba(2,132,199,.3); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="english"] { --subject-start:#dc2626; --subject-end:#f43f5e; --subject-shadow:rgba(220,38,38,.3); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="arabic"] { --subject-start:#ea580c; --subject-end:#f59e0b; --subject-shadow:rgba(234,88,12,.3); }
+:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="islamic-education"] { --subject-start:#0f766e; --subject-end:#10b981; --subject-shadow:rgba(15,118,110,.3); }

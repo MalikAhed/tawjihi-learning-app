@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 188" role="img" aria-labelledby="title description">
+  <title id="title">رموز الفرع العلمي</title>
+  <desc id="description">تكامل وذرة ورسم بياني ومنحنى احتمالي مرتبة حول عنوان الفرع.</desc>
+  <defs>
+    <linearGradient id="scientific-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2d69ae"/>
+      <stop offset="1" stop-color="#3d86d0"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="url(#scientific-blue)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 27c-12-5-15 5-16 23l-1 17c-1 19-5 26-14 23" stroke-width="7.5"/>
+
+    <g stroke-width="4">
+      <ellipse cx="160" cy="50" rx="35" ry="13" transform="rotate(30 160 50)"/>
+      <ellipse cx="160" cy="50" rx="35" ry="13" transform="rotate(90 160 50)"/>
+      <ellipse cx="160" cy="50" rx="35" ry="13" transform="rotate(150 160 50)"/>
+    </g>
+    <circle cx="160" cy="50" r="7" fill="url(#scientific-blue)" stroke="none"/>
+
+    <g stroke-width="4.5">
+      <path d="M29 115v41h48"/>
+      <path d="m33 151 17-20 11 10 18-22"/>
+      <path d="m72 120 7-1-1 7"/>
+    </g>
+
+    <g stroke-width="4">
+      <path d="M124 155h72"/>
+      <path d="M124 155c15-2 21-10 28-25 5-11 9-17 16-17s11 6 16 17c7 15 13 23 27 25"/>
+      <path d="M168 115v40" stroke-dasharray="6 6"/>
+    </g>
+  </g>
+</svg>

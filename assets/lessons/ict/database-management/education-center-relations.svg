@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="650" viewBox="0 0 620 650" role="img" aria-labelledby="title description">
+  <title id="title">علاقات جداول المركز التعليمي في Access</title>
+  <desc id="description">نافذتا جدولي الطالب والدورة ترتبطان بنافذة جدول الطالب والدورة. تصل العلاقة من stdNumber إلى stdNumber ومن crsCode إلى crsCode، وتظهر علاقة واحد إلى متعدد في كل جانب.</desc>
+  <defs>
+    <filter id="window-shadow" x="-15%" y="-15%" width="130%" height="145%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#263844" flood-opacity=".14"/>
+    </filter>
+    <g id="key-icon" fill="#d99a00">
+      <circle cx="7" cy="7" r="5.5" fill="none" stroke="#d99a00" stroke-width="3"/>
+      <path d="M11 11l10 10m-4-4 3-3m0 6 3-3" fill="none" stroke="#d99a00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <rect width="620" height="650" fill="#f7f9fa"/>
+
+  <!-- Relationships attach to the matching field rows, as they do in Access. -->
+  <g fill="none" stroke="#45545f" stroke-linecap="square" stroke-linejoin="round" stroke-width="3">
+    <path d="M35 145H18V528H110"/>
+    <path d="M585 145H602V476H510"/>
+  </g>
+  <g fill="#293842" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+    <text x="27" y="137">1</text>
+    <text x="99" y="520">∞</text>
+    <text x="593" y="137">1</text>
+    <text x="521" y="468">∞</text>
+  </g>
+
+  <!-- Course table window -->
+  <g transform="translate(35 40)" filter="url(#window-shadow)">
+    <rect width="240" height="220" rx="10" fill="#fff" stroke="#97a6b0" stroke-width="2"/>
+    <path d="M10 1h220a9 9 0 0 1 9 9v39H1V10a9 9 0 0 1 9-9z" fill="#dfe6eb"/>
+    <rect x="1" y="1" width="238" height="5" rx="4" fill="#5b78a7"/>
+    <rect x="1" y="49" width="238" height="31" fill="#f1f4f6"/>
+    <path d="M1 49h238M1 80h238M1 128h238M1 176h238" fill="none" stroke="#c8d1d7"/>
+    <path d="M44 49v171" stroke="#d6dde2"/>
+    <text x="16" y="34" fill="#263844" font-family="Arial, sans-serif" font-size="20" font-weight="700">tblCourse</text>
+    <text x="57" y="71" fill="#64737d" font-family="Arial, sans-serif" font-size="13">Field name</text>
+    <text x="169" y="71" fill="#64737d" font-family="Arial, sans-serif" font-size="13">Data type</text>
+    <use href="#key-icon" x="10" y="91"/>
+    <text x="57" y="111" fill="#263844" font-family="Arial, sans-serif" font-size="18" font-weight="700">crsCode</text>
+    <text x="169" y="111" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Text</text>
+    <text x="57" y="159" fill="#3f505b" font-family="Arial, sans-serif" font-size="18">crsName</text>
+    <text x="169" y="159" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Text</text>
+  </g>
+
+  <!-- Student table window -->
+  <g transform="translate(345 40)" filter="url(#window-shadow)">
+    <rect width="240" height="220" rx="10" fill="#fff" stroke="#97a6b0" stroke-width="2"/>
+    <path d="M10 1h220a9 9 0 0 1 9 9v39H1V10a9 9 0 0 1 9-9z" fill="#dfe6eb"/>
+    <rect x="1" y="1" width="238" height="5" rx="4" fill="#5b78a7"/>
+    <rect x="1" y="49" width="238" height="31" fill="#f1f4f6"/>
+    <path d="M1 49h238M1 80h238M1 128h238M1 176h238" fill="none" stroke="#c8d1d7"/>
+    <path d="M44 49v171" stroke="#d6dde2"/>
+    <text x="16" y="34" fill="#263844" font-family="Arial, sans-serif" font-size="20" font-weight="700">tblStudent</text>
+    <text x="57" y="71" fill="#64737d" font-family="Arial, sans-serif" font-size="13">Field name</text>
+    <text x="169" y="71" fill="#64737d" font-family="Arial, sans-serif" font-size="13">Data type</text>
+    <use href="#key-icon" x="10" y="91"/>
+    <text x="57" y="111" fill="#263844" font-family="Arial, sans-serif" font-size="18" font-weight="700">stdNumber</text>
+    <text x="169" y="111" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Number</text>
+    <text x="57" y="159" fill="#3f505b" font-family="Arial, sans-serif" font-size="18">stdName</text>
+    <text x="169" y="159" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Text</text>
+    <text x="57" y="207" fill="#3f505b" font-family="Arial, sans-serif" font-size="18">Class</text>
+    <text x="169" y="207" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Text</text>
+  </g>
+
+  <!-- Junction table window, shown as the selected table. -->
+  <g transform="translate(110 390)" filter="url(#window-shadow)">
+    <rect width="400" height="240" rx="10" fill="#fff" stroke="#2f91c7" stroke-width="3"/>
+    <path d="M10 2h380a8 8 0 0 1 8 8v39H2V10a8 8 0 0 1 8-8z" fill="#dcecf5"/>
+    <rect x="2" y="2" width="396" height="6" rx="4" fill="#2f91c7"/>
+    <rect x="2" y="49" width="396" height="31" fill="#f1f4f6"/>
+    <rect x="2" y="80" width="396" height="48" fill="#edf7fc"/>
+    <rect x="2" y="128" width="396" height="48" fill="#edf7fc"/>
+    <path d="M2 49h396M2 80h396M2 128h396M2 176h396M2 224h396" fill="none" stroke="#c8d1d7"/>
+    <path d="M48 49v175M250 49v175" stroke="#d6dde2"/>
+    <text x="18" y="34" fill="#203b49" font-family="Arial, sans-serif" font-size="20" font-weight="700">tblTraining</text>
+    <text x="62" y="71" fill="#64737d" font-family="Arial, sans-serif" font-size="13">Field name</text>
+    <text x="268" y="71" fill="#64737d" font-family="Arial, sans-serif" font-size="13">Data type</text>
+    <use href="#key-icon" x="12" y="91"/>
+    <text x="62" y="111" fill="#263844" font-family="Arial, sans-serif" font-size="18" font-weight="700">stdNumber</text>
+    <text x="268" y="111" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Number</text>
+    <use href="#key-icon" x="12" y="139"/>
+    <text x="62" y="159" fill="#263844" font-family="Arial, sans-serif" font-size="18" font-weight="700">crsCode</text>
+    <text x="268" y="159" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Text</text>
+    <text x="62" y="207" fill="#3f505b" font-family="Arial, sans-serif" font-size="18">startDate</text>
+    <text x="268" y="207" fill="#4d5d67" font-family="Arial, sans-serif" font-size="16">Date/Time</text>
+  </g>
+</svg>

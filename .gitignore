@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+coverage/
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
+*.log
+artifacts/
+codex screen shots/
+exports/
+tmp/
+user screenshots /
+design-system-clone/
+design-system-clone.zip

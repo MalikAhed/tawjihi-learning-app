@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رحلة التوجيهي</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles/base.css" />
+  <link rel="stylesheet" href="src/styles/week-theme.css" />
+  <link rel="stylesheet" href="src/styles/course-map.css" />
+  <link rel="stylesheet" href="src/styles/learner-dashboard.css" />
+  <link rel="stylesheet" href="src/styles/subject-learning.css" />
+  <link rel="stylesheet" href="src/styles/lesson.css" />
+  <link rel="stylesheet" href="src/styles/markdown-lab.css" />
+  <link rel="stylesheet" href="src/styles/visitor-flow.css" />
+  <link rel="stylesheet" href="src/styles/responsive.css" />
+  <link rel="stylesheet" href="src/styles/dashboard-cards.css" />
+</head>
+<body>
+  <header class="topbar-wrap"><div class="page topbar">
+    <a class="dashboard-nav-brand" href="./" aria-label="رحلة التوجيهي، الرئيسية"><span aria-hidden="true">ر</span><strong>رحلة التوجيهي</strong></a>
+    <nav class="nav-links" aria-label="التنقل الرئيسي">
+      <button class="nav-item active" type="button" data-page="learn" aria-current="page"><div class="nav-icon"><img src="assets/icons/dashboard-home.svg" alt="" /></div><span>الرئيسية</span></button>
+      <button class="nav-item" type="button" data-page="quests"><div class="nav-icon"><img src="assets/icons/dashboard-quests.svg" alt="" /></div><span>المهام</span></button>
+      <button class="nav-item" type="button" data-page="shop"><div class="nav-icon"><img src="assets/icons/dashboard-shop.svg" alt="" /></div><span>المتجر</span></button>
+      <button class="nav-item" type="button" data-page="challenges"><div class="nav-icon"><img src="assets/icons/dashboard-challenges.svg" alt="" /></div><span>التحديات</span></button>
+    </nav>
+    <div class="topbar-auth">
+      <div class="topbar-auth-guest">
+        <button class="topbar-login" type="button" data-auth-flow="sign-in">تسجيل الدخول</button>
+        <button class="topbar-create" type="button" data-auth-flow="register">إنشاء حساب</button>
+      </div>
+      <div class="topbar-auth-member" hidden>
+        <span data-account-label>حساب مجاني</span>
+        <button class="topbar-login" type="button" data-auth-sign-out>تسجيل الخروج</button>
+      </div>
+    </div>
+  </div></header>
+  <div id="visitor-flow-root" hidden></div>
+  <main class="page">
+    <section class="column" aria-labelledby="learning-path-title">
+      <h1 class="visually-hidden" id="learning-path-title">المواد الدراسية للتوجيهي</h1>
+      <div class="course-units"></div>
+    </section>
+    <section class="coming-soon" aria-live="polite">
+      <div class="coming-soon-card">
+        <h1 class="coming-soon-title">قريبًا</h1>
+        <p class="coming-soon-copy">هذه الصفحة قيد الإعداد.</p>
+        <div class="more-tabs" hidden>
+          <div class="more-tab-list" role="tablist" aria-label="More tools">
+            <button class="more-tab" id="ui-lab-tab" type="button" role="tab" aria-selected="true" aria-controls="ui-lab-panel" tabindex="0" data-more-tab="ui-lab">UI LAB</button>
+            <button class="more-tab" id="ship-ready-tab" type="button" role="tab" aria-selected="false" aria-controls="ship-ready-panel" tabindex="-1" data-more-tab="ship-ready">SHIP READY</button>
+            <button class="more-tab" id="design-system-tab" type="button" role="tab" aria-selected="false" aria-controls="design-system-panel" tabindex="-1" data-more-tab="design-system">DESIGN SYSTEM</button>
+          </div>
+          <div class="more-tab-panel" id="ui-lab-panel" role="tabpanel" aria-labelledby="ui-lab-tab"></div>
+          <div class="more-tab-panel" id="ship-ready-panel" role="tabpanel" aria-labelledby="ship-ready-tab" hidden></div>
+          <div class="more-tab-panel" id="design-system-panel" role="tabpanel" aria-labelledby="design-system-tab" hidden></div>
+        </div>
+      </div>
+    </section>
+    <section class="lesson-view">
+      <div class="lesson-shell">
+        <div class="lesson-top">
+          <button class="lesson-back" type="button" aria-label="العودة إلى المواد الدراسية"><span>رجوع</span> <span aria-hidden="true">&rsaquo;</span></button>
+          <div class="lesson-top-title"><span class="current-view-title">المحتوى</span></div>
+          <span class="lesson-status">قيد التقدم</span>
+        </div>
+        <div class="lesson-card" id="lesson-content" tabindex="-1"></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

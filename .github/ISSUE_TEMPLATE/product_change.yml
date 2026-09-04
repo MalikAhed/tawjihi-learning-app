@@ -1,0 +1,40 @@
+name: Product change
+description: Propose a change to learner behavior or release scope.
+title: "[Product]: "
+labels: [product-review]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Student or operational problem
+      description: Describe the problem, not only the requested interface.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Related story or decision
+      placeholder: US-ROADMAP-001 or link to the decision
+  - type: dropdown
+    id: release
+    attributes:
+      label: Proposed release lane
+      options:
+        - First release
+        - Next
+        - Coming soon
+        - Experimental / later
+        - Not decided
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Learning, access, privacy, or scope risks
+      description: Note any effect on minors, student data, curriculum access, mastery, XP, or payment.
