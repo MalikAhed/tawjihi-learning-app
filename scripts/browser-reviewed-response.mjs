@@ -2,13 +2,13 @@ export async function verifyReviewedResponse({ assert, captureScreenshot, cdp, d
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:1280, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
   await evaluate(`(() => {
     const response = document.querySelector('#ui-lab-response');
-    response.value = 'A client sends an HTTP request to a server, and the server returns a response. For example, a browser can send a GET request to an API, which returns the requested data with a status code.';
+    response.value = 'يرسل العميل طلب HTTP إلى الخادم، ويعيد الخادم استجابة تحتوي على النتيجة. مثلًا، يطلب المتصفح قائمة المستخدمين بطريقة GET، فيعيد الخادم البيانات ورمز الحالة.';
     response.dispatchEvent(new Event('input', { bubbles:true }));
     document.querySelector('[data-response-submit]').click();
   })()`);
   await waitFor("document.body.classList.contains('response-reviewed') && document.body.classList.contains('review-pass')", "a passing explanation review");
   await waitFor("Boolean(document.querySelector('.ui-lab-pinata'))", "the passing explanation celebration");
-  assert(await evaluate("document.querySelector('[data-review-message] strong').textContent.endsWith('10/10 · Passed')"), "a passing explanation must show its score before the feedback");
+  assert(await evaluate("document.querySelector('[data-review-message] strong').textContent.endsWith('10/10 · اجتزت التقييم')"), "a passing explanation must show its score before the feedback");
   assert(await evaluate(`[
     document.querySelector('[data-review-message]'),
     document.querySelector('.ui-lab-thinking-mascot'),

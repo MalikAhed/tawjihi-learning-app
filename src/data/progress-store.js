@@ -77,15 +77,6 @@ function reportStorageError(onError, message, cause) {
   onError(error);
 }
 
-export function getBrowserStorage(onError = defaultErrorReporter) {
-  try {
-    return window.localStorage;
-  } catch (error) {
-    reportStorageError(onError, "Lesson progress storage is unavailable; progress will last only for this page view.", error);
-    return null;
-  }
-}
-
 export function createProgressStore({ storage = null, onError = defaultErrorReporter } = {}) {
   let state = createEmptyState();
   let shouldPersistReset = false;

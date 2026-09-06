@@ -1,0 +1,11 @@
+Generated with the built-in imagegen tool.
+Identity reference: rendered production learn/assets/mascot/rocky-wave.svg.
+
+Use case: background-extraction. Edit image 1 into a genuinely transparent PNG cutout. Remove the entire painted checkerboard background. All empty surroundings and the gap between TV and couch must have actual alpha zero. Preserve foreground opacity and crisp edges: no glow, shadow, white fringe or semitransparent foreground. This is a production UI asset, not a picture of transparency. Export with a real transparent background.
+Keep the TV BACK facing the viewer on the left, Rocky seated front-facing on his small lilac couch on the right, holding popcorn; keep his two very tiny oval feet, cute eyes, asymmetric natural rock peak with no rods. Do not turn the TV front toward us.
+Image 2 is the approved production SVG color reference. Match its lighter flat colors: Rocky main body #c6b8a3, feet #888374, hands #8c8778, brows #8e8979, eyes #fffdfc, pupils #31302b, mouth #3b3b37 and tongue #f27a18. Main body must be one uniform solid flat beige fill without gradients. Keep the sparse simple facets from this same SVG palette. Preserve the cozy pose and existing composition. No new objects.
+
+Final background correction:
+Remove the background from this image. Return a transparent PNG cutout of the TV and Rocky on the couch. Keep the artwork unchanged. The grey and white squares are painted into the input and must be removed, leaving actual alpha transparency. Do not paint any background or checkerboard. Keep solid foreground colors opaque, with clean edges and no halo.
+
+Validation: 1536x1024 PNG. 812579 pixels have alpha 0. Foreground is predominantly alpha 253–254. Inspected over white and #182230: no baked checkerboard, visible halo, or missing foreground. TV back faces viewer; Rocky seated on small couch with tiny feet. Palette remains a generated approximation, not a pixel-exact SVG match.

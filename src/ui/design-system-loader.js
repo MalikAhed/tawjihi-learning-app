@@ -1,7 +1,7 @@
 const stylesheetPromises = new Map();
 let designSystemPromise;
 
-function loadStylesheet(href, { before = null, optional = false } = {}) {
+function loadStylesheet(href) {
   if (stylesheetPromises.has(href)) return stylesheetPromises.get(href);
   const promise = new Promise((resolve, reject) => {
     const link = document.createElement("link");
@@ -18,13 +18,12 @@ function loadStylesheet(href, { before = null, optional = false } = {}) {
       link.remove();
       reject(new Error(`Could not load ${href}`));
     }, { once:true });
-    if (before) before.before(link);
-    else document.head.append(link);
+    // Keep current shared styles last, independent of which screen loaded first.
+    const system = document.querySelector('link[href="src/styles/system.css"]');
+    document.head.insertBefore(link, system);
   }).catch((error) => {
     stylesheetPromises.delete(href);
-    if (!optional) throw error;
-    console.warn(error.message);
-    return null;
+    throw error;
   });
   stylesheetPromises.set(href, promise);
   return promise;
@@ -35,7 +34,6 @@ export function loadDesignSystem() {
     designSystemPromise = Promise.all([
       import("./design-system-view.js"),
       loadStylesheet("src/styles/design-system.css"),
-      loadStylesheet("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Lilita+One&family=Rowdies:wght@700&family=Titan+One&display=swap", { optional:true }),
     ]).then(([module]) => module).catch((error) => {
       designSystemPromise = undefined;
       throw error;

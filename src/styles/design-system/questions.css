@@ -64,6 +64,7 @@
 .ds-editor-hint { align-self:center; padding:0 11px; color:#aeb5bd; font:700 8px "Fredoka",sans-serif; white-space:nowrap; }
 .ds-editor-host { min-height:0; overflow:hidden; background:var(--d1-editor-bg); }
 .ds-editor-host[hidden] { display:none; }
+.ds-editor-host .app-loading { min-block-size:100%; color:var(--d1-editor-text); }
 .ds-preview-bar { display:flex; align-items:center; justify-content:space-between; padding:0 14px; border-bottom:1px solid var(--d1-editor-border); background:var(--d1-editor-gutter); color:#d1d1d1; font:700 9px "Fredoka",sans-serif; letter-spacing:.35px; }
 .ds-preview-bar>span { display:flex; align-items:baseline; gap:7px; }
 .ds-preview-bar small { color:#7f858c; font:700 8px "Fredoka",sans-serif; letter-spacing:0; }

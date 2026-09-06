@@ -28,10 +28,6 @@ export function applyWeekTheme(weekNumber, target = document.documentElement) {
   return week;
 }
 
-export function applyWeekThemeForDay(day, target) {
-  return applyWeekTheme(weekNumberForDay(day), target);
-}
-
 export function applyWeekThemeFromSearch(search = window.location.search, target) {
   return applyWeekTheme(new URLSearchParams(search).get("week"), target);
 }

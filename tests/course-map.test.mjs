@@ -10,8 +10,8 @@ test("the learning map contains no development reference nodes", () => {
 test("the learning map renders the eight planned subjects without days", () => {
   const markup = renderCourseMapMarkup();
   const subjects = [...markup.matchAll(/data-subject="([^"]+)"/g)].map((match) => match[1]);
-  assert.deepEqual(subjects, ["mathematics", "physics", "biology", "chemistry", "ict", "english", "arabic", "islamic-education"]);
-  assert.equal((markup.match(/<button class="subject-card(?: subject-card--locked)?"/g) || []).length, 8);
+  assert.deepEqual(subjects, ["ict", "mathematics", "physics", "biology", "chemistry", "english", "arabic", "islamic-education"]);
+  assert.equal((markup.match(/<button class="subject-card(?: [^"]+)?"/g) || []).length, 8);
   assert.equal((markup.match(/data-status="locked"/g) || []).length, 7);
   assert.equal((markup.match(/data-status="in-progress"/g) || []).length, 1);
   assert.equal((markup.match(/ disabled(?=[ >])/g) || []).length, 7);

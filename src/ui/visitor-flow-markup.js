@@ -1,17 +1,12 @@
-function brand() {
-  return `<span class="visitor-brand" aria-label="رحلة التوجيهي"><span class="visitor-brand__mark" aria-hidden="true">ر</span><b>رحلة التوجيهي</b></span>`;
-}
-
 function shell(content, { landing = false } = {}) {
   return `<div class="visitor-shell${landing ? " visitor-shell--landing" : ""}">
-    <header class="visitor-header">${brand()}</header>
     <div class="visitor-main" role="main">${content}</div>
   </div>`;
 }
 
-function field(name, label, attributes = "") {
+function field(name, label, attributes = "", hideLabel = false) {
   const errorId = `auth-${name}-error`;
-  return `<label class="auth-field"><span>${label}</span><input name="${name}" aria-describedby="${errorId}" ${attributes}/><small class="visitor-field-error" id="${errorId}" data-field-error="${name}" aria-live="polite" hidden></small></label>`;
+  return `<label class="auth-field"><span${hideLabel ? ' class="visually-hidden"' : ""}>${label}</span><input name="${name}" aria-describedby="${errorId}" ${attributes}/><small class="visitor-field-error" id="${errorId}" data-field-error="${name}" aria-live="polite" hidden></small></label>`;
 }
 
 function backControl(label, attribute) {
@@ -39,7 +34,7 @@ function authShell(title, intro, form, alternate) {
 
 export function entryMarkup() {
   return shell(`<section class="visitor-landing" aria-labelledby="visitor-title">
-    <div class="visitor-illustration-placeholder" role="img" aria-label="مكان مخصص لصورة تعليمية"><span>مكان الصورة</span></div>
+    <div class="visitor-landing__illustration"><picture><source media="(max-width:760px)" srcset="assets/mascot/hero-options/rocky-beach-mobile-01.png" width="1086" height="1448"/><img src="assets/mascot/hero-options/rocky-beach-desktop-01.png" alt="روكي على شاطئ ذهبي: يبحر بقارب، ويكتب على ورقة، ويسترخي بنظارة شمسية تحت نخلة" width="1672" height="941" fetchpriority="high"/></picture></div>
     <div class="visitor-landing__content">
       <h1 id="visitor-title" tabindex="-1">أكثر طريقة ممتعة للتعلّم والاستعداد للتوجيهي!</h1>
       <div class="visitor-landing__actions">
@@ -59,23 +54,20 @@ export function registerMarkup() {
     <form class="auth-form onboarding-form" data-register-form novalidate>
       <section class="onboarding-step onboarding-step--hello" data-onboarding-step="intro">
         ${rocky("wave", "روكي يلوّح مرحبًا")}
-        <p class="onboarding-eyebrow">رفيقك في رحلة التعلّم</p>
         <h1 id="visitor-title" tabindex="-1">مرحبًا! أنا روكي</h1>
-        <p>سأكون معك خطوة بخطوة في رحلة التوجيهي.</p>
+        <p>أُشبه حجارة ركام البيوت في غزة، وسأكون معك خطوة بخطوة.</p>
         <button class="visitor-primary" type="button" data-step-next>متابعة</button>
         <button class="onboarding-guest" type="button" data-guest-start>تجربة التطبيق كضيف</button>
       </section>
-      <section class="onboarding-step" data-onboarding-step="0">
-        ${rocky("standing-still", "روكي يقف مبتسمًا")}
+      <section class="onboarding-step" data-onboarding-step="0" hidden>
+        ${rocky("standing-still", "روكي يتابع حركة المؤشر", { trackPointer:true })}
         <h1 tabindex="-1">بماذا تحب أن نناديك؟</h1>
-        <p>اختر اسمًا يظهر لك داخل رحلة التعلّم.</p>
-        ${field("username", "اسمك", 'autocomplete="username" maxlength="30" placeholder="مثال: أحمد" required')}
+        ${field("username", "اسمك", 'autocomplete="username" maxlength="30" placeholder="مثال: أحمد" required', true)}
         <button class="visitor-primary" type="button" data-step-next>متابعة</button>
       </section>
-      <section class="onboarding-step" data-onboarding-step="1" hidden>
+      <section class="onboarding-step onboarding-step--picker" data-onboarding-step="1" hidden>
         ${rocky("standing-still", "روكي ينظر إلى اختيار المنهاج", { trackPointer:true })}
         <h1 tabindex="-1">أي منهاج تدرس؟</h1>
-        <p>اختر المكان الذي يتبع له منهاجك.</p>
         <div class="onboarding-choice-grid onboarding-choice-grid--maps">
           <label class="onboarding-choice"><input type="radio" name="curriculum" value="gaza"/><span class="onboarding-choice__visual"><img src="assets/maps/gaza-map.svg" alt=""/></span><strong>غزة</strong></label>
           <label class="onboarding-choice"><input type="radio" name="curriculum" value="full-palestinian"/><span class="onboarding-choice__visual"><img src="assets/maps/palestine-map.svg" alt=""/></span><strong>فلسطين</strong></label>
@@ -83,10 +75,9 @@ export function registerMarkup() {
         <small class="visitor-field-error" data-field-error="curriculum" hidden></small>
         <button class="visitor-primary" type="button" data-step-next>متابعة</button>
       </section>
-      <section class="onboarding-step" data-onboarding-step="2" hidden>
+      <section class="onboarding-step onboarding-step--picker" data-onboarding-step="2" hidden>
         ${rocky("standing-still", "روكي ينظر إلى اختيار الفرع", { trackPointer:true })}
         <h1 tabindex="-1">ما هو فرعك؟</h1>
-        <p>سنستخدم اختيارك لعرض المواد المناسبة لك.</p>
         <div class="onboarding-choice-grid">
           <label class="onboarding-choice onboarding-choice--path onboarding-choice--scientific"><input type="radio" name="path" value="scientific"/><span class="path-choice__visual" aria-hidden="true"><img class="path-choice__art path-choice__art--pale" src="assets/paths/generated-scientific-light.png" alt=""/><img class="path-choice__art path-choice__art--saturated" src="assets/paths/generated-scientific.png" alt=""/></span><strong>العلمي</strong></label>
           <label class="onboarding-choice onboarding-choice--path onboarding-choice--literary"><input type="radio" name="path" value="literary"/><span class="path-choice__visual" aria-hidden="true"><img class="path-choice__art path-choice__art--pale" src="assets/paths/generated-literary-light.png" alt=""/><img class="path-choice__art path-choice__art--saturated" src="assets/paths/generated-literary.png" alt=""/></span><strong>الأدبي</strong></label>
@@ -94,25 +85,23 @@ export function registerMarkup() {
         <small class="visitor-field-error" data-field-error="path" hidden></small>
         <button class="visitor-primary" type="button" data-step-next>متابعة</button>
       </section>
-      <section class="onboarding-step" data-onboarding-step="3" hidden>
-        ${rocky("standing-still", "روكي يقف مبتسمًا")}
+      <section class="onboarding-step onboarding-step--compact" data-onboarding-step="3" hidden>
+        ${rocky("standing-still", "روكي يتابع حركة المؤشر", { trackPointer:true })}
         <h1 tabindex="-1">ما بريدك الإلكتروني؟</h1>
-        <p>يمكنك استخدامه لتسجيل الدخول إلى حسابك.</p>
-        ${field("email", "البريد الإلكتروني", 'type="email" autocomplete="email" maxlength="254" inputmode="email" dir="ltr" placeholder="name@example.com" required')}
+        ${field("email", "البريد الإلكتروني", 'type="email" autocomplete="email" maxlength="254" inputmode="email" dir="ltr" placeholder="name@example.com" required', true)}
         <button class="visitor-primary" type="button" data-step-next>متابعة</button>
       </section>
-      <section class="onboarding-step" data-onboarding-step="4" hidden>
-        ${rocky("standing-still", "روكي يقف مبتسمًا")}
+      <section class="onboarding-step onboarding-step--compact" data-onboarding-step="4" hidden>
+        <div data-rocky-password>${rocky("standing-still", "روكي يغطي عينيه ويختلس نظرة مرحة")}</div>
         <h1 tabindex="-1">اختر كلمة مرور</h1>
-        <p>استخدم 8 أحرف على الأقل، بينها حرف ورقم.</p>
-        ${field("password", "كلمة المرور", 'type="password" autocomplete="new-password" maxlength="128" required')}
+        <p class="onboarding-password-hint">8 أحرف على الأقل، بينها حرف ورقم.</p>
+        ${field("password", "كلمة المرور", 'type="password" autocomplete="new-password" maxlength="128" required', true)}
         <button class="visitor-primary" type="button" data-step-next>متابعة</button>
       </section>
-      <section class="onboarding-step" data-onboarding-step="5" hidden>
-        ${rocky("standing-still", "روكي يقف مبتسمًا")}
-        <h1 tabindex="-1">هل تريد إضافة رقم هاتف؟</h1>
-        <p>هذه الخطوة اختيارية، ويمكنك ترك الحقل فارغًا.</p>
-        ${field("phone", "رقم الهاتف (اختياري)", 'inputmode="tel" autocomplete="tel" maxlength="21" dir="ltr" placeholder="05xxxxxxxx"')}
+      <section class="onboarding-step onboarding-step--compact" data-onboarding-step="5" hidden>
+        ${rocky("standing-still", "روكي يتابع حركة المؤشر", { trackPointer:true })}
+        <h1 tabindex="-1">هل تريد إضافة رقم هاتف؟ (اختياري)</h1>
+        ${field("phone", "رقم الهاتف (اختياري)", 'inputmode="tel" autocomplete="tel" maxlength="21" dir="ltr" placeholder="05xxxxxxxx"', true)}
         <button class="visitor-primary" type="submit">إنشاء الحساب</button>
         <button class="onboarding-skip" type="button" data-skip-field="phone" data-skip-submit>ليس لدي رقم هاتف</button>
       </section>

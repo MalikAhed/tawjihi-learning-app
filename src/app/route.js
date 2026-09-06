@@ -15,7 +15,7 @@ export function readRoute(search = "") {
   const page = APP_PAGES.has(params.get("page")) ? params.get("page") : "learn";
   if (page !== "learn") return { page, day:null, subject:null, view:null, flow:null };
 
-  if (params.get("view") === "design-system" || isShipReadyRoute(params.get("view"))) {
+  if (["design-system", "ui-lab"].includes(params.get("view")) || isShipReadyRoute(params.get("view"))) {
     return { page:"learn", day:null, subject:null, view:params.get("view"), flow:null };
   }
 
@@ -36,7 +36,7 @@ export function createRouteUrl(currentHref, route = {}) {
     if (flow !== "entry") url.searchParams.set("flow", flow);
   } else if (page !== "learn" && APP_PAGES.has(page)) {
     url.searchParams.set("page", page);
-  } else if (view === "design-system" || isShipReadyRoute(view)) {
+  } else if (["design-system", "ui-lab"].includes(view) || isShipReadyRoute(view)) {
     url.searchParams.set("view", view);
   } else if (getCourseSubject(subject)) {
     url.searchParams.set("subject", subject);

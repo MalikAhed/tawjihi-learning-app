@@ -11,16 +11,16 @@ function deepFreeze(value) {
 export const SHIP_READY_TEMPLATES = deepFreeze([
   {
     route:"ship-ready-markdown", renderer:"markdown", label:"MARKDOWN WORKSPACE", title:"Markdown",
-    chromeTitle:"MARKDOWN LAB", preview:{ type:"image", src:"assets/template-previews/markdown-lab-desktop.webp" },
+    chromeTitle:"MARKDOWN LAB", preview:{ type:"markdown" },
   },
   {
     route:"ship-ready", renderer:"level", type:"content", label:"FIXED LAYOUT", title:"Content Area",
-    chromeTitle:"DAY 00", preview:{ type:"image", src:"assets/template-previews/template-lesson-shell.webp" },
+    chromeTitle:"DAY 00", preview:{ type:"content" },
     content:{ title:"Content Area" },
   },
   {
     route:"ship-ready-mcq", renderer:"level", type:"mcq", label:"QUESTION LAYOUT", title:"MCQ Template",
-    chromeTitle:"DAY 00", preview:{ type:"image", src:"assets/template-previews/template-mcq.webp" },
+    chromeTitle:"DAY 00", preview:{ type:"mcq" },
     content:{
       kicker:"KNOWLEDGE CHECK · CHOOSE ONE", title:"HTTP responses",
       prompt:"Which status code best fits a successful POST request that created a new resource?",
@@ -36,7 +36,7 @@ export const SHIP_READY_TEMPLATES = deepFreeze([
   },
   {
     route:"ship-ready-response", renderer:"level", type:"response", label:"WRITTEN RESPONSE", title:"Explain It",
-    chromeTitle:"DAY 00", preview:{ type:"image", src:"assets/template-previews/template-explain-it.webp" },
+    chromeTitle:"DAY 00", preview:{ type:"response" },
     content:{
       title:"Request vs response", prompt:"Explain the idea in your own words. Keep it clear, useful, and grounded in one example.",
       rubricTitle:"A strong answer includes", rubric:["What the client sends", "What the server returns", "One real example"],

@@ -12,7 +12,8 @@ The product is being built in three stages:
 2. Connect the approved experience to durable backend services.
 3. Apply final visual polish without changing the validated journeys.
 
-See [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md) for the delivery plan.
+See [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md) for the delivery plan and
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for entry points, state ownership, shared UI and focused checks.
 
 ## Requirements
 
@@ -46,7 +47,8 @@ Run the same checks used by GitHub Actions with:
 npm run ci
 ```
 
-The separate maintainability audit can be run with `npm run audit:manageability`. It currently reports known file-size cleanup work and is not part of the required CI job yet.
+The separate maintainability audit can be run with `npm run audit:manageability`. It checks ownership boundaries and file-size budgets; it is also included in `npm run verify`.
+For asynchronous rendering and first-paint changes, also run `npm run test:render`.
 
 ## Repository workflow
 
@@ -78,4 +80,6 @@ tests/        Automated tests and fixtures
 
 ## Deployment
 
-GitHub Actions currently validates the application but does not deploy it. The app now includes server-backed account behavior, so the previous static GitHub Pages workflow was removed. A hosting target should be selected only when the deployment and data-storage requirements are defined.
+Pushes to `main` deploy a public Phase 1 preview through GitHub Pages. On that static preview, account flows use the browser prototype service and temporary session storage. Running `npm run dev` continues to use the local Node account API and SQLite store.
+
+The Pages site is a product preview rather than a production account service. Persistent accounts and server-backed review tools require a Node hosting target with durable storage.

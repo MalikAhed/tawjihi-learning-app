@@ -1,11 +1,4 @@
 /* UI Lab borrows the Content Area shell from the approved lesson templates. */
-.lesson-shell--ui-lab.lesson-shell--design-system {
-  width:100%;
-  max-width:none;
-  background:#fff;
-}
-.ui-lab-template-open .lesson-shell--ui-lab.lesson-shell--design-system .lesson-top { margin:0; }
-.lesson-card--design-system.ds-practice-only { padding:0; }
 .lesson-card--ui-lab.ds-practice-only:focus-visible { outline:0; }
 .ds-practice-only #interactive.ds-ready-content-area {
   height:100%;

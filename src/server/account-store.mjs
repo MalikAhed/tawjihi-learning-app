@@ -194,6 +194,10 @@ export function createAccountStore({ databasePath } = {}) {
     createSession,
     getAccountForSession,
     deleteSession(token) { if (token) deleteSession.run(tokenDigest(token)); },
+    resetDevelopmentData() {
+      // Foreign-key cascades remove identifiers and sessions atomically.
+      database.exec("DELETE FROM accounts");
+    },
     close() { database.close(); },
   });
 }

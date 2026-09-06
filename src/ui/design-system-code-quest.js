@@ -4,6 +4,7 @@ import {
   PREVIEW_MESSAGE_SOURCE,
 } from "./code-preview.js";
 import { launchCelebration } from "./celebration.js";
+import { animateView } from "./view-motion.js";
 
 function hasCssDeclaration(cssSource, properties) {
   let rules;
@@ -65,7 +66,7 @@ async function mountCodeQuest(container, signal, codeQuest, { onContinue = null 
   };
   const clearConsole = () => {
     consoleLineCount = 0;
-    consoleOutput.innerHTML = `<p class="ds-console-empty">Console output will appear here.</p>`;
+    consoleOutput.innerHTML = `<p class="ds-console-empty">${codeQuest.locale === "ar" ? "تظهر رسائل السجل هنا." : "Console output will appear here."}</p>`;
     updateConsoleCount();
   };
   const appendConsoleLine = (level, args) => {
@@ -83,6 +84,7 @@ async function mountCodeQuest(container, signal, codeQuest, { onContinue = null 
     consoleOutput.scrollTop = consoleOutput.scrollHeight;
   };
   const selectOutput = (name, { focus = false } = {}) => {
+    const changed = lab.querySelector('[data-output-tab].is-active')?.dataset.outputTab !== name;
     outputTabs.forEach((tab) => {
       const selected = tab.dataset.outputTab === name;
       tab.classList.toggle("is-active", selected);
@@ -91,6 +93,7 @@ async function mountCodeQuest(container, signal, codeQuest, { onContinue = null 
       if (selected && focus) tab.focus();
     });
     lab.querySelectorAll("[data-output-panel]").forEach((panel) => { panel.hidden = panel.dataset.outputPanel !== name; });
+    if (changed) animateView(lab.querySelector(`[data-output-panel="${name}"]`));
   };
   outputTabs.forEach((tab) => tab.addEventListener("click", () => selectOutput(tab.dataset.outputTab), { signal }));
   lab.querySelector("[data-clear-console]")?.addEventListener("click", clearConsole, { signal });
@@ -140,21 +143,40 @@ async function mountCodeQuest(container, signal, codeQuest, { onContinue = null 
     if (!runButton) return;
     runButton.dataset.codeState = passed ? "passed" : "checking";
     const label = runButton.querySelector("[data-template-action-label], span");
-    if (label) label.textContent = passed ? "CONTINUE" : "RUN CHECK";
+    if (label) label.textContent = codeQuest.locale === "ar" ? (passed ? "متابعة" : "تحقّق من الشيفرة") : (passed ? "CONTINUE" : "RUN CHECK");
   };
   const schedulePreview = () => {
     window.cancelAnimationFrame(previewFrame);
     previewFrame = window.requestAnimationFrame(updatePreview);
   };
   let disposeEditor = () => {};
+  const editorCard = lab.querySelector(".ds-editor-card");
+  const editorTabs = [...lab.querySelectorAll("[data-editor-tab]")];
+  const checkButton = container.querySelector("[data-run-code]");
+  editorCard.setAttribute("aria-busy", "true");
+  editorTabs.forEach((tab) => { tab.disabled = true; });
+  if (checkButton) checkButton.disabled = true;
+  const loading = document.createElement("div");
+  loading.className = "app-loading";
+  loading.setAttribute("role", "status");
+  loading.textContent = codeQuest.locale === "ar" ? "جارٍ تجهيز المحرّر…" : "Preparing the editor…";
+  lab.querySelector('[data-editor-host="html"]').append(loading);
   try {
     const { mountLessonCodeLab } = await import("../../assets/vendor/lesson-code-editor.js");
     if (signal.aborted) return disposeEditor;
+    loading.remove();
     const mountedEditor = mountLessonCodeLab(lab, {
       htmlCode, cssCode, jsCode,
       onChange(type, value) { values[type] = value; setRunState(false); schedulePreview(); },
     });
     disposeEditor = typeof mountedEditor === "function" ? mountedEditor : disposeEditor;
+    editorCard.setAttribute("aria-busy", "false");
+    editorTabs.forEach((tab) => { tab.disabled = false; });
+    if (checkButton) checkButton.disabled = false;
+    lab.addEventListener("click", (event) => {
+      const tab = event.target.closest("[data-editor-tab]");
+      if (tab) animateView(lab.querySelector(`[data-editor-host="${tab.dataset.editorTab}"]`));
+    }, { signal });
     const tablist = lab.querySelector("[role='tablist']");
     tablist.addEventListener("keydown", (event) => {
       if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
@@ -171,6 +193,7 @@ async function mountCodeQuest(container, signal, codeQuest, { onContinue = null 
   } catch (error) {
     if (signal.aborted) return disposeEditor;
     console.error("The lesson code editor failed to load.", error);
+    editorCard.setAttribute("aria-busy", "false");
     lab.querySelector(".ds-editor-card").innerHTML = `<p class="ds-editor-error">The editor could not load. Refresh and try again.</p>`;
   }
   if (signal.aborted) return disposeEditor;

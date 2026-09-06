@@ -1,141 +1,10 @@
+import { bindVisitorMascots } from "./visitor-mascot.js";
+import { animateView } from "./view-motion.js";
 import { ACCOUNT_FIELD_ORDER, validateAccountField } from "../domain/account.js";
 import { accountCompleteMarkup, entryMarkup, registerMarkup, signInMarkup } from "./visitor-flow-markup.js";
 
 const FLOW_IDS = new Set(["entry", "register", "sign-in"]);
-const TITLES = { entry:"رحلة التوجيهي", register:"إنشاء حساب", "sign-in":"تسجيل الدخول" };
-const ROCKY_SHOULDERS = {
-  "arm-left": [182, 422],
-  "arm-right": [606, 422]
-};
-
-function bodyFollowDelta(anchor, origin, pose) {
-  const radians = pose.rotation * Math.PI / 180;
-  const cosine = Math.cos(radians);
-  const sine = Math.sin(radians);
-  const localX = anchor[0] - origin.x;
-  const localY = (anchor[1] - origin.y) * pose.scaleY;
-  return {
-    x: pose.x + cosine * localX - sine * localY - (anchor[0] - origin.x),
-    y: pose.y + sine * localX + cosine * localY - (anchor[1] - origin.y)
-  };
-}
-
-function scopeSvgIds(svg, prefix) {
-  const idMap = new Map();
-  svg.querySelectorAll("[id]").forEach((element) => {
-    const originalId = element.id;
-    const scopedId = `${prefix}-${originalId}`;
-    idMap.set(originalId, scopedId);
-    element.id = scopedId;
-  });
-  [svg, ...svg.querySelectorAll("*")].forEach((element) => {
-    for (const attribute of [...element.attributes]) {
-      let value = attribute.value;
-      for (const [originalId, scopedId] of idMap) {
-        if (value === `#${originalId}`) value = `#${scopedId}`;
-        value = value.replaceAll(`url(#${originalId})`, `url(#${scopedId})`);
-      }
-      if (attribute.name === "aria-labelledby" || attribute.name === "aria-describedby") {
-        value = value.split(/\s+/).map((id) => idMap.get(id) ?? id).join(" ");
-      }
-      if (value !== attribute.value) element.setAttributeNS(attribute.namespaceURI, attribute.name, value);
-    }
-  });
-}
-
-async function bindRockyPointerTracking(root, signal, documentObject) {
-  const mascots = [...root.querySelectorAll("[data-rocky-pointer-track]")];
-  const view = documentObject.defaultView;
-  if (!mascots.length || !view || view.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
-  try {
-    const response = await view.fetch("assets/mascot/rocky-standing-still.svg", { signal });
-    if (!response.ok) return;
-    const source = await response.text();
-    if (signal.aborted) return;
-    for (const [index, mascot] of mascots.entries()) {
-      const parsed = new view.DOMParser().parseFromString(source, "image/svg+xml");
-      const svg = parsed.documentElement;
-      if (svg.localName !== "svg" || parsed.querySelector("parsererror")) continue;
-      svg.querySelectorAll("script,foreignObject").forEach((node) => node.remove());
-      scopeSvgIds(svg, `rocky-pointer-${index + 1}`);
-      svg.setAttribute("role", "img");
-      svg.setAttribute("aria-label", mascot.dataset.rockyLabel || "روكي");
-      svg.classList.add("rocky-pointer-svg");
-      mascot.querySelector("picture")?.setAttribute("hidden", "");
-      mascot.append(documentObject.importNode(svg, true));
-    }
-  } catch (error) {
-    if (error?.name !== "AbortError") console.warn("Rocky pointer tracking could not load.", error);
-    return;
-  }
-
-  let targetX = 0;
-  let targetY = 0;
-  let x = 0;
-  let y = 0;
-  let armX = 0;
-  let armY = 0;
-  let frame = 0;
-  const pointAt = (event) => {
-    const active = mascots.find((mascot) => !mascot.closest("[data-onboarding-step]")?.hidden);
-    if (!active) return;
-    const bounds = active.getBoundingClientRect();
-    targetX = Math.max(-1, Math.min(1, (event.clientX - (bounds.left + bounds.width / 2)) / Math.max(1, view.innerWidth * 0.35)));
-    targetY = Math.max(-1, Math.min(1, (event.clientY - (bounds.top + bounds.height / 2)) / Math.max(1, view.innerHeight * 0.4)));
-  };
-  const render = () => {
-    x += (targetX - x) * 0.13;
-    y += (targetY - y) * 0.13;
-    armX += (targetX - armX) * 0.1;
-    armY += (targetY - armY) * 0.1;
-    const proximity = Math.max(0, 1 - Math.hypot(x, y) / 0.72);
-    const bodyPose = {
-      x: x * 15,
-      y: y < 0 ? y * 20 : y * 12,
-      rotation: x * (6 + Math.abs(y) * 2.5),
-      scaleY: 1 - y * 0.05
-    };
-    for (const mascot of mascots) {
-      if (mascot.closest("[data-onboarding-step]")?.hidden) continue;
-      const svg = mascot.querySelector(".rocky-pointer-svg");
-      const body = svg?.querySelector('[data-part="body"]');
-      let bodyOrigin = { x: 400, y: 545 };
-      if (body) {
-        const bounds = body.getBBox();
-        bodyOrigin = { x: bounds.x + bounds.width / 2, y: bounds.y + bounds.height * 0.88 };
-        body.style.translate = `${bodyPose.x}px ${bodyPose.y}px`;
-        body.style.rotate = `${bodyPose.rotation}deg`;
-        body.style.scale = `1 ${bodyPose.scaleY}`;
-        body.style.transformOrigin = "50% 88%";
-        body.style.transformBox = "fill-box";
-      }
-      for (const [partId, side] of [["arm-left", -1], ["arm-right", 1]]) {
-        const selector = `[data-part="${partId}"]`;
-        const arm = svg?.querySelector(selector);
-        if (!arm) continue;
-        const shoulder = ROCKY_SHOULDERS[partId];
-        const inherited = bodyFollowDelta(shoulder, bodyOrigin, bodyPose);
-        const followThroughX = (armX - x) * 10;
-        const followThroughY = (armY - y) * 10;
-        arm.style.translate = `${inherited.x + followThroughX}px ${inherited.y + followThroughY}px`;
-        arm.style.rotate = `${bodyPose.rotation + armX * 10 + armY * side * 10}deg`;
-        arm.style.scale = `1 ${bodyPose.scaleY * (1 - armY * 0.04)}`;
-        arm.style.transformOrigin = `${shoulder[0]}px ${shoulder[1]}px`;
-        arm.style.transformBox = "view-box";
-      }
-      for (const [selector, inwardDirection] of [['[data-part="pupil-left"]', 1], ['[data-part="pupil-right"]', -1]]) {
-        const pupil = svg?.querySelector(selector);
-        if (pupil) pupil.style.translate = `${x * 12 + proximity * 5 * inwardDirection}px ${y * 8}px`;
-      }
-    }
-    frame = view.requestAnimationFrame(render);
-  };
-  view.addEventListener("pointermove", pointAt, { passive:true, signal });
-  documentObject.documentElement.addEventListener("pointerleave", () => { targetX = 0; targetY = 0; }, { signal });
-  signal.addEventListener("abort", () => view.cancelAnimationFrame(frame), { once:true });
-  frame = view.requestAnimationFrame(render);
-}
-
+const TITLES = { entry:"الرئيسية", register:"إنشاء حساب", "sign-in":"تسجيل الدخول" };
 function setSubmitting(form, submitting, label) {
   const button = form.querySelector('[type="submit"]');
   form.setAttribute("aria-busy", String(submitting));
@@ -152,16 +21,26 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
 
   const reduceMotion = () => documentObject.defaultView?.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   const afterAnimation = (element, callback, timeout = 500) => {
+    const { signal } = viewController;
+    const motion = documentObject.defaultView?.matchMedia?.("(prefers-reduced-motion: reduce)");
     let finished = false;
-    const complete = (event) => {
-      if (finished || (event && event.target !== element)) return;
-      finished = true;
+    const cleanup = () => {
       clearTimeout(timer);
       element.removeEventListener("animationend", complete);
       element.removeEventListener("animationcancel", complete);
-      callback();
+      motion?.removeEventListener("change", preferenceChanged);
+      signal.removeEventListener("abort", cleanup);
     };
+    const complete = (event) => {
+      if (finished || (event && event.target !== element)) return;
+      finished = true;
+      cleanup();
+      if (!signal.aborted) callback();
+    };
+    const preferenceChanged = (event) => { if (event.matches) complete(); };
     const timer = setTimeout(complete, timeout);
+    signal.addEventListener("abort", cleanup, { once:true });
+    motion?.addEventListener("change", preferenceChanged);
     element.addEventListener("animationend", complete);
     element.addEventListener("animationcancel", complete);
   };
@@ -184,14 +63,13 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
   };
   const setFieldError = (form, name, message = "") => {
     const node = form.querySelector(`[data-field-error="${name}"]`);
-    if (!node) return Boolean(message);
+    if (!node) return;
     node.textContent = message;
     node.hidden = !message;
     const control = form.elements[name];
     const target = typeof control?.setAttribute === "function" ? control : control?.[0];
     if (message) target?.setAttribute("aria-invalid", "true");
     else target?.removeAttribute("aria-invalid");
-    return Boolean(message);
   };
   const setFormError = (form, message = "") => {
     const node = form.querySelector("[data-auth-error]");
@@ -199,21 +77,11 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
     node.hidden = !message;
   };
 
-  const renderEntry = () => { container.innerHTML = entryMarkup(); };
   const renderRegister = () => {
+    const { signal } = viewController;
     container.innerHTML = registerMarkup();
     const form = container.querySelector("[data-register-form]");
-    void bindRockyPointerTracking(form, viewController.signal, documentObject);
-    const repeatingRocky = form.querySelector("[data-rocky-repeat]");
-    if (repeatingRocky && !reduceMotion()) {
-      const interval = Number(repeatingRocky.dataset.rockyRepeat);
-      const timer = setInterval(() => {
-        if (repeatingRocky.closest("[data-onboarding-step]")?.hidden) return;
-        const picture = repeatingRocky.querySelector("picture");
-        picture?.replaceWith(picture.cloneNode(true));
-      }, interval);
-      viewController.signal.addEventListener("abort", () => clearInterval(timer), { once:true });
-    }
+    bindVisitorMascots(form, signal, documentObject);
     const steps = [...form.querySelectorAll("[data-onboarding-step]")];
     const progress = container.querySelector("[data-onboarding-progress]");
     const backButton = container.querySelector("[data-onboarding-back]");
@@ -251,7 +119,7 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
       const revealTarget = () => {
         steps.forEach((step, index) => { step.hidden = index !== targetIndex; });
         if (animate && !reduceMotion() && previousIndex !== targetIndex) targetStep.classList.add(`is-entering-${direction}`);
-        if (focus) requestAnimationFrame(() => targetStep.querySelector("input:checked, input, h1")?.focus());
+        if (focus) requestAnimationFrame(() => { if (!signal.aborted) targetStep.querySelector("input:checked, input, h1")?.focus(); });
         if (targetStep.classList.contains(`is-entering-${direction}`)) afterAnimation(targetStep, () => targetStep.classList.remove(`is-entering-${direction}`));
         stepTransitioning = false;
       };
@@ -284,9 +152,9 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
       setFormError(form);
       const result = await service.checkAccountAvailability(
         { field:fieldName, value:requestValue },
-        { signal:viewController.signal },
+        { signal:signal },
       );
-      if (viewController.signal.aborted || requestStep !== stepIndex) return;
+      if (signal.aborted || requestStep !== stepIndex) return;
       stepRequestPending = false;
       activeStep.setAttribute("aria-busy", "false");
       activeStep.querySelectorAll("input,button").forEach((control) => { control.disabled = false; });
@@ -306,12 +174,12 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
     };
     form.querySelectorAll("[data-step-next]").forEach((button) => button.addEventListener("click", () => {
       void continueFromCurrentStep();
-    }, { signal:viewController.signal }));
+    }, { signal:signal }));
     form.querySelector("[data-guest-start]")?.addEventListener("click", () => {
       if (stepTransitioning || stepRequestPending) return;
       service.startGuestTrial();
       leaveCurrentFlow(() => onHome({ historyMode:"push" }));
-    }, { signal:viewController.signal });
+    }, { signal:signal });
     form.querySelectorAll("[data-skip-field]").forEach((button) => button.addEventListener("click", () => {
       if (stepTransitioning || stepRequestPending) return;
       const fieldName = button.dataset.skipField;
@@ -319,24 +187,24 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
       setFieldError(form, fieldName);
       if (button.hasAttribute("data-skip-submit")) form.requestSubmit();
       else showStep(stepIndex + 1);
-    }, { signal:viewController.signal }));
+    }, { signal:signal }));
     form.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" || stepTransitioning || stepRequestPending || stepIndex === steps.length - 1 || event.target.matches('input[type="radio"]')) return;
       event.preventDefault();
       void continueFromCurrentStep();
-    }, { signal:viewController.signal });
+    }, { signal:signal });
     backButton.addEventListener("click", () => {
       if (stepTransitioning || stepRequestPending) return;
       if (stepIndex === 0) leaveCurrentFlow(() => onNavigate("entry", { historyMode:"push" }));
       else showStep(stepIndex - 1);
-    }, { signal:viewController.signal });
+    }, { signal:signal });
     form.addEventListener("input", (event) => {
       if (event.target?.name) setFieldError(form, event.target.name);
       setFormError(form);
-    }, { signal:viewController.signal });
+    }, { signal:signal });
     form.addEventListener("change", (event) => {
       if (event.target?.name) setFieldError(form, event.target.name);
-    }, { signal:viewController.signal });
+    }, { signal:signal });
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       setFormError(form);
@@ -345,15 +213,16 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
       if (invalidIndex >= 0) { showStep(invalidIndex); return; }
       setSubmitting(form, true, "جارٍ إنشاء الحساب…");
       backButton.disabled = true;
-      const result = await service.createAccount(data, { signal:viewController.signal });
-      if (viewController.signal.aborted || result.status === "aborted") return;
+      const result = await service.createAccount(data, { signal:signal });
+      if (signal.aborted || result.status === "aborted") return;
       if (result.status === "created") {
         container.innerHTML = accountCompleteMarkup();
+        animateView(container);
         const delay = reduceMotion() ? 500 : 3400;
         const timer = setTimeout(() => {
-          if (!viewController.signal.aborted) leaveCurrentFlow(() => onHome({ historyMode:"push" }), "is-completing");
+          if (!signal.aborted) leaveCurrentFlow(() => onHome({ historyMode:"push" }), "is-completing");
         }, delay);
-        viewController.signal.addEventListener("abort", () => clearTimeout(timer), { once:true });
+        signal.addEventListener("abort", () => clearTimeout(timer), { once:true });
         return;
       }
       backButton.disabled = false;
@@ -367,16 +236,17 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
         setFieldError(form, result.field, result.error);
         showStep(stepForField[result.field]);
       } else setFormError(form, result.error || "تعذّر إنشاء الحساب. حاول مرة أخرى.");
-    }, { signal:viewController.signal });
+    }, { signal:signal });
     showStep(0, { focus:false, animate:false });
   };
   const renderSignIn = () => {
+    const { signal } = viewController;
     container.innerHTML = signInMarkup();
     const form = container.querySelector("[data-sign-in-form]");
     form.addEventListener("input", (event) => {
       if (event.target?.name) setFieldError(form, event.target.name);
       setFormError(form);
-    }, { signal:viewController.signal });
+    }, { signal:signal });
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       setFormError(form);
@@ -390,8 +260,8 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
         return;
       }
       setSubmitting(form, true, "جارٍ تسجيل الدخول…");
-      const result = await service.signIn(data, { signal:viewController.signal });
-      if (viewController.signal.aborted || result.status === "aborted") return;
+      const result = await service.signIn(data, { signal:signal });
+      if (signal.aborted || result.status === "aborted") return;
       if (result.status === "signed-in") {
         onHome({ historyMode:"push" });
         return;
@@ -399,9 +269,8 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
       setSubmitting(form, false, "");
       setFormError(form, result.error || "لم نتمكن من تسجيل الدخول بهذه البيانات.");
       form.elements.identifier.focus();
-    }, { signal:viewController.signal });
+    }, { signal:signal });
   };
-
   function show(flow, { focus = true } = {}) {
     if (!FLOW_IDS.has(flow)) flow = "entry";
     currentFlow = flow;
@@ -410,12 +279,14 @@ export function createVisitorFlow({ container, service, onNavigate, onHome, docu
     viewController = new AbortController();
     container.hidden = false;
     documentObject.body.classList.add("product-flow-active");
-    if (flow === "entry") renderEntry();
+    if (flow === "entry") container.innerHTML = entryMarkup();
     else if (flow === "register") renderRegister();
     else renderSignIn();
     bindCommon();
-    documentObject.title = `${TITLES[flow]} · رحلة التوجيهي`;
-    if (focus) requestAnimationFrame(() => container.querySelector("h1")?.focus());
+    animateView(container);
+    documentObject.title = TITLES[flow];
+    const { signal } = viewController;
+    if (focus) requestAnimationFrame(() => { if (!signal.aborted) container.querySelector("h1")?.focus(); });
   }
   function hide() {
     currentFlow = null;

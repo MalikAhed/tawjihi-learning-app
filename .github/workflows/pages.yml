@@ -1,0 +1,58 @@
+name: Deploy public preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install browser dependencies
+        run: npm ci --ignore-scripts --omit=optional
+
+      - name: Assemble static preview
+        run: |
+          mkdir -p _site/node_modules/dompurify/dist
+          mkdir -p _site/node_modules/@highlightjs/cdn-assets/es
+          mkdir -p _site/node_modules/marked/lib
+          cp -R index.html src assets .nojekyll _site/
+          cp node_modules/dompurify/dist/purify.es.mjs _site/node_modules/dompurify/dist/
+          cp node_modules/@highlightjs/cdn-assets/es/highlight.min.js _site/node_modules/@highlightjs/cdn-assets/es/
+          cp node_modules/marked/lib/marked.esm.js _site/node_modules/marked/lib/
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload preview artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy preview
+        id: deployment
+        uses: actions/deploy-pages@v4

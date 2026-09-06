@@ -1,3 +1,6 @@
+import { localizeShipReady } from "../data/ship-ready-ar.js";
+import { renderPlayground } from "./ui-lab/playground.js";
+import { animateView } from "./view-motion.js";
 import { applyWeekThemeFromSearch } from "../app/week-theme.js";
 import { getShipReadyTemplate } from "../data/ship-ready.js";
 import { prefersReducedMotion } from "../lib/dom.js";
@@ -35,10 +38,24 @@ export function createDevelopmentViewController({
     const request = beginRequest();
     prepareView(opener);
     setDevelopmentViewMode(elements, "design-system");
-    elements.lessonTitle.textContent = "DESIGN SYSTEM";
-    elements.lessonStatus.textContent = "LOADING";
+    const previousBackMarkup = elements.lessonBackButton.innerHTML;
+    const previousBackLabel = elements.lessonBackButton.getAttribute("aria-label");
+    elements.lessonBackButton.textContent = "المزيد →";
+    elements.lessonBackButton.setAttribute("aria-label", "العودة إلى المزيد");
+    elements.lessonBackButton.classList.add("development-reference-back");
+    const restoreBack = () => {
+      elements.lessonContent.classList.remove("current-system");
+      elements.lessonBackButton.innerHTML = previousBackMarkup;
+      elements.lessonBackButton.classList.remove("development-reference-back");
+      if (previousBackLabel === null) elements.lessonBackButton.removeAttribute("aria-label");
+      else elements.lessonBackButton.setAttribute("aria-label", previousBackLabel);
+    };
+    setActiveCleanup(restoreBack);
+    elements.lessonContent.classList.add("current-system");
+    elements.lessonTitle.textContent = "نظام التصميم";
+    elements.lessonStatus.textContent = "جارٍ التحميل";
     elements.lessonContent.setAttribute("aria-busy", "true");
-    elements.lessonContent.innerHTML = `<p role="status" aria-live="polite">Loading the previous Design System…</p>`;
+    elements.lessonContent.innerHTML = `<div class="app-loading" role="status" aria-live="polite"><p>جارٍ تحميل نظام التصميم…</p></div>`;
     document.title = `Loading Design System · ${appTitle}`;
     showContentView();
     writeRoute({ view:"design-system" }, historyMode);
@@ -46,23 +63,26 @@ export function createDevelopmentViewController({
     try {
       const { renderDesignSystem } = await loadDesignSystem();
       if (!isCurrentRequest(request)) return;
+      animateView(elements.lessonContent);
       elements.lessonContent.setAttribute("aria-busy", "false");
-      elements.lessonStatus.textContent = "REFERENCE";
-      setActiveCleanup(renderDesignSystem(elements.lessonContent));
+      elements.lessonStatus.textContent = "مرجع المكوّنات";
+      const disposeReference = renderDesignSystem(elements.lessonContent);
+      setActiveCleanup(() => { disposeReference(); restoreBack(); });
       document.title = `Design System · ${appTitle}`;
       if (opener) elements.lessonContent.focus({ preventScroll:true });
     } catch (error) {
       if (!isCurrentRequest(request)) return;
       console.error("The Design System could not be loaded.", error);
+      animateView(elements.lessonContent);
       elements.lessonContent.setAttribute("aria-busy", "false");
-      elements.lessonStatus.textContent = "UNAVAILABLE";
+      elements.lessonStatus.textContent = "غير متاح";
       elements.lessonContent.innerHTML = `<section class="lesson-error" role="alert"><h1 class="lesson-heading">The Design System could not load</h1><p>Return to the path and try opening it again.</p></section>`;
       elements.lessonContent.focus({ preventScroll:true });
     }
   }
 
   async function openTemplate(opener = null, { historyMode = "push", view = "ui-lab" } = {}) {
-    const definition = getShipReadyTemplate(view);
+    const definition = localizeShipReady(getShipReadyTemplate(view));
     if (!definition) return;
     applyWeekThemeFromSearch();
     const request = beginRequest();
@@ -73,39 +93,56 @@ export function createDevelopmentViewController({
     writeRoute({ view }, historyMode);
     document.title = `Ship Ready · ${appTitle}`;
     if (definition.renderer === "code") {
+      const previousBackMarkup = elements.lessonBackButton.innerHTML;
+      const previousBackLabel = elements.lessonBackButton.getAttribute("aria-label");
+      elements.lessonBackButton.textContent = "×";
+      elements.lessonBackButton.setAttribute("aria-label", "Close lesson");
+      document.body.classList.add("ui-lab-open", "ui-lab-template-open");
+      const restoreShell = () => {
+        document.body.classList.remove("ui-lab-template-open", "ui-lab-open");
+        elements.lessonBackButton.innerHTML = previousBackMarkup;
+        if (previousBackLabel === null) elements.lessonBackButton.removeAttribute("aria-label");
+        else elements.lessonBackButton.setAttribute("aria-label", previousBackLabel);
+      };
+      setActiveCleanup(restoreShell);
       elements.lessonContent.setAttribute("aria-busy", "true");
-      elements.lessonContent.innerHTML = `<p role="status" aria-live="polite">Loading Code Editor template…</p>`;
+      elements.lessonContent.innerHTML = `<div class="app-loading" role="status" aria-live="polite"><p>جارٍ تحميل محرّر الشيفرة…</p></div>`;
       try {
         const { renderDesignSystem } = await loadDesignSystem();
         if (!isCurrentRequest(request)) return;
-        const previousBackText = elements.lessonBackButton.textContent;
-        const previousBackLabel = elements.lessonBackButton.getAttribute("aria-label");
-        elements.lessonBackButton.textContent = "×";
-        elements.lessonBackButton.setAttribute("aria-label", "Close lesson");
+        animateView(elements.lessonContent);
         elements.lessonContent.setAttribute("aria-busy", "false");
-        document.body.classList.add("ui-lab-open", "ui-lab-template-open");
-        const destroyPracticeLab = renderDesignSystem(elements.lessonContent, { practiceOnly:true, practice:definition.content });
+        const destroyPracticeLab = renderDesignSystem(elements.lessonContent, { practiceOnly:true, practice:definition.content, locale:"ar" });
         setActiveCleanup(() => {
           destroyPracticeLab();
-          document.body.classList.remove("ui-lab-template-open", "ui-lab-open");
-          elements.lessonBackButton.textContent = previousBackText;
-          if (previousBackLabel === null) elements.lessonBackButton.removeAttribute("aria-label");
-          else elements.lessonBackButton.setAttribute("aria-label", previousBackLabel);
+          restoreShell();
         });
       } catch (error) {
         if (!isCurrentRequest(request)) return;
         console.error("The Code Editor template could not be loaded.", error);
+        animateView(elements.lessonContent);
         elements.lessonContent.setAttribute("aria-busy", "false");
         elements.lessonContent.innerHTML = `<section class="lesson-error" role="alert"><h1 class="lesson-heading">The Code Editor template could not load</h1><p>Return to Ship Ready and try opening it again.</p></section>`;
       }
     } else {
       elements.lessonContent.removeAttribute("aria-busy");
       setActiveCleanup(definition.renderer === "markdown" ? renderMarkdownLab(elements.lessonContent)
-        : renderUiLab(elements.lessonContent, { definition }));
+        : renderUiLab(elements.lessonContent, { definition, locale:"ar" }));
     }
     window.scrollTo({ top:0, behavior:"auto" });
     if (opener) elements.lessonContent.focus({ preventScroll:true });
   }
 
-  return Object.freeze({ openDesignSystem, openTemplate });
+  function openLab(opener = null, { historyMode = "push" } = {}) {
+    beginRequest();
+    prepareView(opener);
+    setDevelopmentViewMode(elements, "ui-lab");
+    elements.lessonContent.removeAttribute("aria-busy");
+    showContentView();
+    writeRoute({ view:"ui-lab" }, historyMode);
+    document.title = `UI Lab · ${appTitle}`;
+    setActiveCleanup(renderPlayground(elements.lessonContent, { onClose:() => elements.lessonBackButton.click() }));
+  }
+
+  return Object.freeze({ openDesignSystem, openTemplate, openLab });
 }

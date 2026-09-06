@@ -1,56 +1,21 @@
-# P1 current route and state map
+# Current route and state map
 
-This map follows Malik's simplified entry/account decision dated 2026-09-03. It supersedes the earlier
-visitor preview and verification route map.
+Runtime inventory as of 2026-09-05. Product authority remains the [simplified account decision](PRODUCT_DECISION_2026-09-03_SIMPLIFIED_ENTRY_ACCOUNTS.md), [ICT implementation boundaries](ICT_TEXTBOOK_PARTS.md), and approved stories. This inventory does not approve provisional or future-release features.
 
-## Current experience
-
-```text
-Selection
-   ↓
-Existing `?page=learn` subject map ─→ Subject status
-   ↕
-Create account / Sign in
-   ↓
-Existing `?page=learn` subject map
-```
-
-Selection, successful account creation, and successful sign-in all finish at the same Subjects Home.
-
-## Active routes
-
-| Route | Purpose |
+| URL | Current behavior |
 |---|---|
-| `entry` | Choose place/curriculum and path |
-| `?page=learn` | Existing vibrant eight-subject map and the current account state |
-| `?subject={id}` | Existing vibrant subject in-progress or blocked state |
-| `register` | Create a free account with username, email, phone, and password |
-| `sign-in` | Sign in with username, email, or phone plus password |
+| `/` or `?flow=entry` | Entry/guest trial; normalized entry URL omits `flow` |
+| `?flow=register` | Greeting, username, curriculum, path, required email/password, optional phone |
+| `?flow=sign-in` | Username/email/phone identifier plus password |
+| `?page=learn` | Eight subjects, personal dashboard for eligible accounts, guest account actions |
+| `?subject=ict` | Three-unit roadmap with named lesson parts; part/review/completion are in-view state |
+| `?subject={known-id}` | Subject status/access destination; seven unpublished subject cards remain disabled |
+| `?page=quests`, `shop`, `challenges`, `levels` | Retained placeholder/gated destinations; their routes are preserved, not a claim of release readiness |
+| `?page=more` | Five developer tabs: UI Lab, Ship Ready, Design System, motion studio and data |
+| `?view=ui-lab` | Full-screen isolated HTML/CSS/JS playground |
+| `?view=design-system` | Current Arabic component reference |
+| `?view=ship-ready-*` | Eight registered templates; IDs are defined by `src/data/ship-ready.js` |
 
-The only new flow routes are `entry`, `register`, and `sign-in`. Old preview, verification, recovery,
-orientation-handoff, replacement-Home, and separate account-state routes are not in the active router.
+`src/app/route.js` normalizes unsupported values and obsolete day routes and preserves unrelated query parameters. Account types are `guest`, `free`, `subscribed`, and `banned`; internal fixture roles are separate. Successful account actions return to the shared Home. Banned access and guest trial gates stay separate from progress.
 
-## Account types
-
-| Type | Home behavior |
-|---|---|
-| `guest` | Sees all subjects plus Create account and Sign in |
-| `free` | Sees all subjects and the free-account label |
-| `subscribed` | Sees all subjects and the subscribed-account label |
-| `banned` | Sees all subjects with a clear restriction; subject access is blocked |
-
-Internal content or access staff are roles, not additional student account types.
-
-## Shared Home rules
-
-- Always shows the same eight-subject structure.
-- Contains no streak, rank, level, day, challenge, or decorative background-image UI.
-- Every subject is clickable and currently reports `قيد التقدم`.
-- Guests have only Create account and Sign in account actions in the top header.
-- Changing place/path returns to `entry`; it does not open a custom ICT visitor page.
-
-## Prototype service boundary
-
-`src/services/prototype-service.js` owns the temporary selection and account-type behavior. It exposes
-dummy free, subscribed, and banned credentials for frontend testing. No database, real authentication,
-verification message, or backend exists in Phase 1.
+The service can run against fixtures or the existing local account adapter. UI callers use the service boundary in either case. See [architecture and validation](ARCHITECTURE.md) for state owners and lifecycle rules, rather than duplicating them here.

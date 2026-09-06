@@ -13,15 +13,15 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
     const routes = cards.map((card) => card.querySelector('[data-preview-route]')?.dataset.previewRoute);
     const buttons = cards.map((card) => card.querySelector('[data-open-template]')?.dataset.openTemplate);
     return cards.length === 8
-      && cards[0].querySelector('h3')?.textContent === 'Markdown'
-      && cards[1].querySelector('h3')?.textContent === 'Content Area'
-      && cards[2].querySelector('h3')?.textContent === 'MCQ Template'
-      && cards[3].querySelector('h3')?.textContent === 'Explain It'
-      && cards[4].querySelector('h3')?.textContent === 'Put in Order'
-      && cards[5].querySelector('h3')?.textContent === 'Fill in the Blanks'
+      && cards[0].querySelector('h3')?.textContent === 'محرّر المحتوى'
+      && cards[1].querySelector('h3')?.textContent === 'مساحة المحتوى'
+      && cards[2].querySelector('h3')?.textContent === 'اختر الإجابة'
+      && cards[3].querySelector('h3')?.textContent === 'اشرح بأسلوبك'
+      && cards[4].querySelector('h3')?.textContent === 'رتّب الخطوات'
+      && cards[5].querySelector('h3')?.textContent === 'أكمل الفراغات'
       && cards[5].querySelectorAll('.ship-ready-fill-options .lesson-inline-code').length === 3
-      && cards[6].querySelector('h3')?.textContent === 'Spot the Bug'
-      && cards[7].querySelector('h3')?.textContent === 'Code Editor'
+      && cards[6].querySelector('h3')?.textContent === 'اكتشف الخطأ'
+      && cards[7].querySelector('h3')?.textContent === 'محرّر الشيفرة'
       && JSON.stringify(routes) === JSON.stringify(['ship-ready-markdown','ship-ready','ship-ready-mcq','ship-ready-response','ship-ready-sequence','ship-ready-fill-blanks','ship-ready-spot-bug','ship-ready-code-lab'])
       && JSON.stringify(buttons) === JSON.stringify(['ship-ready-markdown','ship-ready','ship-ready-mcq','ship-ready-response','ship-ready-sequence','ship-ready-fill-blanks','ship-ready-spot-bug','ship-ready-code-lab']);
   })()`), "Ship Ready cards must stay in the approved order and use previews of the exact routes they open");
@@ -36,7 +36,7 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
   await evaluate("document.querySelector('[data-open-template=\"ship-ready-sequence\"]').click()");
   await waitFor("location.search === '?view=ship-ready-sequence' && document.body.classList.contains('ui-lab-sequence-open')", "the Ship Ready Put in Order template");
   await assertSharedActions("Put in Order");
-  assert(await evaluate("document.querySelector('#ui-lab-content-title').textContent === 'Put the link journey in order'"), "the Ship Ready sequence route must render Put in Order");
+  assert(await evaluate("document.querySelector('#ui-lab-content-title').textContent === 'رتّب رحلة فتح الرابط'"), "the Ship Ready sequence route must render Put in Order");
   await evaluate(`['click','request','response','render'].forEach((id) => document.querySelector('[data-sequence-step="' + id + '"]').click()); document.querySelector('.level-layout-task').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}))`);
   assert(await evaluate("document.querySelector('[data-sequence-feedback]').classList.contains('is-correct')"), "the data-driven Put in Order template must accept its configured sequence");
   await evaluate("document.querySelector('[data-sequence-check]').click()");
@@ -50,7 +50,7 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
     const inlineCode = choice.querySelector('.lesson-inline-code');
     const choiceStyle = getComputedStyle(choice);
     const codeStyle = getComputedStyle(inlineCode);
-    return document.querySelector('#ui-lab-content-title').textContent === 'Complete the fetch request'
+    return document.querySelector('#ui-lab-content-title').textContent === 'أكمل طلب جلب المستخدمين'
       && document.querySelectorAll('.ui-lab-fill-options .lesson-inline-code').length === 4
       && choiceStyle.minHeight === '72px'
       && choiceStyle.borderRadius === '14px'
@@ -74,7 +74,7 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
   await evaluate("document.querySelector('[data-open-template=\"ship-ready-response\"]').click()");
   await waitFor("location.search === '?view=ship-ready-response' && document.body.classList.contains('ui-lab-response-open')", "the Ship Ready response template");
   await assertSharedActions("Explain It");
-  assert(await evaluate("document.querySelector('#ui-lab-content-title').textContent === 'Request vs response'"), "the Ship Ready response route must render Explain It");
+  assert(await evaluate("document.querySelector('#ui-lab-content-title').textContent === 'الطلب والاستجابة'"), "the Ship Ready response route must render Explain It");
   await captureScreenshot("template-explain-it.png");
   await verifyReviewedResponse({ assert, captureScreenshot, cdp, delay, evaluate, sessionId, waitFor });
   await evaluate("document.querySelector('[data-response-submit]').click()");
@@ -106,7 +106,7 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
   await evaluate("document.querySelector('[data-open-template=\"ship-ready-spot-bug\"]').click()");
   await waitFor("location.search === '?view=ship-ready-spot-bug' && document.body.classList.contains('ui-lab-bug-open')", "the Ship Ready Spot the Bug template");
   await assertSharedActions("Spot the Bug");
-  assert(await evaluate("document.querySelector('#ui-lab-content-title').textContent === 'Which line breaks the code?'"), "the Ship Ready Spot the Bug route must render the approved debugging question");
+  assert(await evaluate("document.querySelector('#ui-lab-content-title').textContent === 'أي سطر يحتوي على الخطأ؟'"), "the Ship Ready Spot the Bug route must render the approved debugging question");
   await evaluate("document.querySelector('[data-bug-line=\"3\"]').click(); document.querySelector('[data-bug-reason=\"parenthesis\"]').click(); document.querySelector('.level-layout-task').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}))");
   assert(await evaluate("document.querySelector('[data-bug-feedback]').classList.contains('is-correct')"), "the data-driven Spot the Bug template must accept its configured line and reason");
   await evaluate("document.querySelector('[data-bug-check]').click()");
@@ -118,7 +118,7 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
   await waitFor("document.querySelector('[data-console-output]')?.textContent.includes('Explorer card ready: Mira the Explorer')", "JavaScript execution in the Code Editor template");
   const codeLabState = await evaluate(`(() => ({
     markdownChecklist:document.querySelectorAll('.ds-build-guide input[type="checkbox"]').length === 2,
-    noLegacyCards:!document.querySelector('.ds-build-brief, .ds-code-requirements, .ds-build-tip'),
+    noLegacyCards:!document.querySelector('.ds-build-brief, .ds-code-requirements, .ds-build-tip, .ds-hero, #foundations, #questions, #explanations'),
     editorTouchesFooter:Math.abs(document.querySelector('.ds-code-lab').getBoundingClientRect().bottom - document.querySelector('.ds-quest-footer').getBoundingClientRect().top) <= 3,
     noBottomBorder:getComputedStyle(document.querySelector('.ds-code-lab')).borderBottomWidth === '0px',
     uiLabRouteRemoved:location.search !== '?view=ui-lab',
@@ -127,7 +127,8 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
     javascriptTab:Boolean(document.querySelector('[data-editor-tab="js"] .ds-language-logo')),
     sandboxedScripts:document.querySelector('.ds-live-preview').getAttribute('sandbox') === 'allow-scripts',
     outputTabs:document.querySelectorAll('[data-output-tab]').length === 2,
-    compactRunAction:document.querySelector('[data-run-code]').getBoundingClientRect().width < 190,
+    readableRunAction:document.querySelector('[data-run-code]').getBoundingClientRect().width <= 240
+      && document.querySelector('[data-run-code] [data-template-action-label]').scrollWidth <= document.querySelector('[data-run-code] [data-template-action-label]').clientWidth + 1,
     unboxedSolidPlayIcon:Boolean(document.querySelector('[data-run-code] .ds-run-play svg path'))
       && getComputedStyle(document.querySelector('.ds-run-play')).backgroundColor === 'rgba(0, 0, 0, 0)'
       && getComputedStyle(document.querySelector('.ds-run-play svg')).fill !== 'none',

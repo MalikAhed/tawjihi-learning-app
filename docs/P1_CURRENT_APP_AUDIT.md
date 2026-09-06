@@ -4,9 +4,8 @@
 **Phase:** Frontend-only UI/UX prototype
 **Product baseline:** 49 first-release stories; 3 locked and 46 provisional
 
-> This is the preserved pre-P1.1 baseline audit. The default product route now uses the locked visitor
-> flow; legacy scaffolding described below is hidden there and remains temporarily available only while
-> reusable development tools are separated.
+> Historical 2026-09-03 snapshot, retained for traceability. This is not the current runtime inventory.
+> See [architecture](ARCHITECTURE.md), [route map](P1_ROUTE_STATE_MAP.md), and [refactor audit](REFACTOR_AUDIT_2026-09-05.md).
 
 ## Current experience
 

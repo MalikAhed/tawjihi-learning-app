@@ -21,10 +21,10 @@ test("the dashboard prioritizes level XP, streak, and subject progress", () => {
   const markup = renderLearnerDashboardMarkup(getPrototypeScenario("student-paid").snapshot, "ليان");
   assert.match(markup, /مرحبًا، <bdi>ليان<\/bdi>/);
   assert.doesNotMatch(markup, /dashboard-resume|متابعة التعلّم|تكنولوجيا المعلومات|تقدّم المادة/);
-  assert.match(markup, /dashboard-stat--level[^]*?<img src="assets\/icons\/dashboard-levels\.svg"/);
+  assert.match(markup, /dashboard-stat--level[^]*?<img src="assets\/icons\/dashboard-levels-animated\.svg"/);
   assert.match(markup, /620 \/ 800 XP/);
   assert.match(markup, /السلسلة اليومية/);
-  assert.match(markup, /dashboard-stat--streak[^]*?<img src="assets\/icons\/dashboard-streak\.svg"/);
+  assert.match(markup, /dashboard-stat--streak[^]*?<img src="assets\/icons\/streak-fire-burning\.svg"/);
   assert.match(markup, /المواد الدراسية/);
   assert.match(markup, /<bdi>7%<\/bdi> مكتمل/);
   assert.doesNotMatch(markup, /الرتبة|الأسئلة المحلولة|إجمالي الدروس|dashboard-metric/);
@@ -49,6 +49,12 @@ test("the dashboard side rail renders the daily quest card", () => {
   assert.match(markup, /أكمل 3 دروس/);
   assert.match(markup, /حل 20 سؤالًا/);
   assert.match(markup, /سلسلة 7 أيام/);
+  assert.match(markup, /dashboard-quests-teaser/);
+  assert.match(markup, /assets\/mascot\/rocky-working\.svg/);
+  assert.match(markup, /assets\/mascot\/rocky-working-reduced\.svg/);
+  assert.match(markup, /prefers-reduced-motion: reduce/);
+  assert.match(markup, /قريبًا/);
+  assert.match(markup, /نعمل على هذه الميزة/);
   assert.match(markup, /assets\/icons\/dashboard-quest-time\.svg/);
   assert.equal((markup.match(/role="progressbar"/g) || []).length, 3);
   assert.equal((markup.match(/dashboard-quest dashboard-quest--/g) || []).length, 3);

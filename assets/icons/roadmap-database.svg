@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <path d="M10 40h44v10c0 6-10 10-22 10S10 56 10 50V40Z" fill="#7A3EC8"/>
+  <path d="M10 38h44v10c0 6-10 10-22 10S10 54 10 48V38Z" fill="#A560E8"/>
+  <ellipse cx="32" cy="38" rx="22" ry="9" fill="#C58AF9"/>
+  <path d="M10 26h44v10c0 6-10 10-22 10S10 42 10 36V26Z" fill="#7A3EC8"/>
+  <path d="M10 24h44v10c0 6-10 10-22 10S10 40 10 34V24Z" fill="#A560E8"/>
+  <ellipse cx="32" cy="24" rx="22" ry="9" fill="#C58AF9"/>
+  <path d="M10 14h44v10c0 6-10 10-22 10S10 30 10 24V14Z" fill="#7A3EC8"/>
+  <path d="M10 12h44v10c0 6-10 10-22 10S10 28 10 22V12Z" fill="#A560E8"/>
+  <ellipse cx="32" cy="12" rx="22" ry="9" fill="#C58AF9"/>
+  <path d="M18 10c4-2 9-3 14-3" stroke="#E5D2F8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M16 22v2m0 12v2m0 12v2" stroke="#C58AF9" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="46" cy="23" r="2.5" fill="#FFD900"/>
+  <circle cx="46" cy="37" r="2.5" fill="#FFD900"/>
+  <circle cx="46" cy="51" r="2.5" fill="#FFD900"/>
+</svg>

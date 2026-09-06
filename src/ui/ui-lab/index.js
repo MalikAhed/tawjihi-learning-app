@@ -17,7 +17,7 @@ function setCheckAction(button, label, state, text, disabled = button.disabled) 
   label.textContent = text;
 }
 
-export function renderUiLab(container, { definition, embedded = false, onBack, onContinue, locale = "en" } = {}) {
+export function renderUiLab(container, { definition, embedded = false, onBack, onContinue, onAnswer, locale = "en" } = {}) {
   const controller = new AbortController();
   const { signal } = controller;
   const copy = getLessonUiCopy(locale);
@@ -39,7 +39,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
   typeClasses.forEach(([className, active]) => (embedded ? container : document.body).classList.toggle(className, active));
   const backButton = embedded ? null : document.querySelector(".lesson-back");
   const lessonStatus = embedded ? null : document.querySelector(".lesson-status");
-  const previousBackText = backButton?.textContent;
+  const previousBackMarkup = backButton?.innerHTML;
   const previousBackLabel = backButton?.getAttribute("aria-label");
   const previousStatusHtml = lessonStatus?.innerHTML;
   const previousStatusHidden = lessonStatus?.hidden;
@@ -83,7 +83,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
     if (embedded) container.classList.remove("ui-lab-template-open");
     else document.body.classList.remove("ui-lab-template-open", "ui-lab-open");
     if (backButton) {
-      backButton.textContent = previousBackText;
+      backButton.innerHTML = previousBackMarkup;
       if (previousBackLabel === null) backButton.removeAttribute("aria-label");
       else backButton.setAttribute("aria-label", previousBackLabel);
     }
@@ -143,6 +143,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
           headers:{ "Content-Type":"application/json" },
           body:JSON.stringify({
             route:definition.route,
+            locale,
             answer,
             ...(definition.route === "lesson-authoring-preview" ? { authoredReview:{
               title:config.title, prompt:config.prompt, rubric:config.rubric,
@@ -245,7 +246,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
         const nudge = document.createElement("div");
         nudge.className = "ui-lab-response-nudge";
         nudge.setAttribute("role", "status");
-        nudge.innerHTML = `<img src="assets/mascots/chibi-placeholder.webp" alt="" /><div class="ui-lab-response-bubble"><strong>${escapeHtml(config.guideTitle)}</strong><p>${escapeHtml(config.guide)}</p><button type="button" data-dismiss-response-guide>${escapeHtml(copy.understood)}</button></div>`;
+        nudge.innerHTML = `<img src="assets/mascot/rocky-standing-still-reduced.svg" alt="" /><div class="ui-lab-response-bubble"><strong>${escapeHtml(config.guideTitle)}</strong><p>${escapeHtml(config.guide)}</p><button type="button" data-dismiss-response-guide>${escapeHtml(copy.understood)}</button></div>`;
         nudge.style.left = `${Math.min(window.innerWidth - 460, Math.max(20, composerRect.left - 72))}px`;
         nudge.style.top = `${Math.max(20, composerRect.top - 142)}px`;
         document.body.append(nudge);
@@ -593,6 +594,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
     }
     if (!selectedAnswer) return;
     const isCorrect = selectedAnswer.dataset.correct === "true";
+    onAnswer?.({ correct:isCorrect });
     selectedAnswer.classList.add(isCorrect ? "is-correct" : "is-wrong");
     feedback.className = `level-feedback ${isCorrect ? "is-correct" : "is-wrong"}`;
     feedback.innerHTML = isCorrect

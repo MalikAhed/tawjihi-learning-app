@@ -1,8 +1,12 @@
+import { renderDeveloperLab, renderDeveloperData, renderDeveloperStudio } from "./ui/developer-area.js";
+import { animateView } from "./ui/view-motion.js";
+import { renderComingSoonMarkup } from "./ui/coming-soon.js";
 import { createRouteUrl, readRoute } from "./app/route.js";
 import { resetWeekTheme } from "./app/week-theme.js";
 import { isShipReadyRoute } from "./data/ship-ready.js";
 import { getRequiredElement, prefersReducedMotion } from "./lib/dom.js";
-import { createFixtureProductService, getBrowserPrototypeStorage } from "./services/prototype-service.js";
+import { createFixtureProductService } from "./services/prototype-service.js";
+import { getBrowserPrototypeStorage } from "./services/prototype-storage.js";
 import { renderCourseMap } from "./ui/course-map.js";
 import { createAuthHeader } from "./ui/auth-header.js";
 import { mountLearnerDashboard } from "./ui/learner-dashboard.js";
@@ -11,26 +15,19 @@ import { createMoreTabs } from "./ui/more-tabs.js";
 import { renderShipReadyLibrary } from "./ui/ship-ready.js";
 import { createSubjectLearningController } from "./ui/subject-learning.js";
 import { createVisitorFlow } from "./ui/visitor-flow.js";
+import { mountAppShell } from "./ui/app-shell.js";
 
-const APP_TITLE = "رحلة التوجيهي";
+const APP_TITLE = "مساحة التعلّم";
 const DEVELOPMENT_GALLERY_ENABLED = window.__FULL_STACK_QUEST_DEV__ === true;
 const PROTOTYPE_TOOLS_ENABLED = DEVELOPMENT_GALLERY_ENABLED && new URLSearchParams(window.location.search).get("prototype") === "1";
 let lessonOpener = null;
-const elements = {
-  comingSoon:getRequiredElement(".coming-soon"),
-  courseUnits:getRequiredElement(".course-units"), lessonBackButton:getRequiredElement(".lesson-back"),
-  lessonCard:getRequiredElement(".lesson-card"), lessonContent:getRequiredElement("#lesson-content"),
-  lessonShell:getRequiredElement(".lesson-shell"), lessonStatus:getRequiredElement(".lesson-status"),
-  lessonTitle:getRequiredElement(".current-view-title"), lessonView:getRequiredElement(".lesson-view"),
-  main:getRequiredElement("main"), moreTabs:getRequiredElement(".more-tabs"),
-  navigationItems:[...document.querySelectorAll(".nav-item")],
-  authGuest:getRequiredElement(".topbar-auth-guest"), authMember:getRequiredElement(".topbar-auth-member"),
-  accountLabel:getRequiredElement("[data-account-label]"), authFlowButtons:[...document.querySelectorAll("[data-auth-flow]")],
-  authSignOut:getRequiredElement("[data-auth-sign-out]"),
-  visitorFlowRoot:getRequiredElement("#visitor-flow-root"),
-};
-const productService = createFixtureProductService({ storage:getBrowserPrototypeStorage(), apiBase:"/api/auth" });
+const isGitHubPagesPreview = window.location.hostname.endsWith(".github.io");
+const productService = createFixtureProductService({
+  storage:getBrowserPrototypeStorage(),
+  apiBase:isGitHubPagesPreview ? null : "/api/auth",
+});
 await productService.restoreSession();
+const elements = mountAppShell();
 let activeContentCleanup = () => {};
 let lessonRequest = 0;
 let pathScrollPosition = 0;
@@ -99,6 +96,7 @@ function showContentView() {
   elements.main.classList.add("lesson-mode");
   elements.comingSoon.classList.remove("is-visible");
   elements.lessonView.classList.add("is-visible");
+  animateView(elements.lessonView);
 }
 
 const setViewMode = (view) => setDevelopmentViewMode(elements, view);
@@ -142,7 +140,7 @@ function selectPage(selectedItem, { historyMode = "push", restorePath = false } 
   const page = selectedItem.dataset.page;
   const isLearnPage = page === "learn";
   const isMorePage = page === "more";
-  const guestFeatureLocked = !isLearnPage && productService.getGuestTrialState?.().active;
+  const guestFeatureLocked = !isLearnPage && !isMorePage && productService.getGuestTrialState?.().active;
   const isCourseVisible = !elements.main.classList.contains("lesson-mode") && !elements.main.classList.contains("coming-mode");
   if (historyMode === "push" && !isLearnPage && isCourseVisible) pathScrollPosition = window.scrollY;
   subjectLearning.reset();
@@ -156,10 +154,12 @@ function selectPage(selectedItem, { historyMode = "push", restorePath = false } 
   elements.comingSoon.classList.toggle("is-more", isMorePage);
   elements.lessonView.classList.remove("is-visible");
   setViewMode();
+  animateView(isLearnPage ? elements.courseUnits : elements.comingSoon);
   elements.comingSoon.querySelector("[data-guest-feature-gate]")?.remove();
   elements.moreTabs.hidden = !isMorePage || guestFeatureLocked;
-  elements.comingSoon.querySelector(".coming-soon-title").hidden = isMorePage || guestFeatureLocked;
-  elements.comingSoon.querySelector(".coming-soon-copy").hidden = isMorePage || guestFeatureLocked;
+  const comingContent = elements.comingSoon.querySelector("[data-coming-soon-content]");
+  comingContent.hidden = isLearnPage || isMorePage || guestFeatureLocked;
+  comingContent.innerHTML = comingContent.hidden ? "" : renderComingSoonMarkup(page);
   if (guestFeatureLocked) {
     elements.comingSoon.querySelector(".coming-soon-card").insertAdjacentHTML("beforeend", `<section class="guest-feature-gate" data-guest-feature-gate aria-labelledby="guest-feature-gate-title"><span aria-hidden="true"><img src="assets/icons/subject-lock.svg" alt="" /></span><h1 id="guest-feature-gate-title">هذه الميزة تحتاج إلى حساب</h1><p>يمكنك تجربة الدرس الأول كضيف. أنشئ حسابًا مجانيًا لحفظ تقدّمك وفتح بقية الدروس والميزات.</p><div><button class="topbar-create" type="button" data-guest-flow="register">إنشاء حساب</button><button class="topbar-login" type="button" data-guest-flow="sign-in">تسجيل الدخول</button></div></section>`);
   }
@@ -171,7 +171,7 @@ function selectPage(selectedItem, { historyMode = "push", restorePath = false } 
 const developmentViews = createDevelopmentViewController({
   elements,
   appTitle:APP_TITLE,
-  designSystemEnabled:DEVELOPMENT_GALLERY_ENABLED,
+  designSystemEnabled:true,
   beginRequest:() => ++lessonRequest,
   isCurrentRequest:(request) => request === lessonRequest,
   prepareView(opener) {
@@ -187,26 +187,29 @@ const developmentViews = createDevelopmentViewController({
   writeRoute,
 });
 
-function clearMorePanel(tab) {
+function showDeveloperLab(tab) {
   const panel = getRequiredElement(`#${tab.getAttribute("aria-controls")}`);
-  panel.replaceChildren();
+  renderDeveloperLab(panel, { onOpenLab:(opener) => developmentViews.openLab(opener) });
 }
 
 const moreTabs = createMoreTabs(elements.moreTabs, {
-  onUiLab:clearMorePanel,
+  onUiLab:(tab) => developmentViews.openLab(tab),
+  onStudio(tab) { renderDeveloperStudio(getRequiredElement(`#${tab.getAttribute("aria-controls")}`)); },
+  onData(tab) { renderDeveloperData(getRequiredElement(`#${tab.getAttribute("aria-controls")}`)); },
   onShipReady(tab) {
     const panel = getRequiredElement(`#${tab.getAttribute("aria-controls")}`);
     renderShipReadyLibrary(panel, { onOpenTemplate(opener, view) { void developmentViews.openTemplate(opener, { view }); } });
   },
   onDesignSystem(tab) { void developmentViews.openDesignSystem(tab); },
 });
-clearMorePanel(moreTabs.uiLabTab);
+showDeveloperLab(moreTabs.uiLabTab);
 function closeLesson() {
   const subjectState = subjectLearning.getState();
   const wasDesignSystem = elements.lessonShell.classList.contains("lesson-shell--design-system");
   const wasUiLab = elements.lessonShell.classList.contains("lesson-shell--ui-lab");
   if (subjectLearning.returnToRoadmap()) return;
   if (wasDesignSystem || wasUiLab) {
+    const returnOpener = lessonOpener;
     const route = readRoute(window.location.search);
     const returningToShipReady = isShipReadyRoute(route.view);
     const templateTab = returningToShipReady ? moreTabs.shipReadyTab : moreTabs.uiLabTab;
@@ -214,9 +217,10 @@ function closeLesson() {
     const moreItem = getPageTarget("more");
     selectPage(moreItem, { historyMode:"replace" });
     if (returningToShipReady) moreTabs.select(templateTab);
+    else moreTabs.select(moreTabs.uiLabTab, { open:false });
     const returnTarget = returningToShipReady
       ? document.querySelector(`[data-open-template="${openedTemplateRoute}"]`) || templateTab
-      : lessonOpener || (route.view === "design-system" ? moreTabs.designSystemTab : templateTab);
+      : returnOpener || (route.view === "design-system" ? moreTabs.designSystemTab : templateTab);
     window.requestAnimationFrame(() => returnTarget?.focus({ preventScroll:true }));
     return;
   }
@@ -230,6 +234,7 @@ function closeLesson() {
   subjectLearning.reset();
   document.title = APP_TITLE;
   writeRoute({ page:"learn" }, "replace");
+  animateView(elements.courseUnits);
   const returnScrollPosition = subjectState.subjectId ? subjectState.pathScrollPosition : pathScrollPosition;
   window.scrollTo({ top:returnScrollPosition, behavior:prefersReducedMotion() ? "auto" : "smooth" });
   const returnTarget = subjectState.opener || lessonOpener || elements.navigationItems[0];
@@ -246,12 +251,12 @@ function applyCurrentRoute({ restorePath = false } = {}) {
     selectPage(getPageTarget(route.page), { historyMode:"none", restorePath });
     return;
   }
+  if (route.view === "ui-lab") {
+    developmentViews.openLab(null, { historyMode:"none" });
+    return;
+  }
   if (route.view === "design-system") {
-    if (DEVELOPMENT_GALLERY_ENABLED) void developmentViews.openDesignSystem(null, { historyMode:"none" });
-    else {
-      writeRoute({ page:"learn" }, "replace");
-      selectPage(elements.navigationItems[0], { historyMode:"none", restorePath });
-    }
+    void developmentViews.openDesignSystem(null, { historyMode:"none" });
     return;
   }
   if (isShipReadyRoute(route.view)) {
@@ -269,6 +274,11 @@ function applyCurrentRoute({ restorePath = false } = {}) {
 elements.lessonBackButton.addEventListener("click", closeLesson);
 elements.navigationItems.forEach((item) => item.addEventListener("click", () => selectPage(item)));
 elements.comingSoon.addEventListener("click", (event) => {
+  if (event.target.closest?.("[data-coming-soon-home]")) {
+    event.preventDefault();
+    selectPage(elements.navigationItems.find((item) => item.dataset.page === "learn"));
+    return;
+  }
   const trigger = event.target.closest?.("[data-guest-flow]");
   if (trigger) openVisitorFlow(trigger.dataset.guestFlow);
 });

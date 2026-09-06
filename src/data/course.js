@@ -1,11 +1,11 @@
 export const DAYS_PER_WEEK = 7;
 
 export const COURSE_SUBJECTS = Object.freeze([
+  { id:"ict", name:"تكنولوجيا المعلومات", status:"in-progress" },
   { id:"mathematics", name:"الرياضيات", status:"locked" },
   { id:"physics", name:"الفيزياء", status:"locked" },
   { id:"biology", name:"الأحياء", status:"locked" },
   { id:"chemistry", name:"الكيمياء", status:"locked" },
-  { id:"ict", name:"تكنولوجيا المعلومات", status:"in-progress" },
   { id:"english", name:"اللغة الإنجليزية", status:"locked" },
   { id:"arabic", name:"اللغة العربية", status:"locked" },
   { id:"islamic-education", name:"التربية الإسلامية", status:"locked" },
@@ -18,22 +18,17 @@ export function getCourseSubject(subjectId) {
 }
 
 const THEMES = {
-  sand: { text:"#49351f", shadow:"rgba(73,53,31,.32)", base:"#7e694e", baseShadow:"#60503c", border:"#d4be95", top:"#e0c79f", middle:"#c7a77b", bottom:"#aa926c" },
-  stone: { text:"#4f463b", shadow:"rgba(79,70,59,.32)", base:"#6f685e", baseShadow:"#565149", border:"#d8c3a1", top:"#e3d0b2", middle:"#c3ab8a", bottom:"#8e8575" },
-  earth: { text:"#4f4034", shadow:"rgba(79,64,52,.32)", base:"#655f57", baseShadow:"#4d4943", border:"#c9b18e", top:"#ddc29b", middle:"#ba9567", bottom:"#9a8b75" },
-  dune: { text:"#4d473d", shadow:"rgba(77,71,61,.32)", base:"#776e5e", baseShadow:"#5d5548", border:"#d5c19d", top:"#e3cea8", middle:"#c8a77a", bottom:"#a99b84" },
-  clay: { text:"#514333", shadow:"rgba(81,67,51,.32)", base:"#766756", baseShadow:"#5a4e41", border:"#d4bd99", top:"#e1c9a1", middle:"#c9a373", bottom:"#c5b28f" },
+  sky: { text:"#082f49", shadow:"rgba(2,132,199,.24)", base:"#0ea5e9", baseShadow:"#0284c7", border:"#7dd3fc", top:"#bae6fd", middle:"#38bdf8", bottom:"#0ea5e9" },
   forest: { text:"#234d25", shadow:"rgba(35,77,37,.32)", base:"#4b9b32", baseShadow:"#367525", border:"#b7ef7e", top:"#e2ffc8", middle:"#a7e866", bottom:"#62bd3d" },
-  amber: { text:"#5b360e", shadow:"rgba(91,54,14,.32)", base:"#8d6730", baseShadow:"#684b22", border:"#d9ae62", top:"#ffe2a1", middle:"#d0a15b", bottom:"#a87532" },
   ocean: { text:"#073b71", shadow:"rgba(4,63,122,.4)", base:"#096cc0", baseShadow:"#07549a", border:"#4ab8ff", top:"#c8edff", middle:"#36aaf5", bottom:"#087acf" },
   frost: { text:"#4d5864", shadow:"rgba(56,67,78,.28)", base:"#c7d0d8", baseShadow:"#9ca9b4", border:"#ffffff", top:"#ffffff", middle:"#eef3f7", bottom:"#cdd6df" },
   arcane: { text:"#351069", shadow:"rgba(53,16,105,.42)", base:"#6626be", baseShadow:"#4a168f", border:"#b779ff", top:"#f0d9ff", middle:"#a95bf1", bottom:"#7735cf" },
 };
 
 export const WEEK_THEMES = [
-  THEMES.sand, THEMES.stone, THEMES.earth, THEMES.dune,
-  THEMES.clay, THEMES.forest, THEMES.forest, THEMES.forest,
-  THEMES.amber, THEMES.forest, THEMES.ocean, THEMES.ocean,
+  THEMES.sky, THEMES.sky, THEMES.sky, THEMES.sky,
+  THEMES.sky, THEMES.forest, THEMES.forest, THEMES.forest,
+  THEMES.sky, THEMES.forest, THEMES.ocean, THEMES.ocean,
   THEMES.ocean, THEMES.frost, THEMES.arcane, THEMES.arcane,
 ];
 

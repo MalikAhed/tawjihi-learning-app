@@ -7,7 +7,8 @@ export function createAuthHeader({ guest, member, label, flowButtons, signOutBut
     const isGuest = type === "guest";
     guest.hidden = !isGuest;
     member.hidden = isGuest;
-    label.textContent = { free:"حساب مجاني", subscribed:"حساب مشترك", banned:"حساب محظور" }[type] || "";
+    label.textContent = { free:"Free", subscribed:"حساب مشترك", banned:"حساب محظور" }[type] || "";
+    label.lang = type === "free" ? "en" : "ar";
     document.body.dataset.accountType = type;
     courseContainer.querySelectorAll("[data-subject]").forEach((button) => {
       const unavailable = button instanceof HTMLButtonElement && button.disabled;
@@ -17,6 +18,7 @@ export function createAuthHeader({ guest, member, label, flowButtons, signOutBut
   const unsubscribe = service.subscribe(update);
   flowButtons.forEach((button) => button.addEventListener("click", () => onFlow(button.dataset.authFlow), { signal }));
   signOutButton.addEventListener("click", async () => { await service.signOut(); update(); }, { signal });
+  update();
   return Object.freeze({
     update,
     destroy() {

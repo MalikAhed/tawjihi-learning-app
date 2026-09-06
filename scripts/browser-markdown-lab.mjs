@@ -119,12 +119,23 @@ export async function verifyMarkdownLab({ assert, captureScreenshot, cdp, delay,
     const top = document.querySelector('.lesson-top-title');
     return document.querySelector('[data-markdown-settings-layer]').hidden
       && !top.hasAttribute('role')
-      && top.textContent === 'MARKDOWN LAB'
+      && top.textContent === 'محرّر المحتوى'
       && getComputedStyle(top).backgroundColor === 'rgba(0, 0, 0, 0)';
   })()`), "UI Lab chrome must stay neutral and keep settings closed by default");
   await captureScreenshot("markdown-lab-desktop.png");
   await evaluate("document.querySelector('[data-markdown-settings]').click()");
   await waitFor("!document.querySelector('[data-markdown-settings-layer]').hidden", "the Markdown settings panel");
+  await evaluate("document.querySelector('[data-markdown-clear]').focus()");
+  await cdp.send("Input.dispatchKeyEvent", { type:"keyDown", key:"Tab", code:"Tab", windowsVirtualKeyCode:9 }, sessionId);
+  await cdp.send("Input.dispatchKeyEvent", { type:"keyUp", key:"Tab", code:"Tab", windowsVirtualKeyCode:9 }, sessionId);
+  assert(await evaluate("document.activeElement === document.querySelector('[data-markdown-settings-close]')"), "settings Tab must wrap from the last control to close");
+  await cdp.send("Input.dispatchKeyEvent", { type:"keyDown", key:"Tab", code:"Tab", windowsVirtualKeyCode:9, modifiers:8 }, sessionId);
+  await cdp.send("Input.dispatchKeyEvent", { type:"keyUp", key:"Tab", code:"Tab", windowsVirtualKeyCode:9, modifiers:8 }, sessionId);
+  assert(await evaluate("document.activeElement === document.querySelector('[data-markdown-clear]')"), "settings Shift+Tab must wrap back to the last control");
+  await cdp.send("Input.dispatchKeyEvent", { type:"keyDown", key:"Escape", code:"Escape", windowsVirtualKeyCode:27 }, sessionId);
+  await cdp.send("Input.dispatchKeyEvent", { type:"keyUp", key:"Escape", code:"Escape", windowsVirtualKeyCode:27 }, sessionId);
+  assert(await evaluate("document.querySelector('[data-markdown-settings-layer]').hidden && document.activeElement === document.querySelector('[data-markdown-settings]')"), "Escape must close settings and restore its opener focus");
+  await evaluate("document.querySelector('[data-markdown-settings]').click()");
   await evaluate("document.querySelector('[data-markdown-sample]').click()");
   await waitFor("document.querySelector('.markdown-rendered-progress')?.getAttribute('aria-valuenow') === '1' && document.querySelector('.markdown-rendered-progress')?.getAttribute('aria-valuemax') === '7'", "lesson progress inside the Rendered window on the first authored step");
   await evaluate("document.querySelector('[data-authored-step] [data-template-primary]').click()");
@@ -160,7 +171,7 @@ export async function verifyMarkdownLab({ assert, captureScreenshot, cdp, delay,
     document.querySelector('[data-ui-lab-check]').click();
   })()`);
   await waitFor("document.querySelector('#ui-lab-response') && document.querySelector('.markdown-rendered-progress')?.getAttribute('aria-valuenow') === '3'", "the Explain It step in the complete authored sample");
-  assert(await evaluate("document.querySelector('[data-authored-step]')?.textContent.includes('Explain it in your own words')"), "the complete Markdown sample must include Explain It");
+  assert(await evaluate("document.querySelector('[data-authored-step]')?.textContent.includes('اشرح بأسلوبك')"), "the complete Markdown sample must include Explain It");
 
   const codeQuestion = (name) => [
     ":::code-question",
@@ -195,12 +206,12 @@ export async function verifyMarkdownLab({ assert, captureScreenshot, cdp, delay,
   assert(await evaluate(`(() => {
     const checks = document.querySelectorAll('.ds-build-guide input[type="checkbox"]');
     return checks.length === 2 && checks[0].checked && !checks[1].checked
-      && document.querySelector('[data-template-action-label]')?.textContent === 'RUN CHECK';
+      && document.querySelector('[data-template-action-label]')?.textContent === 'تحقّق من الشيفرة';
   })()`), "case-sensitive code checks must reject incorrect capitalization");
   await setAuthoredSource(codeQuestion("Mira the Explorer"));
-  await waitFor("document.querySelector('.ds-practice-only .cm-content')?.textContent.includes('Mira the Explorer') && document.querySelector('[data-template-action-label]')?.textContent === 'RUN CHECK'", "the refreshed authored code editor");
+  await waitFor("document.querySelector('.ds-practice-only .cm-content')?.textContent.includes('Mira the Explorer') && document.querySelector('[data-template-action-label]')?.textContent === 'تحقّق من الشيفرة'", "the refreshed authored code editor");
   await evaluate("document.querySelector('[data-run-code]').click()");
-  await waitFor("document.querySelector('[data-template-action-label]')?.textContent === 'CONTINUE'", "automatic code-question success");
+  await waitFor("document.querySelector('[data-template-action-label]')?.textContent === 'متابعة'", "automatic code-question success");
   assert(await evaluate("[...document.querySelectorAll('.ds-build-guide input[type=checkbox]')].every((item) => item.checked)"), "a passing code question must satisfy every declarative requirement");
 
   await evaluate(`import('/src/ui/markdown-lab.js').then(({ SAMPLE_LESSON_MARKDOWN }) => {

@@ -1,3 +1,5 @@
+import { animateView } from "./view-motion.js";
+import { renderSubjectAnalytics, renderSubjectCompletion, animateSubjectCompletion } from "./subject-completion.js";
 import { escapeHtml } from "../lib/dom.js";
 import { XP_PER_LESSON } from "../domain/progression.js";
 import { highlightCode } from "../lib/prism.js";
@@ -11,6 +13,56 @@ import { loadDesignSystem } from "./design-system-loader.js";
 import { renderUiLab } from "./ui-lab/index.js";
 
 const LESSON_ACTION = Object.freeze({ CHECK:"check", RETRY:"retry", CONTINUE:"continue" });
+const ROCKY_DIALOGUE_STEP_IDS = new Set(["meet-rocky", "watch-introduction-together"]);
+
+function mountRockyDialogues(container, signal) {
+  ROCKY_DIALOGUE_STEP_IDS.forEach((stepId) => {
+    const stage = container.querySelector(`[data-lesson-step="${stepId}"]`);
+    const callout = stage?.querySelector(".markdown-rendered > .markdown-callout");
+    if (!callout) return;
+
+    const dialogue = callout.querySelector(":scope > div")?.textContent.trim() || "";
+    const bubble = document.createElement("div");
+    const measuredText = document.createElement("span");
+    const visibleText = document.createElement("span");
+    bubble.className = "rocky-dialogue";
+    bubble.dataset.rockyDialogue = dialogue;
+    bubble.lang = "ar";
+    bubble.dir = "rtl";
+    bubble.setAttribute("aria-label", dialogue);
+    measuredText.className = "rocky-dialogue-measure";
+    measuredText.textContent = dialogue;
+    measuredText.setAttribute("aria-hidden", "true");
+    visibleText.className = "rocky-dialogue-text";
+    visibleText.setAttribute("aria-hidden", "true");
+    // The complete invisible copy owns the bubble height from the first frame.
+    // The visible copy is overlaid, so its entrance cannot move Rocky.
+    bubble.append(measuredText, visibleText);
+    callout.replaceWith(bubble);
+  });
+}
+
+function playRockyDialogue(container, stage, signal) {
+  container.querySelectorAll("[data-rocky-dialogue]").forEach((bubble) => {
+    bubble.querySelector(".rocky-dialogue-text")?.classList.remove("is-revealing");
+  });
+  const bubble = stage?.querySelector("[data-rocky-dialogue]");
+  if (!bubble || signal.aborted) return;
+  const text = bubble.querySelector(".rocky-dialogue-text");
+  const dialogue = bubble.dataset.rockyDialogue;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    text.textContent = dialogue;
+    return;
+  }
+  text.replaceChildren(...dialogue.split(/\s+/u).filter(Boolean).map((word, index) => {
+    const span = document.createElement("span");
+    span.className = "rocky-dialogue-word";
+    span.style.setProperty("--word-delay", `${index * 200}ms`);
+    span.textContent = word;
+    return span;
+  }));
+  text.classList.add("is-revealing");
+}
 
 function lessonReferenceLabel(reference) {
   return Number.isInteger(reference) ? `Day ${reference}` : String(reference || "Lesson");
@@ -43,6 +95,7 @@ function renderStep(step, index) {
 }
 
 export function renderLessonLoading(container, day) {
+  animateView(container);
   const reference = lessonReferenceLabel(day);
   const arabic = /[\u0600-\u06ff]/.test(reference);
   container.innerHTML = `
@@ -51,11 +104,12 @@ export function renderLessonLoading(container, day) {
       <h1 class="lesson-heading">${arabic ? "جارٍ تحميل الدرس…" : "Loading today’s quest…"}</h1>
       <p class="lesson-intro">${arabic ? "جارٍ تجهيز مسار الدرس." : "Preparing the lesson path."}</p>
     </section>`;
-  return arabic ? `${reference}: جارٍ التحميل · رحلة التوجيهي` : `${reference}: Loading · Full-Stack Quest`;
+  return arabic ? `${reference}: جارٍ التحميل` : `${reference}: Loading · Full-Stack Quest`;
 }
 
 export function renderLessonError(container, day, onRetry) {
   const controller = new AbortController();
+  animateView(container);
   const reference = lessonReferenceLabel(day);
   const arabic = /[\u0600-\u06ff]/.test(reference);
   container.innerHTML = `
@@ -66,7 +120,7 @@ export function renderLessonError(container, day, onRetry) {
       <button class="lesson-retry" type="button" data-retry-lesson>${arabic ? "حاول مرة أخرى" : "TRY AGAIN"}</button>
     </section>`;
   container.querySelector("[data-retry-lesson]").addEventListener("click", onRetry, { signal:controller.signal });
-  return { title:arabic ? `${reference}: الدرس غير متاح · رحلة التوجيهي` : `${reference}: Lesson Unavailable · Full-Stack Quest`, destroy:() => controller.abort() };
+  return { title:arabic ? `${reference}: الدرس غير متاح` : `${reference}: Lesson Unavailable · Full-Stack Quest`, destroy:() => controller.abort() };
 }
 
 function renderComingSoon(container, day) {
@@ -99,7 +153,7 @@ function renderInteractiveLesson(container, day, lesson, { progress, onProgress 
   const lessonStatus = shell.querySelector(".lesson-status");
   const hasAppChrome = Boolean(backButton && topProgress && lessonStatus);
   const previousChrome = {
-    backText:backButton?.textContent, backLabel:backButton?.getAttribute("aria-label"), statusHidden:lessonStatus?.hidden,
+    backMarkup:backButton?.innerHTML, backLabel:backButton?.getAttribute("aria-label"), statusHidden:lessonStatus?.hidden,
     progressRole:topProgress?.getAttribute("role"), progressLabel:topProgress?.getAttribute("aria-label"),
   };
   if (hasAppChrome) {
@@ -133,6 +187,7 @@ function renderInteractiveLesson(container, day, lesson, { progress, onProgress 
   if (container.querySelector('.lesson-code pre code[class*="language-"]')) highlightCode(container, signal);
   mountLessonVideos(container, signal);
   mountLessonMarkdown(container, signal);
+  mountRockyDialogues(container, signal);
 
   const stageElements = [...container.querySelectorAll("[data-lesson-step]")];
   const result = container.querySelector("[data-lesson-result]");
@@ -148,8 +203,10 @@ function renderInteractiveLesson(container, day, lesson, { progress, onProgress 
   };
   const focusCurrent = () => window.requestAnimationFrame(() => (resultVisible ? result : stageElements[currentIndex])?.focus({ preventScroll:true }));
   const showCurrent = ({ focus = true } = {}) => {
+    animateView(container);
     stageElements.forEach((stage, index) => { stage.hidden = resultVisible || index !== currentIndex; });
     result.hidden = !resultVisible;
+    playRockyDialogue(container, resultVisible ? null : stageElements[currentIndex], signal);
     const value = resultVisible ? steps.length : currentIndex + 1;
     if (hasAppChrome) {
       topProgress.setAttribute("aria-valuenow", String(value));
@@ -310,7 +367,7 @@ function renderInteractiveLesson(container, day, lesson, { progress, onProgress 
     shell.classList.remove("lesson-shell--ui-lab", "lesson-shell--ready-lesson");
     shell.style.removeProperty("--lesson-progress");
     container.classList.remove("lesson-card--ui-lab", "lesson-card--ready-lesson");
-    backButton.textContent = previousChrome.backText;
+    backButton.innerHTML = previousChrome.backMarkup;
     if (previousChrome.backLabel === null) backButton.removeAttribute("aria-label");
     else backButton.setAttribute("aria-label", previousChrome.backLabel);
     lessonStatus.hidden = previousChrome.statusHidden;
@@ -320,7 +377,7 @@ function renderInteractiveLesson(container, day, lesson, { progress, onProgress 
   };
 }
 
-function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, { progress, onProgress }) {
+function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, { progress, onProgress, isLessonPart = false, onAnswer, reviewStepId, onReviewComplete, allowTestPass = false, getCompletionOutcome, onExitLesson }) {
   const controller = new AbortController();
   const { signal } = controller;
   const reference = lessonReferenceLabel(day);
@@ -331,15 +388,25 @@ function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, 
   const topProgress = shell.querySelector(".lesson-top-title");
   const lessonStatus = shell.querySelector(".lesson-status");
   const previousChrome = {
-    backText:backButton?.textContent,
+    backMarkup:backButton?.innerHTML,
     backLabel:backButton?.getAttribute("aria-label"),
     statusHidden:lessonStatus?.hidden,
+    progressHidden:topProgress?.hidden,
     progressRole:topProgress?.getAttribute("role"),
     progressLabel:topProgress?.getAttribute("aria-label"),
   };
   const stepIds = new Set(authoredSteps.map((step) => step.id));
   const completed = new Set((progress?.completedStepIds || []).filter((id) => stepIds.has(id)));
   let currentIndex = Math.max(0, authoredSteps.findIndex((step) => !completed.has(step.id)));
+  if (reviewStepId) {
+    const target = authoredSteps.findIndex((step) => step.id === reviewStepId);
+    if (target >= 0) {
+      currentIndex = target;
+      for (let index = target - 1; index >= 0; index -= 1) {
+        if (authoredSteps[index].type === "markdown") { currentIndex = index; break; }
+      }
+    }
+  }
   let resultVisible = Boolean(progress?.completedAt) && authoredSteps.every((step) => completed.has(step.id));
   let destroyStep = () => {};
 
@@ -360,28 +427,64 @@ function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, 
     container.querySelector("[data-live-authored-step]")?.focus({ preventScroll:true });
   });
   const updateProgress = () => {
+    shell.classList.toggle("lesson-shell--completion", isLessonPart && resultVisible);
+    topProgress.hidden = isLessonPart && resultVisible ? true : previousChrome.progressHidden;
     const value = resultVisible ? authoredSteps.length : currentIndex + 1;
     topProgress.setAttribute("aria-valuenow", String(value));
     shell.style.setProperty("--lesson-progress", `${(value / authoredSteps.length) * 100}%`);
     document.body.classList.toggle("ui-lab-mcq-open", !resultVisible && authoredSteps[currentIndex]?.type === "mcq");
   };
-  const renderResult = () => {
+  const testPass = isLessonPart && allowTestPass && !reviewStepId ? document.createElement("button") : null;
+  if (testPass) {
+    testPass.type = "button";
+    testPass.className = "lesson-test-pass";
+    testPass.textContent = "تخطّي للنهاية";
+    testPass.setAttribute("aria-label", "معاينة حركة نهاية الدرس دون حفظ إنجاز");
+    testPass.dataset.testLessonPass = "";
+    container.before(testPass);
+    testPass.addEventListener("click", () => renderResult(true), { signal });
+  }
+  const renderResult = (preview = false) => {
     resultVisible = true;
-    authoredSteps.forEach((step) => completed.add(step.id));
-    announce(true);
+    if (testPass) testPass.hidden = true;
+    if (!preview) { authoredSteps.forEach((step) => completed.add(step.id)); announce(true); }
+    const outcome = getCompletionOutcome?.(preview);
     destroyStep();
     destroyStep = () => {};
-    container.innerHTML = `<article class="lesson-flow ready-lesson-flow"><section class="ready-lesson-stage" data-live-authored-step tabindex="-1">${renderTemplateShell({
-      titleId:"authored-lesson-complete-title",
-      content:`<div class="level-lesson-copy ready-lesson-result"><p class="level-layout-kicker">${locale === "ar" ? "اكتمل الدرس" : "LESSON COMPLETE"}</p><h1 id="authored-lesson-complete-title">${locale === "ar" ? `أكملت ${escapeHtml(reference)}` : `You completed ${escapeHtml(reference)}`}</h1><p>${locale === "ar" ? "أنهيت شرح النظام وجميع نقاط التحقق التفاعلية." : "You explained the system and completed every interactive checkpoint."}</p><div class="lesson-result-score"><strong>${locale === "ar" ? "تم" : "DONE"}</strong><span>${locale === "ar" ? `اكتمل الدرس · +${XP_PER_LESSON} نقطة خبرة` : `Lesson complete · +${XP_PER_LESSON} XP`}</span></div></div>`,
-      footer:renderTemplateFooter({ locale, backLabel:locale === "ar" ? "مراجعة الدرس" : "REVIEW LESSON", backAttributes:{ "data-authored-review":true }, primaryLabel:locale === "ar" ? "إعادة الدرس" : "RESTART", primaryAttributes:{ "data-authored-restart":true } }),
-      showScrollIndicator:false,
-      locale,
-    })}</section></article>`;
-    container.querySelector("[data-authored-review]").addEventListener("click", () => { resultVisible = false; currentIndex = 0; renderCurrent(); }, { signal });
-    container.querySelector("[data-authored-restart]").addEventListener("click", () => { completed.clear(); resultVisible = false; currentIndex = 0; announce(false); renderCurrent(); }, { signal });
-    updateProgress();
-    focusHost();
+    let completionStep = 0;
+    const renderCompletionStep = () => {
+      destroyStep();
+      const subjectContent = isLessonPart && outcome ? (completionStep === 0
+        ? renderSubjectCompletion(reference, outcome)
+        : renderSubjectAnalytics(outcome)) : null;
+      const primaryLabel = completionStep === 0 ? "عرض التقدّم" : "متابعة";
+      const content = isLessonPart && outcome ? subjectContent : `<div class="level-lesson-copy ready-lesson-result"><p class="level-layout-kicker">${locale === "ar" ? "اكتمل الدرس" : "LESSON COMPLETE"}</p><h1 id="authored-lesson-complete-title">${locale === "ar" ? `أكملت ${escapeHtml(reference)}` : `You completed ${escapeHtml(reference)}`}</h1><p>${locale === "ar" ? "أنهيت شرح النظام وجميع نقاط التحقق التفاعلية." : "You explained the system and completed every interactive checkpoint."}</p><div class="lesson-result-score"><strong>${locale === "ar" ? "تم" : "DONE"}</strong><span>${locale === "ar" ? `اكتمل الدرس · +${XP_PER_LESSON} نقطة خبرة` : `Lesson complete · +${XP_PER_LESSON} XP`}</span></div></div>`;
+      container.innerHTML = `<article class="lesson-flow ready-lesson-flow"><section class="ready-lesson-stage" data-live-authored-step tabindex="-1" data-completion-step="${completionStep}">${renderTemplateShell({
+        titleId:"authored-lesson-complete-title",
+        content,
+        footer:renderTemplateFooter({ locale, showShortcut:!isLessonPart, backLabel:isLessonPart ? "رجوع" : preview ? "العودة للدرس" : locale === "ar" ? "مراجعة الدرس" : "REVIEW LESSON", backAttributes:{ "data-authored-review":true, hidden:isLessonPart && completionStep !== 0 }, primaryLabel:isLessonPart ? primaryLabel : locale === "ar" ? "إعادة الدرس" : "RESTART", primaryAttributes:{ "data-authored-restart":true } }),
+        showScrollIndicator:false,
+        locale,
+      })}</section></article>`;
+      const secondary = container.querySelector("[data-authored-review]");
+      secondary.addEventListener("click", () => {
+        if (!isLessonPart) { resultVisible = false; if (!preview) currentIndex = 0; if (testPass) testPass.hidden = false; renderCurrent(); return; }
+        if (completionStep > 0) { completionStep -= 1; renderCompletionStep(); return; }
+        resultVisible = false;
+        if (testPass) testPass.hidden = false;
+        renderCurrent();
+      }, { signal });
+      container.querySelector("[data-authored-restart]").addEventListener("click", () => {
+        if (!isLessonPart) { completed.clear(); resultVisible = false; currentIndex = 0; announce(false); renderCurrent(); return; }
+        if (completionStep < 1) { completionStep += 1; renderCompletionStep(); return; }
+        onExitLesson?.();
+      }, { signal });
+      destroyStep = isLessonPart && outcome ? animateSubjectCompletion(container) : () => {};
+      updateProgress();
+      animateView(container);
+      focusHost();
+    };
+    renderCompletionStep();
   };
   const goBack = () => {
     if (currentIndex === 0) return;
@@ -389,6 +492,7 @@ function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, 
     renderCurrent();
   };
   const goNext = () => {
+    if (reviewStepId === authoredSteps[currentIndex].id) { onReviewComplete?.(); return; }
     completed.add(authoredSteps[currentIndex].id);
     if (currentIndex === authoredSteps.length - 1) {
       renderResult();
@@ -404,6 +508,8 @@ function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, 
     const step = authoredSteps[currentIndex];
     container.innerHTML = '<article class="lesson-flow ready-lesson-flow"><section class="ready-lesson-stage" data-live-authored-step tabindex="-1"></section></article>';
     const host = container.querySelector("[data-live-authored-step]");
+    host.dataset.lessonStep = step.id;
+    animateView(container);
     updateProgress();
     if (step.type === "markdown") {
       const stepController = new AbortController();
@@ -411,13 +517,15 @@ function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, 
       host.innerHTML = renderTemplateShell({
         titleId,
         content:`<article class="level-lesson-copy ready-lesson-copy markdown-authored-content"><p class="level-layout-kicker">${locale === "ar" ? "تعلّم" : "LEARN"}</p><div class="markdown-rendered">${renderMarkdownDocument(step.source)}</div></article>`,
-        footer:renderTemplateFooter({ locale, backAttributes:{ disabled:currentIndex === 0 }, primaryLabel:copy.continue }),
+        footer:renderTemplateFooter({ locale, backAttributes:{ disabled:currentIndex === 0, hidden:currentIndex === 0 }, primaryLabel:copy.continue }),
         locale,
       });
       const renderedHeading = host.querySelector(".markdown-rendered h1");
       if (renderedHeading) renderedHeading.id = titleId;
       else host.querySelector(".markdown-authored-content")?.insertAdjacentHTML("afterbegin", `<h1 class="visually-hidden" id="${escapeHtml(titleId)}">${escapeHtml(step.title)}</h1>`);
       mountMarkdownFeatures(host, { signal:stepController.signal, scrollSurface:host.querySelector(".level-layout-task") });
+      mountRockyDialogues(container, stepController.signal);
+      playRockyDialogue(container, host, stepController.signal);
       host.querySelector("[data-template-back]").addEventListener("click", goBack, { signal:stepController.signal });
       host.querySelector("[data-template-primary]").addEventListener("click", goNext, { signal:stepController.signal });
       destroyStep = () => stepController.abort();
@@ -432,8 +540,11 @@ function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, 
       destroyStep = () => { disposed = true; destroyCode(); };
       void loadDesignSystem().then(({ renderDesignSystem }) => {
         if (disposed) return;
+        animateView(container);
         destroyCode = renderDesignSystem(host, { practiceOnly:true, practice:step.content, embedded:true, onBack:goBack, onContinue:goNext });
-        host.querySelector("[data-template-back]").disabled = currentIndex === 0;
+        const stepBackButton = host.querySelector("[data-template-back]");
+        stepBackButton.disabled = currentIndex === 0;
+        stepBackButton.hidden = currentIndex === 0;
         focusHost();
       }).catch((error) => {
         if (disposed) return;
@@ -442,23 +553,28 @@ function renderAuthoredInteractiveLesson(container, day, lesson, authoredSteps, 
       });
       return;
     }
-    destroyStep = renderUiLab(host, { definition:step, embedded:true, onBack:goBack, onContinue:goNext, locale });
-    host.querySelector("[data-template-back]").disabled = currentIndex === 0;
+    destroyStep = renderUiLab(host, { definition:step, embedded:true, onBack:goBack, onContinue:goNext, onAnswer:(result) => onAnswer?.({ ...result, stepId:step.id }), locale });
+    const stepBackButton = host.querySelector("[data-template-back]");
+    stepBackButton.disabled = currentIndex === 0;
+    stepBackButton.hidden = currentIndex === 0;
     focusHost();
   };
 
   mountTemplateEnterShortcut(container, { signal });
   if (resultVisible) renderResult(); else renderCurrent();
   return () => {
+    shell.classList.remove("lesson-shell--completion");
+    testPass?.remove();
     destroyStep();
     controller.abort();
     document.body.classList.remove("ui-lab-open", "ui-lab-template-open", "ui-lab-mcq-open", "ready-lesson-open");
     shell.classList.remove("lesson-shell--ui-lab", "lesson-shell--ready-lesson");
     shell.style.removeProperty("--lesson-progress");
     container.classList.remove("lesson-card--ui-lab", "lesson-card--ready-lesson");
-    backButton.textContent = previousChrome.backText;
+    backButton.innerHTML = previousChrome.backMarkup;
     if (previousChrome.backLabel === null) backButton.removeAttribute("aria-label"); else backButton.setAttribute("aria-label", previousChrome.backLabel);
     lessonStatus.hidden = previousChrome.statusHidden;
+    topProgress.hidden = previousChrome.progressHidden;
     ["aria-valuemin", "aria-valuemax", "aria-valuenow"].forEach((name) => topProgress.removeAttribute(name));
     if (previousChrome.progressRole === null) topProgress.removeAttribute("role"); else topProgress.setAttribute("role", previousChrome.progressRole);
     if (previousChrome.progressLabel === null) topProgress.removeAttribute("aria-label"); else topProgress.setAttribute("aria-label", previousChrome.progressLabel);
@@ -476,7 +592,7 @@ function renderMarkdownAuthoredLesson(container, day, lesson, options) {
   const topProgress = shell.querySelector(".lesson-top-title");
   const lessonStatus = shell.querySelector(".lesson-status");
   const originalChrome = {
-    backText:backButton?.textContent,
+    backMarkup:backButton?.innerHTML,
     backLabel:backButton?.getAttribute("aria-label"),
     statusHidden:lessonStatus?.hidden,
     progressRole:topProgress?.getAttribute("role"),
@@ -511,7 +627,7 @@ function renderMarkdownAuthoredLesson(container, day, lesson, options) {
     shell.style.removeProperty("--lesson-progress");
     container.classList.remove("lesson-card--ui-lab", "lesson-card--ready-lesson");
     if (backButton) {
-      backButton.textContent = originalChrome.backText;
+      backButton.innerHTML = originalChrome.backMarkup;
       if (originalChrome.backLabel === null) backButton.removeAttribute("aria-label");
       else backButton.setAttribute("aria-label", originalChrome.backLabel);
     }

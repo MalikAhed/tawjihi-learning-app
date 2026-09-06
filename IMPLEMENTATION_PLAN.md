@@ -167,13 +167,13 @@ prototype now has one short path:
 
 1. Select place/curriculum and path.
 2. Arrive directly at the existing vibrant `?page=learn` eight-subject map as a guest.
-3. Optionally create an account using exactly username, email, phone, and password, or sign in using any
-   one of username/email/phone plus password.
+3. Optionally create an account through the current onboarding questions (username, curriculum, path,
+   required email/password and optional phone), or sign in using username/email/phone plus password.
 4. Return to that same existing Learn page as a free, subscribed, or banned account.
 
 The existing subject design, vibrant gradients, spacing, and interactions are preserved. Its former rank,
 streak, gem, avatar, challenge, and overview UI is removed. Guests see only Create account and Sign in in
-that page's native top bar. Every subject opens the existing in-progress state. Banned accounts remain on
+that page's native top bar. ICT now opens its roadmap and published parts; seven unavailable subject cards are disabled. Banned accounts remain on
 the same map with blocked subject access.
 
 The former ICT visitor page, sample, verification-code flow, recovery flow, orientation handoff, and
@@ -181,7 +181,20 @@ separate account-state destinations have been removed from the active route set.
 files must be revised before Phase 2 contracts are frozen; see
 `docs/PRODUCT_DECISION_2026-09-03_SIMPLIFIED_ENTRY_ACCOUNTS.md`.
 
-### Next: subject and learning UX
+### Subject and learning UX direction
 
 Use the shared subjects Home as the permanent navigation destination. Define what opens inside each
 subject, beginning with ICT, without adding account detours or inventing official unit and lesson names.
+
+### 2026-09-04 — Textbook lessons and smaller parts
+
+User requested visible lesson separation within units and smaller parts within each lesson.
+The roadmap now has unit → official lesson → named part. The follow-up removes the full-lesson
+entry and keeps the winding circular-stop map with clear lesson dividers and locally saved part progress in each unit card.
+See `docs/ICT_TEXTBOOK_PARTS.md` for source pages and prototype boundaries. This implements
+part navigation within provisional US-ROADMAP-001; it does not approve the rest of that story.
+Part grouping is a reversible teaching/navigation choice, not an official textbook subdivision.
+
+- ICT unit review cards now surface persistent inline mistakes with local per-learner state and targeted explanation/question entry. See `docs/ICT_TEXTBOOK_PARTS.md` for the prototype threshold and remaining review-story scope.
+
+- ICT completion celebration includes test-only preview, Rocky/piñata, and local first-part rewards/streak/progress summaries per Malik’s new request; detailed prototype boundaries in `docs/ICT_TEXTBOOK_PARTS.md`.

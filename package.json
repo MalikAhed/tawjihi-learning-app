@@ -8,6 +8,7 @@
     "check:syntax": "node scripts/check-syntax.mjs",
     "test": "node --test",
     "test:browser": "node scripts/browser-smoke.mjs",
+    "test:render": "node scripts/browser-render-sequence.mjs",
     "audit:manageability": "node scripts/audit-manageability.mjs",
     "build": "node scripts/validate-app.mjs",
     "ci": "npm run check:syntax && npm test && npm run build && npm run test:browser",

@@ -8,6 +8,6 @@ process.stdin.on("end", () => {
   else process.stdout.write(JSON.stringify({
     score:10,
     passed:true,
-    feedback:"Clear request and response distinction with a useful example.",
+    feedback:/[\u0600-\u06ff]/.test(prompt) ? "وضّحت الفرق بين الطلب والاستجابة بدقة، وقدّمت مثالًا مفيدًا." : "Clear request and response distinction with a useful example.",
   }));
 });

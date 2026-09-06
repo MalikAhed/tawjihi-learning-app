@@ -50,15 +50,15 @@ assert(indexHtml.includes("src/styles/week-theme.css"), "index.html must load th
 assert(mainSource.includes('from "./ui/development-views.js"'), "src/main.js is missing the development-view boundary");
 assert(developmentViewsSource.includes('from "./design-system-loader.js"'), "development views are missing the guarded Design System loader");
 assert(designLoaderSource.includes('import("./design-system-view.js")'), "the Design System loader is missing its dynamic view import");
-assert(!mainSource.includes("openLesson"), "the subject-only product must not expose lesson or day routes yet");
 assert(!indexHtml.includes("112"), "the retired 112-day course count must not appear in the product shell");
-assert(mainSource.includes("DEVELOPMENT_GALLERY_ENABLED"), "the Design System gallery must remain guarded outside development");
+assert(mainSource.includes("PROTOTYPE_TOOLS_ENABLED"), "prototype scenario controls must remain separate from normal navigation");
 assert(!mainSource.includes("lesson-studio"), "src/main.js still references the removed Lesson Studio");
 assert(!indexHtml.includes("game-overview") && !indexHtml.includes("sidebar.css"), "index.html still contains the retired game overview");
 assert(!securityHeadersSource.match(/script-src[^\n]*unsafe-inline/), "the development server must not allow inline scripts");
-assert(designViewSource.includes("data-markdown-feature"), "the Design System must retain its Markdown-style lesson reference");
-assert(designViewSource.includes("mountShowcaseFrames"), "the Design System must retain expandable showcases");
-assert((designManifest.match(/@import/g) || []).length === 12, "the Design System manifest must load its twelve owned style modules");
+assert(designViewSource.includes("renderCurrentDesignSystem"), "the reference route must use the current shared UI gallery");
+assert(!designViewSource.includes('class="ds-hero"'), "code practice must not construct the retired gallery behind its CSS");
+assert(!indexHtml.includes("dashboard-cards.css"), "subject cards must have one stylesheet owner");
+assert(designManifest.includes("practice-lab.css"), "the lazy stylesheet must retain the code editor's owned styles");
 
 const sourceBudgets = [
   ["src/main.js", mainSource, 300, "extract a cohesive controller"],
@@ -66,6 +66,7 @@ const sourceBudgets = [
   ["src/services/prototype-service.js", prototypeServiceSource, 220, "extract a service boundary"],
   ["src/ui/visitor-flow.js", visitorFlowSource, 300, "extract markup or a flow controller"],
   ["scripts/browser-smoke.mjs", browserSmokeSource, 550, "extract a stable browser-test helper or scenario"],
+  ["src/ui/design-system-view.js", designViewSource, 300, "keep code practice separate from gallery examples"],
 ];
 for (const [file, source, maximum, remedy] of sourceBudgets) {
   const lines = lineCount(source);

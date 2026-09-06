@@ -20,7 +20,7 @@ test("route parser accepts visitor flows, known pages, valid subjects, and devel
   assert.deepEqual(readRoute("?day=7x"), learnRoute({ flow:"entry" }));
   assert.deepEqual(readRoute("?view=lesson-studio&day=4"), learnRoute());
   assert.deepEqual(readRoute("?view=design-system&subject=ict"), learnRoute({ view:"design-system" }));
-  assert.deepEqual(readRoute("?view=ui-lab"), learnRoute());
+  assert.deepEqual(readRoute("?view=ui-lab"), learnRoute({ view:"ui-lab" }));
   assert.deepEqual(readRoute("?view=ship-ready-markdown"), learnRoute({ view:"ship-ready-markdown" }));
   assert.deepEqual(readRoute("?view=ship-ready-sequence"), learnRoute({ view:"ship-ready-sequence" }));
   assert.deepEqual(readRoute("?view=ship-ready-fill-blanks"), learnRoute({ view:"ship-ready-fill-blanks" }));
@@ -37,7 +37,7 @@ test("route URL updates preserve unrelated query parameters", () => {
   assert.equal(createRouteUrl(page, { subject:"unknown" }).search, "?campaign=quest");
   assert.equal(createRouteUrl(page, { day:12 }).search, "?campaign=quest");
   assert.equal(createRouteUrl(page, { view:"design-system" }).search, "?campaign=quest&view=design-system");
-  assert.equal(createRouteUrl(page, { view:"ui-lab" }).search, "?campaign=quest");
+  assert.equal(createRouteUrl(page, { view:"ui-lab" }).search, "?campaign=quest&view=ui-lab");
   assert.equal(createRouteUrl(page, { view:"ship-ready-markdown" }).search, "?campaign=quest&view=ship-ready-markdown");
   assert.equal(createRouteUrl(page, { view:"ship-ready-sequence" }).search, "?campaign=quest&view=ship-ready-sequence");
   assert.equal(createRouteUrl(page, { view:"ship-ready-fill-blanks" }).search, "?campaign=quest&view=ship-ready-fill-blanks");

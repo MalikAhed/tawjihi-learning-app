@@ -1,3 +1,4 @@
+import { handleDeveloperReset } from "./src/server/developer-reset.mjs";
 import { createServer } from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -43,6 +44,10 @@ const server = createServer(async (request, response) => {
   applySecurityHeaders(response);
   const pathname = request.url?.split("?", 1)[0] || "/";
 
+  if (pathname === "/api/developer/reset") {
+    handleDeveloperReset(request, response, accountStore);
+    return;
+  }
   if (pathname.startsWith("/api/auth/")) {
     await handleAuthRequest(request, response, pathname);
     return;

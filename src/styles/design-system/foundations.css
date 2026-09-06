@@ -1,7 +1,4 @@
 /* Reference shell, typography, contrast, surfaces, and week palettes. */
-.lesson-shell--design-system { width:min(100%,1080px); }
-.lesson-card--design-system { padding:clamp(20px,4vw,40px); }
-.lesson-card--design-system.ds-practice-only { padding:clamp(14px,2vw,24px); }
 .ds-practice-only > :not(#interactive) { display:none; }
 .ds-practice-only #interactive { margin-top:0; }
 .ds-practice-only #interactive > .ds-section-head { margin:0 0 clamp(18px,3vw,28px); padding:clamp(18px,3vw,28px); border:1px solid #ded6cb; border-radius:20px; background:linear-gradient(135deg,#fffaf2,#f4eadc); box-shadow:0 4px 0 #ddd2c2,0 16px 38px rgba(73,53,31,.07); }

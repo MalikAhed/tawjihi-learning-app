@@ -25,6 +25,17 @@ The direct product decision recorded in
 Home, registration, verification, recovery, and account-state behavior in the older story packet. Update
 the story artifacts before freezing backend contracts.
 
+## Mandatory navigation motion
+
+Every tab and screen change must use the shared `src/ui/view-motion.js` motion helper or an
+existing equivalent transition. This includes main and nested tabs, account flows, subject maps,
+lesson loading/entry, lesson steps/results, and return/back navigation. Never introduce an instant
+content swap on these paths. Pair screen fades with the shared component rise in `src/styles/base.css` so newly appearing
+buttons, cards, panels, and lesson content visibly move into place. Use calm, consistent motion without delaying input, replaying stale
+navigation, or animating ordinary typing and answer selection. Respect reduced-motion preferences,
+including changes while motion is running. Verify rapid navigation, keyboard focus, and mobile
+behavior when changing navigation. This is Malik's explicit app-wide requirement.
+
 ## Three-phase delivery strategy
 
 ### Phase 1 — Complete clickable UI/UX prototype

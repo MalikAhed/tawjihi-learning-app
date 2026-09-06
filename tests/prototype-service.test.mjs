@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { DEFAULT_PROTOTYPE_SCENARIO_ID, getPrototypeScenario, PROTOTYPE_SCENARIOS } from "../src/data/prototype-fixtures.js";
-import { createFixtureProductService, GUEST_TRIAL_STORAGE_KEY, LIVE_RELOAD_STORAGE_KEY, PROTOTYPE_SCENARIO_STORAGE_KEY, TEMPORARY_ACCOUNT_STORAGE_KEY, VISITOR_SELECTION_STORAGE_KEY } from "../src/services/prototype-service.js";
+import { createFixtureProductService } from "../src/services/prototype-service.js";
+import { GUEST_TRIAL_STORAGE_KEY, LIVE_RELOAD_STORAGE_KEY, PROTOTYPE_SCENARIO_STORAGE_KEY, TEMPORARY_ACCOUNT_STORAGE_KEY, VISITOR_SELECTION_STORAGE_KEY } from "../src/services/prototype-storage.js";
 
 class MemoryStorage {
   values = new Map();
@@ -172,4 +173,46 @@ test("the development server live reload preserves the temporary login", async (
   assert.equal(reloadedService.getAccountType(), "subscribed");
   assert.equal(reloadedService.getLearnerDisplayName(), "ليان");
   assert.equal(storage.getItem(LIVE_RELOAD_STORAGE_KEY), null);
+});
+
+test("learning progress identity stays stable across sign-in aliases and separate across learners", async () => {
+  const service = createFixtureProductService();
+  assert.equal(service.getLearnerProgressOwner(), "guest");
+  await service.signIn({ identifier:"free", password:"Learn123" });
+  const freeOwner = service.getLearnerProgressOwner();
+  await service.signOut();
+  assert.equal(service.getLearnerProgressOwner(), "guest");
+  await service.signIn({ identifier:"free@example.com", password:"Learn123" });
+  assert.equal(service.getLearnerProgressOwner(), freeOwner);
+  await service.signIn({ identifier:"subscribed", password:"Learn123" });
+  assert.notEqual(service.getLearnerProgressOwner(), freeOwner);
+});
+
+
+test("corrupt saved selection cannot discard a valid guest trial or retain a reload marker", () => {
+  const storage = new MemoryStorage();
+  storage.setItem(VISITOR_SELECTION_STORAGE_KEY, "{broken");
+  storage.setItem(GUEST_TRIAL_STORAGE_KEY, JSON.stringify({ active:true, completedFirstLesson:true }));
+  storage.setItem(LIVE_RELOAD_STORAGE_KEY, "1");
+  const errors = [];
+  const service = createFixtureProductService({ storage, onError:(error) => errors.push(error) });
+  assert.equal(service.getVisitorSelection(), null);
+  assert.deepEqual(service.getGuestTrialState(), { active:true, completedFirstLesson:true });
+  assert.equal(storage.getItem(LIVE_RELOAD_STORAGE_KEY), null);
+  assert.equal(errors.length, 1);
+});
+
+test("storage removal failure does not interrupt guest conversion or account notifications", async () => {
+  const storage = new MemoryStorage();
+  const errors = [];
+  const service = createFixtureProductService({ storage, onError:(error) => errors.push(error) });
+  service.startGuestTrial();
+  storage.removeItem = () => { throw new Error("Storage disabled"); };
+  const changes = [];
+  service.subscribe(() => changes.push(service.getAccountType()));
+  assert.equal((await service.createAccount({ username:"new-student", email:"new@example.com" })).status, "created");
+  assert.equal(service.getAccountType(), "free");
+  assert.equal(service.getGuestTrialState().active, false);
+  assert.deepEqual(changes, ["free"]);
+  assert.equal(errors.length, 1);
 });

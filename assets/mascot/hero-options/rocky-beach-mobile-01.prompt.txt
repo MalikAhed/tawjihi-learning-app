@@ -1,0 +1,8 @@
+Generated using the built-in image generation tool.
+Reference: rocky-beach-desktop-01.png
+Actual output: 1086 x 1448 (portrait); preserved full composition in mobile layout.
+
+Use case: illustration-story.
+Asset type: mobile onboarding opening hero background, full-bleed 4:3 illustration, 1200x900.
+Input image: reference for exact Rocky character identity, palette and illustration style.
+Primary request: Generate a mobile-specific recomposition of this beach scene. Arrange the same three beige stone Rocky characters and beach activities compactly across the canvas so they read clearly at 360px display width. Sailing Rocky in a small coral-orange sailboat in upper-left aqua water; writing Rocky belly-down with pencil touching white paper on golden sand in lower-center; reclining Rocky wearing black sunglasses on aqua-striped towel in middle-right below a green coconut palm rooted at upper-right. Preserve beige angular stone bodies, white eyes, tiny orange mouths, gray mitten limbs, no metal rods. Keep all characters, boat and paper inside generous 8 percent safe margins. Ocean at left, curving white foam shoreline, sand at right and bottom. Reduce empty ocean compared with the desktop reference. Flat clean illustrated shapes, minimal facets, cheerful cyan water, golden sand, vibrant green palm; match reference quality and character design. The artwork fills every edge with no border, no white cutout, no text, no logos, no UI, no watermark. This image sits above the real headline and buttons on mobile; no blank text area is needed.

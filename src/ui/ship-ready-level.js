@@ -17,7 +17,7 @@ function sequenceBankSteps(config) {
 function renderMascotHeader(config, className, locale, copy) {
   const kicker = localizedDefault(config.kicker, "PRACTICE", copy.practiceKicker, locale);
   const mascot = localizedDefault(config.mascot, "Take it one step at a time.", copy.defaultMascot, locale);
-  return `<header class="${className}-head"><div><p class="level-layout-kicker">${escapeHtml(kicker)}</p><h1 id="ui-lab-content-title">${escapeHtml(config.title)}</h1><p>${escapeHtml(config.prompt)}</p></div><div class="${className}-mascot"><div class="${className}-bubble">${escapeHtml(mascot)}</div><img src="assets/mascots/chibi-placeholder.webp" alt="${escapeHtml(copy.friendlyMascot)}" /></div></header>`;
+  return `<header class="${className}-head"><div><p class="level-layout-kicker">${escapeHtml(kicker)}</p><h1 id="ui-lab-content-title">${escapeHtml(config.title)}</h1><p>${escapeHtml(config.prompt)}</p></div><div class="${className}-mascot"><div class="${className}-bubble">${escapeHtml(mascot)}</div><img src="assets/mascot/rocky-standing-still-reduced.svg" alt="${escapeHtml(copy.friendlyMascot)}" /></div></header>`;
 }
 
 export function renderShipReadyContent(type, config, { titleId = "ui-lab-content-title", answerAttribute = "data-ui-lab-answer", locale = "en" } = {}) {

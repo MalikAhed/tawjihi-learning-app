@@ -1,8 +1,8 @@
+import { CdpPipe, delay, terminateProcess, findChrome, getAvailablePort, rawRequest, waitForServer } from "./browser-session.mjs";
+import { verifyAccountJourney } from "./browser-accounts.mjs";
+import { verifyDeveloperWorkspace } from "./browser-developer-workspace.mjs";
 import { spawn } from "node:child_process";
-import { once } from "node:events";
-import { access, mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
-import { request } from "node:http";
-import { createServer } from "node:net";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -18,116 +18,16 @@ const allowExternalAssets = process.env.BROWSER_EXTERNAL_ASSETS === "1";
 const screenshotDirectory = process.env.BROWSER_SCREENSHOT_DIR;
 const screenshotFilter = process.env.BROWSER_SCREENSHOT_FILTER;
 
+class DeveloperSmokeComplete extends Error {}
+class MotionSmokeComplete extends Error {}
+class RoadmapSmokeComplete extends Error {}
 class ScreenshotCaptureComplete extends Error { constructor(filename) { super(filename); this.filename = filename; } }
 function assert(condition, message) {
   if (!condition) failures.push(message);
 }
-function delay(milliseconds) {
-  return new Promise((resolve) => setTimeout(resolve, milliseconds));
-}
-async function terminateProcess(processHandle) {
-  if (!processHandle || processHandle.exitCode !== null || processHandle.signalCode !== null) return;
-  const exited = once(processHandle, "exit");
-  processHandle.kill("SIGTERM");
-  await Promise.race([exited, delay(2_000)]);
-  if (processHandle.exitCode === null && processHandle.signalCode === null) {
-    const forcedExit = once(processHandle, "exit");
-    processHandle.kill("SIGKILL");
-    await forcedExit;
-  }
-}
-async function findChrome() {
-  const candidates = [process.env.CHROME_BIN, "/usr/bin/google-chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser"].filter(Boolean);
-  for (const candidate of candidates) {
-    try {
-      await access(candidate);
-      return candidate;
-    } catch (error) {
-      if (error?.code !== "ENOENT") throw error;
-    }
-  }
-  throw new Error("Chrome or Chromium is required for browser smoke tests. Set CHROME_BIN to its executable.");
-}
-async function getAvailablePort() {
-  const server = createServer();
-  await new Promise((resolve, reject) => server.once("error", reject).listen(0, "127.0.0.1", resolve));
-  const { port } = server.address();
-  await new Promise((resolve) => server.close(resolve));
-  return port;
-}
-function rawRequest(port, target, method = "GET") {
-  return new Promise((resolve, reject) => {
-    const outgoing = request({ host:"127.0.0.1", port, path:target, method }, (response) => {
-      response.resume();
-      response.once("end", () => resolve(response.statusCode));
-    });
-    outgoing.once("error", reject);
-    outgoing.end();
-  });
-}
-class CdpPipe {
-  constructor(processHandle) {
-    this.process = processHandle;
-    this.pending = new Map();
-    this.nextId = 1;
-    this.buffer = Buffer.alloc(0);
-    this.listeners = new Set();
-    processHandle.stdio[4].on("data", (chunk) => this.handleData(chunk));
-  }
-
-  handleData(chunk) {
-    this.buffer = Buffer.concat([this.buffer, chunk]);
-    let boundary = this.buffer.indexOf(0);
-    while (boundary >= 0) {
-      const payload = this.buffer.subarray(0, boundary).toString("utf8");
-      this.buffer = this.buffer.subarray(boundary + 1);
-      if (payload) this.handleMessage(JSON.parse(payload));
-      boundary = this.buffer.indexOf(0);
-    }
-  }
-
-  handleMessage(message) {
-    if (message.id) {
-      const pending = this.pending.get(message.id);
-      if (!pending) return;
-      this.pending.delete(message.id);
-      if (message.error) pending.reject(new Error(`${pending.method}: ${message.error.message}`));
-      else pending.resolve(message.result);
-      return;
-    }
-    this.listeners.forEach((listener) => listener(message));
-  }
-
-  send(method, params = {}, sessionId) {
-    const id = this.nextId++;
-    const payload = { id, method, params };
-    if (sessionId) payload.sessionId = sessionId;
-    return new Promise((resolve, reject) => {
-      this.pending.set(id, { resolve, reject, method });
-      this.process.stdio[3].write(`${JSON.stringify(payload)}\0`);
-    });
-  }
-
-  onEvent(listener) {
-    this.listeners.add(listener);
-    return () => this.listeners.delete(listener);
-  }
-}
-async function waitForServer(port) {
-  for (let attempt = 0; attempt < 100; attempt += 1) {
-    try {
-      if (await rawRequest(port, "/") === 200) return;
-    } catch (error) {
-      if (error?.code !== "ECONNREFUSED") throw error;
-    }
-    await delay(50);
-  }
-  throw new Error("Development server did not become ready.");
-}
 let serverProcess;
 let chromeProcess;
 let profileDirectory;
-let simulateStaticDocument = false;
 try {
   const port = await getAvailablePort();
   const appUrl = `http://127.0.0.1:${port}/`;
@@ -179,6 +79,7 @@ try {
       patterns:[{ urlPattern:`${appUrl}*`, resourceType:"Document", requestStage:"Response" }],
     }, sessionId),
   ]);
+  await cdp.send("Page.addScriptToEvaluateOnNewDocument", { source:"window.__FULL_STACK_QUEST_DEV__ = !new URLSearchParams(location.search).has('static');" }, sessionId);
   if (!allowExternalAssets) {
     await cdp.send("Page.addScriptToEvaluateOnNewDocument", {
       source:"window.__FULL_STACK_QUEST_DISABLE_EXTERNALS__ = true;",
@@ -192,7 +93,8 @@ try {
       void (async () => {
         const response = await cdp.send("Fetch.getResponseBody", { requestId:message.params.requestId }, sessionId);
         let html = Buffer.from(response.body, response.base64Encoded ? "base64" : "utf8").toString("utf8");
-        if (simulateStaticDocument) html = html.replace('<script src="/__codex_live_reload.js"></script>', "");
+        // Keep the test page stable while other workspace processes edit files.
+        html = html.replace('<script src="/__codex_live_reload.js"></script>', "");
         if (!allowExternalAssets) {
           html = html
             .replace(/\s*<link[^>]+href="https:\/\/(?:fonts\.googleapis\.com|fonts\.gstatic\.com)[^"]*"[^>]*>/g, "")
@@ -236,7 +138,10 @@ try {
   async function waitFor(expression, label) {
     const attempts = allowExternalAssets ? 400 : 160;
     for (let attempt = 0; attempt < attempts; attempt += 1) {
-      if (await evaluate(`Boolean(${expression})`)) return;
+      if (await evaluate(`Boolean(${expression})`)) {
+        await evaluate(`Promise.all(document.getAnimations().filter(a => a.animationName === 'app-component-arrive' || a.effect.getTiming().duration === 280).map(a => a.finished.catch(() => {})))`);
+        return;
+      }
       await delay(50);
     }
     const errorContext = browserErrors.length ? ` Browser errors: ${browserErrors.join(" | ")}` : "";
@@ -265,6 +170,13 @@ try {
   }
 
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:1440, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
+  if (process.env.BROWSER_DEVELOPER_ONLY === "1") {
+    await verifyDeveloperWorkspace({ appUrl, navigate, evaluate, waitFor, assert, cdp, sessionId, captureScreenshot });
+    await verifyShipReadyTemplates({ assert, captureScreenshot, cdp, delay, evaluate, sessionId, waitFor });
+    assert(browserErrors.length === 0, `browser errors: ${browserErrors.join(' | ')}`);
+    if (failures.length) throw new Error(failures.join('\n'));
+    throw new DeveloperSmokeComplete();
+  }
   await navigate(appUrl);
   await waitFor("Boolean(document.querySelector('.visitor-landing'))", "the visitor landing page");
   await captureScreenshot("visitor-entry.png");
@@ -275,28 +187,132 @@ try {
   assert(await evaluate("document.querySelectorAll('.subject-card').length === 8 && Boolean(document.querySelector('[data-auth-flow=register]')) && Boolean(document.querySelector('[data-auth-flow=sign-in]'))"), "guests must reach the existing eight-subject Learn page with Create account and Sign in");
   assert(await evaluate("!document.querySelector('[data-learner-dashboard]') && [...document.querySelectorAll('[data-subject-progress]')].every((ring) => ring.hidden)"), "guests must not see a personal dashboard or subject progress");
   assert(await evaluate("!document.querySelector('.sidebar') && !document.querySelector('.topbar-actions')"), "the Learn page must not contain the old streak, rank, gem, avatar, or sidebar account UI");
+  for (const page of ["quests", "shop", "challenges", "learn", "shop", "learn"]) {
+    assert(await evaluate(`(() => {
+      document.querySelector('[data-page="${page}"]').click();
+      const target = document.querySelector('${page === "learn" ? ".course-units" : ".coming-soon"}');
+      return target.getAnimations().filter(a => a.effect.getTiming().duration === 280).length === 1;
+    })()`), `${page} must retain one entrance during rapid tab navigation`);
+  }
+  await cdp.send("Emulation.setEmulatedMedia", { features:[{ name:"prefers-reduced-motion", value:"reduce" }] }, sessionId);
+  assert(await evaluate(`(() => {
+    document.querySelector('[data-page="shop"]').click();
+    return document.querySelector('.coming-soon').getAnimations().length === 0;
+  })()`), "reduced motion must suppress tab entrances");
+  await evaluate("document.querySelector('[data-page=learn]').click()");
+  await cdp.send("Emulation.setEmulatedMedia", { features:[{ name:"prefers-reduced-motion", value:"no-preference" }] }, sessionId);
   await captureScreenshot("subjects-home.png");
   await evaluate("document.querySelector('[data-subject=ict]').click()");
   await waitFor("location.search === '?subject=ict' && Boolean(document.querySelector('.subject-roadmap'))", "the ICT roadmap");
-  assert(await evaluate("document.querySelectorAll('.roadmap-unit').length === 3 && document.querySelectorAll('.roadmap-lesson').length === 5 && document.querySelector('.lesson-back').textContent.includes('رجوع') && document.querySelector('.lesson-back').textContent.includes('›') && !document.querySelector('.lesson-back').textContent.includes('‹') && getComputedStyle(document.querySelector('.lesson-top-title')).display === 'none' && !document.querySelector('.subject-roadmap').textContent.includes('خريطة المادة') && !document.querySelector('.subject-roadmap').textContent.includes('محتوى تجريبي')"), "ICT must begin with the three textbook unit maps and five lessons, plus a labeled Back control whose arrow sits on the right and faces right");
+  assert(await evaluate("document.querySelectorAll('.roadmap-unit').length === 3 && document.querySelectorAll('.roadmap-lesson-group').length === 5 && !document.querySelector('.roadmap-whole-entry') && Boolean(document.querySelector('.lesson-back__icon')) && document.querySelector('.lesson-back').textContent.trim().length > 0 && getComputedStyle(document.querySelector('.lesson-top-title')).display === 'none' && !document.querySelector('.subject-roadmap').textContent.includes('خريطة المادة') && !document.querySelector('.subject-roadmap').textContent.includes('محتوى تجريبي')"), "ICT must begin with the three textbook unit maps and five lessons, plus a labeled Back control whose arrow sits on the right and faces right");
+  assert(await evaluate("[...document.querySelectorAll('.roadmap-unit progress')].every(bar=>bar.value === 0) && !document.querySelector('.subject-roadmap').textContent.includes('الدرس كاملًا')"), "a fresh roadmap must have zero progress and no full-lesson button");
+  assert(await evaluate("!document.querySelector('.subject-roadmap details') && [...document.querySelectorAll('[data-roadmap-part]')].every(button=>button.getBoundingClientRect().width > 0) && document.querySelector('[data-roadmap-part=access-basics]').getBoundingClientRect().width >= 100 && Math.abs(document.querySelector('[data-roadmap-part=access-basics]').getBoundingClientRect().left - document.querySelector('[data-roadmap-part=tables-and-types]').getBoundingClientRect().left) > 40"), "the curriculum must remain an always-visible winding map of oval stops");
   await captureScreenshot("ict-roadmap.png");
-  const lessonNodeColor = await evaluate("getComputedStyle(document.querySelector('.roadmap-lesson')).backgroundColor");
-  await evaluate("document.querySelector('.roadmap-lesson').click()");
+  assert(await evaluate("!document.querySelector('.subject-roadmap').textContent.includes('ابدأ التعلّم') && [...document.querySelectorAll('.roadmap-connector path')].every(path=>{const start=path.getPointAtLength(0);const end=path.getPointAtLength(path.getTotalLength());return path.getAttribute('pathLength') === '100' && start.y >= 6 && end.y <= 42})"), "map labels must omit the redundant start prompt and connector ends must leave room for complete rounded caps");
+  const ovalStop = await evaluate(`(() => { const button=document.querySelector('[data-roadmap-part=access-basics]'); const bounds=button.getBoundingClientRect(); const face=button.querySelector('.roadmap-part-number').getBoundingClientRect(); return { x:bounds.left+bounds.width/2, y:bounds.top+bounds.height/2, top:bounds.top, faceTop:face.top, baseTop:getComputedStyle(button,'::before').top, width:face.width, height:face.height }; })()`);
+  assert(ovalStop.width / ovalStop.height > 1.2 && ovalStop.width / ovalStop.height < 1.45, "stops must have broad oval top faces");
+  assert(await evaluate("[...document.querySelectorAll('.roadmap-part-copy,.roadmap-part-status')].every(label=>getComputedStyle(label).backgroundColor === 'rgba(0, 0, 0, 0)') && [...document.querySelectorAll('.roadmap-connector')].every(line=>line.getBoundingClientRect().top >= line.closest('.roadmap-stop').querySelector('.roadmap-node').getBoundingClientRect().bottom + 8)"), "labels must have no white backing and every connector must start below the text");
+  await cdp.send("Input.dispatchMouseEvent", { type:"mouseMoved", x:ovalStop.x, y:ovalStop.y }, sessionId);
+  await waitFor(`Math.abs(document.querySelector('[data-roadmap-part=access-basics] .roadmap-part-number').getBoundingClientRect().top - ${ovalStop.faceTop} - 4) < 0.2`, "the shallow hover press");
+  assert(await evaluate(`document.querySelector('[data-roadmap-part=access-basics]').getBoundingClientRect().top === ${ovalStop.top} && getComputedStyle(document.querySelector('[data-roadmap-part=access-basics]'),'::before').top === ${JSON.stringify(ovalStop.baseTop)}`), "hover must leave the base fixed");
+  await captureScreenshot("ict-stop-hover.png");
+  await cdp.send("Input.dispatchMouseEvent", { type:"mousePressed", x:ovalStop.x, y:ovalStop.y, button:"left", clickCount:1 }, sessionId);
+  await waitFor(`Math.abs(document.querySelector('[data-roadmap-part=access-basics] .roadmap-part-number').getBoundingClientRect().top - ${ovalStop.faceTop} - 12) < 0.2`, "the full click press");
+  assert(await evaluate(`document.querySelector('[data-roadmap-part=access-basics]').getBoundingClientRect().top === ${ovalStop.top} && getComputedStyle(document.querySelector('[data-roadmap-part=access-basics]'),'::before').top === ${JSON.stringify(ovalStop.baseTop)}`), "clicking must press only the top, all the way down to the fixed base");
+  await captureScreenshot("ict-stop-pressed.png");
+  await cdp.send("Input.dispatchMouseEvent", { type:"mouseReleased", x:ovalStop.x, y:ovalStop.y, button:"left", clickCount:1 }, sessionId);
+  await evaluate("document.querySelector('[data-bubble-close]').click()");
+  await cdp.send("Input.dispatchMouseEvent", { type:"mouseMoved", x:0, y:0 }, sessionId);
+
+  assert(await evaluate("document.querySelectorAll('.roadmap-lesson-divider').length === 5 && document.querySelectorAll('[data-roadmap-part]').length === 28"), "the textbook's five lessons must be separated into 28 named parts");
+  await evaluate("document.querySelector('[data-roadmap-part=access-basics]').click()");
+  assert(await evaluate("document.querySelector('[data-bubble-start]').textContent === 'ابدأ الجزء' && document.querySelector('[data-bubble-summary]').textContent.includes('3–5')"), "an available part must show its book pages and a part-specific action");
+  await evaluate("document.querySelector('[data-bubble-start]').click()");
+  await waitFor("document.querySelector('.current-view-title')?.textContent === 'برامج إدارة البيانات وبيئة Access' && document.querySelector('.markdown-rendered h1')?.textContent.includes('إدارة قواعد البيانات')", "the selected part teaching content");
+  assert(await evaluate("Number(document.querySelector('.lesson-top-title').getAttribute('aria-valuemax')) < 24 && document.querySelector('.markdown-rendered h1')?.textContent.includes('إدارة قواعد البيانات')"), "a part must open its own teaching steps, not restart the whole lesson");
+  await evaluate("document.querySelector('.lesson-back').click()");
+  await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "the roadmap after closing a part");
+  const lessonNodeColor = await evaluate("getComputedStyle(document.querySelector('[data-roadmap-part=access-basics]')).backgroundColor");
+  await evaluate("document.querySelector('[data-roadmap-part=access-basics]').click()");
   await waitFor("!document.querySelector('[data-roadmap-bubble]').hidden", "the lesson information bubble");
-  assert(await evaluate(`document.querySelector('[data-bubble-lesson]').textContent === 'الدرس الأول: إدارة قواعد البيانات' && document.querySelector('[data-bubble-xp]').textContent === '10 XP' && document.activeElement === document.querySelector('[data-bubble-start]') && getComputedStyle(document.querySelector('.roadmap-lesson')).backgroundColor === ${JSON.stringify(lessonNodeColor)}`), "a map node must remain visually stable and open a nearby lesson brief before starting");
+  assert(await evaluate(`document.querySelector('[data-bubble-lesson]').textContent === 'برامج إدارة البيانات وبيئة Access' && document.activeElement === document.querySelector('[data-bubble-start]') && getComputedStyle(document.querySelector('[data-roadmap-part=access-basics]')).backgroundColor === ${JSON.stringify(lessonNodeColor)}`), "a map node must remain visually stable and open a nearby lesson brief before starting");
+  assert(await evaluate("(() => { const bubble=document.querySelector('[data-roadmap-bubble]'); const r=bubble.getBoundingClientRect(); return r.left >= 0 && r.right <= document.documentElement.clientWidth && getComputedStyle(bubble).position === 'absolute' && getComputedStyle(document.querySelector('[data-bubble-start]')).backgroundColor === 'rgb(88, 204, 2)'; })()"), "desktop part details must be a contained floating bubble with the light-green start action");
   await captureScreenshot("ict-lesson-bubble.png");
   await evaluate("document.querySelector('[data-bubble-start]').click()");
   await waitFor("document.querySelector('.markdown-authored-content .markdown-rendered h1')?.textContent === 'إدارة قواعد البيانات'", "the published ICT database lesson");
-  assert(await evaluate("document.querySelector('.lesson-top-title').getAttribute('aria-valuemax') === '24' && document.querySelector('.current-view-title').textContent === 'إدارة قواعد البيانات' && !document.querySelector('[data-roadmap-preview]')"), "starting the first roadmap lesson must open its complete authored flow in the shared lesson shell");
+  assert(await evaluate("document.querySelector('.lesson-top-title').getAttribute('aria-valuemax') === '7' && document.querySelector('.current-view-title').textContent === 'برامج إدارة البيانات وبيئة Access' && !document.querySelector('[data-roadmap-preview]')"), "starting a roadmap part must open only its seven authored steps");
   assert(await evaluate("getComputedStyle(document.querySelector('.markdown-authored-content')).direction === 'rtl'"), "the Arabic ICT lesson must inherit RTL reading direction");
-  assert(await evaluate(`(() => { const primary=document.querySelector('.level-action--primary'); const back=document.querySelector('[data-template-back]'); const shortcut=primary.querySelector('kbd'); const group=document.querySelector('.level-layout-action-group').getBoundingClientRect(); const primaryRect=primary.getBoundingClientRect(); const backRect=back.getBoundingClientRect(); const shortcutRect=shortcut.getBoundingClientRect(); const shortcutStyle=getComputedStyle(shortcut); return primary.textContent.includes('متابعة') && back.textContent === 'السابق' && document.querySelector('.level-layout-kicker').textContent === 'تعلّم' && group.right > innerWidth / 2 && primaryRect.width === 240 && primaryRect.height === 52 && backRect.width === 128 && backRect.height === 52 && shortcutRect.width === 62 && shortcutRect.height === 34 && shortcut.textContent.includes('ENTER') && !shortcut.textContent.includes('إدخال') && shortcutStyle.backgroundColor === 'rgb(255, 255, 255)' && shortcutStyle.color === 'rgb(75, 85, 99)' && shortcutStyle.direction === 'ltr' && !document.querySelector('.prototype-tools'); })()`), "the Arabic lesson controls must use stable geometry and a solid-white English ENTER key with dark-grey text");
+  assert(await evaluate(`(() => { const primary=document.querySelector('.level-action--primary'); const back=document.querySelector('[data-template-back]'); const shortcut=primary.querySelector('kbd'); const group=document.querySelector('.level-layout-action-group').getBoundingClientRect(); const primaryRect=primary.getBoundingClientRect(); const backRect=back.getBoundingClientRect(); const shortcutRect=shortcut.getBoundingClientRect(); const shortcutStyle=getComputedStyle(shortcut); return primary.textContent.includes('متابعة') && back.textContent === 'السابق' && document.querySelector('.level-layout-kicker').textContent === 'تعلّم' && backRect.left > innerWidth / 2 && primaryRect.right < innerWidth / 2 && primaryRect.width === 240 && primaryRect.height === 52 && backRect.width === 128 && backRect.height === 52 && shortcutRect.width === 62 && shortcutRect.height === 34 && shortcut.textContent.includes('ENTER') && !shortcut.textContent.includes('إدخال') && shortcutStyle.backgroundColor === 'rgb(255, 255, 255)' && shortcutStyle.color === 'rgb(75, 85, 99)' && shortcutStyle.direction === 'ltr' && !document.querySelector('.prototype-tools'); })()`), "the Arabic lesson controls must use stable geometry and a solid-white English ENTER key with dark-grey text");
   const ictLessonPalette = await evaluate(`(() => ({
     continueBackground:getComputedStyle(document.querySelector('.level-action--primary')).backgroundColor,
     continueText:getComputedStyle(document.querySelector('.level-action--primary')).color,
-    progressFill:getComputedStyle(document.querySelector('.lesson-top-title'),'::after').backgroundColor,
+    progressFill:getComputedStyle(document.querySelector('.lesson-top-title'),'::after').backgroundImage,
   }))()`);
-  assert(ictLessonPalette.continueBackground === "rgb(56, 189, 248)" && ictLessonPalette.continueText === "rgb(8, 47, 73)" && ictLessonPalette.progressFill === "rgb(56, 189, 248)", `the lesson Continue action and progress bar must use the light-blue palette (${JSON.stringify(ictLessonPalette)})`);
+  assert(ictLessonPalette.continueBackground === "rgb(88, 204, 2)" && ictLessonPalette.continueText === "rgb(21, 60, 8)" && ictLessonPalette.progressFill.includes("linear-gradient") && ictLessonPalette.progressFill.includes("255, 212, 59"), `the lesson must use a green primary action and glossy yellow progress (${JSON.stringify(ictLessonPalette)})`);
   await captureScreenshot("ict-database-lesson-desktop.png");
+  if (process.env.BROWSER_MOTION_ONLY === "1") {
+    assert(await evaluate(`(() => {
+      document.querySelector('[data-template-primary]').click();
+      return document.querySelector('#lesson-content').getAnimations().some(a => a.effect.getTiming().duration === 280);
+    })()`), "lesson steps must use shared motion");
+    throw new MotionSmokeComplete();
+  }
+
+  await evaluate("document.querySelector('[data-test-lesson-pass]').click()");
+  assert(await evaluate("document.querySelector('.subject-completion').dataset.animationState === 'running' && document.querySelector('.subject-gain--xp strong').textContent === '+0 XP' && document.querySelector('.subject-gain--progress strong').textContent === '0%'"), "ending gains and progress must start at their previous values");
+
+  await waitFor("document.querySelector('.subject-completion-rocky')?.complete && document.querySelector('.subject-completion-rocky')?.naturalWidth > 0", "test pass ending preview");
+  assert(await evaluate("document.querySelector('.subject-completion-rocky').src.endsWith('rocky-happy-jump.svg')"), "Rocky must begin the ending with his happy jump");
+  await waitFor("document.querySelector('.subject-completion')?.dataset.animationState === 'complete'", "animated ending counters finish");
+  assert(await evaluate("!document.querySelector('.subject-completion-preview') && getComputedStyle(document.querySelector('.lesson-top-title')).display === 'none' && document.querySelector('.subject-gain--xp strong').textContent === '+10 XP' && document.querySelector('.subject-completion-rocky').complete && document.querySelector('.subject-completion-rocky').naturalWidth > 0"), "preview must show sample gains and loaded happy Rocky");
+  assert(await evaluate("document.querySelectorAll('.subject-gain').length === 2 && !document.querySelector('.subject-completion-progress') && document.querySelector('.subject-gain--progress strong').textContent === '4%'"), "minimal ending has two reward cards and animated subject progress");
+  await waitFor("document.querySelector('.subject-completion-rocky').src.endsWith('rocky-standing-still.svg') && document.querySelector('.subject-completion-rocky').complete", "happy jump transitions into breathing and looking around");
+  assert(await evaluate("document.querySelector('.subject-completion-rocky').src.endsWith('rocky-standing-still.svg') && !document.querySelector('.completion-spark')"), "ending Rocky must use the breathing and looking-around idle without stars");
+  assert(await evaluate(`(() => { const footer=document.querySelector('.lesson-shell--completion .level-layout-actions'); const back=footer.querySelector('[data-template-back]').getBoundingClientRect(); const next=footer.querySelector('[data-template-primary]').getBoundingClientRect(); return getComputedStyle(footer).borderTopWidth === '0px' && back.left > innerWidth/2 && next.right < innerWidth/2 && getComputedStyle(footer.querySelector('.level-action--primary')).backgroundColor === 'rgb(88, 204, 2)'; })()`), "ending buttons must sit at opposite edges with a green primary action and no divider");
+  await captureScreenshot("ict-ending-preview.png");
+  await cdp.send("Emulation.setDeviceMetricsOverride", { width:390, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
+  assert(await evaluate("document.documentElement.scrollWidth <= innerWidth"), "ending gain cards must fit a narrow screen");
+  await captureScreenshot("ict-ending-mobile.png");
+  for (const [width, height] of [[320,568],[390,667],[844,390],[1366,768]]) {
+    await cdp.send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor:1, mobile:width < 600 }, sessionId);
+    const fit = await evaluate(`(() => {
+      const task=document.querySelector('.lesson-shell--completion .level-layout-task');
+      const result=document.querySelector('.subject-completion').getBoundingClientRect();
+      const footer=document.querySelector('.lesson-shell--completion .level-layout-actions').getBoundingClientRect();
+      return { fits:task.scrollHeight <= task.clientHeight + 1 && document.documentElement.scrollWidth <= innerWidth && result.top >= 0 && result.bottom <= footer.top + 1 && footer.bottom <= innerHeight + 1, scroll:task.scrollHeight, height:task.clientHeight, resultBottom:result.bottom, footerTop:footer.top };
+    })()`);
+    assert(fit.fits, `the complete ending and actions must fit without scrolling at ${width}x${height}: ${JSON.stringify(fit)}`);
+    assert(await evaluate("(() => { const label=document.querySelector('.lesson-shell--completion [data-template-action-label]'); return label.scrollWidth <= label.clientWidth + 1; })()"), `the ending Continue label must be fully visible at ${width}x${height}`);
+    await captureScreenshot(`ict-ending-fit-${width}.png`);
+  }
+  await cdp.send("Emulation.setDeviceMetricsOverride", { width:390, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
+
+  await evaluate("document.querySelector('[data-authored-restart]').click()");
+  assert(await evaluate("document.querySelector('.subject-completion--analytics')?.dataset.animationState === 'running' && !document.querySelector('.subject-completion-rocky')"), "Continue must reveal a separate animated analytics screen");
+  await waitFor("document.querySelector('.subject-completion--analytics')?.dataset.animationState === 'complete'", "analytics count-up completes");
+  assert(await evaluate("document.querySelector('.subject-analytics-row--xp strong').textContent === '+10 XP' && document.querySelector('.subject-analytics-row--streak strong').textContent.includes('1') && document.querySelector('[data-gain-bar]').value === 1 && document.querySelector('.subject-analytics-row--streak img').src.endsWith('streak-fire-burning.svg')"), "analytics must show XP, animated streak, and full material progress");
+  for (const [width,height] of [[320,568],[844,390],[1366,768]]) {
+    await cdp.send("Emulation.setDeviceMetricsOverride", { width,height,deviceScaleFactor:1,mobile:width<600 },sessionId);
+    assert(await evaluate("(() => { const task=document.querySelector('.lesson-shell--completion .level-layout-task'); return task.scrollHeight <= task.clientHeight+1 && document.documentElement.scrollWidth<=innerWidth; })()"), `analytics must fit without scrolling at ${width}x${height}`);
+    await captureScreenshot(`ict-analytics-${width}.png`);
+  }
+  await evaluate("document.querySelector('[data-authored-review]').click()");
+  await waitFor("Boolean(document.querySelector('.subject-completion-rocky'))", "back from analytics returns to the celebration");
+  await cdp.send("Emulation.setDeviceMetricsOverride", { width:390,height:844,deviceScaleFactor:1,mobile:true },sessionId);
+  await cdp.send("Emulation.setEmulatedMedia", { features:[{ name:"prefers-reduced-motion", value:"reduce" }] }, sessionId);
+  await evaluate("document.querySelector('[data-authored-review]').click(); document.querySelector('[data-test-lesson-pass]').click()");
+  assert(await evaluate("document.querySelector('.subject-completion-rocky').src.endsWith('rocky-standing-still-reduced.svg') && !document.querySelector('.ui-lab-pinata')"), "reduced-motion ending uses a still Rocky and no particle animation");
+  await evaluate("document.querySelector('[data-authored-restart]').click()");
+  assert(await evaluate("document.querySelector('.subject-completion--analytics')?.dataset.animationState === 'complete' && document.querySelector('.subject-analytics-row--streak img').src.endsWith('streak-fire-burning-reduced.svg')"), "reduced-motion analytics shows final values and a still flame");
+  await evaluate("document.querySelector('[data-authored-restart]').click()");
+  await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "exit preview to map");
+  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value === 0"), "test pass must not persist completion or gains");
+  await cdp.send("Emulation.setEmulatedMedia", { features:[] }, sessionId);
+  await cdp.send("Emulation.setDeviceMetricsOverride", { width:1440, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
+  await evaluate("document.querySelector('[data-roadmap-part=access-basics]').click(); document.querySelector('[data-bubble-start]').click()");
+  await waitFor("Boolean(document.querySelector('[data-live-authored-step]'))", "lesson after test preview");
+  assert(await evaluate("!document.querySelector('.lesson-top-title').hidden"), "returning to the lesson restores its top progress bar");
+
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:390, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
   const mobileIctLesson = await evaluate(`(() => { const step = document.querySelector('[data-live-authored-step]').getBoundingClientRect(); const copy = document.querySelector('.markdown-authored-content'); return { contained:step.left >= 0 && step.right <= innerWidth, overflow:document.documentElement.scrollWidth > innerWidth, fontSize:parseFloat(getComputedStyle(copy).fontSize) }; })()`);
   assert(mobileIctLesson.contained && !mobileIctLesson.overflow && mobileIctLesson.fontSize >= 15, `the ICT lesson must stay readable on a narrow screen (${JSON.stringify(mobileIctLesson)})`);
@@ -308,130 +324,83 @@ try {
   await waitFor("Boolean(document.querySelector('[data-ui-lab-answer=update]'))", "the first ICT MCQ");
   assert(await evaluate("document.querySelector('[data-ui-lab-feedback]').textContent === 'اختر أفضل إجابة، ثم تحقّق من اختيارك.' && document.querySelector('[data-ui-lab-check-label]').textContent === 'تحقّق من الإجابة' && document.querySelector('[data-ui-lab-answer=insert] span').textContent === 'أ'"), "the ICT MCQ instructions, action, and choice markers must be Arabic");
   assert(await evaluate("document.querySelector('[data-template-primary]').getBoundingClientRect().width === 240 && document.querySelector('[data-template-back]').getBoundingClientRect().width === 128"), "teaching steps and MCQs must keep the same primary and Back button sizes");
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    await evaluate("document.querySelector('[data-ui-lab-answer=insert]').click(); document.querySelector('[data-template-primary]').click()");
+    assert(await evaluate("document.querySelector('[data-ui-lab-feedback]').classList.contains('is-wrong')"), "wrong answers must provide feedback before retry");
+    await evaluate("document.querySelector('[data-template-primary]').click()");
+  }
   await evaluate("document.querySelector('[data-ui-lab-answer=update]').click()");
-  await waitFor("getComputedStyle(document.querySelector('[data-ui-lab-answer=update]')).borderColor === 'rgb(56, 189, 248)'", "the selected ICT MCQ color transition");
-  const ictMcqPalette = await evaluate(`(() => { const answer=document.querySelector('[data-ui-lab-answer=update]'); return { border:getComputedStyle(answer).borderColor, progress:getComputedStyle(document.querySelector('.lesson-top-title'),'::after').backgroundColor, action:getComputedStyle(document.querySelector('.level-action--primary')).backgroundColor }; })()`);
-  assert(Object.values(ictMcqPalette).every((color) => color === "rgb(56, 189, 248)"), `selected MCQ, progress, and action colors must share the light-blue palette (${JSON.stringify(ictMcqPalette)})`);
+  await waitFor("getComputedStyle(document.querySelector('[data-ui-lab-answer=update]')).borderColor === 'rgb(28, 176, 246)'", "the selected ICT MCQ color transition");
+  const ictMcqPalette = await evaluate(`(() => { const answer=document.querySelector('[data-ui-lab-answer=update]'); return { border:getComputedStyle(answer).borderColor, progress:getComputedStyle(document.querySelector('.lesson-top-title'),'::after').backgroundImage, action:getComputedStyle(document.querySelector('.level-action--primary')).backgroundColor }; })()`);
+  assert(ictMcqPalette.border === "rgb(28, 176, 246)" && ictMcqPalette.action === "rgb(88, 204, 2)" && ictMcqPalette.progress.includes("linear-gradient") && ictMcqPalette.progress.includes("255, 212, 59"), `selected answers must use blue, actions green, and progress glossy yellow (${JSON.stringify(ictMcqPalette)})`);
   await captureScreenshot("ict-database-mcq-blue.png");
   await evaluate("document.querySelector('[data-live-authored-step]').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}))");
   await waitFor("getComputedStyle(document.querySelector('.level-action--primary')).backgroundColor === 'rgb(88, 204, 2)'", "the correct-answer Continue button success color");
   assert(await evaluate("document.querySelector('[data-ui-lab-check-label]').textContent === 'متابعة' && document.querySelector('[data-ui-lab-feedback]').classList.contains('is-correct')"), "a correct ICT answer must reveal an Arabic green Continue action");
-  await evaluate("document.querySelector('.lesson-back').click(); document.querySelector('[data-auth-flow=register]').click()");
-  await waitFor("Boolean(document.querySelector('[data-register-form]'))", "direct account creation");
-  assert(await evaluate("document.querySelectorAll('[data-onboarding-step]:not([hidden])').length === 1 && document.querySelector('[data-onboarding-step=\"intro\"]:not([hidden])') && document.querySelector('[data-onboarding-step=\"intro\"] img').src.endsWith('/assets/mascot/rocky-wave.svg') && document.querySelector('[data-onboarding-back] [data-back-label]').textContent === 'الرئيسية' && !document.querySelector('.visitor-language')"), "registration must start with Rocky's greeting, a labeled Home control, and no language control");
-  await captureScreenshot("account-register.png");
-  await evaluate("document.querySelector('[data-onboarding-step=\"intro\"] [data-step-next]').click()");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"0\"]:not([hidden]) input[name=username]'))", "Rocky's calm name question");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"0\"] img'))", "Rocky's calm standing image");
-  assert(await evaluate("document.querySelector('[data-onboarding-step=\"0\"] img').src.endsWith('/assets/mascot/rocky-standing-still.svg')"), "the name question must use Rocky's calm standing animation");
-  await evaluate("document.querySelector('[data-register-form]').requestSubmit()");
-  assert(await evaluate("document.querySelector('[data-onboarding-step=\"0\"]:not([hidden]) [data-field-error]:not([hidden])') !== null"), "registration must validate the current question without exposing later fields");
-  await evaluate(`(() => { const form=document.querySelector('[data-register-form]'); form.elements.username.value='student-new'; document.querySelector('[data-onboarding-step="0"] [data-step-next]').click(); })()`);
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"1\"]:not([hidden])'))", "the curriculum question");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"1\"] .rocky-pointer-svg'))", "Rocky's interactive curriculum pose");
-  assert(await evaluate("document.querySelector('[data-onboarding-back] [data-back-label]').textContent === 'السابق'"), "later onboarding steps must label the back action as السابق");
+  await evaluate("document.querySelector('[data-template-primary]').click()");
+  await waitFor("document.querySelector('.markdown-rendered h1')?.textContent.includes('لماذا')", "Access characteristics in the first part");
+  await evaluate("document.querySelector('[data-template-primary]').click()");
+  await waitFor("Boolean(document.querySelector('[data-ui-lab-answer=false]'))", "the true-false check");
+  await evaluate("document.querySelector('[data-ui-lab-answer=false]').click(); document.querySelector('[data-template-primary]').click()");
+  await waitFor("document.querySelector('[data-ui-lab-feedback]')?.classList.contains('is-correct')", "the correct true-false feedback");
+  await evaluate("document.querySelector('[data-template-primary]').click()");
+  await waitFor("document.querySelector('.markdown-rendered h1')?.textContent.includes('مكوّنات')", "Access components");
+  await evaluate("document.querySelector('[data-template-primary]').click()");
+  await waitFor("Boolean(document.querySelector('[data-ui-lab-answer=form]'))", "the components check");
+  await evaluate("document.querySelector('[data-ui-lab-answer=form]').click(); document.querySelector('[data-template-primary]').click()");
+  await waitFor("document.querySelector('[data-ui-lab-feedback]')?.classList.contains('is-correct')", "the correct components feedback");
+  await evaluate("document.querySelector('[data-template-primary]').click()");
+  await waitFor("Boolean(document.querySelector('#authored-lesson-complete-title'))", "the completed part");
+  await waitFor("document.querySelector('.subject-completion')?.dataset.animationState === 'complete'", "earned reward count-up completes");
+  assert(await evaluate("!document.querySelector('.subject-completion-preview') && document.querySelector('.subject-gain--xp strong').textContent === '+10 XP' && document.querySelector('.subject-gain--progress strong').textContent === '4%'"), "first completion displays 10 prototype XP and subject progress");
+  await captureScreenshot("ict-ending-earned.png");
+  await evaluate("document.querySelector('[data-authored-review]').click()");
   await evaluate(`(() => {
-    const mascot=document.querySelector('[data-onboarding-step="1"] [data-rocky-pointer-track]');
-    const box=mascot.getBoundingClientRect();
-    window.dispatchEvent(new PointerEvent('pointermove',{clientX:innerWidth-4,clientY:box.top+box.height/2}));
+    for (let step = 0; step < 30 && !document.querySelector('.subject-completion'); step += 1) {
+      const correct = document.querySelector('[data-ui-lab-answer][data-correct=true]');
+      if (correct && !document.querySelector('[data-ui-lab-feedback]')?.classList.contains('is-correct')) correct.click();
+      document.querySelector('[data-template-primary]').click();
+    }
   })()`);
-  await delay(420);
-  const rockyFollow = await evaluate(`(() => {
-    const svg=document.querySelector('[data-onboarding-step="1"] .rocky-pointer-svg');
-    const offset=(part) => Math.abs(Number.parseFloat(svg.querySelector('[data-part="'+part+'"]').style.translate) || 0);
-    return {body:offset('body'),leftArm:offset('arm-left'),rightArm:offset('arm-right')};
-  })()`);
-  assert(rockyFollow.body > 8 && rockyFollow.leftArm > 8 && rockyFollow.rightArm > 8, `Rocky's shoulders must follow his tracked body movement (${JSON.stringify(rockyFollow)})`);
-  await captureScreenshot("account-curriculum.png");
-  assert(await evaluate("[...document.querySelectorAll('.onboarding-choice-grid--maps img')].length === 2 && [...document.querySelectorAll('.onboarding-choice-grid--maps img')].every((image) => image.complete && image.naturalWidth > 0)"), "curriculum choices must load the accurate Gaza and Palestine SVG maps");
-  await evaluate("document.querySelector('input[name=curriculum][value=gaza]').click(); document.querySelector('[data-onboarding-step=\"1\"] [data-step-next]').click()");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"2\"]:not([hidden])'))", "the academic path question");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"2\"] .rocky-pointer-svg'))", "Rocky's interactive academic-path pose");
-  assert(await evaluate(`(() => {
-    const svgs=[...document.querySelectorAll('.rocky-pointer-svg')];
-    const ids=svgs.flatMap((svg) => [...svg.querySelectorAll('[id]')].map((element) => element.id));
-    const visibleBodyUse=document.querySelector('[data-onboarding-step="2"] .rocky-pointer-svg [data-part="body"] use');
-    return ids.length === new Set(ids).size && visibleBodyUse?.getAttribute('href')?.startsWith('#rocky-pointer-2-');
-  })()`), "each inline Rocky must own uniquely scoped SVG definitions");
-  await captureScreenshot("account-path.png");
-  await captureScreenshot("account-path-svg.png");
-  assert(await evaluate("document.querySelector('[data-onboarding-step=\"2\"]').textContent.includes('العلمي') && document.querySelector('[data-onboarding-step=\"2\"]').textContent.includes('الأدبي')"), "the path question must offer العلمي and الأدبي in Arabic");
-  assert(await evaluate("[...document.querySelectorAll('[data-onboarding-step=\"2\"] .path-choice__visual img')].length === 4 && [...document.querySelectorAll('[data-onboarding-step=\"2\"] .path-choice__visual img')].every((image) => image.complete && image.naturalWidth > 0)"), "academic path choices must preload pale and saturated generated illustrations");
+  await waitFor("document.querySelector('.subject-completion')?.dataset.animationState === 'complete'", "replayed reward counters settle");
+  assert(await evaluate("document.querySelector('.subject-gain--xp strong')?.textContent === '+0 XP' && document.querySelector('.subject-gain--progress strong').textContent === '4%'"), "replaying within the same lesson must not display duplicate XP or progress gains");
+
+  await evaluate("document.querySelector('.lesson-back').click()");
+  await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "unit progress after finishing a part");
+  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value === 1 && document.querySelector('[data-unit=unit-1] progress').max === 13 && document.querySelector('[data-unit=unit-1] [data-unit-percent]').textContent === '8%' && document.querySelector('[data-roadmap-part=access-basics]').dataset.partState === 'completed' && document.activeElement.dataset.roadmapPart === 'access-basics'"), "finishing one part must update unit completion once and return focus to that part");
+  await navigate(`${appUrl}?subject=ict`);
+  await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "restored part progress after reload");
+  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value === 1"), "completed part progress must survive a reload");
+  assert(await evaluate("document.querySelector('[data-unit=unit-1] [data-review-count]').textContent === '1' && document.querySelectorAll('[data-review-part=access-basics]').length === 1"), "repeated mistakes must persist as one review part after reload");
+  await captureScreenshot("ict-review-card.png");
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:390, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
-  assert(await evaluate("document.documentElement.scrollWidth <= innerWidth && [...document.querySelectorAll('[data-onboarding-step=\"2\"] .onboarding-choice--path')].every((choice) => { const box=choice.getBoundingClientRect(); return box.left >= 0 && box.right <= innerWidth; })"), "academic path choices must stay contained on mobile");
-  await captureScreenshot("account-path-mobile.png");
-  await captureScreenshot("account-path-svg-mobile.png");
+  assert(await evaluate("document.documentElement.scrollWidth <= innerWidth"), "populated review cards must fit mobile RTL layouts");
+  await captureScreenshot("ict-review-card-mobile.png");
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:1440, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
-  await evaluate("document.querySelector('input[name=path][value=scientific]').click()");
-  await waitFor("getComputedStyle(document.querySelector('.onboarding-choice--scientific .path-choice__art--saturated')).opacity === '1'", "the selected path artwork transition");
-  assert(await evaluate(`(() => { const choice=document.querySelector('.onboarding-choice--scientific'); const title=choice.querySelector('strong'); const otherTitle=document.querySelector('.onboarding-choice--literary strong'); return getComputedStyle(choice).borderColor !== 'rgb(88, 204, 2)' && getComputedStyle(title).color === getComputedStyle(otherTitle).color && getComputedStyle(choice.querySelector('.path-choice__art--pale')).opacity === '0' && getComputedStyle(choice.querySelector('.path-choice__art--saturated')).opacity === '1'; })()`), "selecting a path must only reveal its saturated artwork without a green border or title treatment");
-  await captureScreenshot("account-path-selected.png");
-  await evaluate("document.querySelector('[data-onboarding-step=\"2\"] [data-step-next]').click()");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"3\"]:not([hidden])'))", "the required email question");
-  assert(await evaluate("document.querySelector('input[name=email]').required && !document.querySelector('[data-skip-field=email]')"), "email must be required by the current account decision");
-  await captureScreenshot("account-email-required.png");
-  await evaluate("document.querySelector('input[name=email]').value='student-new@example.com'; document.querySelector('[data-onboarding-step=\"3\"] [data-step-next]').click()");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"4\"]:not([hidden])'))", "the password question after email");
-  await evaluate("document.querySelector('input[name=password]').value='abc12345'; document.querySelector('[data-onboarding-step=\"4\"] [data-step-next]').click()");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"5\"]:not([hidden])'))", "the optional phone question");
-  assert(await evaluate("!document.querySelector('input[name=phone]').required && document.querySelector('[data-onboarding-step=\"5\"]').textContent.includes('اختيارية') && document.querySelector('[data-skip-field=phone]').textContent.includes('ليس لدي رقم هاتف')"), "phone number must offer an explicit no-phone option");
-  await captureScreenshot("account-phone-optional.png");
-  await evaluate("document.querySelector('[data-skip-field=phone]').click()");
-  await waitFor("location.search === '?page=learn' && !document.querySelector('.topbar-auth-member').hidden", "free-account return to the existing Learn page");
-  assert(await evaluate("!document.querySelector('[data-verification-form]') && !document.body.textContent.includes('رمز تحقق')"), "account creation must have no verification-code step");
-  assert(await evaluate("document.querySelector('[data-learner-dashboard]')?.textContent.includes('student-new') && !document.querySelector('.dashboard-resume') && document.querySelectorAll('.dashboard-stat').length === 2 && document.querySelectorAll('[data-subject-progress]:not([hidden])').length === 1 && document.querySelectorAll('[data-subject-progress].is-empty:not([hidden])').length === 1 && document.querySelectorAll('.subject-card--locked:disabled').length === 7 && document.querySelector('.subject-card[data-subject=ict] [data-subject-action]').textContent === 'ابدأ الدرس 1'"), "a new learner must see the focused dashboard with seven locked subjects and a direct ICT lesson action");
-  await evaluate("document.querySelector('[data-subject=ict]').click()");
-  await waitFor("location.search === '?subject=ict' && Boolean(document.querySelector('.subject-roadmap'))", "the ICT roadmap from the signed-in material card");
-  assert(await evaluate("!document.querySelector('.markdown-authored-content') && document.querySelectorAll('.roadmap-lesson').length === 5"), "clicking the ICT material must show its map instead of opening a lesson directly");
-  await evaluate("document.querySelector('.roadmap-lesson').click()");
-  await waitFor("!document.querySelector('[data-roadmap-bubble]').hidden", "the first lesson information bubble for the signed-in learner");
+  await evaluate("document.querySelector('[data-review-part=access-basics]').click()");
+  await waitFor("document.querySelector('.markdown-rendered h1')?.textContent === 'ما الذي يديره برنامج قواعد البيانات؟'", "targeted explanation for the missed question");
+  await evaluate("document.querySelector('.lesson-back').click()");
+  await waitFor("Boolean(document.querySelector('[data-review-part=access-basics]'))", "interrupted review remains active");
+  await evaluate("document.querySelector('[data-review-part=access-basics]').click()");
+  await waitFor("Boolean(document.querySelector('[data-live-authored-step]'))", "reopened review explanation");
+  await evaluate("document.querySelector('[data-template-primary]').click()");
+  await waitFor("Boolean(document.querySelector('[data-ui-lab-answer=update]'))", "review follow-up question");
+  await evaluate("document.querySelector('[data-ui-lab-answer=update]').click(); document.querySelector('[data-template-primary]').click(); document.querySelector('[data-template-primary]').click()");
+  await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "return after targeted review");
+  assert(await evaluate("document.querySelector('[data-unit=unit-1] [data-review-count]').textContent === '0' && document.querySelector('[data-unit=unit-1] progress').value === 1"), "successful targeted review clears the review item and preserves completion");
+  await evaluate("document.querySelector('[data-roadmap-part=access-basics]').click()");
+  assert(await evaluate("document.querySelector('[data-bubble-start]').textContent === 'راجع الجزء'"), "completed parts must offer review");
   await evaluate("document.querySelector('[data-bubble-start]').click()");
-  await waitFor("document.querySelector('.markdown-authored-content .markdown-rendered h1')?.textContent === 'إدارة قواعد البيانات'", "the lesson selected from the ICT roadmap");
-  const signedInLessonCenter = await evaluate(`(() => { const content=document.querySelector('.markdown-authored-content').getBoundingClientRect(); const rtlScrollbarWidth=innerWidth-document.documentElement.clientWidth; return { contentCenter:content.left + content.width / 2, usableViewportCenter:(innerWidth + rtlScrollbarWidth) / 2, pageMarginRight:getComputedStyle(document.querySelector('main.page')).marginRight }; })()`);
-  assert(Math.abs(signedInLessonCenter.contentCenter - signedInLessonCenter.usableViewportCenter) <= 6 && signedInLessonCenter.pageMarginRight === "0px", `the signed-in ICT lesson must be centered in the usable viewport (${JSON.stringify(signedInLessonCenter)})`);
-  assert(await evaluate("getComputedStyle(document.querySelector('.dashboard-side-rail')).display === 'none'"), "opening a subject must hide the left dashboard rail");
-  assert(await evaluate("document.querySelector('.lesson-top-title').getAttribute('aria-valuemax') === '24' && !document.querySelector('.lesson-label')?.textContent.includes('DAY 1')"), "the personalized Start lesson action must open the subject lesson without a day-based identity");
+  await waitFor("Boolean(document.querySelector('[data-live-authored-step]'))", "review of a completed part");
   await evaluate("document.querySelector('.lesson-back').click()");
-  await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "the ICT roadmap after closing its lesson");
-  await evaluate("document.querySelector('.lesson-back').click()");
-  await waitFor("location.search === '?page=learn' && !document.querySelector('.lesson-view').classList.contains('is-visible')", "the Learn page after leaving the ICT roadmap");
-  await evaluate("document.querySelector('[data-auth-sign-out]').click(); document.querySelector('[data-auth-flow=sign-in]').click()");
-  await waitFor("Boolean(document.querySelector('[data-sign-in-form]'))", "the simplified sign-in form");
-  assert(await evaluate("[...document.querySelectorAll('[data-sign-in-form] input')].every((input) => input.offsetWidth > 400)"), "sign-in fields must fill the native account card");
-  await captureScreenshot("account-sign-in.png");
-  await evaluate(`(() => { const form=document.querySelector('[data-sign-in-form]'); form.elements.identifier.value='student-new'; form.elements.password.value='abc12345'; form.requestSubmit(); })()`);
-  await waitFor("location.search === '?page=learn' && document.querySelector('[data-account-label]').textContent.includes('مجاني')", "restored free-account Learn page");
-  assert(await evaluate("document.querySelector('[data-learner-dashboard]')?.textContent.includes('student-new') && document.querySelectorAll('.dashboard-stat').length === 2"), "a returning learner must restore the account created through the backend");
-  const dashboardShell = await evaluate(`(() => {
-    const navigation=document.querySelector('.topbar-wrap').getBoundingClientRect();
-    const dashboard=document.querySelector('[data-learner-dashboard]').getBoundingClientRect();
-    const railElement=document.querySelector('.dashboard-side-rail');
-    const rail=railElement.getBoundingClientRect();
-    const railStyle=getComputedStyle(railElement);
-    return {navigationLeft:navigation.left,navigationRight:navigation.right,navigationTop:navigation.top,navigationBottom:navigation.bottom,dashboardLeft:dashboard.left,dashboardRight:dashboard.right,railLeft:rail.left,railRight:rail.right,railPosition:railStyle.position,railOverflow:railStyle.overflowY,questCount:document.querySelectorAll('.dashboard-quest').length};
-  })()`);
-  assert(dashboardShell.navigationLeft > dashboardShell.dashboardRight && dashboardShell.navigationTop === 0 && dashboardShell.navigationBottom === 900, `signed-in navigation must occupy the right rail instead of the top (${JSON.stringify(dashboardShell)})`);
-  assert(dashboardShell.railRight < dashboardShell.dashboardLeft && dashboardShell.questCount === 3, `challenges and quests must occupy the left rail (${JSON.stringify(dashboardShell)})`);
-  assert(dashboardShell.railPosition === "sticky" && dashboardShell.railOverflow === "auto", `the left dashboard rail must stay visible and own its vertical scrolling (${JSON.stringify(dashboardShell)})`);
-  await evaluate("window.scrollTo({ top:document.documentElement.scrollHeight, behavior:'auto' })");
-  await delay(100);
-  const scrolledRailTop = await evaluate("Math.round(document.querySelector('.dashboard-side-rail').getBoundingClientRect().top)");
-  assert(scrolledRailTop === 32, `the left dashboard rail must remain fixed while the subject list scrolls (top ${scrolledRailTop})`);
-  await evaluate("window.scrollTo({ top:0, behavior:'auto' })");
-  await captureScreenshot("learner-dashboard.png");
-  await navigate(`${appUrl}?page=learn`);
-  await waitFor("!document.querySelector('.topbar-auth-member').hidden && document.querySelector('[data-learner-dashboard]')?.textContent.includes('student-new')", "hard-refresh session restoration");
-  await evaluate("document.querySelector('[data-auth-sign-out]').click()");
-  await waitFor("!document.querySelector('.topbar-auth-guest').hidden", "backend sign out");
-  await evaluate("document.querySelector('[data-auth-flow=register]').click()");
-  await waitFor("Boolean(document.querySelector('[data-register-form]'))", "registration duplicate check");
-  await evaluate("document.querySelector('[data-onboarding-step=\"intro\"] [data-step-next]').click()");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"0\"]:not([hidden]) input[name=username]'))", "the duplicate-check name question");
-  await waitFor("Boolean(document.querySelector('[data-onboarding-step=\"0\"] img'))", "the duplicate-check name transition");
-  await evaluate("document.querySelector('input[name=username]').value='student-new'; document.querySelector('[data-onboarding-step=\"0\"] [data-step-next]').click()");
-  await waitFor("document.querySelector('[data-field-error=username]')?.textContent.includes('مستخدم بالفعل')", "the immediate duplicate username error");
-  assert(await evaluate("Boolean(document.querySelector('[data-onboarding-step=\"0\"]:not([hidden])'))"), "a duplicate username must be reported before leaving the username step");
-  await navigate(`${appUrl}?page=learn`);
+  await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "map after revisiting a completed part");
+  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value === 1"), "reviewing a part must preserve its completion");
+  await verifyAccountJourney({ appUrl, navigate, evaluate, waitFor, assert, cdp, sessionId, captureScreenshot, delay,
+    completeRoadmap() {
+      if (failures.length || browserErrors.length || failedLocalRequests.length) throw new Error([...failures, ...browserErrors, ...failedLocalRequests].join("\n"));
+      throw new RoadmapSmokeComplete();
+    },
+  });
 
   await navigate(`${appUrl}?page=learn&prototype=1`);
   await waitFor("document.body.dataset.prototypeScenario === 'visitor-new'", "the opt-in development-only prototype scenario tools");
@@ -498,13 +467,12 @@ try {
   const mobileEntry = await evaluate(`(() => ({
     overflow:document.documentElement.scrollWidth > document.documentElement.clientWidth,
     columns:getComputedStyle(document.querySelector('.visitor-landing')).gridTemplateColumns.split(' ').length,
-    illustrationContained:(() => { const box=document.querySelector('.visitor-illustration-placeholder').getBoundingClientRect(); return box.left >= 0 && box.right <= innerWidth; })(),
+    illustrationContained:(() => { const box=document.querySelector('.visitor-landing__illustration').getBoundingClientRect(); return box.left >= 0 && box.right <= innerWidth; })(),
     legacyVisible:getComputedStyle(document.querySelector('.topbar-wrap')).display !== 'none',
   }))()`);
   assert(!mobileEntry.overflow && mobileEntry.columns === 1 && mobileEntry.illustrationContained, "mobile visitor entry must fit one clean column without horizontal overflow");
   assert(!mobileEntry.legacyVisible, "mobile entry must hide the Learn-page chrome until selection is complete");
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:1280, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
-  simulateStaticDocument = true;
   await navigate(`${appUrl}?page=more&static=1`);
   await waitFor("document.querySelectorAll('.subject-card').length === 8", "the raw-static More page");
   const staticReference = await evaluate(`(() => ({
@@ -512,44 +480,13 @@ try {
     prototypeTools:document.querySelectorAll('.prototype-tools').length,
     resources:performance.getEntriesByType('resource').map(({ name }) => name),
   }))()`);
-  assert(staticReference.tabs === 3, "raw-static More must expose all three empty tool tabs");
+  assert(staticReference.tabs === 5, "raw-static More must expose the five developer tools");
   assert(staticReference.prototypeTools === 0, "raw-static output must not expose development prototype tools");
   assert(!staticReference.resources.some((url) => url.includes("/src/styles/design-system") || url.includes("/src/ui/design-system-view.js")), "raw-static output must not load Design System resources");
-  simulateStaticDocument = false;
 
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:1280, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
-  await navigate(`${appUrl}?page=more`);
-  await waitFor("document.querySelector('.more-tabs:not([hidden]) [data-more-tab=\"design-system\"]')", "tool tabs in More");
-  assert(await evaluate(`(() => {
-    const tabs = [...document.querySelectorAll('[data-more-tab]')];
-    const panels = [...document.querySelectorAll('.more-tab-panel')];
-    return tabs.map((tab) => tab.textContent.trim()).join('|') === 'UI LAB|SHIP READY|DESIGN SYSTEM'
-      && panels.length === 3
-      && panels.every((panel) => !panel.textContent.trim() && panel.children.length === 0)
-      && location.search === '?page=more';
-  })()`), "More must start with English tabs and empty lazy panels");
-  await evaluate("document.querySelector('[data-more-tab=\"ui-lab\"]').click()");
-  assert(await evaluate("!document.querySelector('#ui-lab-panel').textContent.trim() && document.querySelector('#ui-lab-panel').children.length === 0"), "UI Lab must remain empty");
+  await verifyDeveloperWorkspace({ appUrl, navigate, evaluate, waitFor, assert, cdp, sessionId, captureScreenshot });
   await verifyShipReadyTemplates({ assert, captureScreenshot, cdp, delay, evaluate, sessionId, waitFor });
-  await evaluate("document.querySelector('[data-more-tab=\"design-system\"]').click()");
-  await waitFor("document.querySelector('.ds-hero')", "restored Design System gallery");
-  const restoredDesignSystem = await evaluate(`(() => ({
-    route:location.search,
-    title:document.querySelector('.ds-hero h1')?.textContent,
-    sections:document.querySelectorAll('.ds-section').length,
-    hasCodeLab:Boolean(document.querySelector('[data-code-lab]')),
-    resources:performance.getEntriesByType('resource').map(({ name }) => name),
-  }))()`);
-  assert(restoredDesignSystem.route === "?view=design-system", "opening the More entry must use the canonical Design System route");
-  assert(restoredDesignSystem.title === "Full-Stack Quest Design System" && restoredDesignSystem.sections >= 6, "the expandable Design System must render its complete reference sections");
-  assert(restoredDesignSystem.hasCodeLab, "the restored Design System must retain its interactive code lab");
-  assert(restoredDesignSystem.resources.some((url) => url.includes("/src/styles/design-system.css")), "the restored Design System must load its modular stylesheet");
-  assert(await evaluate("document.querySelectorAll('[data-markdown-feature]').length >= 10"), "the restored Design System must retain its Markdown-style lesson reference");
-  assert(await evaluate("Boolean(document.querySelector('.ds-section-toggle[aria-expanded]'))"), "the restored Design System must retain expandable sections");
-  await evaluate("document.querySelector('.lesson-back').click()");
-  await waitFor("location.search === '?page=more'", "return from Design System to More");
-  await waitFor("document.activeElement === document.querySelector('[data-more-tab=\"design-system\"]')", "Design System tab focus restoration");
-  assert(await evaluate("document.activeElement === document.querySelector('[data-more-tab=\"design-system\"]')"), "closing the Design System must restore focus to its More tab");
 
   assert(browserErrors.length === 0, `browser reported errors: ${browserErrors.join(" | ")}`);
   assert(failedLocalRequests.length === 0, `browser requests failed: ${failedLocalRequests.join(" | ")}`);
@@ -565,7 +502,10 @@ try {
 
   await cdp.send("Browser.close");
 } catch (error) {
-  if (error instanceof ScreenshotCaptureComplete) console.log(`Captured focused screenshot: ${error.filename}`);
+  if (error instanceof DeveloperSmokeComplete) console.log("Developer workspace browser checks passed.");
+  else if (error instanceof MotionSmokeComplete) console.log("Focused motion browser checks passed: rapid tabs, reduced motion, subject entry, lesson entry and steps.");
+  else if (error instanceof RoadmapSmokeComplete) console.log("Focused roadmap browser checks passed: part completion, saved unit progress, learner isolation, guest gates, unpublished content, narrow RTL layout, and keyboard focus.");
+  else if (error instanceof ScreenshotCaptureComplete) console.log(`Captured focused screenshot: ${error.filename}`);
   else throw error;
 } finally {
   await terminateProcess(chromeProcess);

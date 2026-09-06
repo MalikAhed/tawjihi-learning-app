@@ -15,7 +15,7 @@ the current running app, not the quality of the story.
 | 7 | `US-ORIENTATION-001` Understand the learning experience | Provisional | `orientation` | Missing |
 | 8 | `US-HOME-001` Use personalized Home | Direct product revision | `home` | Signed-in learners receive a dedicated dashboard with their name, level, rank, access state, and private analytics above the existing subject grid; guests and banned accounts receive no personal dashboard |
 | 9 | `US-SUBJECT-001` See subject availability and progress | Provisional | `subjects` | Foundation only; eight cards use one inaccurate state |
-| 10 | `US-ROADMAP-001` Navigate the ICT curriculum roadmap | Provisional | `ict-roadmap` | Missing; ICT is a placeholder |
+| 10 | `US-ROADMAP-001` Navigate the ICT curriculum roadmap | Provisional | `ict-roadmap` | Winding unit/lesson/part map and locally saved unit part-progress implemented; see `ICT_TEXTBOOK_PARTS.md`. Broader access and mastery states remain pending. |
 | 11 | `US-LESSON-001` Start and move through a lesson | Provisional | `lesson` | Foundation only; inactive legacy renderer |
 | 12 | `US-LESSON-CONTENT-001` Learn from practical teaching | Provisional | `lesson` | Foundation only; no ICT content |
 | 13 | `US-INLINE-001` Complete an understanding check | Provisional | `lesson` | Foundation only; inactive question patterns |
@@ -24,7 +24,7 @@ the current running app, not the quality of the story.
 | 16 | `US-QUIZ-002` Understand and retry an exit quiz | Provisional | `quiz-result` | Missing |
 | 17 | `US-TEST-001` Complete a unit test | Provisional | `unit-test` | Missing |
 | 18 | `US-TEST-002` Understand and retry a unit test | Provisional | `test-result` | Missing |
-| 19 | `US-PROGRESS-001` Distinguish completion and progress | Provisional | `home`, `ict-roadmap` | Home fixture reports required lessons completed out of applicable required lessons; backend authority and roadmap synchronization remain missing |
+| 19 | `US-PROGRESS-001` Distinguish completion and progress | Provisional | `home`, `ict-roadmap` | Unit cards show locally saved completed parts out of mapped parts, with resume/review and learner isolation. This is separate from the Home fixture and broader assessed lesson/unit completion; backend synchronization remains missing |
 | 20 | `US-MASTERY-001` Understand mastery evidence | Provisional | `home`, result routes | Home fixture shows a separate Arabic evidence state based on submitted-assessment semantics; assessment wiring remains missing |
 | 21 | `US-REVIEW-001` Choose review now or later | Provisional | `quiz-result`, `test-result` | Missing |
 | 22 | `US-REVIEW-002` Use the Must Review collection | Provisional | `must-review` | Home fixture exposes the private active-item count only; the collection and targeted navigation remain missing |
@@ -73,3 +73,15 @@ the current running app, not the quality of the story.
 
 For each implementation slice, extend this table with its concrete scenario IDs and automated test
 references. UI presence alone never changes a story to complete.
+
+### Unit review card prototype (2026-09-05)
+
+Added a warm amber “بحاجة للمراجعة” card below each ICT unit header with an honest empty state, part count, source lesson, and actionable review rows. Repeated MCQ/true-false mistakes (two incorrect checks for the same authored step) create one local active item; parts group their active steps. The two-attempt threshold is a reversible prototype interpretation of persistent inline misunderstanding, not an approved mastery rule. Guest evidence uses session storage and member evidence uses the existing per-learner local storage adapter. Completion remains independent. Review opens the preceding authored explanation and the specific question; a correct review answer clears that item, interruption preserves it, and later repeated mistakes can re-add it. Existing published explanation/question content is reused: this does not claim completion of the separately authored targeted practice/follow-up, cross-assessment concept mapping, history UI, or review XP stories.
+
+Traceability: approved EPIC-REVIEW-001; detailed US-REVIEW-002/003 remain NEEDS REVIEW. Validation covers repeated errors, deduplication, reload, learner isolation, interruption, correction, completion preservation, and narrow RTL layout.
+
+### Completion celebration and test preview (2026-09-05)
+
+Malik requested a test pass button, happy Rocky/piñata celebration, XP, daily streak, and overall progress gains. ICT part endings now reuse the happy-jump SVG and existing particle celebration, with a still Rocky under reduced motion. A development pass button (localhost, or explicit `?testLesson=1`) previews the ending without persisting completion or rewards, and is labelled accordingly. Regular completion records 10 prototype XP once per part and the local completion date; distinct activity dates determine the subject streak. Totals and progress shown here are ICT subject totals, with progress based on the 28 mapped parts. Old completed parts are not retroactively granted rewards. Per-part XP and streak reflect this new user-requested prototype direction and supersede the earlier no-part-reward presentation; they are not a claim that the older US-XP-001 award schedule or separate Home totals were migrated. Repeat completion adds no XP or progress. Preview exit and normal Continue return to the map.
+
+Validation: one-time rewards, reload and learner isolation, same-day/next-day/missed-day streaks, read-only test preview, loaded Rocky asset, narrow ending layout, and reduced motion. No lesson source was changed.

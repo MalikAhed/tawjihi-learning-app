@@ -3,12 +3,17 @@ import { escapeHtml } from "../lib/dom.js";
 const STYLE_ID = "prototype-tools-styles";
 
 function ensureStyles(documentObject) {
-  if (documentObject.getElementById(STYLE_ID)) return;
-  const link = documentObject.createElement("link");
-  link.id = STYLE_ID;
-  link.rel = "stylesheet";
-  link.href = "src/styles/prototype-tools.css";
-  documentObject.head.append(link);
+  const existing = documentObject.getElementById(STYLE_ID);
+  if (existing?.sheet) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const link = existing || documentObject.createElement("link");
+    link.id = STYLE_ID;
+    link.rel = "stylesheet";
+    link.href = "src/styles/prototype-tools.css";
+    link.addEventListener("load", resolve, { once:true });
+    link.addEventListener("error", () => { link.remove(); reject(new Error("Prototype styles could not load.")); }, { once:true });
+    if (!existing) documentObject.head.append(link);
+  });
 }
 
 function renderOptions(scenarios, activeId) {
@@ -28,9 +33,9 @@ function renderState(snapshot) {
   return items.map(([label, value]) => `<span><b>${escapeHtml(label)}</b>${escapeHtml(value)}</span>`).join("");
 }
 
-export function mountPrototypeScenarioSwitcher({ service, documentObject = document }) {
+export async function mountPrototypeScenarioSwitcher({ service, documentObject = document }) {
   if (!service || service.kind !== "fixture") throw new TypeError("A fixture product service is required");
-  ensureStyles(documentObject);
+  await ensureStyles(documentObject);
   const controller = new AbortController();
   const { signal } = controller;
   const active = service.getScenario();

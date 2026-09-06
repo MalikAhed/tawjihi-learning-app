@@ -1,3 +1,5 @@
+import { trapTabKey } from "./dialog.js";
+import { animateView } from "./view-motion.js";
 import { applyWeekTheme } from "../app/week-theme.js";
 import { COURSE_WEEKS } from "../data/course.js";
 import { escapeHtml } from "../lib/dom.js";
@@ -11,22 +13,22 @@ const STORAGE_KEY = "full-stack-quest:markdown-lab-draft-v3";
 const WEEK_OPTIONS = COURSE_WEEKS.map((week, index) => {
   const number = index + 1;
   const label = week.cardLabel.replace(/^Start Week \d+:\s*/, "");
-  return `<option value="${number}">WEEK ${number} · ${label.toUpperCase()}</option>`;
+  return `<option value="${number}">الأسبوع ${number}</option>`;
 }).join("");
 
 export const SAMPLE_LESSON_MARKDOWN = [
-  "# HTTP Requests",
+  "# طلبات HTTP",
   "",
-  "When a browser requests a page, it sends an **HTTP request** to a server. An [[term: HTTP | The protocol browsers and servers use to exchange requests and responses.]] request includes a method and a path.",
+  "عندما يطلب المتصفح صفحة، يرسل **طلب HTTP** إلى الخادم. يتضمن طلب [[term: HTTP | البروتوكول الذي تستخدمه المتصفحات والخوادم لتبادل الطلبات والاستجابات.]] طريقة الطلب والمسار.",
   "",
-  ":::tip Keep the shell locked",
-  "Lesson authors provide content. The application owns progress, navigation, spacing, and feedback UI.",
+  ":::tip استخدم القالب المشترك",
+  "يكتب المؤلف المحتوى، ويتولّى التطبيق عرض التقدّم والتنقل والتباعد ورسائل النتيجة.",
   ":::",
   "",
-  "| Request part | Example |",
+  "| جزء الطلب | مثال |",
   "| --- | --- |",
-  "| Method | `GET` |",
-  "| Path | `/api/users/42` |",
+  "| الطريقة | `GET` |",
+  "| المسار | `/api/users/42` |",
   "",
   "```javascript title=load-user.js highlight=2",
   "const response = await fetch(\"/api/users/42\");",
@@ -36,52 +38,52 @@ export const SAMPLE_LESSON_MARKDOWN = [
   "https://www.youtube.com/watch?v=AlkDbnbv7dk",
   "",
   ":::mcq",
-  "title: HTTP responses",
-  "question: Which status code means Not Found?",
+  "title: استجابات HTTP",
+  "question: ما رمز الحالة الذي يعني أن المورد غير موجود؟",
   "",
   "- [ ] ok | `200 OK`",
   "- [ ] unauthorized | `401 Unauthorized`",
   "- [x] not-found | `404 Not Found`",
   "- [ ] server-error | `500 Internal Server Error`",
   "",
-  "explanation: `404 Not Found` means the requested resource could not be found.",
-  "hint: Look for the client-error status used when a resource is missing.",
+  "explanation: يعني الرمز `404 Not Found` أن المورد المطلوب غير موجود.",
+  "hint: ابحث عن رمز الخطأ المستخدم عند غياب المورد المطلوب.",
   ":::",
   "",
   ":::response",
-  "title: Explain it in your own words",
-  "question: Explain the difference between an HTTP request and an HTTP response, then give one example.",
+  "title: اشرح بأسلوبك",
+  "question: اشرح الفرق بين طلب HTTP واستجابته، ثم أعط مثالًا واحدًا.",
   "rubric:",
-  "- What the client sends",
-  "- What the server returns",
-  "- One real example",
-  "field-label: Your explanation",
-  "placeholder: A request is what the client sends to a server...",
+  "- ما يرسله العميل",
+  "- ما يعيده الخادم",
+  "- مثال واقعي واحد",
+  "field-label: إجابتك",
+  "placeholder: الطلب هو ما يرسله العميل إلى الخادم…",
   "max-length: 420",
-  "guide: Start with what the client sends. Then explain what the server returns and include one real example.",
+  "guide: ابدأ بما يرسله العميل، ثم وضّح ما يعيده الخادم، وأضف مثالًا واقعيًا واحدًا.",
   ":::",
   "",
-  "## From click to pixels",
+  "## من النقرة إلى الصفحة",
   "",
-  "The renderer can place explanatory Markdown and interactive steps in one authored document.",
+  "يمكن جمع الشرح والخطوات التفاعلية في مستند واحد.",
   "",
   ":::sequence",
-  "title: Put the request flow in order",
-  "question: What happens after someone clicks a link?",
-  "mascot: Follow the request one handoff at a time.",
+  "title: رتّب مراحل الطلب",
+  "question: ماذا يحدث بعد النقر على رابط؟",
+  "mascot: تتبّع الطلب خطوة بخطوة.",
   "",
-  "- [3] response | The server sends a response",
-  "- [1] click | Someone clicks a link",
-  "- [4] render | The browser renders the page",
-  "- [2] request | The browser sends a request",
+  "- [3] response | يرسل الخادم استجابة",
+  "- [1] click | ينقر المستخدم على رابط",
+  "- [4] render | يعرض المتصفح الصفحة",
+  "- [2] request | يرسل المتصفح طلبًا",
   "",
-  "explanation: A click becomes a request, then a response, then a rendered page.",
-  "hint: Start with the user action and finish with the browser.",
+  "explanation: تبدأ الرحلة بنقرة، ثم طلب، ثم استجابة، ثم عرض الصفحة.",
+  "hint: ابدأ بإجراء المستخدم وانتهِ بعرض المتصفح للصفحة.",
   ":::",
   "",
   ":::fill-blanks",
-  "title: Complete the fetch request",
-  "question: Fill both blanks using the reusable code-question component.",
+  "title: أكمل طلب جلب البيانات",
+  "question: اختر القيمة المناسبة لكل فراغ في الشيفرة.",
   "code:",
   "```javascript",
   "const response = await fetch([[endpoint]], { method: [[method]] });",
@@ -94,18 +96,18 @@ export const SAMPLE_LESSON_MARKDOWN = [
   "- `\"/api/users\"`",
   "- `\"GET\"`",
   "- `\"/api/posts\"`",
-  "explanation: The browser sends a GET request to `/api/users`.",
-  "hint: The endpoint is the first argument and the method belongs in the options object.",
+  "explanation: يرسل المتصفح طلب `GET` إلى `/api/users`.",
+  "hint: المسار هو الوسيط الأول، وتُحدّد طريقة الطلب داخل كائن الخيارات.",
   ":::",
   "",
   ":::code-question",
-  "title: Build an explorer card",
+  "title: أنشئ بطاقة مستكشف",
   "instructions:",
-  "Update the reusable starter files. The preview changes as you type, and the application checks the result without lesson-authored UI code.",
+  "عدّل ملفات البداية. تتغيّر المعاينة أثناء الكتابة، ويتحقّق التطبيق من النتيجة.",
   "requirements:",
-  "- Keep the explorer name inside an `<h1>` element.",
-  "- Change the name to `Mira the Explorer` with that exact capitalization.",
-  "- Add a card background with `background` or `background-color`.",
+  "- ضع اسم المستكشف داخل عنصر `<h1>`.",
+  "- غيّر الاسم إلى `Mira the Explorer` مع الحفاظ على حالة الأحرف.",
+  "- أضف خلفية للبطاقة باستخدام `background` أو `background-color`.",
   "html:",
   "```html",
   "<article class=\"explorer-card\">",
@@ -144,38 +146,38 @@ export function renderMarkdownLab(container) {
   const { signal } = controller;
   const backButton = document.querySelector(".lesson-back");
   const lessonStatus = document.querySelector(".lesson-status");
-  const previousBackText = backButton?.textContent;
+  const previousBackMarkup = backButton?.innerHTML;
   const previousBackLabel = backButton?.getAttribute("aria-label");
   const previousStatusHtml = lessonStatus?.innerHTML;
   const previousStatusHidden = lessonStatus?.hidden;
 
   document.body.classList.add("ui-lab-open", "ui-lab-markdown-open");
   backButton.textContent = "×";
-  backButton.setAttribute("aria-label", "Close Markdown Lab");
+  backButton.setAttribute("aria-label", "إغلاق محرّر المحتوى");
   lessonStatus.hidden = true;
   container.innerHTML = `
-    <section class="markdown-lab" aria-label="Lesson authoring workspace">
+    <section class="markdown-lab" aria-label="مساحة كتابة الدرس">
       <div class="markdown-settings-layer" data-markdown-settings-layer hidden>
-        <section class="markdown-settings-panel" id="markdown-settings-panel" role="dialog" aria-modal="true" aria-labelledby="markdown-settings-title">
-          <header><div><p>UI LAB · LESSON CONTENT SYSTEM</p><h1 id="markdown-settings-title">Content in. Reusable UI out.</h1><span>Write Markdown and structured question directives. The lesson shell and component layout stay application-owned.</span></div><button type="button" data-markdown-settings-close aria-label="Close settings">×</button></header>
+        <section class="markdown-settings-panel" id="markdown-settings-panel" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="markdown-settings-title">
+          <header><div><p>كتابة المحتوى · قوالب الدروس</p><h1 id="markdown-settings-title">اكتب المحتوى، ودع القالب ينظّم الواجهة.</h1><span>اكتب المحتوى بصيغة Markdown وأضف الأسئلة. يتولّى التطبيق تنظيم القالب والتنقل والتفاعلات.</span></div><button type="button" data-markdown-settings-close aria-label="إغلاق الإعدادات">×</button></header>
           <div class="markdown-lab-actions">
-            <label class="markdown-theme-picker"><span>COLOR THEME</span><select data-markdown-week aria-label="Preview week color theme">${WEEK_OPTIONS}</select></label>
-            <button type="button" data-markdown-sample>LOAD COMPLETE SAMPLE</button><button type="button" data-markdown-clear>CLEAR</button>
+            <label class="markdown-theme-picker"><span>لون المعاينة</span><select data-markdown-week aria-label="لون معاينة الدرس">${WEEK_OPTIONS}</select></label>
+            <button type="button" data-markdown-sample>تحميل المثال الكامل</button><button type="button" data-markdown-clear>مسح</button>
           </div>
-          <div class="markdown-settings-features" aria-label="Supported lesson authoring features"><span>MARKDOWN</span><span>CALLOUTS</span><span>TECH TERMS</span><span>IMAGES</span><span>YOUTUBE</span><span>MCQ</span><span>TRUE / FALSE</span><span>EXPLAIN IT</span><span>ORDERING</span><span>FILL BLANKS</span><span>SPOT BUG</span><span>CODE EDITOR</span><span>SANITIZED OUTPUT</span></div>
+          <div class="markdown-settings-features" aria-label="مكوّنات كتابة الدروس"><span>MARKDOWN</span><span>تنبيهات</span><span>مصطلحات</span><span>صور</span><span>YOUTUBE</span><span>اختيار من متعدد</span><span>صح أو خطأ</span><span>إجابة كتابية</span><span>ترتيب</span><span>فراغات</span><span>اكتشاف الخطأ</span><span>محرّر الشيفرة</span><span>معاينة آمنة</span></div>
         </section>
       </div>
-      <div class="markdown-lab-tabs" role="tablist" aria-label="Markdown workspace view">
-        <button id="markdown-editor-tab" type="button" role="tab" aria-selected="true" aria-controls="markdown-editor-pane" data-markdown-pane="editor">WRITE</button>
-        <button id="markdown-preview-tab" type="button" role="tab" aria-selected="false" aria-controls="markdown-preview-pane" data-markdown-pane="preview" tabindex="-1">PREVIEW</button>
+      <div class="markdown-lab-tabs" role="tablist" aria-label="عرض مساحة الكتابة">
+        <button id="markdown-editor-tab" type="button" role="tab" aria-selected="true" aria-controls="markdown-editor-pane" data-markdown-pane="editor">الكتابة</button>
+        <button id="markdown-preview-tab" type="button" role="tab" aria-selected="false" aria-controls="markdown-preview-pane" data-markdown-pane="preview" tabindex="-1">المعاينة</button>
       </div>
       <div class="markdown-lab-workspace" data-active-pane="editor">
         <section class="markdown-lab-pane markdown-lab-editor" id="markdown-editor-pane" role="tabpanel" aria-labelledby="markdown-editor-tab markdown-editor-label">
-          <header><strong id="markdown-editor-label">LESSON MARKDOWN</strong><div class="markdown-editor-meta"><span data-markdown-count>0 CHARACTERS</span><button type="button" data-markdown-settings aria-controls="markdown-settings-panel" aria-expanded="false">SETTINGS</button></div></header>
-          <textarea data-markdown-input aria-label="Lesson Markdown source" spellcheck="true" placeholder="# Lesson title\n\nWrite content, then add :::mcq and other supported directives."></textarea>
+          <header><strong id="markdown-editor-label">محتوى الدرس</strong><div class="markdown-editor-meta"><span data-markdown-count>٠ حرف</span><button type="button" data-markdown-settings aria-controls="markdown-settings-panel" aria-expanded="false">الإعدادات</button></div></header>
+          <textarea data-markdown-input aria-label="مصدر محتوى الدرس" spellcheck="true" placeholder="# عنوان الدرس\n\nاكتب المحتوى، ثم أضف :::mcq وغيرها من أنواع الأسئلة."></textarea>
         </section>
         <section class="markdown-lab-pane markdown-lab-preview" id="markdown-preview-pane" role="tabpanel" aria-labelledby="markdown-preview-tab markdown-preview-label">
-          <header><strong id="markdown-preview-label">RENDERED</strong><div class="markdown-preview-modes" role="group" aria-label="Preview format"><button type="button" class="is-active" data-preview-mode="lesson">LESSON</button><button type="button" data-preview-mode="document">DOCUMENT</button><button type="button" data-full-preview aria-pressed="false">FULL PAGE</button></div><span class="markdown-render-status" data-render-status role="status" aria-live="polite"><i></i>READY</span></header>
+          <header><strong id="markdown-preview-label">النتيجة</strong><div class="markdown-preview-modes" role="group" aria-label="شكل المعاينة"><button type="button" class="is-active" data-preview-mode="lesson">الدرس</button><button type="button" data-preview-mode="document">المستند</button><button type="button" data-full-preview aria-pressed="false">صفحة كاملة</button></div><span class="markdown-render-status" data-render-status role="status" aria-live="polite"><i></i>جاهز</span></header>
           <div class="markdown-preview-scroll"><div data-markdown-output></div></div>
         </section>
       </div>
@@ -201,7 +203,10 @@ export function renderMarkdownLab(container) {
     const toggle = container.querySelector("[data-markdown-settings]");
     layer.hidden = !open;
     toggle.setAttribute("aria-expanded", String(open));
-    if (open) container.querySelector("[data-markdown-settings-close]").focus();
+    if (open) {
+      animateView(layer.querySelector("[role=dialog]"));
+      container.querySelector("[data-markdown-settings-close]").focus();
+    }
     else toggle.focus({ preventScroll:true });
   };
 
@@ -211,7 +216,7 @@ export function renderMarkdownLab(container) {
     toolbarButton.textContent = fullPreview ? "EXIT FULL PAGE" : "FULL PAGE";
     container.querySelectorAll("[data-rendered-fullscreen]").forEach((button) => {
       button.textContent = fullPreview ? "×" : "⛶";
-      button.setAttribute("aria-label", fullPreview ? "Exit full-page lesson preview" : "Open full-page lesson preview");
+      button.setAttribute("aria-label", fullPreview ? "إغلاق المعاينة الكاملة" : "فتح المعاينة الكاملة");
       button.setAttribute("aria-pressed", String(fullPreview));
     });
   };
@@ -243,7 +248,7 @@ export function renderMarkdownLab(container) {
     const progressValue = complete ? parsed.steps.length : activeStep + 1;
     const progressPercent = (progressValue / parsed.steps.length) * 100;
     output.className = "markdown-lesson-preview";
-    output.innerHTML = `${issueMarkup}<div class="markdown-rendered-shell"><header class="markdown-rendered-top"><div class="markdown-rendered-progress" role="progressbar" aria-label="Authored lesson preview progress" aria-valuemin="0" aria-valuemax="${parsed.steps.length}" aria-valuenow="${progressValue}"><i style="--rendered-progress:${progressPercent}%"></i></div><button type="button" data-rendered-fullscreen aria-pressed="${fullPreview}" aria-label="${fullPreview ? "Exit" : "Open"} full-page lesson preview">${fullPreview ? "×" : "⛶"}</button></header><div data-authored-step></div></div>`;
+    output.innerHTML = `${issueMarkup}<div class="markdown-rendered-shell"><header class="markdown-rendered-top"><div class="markdown-rendered-progress" role="progressbar" aria-label="تقدّم معاينة الدرس" aria-valuemin="0" aria-valuemax="${parsed.steps.length}" aria-valuenow="${progressValue}"><i style="--rendered-progress:${progressPercent}%"></i></div><button type="button" data-rendered-fullscreen aria-pressed="${fullPreview}" aria-label="${fullPreview ? "إغلاق" : "فتح"} معاينة الدرس بصفحة كاملة">${fullPreview ? "×" : "⛶"}</button></header><div data-authored-step></div></div>`;
     output.querySelector("[data-rendered-fullscreen]").addEventListener("click", () => setFullPreview(!fullPreview), { signal });
     const host = output.querySelector("[data-authored-step]");
     const goBack = () => { if (activeStep > 0) { activeStep -= 1; render(); } };
@@ -252,8 +257,8 @@ export function renderMarkdownLab(container) {
       host.innerHTML = renderTemplateShell({
         titleId:"authored-preview-complete",
         showScrollIndicator:false,
-        content:'<div class="level-lesson-copy ready-lesson-result"><p class="level-layout-kicker">LESSON PREVIEW COMPLETE</p><h1 id="authored-preview-complete">Every step used the shared renderer</h1><p>Return to the source to keep authoring, or restart the interactive preview.</p></div>',
-        footer:renderTemplateFooter({ backAttributes:{ disabled:false }, primaryLabel:"RESTART PREVIEW" }),
+        content:'<div class="level-lesson-copy ready-lesson-result"><p class="level-layout-kicker">اكتملت المعاينة</p><h1 id="authored-preview-complete">اكتملت جميع خطوات الدرس</h1><p>عُد إلى المصدر لمتابعة الكتابة، أو أعد تشغيل المعاينة.</p></div>',
+        footer:renderTemplateFooter({ locale:"ar", backAttributes:{ disabled:false }, primaryLabel:"إعادة المعاينة" }),
       });
       host.querySelector("[data-template-back]").addEventListener("click", goBack, { signal });
       host.querySelector("[data-template-primary]").addEventListener("click", () => { activeStep = 0; render(); }, { signal });
@@ -263,7 +268,7 @@ export function renderMarkdownLab(container) {
       let disposed = false;
       let destroyCodeQuestion = () => {};
       host.classList.add("lesson-card--design-system", "lesson-card--ui-lab");
-      host.innerHTML = '<div class="markdown-empty"><strong>Loading the code editor…</strong></div>';
+      host.innerHTML = '<div class="markdown-empty"><strong>جارٍ تحميل محرّر الشيفرة…</strong></div>';
       destroyStep = () => {
         disposed = true;
         destroyCodeQuestion();
@@ -273,7 +278,8 @@ export function renderMarkdownLab(container) {
         if (disposed) return;
         destroyCodeQuestion = renderDesignSystem(host, {
           practiceOnly:true,
-          practice:step.content,
+          practice:{ ...step.content, locale:"ar" },
+          locale:"ar",
           embedded:true,
           onBack:goBack,
           onContinue:goNext,
@@ -282,20 +288,20 @@ export function renderMarkdownLab(container) {
       }).catch((error) => {
         if (disposed) return;
         console.error("The authored code question could not be rendered.", error);
-        host.innerHTML = '<div class="markdown-empty markdown-empty--error" role="alert"><strong>The code editor could not load</strong><p>Refresh and try again.</p></div>';
+        host.innerHTML = '<div class="markdown-empty markdown-empty--error" role="alert"><strong>تعذّر تحميل محرّر الشيفرة</strong><p>حدّث الصفحة وحاول مرة أخرى.</p></div>';
       });
       return;
     }
     if (step.type !== "markdown") {
-      destroyStep = renderUiLab(host, { definition:step, embedded:true, onBack:goBack, onContinue:goNext });
+      destroyStep = renderUiLab(host, { definition:step, locale:"ar", embedded:true, onBack:goBack, onContinue:goNext });
       host.querySelector("[data-template-back]").disabled = activeStep === 0;
       return;
     }
     const titleId = `authored-markdown-title-${activeStep}`;
     host.innerHTML = renderTemplateShell({
       titleId,
-      content:`<article class="level-lesson-copy ready-lesson-copy markdown-authored-content"><p class="level-layout-kicker">LESSON · EXPLANATION</p><h1 class="visually-hidden" id="${titleId}">${escapeHtml(step.title)}</h1><div class="markdown-rendered">${renderMarkdownDocument(step.source)}</div></article>`,
-      footer:renderTemplateFooter({ backAttributes:{ disabled:activeStep === 0 }, primaryLabel:"CONTINUE" }),
+      content:`<article class="level-lesson-copy ready-lesson-copy markdown-authored-content"><p class="level-layout-kicker">درس · شرح</p><h1 class="visually-hidden" id="${titleId}">${escapeHtml(step.title)}</h1><div class="markdown-rendered">${renderMarkdownDocument(step.source)}</div></article>`,
+      footer:renderTemplateFooter({ locale:"ar", backAttributes:{ disabled:activeStep === 0 }, primaryLabel:"متابعة" }),
     });
     mountMarkdownFeatures(host, { signal, scrollSurface:previewScroll });
     host.querySelector("[data-template-back]").addEventListener("click", goBack, { signal });
@@ -307,12 +313,12 @@ export function renderMarkdownLab(container) {
     destroyStep();
     destroyStep = () => {};
     const source = input.value;
-    count.textContent = `${source.length.toLocaleString()} ${source.length === 1 ? "CHARACTER" : "CHARACTERS"}`;
+    count.textContent = `${source.length.toLocaleString()} حرف`;
     saveDraft(source);
     if (!source.trim()) {
       output.className = "";
-      output.innerHTML = `<div class="markdown-empty"><strong>Your lesson preview is ready</strong><p>Write Markdown or load the complete sample.</p></div>`;
-      status.innerHTML = "<i></i>WAITING";
+      output.innerHTML = `<div class="markdown-empty"><strong>مساحة معاينة الدرس جاهزة</strong><p>اكتب المحتوى أو حمّل المثال الكامل.</p></div>`;
+      status.innerHTML = "<i></i>بانتظار المحتوى";
       return;
     }
     try {
@@ -322,12 +328,12 @@ export function renderMarkdownLab(container) {
         output.innerHTML = renderMarkdownDocument(parsed.documentSource);
         mountMarkdownFeatures(output, { signal, scrollSurface:previewScroll });
       } else renderLessonStep(parsed);
-      status.innerHTML = `<i></i>${parsed.steps.length} ${parsed.steps.length === 1 ? "STEP" : "STEPS"}${parsed.issues.length ? ` · ${parsed.issues.length} ISSUES` : ""}`;
+      status.innerHTML = `<i></i>${parsed.steps.length} خطوة${parsed.issues.length ? ` · ${parsed.issues.length} ملاحظات` : ""}`;
     } catch (error) {
       console.error("Lesson Markdown could not be rendered.", error);
       output.className = "";
-      output.innerHTML = `<div class="markdown-empty markdown-empty--error" role="alert"><strong>This lesson could not render</strong><p>Check the authoring syntax and try again.</p></div>`;
-      status.innerHTML = "<i></i>ERROR";
+      output.innerHTML = `<div class="markdown-empty markdown-empty--error" role="alert"><strong>تعذّر عرض هذا الدرس</strong><p>راجع صيغة المحتوى وحاول مرة أخرى.</p></div>`;
+      status.innerHTML = "<i></i>خطأ";
     }
   };
   const scheduleRender = () => { window.cancelAnimationFrame(renderFrame); renderFrame = window.requestAnimationFrame(render); };
@@ -341,6 +347,7 @@ export function renderMarkdownLab(container) {
   container.querySelector("[data-markdown-settings-close]").addEventListener("click", () => setSettingsOpen(false), { signal });
   container.querySelector("[data-markdown-settings-layer]").addEventListener("click", (event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }, { signal });
   container.addEventListener("keydown", (event) => {
+    if (!container.querySelector("[data-markdown-settings-layer]").hidden && trapTabKey(event, container.querySelector("#markdown-settings-panel"))) return;
     if (event.key === "Escape" && !container.querySelector("[data-markdown-settings-layer]").hidden) { event.preventDefault(); setSettingsOpen(false); }
     else if (event.key === "Escape" && fullPreview) { event.preventDefault(); setFullPreview(false); }
   }, { signal });
@@ -371,7 +378,7 @@ export function renderMarkdownLab(container) {
     destroyStep();
     controller.abort();
     document.body.classList.remove("markdown-full-preview-open", "ui-lab-markdown-open", "ui-lab-open");
-    backButton.textContent = previousBackText;
+    backButton.innerHTML = previousBackMarkup;
     if (previousBackLabel === null) backButton.removeAttribute("aria-label"); else backButton.setAttribute("aria-label", previousBackLabel);
     lessonStatus.innerHTML = previousStatusHtml;
     lessonStatus.hidden = previousStatusHidden;

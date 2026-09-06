@@ -1,3 +1,4 @@
+import { localizeShipReady } from "../data/ship-ready-ar.js";
 import { getShipReadyTemplate } from "../data/ship-ready.js";
 import { hasJsonContentType, sendJson } from "./http.mjs";
 
@@ -34,7 +35,8 @@ export function createExplanationReviewApi({
       const body = await readJsonBody(request);
       const route = typeof body.route === "string" ? body.route : "";
       const answer = typeof body.answer === "string" ? body.answer.trim() : "";
-      const definition = getTemplate(route);
+      const originalDefinition = getTemplate(route);
+      const definition = body.locale === "ar" ? localizeShipReady(originalDefinition) : originalDefinition;
       const content = definition?.type === "response" ? definition.content
         : route === "lesson-authoring-preview" ? readAuthoredReview(body.authoredReview) : null;
       if (!content) {

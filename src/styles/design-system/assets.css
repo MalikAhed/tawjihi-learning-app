@@ -1,5 +1,5 @@
 /* Asset index and semantic asset-use contract. */
-.lesson-shell--design-system,.lesson-card--design-system,.ds-panel,.ds-palette { min-width:0; }
+.ds-panel,.ds-palette { min-width:0; }
 .ds-asset-sample { display:block; width:100%; max-height:220px; object-fit:cover; object-position:center; margin:12px 0 16px; border-radius:12px; }
 .ds-asset-sample--icon { width:96px; height:96px; object-fit:contain; margin:12px 0 16px; }
 .ds-asset-card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
