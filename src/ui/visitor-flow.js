@@ -1,4 +1,5 @@
 import { bindVisitorMascots } from "./visitor-mascot.js";
+import { warmLearningExperience } from "../app/background-loading.js";
 import { revealWhenReady, preloadImages } from "./media-ready.js";
 import {
   ACCOUNT_FIELD_ORDER,
@@ -137,7 +138,13 @@ export function createVisitorFlow({
       password: 5,
       phone: 6,
     };
-    const readData = () => Object.fromEntries(new FormData(form));
+    const readData = () => {
+      const data = Object.fromEntries(new FormData(form));
+      const localPhone = String(data.phone || "").trim().replace(/^0/, "");
+      data.phone = localPhone ? `${data.phonePrefix || ""}${localPhone}` : "";
+      delete data.phonePrefix;
+      return data;
+    };
     const validateStep = (index, data = readData()) => {
       if (index === 0) return true;
       const name = ACCOUNT_FIELD_ORDER[index - 1];
@@ -273,6 +280,15 @@ export function createVisitorFlow({
         { signal: signal },
       ),
     );
+    const phonePrefix = form.elements.phonePrefix;
+    const updatePhoneExample = () => {
+      const option = phonePrefix?.selectedOptions?.[0];
+      const example = option?.dataset.phonePlaceholder || "";
+      form.elements.phone.placeholder = example;
+      form.querySelector("[data-phone-example]").textContent = example;
+      setFieldError(form, "phone");
+    };
+    phonePrefix?.addEventListener("change", updatePhoneExample, { signal });
     form.querySelector("[data-guest-start]")?.addEventListener(
       "click",
       () => {
@@ -456,7 +472,10 @@ export function createVisitorFlow({
     container.hidden = false;
     documentObject.body.classList.add("product-flow-active");
     if (flow === "entry") container.innerHTML = entryMarkup();
-    else if (flow === "register") renderRegister();
+    else if (flow === "register") {
+      renderRegister();
+      warmLearningExperience();
+    }
     else renderSignIn();
     bindCommon();
     documentObject.title = TITLES[flow];

@@ -13,7 +13,7 @@ test("header streak freeze follows learner switches, then unsubscribes", t => {
   const progressStore = { subscribe:callback => { subscribers.add(callback); return () => subscribers.delete(callback); } };
   const streakFreeze = { hidden:true };
   const guest = { hidden:false };
-  const member = { hidden:true, closest:() => ({ querySelector:() => streakFreeze }) };
+  const member = { hidden:true, ownerDocument:{ querySelector:selector => { assert.equal(selector, "[data-learner-streak-freeze]"); return streakFreeze; } } };
   const label = { textContent:"", lang:"" };
   const header = createAuthHeader({ guest, member, label, service, progressStore,
     flowButtons:[], signOutButton:{ addEventListener() {} }, courseContainer:{ querySelectorAll:() => [] }, onFlow() {} });

@@ -1,23 +1,21 @@
-import { renderReviewSummary, renderUnitReviewPanel, mountUnitReviewTabs } from "./subject-review.js";
+import { renderUnitReviewPanel, mountUnitReview } from "./subject-review.js";
+import { animateView } from "./view-motion.js";
 import { escapeHtml } from "../lib/dom.js";
-import { getUnitPartProgress } from "../domain/subject-progress.js";
 import { getSubjectPartAccess } from "../domain/subject-access.js";
 import { getShellViewportBounds } from "./app-shell.js";
-import { formatArabicCount, isProgressLabelCovered } from "./learner-format.js";
 
 const lock = '<svg class="roadmap-lock" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 14v-4a6 6 0 0 1 12 0v4" fill="none" stroke="currentColor" stroke-width="4"/><rect x="6" y="13" width="20" height="16" rx="4" fill="currentColor" stroke="none"/></svg>';
 
 const check = '<svg class="roadmap-complete-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4.5 4.5L19 7"/></svg>';
 
-function lessonGroup(unit, lesson, { getPartProgress, getAccess }) {
+function lessonGroup(unit, lesson, { getPartProgress, getAccess, currentPart }) {
   const parts = lesson.parts || [];
-  const completed = parts.filter((part) => part.startStepId && getPartProgress?.(lesson, part)?.completed).length;
-  const available = parts.some((part) => part.startStepId);
   const stops = parts.map((part, index) => {
     const available = Boolean(part.startStepId);
     const progress = available ? getPartProgress?.(lesson, part) : null;
     const state = progress?.completed ? "completed" : progress?.completedStepIds?.length ? "in-progress" : "not-started";
     const access = getAccess(lesson, part);
+    const current = part === currentPart && ["available", "in-progress"].includes(access.state);
     const pathLocked = access.state === "previous-required";
     const locked = access.state === "account-required";
     const status = { unpublished:"قيد الإعداد", "account-required":"يتطلب حسابًا", "previous-required":"أكمل الجزء السابق", completed:"مكتمل", "in-progress":"تابع التعلّم", available:"متاح للبدء" }[access.state];
@@ -26,27 +24,24 @@ function lessonGroup(unit, lesson, { getPartProgress, getAccess }) {
     const to = positions[(index + 1) % 4];
     const connector = index < parts.length - 1 ? `<svg class="roadmap-connector" viewBox="0 0 400 28" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M ${from} 6 C ${from} 14 ${to} 14 ${to} 22"/></svg>` : "";
     const number = part.number ?? index + 1;
-    return `<li class="roadmap-stop" data-part-state="${state}"><div class="roadmap-node"><button class="roadmap-part" type="button" data-roadmap-unit="${escapeHtml(unit.id)}" data-roadmap-lesson="${escapeHtml(lesson.id)}" data-roadmap-part="${escapeHtml(part.id)}" data-unit-label="${escapeHtml(lesson.label)}" data-lesson-label="${escapeHtml(part.label)}" data-part-pages="${escapeHtml(part.pages)}" data-part-state="${state}" data-part-available="${available}" data-path-locked="${pathLocked}" data-access-state="${access.state}"${locked ? ' data-account-locked="true"' : ""} aria-controls="roadmap-part-brief" aria-expanded="false" aria-label="${escapeHtml(part.label)}${status ? `، ${status}` : ""}"><span class="roadmap-part-number" aria-hidden="true">${state === "completed" ? check : pathLocked || locked || !available ? lock : escapeHtml(String(number))}</span></button><span class="roadmap-part-copy"><strong>${escapeHtml(part.label)}</strong></span>${status || locked ? `<span class="roadmap-part-status">${locked ? '<span aria-hidden="true">🔒</span> ' : ""}${status}</span>` : ""}</div>${connector}</li>`;
+    return `<li class="roadmap-stop" data-part-state="${state}"><div class="roadmap-node">${current ? `<span class="roadmap-start-hint" aria-hidden="true">${state === "in-progress" ? "تابع" : "ابدأ"}</span>` : ""}<button class="roadmap-part" type="button" data-roadmap-unit="${escapeHtml(unit.id)}" data-roadmap-lesson="${escapeHtml(lesson.id)}" data-roadmap-part="${escapeHtml(part.id)}" data-unit-label="${escapeHtml(lesson.label)}" data-lesson-label="${escapeHtml(part.label)}" data-part-pages="${escapeHtml(part.pages)}" data-part-state="${state}" data-part-available="${available}" data-path-locked="${pathLocked}" data-access-state="${access.state}"${locked ? ' data-account-locked="true"' : ""} ${current ? 'aria-current="step" ' : ""}aria-controls="roadmap-part-brief" aria-expanded="false" aria-label="${escapeHtml(part.label)}${status ? `، ${status}` : ""}"><span class="roadmap-part-number" aria-hidden="true">${state === "completed" ? check : pathLocked || locked || !available ? lock : escapeHtml(String(number))}</span></button><span class="roadmap-part-copy"><strong>${escapeHtml(part.label)}</strong></span></div>${connector}</li>`;
   }).join("");
-  return `<section class="roadmap-lesson-group"><header class="roadmap-lesson-divider"><div class="roadmap-lesson-heading"><h3>${escapeHtml(lesson.label)}${lesson.recommended ? '<span class="roadmap-recommended">موصى به</span>' : ""}</h3><span>${formatArabicCount(parts.length, "part")}${available ? ` · ${completed} مكتمل` : " · قيد الإعداد"}</span></div></header><ol class="roadmap-parts" aria-label="أجزاء ${escapeHtml(lesson.label)}">${stops}</ol></section>`;
+  return `<section class="roadmap-lesson-group"><header class="roadmap-lesson-divider"><div class="roadmap-lesson-heading"><h3>${escapeHtml(lesson.label)}${lesson.recommended ? '<span class="roadmap-recommended">موصى به</span>' : ""}</h3></div></header><ol class="roadmap-parts" aria-label="أجزاء ${escapeHtml(lesson.label)}">${stops}</ol></section>`;
 }
 
 
 function unitCard(unit, options) {
-  const { completed, total, percent } = getUnitPartProgress(unit, options.getPartProgress);
-  const answered = unit.lessons.reduce((sum, lesson) => sum + (lesson.parts || []).reduce((count, part) => count + (options.getPartReview?.(lesson, part)?.filter(item => item.solved).length || 0), 0), 0);
   const lessons = unit.lessons.map((lesson) => lessonGroup(unit, lesson, options)).join("");
   // Keep the textbook's unit numbering, including gaps, instead of deriving it from array order.
   const separator = unit.label.indexOf(":");
   const unitLabel = separator > 0 ? unit.label.slice(0, separator).trim() : "مسار التعلّم";
   const title = separator > 0 ? unit.label.slice(separator + 1).trim() : unit.label;
-  const icon = unit.lessons.some((lesson) => lesson.id === "database-management")
-    ? "assets/icons/microsoft-access.svg" : "assets/icons/dashboard-lessons.svg";
-  return `<section class="roadmap-unit" data-unit="${escapeHtml(unit.id)}"><header class="roadmap-unit-header"><div class="roadmap-unit-overview"><span class="roadmap-unit-icon" aria-hidden="true"><img src="${icon}" alt="" width="64" height="64" /></span><div class="roadmap-unit-title"><span>${escapeHtml(unitLabel)}</span><h2>${escapeHtml(title)}</h2></div></div><div class="roadmap-unit-panels"><div class="roadmap-unit-progress"><div class="roadmap-unit-progress-label"><span>تقدّمك في الوحدة</span></div><div class="roadmap-unit-progress-bar" data-label-covered="${isProgressLabelCovered(completed, total)}"><strong data-unit-percent><bdi class="ui-number">${percent}%</bdi></strong><progress value="${completed}" max="${total || 1}" aria-label="إنجاز أجزاء ${escapeHtml(unit.label)}" aria-valuetext="${completed} من ${total} جزء مكتمل"></progress></div></div><div class="roadmap-unit-completed"><img src="assets/icons/dashboard-solved-check.svg" alt="" width="56" height="56" /><div><strong class="ui-number">${answered}</strong><span data-unit-progress-count>أسئلة محلولة</span></div></div>${renderReviewSummary(unit, options)}</div></header><div class="roadmap-unit-tabs" role="tablist" aria-label="عرض الوحدة"><button type="button" id="lessons-tab-${escapeHtml(unit.id)}" role="tab" data-unit-tab="lessons" aria-selected="true" aria-controls="lessons-${escapeHtml(unit.id)}">الدروس</button><button type="button" id="review-tab-${escapeHtml(unit.id)}" role="tab" data-unit-tab="review" aria-selected="false" tabindex="-1" aria-controls="review-${escapeHtml(unit.id)}">المراجعة</button></div><div id="lessons-${escapeHtml(unit.id)}" class="roadmap-lessons" role="tabpanel" aria-labelledby="lessons-tab-${escapeHtml(unit.id)}">${lessons}</div>${renderUnitReviewPanel(unit, options)}</section>`;
+  return `<section class="roadmap-unit" data-unit="${escapeHtml(unit.id)}"><header class="roadmap-unit-header"><div class="roadmap-unit-title"><span>${escapeHtml(unitLabel)}</span><h2>${escapeHtml(title)}</h2></div><button type="button" class="roadmap-guide-button" data-unit-guide aria-haspopup="dialog" aria-controls="guide-${escapeHtml(unit.id)}" aria-label="دليل ${escapeHtml(unitLabel)}"><svg class="roadmap-guide-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M8 3h12a1 1 0 0 1 1 1v17H8a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2 6h6M2 11h6M2 16h6M12 7h5M12 12h5M12 17h5"/></svg><span>دليل الوحدة</span></button></header><dialog class="roadmap-guide" id="guide-${escapeHtml(unit.id)}" aria-labelledby="guide-title-${escapeHtml(unit.id)}"><form method="dialog"><button type="submit" class="roadmap-guide-close" aria-label="إغلاق دليل الوحدة">×</button></form><h2 id="guide-title-${escapeHtml(unit.id)}">${escapeHtml(unit.label)}</h2>${unit.lessons.map(lesson => `<section><h3>${escapeHtml(lesson.label)}</h3><p>${escapeHtml(lesson.summary || "")}</p></section>`).join("")}<button type="button" class="roadmap-guide-review" data-unit-review>مراجعة أخطاء الوحدة</button></dialog><div id="lessons-${escapeHtml(unit.id)}" class="roadmap-lessons" role="region" aria-label="دروس ${escapeHtml(unitLabel)}">${lessons}</div>${renderUnitReviewPanel(unit, options)}</section>`;
 }
 
 export function renderSubjectRoadmapMarkup(roadmap, options = {}) {
   options = { ...options, getAccess:(lesson, part) => getSubjectPartAccess(roadmap, { lessonId:lesson.id, partId:part.id, getPartProgress:options.getPartProgress, accountRequired:options.isLessonLocked?.(roadmap.units.find(unit => unit.lessons.includes(lesson)), lesson) }) };
+  options.currentPart = roadmap.units.flatMap(unit => unit.lessons.flatMap(lesson => (lesson.parts || []).map(part => ({ lesson, part })))).find(({ lesson, part }) => ["available", "in-progress"].includes(options.getAccess(lesson, part).state))?.part;
   return `<section class="subject-roadmap" data-subject="${escapeHtml(roadmap.subjectId)}" aria-label="وحدات المادة"><div class="roadmap-unit-grid">${roadmap.units.map((unit) => unitCard(unit, options)).join("")}</div><aside id="roadmap-part-brief" class="roadmap-lesson-bubble" data-roadmap-bubble role="region" aria-labelledby="roadmap-bubble-title" hidden><button class="roadmap-bubble-close" type="button" data-bubble-close aria-label="إغلاق تفاصيل الجزء">×</button><div class="roadmap-bubble-copy"><p data-bubble-unit></p><h4 id="roadmap-bubble-title" data-bubble-lesson></h4><p class="roadmap-book-tag" data-bubble-summary><svg class="roadmap-book-icon" viewBox="0 0 48 48" aria-hidden="true"><path fill="#D98B00" d="M5 12c7-3 13-2 19 2 6-4 12-5 19-2v26c0 2-2 3-4 2-5-2-10-1-15 2-5-3-10-4-15-2-2 1-4 0-4-2Z"/><path fill="#FFBE18" d="M4 9c7-3 14-2 20 2 6-4 13-5 20-2v26c0 2-2 3-4 2-6-2-11-1-16 2-5-3-10-4-16-2-2 1-4 0-4-2Z"/><path fill="#FFF8DC" d="M8 8c6-1 11 0 16 3v23c-5-3-10-4-16-3Z"/><path fill="#FFF" d="M40 8c-6-1-11 0-16 3v23c5-3 10-4 16-3Z"/><path d="M24 12v21" stroke="#F3D581" stroke-width="2.5"/><path d="m12 16 7 2m-7 5 7 2m10-7 7-2m-7 9 7-2" stroke="#EBC969" stroke-width="3"/><path fill="#1CB0F6" d="M32 7h5v12l-2.5-2-2.5 2Z"/></svg><span data-bubble-summary-text></span></p><div class="roadmap-account-gate" data-roadmap-account-gate hidden><strong>أنشئ حسابًا لمتابعة بقية الدروس</strong><span>سنحفظ تقدّمك لتتابع الدروس المنشورة المتاحة لحسابك.</span></div></div><div class="roadmap-bubble-actions"><button class="system-action system-action--primary system-action--compact roadmap-bubble-start" type="button" data-bubble-start>ابدأ الجزء</button><button class="system-action system-action--secondary system-action--compact roadmap-bubble-sign-in" type="button" data-bubble-sign-in hidden>لدي حساب بالفعل</button></div></aside></section>`;
 }
 
@@ -74,7 +69,12 @@ export function mountSubjectRoadmap({ container, roadmap, onStartLesson, isLesso
   const controller = new AbortController();
   const { signal } = controller;
   container.innerHTML = renderSubjectRoadmapMarkup(roadmap, { isLessonLocked, getPartProgress, getPartReview });
-  const openReview = mountUnitReviewTabs(container, { signal, onChange:onReviewTabChange });
+  container.querySelectorAll("[data-unit-guide]").forEach(button => {
+    const guide = container.querySelector(`#${button.getAttribute("aria-controls")}`);
+    button.addEventListener("click", () => { guide.showModal(); animateView(guide); }, { signal });
+    signal.addEventListener("abort", () => guide.close(), { once:true });
+  });
+  const openReview = mountUnitReview(container, { signal, onChange:onReviewTabChange });
   if (initialReviewUnit) openReview(initialReviewUnit);
   const accessFor = (lessonId, partId) => {
     const unit = roadmap.units.find(unit => unit.lessons.some(lesson => lesson.id === lessonId));
@@ -126,8 +126,7 @@ export function mountSubjectRoadmap({ container, roadmap, onStartLesson, isLesso
   const openPart = ({ lessonId, partId }) => {
     const button = buttons.find(button => button.dataset.roadmapLesson === lessonId && button.dataset.roadmapPart === partId);
     if (!button) return false;
-    const lessonTab = button.closest("[data-unit]").querySelector('[data-unit-tab="lessons"]');
-    lessonTab.click();
+    button.closest("[data-unit]").querySelector("[data-review-back]").click();
     closeBubble({ restoreFocus:false });
     button.scrollIntoView({ block:"center", behavior:"instant" });
     button.click();

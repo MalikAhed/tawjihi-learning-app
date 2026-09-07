@@ -54,7 +54,9 @@ test("ICT follows the units and lessons listed in the textbook contents", () => 
   assert.equal((markup.match(/class="roadmap-connector"/g) || []).length, 23);
   assert.doesNotMatch(markup, /roadmap-lesson-preview|هذه شاشة درس تجريبية|العودة إلى الخريطة/);
   assert.doesNotMatch(markup, /خريطة المادة|تكنولوجيا المعلومات|3 وحدات|محتوى تجريبي/);
-  assert.equal((markup.match(/<progress value="0"/g) || []).length, 3);
+  assert.doesNotMatch(markup, /roadmap-unit-panels|data-unit-percent|data-unit-progress-count/);
+  assert.doesNotMatch(markup, /class="roadmap-part-status"| · \d+ مكتمل|class="roadmap-lesson-heading">[\s\S]*?<\/h3><span>/);
+  assert.equal((markup.match(/data-unit-guide /g) || []).length, 3);
 });
 
 test("subjects without a roadmap remain in their existing status view", () => {
@@ -119,15 +121,13 @@ test("official lessons contain named, individually selectable parts with honest 
 });
 
 
-test("unit cards count completed parts once and keep access separate from progress", () => {
+test("unit banners omit statistics and keep access separate from progress", () => {
   const markup = renderSubjectRoadmapMarkup(getSubjectRoadmap("ict"), {
     getPartProgress:(_lesson, part) => ({ completed:part.id === "getting-started", completedStepIds:[] }),
     isLessonLocked:() => true,
   });
-  assert.match(markup, /<progress value="1" max="14"/);
-  assert.match(markup, /1 من 14 جزء مكتمل/);
-  assert.match(markup, /<bdi class="ui-number">7%<\/bdi>/);
-  assert.equal((markup.match(/<progress value="0"/g) || []).length, 2);
+  assert.doesNotMatch(markup, /<progress|data-unit-percent|data-unit-progress-count/);
+  assert.match(markup, /data-unit-guide aria-haspopup="dialog"/);
   assert.match(markup, /data-part-state="completed"/);
   assert.match(markup, /data-account-locked="true"/);
 });
@@ -148,19 +148,19 @@ test("the next part unlocks after completion and answered questions are counted 
   assert.ok(buttons[0].includes('data-part-state="completed"'));
   assert.ok(buttons[1].includes('data-path-locked="false"'));
   assert.ok(buttons[2].includes('data-path-locked="true"'));
-  assert.match(updated, /<strong class="ui-number">2<\/strong><span data-unit-progress-count>أسئلة محلولة/);
+  assert.doesNotMatch(updated, /data-unit-progress-count/);
 });
 
 test("review cards show honest empty states and deduplicate questions into parts", () => {
   const roadmap = getSubjectRoadmap("ict");
   const empty = renderSubjectRoadmapMarkup(roadmap);
-  assert.equal((empty.match(/data-review-count>0/g) || []).length, 3);
+  assert.equal((empty.match(/لا توجد أسئلة تحتاج مراجعة الآن/g) || []).length, 3);
   assert.ok(!empty.includes("data-review-part="));
   const active = renderSubjectRoadmapMarkup(roadmap, { getPartReview:(_lesson, part) => part.id === "access-basics" ? [{ stepId:"question-1", misses:2, active:true }, { stepId:"question-2", misses:3, active:true }] : [] });
   assert.equal((active.match(/data-review-part=/g) || []).length, 1);
-  assert.ok(active.includes('data-review-count>1'));
+  assert.match(active, /2 سؤال بحاجة للتدريب/);
   assert.ok(active.includes('data-review-step="question-2"'));
-  assert.match(active, /role="tabpanel" aria-labelledby="review-tab-unit-1" tabindex="0" hidden/);
+  assert.match(active, /class="roadmap-review-panel" role="region" aria-label="[^"]+" tabindex="0" hidden/);
   assert.doesNotMatch(active.match(/class="roadmap-unit-panels"[\s\S]*?<\/header>/)?.[0] || "", /data-review-part/);
   const unpublished = renderSubjectRoadmapMarkup(roadmap, {
     isLessonLocked:() => true,
@@ -188,4 +188,24 @@ test("popup placement stays inside measured header, navigation, and rail bounds"
     assert.ok(placed.left >= bounds.left && placed.left + size.width <= bounds.right);
     assert.ok(placed.top >= bounds.top && placed.top + size.height <= bounds.bottom);
   }
+});
+
+test("the start hint begins at level zero, advances, and respects access", () => {
+  const roadmap = getSubjectRoadmap("ict");
+  const parts = roadmap.units[0].lessons.find(lesson => lesson.id === "database-management").parts;
+  const currentButton = markup => markup.match(/<button class="roadmap-part"[^>]*aria-current="step"[^>]*>/g) || [];
+  const initial = renderSubjectRoadmapMarkup(roadmap);
+  assert.equal(currentButton(initial).length, 1);
+  assert.ok(currentButton(initial)[0].includes('data-roadmap-part="getting-started"'));
+  assert.doesNotMatch(initial, /data-unit-tab|role="tablist"/);
+  const afterIntro = renderSubjectRoadmapMarkup(roadmap, { getPartProgress:(_lesson, part) => ({ completed:part.id === "getting-started" }) });
+  assert.ok(currentButton(afterIntro)[0].includes(`data-roadmap-part="${parts[0].id}"`));
+  const continued = renderSubjectRoadmapMarkup(roadmap, {
+    getPartProgress:(_lesson, part) => part.id === "getting-started" || part === parts[0] ? { completed:true } : part === parts[1] ? { completedStepIds:["started"] } : null,
+  });
+  assert.equal(currentButton(continued).length, 1);
+  assert.ok(currentButton(continued)[0].includes(`data-roadmap-part="${parts[1].id}"`));
+  assert.match(continued, /class="roadmap-start-hint" aria-hidden="true">تابع/);
+  assert.equal(currentButton(renderSubjectRoadmapMarkup(roadmap, { isLessonLocked:() => true })).length, 0);
+  assert.equal(currentButton(renderSubjectRoadmapMarkup(roadmap, { getPartProgress:() => ({ completed:true }) })).length, 0);
 });

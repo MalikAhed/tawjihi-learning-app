@@ -11,7 +11,7 @@ const supportedPaths = new Set(SUPPORTED_PATHS);
 
 const USERNAME_PATTERN = /^[\p{L}\p{N}_.-]{3,30}$/u;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_PATTERN = /^[+\d][\d\s()-]{7,20}$/;
+const PHONE_PATTERN = /^(?:\+97259\d{7}|\+97056\d{7}|\+201[0125]\d{8})$/;
 const PASSWORD_PATTERN = /^(?=.*[A-Za-z\u0600-\u06ff])(?=.*\d).{8,128}$/;
 
 export const DUPLICATE_ACCOUNT_FIELD_LABELS = Object.freeze({
@@ -64,8 +64,9 @@ export function validateAccountField(name, value) {
   }
   if (name === "password") return PASSWORD_PATTERN.test(stringValue) ? "" : "استخدم 8 أحرف على الأقل، بينها حرف ورقم.";
   if (name === "phone") {
-    const phone = stringValue.trim();
-    return !phone || PHONE_PATTERN.test(phone) ? "" : "اكتب رقم هاتف صالحًا أو اتركه فارغًا.";
+    const phone = normalizePhone(stringValue);
+    if (!phone) return "أدخل رقم هاتف للمتابعة.";
+    return PHONE_PATTERN.test(phone) ? "" : "أدخل رقمًا صحيحًا للشبكة المختارة.";
   }
   return "تعذّر التحقق من هذه البيانات.";
 }

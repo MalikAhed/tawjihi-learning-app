@@ -11,6 +11,7 @@
     "test:ui-fixes": "node scripts/browser-home-layout.mjs && node scripts/browser-question-layout.mjs && node scripts/browser-routes.mjs",
     "test:render": "node scripts/browser-render-sequence.mjs",
     "test:assets": "node scripts/browser-assets.mjs",
+    "test:splash": "node scripts/browser-splash.mjs",
     "audit:manageability": "node scripts/audit-manageability.mjs",
     "build": "node scripts/validate-app.mjs",
     "ci": "npm run release",

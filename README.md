@@ -2,6 +2,8 @@
 
 Arabic-first learning and exam preparation for Palestinian Tawjihi students. The current product focus is the Gaza Scientific curriculum, beginning with ICT.
 
+[Open the live preview](https://malikahed.github.io/tawjihi-learning-app/)
+
 ## Current status
 
 The app is under active development. It currently includes Arabic RTL entry and account flows, a subject dashboard, an ICT roadmap, and the first interactive ICT lesson. It is not yet ready for a public launch.

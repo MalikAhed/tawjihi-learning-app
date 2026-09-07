@@ -125,7 +125,7 @@ export function createSubjectLearningController({
       behavior: restoreMap || prefersReducedMotion() ? "auto" : "smooth",
     });
     if (restoreMap) {
-      const selected = reviewUnitId ? elements.lessonContent.querySelector('[data-unit-tab="review"][aria-selected="true"]') : [
+      const selected = reviewUnitId ? elements.lessonContent.querySelector('.roadmap-review-panel:not([hidden])') : [
         ...elements.lessonContent.querySelectorAll("[data-roadmap-part]"),
       ].find((button) => button.dataset.roadmapPart === selectedPartId);
       (selected || elements.lessonContent).focus({ preventScroll: true });

@@ -27,7 +27,7 @@ await withBrowserPage(async ({base,send,evaluate,waitFor}) => {
     await evaluate('mountReview(true)');
     assert.equal(await evaluate("document.querySelector('.roadmap-unit-header').getBoundingClientRect().height"),before,'summary does not grow with review count');
     assert.equal(await evaluate("document.querySelector('.roadmap-review-panel').hidden"),true);
-    await evaluate("document.querySelector('[data-unit-tab=review]').click()");
+    await evaluate("document.querySelector('[data-unit-guide]').click();document.querySelector('[data-unit-review]').click()");
     assert.equal(await evaluate("document.querySelector('.roadmap-lessons').hidden"),true);
     assert.equal(await evaluate("document.documentElement.scrollWidth<=innerWidth"),true);
     assert.equal(await evaluate("document.querySelector('.roadmap-review-panel').hidden"),false);
@@ -36,11 +36,11 @@ await withBrowserPage(async ({base,send,evaluate,waitFor}) => {
   }
   await evaluate("mountReview(false,'unit-1');document.querySelector('[data-review-part=access-basics]').click()");
   assert.equal(await evaluate('reviewSelection.reviewStepId'),'question-high');
-  await evaluate("document.querySelector('[data-unit-tab=review]').focus()");
-  await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Home',code:'Home',windowsVirtualKeyCode:36});
-  assert.equal(await evaluate("document.querySelector('[data-unit-tab=lessons]').getAttribute('aria-selected')"),'true');
+  await evaluate("document.querySelector('[data-review-back]').focus()");
+  await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,text:'\r',unmodifiedText:'\r'});
+  assert.equal(await evaluate("document.querySelector('.roadmap-lessons').hidden"),false);
   await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
-  await evaluate("document.querySelector('[data-unit-tab=review]').click();document.querySelector('[data-unit-tab=lessons]').click();map.destroy();document.querySelector('#review-fixture').innerHTML='<p id=destination>تم</p>'");
+  await evaluate("document.querySelector('[data-unit-guide]').click();document.querySelector('[data-unit-review]').click();document.querySelector('[data-review-back]').click();map.destroy();document.querySelector('#review-fixture').innerHTML='<p id=destination>تم</p>'");
   await waitFor("document.querySelector('#destination')");
   assert.equal(await evaluate("document.querySelectorAll('.roadmap-review-panel').length"),0);
 });

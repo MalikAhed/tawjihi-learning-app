@@ -2,7 +2,7 @@ export function createAuthHeader({ guest, member, label, flowButtons, signOutBut
   if (!guest || !member || !label || !signOutButton || !courseContainer || !service || !onFlow) throw new TypeError("auth header dependencies are required");
   const controller = new AbortController();
   const { signal } = controller;
-  const streakFreeze = member.closest(".topbar")?.querySelector("[data-learner-streak-freeze]");
+  const streakFreeze = member.ownerDocument.querySelector("[data-learner-streak-freeze]");
   const update = () => {
     const type = service.getAccountType();
     const isGuest = type === "guest";

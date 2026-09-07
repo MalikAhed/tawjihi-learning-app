@@ -73,7 +73,7 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor, onEvent }) => {
   assert.match(await evaluate("document.querySelector('[data-roadmap-bubble]').textContent"), /قيد الإعداد|إعداد هذا الجزء/);
   assert.equal(await evaluate("document.querySelector('[data-bubble-start]').disabled"), true);
 
-  const alphaAccount = (await api("register", { username:"route-alpha", email:"route-alpha@example.com", password:"Learn12345", curriculum:"gaza", path:"scientific" })).account;
+  const alphaAccount = (await api("register", { username:"route-alpha", email:"route-alpha@example.com", phone:"+972598000001", password:"Learn12345", curriculum:"gaza", path:"scientific" })).account;
   await visit(partQuery);
   await waitFor(`${step} === 'database-management-mission'`);
   await advanceToQuestion();
@@ -81,7 +81,7 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor, onEvent }) => {
   // Await an actual server-confirmed saved step before switching identities.
   await waitFor("document.querySelector('.progress-feedback')?.hidden === true");
   await api("sign-out");
-  await api("register", { username:"route-beta", email:"route-beta@example.com", password:"Learn12345", curriculum:"gaza", path:"scientific" });
+  await api("register", { username:"route-beta", email:"route-beta@example.com", phone:"+972598000002", password:"Learn12345", curriculum:"gaza", path:"scientific" });
   await visit(partQuery);
   await waitFor(`${step} === 'database-management-mission'`);
   await api("sign-out");

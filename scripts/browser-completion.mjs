@@ -41,7 +41,7 @@ export async function verifyCompletionPreview({ evaluate, waitFor, assert, cdp, 
   await checkFit("quests");
   await evaluate("document.querySelector('[data-authored-restart]').click()");
   await waitFor("document.querySelector('.subject-roadmap')","exit explicit completion preview");
-  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value===0 && completionPreviewWrites===0"),"explicit preview leaves learner completion unchanged");
+  assert(await evaluate("document.querySelectorAll('[data-unit=unit-1] .roadmap-part[data-part-state=completed]').length===0 && completionPreviewWrites===0"),"explicit preview leaves learner completion unchanged");
   await cdp.send("Emulation.setEmulatedMedia",{features:[{name:"prefers-reduced-motion",value:"no-preference"}]},sessionId);
   await cdp.send("Emulation.setDeviceMetricsOverride",{width:1440,height:900,deviceScaleFactor:1,mobile:false},sessionId);
 }

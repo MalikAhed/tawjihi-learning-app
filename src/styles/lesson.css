@@ -1,9 +1,24 @@
-.coming-soon { display:none; min-height:calc(100vh - var(--header-height) - 84px); place-items:center; text-align:center; }
+.coming-soon { display:none; min-height:0; place-items:center; text-align:center; }
 .coming-soon.is-visible { display:grid; }
 .coming-soon-card { width:min(100%,680px); padding:32px 32px 36px; border:1px solid #e2e8ee; border-radius:28px; background:#fff; box-shadow:0 12px 40px rgba(35,55,75,.05); }
+/* Single-message destinations occupy the viewport without creating a scroll area. */
+body:has(>main.coming-mode>.coming-soon:not(.is-more)) { height:100dvh; padding-bottom:0; overflow:hidden; }
+main.page.coming-mode:has(>.coming-soon:not(.is-more)) { height:100dvh; min-height:0; padding-block:24px; }
+.coming-soon:not(.is-more) { height:100%; min-width:0; }
+.coming-soon:not(.is-more) .coming-soon-card { display:flex; flex-direction:column; justify-content:center; height:min(100%,640px); min-width:0; min-height:0; padding:clamp(12px,3dvh,32px) 24px; }
+.coming-soon:not(.is-more) [data-coming-soon-content]:not([hidden]) { display:flex; flex:1; min-width:0; min-height:0; }
+.coming-soon:not(.is-more) .guest-feature-gate { min-width:0; padding:8px; gap:8px; }
+.coming-soon .guest-feature-gate>span { width:48px; height:48px; }
+.coming-soon .guest-feature-gate>span img { width:40px; height:40px; }
+.coming-soon .guest-feature-gate h1 { margin:0; font-size:20px; line-height:1.4; }
+.coming-soon .guest-feature-gate p { margin:0; font-size:13px; line-height:1.5; }
+body:not(:is([data-account-type="free"],[data-account-type="subscribed"])) main.page.coming-mode:has(>.coming-soon:not(.is-more)) { padding-top:calc(var(--header-height) + 12px); }
+@media (max-width:760px) {
+  body:is([data-account-type="free"],[data-account-type="subscribed"]) main.page.coming-mode:has(>.coming-soon:not(.is-more)) { padding-top:calc(80px + env(safe-area-inset-top,0px)); padding-bottom:calc(108px + env(safe-area-inset-bottom,0px)); }
+}
 .coming-soon.is-more { place-items:start center; }
 .coming-soon.is-more .coming-soon-card { width:min(100%,1000px); padding:24px 0; border:0; border-radius:0; background:transparent; box-shadow:none; }
-.coming-soon-title { margin:18px 0 12px; color:#273746; font:800 clamp(23px,3vw,32px)/1.5 var(--font-ui); }
+.coming-soon-title { margin:8px 0; color:#273746; font:800 clamp(18px,3.8dvh,28px)/1.4 var(--font-ui); }
 .more-tabs { min-height:320px; direction:ltr; }
 .more-tabs[hidden], .more-tab-panel[hidden] { display:none; }
 .more-tab-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding:0; }

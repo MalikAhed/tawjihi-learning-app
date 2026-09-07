@@ -73,7 +73,7 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
   };
   const checkNavigation = async label => {
     const result = await evaluate(`(() => {
-      const buttons=[...document.querySelectorAll('.nav-item'),...document.querySelectorAll(document.body.dataset.accountType==='guest'?'.topbar-auth-guest button':'[data-auth-sign-out]')];
+      const buttons=[...document.querySelectorAll('.nav-item'),...document.querySelectorAll(document.body.dataset.accountType==='guest'?'.topbar-auth-guest button':'[data-auth-sign-out]')].filter(button=>getComputedStyle(button).display!=='none');
       return buttons.map(button=>{const r=button.getBoundingClientRect();const hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);return {name:button.getAttribute('aria-label')||button.textContent.trim(),width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom,hit:hit===button||button.contains(hit),current:button.getAttribute('aria-current'),page:button.dataset.page};});
     })()`);
     for (const button of result) {
@@ -83,6 +83,10 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
     }
     assert.equal(result.find(button => button.page === "learn").current, "page");
     return result;
+  };
+  const checkResponsiveSignOut = async (label,width) => {
+    const display = await evaluate("getComputedStyle(document.querySelector('[data-auth-sign-out]')).display");
+    assert.equal(display === "none", width <= 760, `${label}: sign-out visibility matches the navigation layout`);
   };
   const checkHeaderResources = async label => {
     const result = await evaluate(`(() => {
@@ -117,7 +121,7 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
   assert.equal(await evaluate("document.querySelector('.nav-resources').getBoundingClientRect().height"), 0, "Guest shell has no sample resource balances");
 
   const register = async username => {
-    const result = await evaluate(`fetch('/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:${JSON.stringify(username)},email:${JSON.stringify(username + "@example.test")},password:'Learning123',curriculum:'gaza',path:'scientific'})}).then(async response=>({status:response.status,body:await response.json()}))`);
+    const result = await evaluate(`fetch('/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:${JSON.stringify(username)},email:${JSON.stringify(username + "@example.test")},phone:'+972598000004',password:'Learning123',curriculum:'gaza',path:'scientific'})}).then(async response=>({status:response.status,body:await response.json()}))`);
     assert.equal(result.status, 201, JSON.stringify(result));
     await navigate(base + "?page=learn");
     await homeReady();
@@ -135,6 +139,7 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
     await checkSubjectGrid(`member ${width}`);
     const navigation = await checkNavigation(`member ${width}`);
     const resources = await checkHeaderResources(`member ${width}`);
+    await checkResponsiveSignOut(`member ${width}`,width);
     assert.equal(card.action, "ابدأ من خريطة الدروس");
     evidence.widths.push({ account:"member", width, card, navigation, resources });
     if (width === 390) {

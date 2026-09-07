@@ -44,7 +44,7 @@ export async function verifyVisitorLifecycle({ evaluate, assert }) {
       flow.show('register', { focus:false });
       await mediaReady();
       const registration = host.querySelector('form');
-      for (const [name, value] of Object.entries({ username:'learner-new', email:'learner@example.com', password:'Learn123' })) registration.elements[name].value = value;
+      for (const [name, value] of Object.entries({ username:'learner-new', email:'learner@example.com', password:'Learn123', phone:'598000099' })) registration.elements[name].value = value;
       registration.querySelector('input[name=curriculum][value=gaza]').checked = true;
       registration.querySelector('input[name=path][value=scientific]').checked = true;
       submit(registration);
@@ -72,7 +72,7 @@ export async function verifyVisitorLifecycle({ evaluate, assert }) {
         flow.show('register', { focus:false });
         await mediaReady();
         const form=host.querySelector('form');
-        for (const [name, value] of Object.entries({ username:'learner-ready', email:'ready@example.com', password:'Learn123' })) form.elements[name].value=value;
+        for (const [name, value] of Object.entries({ username:'learner-ready', email:'ready@example.com', password:'Learn123', phone:'598000099' })) form.elements[name].value=value;
         form.querySelector('input[name=curriculum][value=gaza]').checked=true;
         form.querySelector('input[name=path][value=scientific]').checked=true;
         submit(form);

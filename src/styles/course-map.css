@@ -1,7 +1,7 @@
 /* Every subject uses the same two-part card shown in the approved card reference. */
 .course-units { container:subjects / inline-size; display:block; }
 .subject-map { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; width:100%; padding:0 0 24px; }
-.subject-card { position:relative; min-width:0; min-height:222px; display:grid; grid-template-rows:minmax(154px,1fr) 68px; padding:0; overflow:hidden; border:2px solid color-mix(in srgb,var(--subject-card-color) 24%,white); border-radius:22px; background:var(--subject-card-color); box-shadow:0 4px 0 #d8dee4; color:var(--system-ink); text-align:start; cursor:pointer; transition:filter 160ms ease,transform 160ms ease,box-shadow 160ms ease; }
+.subject-card { --action-edge:#d8dee4; position:relative; min-width:0; min-height:222px; display:grid; grid-template-rows:minmax(154px,1fr) 68px; padding:0; overflow:hidden; border:2px solid color-mix(in srgb,var(--subject-card-color) 24%,white); border-radius:22px; background:var(--subject-card-color); box-shadow:0 4px 0 #d8dee4; color:var(--system-ink); text-align:start; cursor:pointer; transition:filter 160ms ease,transform 160ms ease,box-shadow 160ms ease; }
 .subject-card:not(:disabled):hover { filter:brightness(1.025); transform:translateY(-2px); box-shadow:0 7px 0 #d8dee4; }
 .subject-card:not(:disabled):active { transform:translateY(1px); box-shadow:0 2px 0 #d8dee4; }
 .subject-card:focus-visible { outline:4px solid var(--system-blue-action-ink); outline-offset:4px; }
@@ -27,10 +27,15 @@
 .subject-card[data-subject="english"] { --subject-card-color:#ff5c9f; }
 .subject-card[data-subject="arabic"] { --subject-card-color:#ff9f1a; }
 .subject-card[data-subject="islamic-education"] { --subject-card-color:#0dccaa; }
+@container subjects (max-width:640px) {
+  .subject-card__hero { grid-template-columns:minmax(0,1fr); }
+  .subject-card__title { grid-column:1; }
+  .subject-card h2 { font-size:clamp(21px,4.5cqi,29px); }
+}
 @container subjects (max-width:560px) {
   .subject-map { grid-template-columns:minmax(0,1fr); gap:14px; }
   .subject-card { min-height:208px; grid-template-rows:minmax(140px,1fr) 68px; }
-  .subject-card__hero { grid-template-columns:minmax(96px,40%) minmax(0,1fr); padding:16px 20px; }
+  .subject-card__hero { padding:16px 20px; }
   .subject-card__details { padding:10px 20px; }
   .subject-card h2 { font-size:clamp(21px,8vw,29px); }
 }

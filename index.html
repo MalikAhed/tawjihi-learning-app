@@ -15,39 +15,55 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/app/icon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" data-background-style />
   <link rel="preload" href="assets/fonts/noto-sans-arabic/noto-sans-arabic-arabic-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/noto-sans-arabic/noto-sans-arabic-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="src/styles/base.css" />
-  <link rel="stylesheet" href="src/styles/media.css" />
-  <link rel="stylesheet" href="src/styles/week-theme.css" />
-  <link rel="stylesheet" href="src/styles/course-map.css" />
-  <link rel="stylesheet" href="src/styles/learner-dashboard.css" />
-  <link rel="stylesheet" href="src/styles/subject-learning.css" />
-  <link rel="stylesheet" href="src/styles/lesson.css" />
-  <link rel="stylesheet" href="src/styles/lesson/mcq.css" />
-  <link rel="stylesheet" href="src/styles/lesson/spot-bug.css" />
-  <link rel="stylesheet" href="src/styles/lesson/fill-blanks.css" />
-  <link rel="stylesheet" href="src/styles/lesson/sequence.css" />
-  <link rel="stylesheet" href="src/styles/lesson/response.css" />
-  <link rel="stylesheet" href="src/styles/lesson/response-review.css" />
-  <link rel="stylesheet" href="src/styles/lesson/response-responsive.css" />
-  <link rel="stylesheet" href="src/styles/lesson/classic.css" />
-  <link rel="stylesheet" href="src/styles/lesson/published.css" />
-  <link rel="stylesheet" href="src/styles/lesson/navigation.css" />
-  <link rel="stylesheet" href="src/styles/lesson/completion.css" />
-  <link rel="stylesheet" href="src/styles/lesson/analytics.css" />
-  <link rel="stylesheet" href="src/styles/lesson/progress.css" />
-  <link rel="stylesheet" href="src/styles/markdown-lab.css" />
-  <link rel="stylesheet" href="src/styles/visitor-flow.css" />
-  <link rel="stylesheet" href="src/styles/responsive.css" />
-  <link rel="stylesheet" href="src/styles/developer-area.css" />
-  <link rel="stylesheet" href="src/styles/system.css" />
+  <link rel="stylesheet" href="src/styles/splash.css" />
+  <link rel="preload" href="assets/mascot/rocky-light-still.svg" as="image" />
+  <link rel="preload" href="assets/brand/khotwa-wordmark.svg" as="image" />
+  <link rel="stylesheet" href="src/styles/base.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/media.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/week-theme.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/course-map.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/learner-dashboard.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/subject-learning.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/mcq.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/spot-bug.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/fill-blanks.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/sequence.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/response.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/response-review.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/response-responsive.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/classic.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/published.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/navigation.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/completion.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/analytics.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/lesson/progress.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/markdown-lab.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/visitor-flow.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/responsive.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/developer-area.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/system.css" media="print" data-app-style />
 </head>
-<body>
+<body data-startup>
+  <section id="app-splash" class="app-splash" aria-label="جارٍ تجهيز خطوة">
+    <div class="app-splash__composition">
+      <div class="app-splash__mascot"><img src="assets/mascot/rocky-light-still.svg" alt="" width="540" height="505" fetchpriority="high" /></div>
+      <img class="app-splash__wordmark" src="assets/brand/khotwa-wordmark.svg" alt="خطوة" width="468" height="190" fetchpriority="high" />
+      <div class="app-splash__progress" role="progressbar" aria-label="تجهيز مساحة التعلّم" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="app-splash__fill"></span><span class="app-splash__percentage" aria-hidden="true">0%</span>
+      </div>
+      <p class="app-splash__status" role="status">جارٍ تجهيز مساحة التعلّم…</p>
+      <div class="app-splash__recovery" role="alert" hidden><p>تعذّر إكمال التحميل. تحقّق من الاتصال وحاول مجددًا.</p><button type="button">إعادة المحاولة</button></div>
+      <noscript>فعّل JavaScript لاستخدام مساحة التعلّم.</noscript>
+    </div>
+  </section>
   <template id="app-header-template">
-  <header class="topbar-wrap" data-shell-obstruction><div class="page topbar">
     <div class="nav-resources" aria-label="الجواهر والقلوب وتجميد السلسلة" data-shell-obstruction><span class="nav-resource nav-resource--gems" aria-label="0 جواهر"><img src="assets/icons/nav-gem.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--hearts" aria-label="0 قلوب"><img src="assets/icons/nav-heart.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--freeze" data-learner-streak-freeze aria-label="0 من أدوات تجميد السلسلة" hidden><img src="assets/icons/streak-freeze.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span></div>
+  <header class="topbar-wrap" data-shell-obstruction><div class="page topbar">
+
     <nav class="nav-links" aria-label="التنقل الرئيسي">
       <button class="nav-item active" type="button" data-page="learn" aria-label="الرئيسية" aria-current="page"><div class="nav-icon"><img src="assets/icons/dashboard-home.svg" alt="" /></div><span>الرئيسية</span></button>
       <button class="nav-item" type="button" data-page="quests" aria-label="المهام"><div class="nav-icon"><img src="assets/icons/dashboard-quests.svg" alt="" /></div><span>المهام</span></button>
@@ -55,7 +71,7 @@
       <button class="nav-item" type="button" data-page="challenges" aria-label="التحديات"><div class="nav-icon"><img src="assets/icons/dashboard-challenges.svg" alt="" /></div><span>التحديات</span></button>
       <button class="nav-item" type="button" data-page="more" aria-label="المزيد"><div class="nav-icon"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="4" width="28" height="25" rx="9" fill="#1899d6"/><rect x="2" y="2" width="28" height="24" rx="9" fill="#1cb0f6"/><g fill="white"><circle cx="9" cy="14" r="2"/><circle cx="16" cy="14" r="2"/><circle cx="23" cy="14" r="2"/></g></svg></div><span>المزيد</span></button>
     </nav>
-    <div class="topbar-auth">
+    <div class="topbar-auth" data-shell-obstruction>
       <div class="topbar-auth-guest">
         <button class="topbar-login" type="button" data-auth-flow="sign-in">تسجيل الدخول</button>
         <button class="topbar-create" type="button" data-auth-flow="register">إنشاء حساب</button>
@@ -107,6 +123,6 @@
       </div>
     </section>
   </main>
-  <script type="module" src="src/main.js"></script>
+  <script type="module" src="src/bootstrap.js"></script>
 </body>
 </html>

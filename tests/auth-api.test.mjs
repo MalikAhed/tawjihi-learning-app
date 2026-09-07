@@ -71,6 +71,30 @@ test("registration requires email and does not call the store with invalid data"
   assert.equal(createCalls, 0);
 });
 
+test("registration requires a supported phone number", async () => {
+  let createCalls = 0;
+  const handler = createAuthApi({
+    accountStore:createStore({ createAccount:async () => { createCalls += 1; } }),
+    readJsonBody,
+  });
+  const response = await requestApi(handler, "/api/auth/register", {
+    body:{ username:"student", curriculum:"gaza", path:"scientific", email:"student@example.com", password:"Learn123", phone:"" },
+  });
+
+  assert.equal(response.statusCode, 422);
+  assert.match(response.json.fieldErrors.phone, /رقم هاتف/);
+  assert.equal(createCalls, 0);
+});
+
+test("registration accepts nine Palestinian phone digits without dashes", async () => {
+  const handler = createAuthApi({ accountStore:createStore(), readJsonBody });
+  const response = await requestApi(handler, "/api/auth/register", {
+    body:{ username:"student", curriculum:"gaza", path:"scientific", email:"student@example.com", password:"Learn123", phone:"+972598932239" },
+  });
+
+  assert.equal(response.statusCode, 201);
+});
+
 test("authentication rejects cross-site mutations and misleading JSON content types", async () => {
   let deleted = false;
   const handler = createAuthApi({ accountStore:createStore({ deleteSession:() => { deleted = true; } }), readJsonBody });
@@ -89,7 +113,7 @@ test("authentication rejects cross-site mutations and misleading JSON content ty
 test("successful registration sets a protected strict same-site session cookie", async () => {
   const handler = createAuthApi({ accountStore:createStore(), readJsonBody });
   const response = await requestApi(handler, "/api/auth/register", {
-    body:{ username:"student", curriculum:"gaza", path:"scientific", email:"student@example.com", password:"Learn123", phone:"" },
+    body:{ username:"student", curriculum:"gaza", path:"scientific", email:"student@example.com", password:"Learn123", phone:"+972598932239" },
   });
 
   assert.equal(response.statusCode, 201);

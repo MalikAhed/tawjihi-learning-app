@@ -13,7 +13,7 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor, onEvent }) => {
   });
   await send("Fetch.enable", {
     patterns: [
-      { urlPattern: "*assets/subjects/ict.svg", requestStage: "Request" },
+      { urlPattern: "*assets/icons/subject-lock.svg", requestStage: "Request" },
     ],
   });
   await send("Page.navigate", { url: base + "?page=learn" });
@@ -22,12 +22,12 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor, onEvent }) => {
     await evaluate("document.querySelector('.subject-map').inert"),
     true,
   );
-  for (let n = 0; n < 300 && !held.has(base + "assets/subjects/ict.svg"); n++)
+  for (let n = 0; n < 300 && !held.has(base + "assets/icons/subject-lock.svg"); n++)
     await delay(20);
-  const homeImageRequest = held.get(base + "assets/subjects/ict.svg");
+  const homeImageRequest = held.get(base + "assets/icons/subject-lock.svg");
   assert.ok(homeImageRequest, "Home waits for its required illustration");
   await send("Fetch.continueRequest", { requestId: homeImageRequest });
-  held.delete(base + "assets/subjects/ict.svg");
+  held.delete(base + "assets/icons/subject-lock.svg");
   await waitFor(
     "document.querySelector('.course-units[data-media-state=ready]')",
   );

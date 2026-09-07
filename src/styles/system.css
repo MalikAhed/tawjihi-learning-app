@@ -51,7 +51,7 @@ body.ui-lab-open,.ship-ready-library {
   --quest-theme-shadow:#1899d6; --quest-theme-base:#0ea5e9; --quest-theme-border:#7dd3fc;
   --quest-theme-line:#bde8ff; --quest-theme-line-strong:#84d8ff; --quest-theme-soft:#e8f7ff;
   --quest-theme-soft-strong:#d8f1ff; --quest-theme-surface:#f5fbff; --quest-theme-surface-strong:#e8f7ff;
-  --quest-theme-muted-text:#0875a5; --quest-theme-focus:#0875a555; --quest-theme-shadow-soft:#082f4924;
+  --quest-theme-muted-text:var(--action-blue); --quest-theme-focus:#1cb0f655; --quest-theme-shadow-soft:#082f4924;
 }
 .ship-ready-library { direction:rtl; text-align:start; padding:28px; border:2px solid #e9edf1; border-bottom-width:5px; border-radius:var(--radius-panel); }
 .ship-ready-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
@@ -106,3 +106,41 @@ body.ui-lab-open:not(.ready-lesson-open) .level-lesson-copy { text-align:start; 
 }
 .progress-feedback[hidden] { display: none; }
 body.ready-lesson-open .progress-feedback { display: none; }
+
+/* One physical press response for every native button in the product. */
+button {
+  --button-press-edge:var(--action-edge,rgba(48,71,90,.18));
+  transition:transform 120ms ease,box-shadow 120ms ease,filter 140ms ease,background-color 160ms ease,border-color 160ms ease,color 160ms ease;
+}
+button:not(.nav-item):not(.roadmap-part):not(:disabled):not([aria-disabled="true"]):hover {
+  transform:translateY(2px)!important;
+  box-shadow:0 2px 0 var(--button-press-edge)!important;
+}
+button:not(.nav-item):not(.roadmap-part):not(:disabled):not([aria-disabled="true"]):active {
+  transform:translateY(var(--control-press))!important;
+  box-shadow:0 1px 0 var(--button-press-edge)!important;
+}
+button.nav-item:not(:disabled):is(:hover,:active) {
+  transform:none!important;
+}
+.subject-card--locked:disabled:hover {
+  transform:translateY(2px)!important;
+  box-shadow:0 2px 0 var(--action-edge)!important;
+  filter:brightness(.98);
+}
+.coming-soon-home:hover {
+  transform:translateY(2px);
+  box-shadow:0 2px 0 var(--system-blue-action-edge);
+}
+.coming-soon-home:active {
+  transform:translateY(var(--control-press));
+  box-shadow:0 1px 0 var(--system-blue-action-edge);
+}
+@media (prefers-reduced-motion:reduce) {
+  button { transition:none; }
+  button:not(.nav-item):not(.roadmap-part):not(:disabled):not([aria-disabled="true"]):hover,
+  button:not(.nav-item):not(.roadmap-part):not(:disabled):not([aria-disabled="true"]):active { transform:none!important; }
+  .subject-card--locked:disabled:hover,
+  .dashboard-premium .dashboard-premium__action:is(:hover,:active) { transform:none!important; }
+  .coming-soon-home:is(:hover,:active) { transform:none; }
+}

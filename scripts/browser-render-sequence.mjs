@@ -94,7 +94,7 @@ try {
     await delay(350);
   };
   await navigate("?page=learn");
-  const account = await evaluate(`fetch('/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:'rendercheck',email:'rendercheck@example.com',password:'Learn123',curriculum:'gaza',path:'scientific'})}).then(r=>r.json())`);
+  const account = await evaluate(`fetch('/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:'rendercheck',email:'rendercheck@example.com',phone:'+972598000003',password:'Learn123',curriculum:'gaza',path:'scientific'})}).then(r=>r.json())`);
   assert(account.status === "created", "render verification fixture account is created");
   await send("Emulation.setCPUThrottlingRate", { rate:4 });
   await send("Network.emulateNetworkConditions", { offline:false, latency:60, downloadThroughput:750000, uploadThroughput:750000 });

@@ -177,7 +177,7 @@ try {
   async function navigate(url) {
     const previousTimeOrigin = await evaluate("performance.timeOrigin");
     await cdp.send("Page.navigate", { url }, sessionId);
-    await waitFor(`performance.timeOrigin !== ${previousTimeOrigin} && document.readyState !== 'loading'`, url);
+    await waitFor(`performance.timeOrigin !== ${previousTimeOrigin} && document.readyState !== 'loading' && !document.querySelector('#app-splash')`, url);
   }
 
   async function captureScreenshot(filename) {
@@ -248,7 +248,7 @@ try {
   await evaluate("document.querySelector('[data-subject=ict]').click()");
   await waitFor("location.search === '?subject=ict' && Boolean(document.querySelector('.subject-roadmap'))", "the ICT roadmap");
   assert(await evaluate("document.querySelectorAll('.roadmap-unit').length === 3 && document.querySelectorAll('.roadmap-lesson-group').length === 6 && !document.querySelector('.roadmap-whole-entry') && Boolean(document.querySelector('.lesson-back__icon')) && document.querySelector('.lesson-back').textContent.trim().length > 0 && getComputedStyle(document.querySelector('.lesson-top-title')).display === 'none' && !document.querySelector('.subject-roadmap').textContent.includes('خريطة المادة') && !document.querySelector('.subject-roadmap').textContent.includes('محتوى تجريبي')"), "ICT must begin with the three textbook unit maps and five lessons plus the introduction, with a labeled Back control whose arrow sits on the right and faces right");
-  assert(await evaluate("[...document.querySelectorAll('.roadmap-unit progress')].every(bar=>bar.value === 0) && !document.querySelector('.subject-roadmap').textContent.includes('الدرس كاملًا')"), "a fresh roadmap must have zero progress and no full-lesson button");
+  assert(await evaluate("document.querySelectorAll('.roadmap-part[data-part-state=completed]').length === 0 && !document.querySelector('.subject-roadmap').textContent.includes('الدرس كاملًا')"), "a fresh roadmap must have zero progress and no full-lesson button");
   assert(await evaluate("!document.querySelector('.subject-roadmap details') && [...document.querySelectorAll('[data-roadmap-part]')].every(button=>button.getBoundingClientRect().width > 0) && document.querySelector('[data-roadmap-part=access-basics]').getBoundingClientRect().width >= 100 && Math.abs(document.querySelector('[data-roadmap-part=access-basics]').getBoundingClientRect().left - document.querySelector('[data-roadmap-part=tables-and-types]').getBoundingClientRect().left) > 40"), "the curriculum must remain an always-visible winding map of oval stops");
   await captureScreenshot("ict-roadmap.png");
   assert(await evaluate("!document.querySelector('.subject-roadmap').textContent.includes('ابدأ التعلّم') && [...document.querySelectorAll('.roadmap-connector path')].every(path=>{const start=path.getPointAtLength(0);const end=path.getPointAtLength(path.getTotalLength());return path.getAttribute('pathLength') === '100' && start.y >= 6 && end.y <= 42})"), "map labels must omit the redundant start prompt and connector ends must leave room for complete rounded caps");
@@ -280,7 +280,7 @@ try {
   await evaluate("document.querySelector('[data-roadmap-part=access-basics]').click()");
   await waitFor("!document.querySelector('[data-roadmap-bubble]').hidden", "the lesson information bubble");
   assert(await evaluate(`document.querySelector('[data-bubble-lesson]').textContent === 'برامج إدارة البيانات وبيئة Access' && (!matchMedia('(pointer:fine)').matches || document.querySelector('[data-roadmap-bubble]').contains(document.activeElement)) && getComputedStyle(document.querySelector('[data-roadmap-part=access-basics]')).backgroundColor === ${JSON.stringify(lessonNodeColor)}`), "a map node must remain visually stable and open a nearby lesson brief before starting");
-  assert(await evaluate("(() => { const bubble=document.querySelector('[data-roadmap-bubble]'); const r=bubble.getBoundingClientRect(); return r.left >= 0 && r.right <= document.documentElement.clientWidth && getComputedStyle(document.querySelector('[data-bubble-start]')).backgroundColor === 'rgb(88, 204, 2)' && getComputedStyle(document.querySelector('[data-bubble-start]')).color === 'rgb(255, 255, 255)'; })()"), "desktop part details must be a contained floating bubble with the requested white text on the original green Start action");
+  assert(await evaluate("(() => { const bubble=document.querySelector('[data-roadmap-bubble]'); const r=bubble.getBoundingClientRect(); return r.left >= 0 && r.right <= document.documentElement.clientWidth && getComputedStyle(bubble).backgroundColor === 'rgb(28, 176, 246)' && getComputedStyle(bubble.querySelector('h4')).color === 'rgb(255, 255, 255)' && getComputedStyle(document.querySelector('[data-bubble-start]')).backgroundColor === 'rgb(255, 255, 255)' && getComputedStyle(document.querySelector('[data-bubble-start]')).color === 'rgb(28, 176, 246)'; })()"), "desktop part details must be a contained blue bubble with white text and a white Start action");
   await captureScreenshot("ict-lesson-bubble.png");
   await evaluate("document.querySelector('[data-bubble-start]').click()");
   await waitFor("document.querySelector('.markdown-authored-content .markdown-rendered h1')?.textContent === 'إدارة قواعد البيانات'", "the published ICT database lesson");
@@ -373,12 +373,12 @@ try {
 
   await evaluate("document.querySelector('.lesson-back').click()");
   await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "unit progress after finishing a part");
-  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value === 1 && document.querySelector('[data-unit=unit-1] progress').max === 14 && document.querySelector('[data-unit=unit-1] [data-unit-percent]').textContent === '7%' && document.querySelector('[data-roadmap-part=access-basics]').dataset.partState === 'completed' && document.activeElement.dataset.roadmapPart === 'access-basics'"), "finishing one part must update unit completion once and return focus to that part");
+  assert(await evaluate("!document.querySelector('[data-unit=unit-1] [data-unit-percent]') && document.querySelector('[data-roadmap-part=access-basics]').dataset.partState === 'completed' && document.activeElement.dataset.roadmapPart === 'access-basics'"), "finishing one part must update unit completion once and return focus to that part");
   await navigate(`${appUrl}?subject=ict`);
   await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "restored part progress after reload");
-  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value === 1"), "completed part progress must survive a reload");
-  assert(await evaluate("document.querySelector('[data-unit=unit-1] [data-review-count]').textContent === '1' && document.querySelectorAll('[data-review-part=access-basics]').length === 1"), "repeated mistakes must persist as one review part after reload");
-  await evaluate("document.querySelector('[data-unit=unit-1] [data-unit-tab=review]').click()");
+  assert(await evaluate("document.querySelectorAll('[data-unit=unit-1] .roadmap-part[data-part-state=completed]').length === 1"), "completed part progress must survive a reload");
+  assert(await evaluate("document.querySelectorAll('[data-unit=unit-1] [data-review-part]').length === 1 && document.querySelectorAll('[data-review-part=access-basics]').length === 1"), "repeated mistakes must persist as one review part after reload");
+  await evaluate("document.querySelector('[data-unit=unit-1] [data-unit-guide]').click(); document.querySelector('[data-unit=unit-1] [data-unit-review]').click()");
   await captureScreenshot("ict-review-card.png");
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:390, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
   assert(await evaluate("document.documentElement.scrollWidth <= innerWidth"), "populated review cards must fit mobile RTL layouts");
@@ -395,16 +395,16 @@ try {
   await waitFor("Boolean(document.querySelector('[data-ui-lab-answer=update]'))", "review follow-up question");
   await evaluate("document.querySelector('[data-ui-lab-answer=update]').click(); document.querySelector('[data-template-primary]').click(); document.querySelector('[data-template-primary]').click()");
   await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "return after targeted review");
-  assert(await evaluate("document.querySelector('[data-unit=unit-1] [data-review-count]').textContent === '0' && document.querySelector('[data-unit=unit-1] progress').value === 1"), "successful targeted review clears the review item and preserves completion");
+  assert(await evaluate("document.querySelectorAll('[data-unit=unit-1] [data-review-part]').length === 0 && document.querySelectorAll('[data-unit=unit-1] .roadmap-part[data-part-state=completed]').length === 1"), "successful targeted review clears the review item and preserves completion");
   assert(await evaluate("document.querySelector('#review-unit-1').hidden === false && Boolean(document.querySelector('#review-unit-1 .roadmap-review-empty'))"), "completed review returns to the collection empty state");
-  await evaluate("document.querySelector('[data-unit=unit-1] [data-unit-tab=lessons]').click()");
+  await evaluate("document.querySelector('[data-unit=unit-1] [data-review-back]').click()");
   await evaluate("document.querySelector('[data-roadmap-part=access-basics]').click()");
   assert(await evaluate("document.querySelector('[data-bubble-start]').textContent === 'راجع الجزء'"), "completed parts must offer review");
   await evaluate("document.querySelector('[data-bubble-start]').click()");
   await waitFor("Boolean(document.querySelector('[data-live-authored-step]'))", "review of a completed part");
   await evaluate("document.querySelector('.lesson-back').click()");
   await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "map after revisiting a completed part");
-  assert(await evaluate("document.querySelector('[data-unit=unit-1] progress').value === 1"), "reviewing a part must preserve its completion");
+  assert(await evaluate("document.querySelectorAll('[data-unit=unit-1] .roadmap-part[data-part-state=completed]').length === 1"), "reviewing a part must preserve its completion");
   await verifyAccountJourney({ appUrl, navigate, evaluate, waitFor, assert, cdp, sessionId, captureScreenshot, delay,
     completeRoadmap() {
       if (failures.length || browserErrors.length || failedLocalRequests.length) throw new Error([...failures, ...browserErrors, ...failedLocalRequests].join("\n"));

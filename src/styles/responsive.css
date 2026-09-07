@@ -8,11 +8,9 @@
 }
 @media (max-width:560px) {
   .page { width:calc(100% - (var(--space-3) * 2)); }
-  .coming-soon-card { padding:44px 18px; }
   .coming-soon.is-more .coming-soon-card { padding:16px 0; }
   .more-tab-list { grid-template-columns:1fr; gap:12px; }
   .more-tab { min-height:112px; }
-  .coming-soon-title { font-size:22px; }
 }
 @media (prefers-reduced-motion:reduce) {
   html:focus-within { scroll-behavior:auto; }

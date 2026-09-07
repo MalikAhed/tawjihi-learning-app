@@ -50,6 +50,7 @@ export function entryMarkup() {
         <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-flow="register">ابدأ</button>
         <button class="visitor-secondary system-action system-action--secondary system-action--prominent" type="button" data-flow="sign-in">لدي حساب بالفعل</button>
       </div>
+      <a class="visitor-live-preview" href="https://malikahed.github.io/tawjihi-learning-app/">فتح المعاينة المباشرة</a>
     </div>
   </section>`, { landing:true });
 }
@@ -109,10 +110,18 @@ export function registerMarkup() {
       </section>
       <section class="onboarding-step onboarding-step--compact" data-onboarding-step="5" hidden>
         ${rocky("standing-still", "روكي يتابع حركة المؤشر", { trackPointer:true })}
-        <h1 tabindex="-1">هل تريد إضافة رقم هاتف؟ (اختياري)</h1>
-        ${field("phone", "رقم الهاتف (اختياري)", 'inputmode="tel" autocomplete="tel" maxlength="21" dir="ltr" placeholder="05xxxxxxxx"', true)}
+        <h1 tabindex="-1">ما رقم هاتفك؟</h1>
+        <div class="onboarding-phone-field">
+          <label class="visually-hidden" for="phone-network">الشبكة أو الدولة</label>
+          <select id="phone-network" name="phonePrefix" aria-label="الشبكة أو الدولة">
+            <option value="+972" data-phone-placeholder="59-893-2239">جوّال +972</option>
+            <option value="+970" data-phone-placeholder="56-893-2239">أوريدو +970</option>
+            <option value="+20" data-phone-placeholder="10-1234-5678">مصر +20</option>
+          </select>
+          <label class="auth-field"><span class="visually-hidden">رقم الهاتف</span><input name="phone" inputmode="tel" autocomplete="tel-national" maxlength="14" dir="ltr" placeholder="59-893-2239" aria-describedby="auth-phone-hint auth-phone-error" required/><small class="visitor-field-error" id="auth-phone-error" data-field-error="phone" aria-live="polite" hidden></small></label>
+        </div>
+        <p class="auth-hint onboarding-phone-hint" id="auth-phone-hint">أدخل الأرقام من دون الصفر الأول. الشرطات اختيارية، مثال: <bdi dir="ltr" data-phone-example>59-893-2239</bdi></p>
         <button class="visitor-primary system-action system-action--primary system-action--prominent" type="submit">إنشاء الحساب</button>
-        <button class="onboarding-skip" type="button" data-skip-field="phone" data-skip-submit>ليس لدي رقم هاتف</button>
       </section>
       <div class="visitor-callout visitor-callout--error" data-auth-error role="alert" hidden></div>
     </form>
@@ -124,7 +133,6 @@ export function accountCompleteMarkup() {
   return shell(`<section class="auth-page onboarding-page onboarding-complete" aria-labelledby="onboarding-complete-title">
     ${rocky("happy-jump", "روكي يقفز فرحًا")}
     <h1 id="onboarding-complete-title" tabindex="-1">رائع! أصبح كل شيء جاهزًا</h1>
-    <p>تم إنشاء حسابك بنجاح. تعلّم على راحتك.</p>
     <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-registration-continue>متابعة إلى المواد</button>
   </section>`);
 }

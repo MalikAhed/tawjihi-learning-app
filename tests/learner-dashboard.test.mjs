@@ -22,6 +22,8 @@ test("the dashboard prioritizes level XP, streak, and subject progress", () => {
   assert.match(markup, /مرحبًا، <bdi>ليان<\/bdi>/);
   assert.doesNotMatch(markup, /dashboard-resume|متابعة التعلّم|تكنولوجيا المعلومات|تقدّم المادة/);
   assert.match(markup, /dashboard-stat--level[^]*?<img src="assets\/icons\/dashboard-levels-animated\.svg"/);
+  assert.match(markup, /dashboard-stat--level dashboard-stat--locked/);
+  assert.match(markup, /dashboard-stat__lock[^]*?assets\/icons\/subject-lock\.svg/);
   assert.match(markup, /class="level-value ui-number">Lv\. 04<img class="level-up-arrow" src="assets\/icons\/level-up-arrow\.svg" alt="" aria-hidden="true"/);
   assert.match(markup, /620 \/ 800 XP/);
   assert.match(markup, /السلسلة اليومية/);

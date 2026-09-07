@@ -8,7 +8,7 @@ This is a native ES-module application, without a bundler or framework. `npm run
 
 | Area | Owner / where to change it |
 |---|---|
-| Document and eager styles | `index.html`; initial loading state; `src/ui/app-shell.js` mounts account-sensitive navigation after session restoration |
+| Document and startup | `index.html` supplies the splash; `src/bootstrap.js` waits for styles, local fonts, onboarding artwork, session restoration and destination readiness; `src/ui/splash-screen.js` owns progress, motion, retry and focus; `src/ui/app-shell.js` mounts account-sensitive navigation after session restoration |
 | App lifecycle and navigation | `src/main.js`; route dispatch, history and return focus; `src/app/view-lifecycle.js` owns one active operation’s cancellation and cleanup |
 | URL vocabulary | `src/app/route.js`; optional validated lesson/part identity restores the active learner's saved step; see [route map](P1_ROUTE_STATE_MAP.md) |
 | Entry and accounts | `src/ui/visitor-flow.js` controls forms; `visitor-flow-markup.js` owns markup; `visitor-mascot.js` owns SVG/pointer animation |
@@ -44,6 +44,7 @@ This is a native ES-module application, without a bundler or framework. `npm run
 - Reuse `template-shell.js` for lesson footers and scroll affordances, `dialog.js` for modal focus containment, and `view-motion.js` for every screen/tab transition. Keep DOM commits synchronous, cancel obsolete requests, and retain the component rise in `base.css`. Reduced-motion changes must also stop already-running animation.
 - Preserve Arabic RTL, native control semantics, visible focus and wrapping Arabic labels. Code/editor surfaces remain LTR where needed. Feature breakpoints intentionally differ; do not unify them without browser evidence.
 - Resolve required initial account/theme/layout state before mounting its UI. Use a real, accessible loading surface for pending data; do not flash a guessed guest layout or use timers/page hiding to mask transitions.
+- The startup splash is an explicit loading surface. Only `splash.css` blocks its first paint; existing app styles download in their original cascade positions and activate before `main.js` mounts. Progress counts completed preparation tasks (not transferred bytes), and only reaches 100 after the current destination is ready. Failed dependencies expose retry; pending routes stay inert. The light standing Rocky derives from the production SVG; the rounded brand lettering is an SVG recreation of the supplied splash reference, not an identified font.
 
 ## Shortest reliable checks
 
@@ -58,6 +59,7 @@ Both apps use `npm run check` for non-browser validation and Node tests, and `np
 | Browser transport / readiness probes | `node --test tests/browser-session.test.mjs`; missing responses, process/pipe exit and disposal must reject with command/scenario context and clean up |
 | Shared UI / navigation | `npm run test:browser`; browser journeys cover desktop/mobile, keyboard, reduced motion, account flows and templates |
 | Render timing / async layout | `npm run test:render`; captures frame samples and screenshot sequences under delayed session/CSS loads and CPU throttling |
+| Startup splash / onboarding preparation | `npm run test:splash`; desktop and narrow screenshots, held/failed dependencies, focus, live reduced motion, background warming and interrupted startup |
 | Code editor / developer tools | `npm run test:developer` |
 | ICT roadmap / local progress | `npm run test:progress` |
 | Navigation motion | `npm run test:motion` |
@@ -79,6 +81,7 @@ Search `src/`, `tests/`, `scripts/`, `docs/` and `index.html` first. Existing `.
 - `ui/media-ready.js` waits for actual image decoding, pauses component entrance while a content surface is pending, and provides retry or an explicit missing-image fallback. Its disposer/AbortSignal prevents stale reveals.
 - Subjects Home, feature placeholders, visitor flows, authored Markdown steps, and completion use this boundary. Keep it scoped to the content surface, not the entire application shell.
 - Published Markdown steps preload the next step's images through `ui/lesson/media.js`. Registration warms the next step; final lesson steps warm the celebration. The warm cache is bounded and respects Save-Data; do not preload the whole course. Fetch bytes without instantiating offscreen animated SVG images, so their playback does not start early.
+- `app/startup-assets.js` derives critical onboarding images from the registration markup, selects reduced-motion SVGs, fetches animation bytes and retains decoded static choice artwork. During registration, `app/background-loading.js` uses idle time to warm the lesson renderer, the introductory part and upcoming Rocky artwork. This is optional, respects Save-Data and does not mount views or write learner progress. Other direct routes keep their existing lazy boundaries.
 - Lesson/editor renderers and the template catalog load when opened. Home must not import Markdown/highlighting libraries indirectly through a developer panel.
 - Public static assets use ETag revalidation; injected HTML and account APIs remain uncached. Do not add a service worker or version-busting timestamp to every ordinary asset.
 - Run `npm run test:assets` for slow/failed media, retry, navigation cancellation, deferred modules, next-step requests, and reduced motion.
