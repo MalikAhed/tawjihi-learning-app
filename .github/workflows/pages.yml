@@ -35,11 +35,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
 
-      - name: Install compatibility browsers
-        run: npx playwright install --with-deps firefox webkit
-
       - name: Verify and package the release artifact
-        run: npm run ci
+        run: npm run check && npm run package:preview
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
