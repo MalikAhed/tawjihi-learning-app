@@ -169,7 +169,17 @@ async function mountCodeQuest(container, signal, codeQuest, { onContinue = null 
       htmlCode, cssCode, jsCode,
       onChange(type, value) { values[type] = value; setRunState(false); schedulePreview(); },
     });
-    disposeEditor = typeof mountedEditor === "function" ? mountedEditor : disposeEditor;
+    lab.querySelectorAll('[data-editor-host]').forEach((host) => {
+      const input=host.querySelector('.cm-content');
+      input.setAttribute('aria-label', codeQuest.locale === 'ar' ? `محرّر ${host.dataset.editorHost}` : `${host.dataset.editorHost.toUpperCase()} code editor`);
+      input.tabIndex=0;
+    });
+    // The bundled editor creates its suggestion list after mounting. Give that
+    // scrollable surface a native keyboard stop without replacing its keymap.
+    const labelSuggestions=()=>lab.querySelectorAll('.cm-tooltip-autocomplete ul').forEach(list=>{list.tabIndex=0;});
+    const suggestions=new MutationObserver(labelSuggestions);
+    suggestions.observe(lab,{childList:true,subtree:true});
+    disposeEditor = () => { suggestions.disconnect(); if(typeof mountedEditor === 'function')mountedEditor(); };
     editorCard.setAttribute("aria-busy", "false");
     editorTabs.forEach((tab) => { tab.disabled = false; });
     if (checkButton) checkButton.disabled = false;

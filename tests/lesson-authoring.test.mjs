@@ -305,3 +305,18 @@ test("the first ICT lesson is a focused database-management lesson", () => {
   assert.equal(compiled.steps.length, parsed.steps.length);
   assert.deepEqual(compiled.issues, []);
 });
+
+test("illustrated dialogue presentation is reusable across stable explanation IDs", () => {
+  const dialogue = (id) => `<!-- step-id: ${id} -->\n<!-- presentation: rocky-dialogue -->\n# Welcome\n\n![Rocky waves](assets/mascot/rocky-wave.svg)\n\n:::note Hello\nLet’s learn together.\n:::`;
+  const result = compileLessonMarkdown(`${dialogue("first-welcome")}\n<!-- lesson-step -->\n${dialogue("another-welcome")}`, { published:true });
+  assert.deepEqual(result.issues, []);
+  assert.deepEqual(result.parsed.steps.map((step) => step.id), ["first-welcome", "another-welcome"]);
+  for (const step of result.parsed.steps) {
+    assert.equal(step.presentation, "rocky-dialogue");
+    assert.equal(step.dialogue.source, "Let’s learn together.");
+    assert.match(step.dialogue.image, /rocky-wave\.svg/);
+  }
+  assert.equal(result.steps[0].presentation, "rocky-dialogue");
+  assert.match(compileLessonMarkdown(dialogue("valid-id").replace("presentation: rocky-dialogue", "presentation: arbitrary-layout")).issues.join(" "), /unsupported presentation/);
+  assert.match(compileLessonMarkdown(dialogue("valid-id").replace(/!\[[^\n]+\n/, "")).issues.join(" "), /one image/);
+});

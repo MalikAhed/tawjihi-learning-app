@@ -8,6 +8,8 @@ import { mountMarkdownFeatures, renderMarkdownDocument } from "../markdown/rende
 import { renderTemplateFooter, renderTemplateShell } from "./template-shell.js";
 import { loadDesignSystem } from "./design-system-loader.js";
 import { renderUiLab } from "./ui-lab/index.js";
+import { renderRockyDialogue, mountRockyDialogues, playRockyDialogue } from "./lesson/rocky-dialogue.js";
+import { revealWhenReady } from "./media-ready.js";
 
 const STORAGE_KEY = "full-stack-quest:markdown-lab-draft-v3";
 const WEEK_OPTIONS = COURSE_WEEKS.map((week, index) => {
@@ -256,6 +258,7 @@ export function renderMarkdownLab(container) {
     if (complete) {
       host.innerHTML = renderTemplateShell({
         titleId:"authored-preview-complete",
+        locale:"ar",
         showScrollIndicator:false,
         content:'<div class="level-lesson-copy ready-lesson-result"><p class="level-layout-kicker">اكتملت المعاينة</p><h1 id="authored-preview-complete">اكتملت جميع خطوات الدرس</h1><p>عُد إلى المصدر لمتابعة الكتابة، أو أعد تشغيل المعاينة.</p></div>',
         footer:renderTemplateFooter({ locale:"ar", backAttributes:{ disabled:false }, primaryLabel:"إعادة المعاينة" }),
@@ -298,14 +301,27 @@ export function renderMarkdownLab(container) {
       return;
     }
     const titleId = `authored-markdown-title-${activeStep}`;
+    const stepController = new AbortController();
+    const stepSignal = stepController.signal;
+    if (step.presentation) host.dataset.lessonPresentation = step.presentation;
+    host.lang = "ar";
+    host.dir = "rtl";
     host.innerHTML = renderTemplateShell({
       titleId,
-      content:`<article class="level-lesson-copy ready-lesson-copy markdown-authored-content"><p class="level-layout-kicker">درس · شرح</p><h1 class="visually-hidden" id="${titleId}">${escapeHtml(step.title)}</h1><div class="markdown-rendered">${renderMarkdownDocument(step.source)}</div></article>`,
+      locale:"ar",
+      content:step.presentation === "rocky-dialogue"
+        ? renderRockyDialogue(step, { titleId, locale:"ar" })
+        : `<article class="level-lesson-copy ready-lesson-copy markdown-authored-content"><p class="level-layout-kicker">درس · شرح</p><h1 class="visually-hidden" id="${titleId}">${escapeHtml(step.title)}</h1><div class="markdown-rendered">${renderMarkdownDocument(step.source, { locale:"ar" })}</div></article>`,
       footer:renderTemplateFooter({ locale:"ar", backAttributes:{ disabled:activeStep === 0 }, primaryLabel:"متابعة" }),
     });
-    mountMarkdownFeatures(host, { signal, scrollSurface:previewScroll });
-    host.querySelector("[data-template-back]").addEventListener("click", goBack, { signal });
-    host.querySelector("[data-template-primary]").addEventListener("click", goNext, { signal });
+    mountMarkdownFeatures(host, { signal:stepSignal, scrollSurface:previewScroll, locale:"ar" });
+    if (step.presentation === "rocky-dialogue") {
+      mountRockyDialogues(host, stepSignal);
+      revealWhenReady(host, { signal:stepSignal, onReady:() => playRockyDialogue(host, host, stepSignal) });
+    }
+    host.querySelector("[data-template-back]").addEventListener("click", goBack, { signal:stepSignal });
+    host.querySelector("[data-template-primary]").addEventListener("click", goNext, { signal:stepSignal });
+    destroyStep = () => stepController.abort();
   };
 
   const render = () => {
@@ -325,8 +341,8 @@ export function renderMarkdownLab(container) {
       const parsed = parseLessonMarkdown(source);
       if (previewMode === "document") {
         output.className = "markdown-rendered";
-        output.innerHTML = renderMarkdownDocument(parsed.documentSource);
-        mountMarkdownFeatures(output, { signal, scrollSurface:previewScroll });
+        output.innerHTML = renderMarkdownDocument(parsed.documentSource, { locale:"ar" });
+        mountMarkdownFeatures(output, { signal, scrollSurface:previewScroll, locale:"ar" });
       } else renderLessonStep(parsed);
       status.innerHTML = `<i></i>${parsed.steps.length} خطوة${parsed.issues.length ? ` · ${parsed.issues.length} ملاحظات` : ""}`;
     } catch (error) {

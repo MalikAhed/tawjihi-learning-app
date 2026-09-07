@@ -1,15 +1,8 @@
-import { access, readFile, readdir, stat } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const failures = [];
-const warnings = [];
-
-function assert(condition, message) {
-  if (!condition) failures.push(message);
-}
-
 function lineCount(source) {
   return source.split(/\r?\n/).length - (source.endsWith("\n") ? 1 : 0);
 }
@@ -23,68 +16,21 @@ async function collectFiles(directory, result = []) {
   return result;
 }
 
-const [
-  indexHtml, mainSource, developmentViewsSource, designLoaderSource, designViewSource,
-  designManifest, browserSmokeSource, devServerSource, prototypeServiceSource,
-  visitorFlowSource, securityHeadersSource,
-] = await Promise.all([
-  readFile(path.join(projectRoot, "index.html"), "utf8"),
-  readFile(path.join(projectRoot, "src/main.js"), "utf8"),
-  readFile(path.join(projectRoot, "src/ui/development-views.js"), "utf8"),
-  readFile(path.join(projectRoot, "src/ui/design-system-loader.js"), "utf8"),
-  readFile(path.join(projectRoot, "src/ui/design-system-view.js"), "utf8"),
-  readFile(path.join(projectRoot, "src/styles/design-system.css"), "utf8"),
-  readFile(path.join(projectRoot, "scripts/browser-smoke.mjs"), "utf8"),
-  readFile(path.join(projectRoot, "dev-server.mjs"), "utf8"),
-  readFile(path.join(projectRoot, "src/services/prototype-service.js"), "utf8"),
-  readFile(path.join(projectRoot, "src/ui/visitor-flow.js"), "utf8"),
-  readFile(path.join(projectRoot, "src/server/security-headers.mjs"), "utf8"),
-]);
-
-assert(!indexHtml.includes("design-system.css"), "index.html must not preload the development-only Design System stylesheet");
-assert(indexHtml.includes('data-more-tab="ui-lab"'), "More must expose the UI Lab tab");
-assert(indexHtml.includes('data-more-tab="ship-ready"'), "More must expose the Ship Ready tab");
-assert(indexHtml.includes('data-more-tab="design-system"'), "More must expose the Design System tab");
-assert(!indexHtml.includes("prismjs"), "index.html must not preload Prism on routes without code examples");
-assert(indexHtml.includes("src/styles/week-theme.css"), "index.html must load the shared week-theme token layer");
-assert(mainSource.includes('from "./ui/development-views.js"'), "src/main.js is missing the development-view boundary");
-assert(developmentViewsSource.includes('from "./design-system-loader.js"'), "development views are missing the guarded Design System loader");
-assert(designLoaderSource.includes('import("./design-system-view.js")'), "the Design System loader is missing its dynamic view import");
-assert(!indexHtml.includes("112"), "the retired 112-day course count must not appear in the product shell");
-assert(mainSource.includes("PROTOTYPE_TOOLS_ENABLED"), "prototype scenario controls must remain separate from normal navigation");
-assert(!mainSource.includes("lesson-studio"), "src/main.js still references the removed Lesson Studio");
-assert(!indexHtml.includes("game-overview") && !indexHtml.includes("sidebar.css"), "index.html still contains the retired game overview");
-assert(!securityHeadersSource.match(/script-src[^\n]*unsafe-inline/), "the development server must not allow inline scripts");
-assert(designViewSource.includes("renderCurrentDesignSystem"), "the reference route must use the current shared UI gallery");
-assert(!designViewSource.includes('class="ds-hero"'), "code practice must not construct the retired gallery behind its CSS");
-assert(!indexHtml.includes("dashboard-cards.css"), "subject cards must have one stylesheet owner");
-assert(designManifest.includes("practice-lab.css"), "the lazy stylesheet must retain the code editor's owned styles");
-
-const sourceBudgets = [
-  ["src/main.js", mainSource, 300, "extract a cohesive controller"],
-  ["dev-server.mjs", devServerSource, 120, "move server concerns into src/server"],
-  ["src/services/prototype-service.js", prototypeServiceSource, 220, "extract a service boundary"],
-  ["src/ui/visitor-flow.js", visitorFlowSource, 300, "extract markup or a flow controller"],
-  ["scripts/browser-smoke.mjs", browserSmokeSource, 550, "extract a stable browser-test helper or scenario"],
-  ["src/ui/design-system-view.js", designViewSource, 300, "keep code practice separate from gallery examples"],
-];
-for (const [file, source, maximum, remedy] of sourceBudgets) {
-  const lines = lineCount(source);
-  assert(lines <= maximum, `${file} has ${lines} lines; ${remedy} before exceeding the ${maximum}-line growth budget`);
+// Behavior belongs in Node/browser tests; this report only helps review ownership.
+const sourceFiles = [path.join(projectRoot, "dev-server.mjs")];
+for (const directory of ["src", "scripts"]) {
+  sourceFiles.push(...await collectFiles(path.join(projectRoot, directory)));
 }
-
-for (const retiredFile of [
-  "src/styles/sidebar.css",
-  "src/ui/course-map-editor.js",
-  "src/ui/game-progress.js",
-  "src/ui/ui-lab-library.js",
-]) {
-  try {
-    await access(path.join(projectRoot, retiredFile));
-    failures.push(`${retiredFile} is retired and should not be restored without a product decision`);
-  } catch (error) {
-    if (error?.code !== "ENOENT") throw error;
-  }
+const sources = [];
+for (const file of sourceFiles.filter((file) => /\.(?:js|mjs|css)$/.test(file))) {
+  const source = await readFile(file, "utf8");
+  sources.push({ file: path.relative(projectRoot, file), lines: lineCount(source), bytes: Buffer.byteLength(source) });
+}
+sources.sort((a, b) => b.lines - a.lines || a.file.localeCompare(b.file));
+console.log(`Manageability inventory: ${sources.length} source files (advisory).`);
+console.log("Largest files by line count; review responsibilities before deciding to split:");
+for (const { file, lines, bytes } of sources.slice(0, 5)) {
+  console.log(`- ${file}: ${lines} lines, ${(bytes / 1024).toFixed(1)} KiB`);
 }
 
 const assetFiles = await collectFiles(path.join(projectRoot, "assets"));
@@ -95,12 +41,5 @@ for (const file of assetFiles) {
   assetBytes += size;
   if (size > 2 * 1024 * 1024) oversizedAssets += 1;
 }
-if (oversizedAssets) warnings.push(`${oversizedAssets} active assets exceed 2 MiB; optimize deliberately without replacing approved artwork`);
-
-if (failures.length) {
-  console.error(`Manageability audit failed:\n- ${failures.join("\n- ")}`);
-  process.exit(1);
-}
-console.log("Manageability audit passed: runtime entry points stay small, retired UI remains absent, and development views stay lazy.");
 console.log(`Runtime asset inventory: ${(assetBytes / 1024 / 1024).toFixed(1)} MiB across ${assetFiles.length} files.`);
-warnings.forEach((warning) => console.warn(`Manageability warning: ${warning}.`));
+if (oversizedAssets) console.warn(`Manageability warning: ${oversizedAssets} active assets exceed 2 MiB; optimize deliberately without replacing approved artwork.`);

@@ -1,4 +1,5 @@
 import { animateView } from "./view-motion.js";
+import { escapeHtml } from "../lib/dom.js";
 
 const action = (label, variant = "secondary", extra = "") => `<button type="button" class="system-action system-action--${variant}" ${extra}>${label}</button>`;
 const sample = (title, preview, use, rule = "") => `<article class="system-sample"><div class="system-sample-preview">${preview}</div><div class="system-sample-copy"><h3>${title}</h3><p>${use}</p>${rule ? `<small>${rule}</small>` : ""}</div></article>`;
@@ -32,7 +33,7 @@ export function renderCurrentDesignSystem(container) {
   container.lang = "ar";
   const controller = new AbortController();
   const { signal } = controller;
-  const navItems = [...document.querySelectorAll('.topbar .nav-item')].map((node) => `<button class="nav-item" type="button" aria-pressed="${node.dataset.page === "more"}">${node.innerHTML}</button>`).join("");
+  const navItems = [...document.querySelectorAll('.topbar .nav-item')].map((node) => `<button class="nav-item" type="button" aria-label="${escapeHtml(node.getAttribute('aria-label') || node.textContent.trim())}" aria-pressed="${node.dataset.page === "more"}">${node.innerHTML}</button>`).join("");
   container.innerHTML = `<header class="system-hero"><div><span>نظام التصميم الحالي</span><h1>لغة واحدة.<br>لكل شاشة.</h1><p>واجهتنا بالأزرق والأخضر والأبيض. ابحث عن المكوّن، تعرّف على دوره، وأعد استخدامه بالطريقة نفسها.</p></div><img src="assets/mascot/rocky-standing-still-reduced.svg" alt="روكي، شخصية التطبيق" /></header><nav class="system-index" aria-label="أقسام نظام التصميم">${["الأزرار والتنقل", "لوحة الألوان", "البطاقات والأقسام", "الحقول والحالات", "الرسومات وروكي", "النص والحركة"].map((name,index) => `<a href="#system-${["actions","colors","cards","feedback","assets","type"][index]}">${name}</a>`).join("")}</nav>
   ${section("actions", "٠١", "الأزرار والتنقل", "كل ما يمكن النقر عليه في مكان واحد: الأزرار، الروابط، التبويبات، الأيقونات، والبطاقات الكاملة.", `<div class="system-rule"><strong>اختر اللون بحسب الوظيفة.</strong> الأخضر لإنجاز المهمة، والأزرق الفاتح للتحديد، والأبيض بنص أزرق للإجراء الثانوي. النصوص والأيقونات البسيطة للتنقل الهادئ.</div><div class="system-samples">
   ${sample("أساسي · أخضر", action("متابعة", "primary"), "ابدأ الدرس، أرسل الإجابة، احفظ التغيير، أو انتقل إلى الخطوة التالية.", "إجراء أساسي واحد في كل مجموعة. بعد الإجابة الخاطئة، يبقى زر المحاولة أخضر وتشرح رسالة الخطأ ما يجب تعديله.")}

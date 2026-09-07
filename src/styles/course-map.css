@@ -1,104 +1,37 @@
-/* Subject availability cards use each subject’s color palette. */
-:root {
-  --dashboard-card-outline:#e2e5e9;
-  --dashboard-card-outline-hover:#cbd1d8;
-  --dashboard-card-surface:#fff;
-  --dashboard-card-surface-hover:#fafbfc;
-}
-.course-units { display:block; }
-.subject-map { display:grid; grid-template-columns:minmax(0,1fr); gap:16px; width:100%; padding:0 0 44px; }
-.subject-card { --subject-start:#2563eb; --subject-end:#06b6d4; --subject-shadow:rgba(37,99,235,.28); position:relative; min-height:200px; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:clamp(22px,3vw,34px); overflow:hidden; border:1px solid var(--subject-card-color); border-radius:var(--radius-card); background:var(--subject-card-color); box-shadow:0 4px 0 color-mix(in srgb,var(--subject-card-color) 80%,white); color:#173047; text-align:start; cursor:pointer; transition:filter 160ms ease; }
-.subject-card:not(:disabled):not(.subject-card--ict):hover { filter:brightness(1.08); }
-.subject-card:not(:disabled):not(.subject-card--ict):active { filter:brightness(.96); }
-.subject-card:focus-visible { outline:4px solid #111827; outline-offset:4px; }
-.subject-card__content { max-width:calc(100% - 88px); display:grid; justify-items:start; gap:13px; }
-.subject-card h2 { margin:0; color:inherit; font:900 clamp(28px,3vw,36px)/1.35 "Nunito",sans-serif; }
-.subject-card__action { width:max-content; min-height:auto; display:inline-flex; align-items:center; justify-content:center; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; color:#173047; font:900 13px/1 "Nunito",sans-serif; }
-.subject-card__lock { position:relative; width:144px; height:144px; flex-shrink:0; display:grid; place-items:center; }
-.subject-card__lock img { display:block; width:100%; height:100%; object-fit:contain; }
-.subject-card--locked { min-height:300px; align-items:center; justify-content:center; gap:12px; cursor:not-allowed; }
-.subject-card--locked::after { content:""; position:absolute; inset:0; z-index:0; background:rgba(15,23,42,.34); pointer-events:none; }
-.subject-card--locked .subject-card__content { max-width:100%; justify-items:center; color:#fff; text-align:center; }
-.subject-card--locked .subject-card__action { color:#fff; }
-.subject-card__progress[hidden] { display:none; }
-.subject-card__progress { --subject-progress:0; position:absolute; inset-block-start:50%; inset-inline-end:18px; width:72px; height:72px; display:grid; place-items:center; border-radius:50%; background:#f2f4f6; color:#44515e; font:900 14px/1 "Nunito",sans-serif; transform:translateY(-50%); }
-.subject-card__progress svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; transform:rotate(-90deg); }
-.subject-card__progress circle { fill:none; stroke-linecap:round; }
-.subject-progress-track { stroke:#cbd2d9; stroke-width:12; }
-.subject-progress-value,.subject-progress-gloss { stroke-dasharray:var(--subject-progress) 100; }
-.subject-progress-value { stroke:#58cc02; stroke-width:12; }
-.subject-progress-gloss { stroke:rgba(255,255,255,.62); stroke-width:2.5; }
-.subject-card__progress.is-empty :is(.subject-progress-value,.subject-progress-gloss) { display:none; }
-.subject-card__progress bdi { position:relative; z-index:1; direction:ltr; unicode-bidi:isolate; }
-.subject-card--personalized { min-height:200px; padding:28px; }
-.subject-card--personalized .subject-card__content { max-width:calc(100% - 88px); gap:9px; }
-.subject-card--personalized h2 { font-size:clamp(28px,3vw,36px); }
-.subject-card[data-subject="ict"] { min-height:300px; align-items:center; justify-content:center; }
-.subject-card[data-subject="ict"] .subject-card__content { max-width:calc(100% - 144px); justify-items:center; text-align:center; }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="mathematics"] { --subject-start:#2563eb; --subject-end:#06b6d4; --subject-shadow:rgba(37,99,235,.3); }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="physics"] { --subject-start:#7c3aed; --subject-end:#c026d3; --subject-shadow:rgba(124,58,237,.3); }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="biology"] { --subject-start:#059669; --subject-end:#22c55e; --subject-shadow:rgba(5,150,105,.3); }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="chemistry"] { --subject-start:#e11d48; --subject-end:#f97316; --subject-shadow:rgba(225,29,72,.3); }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="ict"] { --subject-start:#0284c7; --subject-end:#2563eb; --subject-shadow:rgba(2,132,199,.3); }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="english"] { --subject-start:#dc2626; --subject-end:#f43f5e; --subject-shadow:rgba(220,38,38,.3); }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="arabic"] { --subject-start:#ea580c; --subject-end:#f59e0b; --subject-shadow:rgba(234,88,12,.3); }
-:is(.subject-card,.subject-status-view,.lesson-shell--subject)[data-subject="islamic-education"] { --subject-start:#0f766e; --subject-end:#10b981; --subject-shadow:rgba(15,118,110,.3); }
-
-/* Bright subject surfaces, matching the app’s green and sky blue. */
-.subject-card[data-subject="mathematics"] { --subject-card-color:#ffcc00; }
+/* Every subject uses the same two-part card shown in the approved card reference. */
+.course-units { container:subjects / inline-size; display:block; }
+.subject-map { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; width:100%; padding:0 0 24px; }
+.subject-card { position:relative; min-width:0; min-height:222px; display:grid; grid-template-rows:minmax(154px,1fr) 68px; padding:0; overflow:hidden; border:2px solid color-mix(in srgb,var(--subject-card-color) 24%,white); border-radius:22px; background:var(--subject-card-color); box-shadow:0 4px 0 #d8dee4; color:var(--system-ink); text-align:start; cursor:pointer; transition:filter 160ms ease,transform 160ms ease,box-shadow 160ms ease; }
+.subject-card:not(:disabled):hover { filter:brightness(1.025); transform:translateY(-2px); box-shadow:0 7px 0 #d8dee4; }
+.subject-card:not(:disabled):active { transform:translateY(1px); box-shadow:0 2px 0 #d8dee4; }
+.subject-card:focus-visible { outline:4px solid var(--system-blue-action-ink); outline-offset:4px; }
+.subject-card__hero { position:relative; display:grid; grid-template-columns:minmax(112px,42%) minmax(0,1fr); align-items:center; gap:12px; min-width:0; padding:20px 24px; overflow:hidden; direction:ltr; background:linear-gradient(145deg,color-mix(in srgb,var(--subject-card-color) 82%,white),var(--subject-card-color)); color:#fff; }
+.subject-card__title { position:relative; z-index:1; grid-column:2; min-width:0; direction:rtl; text-align:right; }
+.subject-card h2 { margin:0; color:inherit; font:800 clamp(21px,2.5vw,32px)/1.4 var(--font-ui); overflow-wrap:anywhere; }
+.subject-card__details { position:relative; z-index:1; display:grid; align-content:center; min-width:0; padding:10px 24px; border-radius:18px 18px 0 0; background:#fff; }
+.subject-card__progress-track { position:relative; display:block; width:100%; height:18px; overflow:hidden; border-radius:999px; background:#edf1f3; }
+.subject-card__progress-track>span { position:absolute; inset-block:0; inset-inline-start:0; display:block; width:calc(var(--subject-progress,0) * 1%); overflow:hidden; border-radius:inherit; background:#0a8dea; transition:width 180ms ease; }
+.subject-card__progress-track>span::before { content:""; position:absolute; top:3px; right:7px; width:max(0px,calc(100% - 14px)); height:3px; border-radius:999px; background:#8fd2ff; }
+.subject-card__progress-count { position:absolute; z-index:2; top:50%; left:50%; translate:-50% -50%; padding:1px 7px; border-radius:999px; background:#edf1f3; color:var(--system-number-ink); font:800 12px/16px var(--font-numeric); direction:rtl; white-space:nowrap; }
+.subject-card__progress-track[data-label-covered="true"] .subject-card__progress-count { background:#0a8dea; color:#fff; }
+.subject-card__lock { position:absolute; top:50%; left:50%; z-index:4; display:grid; place-items:center; width:88px; height:88px; transform:translate(-50%,-50%); }
+.subject-card__lock img { display:block; width:76px; height:76px; object-fit:contain; filter:drop-shadow(0 3px 5px rgba(15,23,42,.28)); }
+.subject-card--locked { cursor:not-allowed; }
+.subject-card--locked::after { content:""; position:absolute; inset:0; z-index:3; border-radius:inherit; background:rgba(15,23,42,.45); pointer-events:none; }
+.subject-card[data-subject="mathematics"],.subject-card[data-subject="mathematics-2"] { --subject-card-color:#ffcc00; }
 .subject-card[data-subject="physics"] { --subject-card-color:#a66bff; }
 .subject-card[data-subject="biology"] { --subject-card-color:#58cc02; }
 .subject-card[data-subject="chemistry"] { --subject-card-color:#ff784f; }
-.subject-card[data-subject="ict"] { --subject-card-color:#0aafff; }
+.subject-card[data-subject="ict"] { --subject-card-color:#0a8dea; }
+.subject-card[data-subject="ict"] { grid-column:1 / -1; }
 .subject-card[data-subject="english"] { --subject-card-color:#ff5c9f; }
 .subject-card[data-subject="arabic"] { --subject-card-color:#ff9f1a; }
 .subject-card[data-subject="islamic-education"] { --subject-card-color:#0dccaa; }
-
-.subject-card__decoration { position:absolute; inset:0; opacity:.7; pointer-events:none; }
-/* Keep the drawing scale stable so wider cards do not crop the outer contours. */
-.subject-card__decoration img { position:absolute; left:50%; display:block; width:100%; min-width:720px; height:100%; object-fit:contain; transform:translateX(-50%); }
-.subject-card__content,.subject-card__lock,.subject-card__progress { z-index:1; }
-.subject-card__content { position:relative; }
-@media (max-width:560px) {
-  .subject-card h2,.subject-card--personalized h2 { font-size:26px; }
+@container subjects (max-width:560px) {
+  .subject-map { grid-template-columns:minmax(0,1fr); gap:14px; }
+  .subject-card { min-height:208px; grid-template-rows:minmax(140px,1fr) 68px; }
+  .subject-card__hero { grid-template-columns:minmax(96px,40%) minmax(0,1fr); padding:16px 20px; }
+  .subject-card__details { padding:10px 20px; }
+  .subject-card h2 { font-size:clamp(21px,8vw,29px); }
 }
-
-.subject-card.subject-card--ict { min-height:250px; justify-content:center; padding:24px; transition:filter 160ms ease,transform 160ms ease,box-shadow 160ms ease; }
-.subject-card.subject-card--ict:hover { filter:brightness(1.025); transform:translateY(-2px); box-shadow:0 7px 0 color-mix(in srgb,var(--subject-card-color) 76%,#087db5); }
-.subject-card.subject-card--ict:active { filter:brightness(.98); transform:translateY(2px); box-shadow:0 2px 0 color-mix(in srgb,var(--subject-card-color) 76%,#087db5); }
-.subject-card--ict .subject-card__decoration { opacity:.28; }
-.subject-card.subject-card--ict .subject-card__content { width:100%; max-width:none; grid-template-columns:minmax(210px,.72fr) minmax(360px,1.28fr); align-items:stretch; gap:24px; }
-.subject-card__identity { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; min-width:0; text-align:start; }
-.subject-card__eyebrow { margin-bottom:7px; color:rgba(255,255,255,.82); font-size:13px; font-weight:900; }
-.subject-card--ict h2 { color:#fff; font-size:clamp(27px,3vw,38px); line-height:1.2; }
-.subject-card__action--ict { gap:8px; min-height:40px; margin-top:20px; padding:0 16px; border-radius:12px; background:#fff; box-shadow:0 4px 0 rgba(8,95,137,.3); color:#087db5; font-size:14px; }
-.subject-card__action--ict>span { font-size:19px; line-height:1; }
-.subject-card__study-panel { display:grid; align-content:center; gap:16px; width:100%; min-width:0; padding:20px; border:1px solid rgba(255,255,255,.78); border-radius:18px; background:rgba(255,255,255,.96); box-shadow:0 10px 24px rgba(8,95,137,.14); }
-.subject-card--ict .subject-card__progress--line { position:static; inset:auto; width:100%; height:auto; display:grid; gap:12px; padding:0; border-radius:0; background:transparent; color:#173047; transform:none; font-size:14px; }
-.subject-card__progress-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; }
-.subject-card__progress-track { position:relative; display:block; width:100%; height:20px; overflow:hidden; border-radius:999px; background:#e5edf2; }
-.subject-card__progress-track>span { display:block; width:calc(var(--subject-progress,0) * 1%); height:100%; border-radius:inherit; background:#58cc02; }
-
-.subject-card__analytics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding-top:14px; border-top:1px solid #e5edf2; color:#475569; }
-.subject-card__analytics>span { display:flex; align-items:center; min-width:0; gap:10px; direction:rtl; text-align:right; font-size:12px; line-height:1.35; }
-.subject-card__metric-copy { display:grid; justify-items:start; min-width:0; }
-.subject-card__analytics strong { color:#17803d; font-size:26px; line-height:1; }
-.subject-card__analytics>span+span strong { color:#b96809; }
-
-.subject-card__analytics-icon { display:block; width:44px; height:44px; flex:0 0 44px; object-fit:contain; }
-
-@media (max-width:700px) {
-  .subject-card.subject-card--ict { min-height:0; padding:20px 18px; }
-  .subject-card.subject-card--ict .subject-card__content { grid-template-columns:minmax(0,1fr); gap:16px; }
-  .subject-card__identity { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:end; gap:3px 12px; }
-  .subject-card__eyebrow { grid-column:1 / -1; margin:0; font-size:12px; }
-  .subject-card--ict h2 { font-size:27px; }
-  .subject-card__action--ict { min-height:36px; margin:0; padding:0 12px; font-size:12px; }
-  .subject-card__study-panel { gap:13px; padding:15px; }
-  .subject-card__analytics { gap:8px; padding-top:12px; }
-  .subject-card__analytics>span { gap:7px; font-size:11px; }
-  .subject-card__analytics-icon { width:36px; height:36px; flex-basis:36px; }
-  .subject-card__analytics strong { font-size:21px; }
-}
-
-.subject-card__progress-track>bdi { position:absolute; inset:0; display:grid; place-items:center; color:#173047; font-size:12px; font-weight:900; line-height:1; }
+@media (prefers-reduced-motion:reduce) { .subject-card,.subject-card__progress-track>span { transition:none; } }

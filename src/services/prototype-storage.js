@@ -1,4 +1,4 @@
-// Persistence mechanics only; prototype-service validates and owns product state.
+// Persistence mechanics only; learner-session validates and owns product state.
 export const PROTOTYPE_SCENARIO_STORAGE_KEY = "tawjihi:prototype-scenario";
 export const VISITOR_SELECTION_STORAGE_KEY = "tawjihi:visitor-selection";
 export const TEMPORARY_ACCOUNT_STORAGE_KEY = "tawjihi:temporary-account";

@@ -2,6 +2,7 @@ import DOMPurify from "../../node_modules/dompurify/dist/purify.es.mjs";
 import hljs from "../../node_modules/@highlightjs/cdn-assets/es/highlight.min.js";
 import { Marked } from "../../node_modules/marked/lib/marked.esm.js";
 import { escapeHtml } from "../lib/dom.js";
+import { getLessonUiCopy } from "../ui/lesson-ui-copy.js";
 import { LESSON_CONTENT_DIRECTIVES } from "./lesson-authoring.js";
 
 const GLOSSARY = new Map([
@@ -76,11 +77,11 @@ const technicalTermExtension = {
     if (!definition) return undefined;
     return { type:"technicalTerm", raw:match[0], term, definition };
   },
-  renderer(token) {
+  renderer(token, copy = getLessonUiCopy()) {
     technicalTermId += 1;
     const term = escapeHtml(token.term);
     const definitionId = `markdown-term-${technicalTermId}`;
-    return `<dfn class="markdown-tech-term" tabindex="0" aria-describedby="${definitionId}"><span class="markdown-tech-label">${term}</span><span class="markdown-tech-card" id="${definitionId}" role="tooltip"><small>TECH TERM</small><strong>${term}</strong><span>${escapeHtml(token.definition)}</span></span></dfn>`;
+    return `<dfn class="markdown-tech-term" tabindex="0" aria-describedby="${definitionId}"><span class="markdown-tech-label">${term}</span><span class="markdown-tech-card" id="${definitionId}" role="tooltip"><small>${escapeHtml(copy.glossaryLabel)}</small><strong dir="auto">${term}</strong><span dir="auto">${escapeHtml(token.definition)}</span></span></dfn>`;
   },
 };
 
@@ -146,18 +147,26 @@ const codeRenderer = {
       return `<span class="markdown-code-line${highlightedClass}">${line || " "}</span>`;
     }).join("\n");
     const heading = title ? `<span>${escapeHtml(title)}</span>` : "<span>CODE</span>";
-    return `<div class="markdown-code-block"><div class="markdown-code-head">${heading}<b>${languageLabel}</b></div><pre><code class="hljs${languageClass}">${code}</code></pre></div>`;
+    return `<div class="markdown-code-block"><div class="markdown-code-head">${heading}<b>${languageLabel}</b></div><pre dir="ltr" tabindex="0"><code class="hljs${languageClass}">${code}</code></pre></div>`;
   },
 };
 
-const markdown = new Marked({
+const markdownByLocale = new Map();
+function markdownFor(locale = "en") {
+  const key = locale === "ar" ? "ar" : "en";
+  if (markdownByLocale.has(key)) return markdownByLocale.get(key);
+  const copy = getLessonUiCopy(key);
+  const markdown = new Marked({
   async:false,
   breaks:false,
-  extensions:[technicalTermExtension, lessonDirectiveExtension, youtubeVideoExtension],
+  extensions:[{ ...technicalTermExtension, renderer(token) { return technicalTermExtension.renderer(token, copy); } }, lessonDirectiveExtension, youtubeVideoExtension],
   gfm:true,
   pedantic:false,
   renderer:codeRenderer,
-});
+  });
+  markdownByLocale.set(key, markdown);
+  return markdown;
+}
 
 function sanitize(html) {
   return DOMPurify.sanitize(html, {
@@ -168,32 +177,32 @@ function sanitize(html) {
   });
 }
 
-export function renderMarkdownDocument(source) {
-  return sanitize(markdown.parse(String(source)));
+export function renderMarkdownDocument(source, { locale = "en" } = {}) {
+  return sanitize(markdownFor(locale).parse(String(source)));
 }
 
-export function renderMarkdownInline(source) {
-  return sanitize(markdown.parseInline(String(source)));
+export function renderMarkdownInline(source, { locale = "en" } = {}) {
+  return sanitize(markdownFor(locale).parseInline(String(source)));
 }
 
 export function renderLessonInline(source) {
-  return renderMarkdownInline(source).replaceAll("<code>", '<code class="lesson-inline-code">');
+  return renderMarkdownInline(source).replaceAll("<code>", '<code class="lesson-inline-code" dir="ltr">');
 }
 
-function wrapTables(container) {
+function wrapTables(container, copy) {
   container.querySelectorAll(".markdown-rendered table").forEach((table) => {
     if (table.parentElement?.classList.contains("markdown-table-scroll")) return;
     const wrapper = document.createElement("div");
     wrapper.className = "markdown-table-scroll";
     wrapper.tabIndex = 0;
     wrapper.setAttribute("role", "region");
-    wrapper.setAttribute("aria-label", "Scrollable table");
+    wrapper.setAttribute("aria-label", copy.scrollableTable);
     table.before(wrapper);
     wrapper.append(table);
   });
 }
 
-function mountYouTubeVideos(container) {
+function mountYouTubeVideos(container, copy) {
   container.querySelectorAll(".markdown-youtube-source").forEach((link) => {
     const video = parseYouTubeUrl(link.href);
     if (!video) return;
@@ -203,7 +212,7 @@ function mountYouTubeVideos(container) {
     const player = document.createElement("iframe");
     player.className = "markdown-youtube-player";
     player.src = source.href;
-    player.title = "YouTube video player";
+    player.title = copy.videoPlayer;
     player.loading = "lazy";
     player.referrerPolicy = "strict-origin-when-cross-origin";
     player.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
@@ -212,9 +221,14 @@ function mountYouTubeVideos(container) {
   });
 }
 
-export function mountMarkdownFeatures(container, { signal, scrollSurface } = {}) {
-  wrapTables(container);
-  mountYouTubeVideos(container);
+export function mountMarkdownFeatures(container, { signal, scrollSurface, locale = "en" } = {}) {
+  const copy = getLessonUiCopy(locale);
+  container.querySelectorAll('.markdown-rendered li > input[type="checkbox"]').forEach((input) => {
+    if (!input.hasAttribute('aria-label') && !input.hasAttribute('aria-labelledby'))
+      input.setAttribute('aria-label', input.parentElement.textContent.trim());
+  });
+  wrapTables(container, copy);
+  mountYouTubeVideos(container, copy);
   if (mountedContainers.has(container) && mountedContainers.get(container) === signal) return;
   mountedContainers.set(container, signal);
   const contentScrollButton = container.querySelector("[data-content-scroll]");

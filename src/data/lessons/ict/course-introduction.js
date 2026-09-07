@@ -1,6 +1,7 @@
 import { defineMarkdownLesson } from "../../../markdown/lesson-model.js";
 
 export const LESSON_MARKDOWN = `<!-- step-id: meet-rocky -->
+<!-- presentation: rocky-dialogue -->
 # تعرّف إلى روكي
 
 ![روكي يلوّح مرحبًا بالطالب](assets/mascot/rocky-wave.svg)
@@ -11,20 +12,21 @@ export const LESSON_MARKDOWN = `<!-- step-id: meet-rocky -->
 
 <!-- lesson-step -->
 <!-- step-id: watch-introduction-together -->
-# لنشاهد المقدمة معًا
+<!-- presentation: rocky-dialogue -->
+# لنبدأ رحلتنا معًا
 
 ![روكي يجلس على أريكة صغيرة مريحة، ويحمل الفشار أمام التلفاز](assets/mascot/rocky-watching-tv.png)
 
-:::note لنشاهد المقدمة معًا
-لنشاهد المقدمة معًا. اضغط **التالي**، وأنا معك!
+:::note لنبدأ رحلتنا معًا
+سنتعرّف إلى طريقة الدروس، ثم نجرّب سؤالًا بسيطًا. اضغط **متابعة**، وأنا معك!
 :::
 
 <!-- lesson-step -->
 <!-- step-id: introduction-video -->
-# فيديو المقدمة
+# تعلّم على راحتك
 
-:::note مكان الفيديو
-سيُضاف فيديو المقدمة هنا قريبًا. بعد إضافته، ستتمكن من مشاهدته من داخل الدرس ثم متابعة المقدمة.
+:::note خطوة واحدة في كل مرة
+ستقرأ شرحًا قصيرًا، ثم تجرّب ما تعلّمته. يمكنك استخدام **السابق** لمراجعة فكرة، أو **متابعة** عندما تكون جاهزًا.
 :::
 
 <!-- lesson-step -->

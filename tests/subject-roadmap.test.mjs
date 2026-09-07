@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { getSubjectRoadmap, getSubjectRoadmapLesson } from "../src/data/subject-roadmaps.js";
-import { renderSubjectRoadmapMarkup } from "../src/ui/subject-roadmap.js";
+import { getRoadmapBubblePosition, renderSubjectRoadmapMarkup } from "../src/ui/subject-roadmap.js";
 
 test("ICT follows the units and lessons listed in the textbook contents", () => {
   const roadmap = getSubjectRoadmap("ict");
@@ -64,11 +64,12 @@ test("subjects without a roadmap remain in their existing status view", () => {
   assert.equal(getSubjectRoadmapLesson("ict", "unknown"), null);
 });
 
-test("the guest roadmap leaves only the first trial lesson open", () => {
+test("unpublished guest parts never imply that creating an account publishes them", () => {
   const markup = renderSubjectRoadmapMarkup(getSubjectRoadmap("ict"), {
     isLessonLocked:(_unit, lesson) => !["course-introduction", "database-management"].includes(lesson.id),
   });
-  assert.equal((markup.match(/data-account-locked="true"/g) || []).length, 22);
+  assert.equal((markup.match(/data-account-locked="true"/g) || []).length, 0);
+  assert.equal((markup.match(/data-access-state="unpublished"/g) || []).length, 22);
   assert.doesNotMatch(markup.match(/<button[^>]*data-roadmap-lesson="course-introduction"[^>]*>/)?.[0] || "", /data-account-locked/);
   assert.doesNotMatch(markup.match(/<button[^>]*data-roadmap-lesson="database-management"[^>]*>/)?.[0] || "", /data-account-locked/);
   assert.match(markup, /أنشئ حسابًا لمتابعة بقية الدروس/);
@@ -125,7 +126,7 @@ test("unit cards count completed parts once and keep access separate from progre
   });
   assert.match(markup, /<progress value="1" max="14"/);
   assert.match(markup, /1 من 14 جزء مكتمل/);
-  assert.match(markup, /<bdi>7%<\/bdi>/);
+  assert.match(markup, /<bdi class="ui-number">7%<\/bdi>/);
   assert.equal((markup.match(/<progress value="0"/g) || []).length, 2);
   assert.match(markup, /data-part-state="completed"/);
   assert.match(markup, /data-account-locked="true"/);
@@ -135,19 +136,19 @@ test("the next part unlocks after completion and answered questions are counted 
   const roadmap = getSubjectRoadmap("ict");
   const initial = renderSubjectRoadmapMarkup(roadmap);
   const initialButtons = [...initial.matchAll(/<button class="roadmap-part"[^>]*>/g)].map(match => match[0]);
-  assert.equal(initialButtons.filter(button => button.includes('data-path-locked="false"')).length, 2);
+  assert.equal(initialButtons.filter(button => button.includes('data-access-state="available"')).length, 2);
   assert.match(initial, /roadmap-recommended">موصى به/);
   assert.match(initial, /data-roadmap-part="getting-started"[^>]*>[\s\S]*?roadmap-part-number" aria-hidden="true">0</);
   assert.match(initial, /data-roadmap-part="access-basics"[^>]*>[\s\S]*?roadmap-part-number" aria-hidden="true">1</);
   const updated = renderSubjectRoadmapMarkup(roadmap, {
     getPartProgress:(_lesson, part) => ({ completed:part.id === "getting-started" }),
-    getPartReview:(_lesson, part) => part.id === "access-basics" ? [{ stepId:"a" }, { stepId:"b" }] : [],
+    getPartReview:(_lesson, part) => part.id === "access-basics" ? [{ stepId:"a", solved:true }, { stepId:"b", solved:true }, { stepId:"c", solved:false }] : [],
   });
   const buttons = [...updated.matchAll(/<button class="roadmap-part"[^>]*>/g)].map(match => match[0]);
   assert.ok(buttons[0].includes('data-part-state="completed"'));
   assert.ok(buttons[1].includes('data-path-locked="false"'));
   assert.ok(buttons[2].includes('data-path-locked="true"'));
-  assert.match(updated, /<strong>2<\/strong><span data-unit-progress-count>أسئلة محلولة/);
+  assert.match(updated, /<strong class="ui-number">2<\/strong><span data-unit-progress-count>أسئلة محلولة/);
 });
 
 test("review cards show honest empty states and deduplicate questions into parts", () => {
@@ -158,5 +159,33 @@ test("review cards show honest empty states and deduplicate questions into parts
   const active = renderSubjectRoadmapMarkup(roadmap, { getPartReview:(_lesson, part) => part.id === "access-basics" ? [{ stepId:"question-1", misses:2, active:true }, { stepId:"question-2", misses:3, active:true }] : [] });
   assert.equal((active.match(/data-review-part=/g) || []).length, 1);
   assert.ok(active.includes('data-review-count>1'));
-  assert.ok(active.includes('data-review-step="question-1"'));
+  assert.ok(active.includes('data-review-step="question-2"'));
+  assert.match(active, /role="tabpanel" aria-labelledby="review-tab-unit-1" tabindex="0" hidden/);
+  assert.doesNotMatch(active.match(/class="roadmap-unit-panels"[\s\S]*?<\/header>/)?.[0] || "", /data-review-part/);
+  const unpublished = renderSubjectRoadmapMarkup(roadmap, {
+    isLessonLocked:() => true,
+    getPartReview:(_lesson, part) => part.id === "sql-introduction" ? [{ stepId:"retained-question", misses:2, active:true }] : [],
+  });
+  assert.match(unpublished, /data-review-part="sql-introduction"[^>]* disabled>[\s\S]*?<b>غير متاح حاليًا<\/b>/);
+});
+
+
+test("published gated parts retain their account requirement", () => {
+  const markup = renderSubjectRoadmapMarkup(getSubjectRoadmap("ict"), { isLessonLocked:() => true });
+  assert.equal((markup.match(/data-account-locked="true"/g) || []).length, 7);
+  assert.equal((markup.match(/data-access-state="unpublished"/g) || []).length, 22);
+});
+
+test("popup placement stays inside measured header, navigation, and rail bounds", () => {
+  const cases = [
+    { anchor:{ left:140, right:244, top:650, bottom:740 }, size:{ width:320, height:240 }, bounds:{ left:12, right:378, top:78, bottom:741 } },
+    { anchor:{ left:14, right:118, top:90, bottom:180 }, size:{ width:320, height:240 }, bounds:{ left:12, right:378, top:78, bottom:741 } },
+    { anchor:{ left:400, right:510, top:130, bottom:224 }, size:{ width:320, height:188 }, bounds:{ left:12, right:748, top:78, bottom:266 } },
+    { anchor:{ left:830, right:940, top:650, bottom:744 }, size:{ width:320, height:320 }, bounds:{ left:12, right:1160, top:12, bottom:888 } },
+  ];
+  for (const { anchor, size, bounds } of cases) {
+    const placed = getRoadmapBubblePosition(anchor, size, bounds);
+    assert.ok(placed.left >= bounds.left && placed.left + size.width <= bounds.right);
+    assert.ok(placed.top >= bounds.top && placed.top + size.height <= bounds.bottom);
+  }
 });

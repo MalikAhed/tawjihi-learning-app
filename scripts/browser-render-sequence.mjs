@@ -4,15 +4,18 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { CdpPipe, delay, findChrome, getAvailablePort, terminateProcess, waitForServer } from "./browser-session.mjs";
+import { createFailureDirectory, saveBrowserFailure } from "./browser-diagnostics.mjs";
 import { verifyVisitorLifecycle } from "./browser-visitor-lifecycle.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const output = process.env.BROWSER_RENDER_DIR || await mkdtemp(path.join(tmpdir(), "learn-render-sequence-"));
+const output = process.env.BROWSER_RENDER_DIR || await createFailureDirectory("render-sequence");
 const baseline = process.env.BROWSER_RENDER_BASELINE === "1";
 const failures = [];
 const records = [];
 const writes = [];
 let server, chrome, profile;
+let cdp;
+let diagnosticSend;
 let stage = "startup", frame = 0;
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
@@ -20,14 +23,15 @@ try {
   await mkdir(output, { recursive:true });
   const port = await getAvailablePort();
   const appUrl = `http://127.0.0.1:${port}/`;
-  server = spawn(process.execPath, ["dev-server.mjs"], { cwd:projectRoot, env:{ ...process.env, PORT:String(port), ACCOUNTS_DATABASE_PATH:":memory:" }, stdio:"ignore" });
+  server = spawn(process.execPath, ["dev-server.mjs"], { cwd:projectRoot, env:{ ...process.env, PORT:String(port), LIVE_RELOAD:"0",ACCOUNTS_DATABASE_PATH:":memory:" }, stdio:"ignore" });
   await waitForServer(port);
   profile = await mkdtemp(path.join(tmpdir(), "learn-render-chrome-"));
   chrome = spawn(await findChrome(), ["--headless=new", "--no-sandbox", "--disable-gpu", "--disable-background-networking", "--remote-debugging-pipe", `--user-data-dir=${profile}`, "about:blank"], { stdio:["ignore", "ignore", "ignore", "pipe", "pipe"] });
-  const cdp = new CdpPipe(chrome);
+  cdp = new CdpPipe(chrome);
   const { targetId } = await cdp.send("Target.createTarget", { url:"about:blank" });
   const { sessionId } = await cdp.send("Target.attachToTarget", { targetId, flatten:true });
   const send = (method, params = {}) => cdp.send(method, params, sessionId);
+  diagnosticSend = send;
   const evaluate = async (expression) => {
     const result = await send("Runtime.evaluate", { expression, returnByValue:true, awaitPromise:true });
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.exception?.description || result.exceptionDetails.text);
@@ -130,7 +134,8 @@ try {
     assert(await evaluate("document.querySelector('dialog').open && document.querySelector('dialog').contains(document.activeElement)"), `${width}: dialog opens with focus inside`);
     await send("Input.dispatchKeyEvent", { type:"keyDown", key:"Escape", code:"Escape", windowsVirtualKeyCode:27 });
     await send("Input.dispatchKeyEvent", { type:"keyUp", key:"Escape", code:"Escape", windowsVirtualKeyCode:27 });
-    await waitFor("!document.querySelector('dialog').open");
+    // Escape removes `open` before the queued close event restores the opener.
+    await waitFor("!document.querySelector('dialog').open && document.activeElement.matches('[data-reset=browser]')");
     assert(await evaluate("document.activeElement.matches('[data-reset=browser]')"), `${width}: dialog cancellation restores focus`);
 
     stage = `${width}-warm-reference`;
@@ -175,8 +180,12 @@ try {
     console.log(failures.join("\n"));
     if (!baseline) process.exitCode = 1;
   } else console.log("Rendering sequences passed: desktop/mobile, slow initial loads, warm reloads, nested tabs, dialogs, back/forward, rapid navigation, and reduced motion.");
+} catch (error) {
+  if (diagnosticSend) await saveBrowserFailure({send:diagnosticSend,name:`render-${stage}`,error,failures});
+  throw error;
 } finally {
+  cdp?.close();
   await terminateProcess(chrome);
   await terminateProcess(server);
-  if (profile) await rm(profile, { recursive:true, force:true });
+  if (profile) await rm(profile, { recursive:true, force:true, maxRetries:5, retryDelay:100 });
 }

@@ -1,3 +1,5 @@
+import { getSessionToken, isCrossSiteRequest } from "./auth-api.mjs";
+import { createAuthRateLimiter } from "./auth-rate-limiter.mjs";
 import { localizeShipReady } from "../data/ship-ready-ar.js";
 import { getShipReadyTemplate } from "../data/ship-ready.js";
 import { hasJsonContentType, sendJson } from "./http.mjs";
@@ -19,6 +21,11 @@ export function createExplanationReviewApi({
   reviewExplanation,
   readJsonBody,
   getTemplate = getShipReadyTemplate,
+  accountStore = null,
+  production = false,
+  originPolicy = isCrossSiteRequest,
+  clientAddress = request => request.socket?.remoteAddress || "unknown",
+  rateLimiter = createAuthRateLimiter(),
 } = {}) {
   if (!reviewExplanation || !readJsonBody) throw new TypeError("explanation review API dependencies are required");
 
@@ -27,6 +34,12 @@ export function createExplanationReviewApi({
       response.writeHead(405, { Allow:"POST" }).end("Method not allowed");
       return;
     }
+    if (originPolicy(request)) { sendJson(response,403,{error:"Invalid request origin."}); return; }
+    const account=accountStore?.getAccountForSession(getSessionToken(request));
+    if (production && (!account || account.accountType==="banned")) { sendJson(response,401,{error:"Sign in to request a review."}); return; }
+    const actor=account ? `account:${account.id}` : `trial:${clientAddress(request)}`;
+    const allowance=rateLimiter.consume(actor,account?"review":"trialReview");
+    if(!allowance.allowed) { sendJson(response,429,{source:"unavailable",feedback:"محاولات كثيرة. حاول بعد قليل."},{"Retry-After":String(allowance.retryAfterSeconds)});return; }
     if (!hasJsonContentType(request)) {
       sendJson(response, 415, { error:"Content-Type must be application/json." });
       return;
@@ -38,7 +51,7 @@ export function createExplanationReviewApi({
       const originalDefinition = getTemplate(route);
       const definition = body.locale === "ar" ? localizeShipReady(originalDefinition) : originalDefinition;
       const content = definition?.type === "response" ? definition.content
-        : route === "lesson-authoring-preview" ? readAuthoredReview(body.authoredReview) : null;
+        : !production && route === "lesson-authoring-preview" ? readAuthoredReview(body.authoredReview) : null;
       if (!content) {
         sendJson(response, 400, { error:"Unknown explanation template." });
         return;
@@ -47,13 +60,20 @@ export function createExplanationReviewApi({
         sendJson(response, 400, { error:`Answer must contain 1-${content.maxLength} characters.` });
         return;
       }
-      const result = await reviewExplanation({ answer, content, route });
-      sendJson(response, result.source === "codex" ? 200 : 503, result);
+      const controller=new AbortController();
+      const disconnected=()=>{if(!response.writableEnded)controller.abort();};
+      response.on("close",disconnected);
+      try {
+        const result = await reviewExplanation({ answer, content, route, actor, signal:controller.signal });
+        if(!response.destroyed) sendJson(response, ["codex","provider"].includes(result.source) ? 200 : 503, result);
+      } finally { response.removeListener("close",disconnected); }
     } catch (error) {
-      if (error?.code === "ETOOBIG") sendJson(response, 413, { error:"Request body is too large." });
+      if(response.destroyed)return;
+      if(["EBUSY","ETIMEDOUT","ABORT_ERR"].includes(error?.code)) sendJson(response,503,{source:"unavailable",code:error.code,feedback:"المراجعة مشغولة الآن. حاول مجددًا بعد قليل."},{"Retry-After":"5"});
+      else if (error?.code === "ETOOBIG") sendJson(response, 413, { error:"Request body is too large." });
       else if (error instanceof SyntaxError) sendJson(response, 400, { error:"Request body must be valid JSON." });
       else {
-        console.error("Could not review the explanation.", error);
+        console.error(JSON.stringify({event:"review_error",code:error.code||"UNKNOWN"}));
         sendJson(response, 500, { error:"The explanation could not be reviewed." });
       }
     }

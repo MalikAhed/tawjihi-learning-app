@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="learn-account-mode" content="http" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مساحة التعلّم</title>
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
@@ -15,12 +16,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/noto-sans-arabic/noto-sans-arabic-arabic-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/noto-sans-arabic/noto-sans-arabic-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="src/styles/base.css" />
+  <link rel="stylesheet" href="src/styles/media.css" />
   <link rel="stylesheet" href="src/styles/week-theme.css" />
   <link rel="stylesheet" href="src/styles/course-map.css" />
   <link rel="stylesheet" href="src/styles/learner-dashboard.css" />
   <link rel="stylesheet" href="src/styles/subject-learning.css" />
   <link rel="stylesheet" href="src/styles/lesson.css" />
+  <link rel="stylesheet" href="src/styles/lesson/mcq.css" />
+  <link rel="stylesheet" href="src/styles/lesson/spot-bug.css" />
+  <link rel="stylesheet" href="src/styles/lesson/fill-blanks.css" />
+  <link rel="stylesheet" href="src/styles/lesson/sequence.css" />
+  <link rel="stylesheet" href="src/styles/lesson/response.css" />
+  <link rel="stylesheet" href="src/styles/lesson/response-review.css" />
+  <link rel="stylesheet" href="src/styles/lesson/response-responsive.css" />
+  <link rel="stylesheet" href="src/styles/lesson/classic.css" />
+  <link rel="stylesheet" href="src/styles/lesson/published.css" />
+  <link rel="stylesheet" href="src/styles/lesson/navigation.css" />
+  <link rel="stylesheet" href="src/styles/lesson/completion.css" />
+  <link rel="stylesheet" href="src/styles/lesson/analytics.css" />
+  <link rel="stylesheet" href="src/styles/lesson/progress.css" />
   <link rel="stylesheet" href="src/styles/markdown-lab.css" />
   <link rel="stylesheet" href="src/styles/visitor-flow.css" />
   <link rel="stylesheet" href="src/styles/responsive.css" />
@@ -29,14 +46,14 @@
 </head>
 <body>
   <template id="app-header-template">
-  <header class="topbar-wrap"><div class="page topbar">
-    <div class="nav-resources" aria-label="الجواهر والقلوب والمستوى"><span class="nav-resource nav-resource--gems"><img src="assets/icons/nav-gem.svg" alt="الجواهر" width="36" height="36" /><bdi>120</bdi></span><span class="nav-resource nav-resource--hearts"><img src="assets/icons/nav-heart.svg" alt="القلوب" width="36" height="36" /><bdi>5</bdi></span><span class="nav-resource nav-resource--level"><img src="assets/icons/dashboard-levels.svg" alt="المستوى" width="36" height="36" /><bdi lang="en">Lv. 01</bdi></span></div>
+  <header class="topbar-wrap" data-shell-obstruction><div class="page topbar">
+    <div class="nav-resources" aria-label="الجواهر والقلوب وتجميد السلسلة" data-shell-obstruction><span class="nav-resource nav-resource--gems" aria-label="0 جواهر"><img src="assets/icons/nav-gem.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--hearts" aria-label="0 قلوب"><img src="assets/icons/nav-heart.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--freeze" data-learner-streak-freeze aria-label="0 من أدوات تجميد السلسلة" hidden><img src="assets/icons/streak-freeze.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span></div>
     <nav class="nav-links" aria-label="التنقل الرئيسي">
-      <button class="nav-item active" type="button" data-page="learn" aria-current="page"><div class="nav-icon"><img src="assets/icons/dashboard-home.svg" alt="" /></div><span>الرئيسية</span></button>
-      <button class="nav-item" type="button" data-page="quests"><div class="nav-icon"><img src="assets/icons/dashboard-quests.svg" alt="" /></div><span>المهام</span></button>
-      <button class="nav-item" type="button" data-page="shop"><div class="nav-icon"><img src="assets/icons/dashboard-shop.svg" alt="" /></div><span>المتجر</span></button>
-      <button class="nav-item" type="button" data-page="challenges"><div class="nav-icon"><img src="assets/icons/dashboard-challenges.svg" alt="" /></div><span>التحديات</span></button>
-      <button class="nav-item" type="button" data-page="more"><div class="nav-icon"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="4" width="28" height="25" rx="9" fill="#1899d6"/><rect x="2" y="2" width="28" height="24" rx="9" fill="#1cb0f6"/><g fill="white"><circle cx="9" cy="14" r="2"/><circle cx="16" cy="14" r="2"/><circle cx="23" cy="14" r="2"/></g></svg></div><span>المزيد</span></button>
+      <button class="nav-item active" type="button" data-page="learn" aria-label="الرئيسية" aria-current="page"><div class="nav-icon"><img src="assets/icons/dashboard-home.svg" alt="" /></div><span>الرئيسية</span></button>
+      <button class="nav-item" type="button" data-page="quests" aria-label="المهام"><div class="nav-icon"><img src="assets/icons/dashboard-quests.svg" alt="" /></div><span>المهام</span></button>
+      <button class="nav-item" type="button" data-page="shop" aria-label="المتجر"><div class="nav-icon"><img src="assets/icons/dashboard-shop.svg" alt="" /></div><span>المتجر</span></button>
+      <button class="nav-item" type="button" data-page="challenges" aria-label="التحديات"><div class="nav-icon"><img src="assets/icons/dashboard-challenges.svg" alt="" /></div><span>التحديات</span></button>
+      <button class="nav-item" type="button" data-page="more" aria-label="المزيد"><div class="nav-icon"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="4" width="28" height="25" rx="9" fill="#1899d6"/><rect x="2" y="2" width="28" height="24" rx="9" fill="#1cb0f6"/><g fill="white"><circle cx="9" cy="14" r="2"/><circle cx="16" cy="14" r="2"/><circle cx="23" cy="14" r="2"/></g></svg></div><span>المزيد</span></button>
     </nav>
     <div class="topbar-auth">
       <div class="topbar-auth-guest">
@@ -46,7 +63,7 @@
       <div class="topbar-auth-member" hidden>
         <div class="topbar-profile">
           <span class="topbar-profile__avatar" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="currentColor"/><path d="M6 27v-2a10 10 0 0 1 20 0v2" fill="currentColor"/></svg></span>
-          <span data-account-label lang="en">Free</span>
+          <span data-account-label>حساب مجاني</span>
         </div>
         <button class="topbar-login" type="button" data-auth-sign-out>تسجيل الخروج</button>
       </div>

@@ -1,0 +1,286 @@
+
+.ui-lab-mcq-open .lesson-status {
+  order: 3;
+  min-width: 58px;
+  padding: 0;
+  background: transparent;
+  color: var(--quest-theme-muted-text);
+  box-shadow: none;
+}
+.lesson-lives {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font:
+    700 15px var(--font-ui);
+}
+.lesson-lives svg {
+  width: 27px;
+  height: 27px;
+  overflow: visible;
+  filter: drop-shadow(0 2px 0 rgba(183, 45, 61, 0.18));
+}
+.lesson-heart-shape {
+  fill: #ff4b5c;
+  stroke: none;
+}
+.lesson-heart-shine {
+  fill: #ffb7bf;
+  transform-origin: 24.8px 4.2px;
+  animation: lesson-heart-sparkle 1.8s ease-in-out infinite;
+}
+@keyframes lesson-heart-sparkle {
+  0%,
+  55%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.75) rotate(0);
+  }
+  68% {
+    opacity: 1;
+    transform: scale(1.28) rotate(18deg);
+  }
+}
+.ui-lab-mcq-open .level-layout-task {
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vh, 42px) 24px 20px;
+}
+.ui-lab-mcq-open .ui-lab-mcq {
+  width: min(100%, 900px);
+}
+.ui-lab-mcq-open .level-layout-task h1 {
+  margin-bottom: 14px;
+  color: var(--quest-theme-text);
+  font-size: clamp(28px, 4vw, 38px);
+}
+.ui-lab-mcq-open .level-lesson-copy > p:not(.level-layout-kicker) {
+  color: #5f5b57;
+  font:
+    700 clamp(18px, 2vw, 23px) / 1.4 var(--font-ui);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  margin-top: clamp(22px, 3.5vh, 34px);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list:is([data-answer-count="2"], [data-answer-count="4"]) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button {
+  position: relative;
+  min-height: 72px;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  overflow: hidden;
+  padding: 11px 16px;
+  border: 2px solid var(--quest-theme-line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--quest-theme-text);
+  font-size: 17px;
+  box-shadow: 0 3px 0 var(--quest-theme-line);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button > span {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--quest-theme-line);
+  border-radius: 9px;
+  background: var(--quest-theme-surface);
+  color: var(--quest-theme-muted-text);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button:hover {
+  border-color: var(--quest-theme-main);
+  background: var(--quest-theme-surface);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button:hover:not(.is-selected) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 var(--quest-theme-main);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--quest-theme-main);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-selected {
+  border-color: var(--quest-theme-main);
+  background: var(--quest-theme-soft-strong);
+  color: var(--quest-theme-text);
+  box-shadow: 0 1px 0 var(--quest-theme-main);
+  transform: translateY(2px);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-selected > span {
+  border-color: var(--quest-theme-bottom);
+  background: var(--quest-theme-surface);
+  color: var(--quest-theme-text);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct {
+  border-color: #58cc02;
+  background: #d7ffb8;
+  color: var(--system-green-ink);
+  box-shadow: 0 3px 0 #58cc02;
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct > span {
+  border-color: #58cc02;
+  background: #edffdf;
+  color: var(--system-green-ink);
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct > span,
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct > b {
+  position: relative;
+  z-index: 1;
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct:before,
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct:after {
+  content: "✦";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  color: rgba(70, 163, 2, 0.38);
+  font:
+    700 34px/1 var(--font-ui);
+  opacity: 0;
+  pointer-events: none;
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct:before {
+  left: 6%;
+  animation: level-correct-star-left 430ms ease-out both;
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-correct:after {
+  right: 6%;
+  animation: level-correct-star-right 430ms ease-out both;
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-wrong {
+  border-color: #ff4b4b;
+  background: #ffdfe0;
+  color: var(--system-red-ink);
+  box-shadow: 0 3px 0 #ff4b4b;
+  animation: level-wrong-shake 560ms ease-in-out both;
+}
+.ui-lab-mcq-open .ui-lab-mcq .level-answer-list button.is-wrong > span {
+  border-color: #ff4b4b;
+  background: #fff0f0;
+  color: var(--system-red-ink);
+}
+@media (max-width: 760px) {
+  .ui-lab-mcq-open .level-layout-task {
+    align-items: stretch;
+    justify-content: center;
+    padding-inline: 16px;
+  }
+  .ui-lab-mcq-open .ui-lab-mcq .level-answer-list,
+  .ui-lab-mcq-open .ui-lab-mcq .level-answer-list:is([data-answer-count="2"], [data-answer-count="4"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@keyframes level-correct-star-left {
+  0% {
+    opacity: 0;
+    transform: translate(-42px, -50%) scale(0.2) rotate(-30deg);
+  }
+  46% {
+    opacity: 0.72;
+    transform: translate(18px, -50%) scale(1.9) rotate(8deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(48px, -50%) scale(2.45) rotate(22deg);
+  }
+}
+@keyframes level-correct-star-right {
+  0% {
+    opacity: 0;
+    transform: translate(42px, -50%) scale(0.2) rotate(30deg);
+  }
+  46% {
+    opacity: 0.72;
+    transform: translate(-18px, -50%) scale(1.9) rotate(-8deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-48px, -50%) scale(2.45) rotate(-22deg);
+  }
+}
+@keyframes level-wrong-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  18% {
+    transform: translateX(-6px);
+  }
+  38% {
+    transform: translateX(5px);
+  }
+  58% {
+    transform: translateX(-3px);
+  }
+  78% {
+    transform: translateX(2px);
+  }
+}
+.ui-lab-mcq-open .level-feedback.is-correct {
+  color: #46a302;
+}
+.ui-lab-mcq-open .level-feedback.is-wrong {
+  color: #d93636;
+}
+.ui-lab-mcq-open .level-feedback:is(.is-correct, .is-wrong) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.level-result-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+}
+.level-result-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.level-result-icon--correct {
+  background: var(--system-green-action, #58cc02);
+}
+.level-result-icon--wrong {
+  background: #ff4b4b;
+}
+.level-result-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+.level-result-copy strong {
+  color: currentColor;
+  font:
+    900 19px/1.2 var(--font-ui);
+}
+.level-result-copy > span {
+  color: var(--quest-theme-text);
+  font:
+    700 13px/1.45 var(--font-ui);
+}
+.level-result-copy code {
+  padding: 0.08em 0.34em;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.55);
+  color: inherit;
+  font:
+    800 0.92em ui-monospace,
+    monospace;
+}
+.ui-lab-mcq-open .ui-lab-pinata > strong {
+  color: #ffd84d;
+  text-shadow:
+    0 0 0 #fff,
+    0 0 24px rgba(255, 216, 77, 0.8);
+}

@@ -1,3 +1,4 @@
+import { assertSupportedDatabaseVersion, createDatabaseProgressStore } from "./progress-store.mjs";
 import { createHash, randomBytes, scrypt as scryptCallback, scryptSync, timingSafeEqual } from "node:crypto";
 import { mkdirSync } from "node:fs";
 import path from "node:path";
@@ -48,7 +49,15 @@ export function createAccountStore({ databasePath } = {}) {
   const filename = databasePath || path.resolve("data/accounts.sqlite");
   if (filename !== ":memory:") mkdirSync(path.dirname(filename), { recursive:true });
   const database = new DatabaseSync(filename);
-  initializeAccountSchema(database);
+  let progress;
+  try {
+    assertSupportedDatabaseVersion(database);
+    initializeAccountSchema(database);
+    progress = createDatabaseProgressStore(database);
+  } catch (error) {
+    database.close();
+    throw error;
+  }
 
   const insertAccount = database.prepare(`
     INSERT INTO accounts (
@@ -185,6 +194,7 @@ export function createAccountStore({ databasePath } = {}) {
   }
 
   return Object.freeze({
+    progress,
     createAccount,
     authenticate,
     isIdentifierAvailable(field, value) {

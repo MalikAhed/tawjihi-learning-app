@@ -1,3 +1,5 @@
+> Historical snapshot: findings and ownership may be superseded. Use [the current architecture](ARCHITECTURE.md) and [the active improvement plan](AGENT_IMPROVEMENT_PLAN.md) for implementation.
+
 # Refactor and rendering audit — 2026-09-05
 
 ## Scope and baseline

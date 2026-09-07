@@ -1,0 +1,102 @@
+/* Completion presents recorded rewards and progress; navigation is shared with lessons. */
+.lesson-test-pass { align-self:flex-end; min-height:var(--control-height-compact); margin:8px 20px; padding:8px 14px; border:1px dashed var(--system-border); border-radius:var(--radius-control); background:var(--system-white); color:var(--system-muted); font:var(--type-helper); cursor:pointer; }
+.lesson-test-pass[hidden] { display:none; }
+.lesson-test-pass:focus-visible { outline:3px solid var(--system-focus); outline-offset:3px; }
+.lesson-shell--completion .lesson-top { display:none; }
+.lesson-shell--completion .lesson-card--ready-lesson { border-radius:0; }
+.lesson-shell--completion .level-layout-task { display:flex; align-items:safe center; justify-content:center; padding:24px 20px; }
+.subject-completion { width:min(100%,660px); margin:auto; padding:0; color:var(--system-ink); text-align:center; }
+.subject-completion h1 { margin:0; color:var(--system-ink); font:var(--type-title); }
+.subject-completion-hero { display:grid; justify-items:center; }
+.subject-completion-scene { width:min(100%,360px); height:310px; }
+.subject-completion-rocky { display:block; width:100%; height:100%; margin:auto; object-fit:contain; }
+.subject-gains { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; justify-content:center; margin-top:64px; direction:ltr; }
+.subject-gain { --gain-color:#ffc800; overflow:hidden; border:3px solid var(--gain-color); border-radius:18px; background:var(--gain-color); color:var(--gain-color); }
+.subject-gain--accuracy { --gain-color:#58cc02; }
+.subject-gain--quick { --gain-color:#1cb0f6; }
+.subject-gain > span { display:block; padding:5px 4px; color:#fff; font:800 14px/1.6 var(--font-ui); }
+.subject-gain > strong { display:flex; align-items:center; justify-content:center; gap:8px; min-height:76px; padding:10px 4px; border-radius:15px; background:#fff; font:800 clamp(20px,3vw,30px)/1.3 var(--font-numeric); }
+.subject-gain > strong svg { flex-shrink:0; width:25px; height:25px; fill:currentColor; }
+.subject-completion--result h1 { color:#ffc800; font:800 clamp(28px,4vw,42px)/1.6 var(--font-ui); }
+.lesson-shell--completion .level-layout-actions { border-top:0; grid-template-columns:160px minmax(0,1fr) 240px; }
+.lesson-shell--completion [data-template-primary] { background:#1cb0f6; border-color:#1cb0f6; --action-edge:#1899d6; color:#fff; }
+.subject-gain bdi { white-space:nowrap; }
+.subject-completion .subject-completion-preview { max-width:480px; margin:18px auto 0; color:var(--system-muted); font:var(--type-helper); }
+.subject-completion [data-gain-count] { font-variant-numeric:tabular-nums; }
+.subject-gain,.subject-completion-rocky { animation:completion-arrive 500ms ease-out both; }
+.subject-gain { animation-delay:250ms; }
+@keyframes completion-arrive { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+@keyframes completion-gain-pop { 0%,100% { transform:scale(1); } 45% { transform:scale(1.08); } }
+/* Streak and quests follow the same centered composition on every screen. */
+.subject-completion--streak { display:grid; justify-items:center; width:min(100%,560px); }
+.completion-streak-message { position:relative; max-width:480px; margin:0 0 24px; padding:16px 22px; border:2px solid #e5e5e5; border-radius:18px; color:#4b4b4b; font:var(--type-body); }
+.completion-streak-message::after { content:""; position:absolute; bottom:-9px; left:calc(50% - 8px); width:14px; height:14px; background:#fff; border-right:2px solid #e5e5e5; border-bottom:2px solid #e5e5e5; transform:rotate(45deg); }
+.completion-streak-scene { width:300px; height:240px; }
+.completion-streak-scene picture { display:block; width:100%; height:100%; }
+.completion-streak-fire { width:100%; height:100%; object-fit:contain; }
+.subject-completion .completion-streak-count { display:grid; gap:4px; color:#ff9600; }
+.completion-streak-count strong { font:800 clamp(4rem,12vw,6rem)/1 var(--font-numeric); }
+.completion-streak-count span { font:var(--type-section); }
+.completion-streak-caption { margin:8px 0 0; color:#ad6000; font:var(--type-helper); }
+.completion-week { width:100%; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:8px; margin:32px 0 0; padding:0; list-style:none; }
+.completion-week li { display:grid; justify-items:center; gap:8px; color:var(--system-muted); }
+.completion-week li > span { font-size:12px; font-weight:800; }
+.completion-week .is-today > span { color:#ff9600; }
+.completion-week i { display:grid; place-items:center; width:100%; max-width:44px; aspect-ratio:1; border-radius:50%; background:#edf0f2; font-style:normal; }
+.completion-week i svg { width:70%; height:70%; }
+.completion-week .is-complete i { background:#ff9600; color:#fff; }
+.subject-completion--quests { width:min(100%,620px); }
+.subject-completion--quests h1 { color:#1cb0f6; font:800 clamp(26px,4vw,38px)/1.6 var(--font-ui); }
+.completion-quests-intro { margin:6px 0 24px; color:#526170; font:var(--type-body); }
+.completion-quests { margin:0; padding:0; overflow:hidden; border:3px solid #e8eaec; border-radius:20px; list-style:none; text-align:start; }
+.completion-quests li { padding:22px 24px; }
+.completion-quests li + li { border-top:3px solid #f1f2f3; }
+.completion-quests li > strong { display:block; margin-bottom:20px; color:#3f454b; font:800 18px/1.5 var(--font-ui); }
+.completion-quest-icon { position:absolute; z-index:2; right:-10px; top:50%; display:block; width:60px; height:60px; transform:translateY(-50%); }
+.completion-quest-icon svg,.completion-quest-icon img { display:block; width:100%; height:100%; object-fit:contain; }
+.completion-quest--lessons .completion-quest-icon { color:#b86f42; }
+.completion-quest--perfect .completion-quest-icon { color:#58cc02; }
+.completion-quest--questions .completion-quest-icon { color:#a560e8; }
+.completion-quest-progress { position:relative; }
+.completion-quest-progress progress { display:block; appearance:none; width:100%; height:24px; border:0; border-radius:999px; overflow:hidden; direction:rtl; }
+.completion-quest-progress progress { width:calc(100% - 72px); margin-right:auto; margin-left:0; }
+.completion-quest-progress bdi { position:absolute; z-index:1; top:50%; left:calc((100% - 72px)/2); translate:-50% -50%; padding:3px 8px; border-radius:999px; background:var(--lesson-progress-track); color:var(--system-number-ink); font:800 14px/1 var(--font-numeric); white-space:nowrap; }
+.completion-quest-progress[data-label-covered="true"] bdi { background:var(--quest-progress-fill); color:#fff; }
+@media (max-width:600px), (max-height:700px) {
+  .completion-streak-message { padding:12px 16px; margin-bottom:16px; font:var(--type-helper); }
+  .completion-streak-scene { width:260px; height:220px; }
+  .completion-streak-count strong { font-size:64px; }
+  .completion-week { margin-top:20px; gap:6px; }
+  .completion-quests li { padding:16px; }
+  .completion-quests li > strong { margin-bottom:18px; }
+}
+@media (max-height:600px) {
+  .completion-streak-scene { width:120px; height:100px; }
+  .completion-streak-count strong { font-size:48px; }
+  .completion-quests-intro { margin-bottom:14px; }
+  .completion-quests li { padding:12px 16px; }
+  .completion-quest-icon { width:54px; height:54px; }
+}
+@media (max-width:600px) {
+  .lesson-shell--completion .level-layout-task { padding:20px 16px; }
+  .subject-completion-scene { width:min(100%,280px); height:250px; }
+  .subject-gains { margin-top:56px; gap:16px; }
+  .subject-gain > strong { min-height:60px; gap:5px; }
+  .subject-gain > strong svg { width:21px; height:21px; }
+}
+@media (max-width:760px) {
+  .lesson-shell--completion .level-layout-actions { grid-template-columns:84px minmax(0,1fr); gap:12px; }
+  .lesson-shell--completion .level-layout-actions [data-template-back] { grid-column:1; grid-row:1; padding-inline:4px; }
+  .lesson-shell--completion .level-layout-actions [data-template-primary] { grid-column:2; grid-row:1; }
+}
+@media (max-height:670px) {
+  .subject-completion-scene { width:200px; height:178px; }
+  .subject-gains { margin-top:14px; }
+  .lesson-shell--completion .level-layout-task { padding-block:12px; }
+}
+@media (max-height:480px) and (min-width:600px) {
+  .subject-completion--result .subject-completion-scene { width:110px; height:96px; }
+  .subject-completion--result h1 { font-size:28px; }
+  .subject-completion--result .subject-gain > strong { min-height:48px; }
+}
+@media (prefers-reduced-motion:reduce) { .subject-completion,.subject-completion * { animation:none; } }

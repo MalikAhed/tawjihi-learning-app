@@ -1,3 +1,4 @@
+import { createReviewLimiter } from "./review-limiter.mjs";
 import { spawn } from "node:child_process";
 import path from "node:path";
 
@@ -62,7 +63,7 @@ function appendChunk(current, chunk) {
   return (current + chunk).slice(0, MAX_OUTPUT_BYTES);
 }
 
-export function runCodexExplanationReview({ answer, content, projectRoot, environment = process.env, spawnProcess = spawn }) {
+export function runCodexExplanationReview({ answer, content, projectRoot, environment = process.env, spawnProcess = spawn, signal }) {
   const executable = environment.EXPLAIN_REVIEW_CLI || "codex";
   const schemaPath = path.join(projectRoot, "src/server/explanation-review.schema.json");
   const timeoutMs = Math.max(1_000, Number(environment.EXPLAIN_REVIEW_TIMEOUT_MS) || DEFAULT_TIMEOUT_MS);
@@ -88,7 +89,13 @@ export function runCodexExplanationReview({ answer, content, projectRoot, enviro
       if (settled) return;
       settled = true;
       clearTimeout(timeout);
+      signal?.removeEventListener("abort", cancel);
       callback();
+    };
+    const cancel = () => {
+      child.kill("SIGTERM");
+      setTimeout(()=>child.kill("SIGKILL"),250).unref();
+      finish(()=>reject(Object.assign(new Error("Review cancelled."),{code:"ABORT_ERR"})));
     };
     const timeout = setTimeout(() => {
       child.kill("SIGTERM");
@@ -96,6 +103,8 @@ export function runCodexExplanationReview({ answer, content, projectRoot, enviro
       finish(() => reject(Object.assign(new Error("The CLI review timed out."), { code:"ETIMEDOUT" })));
     }, timeoutMs);
     timeout.unref();
+    if(signal?.aborted) cancel();
+    else signal?.addEventListener("abort",cancel,{once:true});
 
     child.stdout?.setEncoding("utf8");
     child.stderr?.setEncoding("utf8");
@@ -121,61 +130,51 @@ export function runCodexExplanationReview({ answer, content, projectRoot, enviro
   });
 }
 
-function createLimiter(maxConcurrent) {
-  let active = 0;
-  const queue = [];
-  const drain = () => {
-    while (active < maxConcurrent && queue.length) {
-      active += 1;
-      const { task, resolve, reject } = queue.shift();
-      Promise.resolve().then(task).then(resolve, reject).finally(() => { active -= 1; drain(); });
-    }
-  };
-  return (task) => new Promise((resolve, reject) => { queue.push({ task, resolve, reject }); drain(); });
-}
-
 export function createExplanationReviewService({
   projectRoot,
   environment = process.env,
   now = Date.now,
   cacheTtlMs = DEFAULT_CACHE_TTL_MS,
   runCli = runCodexExplanationReview,
+  limiter = createReviewLimiter(),
+  hosted = false,
 } = {}) {
   const cache = new Map();
   const inFlight = new Map();
-  const limit = createLimiter(2);
+
   let cliUnavailableUntil = 0;
   let lastUnavailable = unavailableExplanationReview({ code:"ENOENT" });
 
-  return async function reviewExplanation({ answer, content, route }) {
+  const reviewExplanation = async ({ answer, content, route, signal, actor = "local" }) => {
     const normalizedAnswer = answer.trim();
     const contentKey = JSON.stringify({ title:content.title, prompt:content.prompt, rubric:content.rubric, passScore:content.review.passScore });
-    const key = `${route}\u0000${contentKey}\u0000${normalizedAnswer}`;
+    const key = `${actor}\u0000${route}\u0000${contentKey}\u0000${normalizedAnswer}`;
     const cached = cache.get(key);
     if (cached && cached.expiresAt > now()) return { ...cached.value, cached:true, latencyMs:0 };
-    if (inFlight.has(key)) return inFlight.get(key);
+    if (!signal && inFlight.has(key)) return inFlight.get(key);
 
     const startedAt = now();
-    const task = limit(async () => {
+    const task = limiter.run(async (providerSignal) => {
       let result;
       if (cliUnavailableUntil > now()) {
         result = lastUnavailable;
       } else {
         try {
-          result = await runCli({ answer:normalizedAnswer, content, projectRoot, environment });
+          result = await runCli({ answer:normalizedAnswer, content, projectRoot, environment, signal:providerSignal });
         } catch (error) {
-          result = unavailableExplanationReview(error);
+          result = hosted ? {source:"unavailable",code:"provider_unavailable",feedback:"تعذّرت المراجعة الآن. حاول مرة أخرى قريبًا."} : unavailableExplanationReview(error);
           lastUnavailable = result;
           cliUnavailableUntil = now() + (error?.code === "ENOENT" ? 30_000 : 5_000);
         }
       }
       const value = { ...result, cached:false, latencyMs:Math.max(0, now() - startedAt) };
-      if (result.source === "codex") cache.set(key, { value, expiresAt:now() + cacheTtlMs });
+      if (["codex","provider"].includes(result.source)) cache.set(key, { value, expiresAt:now() + cacheTtlMs });
       if (cache.size > 200) cache.delete(cache.keys().next().value);
       return value;
-    });
-    inFlight.set(key, task);
+    }, {signal});
+    if (!signal) inFlight.set(key, task);
     task.then(() => inFlight.delete(key), () => inFlight.delete(key));
     return task;
   };
+  return Object.assign(reviewExplanation, {close:()=>limiter.close(),stats:()=>limiter.stats()});
 }

@@ -34,7 +34,7 @@ function renderState(snapshot) {
 }
 
 export async function mountPrototypeScenarioSwitcher({ service, documentObject = document }) {
-  if (!service || service.kind !== "fixture") throw new TypeError("A fixture product service is required");
+  if (!service || typeof service.listScenarios !== "function") throw new TypeError("A learner session with explicit scenarios is required");
   await ensureStyles(documentObject);
   const controller = new AbortController();
   const { signal } = controller;

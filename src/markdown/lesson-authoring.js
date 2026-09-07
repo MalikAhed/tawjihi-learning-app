@@ -338,10 +338,27 @@ function parseDirective(type, source, index, issues) {
   return null;
 }
 
-function markdownStep(source, index) {
+function markdownStep(source, index, issues) {
   const heading = /^#{1,3}\s+(.+)$/m.exec(source)?.[1]?.replace(/[*_`]/g, "").trim();
   const explicitId = /^<!--\s*step-id:\s*([a-z0-9]+(?:-[a-z0-9]+)*)\s*-->$/im.exec(source)?.[1];
-  return { type:"markdown", id:explicitId || `authored-content-${index + 1}`, title:heading || `Lesson content ${index + 1}`, source:source.trim() };
+  const markers = [...source.matchAll(/^<!--\s*presentation:\s*(.*?)\s*-->$/gim)];
+  const presentation = markers[0]?.[1];
+  const step = { type:"markdown", id:explicitId || `authored-content-${index + 1}`, title:heading || `Lesson content ${index + 1}`, source:source.trim() };
+  if (markers.length > 1) issues.push(`Explanation step ${index + 1} can select only one presentation.`);
+  if (presentation !== undefined && presentation !== "rocky-dialogue") {
+    issues.push(`Explanation step ${index + 1} uses unsupported presentation “${presentation}”.`);
+  }
+  if (presentation === "rocky-dialogue") {
+    // A dialogue is content: one heading, illustration and note. The renderer owns its structure.
+    const body = source.replace(/^<!--\s*(?:step-id|presentation):.*?-->\s*$/gim, "").trim();
+    const match = /^#\s+[^\n]+\n\s*(!\[[^\]\n]+\]\([^\n]+\))\s*\n\s*:::note(?:[ \t]+[^\n]+)?\n([\s\S]+?)\n:::\s*$/.exec(body);
+    if (!match) issues.push(`Explanation step ${index + 1} (rocky-dialogue) needs one heading, one image with alt text, and one non-empty :::note dialogue.`);
+    else {
+      step.presentation = presentation;
+      step.dialogue = { image: match[1], source: match[2].trim() };
+    }
+  }
+  return step;
 }
 
 function validatePublishedFields(chunks, issues) {
@@ -422,7 +439,7 @@ export function parseLessonMarkdown(source, { published = false } = {}) {
   if (published) validatePublishedFields(chunks, issues);
 
   const steps = chunks.map((chunk, index) => chunk.kind === "markdown"
-    ? markdownStep(chunk.source, index)
+    ? markdownStep(chunk.source, index, issues)
     : { ...parseDirective(chunk.type, chunk.source, index, issues), id:field(chunk.source, "id", `authored-${chunk.type}-${index + 1}`) }).filter(Boolean);
   const stepIds = steps.map((step) => step.id);
   if (new Set(stepIds).size !== stepIds.length) issues.push("Every authored lesson step needs a unique id.");

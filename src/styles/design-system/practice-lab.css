@@ -146,7 +146,7 @@
   border-right:1px solid var(--d1-editor-border);
   border-radius:0;
   background:transparent;
-  opacity:.62;
+  opacity:1;
   transition:background 150ms,border-radius 150ms,box-shadow 150ms,opacity 150ms,transform 150ms;
 }
 .ds-editor-tab-label {

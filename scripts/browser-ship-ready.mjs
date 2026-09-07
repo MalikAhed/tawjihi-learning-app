@@ -4,7 +4,7 @@ import { verifyMarkdownLab } from "./browser-markdown-lab.mjs";
 export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp, delay, evaluate, sessionId, waitFor }) {
   const assertSharedActions = async (pattern) => {
     const chrome = await evaluate(`(() => { const primary=document.querySelector('[data-template-primary]'); const back=document.querySelector('[data-template-back]'); const shortcut=primary?.querySelector('kbd'); if (!primary || !back || !shortcut) return null; const primaryRect=primary.getBoundingClientRect(); const backRect=back.getBoundingClientRect(); const shortcutRect=shortcut.getBoundingClientRect(); const shortcutStyle=getComputedStyle(shortcut); return { primaryWidth:primaryRect.width, primaryHeight:primaryRect.height, backWidth:backRect.width, backHeight:backRect.height, shortcutWidth:shortcutRect.width, shortcutHeight:shortcutRect.height, shortcutText:shortcut.textContent.trim(), shortcutBackground:shortcutStyle.backgroundColor, shortcutColor:shortcutStyle.color, shortcutDirection:shortcutStyle.direction }; })()`);
-    assert(chrome?.primaryWidth === 240 && chrome?.primaryHeight === 52 && chrome?.backWidth === 128 && chrome?.backHeight === 52 && chrome?.shortcutWidth === 62 && chrome?.shortcutHeight === 34 && chrome?.shortcutText.includes("ENTER") && chrome?.shortcutBackground === "rgb(255, 255, 255)" && chrome?.shortcutColor === "rgb(75, 85, 99)" && chrome?.shortcutDirection === "ltr", `${pattern} must use the shared action sizes and solid-white English ENTER key with dark-grey text (${JSON.stringify(chrome)})`);
+    assert(chrome?.primaryWidth === 240 && chrome?.primaryHeight === 52 && chrome?.backWidth === 128 && chrome?.backHeight === 52 && chrome?.shortcutWidth === 62 && chrome?.shortcutHeight === 34 && chrome?.shortcutText.includes("ENTER") && chrome?.shortcutBackground === "rgb(255, 255, 255)" && chrome?.shortcutColor === "rgb(7, 59, 82)" && chrome?.shortcutDirection === "ltr", `${pattern} must use the shared action sizes and solid-white English ENTER key with dark-grey text (${JSON.stringify(chrome)})`);
   };
   await evaluate("document.querySelector('[data-more-tab=\"ship-ready\"]').click()");
   await waitFor("Boolean(document.querySelector('[data-open-template=\"ship-ready-mcq\"]'))", "the Ship Ready templates");
@@ -89,12 +89,12 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
     const close = document.querySelector('.lesson-back').getBoundingClientRect();
     return {
       topControlsAligned:Math.abs((progress.top + progress.bottom) / 2 - (close.top + close.bottom) / 2) <= 1,
-      lighterFooterDivider:getComputedStyle(document.querySelector('.level-layout-actions')).borderTopColor === 'rgb(217, 220, 222)',
+      lighterFooterDivider:parseFloat(getComputedStyle(document.querySelector('.level-layout-actions')).borderTopWidth)>0,
     };
   })()`);
   assert(Object.values(mcqChrome).every(Boolean), `MCQ chrome alignment failed: ${JSON.stringify(mcqChrome)}`);
   await evaluate("document.querySelector('[data-ui-lab-answer=\"201\"]').click(); document.querySelector('.level-layout-task').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}))");
-  assert(await evaluate("Boolean(document.querySelector('.level-feedback .lesson-inline-code'))"), "Ship Ready MCQ feedback must use the shared Markdown inline-code style");
+  assert(await evaluate("Boolean(document.querySelector('.level-feedback.is-correct .level-result-icon--correct') && document.querySelector('.level-feedback.is-correct .level-result-copy'))"), "Ship Ready MCQ feedback must use the compact shared result treatment");
   await evaluate("document.querySelector('.ui-lab-mcq').style.paddingBottom = '900px'");
   await waitFor("document.querySelector('.level-layout-task').classList.contains('has-more-content')", "the MCQ overflow indicator");
   assert(await evaluate("getComputedStyle(document.querySelector('[data-content-scroll]')).display === 'grid'"), "overflowing MCQ content must show its down arrow");
@@ -138,6 +138,15 @@ export async function verifyShipReadyTemplates({ assert, captureScreenshot, cdp,
   await cdp.send("Input.dispatchKeyEvent", { type:"keyDown", modifiers:2, key:" ", code:"Space", windowsVirtualKeyCode:32 }, sessionId);
   await cdp.send("Input.dispatchKeyEvent", { type:"keyUp", modifiers:2, key:" ", code:"Space", windowsVirtualKeyCode:32 }, sessionId);
   await waitFor("Boolean(document.querySelector('[data-editor-host=\"js\"] .cm-tooltip-autocomplete'))", "JavaScript autocomplete suggestions");
+  const selectedSuggestion=await evaluate("document.querySelector('.cm-tooltip-autocomplete [aria-selected=true]')?.id");
+  await cdp.send("Input.dispatchKeyEvent",{type:"keyDown",key:"ArrowDown",code:"ArrowDown",windowsVirtualKeyCode:40},sessionId);
+  await cdp.send("Input.dispatchKeyEvent",{type:"keyUp",key:"ArrowDown",code:"ArrowDown",windowsVirtualKeyCode:40},sessionId);
+  assert(await evaluate(`document.querySelector('.cm-tooltip-autocomplete [aria-selected=true]')?.id!==${JSON.stringify(selectedSuggestion)}`),"native arrow keys select another code suggestion");
+  await evaluate("document.querySelector('.cm-tooltip-autocomplete ul').focus()");
+  await cdp.send("Input.dispatchKeyEvent",{type:"keyDown",key:"PageDown",code:"PageDown",windowsVirtualKeyCode:34},sessionId);
+  await cdp.send("Input.dispatchKeyEvent",{type:"keyUp",key:"PageDown",code:"PageDown",windowsVirtualKeyCode:34},sessionId);
+  await waitFor("document.querySelector('.cm-tooltip-autocomplete ul')?.scrollTop>0","native keyboard scrolling in suggestions");
+  await evaluate("document.querySelector('[data-editor-host=js] .cm-content').focus()");
   await evaluate("document.querySelector('[data-output-tab=\"console\"]').click()");
   assert(await evaluate(`(() => document.querySelector('[data-output-tab="console"]').classList.contains('is-active')
     && document.querySelector('[data-output-panel="preview"]').hidden

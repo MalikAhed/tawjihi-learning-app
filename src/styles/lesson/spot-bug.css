@@ -1,0 +1,270 @@
+.ui-lab-bug-open .level-layout-task {
+  align-items: safe center;
+  padding: clamp(16px, 3vh, 34px) 24px;
+}
+.ui-lab-bug {
+  width: min(100%, 900px);
+}
+.ui-lab-bug-code {
+  min-width: 0;
+  width: 100%;
+  direction: ltr;
+  text-align: left;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: auto;
+  scrollbar-color: #9da3aa #252526;
+  padding: 10px 0;
+  border: 2px solid #34373c;
+  border-radius: 17px;
+  background: #252526;
+  box-shadow:
+    0 5px 0 #151617,
+    0 16px 34px rgba(30, 31, 34, 0.16);
+}
+.ui-lab-bug-lines { width: max-content; min-width: 100%; }
+.ui-lab-bug-code:focus-visible { outline: 3px solid var(--system-focus); outline-offset: 4px; }
+.ui-lab-bug-code button {
+  width: 100%;
+  min-height: 47px;
+  display: grid;
+  grid-template-columns: 48px minmax(max-content, 1fr);
+  align-items: center;
+  padding: 0 18px 0 0;
+  border: 0;
+  border-left: 4px solid transparent;
+  background: transparent;
+  color: #d4d4d4;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    border-color 150ms,
+    background 150ms;
+}
+.ui-lab-bug-code button > span {
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  border-right: 1px solid #39393b;
+  color: #b4b8be;
+  font:
+    700 11px ui-monospace,
+    monospace;
+}
+.ui-lab-bug-code button code {
+  min-width: 0;
+  padding-left: 18px;
+  color: #d4d4d4;
+  font:
+    700 clamp(12px, 1.7vw, 15px) / 1.5 ui-monospace,
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+  white-space: pre;
+
+}
+
+.ui-lab-bug-code code i {
+  color: #c586c0;
+  font-style: normal;
+}
+.ui-lab-bug-code code em {
+  color: #b5cea8;
+  font-style: normal;
+}
+.ui-lab-bug-code code u {
+  color: #ce9178;
+  text-decoration: none;
+}
+.ui-lab-bug-code button:hover {
+  background: #2e2e31;
+}
+.ui-lab-bug-code button.is-selected {
+  border-left-color: #7a7f87;
+  background: #34353a;
+}
+.ui-lab-bug-code button.is-correct {
+  border-left-color: #58cc02;
+  background: #273c23;
+}
+.ui-lab-bug-code button.is-wrong {
+  border-left-color: #ff4b4b;
+  background: #48282a;
+}
+.ui-lab-bug-code button:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid #9da3aa;
+  outline-offset: -3px;
+}
+.ui-lab-bug-reasons {
+  margin-top: 18px;
+  animation: ui-lab-bug-reasons-in 260ms cubic-bezier(0.2, 0.82, 0.25, 1) both;
+}
+.ui-lab-bug-reasons[hidden] {
+  display: none;
+}
+.ui-lab-bug-reasons > p {
+  margin: 0 0 10px;
+  color: var(--quest-theme-muted-text);
+  font:
+    700 11px var(--font-ui);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.ui-lab-bug-reasons > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.ui-lab-bug-reasons button {
+  position: relative;
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  overflow: hidden;
+  padding: 11px 16px;
+  border: 2px solid var(--quest-theme-line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--quest-theme-text);
+  text-align: start;
+  box-shadow: 0 3px 0 var(--quest-theme-line);
+  cursor: pointer;
+  transition:
+    background 150ms,
+    border-color 150ms,
+    transform 120ms,
+    box-shadow 120ms;
+}
+.ui-lab-bug-reasons button > span {
+  position: relative;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--quest-theme-line);
+  border-radius: 9px;
+  background: var(--quest-theme-surface);
+  color: var(--quest-theme-muted-text);
+  font:
+    700 11px var(--font-ui);
+}
+.ui-lab-bug-reasons button > b {
+  position: relative;
+  z-index: 1;
+  font:
+    700 14px/1.3 var(--font-ui);
+}
+.ui-lab-bug-reasons button code {
+  color: #7252a0;
+  font:
+    700 0.95em ui-monospace,
+    monospace;
+}
+.ui-lab-bug-reasons button:hover {
+  border-color: var(--quest-theme-main);
+  background: var(--quest-theme-surface);
+}
+.ui-lab-bug-reasons button:hover:not(.is-selected) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 var(--quest-theme-main);
+}
+.ui-lab-bug-reasons button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--quest-theme-main);
+}
+.ui-lab-bug-reasons button.is-selected {
+  border-color: var(--quest-theme-main);
+  background: var(--quest-theme-soft-strong);
+  color: var(--quest-theme-text);
+  box-shadow: 0 1px 0 var(--quest-theme-main);
+  transform: translateY(2px);
+}
+.ui-lab-bug-reasons button.is-selected > span {
+  border-color: var(--quest-theme-bottom);
+  background: var(--quest-theme-surface);
+  color: var(--quest-theme-text);
+}
+.ui-lab-bug-reasons button.is-correct {
+  border-color: #58cc02;
+  background: #d7ffb8;
+  color: var(--system-green-ink);
+  box-shadow: 0 3px 0 #58cc02;
+}
+.ui-lab-bug-reasons button.is-correct > span {
+  border-color: #58cc02;
+  background: #edffdf;
+  color: var(--system-green-ink);
+}
+.ui-lab-bug-reasons button.is-correct:before,
+.ui-lab-bug-reasons button.is-correct:after {
+  content: "✦";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  color: rgba(70, 163, 2, 0.38);
+  font:
+    700 34px/1 var(--font-ui);
+  opacity: 0;
+  pointer-events: none;
+}
+.ui-lab-bug-reasons button.is-correct:before {
+  left: 6%;
+  animation: level-correct-star-left 430ms ease-out both;
+}
+.ui-lab-bug-reasons button.is-correct:after {
+  right: 6%;
+  animation: level-correct-star-right 430ms ease-out both;
+}
+.ui-lab-bug-reasons button.is-wrong {
+  border-color: #ff4b4b;
+  background: #ffdfe0;
+  color: var(--system-red-ink);
+  box-shadow: 0 3px 0 #ff4b4b;
+  animation: level-wrong-shake 560ms ease-in-out both;
+}
+.ui-lab-bug-reasons button.is-wrong > span {
+  border-color: #ff4b4b;
+  background: #fff0f0;
+  color: var(--system-red-ink);
+}
+.ui-lab-bug-reasons button:focus-visible {
+  outline: 3px solid var(--quest-theme-focus);
+  outline-offset: 3px;
+}
+@keyframes ui-lab-bug-reasons-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 720px) {
+  .ui-lab-bug-open .level-layout-task {
+    align-items: start;
+    padding: 18px 14px;
+  }
+  .ui-lab-bug-code button {
+    min-height: 43px;
+    grid-template-columns: 38px minmax(max-content, 1fr);
+    padding-right: 10px;
+  }
+  .ui-lab-bug-code button code {
+    padding-left: 12px;
+    font-size: 11px;
+  }
+  .ui-lab-bug-reasons > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .ui-lab-bug-reasons button {
+    min-height: 48px;
+  }
+}

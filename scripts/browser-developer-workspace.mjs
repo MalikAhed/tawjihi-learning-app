@@ -17,7 +17,9 @@ export async function verifyDeveloperWorkspace({ appUrl, navigate, evaluate, wai
   await evaluate("document.querySelector('[data-lab-close]').click()");
   await waitFor("location.search === '?page=more' && !document.body.classList.contains('playground-open')", "return from UI Lab");
   await waitFor("document.activeElement.dataset.moreTab === 'ui-lab'", "UI Lab focus restoration");
-  await evaluate("document.querySelector('[data-more-tab=ui-lab]').click(); document.querySelector('[data-lab-edit]').click()");
+  await evaluate("document.querySelector('[data-more-tab=ui-lab]').click()");
+  await waitFor("document.querySelector('[data-lab-edit]') && document.querySelector('.playground-board')", "reopened UI Lab");
+  await evaluate("document.querySelector('[data-lab-edit]').click()");
   assert(await evaluate("document.querySelector('[data-language=html]').value.includes('demo')"), "current experiment survives reopening");
   await cdp.send("Emulation.setDeviceMetricsOverride", { width:390, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
   assert(await evaluate("document.querySelector('.playground-editor').getBoundingClientRect().right <= innerWidth && document.querySelector('.playground-editor').scrollWidth <= document.querySelector('.playground-editor').clientWidth"), "mobile editor fits its panel");
@@ -45,14 +47,14 @@ export async function verifyDeveloperWorkspace({ appUrl, navigate, evaluate, wai
   }
   for (const route of ['ship-ready-sequence', 'ship-ready-fill-blanks', 'ship-ready-spot-bug']) {
     await evaluate(`document.querySelector('[data-open-template="${route}"]').click()`);
-    await waitFor("document.querySelector('img[src*=rocky]')?.naturalWidth > 0", "Rocky in lesson template");
+    await waitFor("document.querySelector('#lesson-content [data-template-back]') && document.querySelector('#lesson-content [data-template-primary]') && document.querySelector('#lesson-content img[src*=rocky]')?.naturalWidth > 0", "lesson template controls and Rocky");
     assert(await evaluate("!document.querySelector('img[src*=placeholder]')"), `${route} uses Rocky`);
-    assert(await evaluate(`(() => { const back=document.querySelector('[data-template-back]').getBoundingClientRect(); const next=document.querySelector('[data-template-primary]').getBoundingClientRect(); return back.left > innerWidth/2 && next.right < innerWidth/2 && document.querySelector('[data-template-back]').textContent === 'السابق' && getComputedStyle(document.body).direction === 'rtl' && getComputedStyle(document.querySelector('.lesson-top-title'), '::after').backgroundImage.includes('linear-gradient'); })()`), `${route} uses Arabic, opposite-side actions, and glossy progress`);
+    assert(await evaluate(`(() => { const back=document.querySelector('[data-template-back]').getBoundingClientRect(); const next=document.querySelector('[data-template-primary]').getBoundingClientRect(); return back.left > innerWidth/2 && next.right < innerWidth/2 && document.querySelector('[data-template-back]').textContent === 'السابق' && getComputedStyle(document.body).direction === 'rtl' && getComputedStyle(document.querySelector('.lesson-top-title'), '::after').backgroundColor === 'rgb(255, 200, 0)'; })()`), `${route} uses Arabic, opposite-side actions, and shared gold progress`);
     await captureScreenshot(`${route}-system.png`);
     if (route === 'ship-ready-sequence') {
       for (const width of [320, 390]) {
         await cdp.send("Emulation.setDeviceMetricsOverride", { width, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
-        assert(await evaluate(`(() => { const back=document.querySelector('[data-template-back]').getBoundingClientRect(); const next=document.querySelector('[data-template-primary]').getBoundingClientRect(); const label=document.querySelector('[data-template-action-label]'); return back.left > next.right && next.left >= 0 && back.right <= innerWidth && label.scrollWidth <= label.clientWidth + 1 && document.documentElement.scrollWidth <= innerWidth; })()`), `Arabic footer fits ${width}px with actions at opposite edges`);
+        assert(await evaluate(`(() => { const back=document.querySelector('[data-template-back]').getBoundingClientRect(); const next=document.querySelector('[data-template-primary]').getBoundingClientRect(); const label=document.querySelector('[data-template-action-label]'); return back.top >= next.bottom && next.left >= 0 && back.right <= innerWidth && label.scrollWidth <= label.clientWidth + 1 && document.documentElement.scrollWidth <= innerWidth; })()`), `Arabic footer fits ${width}px with stacked, readable actions`);
         await captureScreenshot(`arabic-template-${width}.png`);
       }
       await cdp.send("Emulation.setDeviceMetricsOverride", { width:1440, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
@@ -66,6 +68,7 @@ export async function verifyDeveloperWorkspace({ appUrl, navigate, evaluate, wai
   await waitFor("location.search === '?page=more' && !document.querySelector('.lesson-view.is-visible')", "rapid navigation cancels reference opening");
   await cdp.send("Emulation.setEmulatedMedia", { features:[{ name:"prefers-reduced-motion", value:"reduce" }] }, sessionId);
   await evaluate("document.querySelector('[data-more-tab=ui-lab]').click()");
+  await waitFor("document.querySelector('[data-lab-close]') && document.querySelector('.playground-board')", "reduced-motion UI Lab");
   assert(await evaluate("document.getAnimations().every(animation => animation.playState !== 'running')"), "UI Lab respects reduced motion");
   await evaluate("document.querySelector('[data-lab-close]').click()");
   await cdp.send("Emulation.setEmulatedMedia", { features:[] }, sessionId);

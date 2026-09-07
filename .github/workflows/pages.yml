@@ -32,18 +32,14 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Install browser dependencies
-        run: npm ci --ignore-scripts --omit=optional
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
 
-      - name: Assemble static preview
-        run: |
-          mkdir -p _site/node_modules/dompurify/dist
-          mkdir -p _site/node_modules/@highlightjs/cdn-assets/es
-          mkdir -p _site/node_modules/marked/lib
-          cp -R index.html src assets .nojekyll _site/
-          cp node_modules/dompurify/dist/purify.es.mjs _site/node_modules/dompurify/dist/
-          cp node_modules/@highlightjs/cdn-assets/es/highlight.min.js _site/node_modules/@highlightjs/cdn-assets/es/
-          cp node_modules/marked/lib/marked.esm.js _site/node_modules/marked/lib/
+      - name: Install compatibility browsers
+        run: npx playwright install --with-deps firefox webkit
+
+      - name: Verify and package the release artifact
+        run: npm run ci
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

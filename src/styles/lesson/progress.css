@@ -1,0 +1,28 @@
+/* Shared progress appearance; each controller keeps its own progress calculation. */
+.lesson-shell,.level-progress,.lesson-progress-track,.ship-ready-live-preview,.ship-ready-order-progress,.ship-ready-fill-progress,.subject-completion {
+  --lesson-progress-fill:#ffc800;
+  --lesson-progress-highlight:#fff0a3;
+  --lesson-progress-track:#edf1f3;
+}
+/* MarkdownLab uses this shell heading as a title, with progress inside its preview. */
+body:not(.ui-lab-markdown-open) .lesson-shell--ui-lab .lesson-top-title { position:relative; height:18px; border-radius:999px; overflow:hidden; background:var(--lesson-progress-track); color:transparent; font-size:0; box-shadow:none; }
+body:not(.ui-lab-markdown-open) .lesson-shell--ui-lab .lesson-top-title::after { content:""; position:absolute; z-index:1; inset:0 0 0 auto; width:var(--lesson-progress,0%); border-radius:inherit; background:var(--lesson-progress-fill); transition:width 180ms ease; }
+body:not(.ui-lab-markdown-open) .lesson-shell--ui-lab .lesson-top-title::before { content:""; position:absolute; z-index:2; top:3px; right:7px; width:max(0px,calc(var(--lesson-progress,0%) - 14px)); height:3px; border-radius:999px; background:var(--lesson-progress-highlight); transition:width 180ms ease; }
+body:not(.ui-lab-markdown-open) .lesson-shell--ui-lab .lesson-top-title[hidden] { display:none; }
+.lesson-progress-track { height:18px; overflow:hidden; border-radius:999px; background:var(--lesson-progress-track); }
+.lesson-progress-track span { display:block; width:0; height:100%; border-radius:inherit; transition:width 180ms ease; }
+.level-progress span,.lesson-progress-track span,.ship-ready-order-progress i,.ship-ready-fill-progress i { background:var(--lesson-progress-fill); }
+.subject-completion progress { background:var(--lesson-progress-track); accent-color:var(--lesson-progress-fill); }
+.subject-completion progress::-webkit-progress-bar { background:var(--lesson-progress-track); }
+.subject-completion progress::-webkit-progress-value { border-radius:999px; background:var(--lesson-progress-fill); }
+.subject-completion progress::-moz-progress-bar { border-radius:999px; background:var(--lesson-progress-fill); }
+.completion-quest--lessons { --quest-progress-fill:#b86f42; --quest-progress-highlight:#e4a47b; }
+.completion-quest--perfect { --quest-progress-fill:#58cc02; --quest-progress-highlight:#b8f28b; }
+.completion-quest--questions { --quest-progress-fill:#a560e8; --quest-progress-highlight:#d9adff; }
+.completion-quest-progress progress { accent-color:var(--quest-progress-fill); }
+.completion-quest-progress progress::-webkit-progress-value { background:linear-gradient(var(--quest-progress-highlight),var(--quest-progress-highlight)) 12px 4px / calc(100% - 24px) 3px no-repeat,var(--quest-progress-fill); }
+.completion-quest-progress progress::-moz-progress-bar { background:linear-gradient(var(--quest-progress-highlight),var(--quest-progress-highlight)) 12px 4px / calc(100% - 24px) 3px no-repeat,var(--quest-progress-fill); }
+@media (max-width:760px) { body:not(.ui-lab-markdown-open) .lesson-shell--ui-lab .lesson-top-title { height:14px; } }
+@media (prefers-reduced-motion:reduce) {
+ body:not(.ui-lab-markdown-open) .lesson-shell--ui-lab .lesson-top-title::after,body:not(.ui-lab-markdown-open) .lesson-shell--ui-lab .lesson-top-title::before,.lesson-progress-track span { transition:none; }
+}

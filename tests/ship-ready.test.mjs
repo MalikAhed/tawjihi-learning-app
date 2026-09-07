@@ -97,3 +97,14 @@ test("response review uses Rocky's thinking loop and reduced-motion pose", () =>
   assert.match(html, /srcset="assets\/mascot\/rocky-thinking-reduced\.svg"/);
   assert.doesNotMatch(html, /ui-lab-thinking-mascot"><img[^>]+chibi-placeholder/);
 });
+
+test("question defaults are resolved once without replacing explicit authored language", async () => {
+  const { resolveLessonContent } = await import("../src/ui/lesson-ui-copy.js");
+  const config = { placeholder:"Choose a step below", mascot:"Take it one step at a time." };
+  const arabic = resolveLessonContent("sequence", config, "ar");
+  assert.equal(arabic.placeholder, "اختر خطوة من الأسفل");
+  assert.equal(resolveLessonContent("sequence", arabic, "ar").placeholder, arabic.placeholder);
+  assert.equal(config.placeholder, "Choose a step below");
+  assert.equal(resolveLessonContent("sequence", { placeholder:"Start by connecting the cable" }, "ar").placeholder, "Start by connecting the cable");
+  assert.equal(resolveLessonContent("sequence", config, "en").placeholder, config.placeholder);
+});

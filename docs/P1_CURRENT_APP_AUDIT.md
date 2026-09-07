@@ -1,3 +1,5 @@
+> Historical snapshot: findings and ownership may be superseded. Use [the current architecture](ARCHITECTURE.md) and [the active improvement plan](AGENT_IMPROVEMENT_PLAN.md) for implementation.
+
 # P1.0 current application audit
 
 **Audit date:** 2026-09-03

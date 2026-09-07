@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRoots = ["src", "scripts", "tests", "assets/vendor"];
-const files = [path.join(projectRoot, "dev-server.mjs")];
+const files = [path.join(projectRoot, "dev-server.mjs"), path.join(projectRoot, "server.mjs")];
 
 async function collectJavaScript(directory) {
   const entries = await readdir(directory, { withFileTypes:true });

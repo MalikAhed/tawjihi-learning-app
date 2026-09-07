@@ -17,16 +17,19 @@ export function launchCelebration({ className, signal, replaceExisting = false, 
   layer.innerHTML = "<strong>✦</strong>";
   for (let index = 0; index < particleCount; index += 1) {
     const particle = document.createElement("i");
-    const angle = Math.random() * Math.PI * 2;
-    const distance = 28 + Math.random() * 62;
-    const x = Math.cos(angle) * distance;
-    const y = Math.sin(angle) * distance - 12;
+    const x = (Math.random() - .5) * 126;
+    const y = -(12 + Math.random() * 34);
+    const fallX = x + (Math.random() - .5) * 20;
+    const fallY = 58 + Math.random() * 38;
     particle.style.setProperty("--burst-x", `${x}vw`);
     particle.style.setProperty("--burst-y", `${y}vh`);
-    particle.style.setProperty("--fall-y", `${y + 78}vh`);
-    particle.style.setProperty("--delay", `${Math.random() * .16}s`);
-    particle.style.setProperty("--duration", `${1.35 + Math.random() * .9}s`);
-    particle.style.setProperty("--spin", `${360 + Math.random() * 900}deg`);
+    particle.style.setProperty("--fall-x", `${fallX}vw`);
+    particle.style.setProperty("--fall-y", `${fallY}vh`);
+    particle.style.setProperty("--delay", `${Math.random() * .24}s`);
+    particle.style.setProperty("--duration", `${3.2 + Math.random() * 1.6}s`);
+    const spin = 360 + Math.random() * 900;
+    particle.style.setProperty("--burst-spin", `${spin * .45}deg`);
+    particle.style.setProperty("--spin", `${spin}deg`);
     particle.style.setProperty("--color", PARTICLE_COLORS[index % PARTICLE_COLORS.length]);
     layer.append(particle);
   }

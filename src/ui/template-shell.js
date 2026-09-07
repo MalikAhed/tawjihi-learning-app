@@ -23,7 +23,7 @@ export function renderTemplateFooter(options = {}) {
   const copy = getLessonUiCopy(locale);
   const resolvedBackLabel = backLabel ?? copy.back;
   const resolvedPrimaryLabel = primaryLabel ?? copy.continue;
-  return `<nav class="${escapeHtml(className)}" aria-label="${escapeHtml(copy.lessonNavigation)}">
+  return `<nav class="${escapeHtml(className)}" dir="${locale === "ar" ? "rtl" : "ltr"}" aria-label="${escapeHtml(copy.lessonNavigation)}">
     <p class="${escapeHtml(feedbackClass)}"${renderAttributes(feedbackAttributes)}>${escapeHtml(feedback)}</p>
     <div class="level-layout-action-group">
       <button class="level-action" type="button" data-template-back${renderAttributes(backAttributes)}>${escapeHtml(resolvedBackLabel)}</button>
@@ -46,7 +46,7 @@ export function mountTemplateEnterShortcut(container, { signal } = {}) {
 
 export function renderTemplateShell({ content, footer, showScrollIndicator = true, titleId = "ui-lab-content-title", locale = "en" }) {
   const copy = getLessonUiCopy(locale);
-  return `<div class="level-layout-preview">
+  return `<div class="level-layout-preview" lang="${locale}" dir="${locale === "ar" ? "rtl" : "ltr"}">
     <div class="level-layout-content">
       <section class="level-layout-task" aria-labelledby="${escapeHtml(titleId)}">${content}</section>
       ${showScrollIndicator ? `<button class="ui-lab-content-scroll" type="button" data-content-scroll aria-label="${escapeHtml(copy.showMoreContent)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 9.5 5.5 5 5.5-5"/></svg></button>` : ""}

@@ -22,11 +22,12 @@ test("the dashboard prioritizes level XP, streak, and subject progress", () => {
   assert.match(markup, /مرحبًا، <bdi>ليان<\/bdi>/);
   assert.doesNotMatch(markup, /dashboard-resume|متابعة التعلّم|تكنولوجيا المعلومات|تقدّم المادة/);
   assert.match(markup, /dashboard-stat--level[^]*?<img src="assets\/icons\/dashboard-levels-animated\.svg"/);
+  assert.match(markup, /class="level-value ui-number">Lv\. 04<img class="level-up-arrow" src="assets\/icons\/level-up-arrow\.svg" alt="" aria-hidden="true"/);
   assert.match(markup, /620 \/ 800 XP/);
   assert.match(markup, /السلسلة اليومية/);
   assert.match(markup, /dashboard-stat--streak[^]*?<img src="assets\/icons\/streak-fire-burning\.svg"/);
   assert.match(markup, /المواد الدراسية/);
-  assert.match(markup, /<bdi>7%<\/bdi> مكتمل/);
+  assert.match(markup, /<bdi class="ui-number">7%<\/bdi> مكتمل/);
   assert.doesNotMatch(markup, /الرتبة|الأسئلة المحلولة|إجمالي الدروس|dashboard-metric/);
 });
 
@@ -42,20 +43,46 @@ test("learner names are escaped before entering dashboard markup", () => {
   assert.match(markup, /&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt;/);
 });
 
-test("the dashboard side rail renders the daily quest card", () => {
+test("upcoming features disclose availability before an informational action", () => {
   const markup = renderDashboardSideRailMarkup(getPrototypeScenario("student-paid").snapshot);
   assert.match(markup, /المهام اليومية/);
-  assert.match(markup, /عرض الكل/);
-  assert.match(markup, /أكمل 3 دروس/);
-  assert.match(markup, /حل 20 سؤالًا/);
-  assert.match(markup, /سلسلة 7 أيام/);
-  assert.match(markup, /dashboard-quests-teaser/);
+  assert.match(markup, /الاشتراك غير متاح حاليًا/);
+  assert.ok(markup.indexOf("قيد الإعداد") < markup.indexOf("data-premium-details"));
   assert.match(markup, /assets\/mascot\/rocky-working\.svg/);
   assert.match(markup, /assets\/mascot\/rocky-working-reduced\.svg/);
-  assert.match(markup, /prefers-reduced-motion: reduce/);
-  assert.match(markup, /قريبًا/);
-  assert.match(markup, /نعمل على هذه الميزة/);
-  assert.match(markup, /assets\/icons\/dashboard-quest-time\.svg/);
-  assert.equal((markup.match(/role="progressbar"/g) || []).length, 3);
-  assert.equal((markup.match(/dashboard-quest dashboard-quest--/g) || []).length, 3);
+  assert.doesNotMatch(markup, /عرض الكل|role="progressbar"|دروس بلا حدود/);
+});
+
+test("new learner statistics display zero XP and streak without visual placeholders", () => {
+  const markup = renderLearnerDashboardMarkup(getPrototypeScenario("student-free-new").snapshot, "طالب");
+  assert.match(markup, /0 \/ 200 XP/);
+  assert.match(markup, /<strong class="ui-number">0 أيام<\/strong>/);
+});
+
+test("a one-day dashboard streak uses a numeric count", () => {
+  const scenario = getPrototypeScenario("student-free-new").snapshot;
+  const markup = renderLearnerDashboardMarkup({ ...scenario, learning:{ ...scenario.learning, dailyStreak:1 } }, "طالب");
+  assert.match(markup, /<strong class="ui-number">1 يوم<\/strong>/);
+  assert.doesNotMatch(markup, /يوم واحد/);
+});
+
+test("Home uses the same completed part, answers and rewards as the lesson store", async () => {
+  const { createLearnerSession } = await import("../src/services/learner-session.js");
+  const { createSubjectProgressStore } = await import("../src/services/subject-progress-store.js");
+  const progressStore = createSubjectProgressStore();
+  const session = createLearnerSession({ progressStore });
+  await session.createAccount({ username:"home-test" });
+  const ownerId = session.getLearnerProgressOwner();
+  await progressStore.ready(ownerId);
+  assert.equal(session.getLearnerHomeSnapshot().learning.totalXp, 0);
+  const key = { ownerId, subjectId:"ict", lessonId:"database-management", partId:"access-basics" };
+  await progressStore.recordAnswer({ ...key, stepId:"check", correct:true });
+  await progressStore.record({ ...key, stepIds:["check"], completedStepIds:["check"], isComplete:true });
+  const learning = session.getLearnerHomeSnapshot().learning;
+  assert.equal(learning.totalXp, 10);
+  assert.equal(learning.requiredLessonsCompleted, 1);
+  assert.equal(learning.questionsSolved, 1);
+  assert.equal(learning.progress, progressStore.getOutcome({ ...key, totalParts:29 }).progress);
+  await session.createAccount({ username:"different" });
+  assert.equal(session.getLearnerHomeSnapshot().learning.totalXp, 0);
 });

@@ -40,7 +40,9 @@ export async function verifyMarkdownLab({ assert, captureScreenshot, cdp, delay,
     "",
     "Keep this [YouTube link](https://www.youtube.com/watch?v=AlkDbnbv7dk) inline.",
     "",
-    "<img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" onerror=\"window.__markdownXss = 1\">",
+    // This transparent test pixel is decorative; retain the malicious handler
+    // so the sanitization assertion still verifies its removal.
+    "<img alt=\"\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\" onerror=\"window.__markdownXss = 1\">",
     "<script>window.__markdownXss = 2</script>",
     "[unsafe](javascript:window.__markdownXss=3)",
   ].join("\n");
@@ -59,6 +61,7 @@ export async function verifyMarkdownLab({ assert, captureScreenshot, cdp, delay,
       inlineFormatting:Boolean(output.querySelector('strong') && output.querySelector('em') && output.querySelector('del') && output.querySelector('p code')),
       quote:Boolean(output.querySelector('blockquote')),
       tasks:output.querySelectorAll('li > input[type="checkbox"][disabled]').length === 2,
+      taskNames:[...output.querySelectorAll('li > input[type="checkbox"]')].every(input=>input.getAttribute('aria-label')===input.parentElement.textContent.trim()),
       table:Boolean(output.querySelector('.markdown-table-scroll > table')),
       lessonCallout:output.querySelector('.markdown-callout')?.textContent.includes('same renderer') === true,
       warningCallout:output.querySelector('.markdown-callout--warning')?.textContent.includes('supported warning') === true,

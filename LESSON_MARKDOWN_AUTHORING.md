@@ -74,6 +74,24 @@ Raw HTML is not lesson syntax. The authoring validator rejects it outside fenced
 - Unsupported directives and fields are validation errors. Do not add `phase:`, `critical:`, arbitrary attributes, or renderer options.
 - Raw HTML and nested directives are rejected inside interactive blocks. Content callouts must also close cleanly and cannot contain another directive.
 
+## Illustrated Rocky dialogue
+
+An explanation can select the existing illustrated dialogue presentation with `<!-- presentation: rocky-dialogue -->`. Keep its separate stable step ID. This presentation requires exactly one heading, one image with useful alt text, and one non-empty `:::note` containing the dialogue:
+
+```md
+<!-- step-id: welcome-to-this-topic -->
+<!-- presentation: rocky-dialogue -->
+# Welcome
+
+![Rocky waves hello](assets/mascot/rocky-wave.svg)
+
+:::note Welcome
+Let’s learn this idea together, one step at a time.
+:::
+```
+
+The application owns the bubble, illustration layout, measured text height, animation, responsive behavior, and reduced motion. The marker selects this one supported presentation; arbitrary names, classes, styles, or layout fields are rejected. Another stable explanation ID can reuse it without code or stylesheet changes. Normal explanations omit the marker.
+
 ## Single choice
 
 ```md

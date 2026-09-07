@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { DEFAULT_PROTOTYPE_SCENARIO_ID, getPrototypeScenario, PROTOTYPE_SCENARIOS } from "../src/data/prototype-fixtures.js";
-import { createFixtureProductService } from "../src/services/prototype-service.js";
+import { createLearnerSession } from "../src/services/learner-session.js";
 import { GUEST_TRIAL_STORAGE_KEY, LIVE_RELOAD_STORAGE_KEY, PROTOTYPE_SCENARIO_STORAGE_KEY, TEMPORARY_ACCOUNT_STORAGE_KEY, VISITOR_SELECTION_STORAGE_KEY } from "../src/services/prototype-storage.js";
 
 class MemoryStorage {
@@ -22,7 +22,7 @@ test("prototype fixtures cover guests, students, recovery, and internal roles", 
 
 test("fixture service selects, announces, and persists a scenario", () => {
   const storage = new MemoryStorage();
-  const service = createFixtureProductService({ storage });
+  const service = createLearnerSession({ storage });
   const changes = [];
   const unsubscribe = service.subscribe((snapshot, scenario) => changes.push([snapshot.actor, scenario.id]));
   const snapshot = service.selectScenario("student-paid");
@@ -31,20 +31,20 @@ test("fixture service selects, announces, and persists a scenario", () => {
   assert.equal(snapshot.access.status, "paid-active");
   assert.deepEqual(changes, [["student", "student-paid"]]);
   assert.equal(storage.getItem(PROTOTYPE_SCENARIO_STORAGE_KEY), "visitor-supported");
-  assert.equal(createFixtureProductService({ storage }).getScenario().id, "visitor-supported");
+  assert.equal(createLearnerSession({ storage }).getScenario().id, "visitor-supported");
 });
 
 test("fixture service safely rejects unknown scenarios and ignores invalid saved values", () => {
   const storage = new MemoryStorage();
   storage.setItem(PROTOTYPE_SCENARIO_STORAGE_KEY, "not-a-scenario");
-  const service = createFixtureProductService({ storage });
+  const service = createLearnerSession({ storage });
   assert.equal(service.getScenario().id, DEFAULT_PROTOTYPE_SCENARIO_ID);
   assert.throws(() => service.selectScenario("not-a-scenario"), /Unknown prototype scenario/);
 });
 
 test("visitor selection stays behind the fixture service boundary", () => {
   const storage = new MemoryStorage();
-  const service = createFixtureProductService({ storage });
+  const service = createLearnerSession({ storage });
   assert.equal(service.getVisitorSelection(), null);
   assert.deepEqual(service.saveVisitorSelection({ curriculum:"gaza", path:"scientific" }), { curriculum:"gaza", path:"scientific" });
   assert.equal(storage.getItem(VISITOR_SELECTION_STORAGE_KEY), JSON.stringify({ curriculum:"gaza", path:"scientific" }));
@@ -53,19 +53,19 @@ test("visitor selection stays behind the fixture service boundary", () => {
 
 test("guest trial persists its first-lesson gate and is cleared by account creation", async () => {
   const storage = new MemoryStorage();
-  const service = createFixtureProductService({ storage });
+  const service = createLearnerSession({ storage });
   assert.deepEqual(service.startGuestTrial(), { status:"guest-started", accountType:"guest" });
   assert.deepEqual(service.getGuestTrialState(), { active:true, completedFirstLesson:false });
   assert.deepEqual(service.completeGuestFirstLesson(), { active:true, completedFirstLesson:true });
   assert.match(storage.getItem(GUEST_TRIAL_STORAGE_KEY), /completedFirstLesson/);
-  assert.deepEqual(createFixtureProductService({ storage }).getGuestTrialState(), { active:true, completedFirstLesson:true });
+  assert.deepEqual(createLearnerSession({ storage }).getGuestTrialState(), { active:true, completedFirstLesson:true });
   await service.createAccount({ username:"guest-convert", email:"guest@example.com", password:"Secret123" });
   assert.deepEqual(service.getGuestTrialState(), { active:false, completedFirstLesson:false });
   assert.equal(storage.getItem(GUEST_TRIAL_STORAGE_KEY), null);
 });
 
 test("registration creates a free account directly without verification", async () => {
-  const service = createFixtureProductService();
+  const service = createLearnerSession();
   const result = await service.createAccount({ username:"new-student", email:"new@example.com", phone:"0591234567", password:"Secret123" });
   assert.deepEqual(result, { status:"created", accountType:"free" });
   assert.equal(service.getAccountType(), "free");
@@ -74,7 +74,7 @@ test("registration creates a free account directly without verification", async 
 });
 
 test("registration rejects identifiers already used by a demo account", async () => {
-  const service = createFixtureProductService();
+  const service = createLearnerSession();
   assert.equal((await service.checkAccountAvailability({ field:"username", value:"free" })).status, "duplicate");
   assert.equal((await service.checkAccountAvailability({ field:"username", value:"unused-name" })).status, "available");
   assert.equal((await service.createAccount({ username:"free", email:"new@example.com", phone:"0591234567" })).status, "duplicate");
@@ -84,10 +84,10 @@ test("registration rejects identifiers already used by a demo account", async ()
 test("API sign-in restores the curriculum and path owned by the account", async () => {
   const storage = new MemoryStorage();
   const account = {
-    username:"returning", displayName:"Returning", accountType:"free",
+    id:"test-returning", username:"returning", displayName:"Returning", accountType:"free",
     curriculum:"full-palestinian", path:"literary",
   };
-  const service = createFixtureProductService({
+  const service = createLearnerSession({
     storage,
     apiBase:"/api/auth",
     fetchImpl:async () => ({ ok:true, status:200, json:async () => ({ status:"signed-in", account }) }),
@@ -104,7 +104,7 @@ test("failed API session restoration clears temporary member state", async () =>
   storage.setItem(TEMPORARY_ACCOUNT_STORAGE_KEY, JSON.stringify({
     type:"subscribed", displayName:"Stale user", homeScenarioId:"student-paid",
   }));
-  const service = createFixtureProductService({
+  const service = createLearnerSession({
     storage,
     apiBase:"/api/auth",
     fetchImpl:async () => ({ ok:false, status:503, json:async () => ({ status:"unavailable" }) }),
@@ -118,7 +118,7 @@ test("failed API session restoration clears temporary member state", async () =>
 
 test("malformed successful API responses fail closed without changing account state", async () => {
   const errors = [];
-  const service = createFixtureProductService({
+  const service = createLearnerSession({
     apiBase:"/api/auth",
     onError:(error) => errors.push(error),
     fetchImpl:async () => ({ ok:true, status:200, json:async () => ({ status:"signed-in" }) }),
@@ -133,7 +133,7 @@ test("malformed successful API responses fail closed without changing account st
 
 test("sign-in accepts username, email, or phone for the three member account types", async () => {
   const storage = new MemoryStorage();
-  const service = createFixtureProductService({ storage });
+  const service = createLearnerSession({ storage });
   assert.equal((await service.signIn({ identifier:"unknown", password:"Learn123" })).status, "invalid");
   assert.equal((await service.signIn({ identifier:"free@example.com", password:"wrong" })).status, "invalid");
   assert.deepEqual(await service.signIn({ identifier:"free", password:"Learn123" }), { status:"signed-in", accountType:"free" });
@@ -154,29 +154,29 @@ test("sign-in accepts username, email, or phone for the three member account typ
 
 test("a login survives in-app navigation state but is cleared by a hard refresh", async () => {
   const storage = new MemoryStorage();
-  const service = createFixtureProductService({ storage });
+  const service = createLearnerSession({ storage });
   await service.signIn({ identifier:"subscribed", password:"Learn123" });
   assert.equal(service.getAccountType(), "subscribed");
   assert.equal(service.getLearnerDisplayName(), "ليان");
-  const refreshedService = createFixtureProductService({ storage });
+  const refreshedService = createLearnerSession({ storage });
   assert.equal(refreshedService.getAccountType(), "guest");
   assert.equal(refreshedService.getLearnerDisplayName(), "");
 });
 
 test("the development server live reload preserves the temporary login", async () => {
   const storage = new MemoryStorage();
-  const service = createFixtureProductService({ storage });
+  const service = createLearnerSession({ storage });
   await service.signIn({ identifier:"subscribed", password:"Learn123" });
   assert.match(storage.getItem(TEMPORARY_ACCOUNT_STORAGE_KEY), /subscribed/);
   storage.setItem(LIVE_RELOAD_STORAGE_KEY, "1");
-  const reloadedService = createFixtureProductService({ storage });
+  const reloadedService = createLearnerSession({ storage });
   assert.equal(reloadedService.getAccountType(), "subscribed");
   assert.equal(reloadedService.getLearnerDisplayName(), "ليان");
   assert.equal(storage.getItem(LIVE_RELOAD_STORAGE_KEY), null);
 });
 
 test("learning progress identity stays stable across sign-in aliases and separate across learners", async () => {
-  const service = createFixtureProductService();
+  const service = createLearnerSession();
   assert.equal(service.getLearnerProgressOwner(), "guest");
   await service.signIn({ identifier:"free", password:"Learn123" });
   const freeOwner = service.getLearnerProgressOwner();
@@ -195,7 +195,7 @@ test("corrupt saved selection cannot discard a valid guest trial or retain a rel
   storage.setItem(GUEST_TRIAL_STORAGE_KEY, JSON.stringify({ active:true, completedFirstLesson:true }));
   storage.setItem(LIVE_RELOAD_STORAGE_KEY, "1");
   const errors = [];
-  const service = createFixtureProductService({ storage, onError:(error) => errors.push(error) });
+  const service = createLearnerSession({ storage, onError:(error) => errors.push(error) });
   assert.equal(service.getVisitorSelection(), null);
   assert.deepEqual(service.getGuestTrialState(), { active:true, completedFirstLesson:true });
   assert.equal(storage.getItem(LIVE_RELOAD_STORAGE_KEY), null);
@@ -205,7 +205,7 @@ test("corrupt saved selection cannot discard a valid guest trial or retain a rel
 test("storage removal failure does not interrupt guest conversion or account notifications", async () => {
   const storage = new MemoryStorage();
   const errors = [];
-  const service = createFixtureProductService({ storage, onError:(error) => errors.push(error) });
+  const service = createLearnerSession({ storage, onError:(error) => errors.push(error) });
   service.startGuestTrial();
   storage.removeItem = () => { throw new Error("Storage disabled"); };
   const changes = [];
@@ -215,4 +215,12 @@ test("storage removal failure does not interrupt guest conversion or account not
   assert.equal(service.getGuestTrialState().active, false);
   assert.deepEqual(changes, ["free"]);
   assert.equal(errors.length, 1);
+});
+
+
+test("HTTP accounts require a stable server identity", async () => {
+  const service = createLearnerSession({ apiBase:"/api/auth", onError:()=>{},
+    fetchImpl:async () => ({ok:true, status:200, json:async () => ({status:"signed-in",account:{username:"missing-id",accountType:"free",curriculum:"gaza",path:"scientific"}})}) });
+  assert.equal((await service.signIn({identifier:"missing-id",password:"Learn123"})).status,"unavailable");
+  assert.equal(service.getAccountType(),"guest");
 });

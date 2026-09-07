@@ -15,6 +15,8 @@ function parseCookies(header = "") {
   }).filter(([name]) => name));
 }
 
+export const getSessionToken = (request) => parseCookies(request.headers.cookie)[SESSION_COOKIE];
+
 function sessionCookie(token, expiresAt, secure = false) {
   const parts = [
     `${SESSION_COOKIE}=${encodeURIComponent(token)}`,
@@ -32,7 +34,7 @@ function expiredSessionCookie() {
   return `${SESSION_COOKIE}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0`;
 }
 
-function isCrossSiteRequest(request) {
+export function isCrossSiteRequest(request) {
   if (request.headers["sec-fetch-site"] === "cross-site") return true;
   const origin = request.headers.origin;
   if (!origin) return false;
@@ -44,7 +46,7 @@ function clientKey(request, pathname) {
   return `${request.socket?.remoteAddress || "unknown"}:${pathname}`;
 }
 
-export function createAuthApi({ accountStore, readJsonBody, rateLimiter = createAuthRateLimiter() }) {
+export function createAuthApi({ accountStore, readJsonBody, rateLimiter = createAuthRateLimiter(), originPolicy = isCrossSiteRequest, clientAddress = request => request.socket?.remoteAddress || "unknown", secureCookies = false }) {
   if (!accountStore || !readJsonBody) throw new TypeError("auth API dependencies are required");
 
   return async function handleAuthApi(request, response, pathname) {
@@ -67,7 +69,7 @@ export function createAuthApi({ accountStore, readJsonBody, rateLimiter = create
       response.writeHead(405, { Allow:"POST" }).end("Method not allowed");
       return;
     }
-    if (isCrossSiteRequest(request)) {
+    if (originPolicy(request)) {
       sendJson(response, 403, { status:"forbidden", error:"تعذّر التحقق من مصدر الطلب." });
       return;
     }
@@ -85,7 +87,7 @@ export function createAuthApi({ accountStore, readJsonBody, rateLimiter = create
 
     const policyName = pathname === "/api/auth/availability" ? "availability"
       : pathname === "/api/auth/register" ? "register" : "signIn";
-    const limiterKey = clientKey(request, pathname);
+    const limiterKey = `${clientAddress(request)}:${pathname}`;
     const rateLimit = rateLimiter.consume(limiterKey, policyName);
     if (!rateLimit.allowed) {
       sendJson(response, 429, {
@@ -134,7 +136,7 @@ export function createAuthApi({ accountStore, readJsonBody, rateLimiter = create
       }
       const session = accountStore.createSession(result.account.id);
       sendJson(response, 201, { status:"created", account:result.account }, {
-        "Set-Cookie":sessionCookie(session.token, session.expiresAt, Boolean(request.socket.encrypted)),
+        "Set-Cookie":sessionCookie(session.token, session.expiresAt, secureCookies || Boolean(request.socket.encrypted)),
       });
       return;
     }
@@ -155,7 +157,7 @@ export function createAuthApi({ accountStore, readJsonBody, rateLimiter = create
       rateLimiter.reset(limiterKey);
       const session = accountStore.createSession(account.id);
       sendJson(response, 200, { status:"signed-in", account }, {
-        "Set-Cookie":sessionCookie(session.token, session.expiresAt, Boolean(request.socket.encrypted)),
+        "Set-Cookie":sessionCookie(session.token, session.expiresAt, secureCookies || Boolean(request.socket.encrypted)),
       });
       return;
     }

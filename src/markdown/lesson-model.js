@@ -2,7 +2,7 @@ import { defineLesson } from "../domain/lesson.js";
 import { parseLessonMarkdown } from "./lesson-authoring.js";
 
 function explanationBody(source) {
-  const lines = String(source).split("\n");
+  const lines = String(source).replace(/^<!--\s*(?:step-id|presentation):.*?-->\s*$/gim, "").split("\n");
   while (lines[0]?.trim() === "") lines.shift();
   if (/^<!--\s*step-id:/i.test(lines[0]?.trim() || "")) lines.shift();
   while (lines[0]?.trim() === "") lines.shift();
@@ -18,6 +18,7 @@ function compileMarkdownStep(step, issues) {
       type:"explanation",
       tag:"LEARN",
       title:step.title,
+      ...(step.presentation ? { presentation:step.presentation, dialogue:step.dialogue } : {}),
       blocks:[{ type:"markdown", source:explanationBody(step.source) }],
     };
   }

@@ -1,7 +1,7 @@
 import { escapeHtml, prefersReducedMotion } from "../../lib/dom.js";
 import { renderLessonInline } from "../../markdown/renderer.js";
 import { launchCelebration } from "../celebration.js";
-import { getLessonUiCopy } from "../lesson-ui-copy.js";
+import { getLessonUiCopy, resolveLessonContent } from "../lesson-ui-copy.js";
 import { renderShipReadyLevel } from "../ship-ready-level.js";
 import { mountTemplateEnterShortcut } from "../template-shell.js";
 
@@ -17,13 +17,20 @@ function setCheckAction(button, label, state, text, disabled = button.disabled) 
   label.textContent = text;
 }
 
+function compactResult(copy, correct) {
+  const path = correct ? "m10.5 20.8 6.2 6.2 13-14" : "m12.5 12.5 15 15m0-15-15 15";
+  const modifier = correct ? "correct" : "wrong";
+  const label = correct ? copy.excellent : copy.wrongAnswer;
+  return `<span class="level-result-icon level-result-icon--${modifier}"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="${path}"/></svg></span><span class="level-result-copy"><strong>${escapeHtml(label)}</strong></span>`;
+}
+
 export function renderUiLab(container, { definition, embedded = false, onBack, onContinue, onAnswer, locale = "en" } = {}) {
   const controller = new AbortController();
   const { signal } = controller;
   const copy = getLessonUiCopy(locale);
   if (!definition?.type || !definition.content) throw new Error("A Ship Ready template definition is required.");
   const template = definition.type;
-  const config = definition.content;
+  const config = resolveLessonContent(template, definition.content, locale);
   const isMcq = template === "mcq";
   const isResponse = template === "response";
   const isSequence = template === "sequence";
@@ -52,7 +59,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
   if (lives > 0 && lessonStatus) {
     lessonStatus.innerHTML = `<span class="lesson-lives" aria-label="${copy.lives(lives)}"><b>${lives}</b><svg viewBox="0 0 32 30" aria-hidden="true"><path class="lesson-heart-shape" d="M16 27.2C13.7 24.7 4 17.7 4 10.5 4 6.6 6.9 4 10.6 4c2.2 0 4.2 1.1 5.4 2.9C17.2 5.1 19.2 4 21.4 4 25.1 4 28 6.6 28 10.5c0 7.2-9.7 14.2-12 16.7Z"/><path class="lesson-heart-shine" d="M9.2 8.1c1.5-1.7 3.6-1.7 4.5-.7" fill="none" stroke="#ffb7bf" stroke-width="2.4" stroke-linecap="round"/></svg></span>`;
   }
-  container.innerHTML = renderShipReadyLevel(definition, { locale });
+  container.innerHTML = renderShipReadyLevel({ ...definition, content: config }, { locale });
   const closeTemplate = () => embedded ? onContinue?.() : document.querySelector(".lesson-back")?.click();
   container.querySelector("[data-template-back]").addEventListener("click", () => embedded ? onBack?.() : closeTemplate(), { signal });
 
@@ -62,6 +69,15 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
   let contentOverflowObserver = null;
   let resultAnimations = [];
   let reviewRequestController = null;
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  motionPreference.addEventListener("change", () => {
+    if (motionPreference.matches) resultAnimations.forEach((animation) => animation.finish());
+  }, { signal });
+  const trackAnimation = (animation) => {
+    resultAnimations.push(animation);
+    const remove = () => { resultAnimations = resultAnimations.filter((active) => active !== animation); };
+    animation.finished.then(remove, remove);
+  };
 
   if (!embedded) mountTemplateEnterShortcut(container, { signal });
 
@@ -156,7 +172,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
         if (payload.source === "unavailable" && typeof payload.feedback === "string" && payload.feedback.trim().length >= 12) {
           return { source:"unavailable", feedback:payload.feedback.trim() };
         }
-        if (!result.ok || !Number.isInteger(payload.score) || payload.score < 0 || payload.score > 10 || typeof payload.feedback !== "string" || payload.feedback.trim().length < 12 || payload.feedback.length > 600 || payload.source !== "codex") {
+        if (!result.ok || !Number.isInteger(payload.score) || payload.score < 0 || payload.score > 10 || typeof payload.feedback !== "string" || payload.feedback.trim().length < 12 || payload.feedback.length > 600 || !["codex","provider"].includes(payload.source)) {
           throw new Error("Review response was invalid.");
         }
         return { score:payload.score, passed:payload.score >= config.review.passScore, feedback:payload.feedback.trim(), source:payload.source };
@@ -185,12 +201,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
         easing:"cubic-bezier(.2,.82,.22,1)",
         fill:"backwards",
       });
-      resultAnimations.push(animation);
-      animation.finished.then(() => {
-        resultAnimations = resultAnimations.filter((activeAnimation) => activeAnimation !== animation);
-      }, () => {
-        resultAnimations = resultAnimations.filter((activeAnimation) => activeAnimation !== animation);
-      });
+      trackAnimation(animation);
     };
     const resetReview = () => {
       window.clearTimeout(reviewTimer);
@@ -333,6 +344,12 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
     return destroy;
   }
   if (isSpotBug) {
+    const codeSurface = container.querySelector(".ui-lab-bug-code");
+    codeSurface.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight"].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey) return;
+      event.preventDefault();
+      codeSurface.scrollBy({ left:(event.key === "ArrowRight" ? 1 : -1) * Math.max(80, codeSurface.clientWidth / 2), behavior:"instant" });
+    }, { signal });
     const lines = [...container.querySelectorAll("[data-bug-line]")];
     const reasonsPanel = container.querySelector("[data-bug-reasons]");
     const reasons = [...container.querySelectorAll("[data-bug-reason]")];
@@ -396,9 +413,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
       selectedLineButton.classList.add(correct ? "is-correct" : "is-wrong");
       selectedReasonButton.classList.add(correct ? "is-correct" : "is-wrong");
       feedback.className = `level-feedback ${correct ? "is-correct" : "is-wrong"}`;
-      feedback.innerHTML = correct
-        ? `<span class="level-result-copy"><strong>${escapeHtml(copy.bugFound)}</strong><span>${renderLessonInline(config.correctFeedback)}</span></span>`
-        : `<span class="level-result-copy"><strong>${escapeHtml(copy.notQuite)}</strong><span>${renderLessonInline(config.wrongFeedback)}</span></span>`;
+      feedback.innerHTML = compactResult(copy, correct);
       setCheckAction(checkButton, checkLabel, correct ? CHECK_ACTION.CONTINUE : CHECK_ACTION.RETRY, correct ? copy.continue : copy.tryAgain);
       if (correct) triggerPinata(signal);
     }, { signal });
@@ -421,7 +436,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
         { transform:`translate(${sourceRect.left - targetRect.left}px, ${sourceRect.top - targetRect.top}px) scale(${sourceRect.width / targetRect.width}, ${sourceRect.height / targetRect.height})` },
         { transform:"translate(0, 0) scale(1)" },
       ], { duration:420, easing:"cubic-bezier(.2,.85,.25,1)" });
-      animation.finished.catch(() => {});
+      trackAnimation(animation);
     };
     const updateFillState = () => {
       const nextIndex = answers.findIndex((answer) => answer === null);
@@ -481,9 +496,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
       const correct = expected.every((answer, index) => answer === answers[index]);
       blanks.forEach((blank, index) => blank.classList.add(answers[index] === expected[index] ? "is-correct" : "is-wrong"));
       feedback.className = `level-feedback ${correct ? "is-correct" : "is-wrong"}`;
-      feedback.innerHTML = correct
-        ? `<span class="level-result-copy"><strong>${escapeHtml(copy.correct)}</strong><span>${renderLessonInline(config.correctFeedback)}</span></span>`
-        : `<span class="level-result-copy"><strong>${escapeHtml(copy.notQuite)}</strong><span>${renderLessonInline(config.wrongFeedback)}</span></span>`;
+      feedback.innerHTML = compactResult(copy, correct);
       setCheckAction(checkButton, checkLabel, correct ? CHECK_ACTION.CONTINUE : CHECK_ACTION.RETRY, correct ? copy.continue : copy.tryAgain);
       if (correct) triggerPinata(signal);
     }, { signal });
@@ -503,15 +516,28 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
     const refresh = () => {
       slots.forEach((slot, index) => {
         const value = chosen[index];
-        const placedStep = slot.querySelector("[data-sequence-step]");
+        const placedStep = steps.find((step) => step.dataset.sequenceStep === value);
         slot.classList.toggle("is-filled", Boolean(value));
-        if (!placedStep) slot.querySelector("b").textContent = value ? stepText[value] : config.placeholder;
+        const number = slot.querySelector(":scope > span");
+        slot.replaceChildren(number, placedStep || Object.assign(document.createElement("b"), { textContent:config.placeholder }));
       });
       checkButton.disabled = chosen.length !== expected.length;
       feedback.className = "level-feedback";
       feedback.textContent = chosen.length === expected.length ? copy.sequenceReady : copy.chooseMoreSteps(expected.length - chosen.length);
     };
     steps.forEach((step) => step.addEventListener("click", () => {
+      if (placements.has(step)) {
+        if (checkButton.dataset.actionState === CHECK_ACTION.CONTINUE) return;
+        placements.get(step).replaceWith(step);
+        placements.delete(step);
+        chosen.splice(chosen.indexOf(step.dataset.sequenceStep), 1);
+        step.classList.remove("is-placed");
+        step.removeAttribute("aria-label");
+        setCheckAction(checkButton, checkLabel, CHECK_ACTION.CHECK, copy.checkOrder);
+        refresh();
+        step.focus({ preventScroll:true });
+        return;
+      }
       if (step.disabled || chosen.length === expected.length) return;
       const targetSlot = slots[chosen.length];
       const sourceRect = step.getBoundingClientRect();
@@ -523,8 +549,8 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
       step.before(bankPlaceholder);
       placements.set(step, bankPlaceholder);
       chosen.push(step.dataset.sequenceStep);
-      step.disabled = true;
       step.classList.add("is-placed");
+      step.setAttribute("aria-label", copy.removeOrderedStep(stepText[step.dataset.sequenceStep]));
       targetSlot.replaceChildren(slotNumber, step);
       setCheckAction(checkButton, checkLabel, CHECK_ACTION.CHECK, copy.checkOrder);
       refresh();
@@ -534,13 +560,13 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
           { transform:`translate(${sourceRect.left - targetRect.left}px, ${sourceRect.top - targetRect.top}px)` },
           { transform:"translate(0, 0)" },
         ], { duration:420, easing:"cubic-bezier(.2,.85,.25,1)" });
-        animation.finished.catch(() => {});
+        trackAnimation(animation);
       }
     }, { signal }));
     checkButton.addEventListener("click", () => {
       if (checkButton.dataset.actionState === CHECK_ACTION.CONTINUE) { closeTemplate(); return; }
       if (checkButton.dataset.actionState === CHECK_ACTION.RETRY) {
-        placements.forEach((placeholder, step) => { placeholder.replaceWith(step); step.disabled = false; step.classList.remove("is-placed"); });
+        placements.forEach((placeholder, step) => { placeholder.replaceWith(step); step.disabled = false; step.classList.remove("is-placed"); step.removeAttribute("aria-label"); });
         placements.clear(); chosen.length = 0;
         slots.forEach((slot, index) => { const number = slot.querySelector("span"); slot.replaceChildren(number, Object.assign(document.createElement("b"), { textContent:config.placeholder })); slot.classList.remove("is-filled"); });
         setCheckAction(checkButton, checkLabel, CHECK_ACTION.CHECK, copy.checkOrder);
@@ -550,9 +576,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
       if (chosen.length !== expected.length) return;
       const correct = expected.every((step, index) => step === chosen[index]);
       feedback.className = `level-feedback ${correct ? "is-correct" : "is-wrong"}`;
-      feedback.innerHTML = correct
-        ? `<span class="level-result-copy"><strong>${escapeHtml(copy.pathCorrect)}</strong><span>${escapeHtml(config.correctFeedback)}</span></span>`
-        : `<span class="level-result-copy"><strong>${escapeHtml(copy.almostThere)}</strong><span>${escapeHtml(config.wrongFeedback)}</span></span>`;
+      feedback.innerHTML = compactResult(copy, correct);
       setCheckAction(checkButton, checkLabel, correct ? CHECK_ACTION.CONTINUE : CHECK_ACTION.RETRY, correct ? copy.continue : copy.tryAgain);
       if (correct) triggerPinata(signal);
     }, { signal });
@@ -579,7 +603,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
       option.setAttribute("aria-pressed", String(option === answer));
     });
     feedback.className = "level-feedback";
-    feedback.textContent = locale === "ar" ? copy.mcqSelected : config.selectedFeedback;
+    feedback.textContent = "";
     setCheckAction(checkButton, checkLabel, CHECK_ACTION.CHECK, copy.checkAnswer, false);
   }, { signal }));
 
@@ -588,7 +612,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
     if (checkButton.dataset.actionState === CHECK_ACTION.RETRY) {
       selectedAnswer = null;
       answers.forEach((answer) => { answer.classList.remove("is-selected", "is-correct", "is-wrong"); answer.setAttribute("aria-pressed", "false"); });
-      feedback.className = "level-feedback"; feedback.textContent = locale === "ar" ? copy.mcqIdle : config.idleFeedback;
+      feedback.className = "level-feedback"; feedback.textContent = "";
       setCheckAction(checkButton, checkLabel, CHECK_ACTION.CHECK, copy.checkAnswer, true);
       return;
     }
@@ -597,9 +621,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
     onAnswer?.({ correct:isCorrect });
     selectedAnswer.classList.add(isCorrect ? "is-correct" : "is-wrong");
     feedback.className = `level-feedback ${isCorrect ? "is-correct" : "is-wrong"}`;
-    feedback.innerHTML = isCorrect
-      ? `<span class="level-result-icon level-result-icon--correct"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="m10.5 20.8 6.2 6.2 13-14"/></svg></span><span class="level-result-copy"><strong>${escapeHtml(copy.correct)}</strong><span>${renderLessonInline(config.correctFeedback)}</span></span>`
-      : `<span class="level-result-icon level-result-icon--wrong"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="m12.5 12.5 15 15m0-15-15 15"/></svg></span><span class="level-result-copy"><strong>${escapeHtml(copy.notQuite)}</strong><span>${renderLessonInline(config.wrongFeedback)}</span></span>`;
+    feedback.innerHTML = compactResult(copy, isCorrect);
     setCheckAction(checkButton, checkLabel, isCorrect ? CHECK_ACTION.CONTINUE : CHECK_ACTION.RETRY, isCorrect ? copy.continue : copy.tryAgain);
     if (isCorrect) triggerPinata(signal);
   }, { signal });

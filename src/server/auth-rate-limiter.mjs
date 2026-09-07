@@ -1,4 +1,6 @@
 const DEFAULT_POLICIES = Object.freeze({
+  review:Object.freeze({limit:10,windowMs:60_000}),
+  trialReview:Object.freeze({limit:3,windowMs:60_000}),
   availability:Object.freeze({ limit:30, windowMs:60_000 }),
   register:Object.freeze({ limit:8, windowMs:60 * 60_000 }),
   signIn:Object.freeze({ limit:10, windowMs:10 * 60_000 }),
@@ -22,6 +24,7 @@ export function createAuthRateLimiter({ now = Date.now } = {}) {
       requestCount += 1;
       if (requestCount % 100 === 0) removeExpiredBuckets(currentTime);
       const existing = buckets.get(key);
+      if (!existing && buckets.size >= 10000) { removeExpiredBuckets(currentTime); if (buckets.size >= 10000) return {allowed:false,retryAfterSeconds:60}; }
       const bucket = !existing || existing.resetAt <= currentTime
         ? { count:0, resetAt:currentTime + policy.windowMs }
         : existing;
