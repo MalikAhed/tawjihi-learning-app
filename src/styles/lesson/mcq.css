@@ -284,3 +284,16 @@
     0 0 0 #fff,
     0 0 24px rgba(255, 216, 77, 0.8);
 }
+
+/* Keep authored SQL together and readable within Arabic question text. */
+.ui-lab-mcq > p code {
+  display: inline-block;
+  direction: ltr;
+  unicode-bidi: isolate;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
+  vertical-align: middle;
+  font: 0.86em/1.8 ui-monospace, monospace;
+}

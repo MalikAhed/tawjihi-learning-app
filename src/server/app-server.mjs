@@ -27,7 +27,9 @@ export async function createAppServer({root,config,reviewProvider,logger=record=
   const server=createServer(async(request,response)=>{
     const start=performance.now();
     const pathname=request.url?.split('?',1)[0]||'/';
-    applySecurityHeaders(response);
+    const requestUrl=new URL(request.url||'/', 'http://localhost');
+    const isMobilePreview=(pathname==='/'||pathname==='/index.html')&&requestUrl.searchParams.get('mobile-preview')==='1';
+    applySecurityHeaders(response,{allowSameOriginFrame:isMobilePreview});
     if(config.production) response.on('finish',()=>logger({event:'request',method:request.method,route:pathname.startsWith('/api/')?pathname:'static',status:response.statusCode,durationMs:Math.round(performance.now()-start)}));
     try {
       policy.clientAddress(request);

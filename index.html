@@ -45,9 +45,10 @@
   <link rel="stylesheet" href="src/styles/visitor-flow.css" media="print" data-app-style />
   <link rel="stylesheet" href="src/styles/responsive.css" media="print" data-app-style />
   <link rel="stylesheet" href="src/styles/developer-area.css" media="print" data-app-style />
+  <link rel="stylesheet" href="src/styles/mobile-preview.css" media="print" data-app-style />
   <link rel="stylesheet" href="src/styles/system.css" media="print" data-app-style />
 </head>
-<body data-startup>
+<body data-startup data-expanded-components="hidden">
   <section id="app-splash" class="app-splash" aria-label="جارٍ تجهيز خطوة">
     <div class="app-splash__composition">
       <div class="app-splash__mascot"><img src="assets/mascot/rocky-light-still.svg" alt="" width="540" height="505" fetchpriority="high" /></div>
@@ -61,14 +62,14 @@
     </div>
   </section>
   <template id="app-header-template">
-    <div class="nav-resources" aria-label="الجواهر والقلوب وتجميد السلسلة" data-shell-obstruction><span class="nav-resource nav-resource--gems" aria-label="0 جواهر"><img src="assets/icons/nav-gem.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--hearts" aria-label="0 قلوب"><img src="assets/icons/nav-heart.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--freeze" data-learner-streak-freeze aria-label="0 من أدوات تجميد السلسلة" hidden><img src="assets/icons/streak-freeze.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span></div>
+    <div class="nav-resources" aria-label="الجواهر والقلوب وتجميد السلسلة" data-shell-obstruction data-expanded-component><span class="nav-resource nav-resource--gems" aria-label="0 جواهر"><img src="assets/icons/nav-gem.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--hearts" aria-label="0 قلوب"><img src="assets/icons/nav-heart.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span><span class="nav-resource nav-resource--freeze" data-learner-streak-freeze aria-label="0 من أدوات تجميد السلسلة" hidden><img src="assets/icons/streak-freeze.svg" alt="" aria-hidden="true" width="36" height="36" /><bdi class="ui-number">0</bdi></span></div>
   <header class="topbar-wrap" data-shell-obstruction><div class="page topbar">
 
     <nav class="nav-links" aria-label="التنقل الرئيسي">
       <button class="nav-item active" type="button" data-page="learn" aria-label="الرئيسية" aria-current="page"><div class="nav-icon"><img src="assets/icons/dashboard-home.svg" alt="" /></div><span>الرئيسية</span></button>
-      <button class="nav-item" type="button" data-page="quests" aria-label="المهام"><div class="nav-icon"><img src="assets/icons/dashboard-quests.svg" alt="" /></div><span>المهام</span></button>
-      <button class="nav-item" type="button" data-page="shop" aria-label="المتجر"><div class="nav-icon"><img src="assets/icons/dashboard-shop.svg" alt="" /></div><span>المتجر</span></button>
-      <button class="nav-item" type="button" data-page="challenges" aria-label="التحديات"><div class="nav-icon"><img src="assets/icons/dashboard-challenges.svg" alt="" /></div><span>التحديات</span></button>
+      <button class="nav-item" type="button" data-page="quests" aria-label="المهام" data-expanded-component><div class="nav-icon"><img src="assets/icons/dashboard-quests.svg" alt="" /></div><span>المهام</span></button>
+      <button class="nav-item" type="button" data-page="shop" aria-label="المتجر" data-expanded-component><div class="nav-icon"><img src="assets/icons/dashboard-shop.svg" alt="" /></div><span>المتجر</span></button>
+      <button class="nav-item" type="button" data-page="challenges" aria-label="التحديات" data-expanded-component><div class="nav-icon"><img src="assets/icons/dashboard-challenges.svg" alt="" /></div><span>التحديات</span></button>
       <button class="nav-item" type="button" data-page="more" aria-label="المزيد"><div class="nav-icon"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="4" width="28" height="25" rx="9" fill="#1899d6"/><rect x="2" y="2" width="28" height="24" rx="9" fill="#1cb0f6"/><g fill="white"><circle cx="9" cy="14" r="2"/><circle cx="16" cy="14" r="2"/><circle cx="23" cy="14" r="2"/></g></svg></div><span>المزيد</span></button>
     </nav>
     <div class="topbar-auth" data-shell-obstruction>
@@ -103,12 +104,14 @@
             <button class="more-tab" id="design-system-tab" type="button" role="tab" aria-selected="false" aria-controls="design-system-panel" tabindex="-1" data-more-tab="design-system">نظام التصميم</button>
             <button class="more-tab" id="studio-tab" type="button" role="tab" aria-selected="false" aria-controls="studio-panel" tabindex="-1" data-more-tab="studio">استوديو الحركة</button>
             <button class="more-tab" id="data-tab" type="button" role="tab" aria-selected="false" aria-controls="data-panel" tabindex="-1" data-more-tab="data">البيانات</button>
+            <button class="more-tab" id="mobile-preview-tab" type="button" role="tab" aria-selected="false" aria-controls="mobile-preview-panel" tabindex="-1" data-more-tab="mobile-preview">معاينة الهاتف</button>
           </div>
           <div class="more-tab-panel" id="studio-panel" role="tabpanel" aria-labelledby="studio-tab" hidden></div>
           <div class="more-tab-panel" id="data-panel" role="tabpanel" aria-labelledby="data-tab" hidden></div>
           <div class="more-tab-panel" id="ui-lab-panel" role="tabpanel" aria-labelledby="ui-lab-tab"></div>
           <div class="more-tab-panel" id="ship-ready-panel" role="tabpanel" aria-labelledby="ship-ready-tab" hidden></div>
           <div class="more-tab-panel" id="design-system-panel" role="tabpanel" aria-labelledby="design-system-tab" hidden></div>
+          <div class="more-tab-panel" id="mobile-preview-panel" role="tabpanel" aria-labelledby="mobile-preview-tab" hidden></div>
         </div>
       </div>
     </section>

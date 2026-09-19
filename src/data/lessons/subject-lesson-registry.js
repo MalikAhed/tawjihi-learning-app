@@ -9,6 +9,7 @@ function lessonKey(subjectId, lessonId) {
 export const subjectLessonRegistry = new Map([
   [lessonKey("ict", "course-introduction"), () => import("./ict/course-introduction.js")],
   [lessonKey("ict", "database-management"), () => import("./ict/database-management.js")],
+  [lessonKey("ict", "sql-queries"), () => import("./ict/sql-queries.js")],
 ]);
 
 export function createSubjectLessonLoader({ registry = subjectLessonRegistry } = {}) {

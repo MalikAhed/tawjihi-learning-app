@@ -17,9 +17,9 @@ test("loads Lesson 0 as the ICT course introduction", async () => {
 
 test("loads the first ICT lesson by subject and lesson id without a day slot", async () => {
   const lesson = await loadSubjectLesson("ict", "database-management");
-  assert.equal(lesson.title, "إدارة قواعد البيانات");
-  assert.equal(lesson.steps.length, 24);
-  assert.equal(lesson.authoringSource.includes("# إدارة قواعد البيانات"), true);
+  assert.equal(lesson.title, "برنامج إدارة قواعد البيانات");
+  assert.ok(lesson.steps.some(step => step.id === "engineering-office-intro"));
+  assert.equal(lesson.authoringSource.includes("# الدرس الأول: برنامج إدارة قواعد البيانات"), true);
   assert.equal(await loadSubjectLesson("ict", "unknown"), null);
 });
 
@@ -44,16 +44,28 @@ test("subject lesson loading deduplicates concurrent imports", async () => {
   assert.strictEqual(first, second);
 });
 
-test("lesson parts partition every published step once, preserving IDs and interactions", async () => {
+test("registered Unit 1 lessons partition every published step once, preserving IDs and interactions", async () => {
   const { getSubjectRoadmapLesson } = await import("../src/data/subject-roadmaps.js");
   const { loadSubjectLessonPart } = await import("../src/data/lessons/subject-lesson-registry.js");
-  const full = await loadSubjectLesson("ict", "database-management");
-  const parts = await Promise.all(getSubjectRoadmapLesson("ict", "database-management").parts.map(
-    ({ id }) => loadSubjectLessonPart("ict", "database-management", id),
-  ));
-  assert.deepEqual(parts.flatMap(({ steps }) => steps.map(({ id }) => id)), full.steps.map(({ id }) => id));
-  assert.deepEqual(parts.flatMap(({ steps }) => steps), full.steps);
-  assert.ok(parts.every((part) => part.steps.length > 0 && part.steps.length < full.steps.length && part.reward === 0));
-  assert.equal(await loadSubjectLessonPart("ict", "database-management", "unknown"), null);
-  assert.equal(await loadSubjectLessonPart("ict", "sql-queries", "sql-introduction"), null);
+  const { parseLessonMarkdown } = await import("../src/markdown/lesson-authoring.js");
+  for (const lessonId of ["database-management", "sql-queries"]) {
+    const full = await loadSubjectLesson("ict", lessonId);
+    assert.ok(full?.authoringSource, `${lessonId} must be registered`);
+    const roadmapParts = getSubjectRoadmapLesson("ict", lessonId).parts;
+    const parts = await Promise.all(roadmapParts.map(({ id }) => loadSubjectLessonPart("ict", lessonId, id)));
+    assert.deepEqual(parts.flatMap(({ steps }) => steps.map(({ id }) => id)), full.steps.map(({ id }) => id));
+    assert.deepEqual(parts.flatMap(({ steps }) => steps), full.steps);
+    for (const [index, part] of parts.entries()) {
+      assert.equal(part.steps[0].id, roadmapParts[index].startStepId);
+      assert.ok(part.steps.length > 2 && part.steps.length < full.steps.length);
+      assert.equal(part.reward, 0);
+      const parsed = parseLessonMarkdown(part.authoringSource, { published:true });
+      assert.deepEqual(parsed.issues, []);
+      assert.equal(parsed.steps[0].presentation, "video-intro");
+      assert.equal(parsed.steps[1].presentation, "lesson-summary");
+      assert.ok(parsed.steps.slice(2).every(step => step.type === "mcq"));
+    }
+    assert.equal(await loadSubjectLessonPart("ict", lessonId, "unknown"), null);
+  }
+  assert.equal(await loadSubjectLessonPart("ict", "smartphone-operating-systems", "android-features"), null);
 });

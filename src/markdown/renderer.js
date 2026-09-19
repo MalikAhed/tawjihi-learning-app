@@ -177,12 +177,23 @@ function sanitize(html) {
   });
 }
 
+// Arabic SQL names keep their own reading direction without reversing the
+// surrounding assignment, punctuation, or left-to-right command structure.
+function isolateArabicCode(markup) {
+  return markup.replace(/(<code\b[^>]*>)([\s\S]*?)(<\/code>)/g, (_match, open, content, close) => {
+    const isolated = content.split(/(<[^>]*>)/g).map((fragment, index) => index % 2 ? fragment :
+      fragment.replace(/[\p{Script=Arabic}\p{Mark}]+(?:[ \t]+[\p{Script=Arabic}\p{Mark}]+)*/gu,
+        text => `<bdi dir="rtl">${text}</bdi>`)).join("");
+    return open + isolated + close;
+  });
+}
+
 export function renderMarkdownDocument(source, { locale = "en" } = {}) {
-  return sanitize(markdownFor(locale).parse(String(source)));
+  return isolateArabicCode(sanitize(markdownFor(locale).parse(String(source))));
 }
 
 export function renderMarkdownInline(source, { locale = "en" } = {}) {
-  return sanitize(markdownFor(locale).parseInline(String(source)));
+  return isolateArabicCode(sanitize(markdownFor(locale).parseInline(String(source))));
 }
 
 export function renderLessonInline(source) {

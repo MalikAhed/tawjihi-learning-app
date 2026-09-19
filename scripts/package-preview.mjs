@@ -16,7 +16,7 @@ export async function packagePreview() {
     .replace('<meta name="learn-account-mode" content="http" />', '<meta name="learn-account-mode" content="fixture" />');
   if (!html.includes('name="learn-account-mode" content="fixture"')) throw new Error("Static preview requires explicit fixture mode.");
   await writeFile(path.join(previewDirectory, "index.html"), html);
-  for (const dependency of ["dompurify/dist/purify.es.mjs", "@highlightjs/cdn-assets/es/highlight.min.js", "marked/lib/marked.esm.js", "@vscode/codicons/dist/codicon.ttf"]) {
+  for (const dependency of ["dompurify/dist/purify.es.mjs", "@highlightjs/cdn-assets/es/highlight.min.js", "marked/lib/marked.esm.js", "@vscode/codicons/dist/codicon.ttf", "@rive-app/canvas-single/rive.js"]) {
     const target = path.join(previewDirectory, "node_modules", dependency);
     await mkdir(path.dirname(target), { recursive:true });
     await cp(path.join(root, "node_modules", dependency), target);

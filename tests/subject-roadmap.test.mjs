@@ -19,7 +19,7 @@ test("ICT follows the units and lessons listed in the textbook contents", () => 
         label:"الوحدة الأولى: قواعد البيانات",
         lessons:[
           "الدرس 0: مقدمة المسار",
-          "الدرس الأول: إدارة قواعد البيانات",
+          "الدرس الأول: برنامج إدارة قواعد البيانات",
           "الدرس الثاني: الاستعلامات ولغة SQL",
         ],
       },
@@ -41,7 +41,7 @@ test("ICT follows the units and lessons listed in the textbook contents", () => 
   assert.equal(roadmap.units.flatMap(({ lessons }) => lessons).length, 6);
   assert.equal((markup.match(/class="roadmap-unit"/g) || []).length, 3);
   assert.equal((markup.match(/class="roadmap-lesson-divider"/g) || []).length, 6);
-  assert.equal((markup.match(/class="roadmap-stop"/g) || []).length, 29);
+  assert.equal((markup.match(/class="roadmap-stop"/g) || []).length, 31);
   assert.match(markup, /قواعد البيانات/);
   assert.match(markup, /تطبيقات الهاتف الذكي/);
   assert.match(markup, /شبكات الاتصال/);
@@ -50,8 +50,8 @@ test("ICT follows the units and lessons listed in the textbook contents", () => 
   assert.match(markup, /data-roadmap-bubble/);
   assert.match(markup, /data-bubble-start/);
   assert.doesNotMatch(markup, /roadmap-whole-entry|الدرس كاملًا|ابدأ التعلّم|data-bubble-xp|<details|<summary/);
-  assert.equal((markup.match(/class="roadmap-node"/g) || []).length, 29);
-  assert.equal((markup.match(/class="roadmap-connector"/g) || []).length, 23);
+  assert.equal((markup.match(/class="roadmap-node"/g) || []).length, 31);
+  assert.equal((markup.match(/class="roadmap-connector"/g) || []).length, 25);
   assert.doesNotMatch(markup, /roadmap-lesson-preview|هذه شاشة درس تجريبية|العودة إلى الخريطة/);
   assert.doesNotMatch(markup, /خريطة المادة|تكنولوجيا المعلومات|3 وحدات|محتوى تجريبي/);
   assert.doesNotMatch(markup, /roadmap-unit-panels|data-unit-percent|data-unit-progress-count/);
@@ -62,16 +62,16 @@ test("ICT follows the units and lessons listed in the textbook contents", () => 
 test("subjects without a roadmap remain in their existing status view", () => {
   assert.equal(getSubjectRoadmap("mathematics"), null);
   assert.equal(getSubjectRoadmap("unknown"), null);
-  assert.equal(getSubjectRoadmapLesson("ict", "database-management")?.label, "الدرس الأول: إدارة قواعد البيانات");
+  assert.equal(getSubjectRoadmapLesson("ict", "database-management")?.label, "الدرس الأول: برنامج إدارة قواعد البيانات");
   assert.equal(getSubjectRoadmapLesson("ict", "unknown"), null);
 });
 
 test("unpublished guest parts never imply that creating an account publishes them", () => {
   const markup = renderSubjectRoadmapMarkup(getSubjectRoadmap("ict"), {
-    isLessonLocked:(_unit, lesson) => !["course-introduction", "database-management"].includes(lesson.id),
+    isLessonLocked:(_unit, lesson) => !["course-introduction", "database-management", "sql-queries"].includes(lesson.id),
   });
   assert.equal((markup.match(/data-account-locked="true"/g) || []).length, 0);
-  assert.equal((markup.match(/data-access-state="unpublished"/g) || []).length, 22);
+  assert.equal((markup.match(/data-access-state="unpublished"/g) || []).length, 15);
   assert.doesNotMatch(markup.match(/<button[^>]*data-roadmap-lesson="course-introduction"[^>]*>/)?.[0] || "", /data-account-locked/);
   assert.doesNotMatch(markup.match(/<button[^>]*data-roadmap-lesson="database-management"[^>]*>/)?.[0] || "", /data-account-locked/);
   assert.match(markup, /أنشئ حسابًا لمتابعة بقية الدروس/);
@@ -109,11 +109,11 @@ test("official lessons contain named, individually selectable parts with honest 
   const roadmap = getSubjectRoadmap("ict");
   const lessons = roadmap.units.flatMap(({ lessons }) => lessons);
   const markup = renderSubjectRoadmapMarkup(roadmap);
-  assert.equal(lessons.flatMap(({ parts }) => parts).length, 29);
+  assert.equal(lessons.flatMap(({ parts }) => parts).length, 31);
   assert.equal((markup.match(/class="roadmap-lesson-divider"/g) || []).length, 6);
-  assert.equal((markup.match(/data-roadmap-part=/g) || []).length, 29);
-  assert.equal((markup.match(/data-part-available="true"/g) || []).length, 7);
-  assert.equal((markup.match(/data-part-available="false"/g) || []).length, 22);
+  assert.equal((markup.match(/data-roadmap-part=/g) || []).length, 31);
+  assert.equal((markup.match(/data-part-available="true"/g) || []).length, 16);
+  assert.equal((markup.match(/data-part-available="false"/g) || []).length, 15);
   for (const lesson of lessons) {
     assert.equal(new Set(lesson.parts.map(({ id }) => id)).size, lesson.parts.length);
     assert.ok(lesson.parts.every(({ label, pages }) => label && pages));
@@ -129,14 +129,14 @@ test("unit banners omit statistics and keep access separate from progress", () =
   assert.doesNotMatch(markup, /<progress|data-unit-percent|data-unit-progress-count/);
   assert.match(markup, /data-unit-guide aria-haspopup="dialog"/);
   assert.match(markup, /data-part-state="completed"/);
-  assert.match(markup, /data-account-locked="true"/);
+  assert.doesNotMatch(markup, /data-account-locked="true"/);
 });
 
-test("the next part unlocks after completion and answered questions are counted independently", () => {
+test("all published parts are unlocked while completion stays independent", () => {
   const roadmap = getSubjectRoadmap("ict");
   const initial = renderSubjectRoadmapMarkup(roadmap);
   const initialButtons = [...initial.matchAll(/<button class="roadmap-part"[^>]*>/g)].map(match => match[0]);
-  assert.equal(initialButtons.filter(button => button.includes('data-access-state="available"')).length, 2);
+  assert.equal(initialButtons.filter(button => button.includes('data-access-state="available"')).length, 16);
   assert.match(initial, /roadmap-recommended">موصى به/);
   assert.match(initial, /data-roadmap-part="getting-started"[^>]*>[\s\S]*?roadmap-part-number" aria-hidden="true">0</);
   assert.match(initial, /data-roadmap-part="access-basics"[^>]*>[\s\S]*?roadmap-part-number" aria-hidden="true">1</);
@@ -147,7 +147,7 @@ test("the next part unlocks after completion and answered questions are counted 
   const buttons = [...updated.matchAll(/<button class="roadmap-part"[^>]*>/g)].map(match => match[0]);
   assert.ok(buttons[0].includes('data-part-state="completed"'));
   assert.ok(buttons[1].includes('data-path-locked="false"'));
-  assert.ok(buttons[2].includes('data-path-locked="true"'));
+  assert.ok(buttons[2].includes('data-path-locked="false"'));
   assert.doesNotMatch(updated, /data-unit-progress-count/);
 });
 
@@ -164,16 +164,16 @@ test("review cards show honest empty states and deduplicate questions into parts
   assert.doesNotMatch(active.match(/class="roadmap-unit-panels"[\s\S]*?<\/header>/)?.[0] || "", /data-review-part/);
   const unpublished = renderSubjectRoadmapMarkup(roadmap, {
     isLessonLocked:() => true,
-    getPartReview:(_lesson, part) => part.id === "sql-introduction" ? [{ stepId:"retained-question", misses:2, active:true }] : [],
+    getPartReview:(_lesson, part) => part.id === "android-features" ? [{ stepId:"retained-question", misses:2, active:true }] : [],
   });
-  assert.match(unpublished, /data-review-part="sql-introduction"[^>]* disabled>[\s\S]*?<b>غير متاح حاليًا<\/b>/);
+  assert.match(unpublished, /data-review-part="android-features"[^>]* disabled>[\s\S]*?<b>غير متاح حاليًا<\/b>/);
 });
 
 
-test("published gated parts retain their account requirement", () => {
+test("published parts bypass account requirements while unfinished content stays unavailable", () => {
   const markup = renderSubjectRoadmapMarkup(getSubjectRoadmap("ict"), { isLessonLocked:() => true });
-  assert.equal((markup.match(/data-account-locked="true"/g) || []).length, 7);
-  assert.equal((markup.match(/data-access-state="unpublished"/g) || []).length, 22);
+  assert.equal((markup.match(/data-account-locked="true"/g) || []).length, 0);
+  assert.equal((markup.match(/data-access-state="unpublished"/g) || []).length, 15);
 });
 
 test("popup placement stays inside measured header, navigation, and rail bounds", () => {
@@ -206,6 +206,6 @@ test("the start hint begins at level zero, advances, and respects access", () =>
   assert.equal(currentButton(continued).length, 1);
   assert.ok(currentButton(continued)[0].includes(`data-roadmap-part="${parts[1].id}"`));
   assert.match(continued, /class="roadmap-start-hint" aria-hidden="true">تابع/);
-  assert.equal(currentButton(renderSubjectRoadmapMarkup(roadmap, { isLessonLocked:() => true })).length, 0);
+  assert.equal(currentButton(renderSubjectRoadmapMarkup(roadmap, { isLessonLocked:() => true })).length, 1);
   assert.equal(currentButton(renderSubjectRoadmapMarkup(roadmap, { getPartProgress:() => ({ completed:true }) })).length, 0);
 });

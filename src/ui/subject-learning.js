@@ -241,15 +241,16 @@ export function createSubjectLearningController({
             onExitLesson: returnToRoadmap,
             reviewStepId,
             onReviewComplete: returnToRoadmap,
-            onAnswer: ({ stepId, correct }) =>
+            onAnswer: ({ stepId, correct, reviewing = false }) =>
               store.recordAnswer({
                 ...recordKey,
                 stepId,
                 correct,
-                reviewing: stepId === reviewStepId,
+                reviewing: reviewing || stepId === reviewStepId,
               }),
             progress: {
               completedStepIds: saved.completedStepIds,
+              mistakeStepIds: store.getReview(recordKey).filter((item) => item.misses > 0).map((item) => item.stepId),
               completedAt: null,
             },
             async onProgress({ completedStepIds, isComplete }) {

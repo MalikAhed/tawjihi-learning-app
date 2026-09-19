@@ -596,6 +596,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
   setCheckAction(checkButton, checkLabel, CHECK_ACTION.CHECK, copy.checkAnswer, true);
 
   answers.forEach((answer) => answer.addEventListener("click", () => {
+    if (checkButton.dataset.actionState === CHECK_ACTION.CONTINUE) return;
     selectedAnswer = answer;
     answers.forEach((option) => {
       option.classList.toggle("is-selected", option === answer);
@@ -609,20 +610,21 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
 
   checkButton.addEventListener("click", () => {
     if (checkButton.dataset.actionState === CHECK_ACTION.CONTINUE) { closeTemplate(); return; }
-    if (checkButton.dataset.actionState === CHECK_ACTION.RETRY) {
-      selectedAnswer = null;
-      answers.forEach((answer) => { answer.classList.remove("is-selected", "is-correct", "is-wrong"); answer.setAttribute("aria-pressed", "false"); });
-      feedback.className = "level-feedback"; feedback.textContent = "";
-      setCheckAction(checkButton, checkLabel, CHECK_ACTION.CHECK, copy.checkAnswer, true);
-      return;
-    }
     if (!selectedAnswer) return;
     const isCorrect = selectedAnswer.dataset.correct === "true";
     onAnswer?.({ correct:isCorrect });
-    selectedAnswer.classList.add(isCorrect ? "is-correct" : "is-wrong");
+    answers.forEach((answer) => {
+      answer.setAttribute("aria-disabled", "true");
+      answer.classList.toggle("is-correct", answer.dataset.correct === "true");
+      answer.classList.toggle("is-wrong", answer === selectedAnswer && !isCorrect);
+    });
     feedback.className = `level-feedback ${isCorrect ? "is-correct" : "is-wrong"}`;
     feedback.innerHTML = compactResult(copy, isCorrect);
-    setCheckAction(checkButton, checkLabel, isCorrect ? CHECK_ACTION.CONTINUE : CHECK_ACTION.RETRY, isCorrect ? copy.continue : copy.tryAgain);
+    if (!isCorrect) {
+      const correctAnswer = answers.find((answer) => answer.dataset.correct === "true");
+      feedback.insertAdjacentHTML("beforeend", `<span class="visually-hidden">${locale === "ar" ? "الإجابة الصحيحة:" : "Correct answer:"} ${escapeHtml(correctAnswer?.textContent || "")}</span>`);
+    }
+    setCheckAction(checkButton, checkLabel, CHECK_ACTION.CONTINUE, copy.continue);
     if (isCorrect) triggerPinata(signal);
   }, { signal });
 

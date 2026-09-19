@@ -3,8 +3,8 @@ import { isShipReadyRoute } from "../data/ship-ready.js";
 import { getCourseSubject } from "../data/course.js";
 import { getSubjectRoadmapLesson } from "../data/subject-roadmaps.js";
 
-/** @typedef {{page:string, day:null, subject:string|null, lesson:string|null, part:string|null, view:string|null, flow:string|null}} Route */
-/** @typedef {{page?:string, subject?:string|null, lesson?:string|null, part?:string|null, view?:string|null, flow?:string|null}} RouteTarget */
+/** @typedef {{page:string, day:null, subject:string|null, lesson:string|null, part:string|null, view:string|null, flow:string|null, moreTab:string|null}} Route */
+/** @typedef {{page?:string, subject?:string|null, lesson?:string|null, part?:string|null, view?:string|null, flow?:string|null, moreTab?:string|null}} RouteTarget */
 
 const APP_PAGES = new Set(["learn", "levels", "quests", "shop", "challenges", "more"]);
 export const VISITOR_FLOWS = new Set(["entry", "register", "sign-in"]);
@@ -20,24 +20,25 @@ export function readRoute(search = "") {
   const params = new URLSearchParams(search);
   const requestedFlow = params.get("flow");
   const flow = VISITOR_FLOWS.has(requestedFlow || "") ? requestedFlow : null;
-  if (flow) return { page:"learn", day:null, subject:null, lesson:null, part:null, view:null, flow };
+  if (flow) return { page:"learn", day:null, subject:null, lesson:null, part:null, view:null, flow, moreTab:null };
   if (!params.has("page") && !params.has("subject") && !params.has("view")) {
-    return { page:"learn", day:null, subject:null, lesson:null, part:null, view:null, flow:"entry" };
+    return { page:"learn", day:null, subject:null, lesson:null, part:null, view:null, flow:"entry", moreTab:null };
   }
   const page = APP_PAGES.has(params.get("page") || "") ? params.get("page") || "learn" : "learn";
-  if (page !== "learn") return { page, day:null, subject:null, lesson:null, part:null, view:null, flow:null };
+  if (page !== "learn") return { page, day:null, subject:null, lesson:null, part:null, view:null, flow:null,
+    moreTab:page === "more" && params.get("more-tab") === "mobile-preview" ? "mobile-preview" : null };
 
   if (["design-system", "ui-lab"].includes(params.get("view") || "") || isShipReadyRoute(params.get("view"))) {
-    return { page:"learn", day:null, subject:null, lesson:null, part:null, view:params.get("view"), flow:null };
+    return { page:"learn", day:null, subject:null, lesson:null, part:null, view:params.get("view"), flow:null, moreTab:null };
   }
 
   const subject = getCourseSubject(params.get("subject"))?.id || null;
-  return { page:"learn", day:null, subject, ...lessonDestination(subject, params.get("lesson"), params.get("part")), view:null, flow:null };
+  return { page:"learn", day:null, subject, ...lessonDestination(subject, params.get("lesson"), params.get("part")), view:null, flow:null, moreTab:null };
 }
 
 /** @param {string} currentHref @param {RouteTarget} [route] */
 export function createRouteUrl(currentHref, route = {}) {
-  const { page = "learn", subject = null, lesson = null, part = null, view = null, flow = null } = route;
+  const { page = "learn", subject = null, lesson = null, part = null, view = null, flow = null, moreTab = null } = route;
   const url = new URL(currentHref);
   url.searchParams.delete("page");
   url.searchParams.delete("day");
@@ -46,11 +47,13 @@ export function createRouteUrl(currentHref, route = {}) {
   url.searchParams.delete("part");
   url.searchParams.delete("view");
   url.searchParams.delete("flow");
+  url.searchParams.delete("more-tab");
 
   if (VISITOR_FLOWS.has(flow || "")) {
     if (flow !== "entry") url.searchParams.set("flow", flow || "");
   } else if (page !== "learn" && APP_PAGES.has(page)) {
     url.searchParams.set("page", page);
+    if (page === "more" && moreTab === "mobile-preview") url.searchParams.set("more-tab", moreTab);
   } else if (["design-system", "ui-lab"].includes(view || "") || isShipReadyRoute(view)) {
     url.searchParams.set("view", view || "");
   } else if (getCourseSubject(subject)) {

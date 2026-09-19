@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "node dev-server.mjs",
+    "dev": "node --watch --watch-preserve-output dev-server.mjs",
     "check:syntax": "node scripts/check-syntax.mjs",
     "test": "node --test",
     "test:browser": "node scripts/browser-smoke.mjs",
@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@highlightjs/cdn-assets": "11.11.1",
+    "@rive-app/canvas-single": "2.42.0",
     "@vscode/codicons": "0.0.46-24",
     "dompurify": "3.4.14",
     "marked": "18.0.7"

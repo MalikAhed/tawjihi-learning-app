@@ -27,6 +27,27 @@ test("static file resolver exposes only browser application files", () => {
     path.join(projectRoot, "assets/icons/favicon.svg"),
   );
   assert.equal(
+    resolvePublicFilePath(
+      projectRoot,
+      "/assets/rive/learning-success.riv",
+    ),
+    path.join(projectRoot, "assets/rive/learning-success.riv"),
+  );
+  assert.equal(
+    resolvePublicFilePath(projectRoot, "/assets/rive/preview.html"),
+    path.join(projectRoot, "assets/rive/preview.html"),
+  );
+  assert.equal(
+    resolvePublicFilePath(
+      projectRoot,
+      "/node_modules/@rive-app/canvas-single/rive.js",
+    ),
+    path.join(
+      projectRoot,
+      "node_modules/@rive-app/canvas-single/rive.js",
+    ),
+  );
+  assert.equal(
     resolvePublicFilePath(projectRoot, "/src/server/account-store.mjs"),
     null,
   );

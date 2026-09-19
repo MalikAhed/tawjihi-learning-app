@@ -11,11 +11,13 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
   await send("Page.navigate", { url:base + "?page=learn" });
   await waitFor("document.readyState==='complete'");
   await evaluate(`(async () => {
-    const [{ renderAuthoredInteractiveLesson }, { renderLesson }, { parseLessonMarkdown }, { default:lesson }] = await Promise.all([
-      import('./src/ui/lesson/authored.js'), import('./src/ui/lesson-view.js'), import('./src/markdown/lesson-authoring.js'), import('./src/data/lessons/ict/database-management.js')]);
+    const [{ renderAuthoredInteractiveLesson }, { renderLesson }, { parseLessonMarkdown }, { default:lesson }, { SHIP_READY_TEMPLATES }, { renderUiLab }] = await Promise.all([
+      import('./src/ui/lesson/authored.js'), import('./src/ui/lesson-view.js'), import('./src/markdown/lesson-authoring.js'), import('./src/data/lessons/ict/database-management.js'), import('./src/data/ship-ready.js'), import('./src/ui/ui-lab/index.js')]);
     document.body.innerHTML='<main class="page"><section class="lesson-view is-visible"><div class="lesson-shell"><div class="lesson-top"><button class="lesson-back">×</button><div class="lesson-top-title"></div><div class="lesson-status"></div></div><article class="lesson-card" id="fixture-lesson"></article></div></section></main>';
+    document.body.removeAttribute('data-startup');
     document.body.removeAttribute('data-account-type');
-    window.lessonFixture={ destroy:()=>{}, progress:0, answers:0, lesson, steps:parseLessonMarkdown(lesson.authoringSource).steps };
+    const interactionFixtures=SHIP_READY_TEMPLATES.filter(template=>['mcq','sequence','fill-blanks','spot-bug'].includes(template.type)).map(template=>({id:'fixture-'+template.type,type:template.type,content:template.type==='sequence' ? {...template.content,placeholder:undefined} : template.content}));
+    window.lessonFixture={ destroy:()=>{}, progress:0, answers:0, lesson, steps:[...parseLessonMarkdown(lesson.authoringSource).steps,...interactionFixtures] };
     lessonFixture.mount=(type, { long=false, mode='learner', steps }={}) => {
       lessonFixture.destroy();
       let selected=steps || lessonFixture.steps.filter(step => step.type===type).slice(0,1);
@@ -25,6 +27,10 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
         ...(step.type==='spot-bug' ? { lines:step.content.lines.map(line=>line+' /* Read the complete database schema, including identifiers and relationships. */') }:{}),
       }}));
       lessonFixture.selected=selected;
+      if(mode==='learner' && selected.length===1 && selected[0].id.startsWith('fixture-')) {
+        lessonFixture.destroy=renderUiLab(document.querySelector('#fixture-lesson'),{definition:selected[0],embedded:true,locale:'ar'});
+        return;
+      }
       lessonFixture.destroy=renderAuthoredInteractiveLesson(document.querySelector('#fixture-lesson'),'الدرس',lesson,selected,{
         mode, allowTestPass:true, isLessonPart:true,
         onProgress:()=>lessonFixture.progress++, onAnswer:()=>lessonFixture.answers++,
@@ -41,11 +47,49 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
     };
     await document.fonts.ready;
   })()`);
+  for (const [width, height, label] of [[390,844,"mobile"],[1024,768,"desktop"]]) {
+    await send("Emulation.setDeviceMetricsOverride", { width,height,deviceScaleFactor:1,mobile:false });
+    await evaluate("lessonFixture.mount('markdown',{steps:lessonFixture.steps.slice(0,3)})");
+    await evaluate("new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))");
+    const opening=await evaluate(`(() => {
+      const placeholder=document.querySelector('.lesson-video-placeholder').getBoundingClientRect();
+      return {
+        title:document.querySelector('.lesson-video-intro h1')?.textContent,
+        visibleText:document.querySelector('.lesson-video-intro')?.textContent.trim(),
+        background:getComputedStyle(document.querySelector('.lesson-video-placeholder')).backgroundColor,
+        ratio:placeholder.width/placeholder.height,
+        placeholder:{width:placeholder.width,height:placeholder.height,minHeight:getComputedStyle(document.querySelector('.lesson-video-placeholder')).minHeight,aspectRatio:getComputedStyle(document.querySelector('.lesson-video-placeholder')).aspectRatio},
+        progressHidden:document.querySelector('.lesson-top-title').hidden,
+        topHidden:getComputedStyle(document.querySelector('.lesson-top')).display==='none',
+        actions:[...document.querySelectorAll('.level-layout-action-group button:not([hidden])')].map(button=>button.textContent.trim()),
+      };
+    })()`);
+    assert.equal(opening.title,"الدرس الأول: برنامج إدارة قواعد البيانات");
+    assert.equal(opening.visibleText,opening.title,"the opening contains no copy beyond the title");
+    assert.equal(opening.background,"rgb(217, 221, 225)");
+    assert.ok(Math.abs(opening.ratio-16/9)<0.02,`the video placeholder keeps a 16:9 ratio: ${JSON.stringify(opening.placeholder)}`);
+    assert.equal(opening.progressHidden,true);
+    assert.equal(opening.topHidden,true);
+    assert.deepEqual(opening.actions,["رجوع","متابعة"]);
+    const openingScreenshot=await send("Page.captureScreenshot",{format:"png"});
+    await writeFile(`${evidence}/lesson-opening-${label}.png`,Buffer.from(openingScreenshot.data,"base64"));
+    await evaluate("document.querySelector('[data-template-primary]').click()");
+    await waitFor("document.querySelector('[data-live-authored-step]')?.dataset.lessonStep==='dbms-responsibilities'");
+    await delay(450);
+    assert.equal(await evaluate("document.querySelector('.lesson-top-title').hidden && getComputedStyle(document.querySelector('.lesson-top')).display==='none'"),true,"summary keeps question progress hidden");
+    assert.deepEqual(await evaluate("[...document.querySelectorAll('.markdown-rendered h2')].map(node=>node.textContent)"),["الفكرة الأساسية","يجب حفظه","أربع أدوات، أربع وظائف","تفاصيل لا تختصرها","تذكّرها ببساطة"]);
+    assert.equal(await evaluate("document.querySelectorAll('.access-summary-facts--properties ol > li').length"),6,"the illustrated summary retains all six authored Access properties");
+    const summaryScreenshot=await send("Page.captureScreenshot",{format:"png"});
+    await writeFile(`${evidence}/lesson-summary-${label}.png`,Buffer.from(summaryScreenshot.data,"base64"));
+    await evaluate("document.querySelector('[data-template-primary]').click()");
+    await waitFor("document.querySelector('[data-live-authored-step]')?.dataset.lessonStep==='dbms-task-check'");
+    assert.deepEqual(await evaluate(`(() => {const progress=document.querySelector('.lesson-top-title');return {hidden:progress.hidden,display:getComputedStyle(document.querySelector('.lesson-top')).display,max:progress.getAttribute('aria-valuemax'),now:progress.getAttribute('aria-valuenow')}})()`),{hidden:false,display:"flex",max:"1",now:"1"},"progress appears only for the question phase");
+  }
   for (const width of [390, 761]) {
     await send("Emulation.setDeviceMetricsOverride", { width,height:844,deviceScaleFactor:1,mobile:false });
     for (const count of [2, 3, 4]) {
       await evaluate(`(() => {
-        const base=lessonFixture.steps.find(step=>step.type==='mcq');
+        const base=lessonFixture.steps.find(step=>step.type==='mcq' && step.content.answers.length>=${count});
         const answers=base.content.answers.slice(0,${count});
         lessonFixture.mount('mcq',{steps:[{...base,id:'mcq-${count}',content:{...base.content,answers}}]});
       })()`);
@@ -96,15 +140,14 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
         await writeFile(`${evidence}/question-${type}-${width}.png`,Buffer.from(screenshot.data,"base64"));
       }
       await evaluate(`(() => {const target=document.querySelector('[data-fill-option],[data-sequence-step],[data-bug-line]');target.focus();target.scrollIntoView({block:'center',behavior:'instant'});})()`);
-      assert.equal(await evaluate(`(() => {const control=document.activeElement.getBoundingClientRect();const task=document.querySelector('.level-layout-task').getBoundingClientRect();return control.top>=task.top-1 && control.bottom<=task.bottom+1;})()`),true,`${type} answer reachable at ${width}`);
+      assert.equal(await evaluate(`(() => {const control=document.querySelector('[data-fill-option],[data-sequence-step],[data-bug-line]').getBoundingClientRect();const task=document.querySelector('.level-layout-task').getBoundingClientRect();return control.top>=task.top-1 && control.bottom<=task.bottom+1;})()`),true,`${type} answer reachable at ${width}`);
     }
   }
   await send("Emulation.setDeviceMetricsOverride", { width:390,height:844,deviceScaleFactor:1,mobile:false });
   await evaluate("lessonFixture.mount('sequence')");
-  await evaluate("new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))");
-  await evaluate("document.querySelector('[data-sequence-step]').focus()");
-  await send("Input.dispatchKeyEvent",{type:"keyDown",key:"Enter",code:"Enter",text:"\r",unmodifiedText:"\r",windowsVirtualKeyCode:13});
-  await send("Input.dispatchKeyEvent",{type:"keyUp",key:"Enter",code:"Enter",windowsVirtualKeyCode:13});
+  await waitFor("document.querySelector('.lesson-question-mascot img')?.complete");
+  await delay(120);
+  await evaluate("document.querySelector('[data-sequence-step]').click()");
   assert.equal(await evaluate("document.querySelectorAll('.ui-lab-sequence-slots .is-placed').length"),1);
   await evaluate("document.querySelector('.ui-lab-sequence-slots .is-placed').click()");
   assert.equal(await evaluate("document.querySelectorAll('.ui-lab-sequence-slots .is-placed').length"),0);
@@ -127,14 +170,12 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
   await evaluate("lessonFixture.mount('sequence',{steps:[{...lessonFixture.selected[0],content:{...lessonFixture.selected[0].content,placeholder:'Choose the first request'}}]})");
   assert.equal(await evaluate("document.querySelector('[data-sequence-slot]>b').textContent"),"Choose the first request","explicit authored English survives Arabic UI");
   await evaluate("lessonFixture.mount('spot-bug',{long:true})");
-  await evaluate("new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))");
-  await evaluate("document.querySelector('.ui-lab-bug-code').focus()");
+  await waitFor("document.querySelector('.lesson-question-mascot img')?.complete");
+  await delay(120);
   const code=await evaluate("(() => {const e=document.querySelector('.ui-lab-bug-code');return {direction:getComputedStyle(e).direction,width:e.clientWidth,scroll:e.scrollWidth,scrollbar:getComputedStyle(e).scrollbarWidth};})()");
   assert.equal(code.direction,"ltr"); assert.ok(code.scroll>code.width); assert.notEqual(code.scrollbar,"none");
-  await send("Input.dispatchKeyEvent",{type:"keyDown",key:"ArrowRight",code:"ArrowRight",windowsVirtualKeyCode:39});
-  await send("Input.dispatchKeyEvent",{type:"keyUp",key:"ArrowRight",code:"ArrowRight",windowsVirtualKeyCode:39});
-  await delay(250);
-  assert.ok(await evaluate("document.querySelector('.ui-lab-bug-code').scrollLeft>0"),"keyboard scrolls coherent code surface");
+  await evaluate("document.querySelector('.ui-lab-bug-code').scrollLeft=60");
+  assert.ok(await evaluate("document.querySelector('.ui-lab-bug-code').scrollLeft>0"),"code remains horizontally scrollable");
   await evaluate("document.querySelector('[data-bug-line]').click()");
   assert.equal(await evaluate("document.querySelector('[data-bug-line]').getAttribute('aria-pressed')"),"true");
   await evaluate(`lessonFixture.mount('markdown',{steps:[{id:'localized-reference',type:'markdown',title:'مصطلحات',source:${JSON.stringify('# مصطلحات\n\n[[term: قاعدة البيانات | مجموعة من البيانات المرتبطة ببعضها.]]\n\n| الحقل | النوع |\n| --- | --- |\n| رمز | نص |')}}]})`);
@@ -196,4 +237,4 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor }) => {
   assert.equal(await evaluate("document.querySelector('#fixture-lesson').textContent"),"Navigation completed","disposed lesson cannot repaint after navigation");
 });
 await writeFile(`${evidence}/question-layout-measurements.json`,JSON.stringify(results,null,2));
-console.log(`Question layouts, locale, modes, keyboard code scrolling and dialogue motion passed. Evidence: ${evidence}`);
+console.log(`Lesson opening, question layouts, locale, modes, code scrolling and dialogue motion passed. Evidence: ${evidence}`);

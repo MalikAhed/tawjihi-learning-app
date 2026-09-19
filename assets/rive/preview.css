@@ -1,0 +1,135 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans Arabic", system-ui, sans-serif;
+  background: #f4f6ff;
+  color: #172033;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 10%, #dedaff 0 12%, transparent 38%),
+    linear-gradient(150deg, #f8f9ff, #eef2ff);
+}
+
+.rive-pilot {
+  width: min(100%, 520px);
+}
+
+.rive-card {
+  padding: clamp(22px, 6vw, 36px);
+  border: 1px solid #dfe3f2;
+  border-radius: 28px;
+  background: rgb(255 255 255 / 92%);
+  box-shadow: 0 22px 70px rgb(67 56 202 / 14%);
+}
+
+.rive-copy {
+  text-align: center;
+}
+
+.rive-eyebrow {
+  margin: 0 0 8px;
+  color: #5b4ce6;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(26px, 8vw, 38px);
+  line-height: 1.25;
+}
+
+.rive-copy > p:last-child {
+  margin: 12px auto 0;
+  max-width: 38ch;
+  color: #566078;
+  line-height: 1.75;
+}
+
+.rive-stage {
+  width: min(100%, 340px);
+  aspect-ratio: 1;
+  margin: 10px auto 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rive-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 14px;
+  padding: 11px 18px;
+  background: #5145cd;
+  color: white;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #e9e9f8;
+  color: #342c86;
+}
+
+button:hover {
+  filter: brightness(1.05);
+}
+
+button:focus-visible {
+  outline: 3px solid #0f766e;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.rive-status {
+  min-height: 24px;
+  margin: 16px 0 0;
+  color: #616a80;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 430px) {
+  body {
+    padding: 12px;
+  }
+
+  .rive-card {
+    border-radius: 22px;
+  }
+
+  .rive-actions button {
+    flex: 1 1 145px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    scroll-behavior: auto;
+  }
+}

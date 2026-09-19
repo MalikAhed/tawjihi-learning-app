@@ -27,7 +27,7 @@ export function readRuntimeConfig(environment,{root,production=false}) {
     liveReload:!production&&environment.LIVE_RELOAD!=='0',production};
 }
 
-export function createRequestPolicy({publicOrigin,trustedProxies}) {
+export function createRequestPolicy({publicOrigin,trustedProxies,production=false}) {
   const clientAddress=request=>{
     const direct=normalizeAddress(request.socket.remoteAddress);
     const forwarded=request.headers['x-forwarded-for'];
@@ -41,7 +41,14 @@ export function createRequestPolicy({publicOrigin,trustedProxies}) {
   const rejectOrigin=request=>{
     if(request.headers['sec-fetch-site']==='cross-site')return true;
     if(!request.headers.origin)return false;
-    try {return new URL(request.headers.origin).origin!==(publicOrigin||`http://${request.headers.host}`);}
+    try {
+      const origin=new URL(request.headers.origin);
+      // The private HTTPS preview and its local development URL share a server.
+      // Allow the exact loopback request origin only in development.
+      if(!production&&['localhost','127.0.0.1','[::1]'].includes(origin.hostname)
+        &&origin.origin===`http://${request.headers.host}`)return false;
+      return origin.origin!==(publicOrigin||`http://${request.headers.host}`);
+    }
     catch {return true;}
   };
   return {clientAddress,rejectOrigin};

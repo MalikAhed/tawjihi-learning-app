@@ -19,7 +19,7 @@ function compileMarkdownStep(step, issues) {
       tag:"LEARN",
       title:step.title,
       ...(step.presentation ? { presentation:step.presentation, dialogue:step.dialogue } : {}),
-      blocks:[{ type:"markdown", source:explanationBody(step.source) }],
+      blocks:[{ type:"markdown", source:explanationBody(step.source) || step.title }],
     };
   }
   if (step.type === "mcq") {

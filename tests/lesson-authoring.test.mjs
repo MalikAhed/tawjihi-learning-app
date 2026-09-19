@@ -2,7 +2,9 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { parseLessonMarkdown } from "../src/markdown/lesson-authoring.js";
 import { compileLessonMarkdown, defineMarkdownLesson } from "../src/markdown/lesson-model.js";
-import { LESSON_MARKDOWN as ICT_DATABASE_MARKDOWN } from "../src/data/lessons/ict/database-management.js";
+import { LESSON_MARKDOWN as ICT_DATABASE_MARKDOWN, SIDE_QUEST_MARKDOWN, ALL_LESSON_MARKDOWN } from "../src/data/lessons/ict/database-management.js";
+import { LESSON_MARKDOWN as ICT_SQL_MARKDOWN } from "../src/data/lessons/ict/sql-queries.js";
+import { getSubjectRoadmapLesson } from "../src/data/subject-roadmaps.js";
 
 test("parses Markdown and existing interactive patterns into ordered steps", () => {
   const source = `# Request flow
@@ -284,26 +286,65 @@ question: Which URL matches?
 test("the first ICT lesson is a focused database-management lesson", () => {
   const parsed = parseLessonMarkdown(ICT_DATABASE_MARKDOWN);
   const types = parsed.steps.map((step) => step.type);
-  assert.equal(ICT_DATABASE_MARKDOWN.length > 12_000, true);
-  assert.equal(parsed.steps.length, 24);
   assert.deepEqual(parsed.issues, []);
-  ["markdown", "mcq", "sequence", "fill-blanks", "spot-bug", "response"].forEach((type) => {
-    assert.equal(types.includes(type), true, `Day 1 must include ${type}`);
+  assert.deepEqual(new Set(types), new Set(["markdown", "mcq"]));
+  assert.equal(parsed.steps.filter((step) => step.presentation === "video-intro").length, getSubjectRoadmapLesson("ict", "database-management").parts.length);
+  assert.equal(parsed.steps.filter((step) => step.presentation === "lesson-summary").length, getSubjectRoadmapLesson("ict", "database-management").parts.length);
+  assert.equal(parsed.steps.filter((step) => step.type === "mcq").every((step) => step.content.answers.length === 3), true);
+  ["database-management-mission", "dbms-responsibilities", "dbms-task-check", "access-characteristics", "access-tradeoff-check", "access-components", "component-purpose-check", "tables-fields-records", "row-column-check", "field-data-types", "data-type-fill", "keys-identity", "primary-key-truth", "relationships-cardinality", "relationship-type-check", "education-center-model", "junction-key-check", "schema-design-bug", "referential-integrity", "access-build-order", "access-build-sequence", "hospital-transfer", "hospital-schema-response", "lesson-recap"].forEach((id) => {
+    assert.equal([...parsed.steps, ...parseLessonMarkdown(SIDE_QUEST_MARKDOWN).steps].some((step) => step.id === id), true, `Lesson 1 must preserve the ${id} step id`);
   });
-  assert.equal(types.includes("code-question"), false, "Day 1 must not force an unrelated browser code editor interaction");
-  assert.deepEqual(parsed.steps.filter((step) => step.type === "sequence").map((step) => step.id), ["access-build-sequence"]);
-  assert.deepEqual(parsed.steps.filter((step) => step.type === "fill-blanks").map((step) => step.id), ["data-type-fill"]);
-  assert.deepEqual(parsed.steps.filter((step) => step.type === "spot-bug").map((step) => step.id), ["schema-design-bug"]);
-  assert.deepEqual(parsed.steps.filter((step) => step.type === "response").map((step) => step.id), ["hospital-schema-response"]);
-  ["dbms-responsibilities", "access-characteristics", "access-components", "tables-fields-records", "field-data-types", "keys-identity", "relationships-cardinality", "education-center-model", "referential-integrity", "access-build-order", "hospital-transfer", "lesson-recap"].forEach((id) => {
-    assert.equal(parsed.steps.some((step) => step.id === id), true, `Day 1 must preserve the ${id} explanation`);
-  });
-  const fourChoiceChecks = parsed.steps.filter((step) => step.type === "mcq" && step.content.answers.length !== 2);
-  assert.equal(fourChoiceChecks.every((step) => step.content.answers.length === 4), true);
   assert.equal(new Set(parsed.steps.map((step) => step.id)).size, parsed.steps.length);
   const compiled = compileLessonMarkdown(ICT_DATABASE_MARKDOWN);
   assert.equal(compiled.steps.length, parsed.steps.length);
   assert.deepEqual(compiled.issues, []);
+});
+
+test("every SQL roadmap part has an introduction, focused summary, and answerable MCQ practice", () => {
+  const parsed = parseLessonMarkdown(ICT_SQL_MARKDOWN, { published:true });
+  assert.deepEqual(parsed.issues, []);
+  assert.equal(new Set(parsed.steps.map(step => step.id)).size, parsed.steps.length);
+  const parts = getSubjectRoadmapLesson("ict", "sql-queries").parts;
+  assert.deepEqual(parts.map(part => part.id), [
+    "sql-introduction", "select-order", "where-conditions", "related-tables",
+    "count-parameters", "update-queries", "insert-queries", "delete-review",
+  ]);
+  assert.deepEqual(parsed.steps.filter(step => step.presentation === "video-intro").map(step => step.id), parts.map(part => part.startStepId));
+  for (const [index, part] of parts.entries()) {
+    const start = parsed.steps.findIndex(step => step.id === part.startStepId);
+    const end = parts[index + 1] ? parsed.steps.findIndex(step => step.id === parts[index + 1].startStepId) : parsed.steps.length;
+    const steps = parsed.steps.slice(start, end);
+    assert.equal(steps[0].presentation, "video-intro", part.id);
+    assert.equal(steps[1].presentation, "lesson-summary", part.id);
+    assert.ok(steps.length > 2, `${part.id} must have practice`);
+    for (const step of steps.slice(2)) {
+      assert.equal(step.type, "mcq", part.id);
+      assert.equal(step.content.answers.length, 3, step.id);
+      assert.equal(step.content.answers.filter(answer => answer.correct).length, 1, step.id);
+      assert.ok(step.content.correctFeedback && step.content.wrongFeedback, step.id);
+    }
+  }
+  assert.deepEqual(compileLessonMarkdown(ICT_SQL_MARKDOWN, { published:true }).issues, []);
+});
+
+test("Access core practice and reserved side quests preserve every original question", () => {
+  const active = parseLessonMarkdown(ICT_DATABASE_MARKDOWN);
+  const reserved = parseLessonMarkdown(SIDE_QUEST_MARKDOWN);
+  const original = parseLessonMarkdown(ALL_LESSON_MARKDOWN);
+  assert.deepEqual(reserved.issues, []);
+  assert.equal(reserved.steps.length, 2);
+  assert.ok(reserved.steps.every(step => step.type === "mcq"));
+  const firstPartEnd = active.steps.findIndex(step => step.id === "tables-fields-records");
+  assert.equal(active.steps.slice(0, firstPartEnd).filter(step => step.type === "mcq").length, 19);
+  const combined = [...active.steps, ...reserved.steps];
+  assert.equal(new Set(combined.map(step => step.id)).size, original.steps.length);
+  for (const step of original.steps) {
+    const retained = combined.find(candidate => candidate.id === step.id);
+    // The parser's positional preview ID changes; persisted step IDs and content must not.
+    const normalize = value => value.type === "mcq"
+      ? { ...value, content:{ ...value.content, authoringId:undefined } } : value;
+    assert.deepEqual(normalize(retained), normalize(step));
+  }
 });
 
 test("illustrated dialogue presentation is reusable across stable explanation IDs", () => {

@@ -12,6 +12,7 @@ const MIME_TYPES = Object.freeze({
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".svg": "image/svg+xml",
+  ".riv": "application/octet-stream",
   ".webp": "image/webp",
   ".zip": "application/zip",
   ".ttf": "font/ttf",
@@ -23,6 +24,7 @@ const PUBLIC_DEPENDENCIES = new Set([
   "/node_modules/@highlightjs/cdn-assets/es/highlight.min.js",
   "/node_modules/marked/lib/marked.esm.js",
   "/node_modules/@vscode/codicons/dist/codicon.ttf",
+  "/node_modules/@rive-app/canvas-single/rive.js",
 ]);
 const PUBLIC_EXTENSIONS = new Set([
   ".css",
@@ -33,6 +35,7 @@ const PUBLIC_EXTENSIONS = new Set([
   ".jpg",
   ".jpeg",
   ".svg",
+  ".riv",
   ".webp",
   ".ttf",
   ".woff",
@@ -56,6 +59,7 @@ export function resolvePublicFilePath(root, urlPath) {
   const isPublic =
     normalizedPath === "/" ||
     normalizedPath === "/index.html" ||
+    normalizedPath === "/assets/rive/preview.html" ||
     PUBLIC_DEPENDENCIES.has(normalizedPath) ||
     (isApplicationFile &&
       PUBLIC_EXTENSIONS.has(path.posix.extname(normalizedPath).toLowerCase()));

@@ -1,7 +1,7 @@
 import { animateView } from "./view-motion.js";
 import { getRequiredElement } from "../lib/dom.js";
 
-export function createMoreTabs(root, { onDesignSystem, onShipReady, onUiLab, onStudio, onData }) {
+export function createMoreTabs(root, { onDesignSystem, onShipReady, onUiLab, onStudio, onData, onMobilePreview, onSelect }) {
   const tabs = [...root.querySelectorAll("[data-more-tab]")];
 
   function select(selectedTab, { focus = false, open = true } = {}) {
@@ -18,6 +18,8 @@ export function createMoreTabs(root, { onDesignSystem, onShipReady, onUiLab, onS
     if (open && selectedTab.dataset.moreTab === "ui-lab") onUiLab(selectedTab);
     if (selectedTab.dataset.moreTab === "ship-ready") onShipReady(selectedTab);
     if (open && selectedTab.dataset.moreTab === "design-system") onDesignSystem(selectedTab);
+    if (selectedTab.dataset.moreTab === "mobile-preview") onMobilePreview(selectedTab);
+    onSelect?.(selectedTab.dataset.moreTab);
   }
 
   tabs.forEach((tab) => tab.addEventListener("click", () => select(tab)));
@@ -36,6 +38,7 @@ export function createMoreTabs(root, { onDesignSystem, onShipReady, onUiLab, onS
     designSystemTab:tabs.find((tab) => tab.dataset.moreTab === "design-system"),
     shipReadyTab:tabs.find((tab) => tab.dataset.moreTab === "ship-ready"),
     uiLabTab:tabs.find((tab) => tab.dataset.moreTab === "ui-lab"),
+    mobilePreviewTab:tabs.find((tab) => tab.dataset.moreTab === "mobile-preview"),
     select,
   };
 }

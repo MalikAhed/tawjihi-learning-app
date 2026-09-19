@@ -8,18 +8,20 @@ const CONTENT_SECURITY_POLICY = [
   "img-src 'self' data:",
   "font-src 'self' https://fonts.gstatic.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
-  "script-src 'self' https://cdn.jsdelivr.net",
+  "script-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net",
   "connect-src 'self'",
 ].join("; ");
 
-export function applySecurityHeaders(response) {
+export function applySecurityHeaders(response, { allowSameOriginFrame = false } = {}) {
   response.setHeader("X-Content-Type-Options", "nosniff");
   response.setHeader("Referrer-Policy", "no-referrer");
-  response.setHeader("X-Frame-Options", "DENY");
+  response.setHeader("X-Frame-Options", allowSameOriginFrame ? "SAMEORIGIN" : "DENY");
   response.setHeader("Cross-Origin-Opener-Policy", "same-origin");
   response.setHeader("Cross-Origin-Resource-Policy", "same-origin");
   response.setHeader("Permissions-Policy", "camera=(), geolocation=(), microphone=()");
-  response.setHeader("Content-Security-Policy", CONTENT_SECURITY_POLICY);
+  response.setHeader("Content-Security-Policy", allowSameOriginFrame
+    ? CONTENT_SECURITY_POLICY.replace("frame-ancestors 'none'", "frame-ancestors 'self'")
+    : CONTENT_SECURITY_POLICY);
 }
 
 export function applyCodePreviewSecurityHeaders(response, nonce) {

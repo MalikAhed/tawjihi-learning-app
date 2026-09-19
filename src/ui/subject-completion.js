@@ -64,7 +64,7 @@ function streakDays({ streak = 0, activeToday = false, date = new Date() }) {
 export function renderSubjectStreak(outcome = {}) {
   const streak = Math.max(0, Number(outcome.streak) || 0);
   return `<div class="level-lesson-copy ready-lesson-result subject-completion subject-completion--streak" dir="rtl">
-    ${outcome.preview || outcome.activeToday ? `<p class="completion-streak-message">${outcome.preview ? "معاينة فقط — لم يُحفظ تقدّم." : "خطوة جميلة اليوم! نلتقي غدًا لنكمل السلسلة."}</p>` : ""}
+    ${outcome.preview || outcome.activeToday ? `<p class="completion-streak-message" data-expanded-component>${outcome.preview ? "معاينة فقط — لم يُحفظ تقدّم." : "خطوة جميلة اليوم! نلتقي غدًا لنكمل السلسلة."}</p>` : ""}
     <div class="completion-streak-scene"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/icons/streak-fire-burning-reduced.svg"><img class="completion-streak-fire" src="assets/icons/streak-fire-burning${prefersReducedMotion() ? "-reduced" : ""}.svg" alt="" aria-hidden="true"></picture></div>
     <h1 id="authored-lesson-complete-title" class="completion-streak-count"><strong class="ui-number">${outcome.preview ? "—" : streak}</strong><span>سلسلة التعلّم</span></h1>
     <p class="completion-streak-caption">${outcome.preview ? "أيام إنجازك تظهر هنا" : formatArabicCount(streak, "day") + " من التعلّم المتواصل"}</p>

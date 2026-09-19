@@ -1,0 +1,247 @@
+{
+  "artboard": {
+    "name": "Learning Success",
+    "width": 320,
+    "height": 320
+  },
+  "groups": [
+    {
+      "id": "celebration",
+      "x": 160,
+      "y": 160
+    },
+    {
+      "id": "badge",
+      "x": 0,
+      "y": 0,
+      "parent": "celebration"
+    },
+    {
+      "id": "sparkles",
+      "x": 0,
+      "y": 0,
+      "parent": "celebration"
+    }
+  ],
+  "shapes": [
+    {
+      "id": "halo",
+      "type": "ellipse",
+      "x": 0,
+      "y": 0,
+      "width": 210,
+      "height": 210,
+      "parent": "badge",
+      "opacity": 0.24,
+      "fill": {
+        "color": "#6D5EF5"
+      }
+    },
+    {
+      "id": "disc",
+      "type": "ellipse",
+      "x": 0,
+      "y": 0,
+      "width": 154,
+      "height": 154,
+      "parent": "badge",
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#6D5EF5"
+            },
+            {
+              "color": "#4338CA"
+            }
+          ]
+        }
+      },
+      "stroke": {
+        "color": "#FFFFFF",
+        "thickness": 8
+      }
+    },
+    {
+      "id": "check",
+      "type": "polygon",
+      "x": -2,
+      "y": 2,
+      "parent": "badge",
+      "points": [
+        {
+          "x": -42,
+          "y": -2
+        },
+        {
+          "x": -20,
+          "y": 22
+        },
+        {
+          "x": 47,
+          "y": -44
+        },
+        {
+          "x": 58,
+          "y": -32
+        },
+        {
+          "x": -20,
+          "y": 46
+        },
+        {
+          "x": -54,
+          "y": 10
+        }
+      ],
+      "fill": {
+        "color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "sparkTop",
+      "type": "rect",
+      "x": 0,
+      "y": -124,
+      "width": 12,
+      "height": 34,
+      "cornerRadius": 6,
+      "parent": "sparkles",
+      "fill": {
+        "color": "#FBBF24"
+      }
+    },
+    {
+      "id": "sparkRight",
+      "type": "rect",
+      "x": 124,
+      "y": 0,
+      "width": 34,
+      "height": 12,
+      "cornerRadius": 6,
+      "parent": "sparkles",
+      "fill": {
+        "color": "#2DD4BF"
+      }
+    },
+    {
+      "id": "sparkBottom",
+      "type": "rect",
+      "x": 0,
+      "y": 124,
+      "width": 12,
+      "height": 34,
+      "cornerRadius": 6,
+      "parent": "sparkles",
+      "fill": {
+        "color": "#FB7185"
+      }
+    },
+    {
+      "id": "sparkLeft",
+      "type": "rect",
+      "x": -124,
+      "y": 0,
+      "width": 34,
+      "height": 12,
+      "cornerRadius": 6,
+      "parent": "sparkles",
+      "fill": {
+        "color": "#38BDF8"
+      }
+    }
+  ],
+  "animations": [
+    {
+      "name": "idle",
+      "fps": 60,
+      "duration": 180,
+      "loop": "loop",
+      "presets": [
+        {
+          "preset": "breathing",
+          "target": "badge",
+          "intensity": 0.35,
+          "cycleSeconds": 3
+        },
+        {
+          "preset": "spin",
+          "target": "sparkles",
+          "intensity": 0.1,
+          "cycleSeconds": 6
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "name": "celebrate",
+      "fps": 60,
+      "duration": 90,
+      "loop": "oneShot",
+      "presets": [
+        {
+          "preset": "pop-in",
+          "target": "badge",
+          "intensity": 0.8
+        },
+        {
+          "preset": "rise-in",
+          "targets": [
+            "sparkTop",
+            "sparkRight",
+            "sparkBottom",
+            "sparkLeft"
+          ],
+          "at": 8,
+          "stagger": 4,
+          "intensity": 0.55
+        },
+        {
+          "preset": "tada",
+          "target": "celebration",
+          "at": 18,
+          "intensity": 0.45
+        }
+      ],
+      "tracks": []
+    }
+  ],
+  "stateMachine": {
+    "name": "Learning Success State",
+    "inputs": [
+      {
+        "name": "celebrate",
+        "type": "bool"
+      }
+    ],
+    "states": [
+      {
+        "name": "idle",
+        "animation": "idle"
+      },
+      {
+        "name": "celebrating",
+        "animation": "celebrate"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "entry",
+        "to": "idle"
+      },
+      {
+        "from": "idle",
+        "to": "celebrating",
+        "condition": {
+          "input": "celebrate"
+        }
+      },
+      {
+        "from": "celebrating",
+        "to": "idle",
+        "exitTimeMs": 1400
+      }
+    ]
+  }
+}

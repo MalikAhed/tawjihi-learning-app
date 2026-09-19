@@ -23,6 +23,7 @@ import {
   setDevelopmentViewMode,
 } from "./ui/development-views.js";
 import { createMoreTabs } from "./ui/more-tabs.js";
+import { renderMobilePreview } from "./ui/mobile-preview.js";
 import { createSubjectLearningController } from "./ui/subject-learning.js";
 import { createVisitorFlow } from "./ui/visitor-flow.js";
 import { createSubjectProgressStore } from "./services/subject-progress-store.js";
@@ -289,6 +290,17 @@ function showDeveloperLab(tab) {
 }
 
 const moreTabs = createMoreTabs(elements.moreTabs, {
+  onSelect(tool) {
+    const url = new URL(window.location.href);
+    if (tool === "mobile-preview") url.searchParams.set("more-tab", tool);
+    else url.searchParams.delete("more-tab");
+    window.history.replaceState(window.history.state, "", url);
+  },
+  onMobilePreview(tab) {
+    renderMobilePreview(
+      getRequiredElement(`#${tab.getAttribute("aria-controls")}`),
+    );
+  },
   onUiLab: (tab) => developmentViews.openLab(tab),
   onStudio(tab) {
     renderDeveloperStudio(
@@ -325,6 +337,9 @@ const moreTabs = createMoreTabs(elements.moreTabs, {
   },
 });
 showDeveloperLab(moreTabs.uiLabTab);
+if (new URLSearchParams(window.location.search).get("more-tab") === "mobile-preview") {
+  moreTabs.select(moreTabs.mobilePreviewTab);
+}
 function closeLesson() {
   const subjectState = subjectLearning.getState();
   const wasDesignSystem = elements.lessonShell.classList.contains(

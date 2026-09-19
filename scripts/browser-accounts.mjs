@@ -1,7 +1,10 @@
 import { COURSE_SUBJECTS } from "../src/data/course.js";
+import { loadSubjectLessonPart } from "../src/data/lessons/subject-lesson-registry.js";
 
 // Continues from the completed guest roadmap; creates and restores an isolated test account.
 export async function verifyAccountJourney({ appUrl, navigate, evaluate, waitFor, assert, cdp, sessionId, captureScreenshot, delay, completeRoadmap }) {
+  const accessPart = await loadSubjectLessonPart("ict", "database-management", "access-basics");
+  const accessQuestionCount = accessPart.steps.filter(step => step.type === "question").length;
   await waitFor("Boolean(document.querySelector('[data-auth-flow=register]'))", "restored guest account actions");
   await evaluate("document.querySelector('[data-auth-flow=register]').click()");
   await waitFor("Boolean(document.querySelector('[data-register-form]'))", "direct account creation");
@@ -129,19 +132,20 @@ export async function verifyAccountJourney({ appUrl, navigate, evaluate, waitFor
     const hint=document.querySelector('.roadmap-start-hint');
     const heading=hint.closest('.roadmap-lesson-group').querySelector('.roadmap-lesson-heading');
     const style=getComputedStyle(hint);
+    if (document.body.dataset.expandedComponents === 'hidden' && hint.closest('[data-expanded-component]')) return hint.getClientRects().length === 0;
     return style.color === 'rgb(28, 176, 246)' && style.fontSize === '17px' && style.paddingTop === '9px' && style.animationName === 'roadmap-start-bob' && style.animationDuration === '2s' && hint.getBoundingClientRect().top > heading.getBoundingClientRect().bottom;
-  })()`), "the ICT start hint must use the reference size and motion without covering the lesson 0 title");
-  await evaluate("document.querySelector('[data-roadmap-part=sql-introduction]').click()");
+  })()`), "the optional introduction hint follows the visibility flag, and when shown retains its reference size, motion, and title clearance");
+  await evaluate("document.querySelector('[data-roadmap-part=android-features]').click()");
   assert(await evaluate("document.querySelector('[data-bubble-start]').disabled && document.querySelector('[data-bubble-start]').textContent.includes('قيد الإعداد')"), "unpublished parts must explain their availability without offering a false start");
   await evaluate("document.querySelector('[data-bubble-close]').click()");
   await evaluate("document.querySelector('[data-roadmap-part=access-basics]').click()");
   await waitFor("!document.querySelector('[data-roadmap-bubble]').hidden", "the first lesson information bubble for the signed-in learner");
   await evaluate("document.querySelector('[data-bubble-start]').click()");
-  await waitFor("document.querySelector('.markdown-authored-content .markdown-rendered h1')?.textContent === 'إدارة قواعد البيانات'", "the lesson selected from the ICT roadmap");
-  const signedInLessonCenter = await evaluate(`(() => { const content=document.querySelector('.markdown-authored-content').getBoundingClientRect(); const rtlScrollbarWidth=innerWidth-document.documentElement.clientWidth; return { contentCenter:content.left + content.width / 2, usableViewportCenter:(innerWidth + rtlScrollbarWidth) / 2, pageMarginRight:getComputedStyle(document.querySelector('main.page')).marginRight }; })()`);
+  await waitFor("document.querySelector('.lesson-video-intro h1')?.textContent === 'الدرس الأول: برنامج إدارة قواعد البيانات'", "the lesson selected from the ICT roadmap");
+  const signedInLessonCenter = await evaluate(`(() => { const content=document.querySelector('.lesson-video-intro').getBoundingClientRect(); const rtlScrollbarWidth=innerWidth-document.documentElement.clientWidth; return { contentCenter:content.left + content.width / 2, usableViewportCenter:(innerWidth + rtlScrollbarWidth) / 2, pageMarginRight:getComputedStyle(document.querySelector('main.page')).marginRight }; })()`);
   assert(Math.abs(signedInLessonCenter.contentCenter - signedInLessonCenter.usableViewportCenter) <= 6 && signedInLessonCenter.pageMarginRight === "0px", `the signed-in ICT lesson must be centered in the usable viewport (${JSON.stringify(signedInLessonCenter)})`);
   assert(await evaluate("getComputedStyle(document.querySelector('.dashboard-side-rail')).display === 'none'"), "opening a subject must hide the left dashboard rail");
-  assert(await evaluate("document.querySelector('.lesson-top-title').getAttribute('aria-valuemax') === '7' && !document.querySelector('.lesson-label')?.textContent.includes('DAY 1')"), "the personalized Start lesson action must open the subject lesson without a day-based identity");
+  assert(await evaluate(`Number(document.querySelector('.lesson-top-title').getAttribute('aria-valuemax')) === ${accessQuestionCount} && document.querySelector('.lesson-top-title').hidden && !document.querySelector('.lesson-label')?.textContent.includes('DAY 1')`), "the personalized Start lesson action must open the subject lesson without a day-based identity");
   await evaluate("document.querySelector('.lesson-back').click()");
   await waitFor("Boolean(document.querySelector('.subject-roadmap'))", "the ICT roadmap after closing its lesson");
   if (process.env.BROWSER_ROADMAP_ONLY === "1") {

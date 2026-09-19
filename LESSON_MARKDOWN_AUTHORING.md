@@ -61,6 +61,44 @@ Supported content syntax includes:
 
 Raw HTML is not lesson syntax. The authoring validator rejects it outside fenced code. Never use HTML, CSS, JSX, classes, inline styles, iframes, or wrappers to create lesson UI. HTML/CSS/JS inside a fenced example or `:::code-question` starter file is lesson subject matter and is allowed.
 
+## Published lesson learning arc
+
+Student lessons use a predictable three-phase order:
+
+1. A short-video opening with only the lesson title and the application-owned neutral placeholder.
+2. A concise recap that separates what the student must memorize, what they need to understand, and a few important notes.
+3. MCQ practice. The lesson progress bar is hidden during the video and recap, then measures questions only.
+
+Use `video-intro` for the opening. It accepts exactly one level-one title; do not add copy, images, links, or player controls because the application owns the placeholder and navigation:
+
+```md
+<!-- step-id: stable-video-id -->
+<!-- presentation: video-intro -->
+# Lesson title
+```
+
+Use `lesson-summary` on the following explanation and write ordinary accessible Markdown inside it:
+
+```md
+<!-- step-id: stable-summary-id -->
+<!-- presentation: lesson-summary -->
+# Lesson summary
+
+## Memorize
+
+- The smallest set of facts needed for recall.
+
+## Understand
+
+- A plain-language explanation of why the idea works.
+
+:::note Important note
+One easy-to-miss boundary or exception.
+:::
+```
+
+Keep most MCQs to three useful choices. Two-choice questions remain supported, and the shared question component owns the responsive layout: two or four choices form two columns on desktop, three choices stack, and all choices stack on mobile.
+
 ## Shared directive rules
 
 - Open with `:::type` and close with `:::`.

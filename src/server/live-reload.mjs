@@ -55,7 +55,8 @@ function shouldReload(filename) {
 export function createLiveReload({ root, watchFiles = watch } = {}) {
   if (!root) throw new TypeError("live reload root is required");
   const clients = new Set();
-  let revision = 0;
+  // A server restart must also refresh open tabs, even before any file event.
+  let revision = Date.now();
   let reloadTimer;
   const watcher = watchFiles(root, { recursive:true }, (_event, filename = "") => {
     if (!shouldReload(filename)) return;

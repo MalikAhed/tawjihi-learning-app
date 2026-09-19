@@ -19,9 +19,20 @@ export function onboardingSources() {
 }
 
 export async function fetchStartupAsset(source, signal) {
-  const response = await fetch(source, { signal:AbortSignal.any([signal, AbortSignal.timeout(15000)]), priority:"high" });
-  if (!response.ok) throw new Error(`Startup asset failed: ${source}`);
-  await response.arrayBuffer();
+  // Forward cancellation without requiring AbortSignal.any on older browsers.
+  const controller = new AbortController();
+  const abort = () => controller.abort(signal.reason);
+  if (signal.aborted) abort();
+  else signal.addEventListener("abort", abort, { once:true });
+  const timer = setTimeout(() => controller.abort(new DOMException("Startup asset timed out", "TimeoutError")), 15000);
+  try {
+    const response = await fetch(source, { signal:controller.signal, priority:"high" });
+    if (!response.ok) throw new Error(`Startup asset failed: ${source}`);
+    await response.arrayBuffer();
+  } finally {
+    clearTimeout(timer);
+    signal.removeEventListener("abort", abort);
+  }
   if (/\.(png|webp|jpe?g)$/.test(source)) {
     const image = new Image();
     image.src = source;

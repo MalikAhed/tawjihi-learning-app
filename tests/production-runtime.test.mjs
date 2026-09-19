@@ -34,6 +34,20 @@ test('production configuration requires origin, durable data path and provider; 
   assert.equal(policy.rejectOrigin({...request,headers:{origin:'https://evil.example'}}),true);
 });
 
+test('private preview permits same-origin localhost saves only in development',()=>{
+  const config={publicOrigin:'https://preview.example',trustedProxies:new Set()};
+  const development=createRequestPolicy({...config,production:false});
+  const production=createRequestPolicy({...config,production:true});
+  const request={headers:{host:'localhost:4173',origin:'http://localhost:4173'}};
+  assert.equal(development.rejectOrigin(request),false);
+  assert.equal(production.rejectOrigin(request),true);
+  for(const origin of ['http://localhost:4174','http://127.0.0.1:4173','https://evil.example']) {
+    assert.equal(development.rejectOrigin({headers:{...request.headers,origin}}),true);
+  }
+  assert.equal(development.rejectOrigin({headers:{...request.headers,'sec-fetch-site':'cross-site'}}),true);
+  assert.equal(development.rejectOrigin({headers:{host:'preview.example',origin:config.publicOrigin}}),false);
+});
+
 test('review queue has a fixed bound, cancels queued work and recovers after deadline',async()=>{
   const limiter=createReviewLimiter({maxConcurrent:1,maxQueue:1,timeoutMs:50});
   const running=limiter.run(signal=>new Promise((resolve,reject)=>signal.addEventListener('abort',()=>reject(signal.reason),{once:true}))).catch(error=>error.code);

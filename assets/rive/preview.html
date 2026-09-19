@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تجربة Rive</title>
+    <link rel="icon" href="/assets/icons/favicon.svg" />
+    <link rel="stylesheet" href="./preview.css" />
+  </head>
+  <body>
+    <main class="rive-pilot">
+      <section class="rive-card" aria-labelledby="rive-title">
+        <div class="rive-copy">
+          <p class="rive-eyebrow">تجربة محلية</p>
+          <h1 id="rive-title">رقصة روكي باستخدام Rive</h1>
+          <p>
+            اضغط الزر لتجعل روكي يرقص بسعادة عبر آلة حالات داخل ملف Rive.
+          </p>
+        </div>
+
+        <div class="rive-stage">
+          <canvas
+            id="rive-canvas"
+            width="640"
+            height="640"
+            aria-label="روكي يرقص بسعادة"
+          ></canvas>
+        </div>
+
+        <div class="rive-actions">
+          <button id="celebrate" type="button">شغّل رقصة روكي</button>
+          <button id="pause" class="secondary" type="button">إيقاف مؤقت</button>
+        </div>
+        <p id="rive-status" class="rive-status" role="status">
+          جارٍ تحميل الحركة…
+        </p>
+      </section>
+    </main>
+    <script src="/node_modules/@rive-app/canvas-single/rive.js"></script>
+    <script type="module" src="./preview.js"></script>
+  </body>
+</html>

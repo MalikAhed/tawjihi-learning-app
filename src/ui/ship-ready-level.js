@@ -23,7 +23,7 @@ export function renderShipReadyContent(type, config, { titleId = "ui-lab-content
   const copy = getLessonUiCopy(locale);
   config = resolveLessonContent(type, config, locale);
   if (type === "mcq") {
-    return `<div class="level-lesson-copy ui-lab-mcq lesson-question"><h1 id="${escapeHtml(titleId)}">${escapeHtml(config.title)}</h1><p>${escapeHtml(config.prompt)}</p><div class="level-answer-list lesson-answer-list" data-answer-count="${config.answers.length}" role="group" aria-label="${escapeHtml(copy.answerChoices)}">${config.answers.map((answer, index) => {
+    return `<div class="level-lesson-copy ui-lab-mcq lesson-question"><h1 id="${escapeHtml(titleId)}">${escapeHtml(config.title)}</h1><p>${renderLessonInline(config.prompt)}</p><div class="level-answer-list lesson-answer-list" data-answer-count="${config.answers.length}" role="group" aria-label="${escapeHtml(copy.answerChoices)}">${config.answers.map((answer, index) => {
       const answerText = locale === "ar" && answer.id === "true" && answer.text === "True" ? "صح" : locale === "ar" && answer.id === "false" && answer.text === "False" ? "خطأ" : answer.text;
       return `<button class="lesson-answer" type="button" ${answerAttribute}="${escapeHtml(answer.id)}" data-correct="${answer.correct === true}" aria-pressed="false"><span>${lessonChoiceMarker(index, locale)}</span><b>${renderLessonInline(answerText)}</b></button>`;
     }).join("")}</div></div>`;

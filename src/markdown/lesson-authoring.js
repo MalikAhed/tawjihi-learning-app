@@ -345,7 +345,8 @@ function markdownStep(source, index, issues) {
   const presentation = markers[0]?.[1];
   const step = { type:"markdown", id:explicitId || `authored-content-${index + 1}`, title:heading || `Lesson content ${index + 1}`, source:source.trim() };
   if (markers.length > 1) issues.push(`Explanation step ${index + 1} can select only one presentation.`);
-  if (presentation !== undefined && presentation !== "rocky-dialogue") {
+  const supportedPresentations = new Set(["rocky-dialogue", "video-intro", "lesson-summary"]);
+  if (presentation !== undefined && !supportedPresentations.has(presentation)) {
     issues.push(`Explanation step ${index + 1} uses unsupported presentation “${presentation}”.`);
   }
   if (presentation === "rocky-dialogue") {
@@ -358,6 +359,13 @@ function markdownStep(source, index, issues) {
       step.dialogue = { image: match[1], source: match[2].trim() };
     }
   }
+  if (presentation === "video-intro") {
+    const body = source.replace(/^<!--\s*(?:step-id|presentation):.*?-->\s*$/gim, "").trim();
+    if (!/^#\s+[^\n]+\s*$/.test(body)) {
+      issues.push(`Explanation step ${index + 1} (video-intro) needs exactly one level-one lesson title.`);
+    } else step.presentation = presentation;
+  }
+  if (presentation === "lesson-summary") step.presentation = presentation;
   return step;
 }
 

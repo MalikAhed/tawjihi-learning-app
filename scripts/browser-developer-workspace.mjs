@@ -7,6 +7,21 @@ export async function verifyDeveloperWorkspace({ appUrl, navigate, evaluate, wai
     assert(await evaluate("document.documentElement.scrollWidth <= innerWidth"), `More fits ${width}px`);
     await captureScreenshot(`developer-area-${width}.png`);
   }
+  await evaluate("document.querySelector('[data-more-tab=mobile-preview]').click()");
+  await waitFor("document.querySelector('.mobile-preview iframe')?.contentDocument?.querySelector('.subject-card') && !document.querySelector('.mobile-preview iframe').contentDocument.body.hasAttribute('data-startup')", "interactive mobile preview");
+  assert(await evaluate(`(() => { const iframe=document.querySelector('.mobile-preview iframe'); const rect=iframe.getBoundingClientRect(); return location.search.includes('more-tab=mobile-preview') && rect.width === 390 && rect.height === 844 && iframe.contentWindow.innerWidth === 390; })()`), "mobile preview starts with a real 390 × 844 app viewport and keeps its tab in the URL");
+  await captureScreenshot("mobile-preview-desktop.png");
+  await evaluate("document.querySelector('[data-mobile-preview-rotate]').click()");
+  await waitFor("document.querySelector('.mobile-preview iframe').getBoundingClientRect().width === 844", "rotated mobile preview");
+  assert(await evaluate(`(() => { const rect=document.querySelector('.mobile-preview iframe').getBoundingClientRect(); return rect.width === 844 && rect.height === 390 && document.querySelector('[data-mobile-preview-size]').textContent.includes('844 × 390'); })()`), "mobile preview rotates without reloading the outer app");
+  await cdp.send("Emulation.setDeviceMetricsOverride", { width:390, height:844, deviceScaleFactor:1, mobile:true }, sessionId);
+  const mobileContainment = await evaluate(`(() => { const stage=document.querySelector('.mobile-preview__stage'); return { documentWidth:document.documentElement.scrollWidth, viewportWidth:innerWidth, stageWidth:stage.clientWidth, stageScrollWidth:stage.scrollWidth }; })()`);
+  assert(mobileContainment.documentWidth <= mobileContainment.viewportWidth && mobileContainment.stageScrollWidth > mobileContainment.stageWidth, `mobile preview stays contained in the More tab on narrow screens (${JSON.stringify(mobileContainment)})`);
+  await captureScreenshot("mobile-preview-narrow.png");
+  await cdp.send("Emulation.setDeviceMetricsOverride", { width:1440, height:900, deviceScaleFactor:1, mobile:false }, sessionId);
+  await navigate(`${appUrl}?page=more&more-tab=mobile-preview`);
+  await waitFor("document.querySelector('[data-more-tab=mobile-preview]')?.getAttribute('aria-selected') === 'true' && document.querySelector('.mobile-preview iframe')", "mobile preview after app reload");
+  assert(await evaluate("document.querySelector('[data-more-tab=mobile-preview]').tabIndex === 0"), "mobile preview remains selected after live reload");
   await evaluate("document.querySelector('[data-more-tab=ui-lab]').click()");
   await waitFor("location.search === '?view=ui-lab' && document.querySelector('.playground-board')", "full-screen UI Lab");
   assert(await evaluate(`(() => { const board=document.querySelector('.playground-board'); const rect=board.getBoundingClientRect(); return rect.width === innerWidth && rect.height === innerHeight && board.getAttribute('sandbox') === 'allow-scripts' && !document.querySelector('[data-language=html]').value && document.querySelector('#lab-editor').hidden && getComputedStyle(document.querySelector('.topbar-wrap')).display === 'none'; })()`), "UI Lab is a blank viewport with an isolated preview and hidden editor");

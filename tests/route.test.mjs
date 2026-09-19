@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createRouteUrl, readRoute } from "../src/app/route.js";
 
-const learnRoute = (overrides = {}) => ({ page:"learn", day:null, subject:null, lesson:null, part:null, view:null, flow:null, ...overrides });
+const learnRoute = (overrides = {}) => ({ page:"learn", day:null, subject:null, lesson:null, part:null, view:null, flow:null, moreTab:null, ...overrides });
 
 test("route parser accepts visitor flows, known pages, valid subjects, and development views", () => {
   assert.deepEqual(readRoute(""), learnRoute({ flow:"entry" }));
@@ -13,6 +13,7 @@ test("route parser accepts visitor flows, known pages, valid subjects, and devel
   assert.deepEqual(readRoute("?page=levels"), learnRoute({ page:"levels" }));
   assert.deepEqual(readRoute("?page=quests"), learnRoute({ page:"quests" }));
   assert.deepEqual(readRoute("?page=challenges"), learnRoute({ page:"challenges" }));
+  assert.deepEqual(readRoute("?page=more&more-tab=mobile-preview"), learnRoute({ page:"more", moreTab:"mobile-preview" }));
   assert.deepEqual(readRoute("?subject=ict"), learnRoute({ subject:"ict" }));
   assert.deepEqual(readRoute("?subject=mathematics"), learnRoute({ subject:"mathematics" }));
   assert.deepEqual(readRoute("?subject=unknown"), learnRoute());
@@ -65,6 +66,7 @@ test("route URL updates preserve unrelated query parameters", () => {
   assert.equal(createRouteUrl(page, { view:"ship-ready-response" }).search, "?campaign=quest&view=ship-ready-response");
   assert.equal(createRouteUrl(page, { view:"ship-ready-spot-bug" }).search, "?campaign=quest&view=ship-ready-spot-bug");
   assert.equal(createRouteUrl(page, { view:"ship-ready-code-lab" }).search, "?campaign=quest&view=ship-ready-code-lab");
+  assert.equal(createRouteUrl(page, { page:"more", moreTab:"mobile-preview" }).search, "?campaign=quest&page=more&more-tab=mobile-preview");
   assert.equal(createRouteUrl(page, { flow:"entry" }).search, "?campaign=quest");
   assert.equal(createRouteUrl(page, { flow:"register" }).search, "?campaign=quest&flow=register");
   assert.equal(createRouteUrl(page, { flow:"unknown" }).search, "?campaign=quest");

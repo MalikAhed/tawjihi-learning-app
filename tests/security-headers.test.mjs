@@ -9,9 +9,21 @@ test("security headers block framing and inline scripts", () => {
   assert.equal(headers.get("X-Frame-Options"), "DENY");
   assert.equal(headers.get("X-Content-Type-Options"), "nosniff");
   assert.match(headers.get("Content-Security-Policy"), /frame-ancestors 'none'/);
-  assert.match(headers.get("Content-Security-Policy"), /script-src 'self' https:\/\/cdn\.jsdelivr\.net/);
+  assert.match(
+    headers.get("Content-Security-Policy"),
+    /script-src 'self' 'wasm-unsafe-eval' https:\/\/cdn\.jsdelivr\.net/,
+  );
   assert.doesNotMatch(headers.get("Content-Security-Policy"), /script-src[^;]*'unsafe-inline'/);
-  assert.doesNotMatch(headers.get("Content-Security-Policy"), /unsafe-eval/);
+  assert.doesNotMatch(headers.get("Content-Security-Policy"), /'unsafe-eval'/);
+});
+
+test("the mobile review document can be framed only by this app", () => {
+  const headers = new Map();
+  applySecurityHeaders({ setHeader:(name, value) => headers.set(name, value) }, { allowSameOriginFrame:true });
+
+  assert.equal(headers.get("X-Frame-Options"), "SAMEORIGIN");
+  assert.match(headers.get("Content-Security-Policy"), /frame-ancestors 'self'/);
+  assert.doesNotMatch(headers.get("Content-Security-Policy"), /frame-ancestors 'none'/);
 });
 
 test("the sandboxed code runner owns the only dynamic execution permission", () => {

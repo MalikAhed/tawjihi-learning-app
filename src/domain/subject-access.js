@@ -1,3 +1,6 @@
+// One switch restores normal account/sequence gates without changing saved progress.
+export const ALL_LEVELS_UNLOCKED = true;
+
 // Publication, account access, and sequence are separate from earned progress.
 export function getNextSubjectPart(roadmap, getPartProgress) {
   return roadmap?.units.flatMap((unit) => unit.lessons.flatMap((lesson) =>
@@ -16,9 +19,9 @@ export function getSubjectPartAccess(roadmap, {
   const progress = getPartProgress?.(lesson, part);
   const previous = getNextSubjectPart(roadmap, getPartProgress);
   const state = !part.startStepId ? "unpublished"
-    : accountRequired ? "account-required"
+    : !ALL_LEVELS_UNLOCKED && accountRequired ? "account-required"
     : progress?.completed ? "completed"
-    : !lesson.optional && part !== previous?.part ? "previous-required"
+    : !ALL_LEVELS_UNLOCKED && !lesson.optional && part !== previous?.part ? "previous-required"
     : progress?.completedStepIds?.length ? "in-progress" : "available";
   return { unit, lesson, part, state, previous };
 }

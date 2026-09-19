@@ -47,6 +47,20 @@ test('progress requires its authenticated owner, origin and published identities
   assert.deepEqual((await request(null,accounts[1])).body.records,[]);
 });
 
+test('current Access questions, mistake review and completion all save',async t=>{
+  const {request}=await fixture(t);
+  const key={subjectId:'ict',lessonId:'database-management',partId:'access-basics'};
+  const current=await loadSubjectLessonPart(key.subjectId,key.lessonId,key.partId);
+  const questions=current.steps.filter(step=>step.type==='question');
+  assert.ok(questions.some(step=>step.id==='access-other-components-check'));
+  for(const [index,step] of questions.entries()) {
+    const response=await request({...key,id:`access-answer-${index}`,type:'answer',stepId:step.id,correct:false});
+    assert.equal(response.status,200,`${step.id}: ${JSON.stringify(response.body)}`);
+  }
+  assert.equal((await request({...key,id:'access-review-answer',type:'answer',stepId:questions[0].id,correct:true,reviewing:true})).status,200);
+  assert.equal((await request({...key,id:'access-completion',type:'completion',completedStepIds:current.steps.map(step=>step.id),isComplete:true})).status,200);
+});
+
 test('overlapping completions, lost responses and retries award once and survive reopen',async t=>{
   const {request,databasePath,accounts}=await fixture(t);
   const first={...part,id:'first-update',type:'completion',completedStepIds:steps.slice(0,3),isComplete:true};

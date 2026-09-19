@@ -21,8 +21,12 @@ import { loadDesignSystem } from "../design-system-loader.js";
 import { renderUiLab } from "../ui-lab/index.js";
 import { lessonLocale, lessonReferenceLabel } from "./shared.js";
 import { renderRockyDialogue, mountRockyDialogues, playRockyDialogue } from "./rocky-dialogue.js";
+import { renderVideoIntro } from "./video-intro.js";
+import { enhanceLessonSummary } from "./lesson-summary.js";
 import { revealWhenReady, preloadImages } from "../media-ready.js";
 import { preloadNextStep } from "./media.js";
+import { mountQuestionRocky } from "./question-rocky.js";
+import { renderMistakeReviewIntro } from "./mistake-review.js";
 
 /** @param {import("../lesson-view.js").LessonOptions} [options] @returns {import("../../app/view-lifecycle.js").Cleanup} */
 export function renderAuthoredInteractiveLesson(
@@ -63,6 +67,7 @@ export function renderAuthoredInteractiveLesson(
     progressLabel: topProgress?.getAttribute("aria-label"),
   };
   const stepIds = new Set(authoredSteps.map((step) => step.id));
+  const questionSteps = authoredSteps.filter((step) => step.type !== "markdown");
   const completed = new Set(
     (progress?.completedStepIds || []).filter((id) => stepIds.has(id)),
   );
@@ -92,6 +97,11 @@ export function renderAuthoredInteractiveLesson(
   let answerRun = 0;
   let bestAnswerRun = 0;
   let sessionElapsed = null;
+  let developerSkipped = false;
+  const mistakes = new Set((progress?.mistakeStepIds || []).filter((id) => stepIds.has(id)));
+  const scoredQuestions = new Set();
+  let reviewQueue = [];
+  let reviewIndex = -1;
 
   document.body.classList.add(
     "ui-lab-open",
@@ -109,10 +119,10 @@ export function renderAuthoredInteractiveLesson(
     locale === "ar" ? `تقدّم درس ${lesson.title}` : `${lesson.title} progress`,
   );
   topProgress.setAttribute("aria-valuemin", "0");
-  topProgress.setAttribute("aria-valuemax", String(authoredSteps.length));
+  topProgress.setAttribute("aria-valuemax", String(questionSteps.length));
 
   const announce = (isComplete = false) =>
-    !isPreview && onProgress?.({ completedStepIds: [...completed], isComplete });
+    !isPreview && !developerSkipped && onProgress?.({ completedStepIds: [...completed], isComplete });
   const focusHost = () =>
     window.requestAnimationFrame(() => {
       if (signal.aborted || document.body.classList.contains("lesson-markdown-source-open"))
@@ -126,13 +136,20 @@ export function renderAuthoredInteractiveLesson(
       "lesson-shell--completion",
       isLessonPart && resultVisible,
     );
-    topProgress.hidden =
-      isLessonPart && resultVisible ? true : previousChrome.progressHidden;
-    const value = resultVisible ? authoredSteps.length : currentIndex + 1;
+    const currentStep = authoredSteps[currentIndex];
+    const questionIndex = questionSteps.indexOf(currentStep);
+    const showingQuestion = !resultVisible && questionIndex >= 0;
+    shell.classList.toggle("lesson-shell--pre-quiz", !resultVisible && !showingQuestion);
+    topProgress.hidden = resultVisible || !showingQuestion;
+    const reviewing = reviewIndex >= 0;
+    const total = reviewing ? reviewQueue.length : questionSteps.length;
+    const value = resultVisible ? total : reviewing ? reviewIndex + 1 : Math.max(0, questionIndex + 1);
+    topProgress.setAttribute("aria-valuemax", String(total));
+    topProgress.setAttribute("aria-label", reviewing ? (locale === "ar" ? "مراجعة الأخطاء" : "Mistake review") : (locale === "ar" ? `تقدّم درس ${lesson.title}` : `${lesson.title} progress`));
     topProgress.setAttribute("aria-valuenow", String(value));
     shell.style.setProperty(
       "--lesson-progress",
-      `${(value / authoredSteps.length) * 100}%`,
+      `${total ? (value / total) * 100 : 0}%`,
     );
     document.body.classList.toggle(
       "ui-lab-mcq-open",
@@ -157,7 +174,7 @@ export function renderAuthoredInteractiveLesson(
   }
   const renderResult = async (preview = false) => {
     if (sessionElapsed === null && !resultVisible) sessionElapsed = Math.floor((performance.now() - sessionStarted) / 1000);
-    preview = preview || isPreview;
+    preview = preview || isPreview || developerSkipped;
     resultVisible = true;
     if (testPass) testPass.hidden = true;
     if (!preview) {
@@ -224,6 +241,7 @@ export function renderAuthoredInteractiveLesson(
         () => {
           if (!isLessonPart) {
             resultVisible = false;
+            reviewIndex = -1;
             if (!preview) currentIndex = 0;
             if (testPass) testPass.hidden = false;
             renderCurrent();
@@ -245,6 +263,10 @@ export function renderAuthoredInteractiveLesson(
         () => {
           if (!isLessonPart) {
             completed.clear();
+            mistakes.clear();
+            scoredQuestions.clear();
+            reviewQueue = [];
+            reviewIndex = -1;
             resultVisible = false;
             currentIndex = 0;
             announce(false);
@@ -280,18 +302,42 @@ export function renderAuthoredInteractiveLesson(
     renderCompletionStep();
   };
   const goBack = () => {
+    if (reviewIndex >= 0) return;
     if (currentIndex === 0) return;
     currentIndex -= 1;
     renderCurrent();
   };
+  const exitFromOpening = () => {
+    if (onExitLesson) onExitLesson();
+    else backButton?.click();
+  };
+  const finishQuestions = () => {
+    reviewQueue = authoredSteps.filter((step) => step.type === "mcq" && mistakes.has(step.id));
+    if (!reviewQueue.length || reviewStepId) { void renderResult(); return; }
+    destroyStep();
+    topProgress.hidden = true;
+    document.body.classList.remove("ui-lab-mcq-open");
+    destroyStep = renderMistakeReviewIntro(container, { locale, onContinue() {
+      reviewIndex = 0;
+      currentIndex = authoredSteps.indexOf(reviewQueue[0]);
+      renderCurrent();
+    } });
+  };
   const goNext = () => {
+    if (reviewIndex >= 0) {
+      if (reviewIndex + 1 === reviewQueue.length) { void renderResult(); return; }
+      reviewIndex += 1;
+      currentIndex = authoredSteps.indexOf(reviewQueue[reviewIndex]);
+      renderCurrent();
+      return;
+    }
     if (reviewStepId === authoredSteps[currentIndex].id) {
-      if (!isPreview) onReviewComplete?.();
+      if (!isPreview && !developerSkipped) onReviewComplete?.();
       return;
     }
     completed.add(authoredSteps[currentIndex].id);
     if (currentIndex === authoredSteps.length - 1) {
-      renderResult();
+      finishQuestions();
       return;
     }
     announce(false);
@@ -307,6 +353,7 @@ export function renderAuthoredInteractiveLesson(
       '<article class="lesson-flow ready-lesson-flow"><section class="ready-lesson-stage" data-live-authored-step tabindex="-1"></section></article>';
     const host = container.querySelector("[data-live-authored-step]");
     host.dataset.lessonStep = step.id;
+    if (reviewIndex >= 0) host.dataset.mistakeReview = "";
     if (step.presentation) host.dataset.lessonPresentation = step.presentation;
     host.lang = locale;
     host.dir = locale === "ar" ? "rtl" : "ltr";
@@ -317,16 +364,27 @@ export function renderAuthoredInteractiveLesson(
       const titleId = `authored-lesson-title-${step.id}`;
       host.innerHTML = renderTemplateShell({
         titleId,
+        showScrollIndicator: step.presentation !== "video-intro",
         content: step.presentation === "rocky-dialogue"
           ? renderRockyDialogue(step, { titleId, locale })
-          : `<article class="level-lesson-copy ready-lesson-copy markdown-authored-content"><p class="level-layout-kicker">${locale === "ar" ? "تعلّم" : "LEARN"}</p><div class="markdown-rendered">${renderMarkdownDocument(step.source, { locale })}</div></article>`,
+          : step.presentation === "video-intro"
+            ? renderVideoIntro(step, { titleId, locale })
+            : `<article class="level-lesson-copy ready-lesson-copy markdown-authored-content">${step.presentation === "lesson-summary" ? "" : `<p class="level-layout-kicker">${locale === "ar" ? "تعلّم" : "LEARN"}</p>`}<div class="markdown-rendered">${renderMarkdownDocument(step.source, { locale })}</div></article>`,
         footer: renderTemplateFooter({
           locale,
+          showShortcut: step.presentation !== "video-intro",
+          backLabel: step.presentation === "video-intro"
+            ? (locale === "ar" ? "رجوع" : "BACK")
+            : undefined,
           backAttributes: {
-            disabled: currentIndex === 0,
-            hidden: currentIndex === 0,
+            disabled: currentIndex === 0 && step.presentation !== "video-intro",
+            hidden: currentIndex === 0 && step.presentation !== "video-intro",
           },
-          primaryLabel: copy.continue,
+          primaryLabel: step.presentation === "video-intro"
+            ? (locale === "ar" ? "متابعة" : "RESUME")
+            : authoredSteps[currentIndex + 1]?.type !== "markdown"
+              ? (locale === "ar" ? "ابدأ الأسئلة" : "START QUESTIONS")
+              : copy.continue,
         }),
         locale,
       });
@@ -339,6 +397,9 @@ export function renderAuthoredInteractiveLesson(
             "afterbegin",
             `<h1 class="visually-hidden" id="${escapeHtml(titleId)}">${escapeHtml(step.title)}</h1>`,
           );
+      if (step.presentation === "lesson-summary") {
+        enhanceLessonSummary(host, { titleId, stepId: step.id });
+      }
       mountMarkdownFeatures(host, {
         locale,
         signal: stepController.signal,
@@ -356,7 +417,7 @@ export function renderAuthoredInteractiveLesson(
       });
       host
         .querySelector("[data-template-back]")
-        .addEventListener("click", goBack, { signal: stepController.signal });
+        .addEventListener("click", currentIndex === 0 && step.presentation === "video-intro" ? exitFromOpening : goBack, { signal: stepController.signal });
       host
         .querySelector("[data-template-primary]")
         .addEventListener("click", goNext, { signal: stepController.signal });
@@ -397,24 +458,47 @@ export function renderAuthoredInteractiveLesson(
         });
       return;
     }
-    destroyStep = renderUiLab(host, {
+    const questionController = new AbortController();
+    let rocky = { react(_correct) {} };
+    const destroyQuestion = renderUiLab(host, {
       definition: step,
       embedded: true,
       onBack: goBack,
       onContinue: goNext,
       onAnswer: (result) => {
-        if (isPreview) return;
-        answerCount += 1;
-        if (result.correct) correctCount += 1;
-        answerRun = result.correct ? answerRun + 1 : 0;
-        bestAnswerRun = Math.max(bestAnswerRun, answerRun);
-        onAnswer?.({ ...result, stepId: step.id });
+        rocky.react(result.correct);
+        if (reviewIndex < 0 && !result.correct) mistakes.add(step.id);
+        if (isPreview || developerSkipped) return;
+        if (reviewIndex < 0 && !scoredQuestions.has(step.id)) {
+          scoredQuestions.add(step.id);
+          answerCount += 1;
+          if (result.correct) correctCount += 1;
+          answerRun = result.correct ? answerRun + 1 : 0;
+          bestAnswerRun = Math.max(bestAnswerRun, answerRun);
+        }
+        onAnswer?.({ ...result, stepId: step.id, reviewing: reviewIndex >= 0 });
       },
       locale,
     });
+    rocky = mountQuestionRocky(host, {
+      signal: questionController.signal,
+      locale,
+      questionIndex: questionSteps.findIndex((question) => question.id === step.id),
+      onSkip() {
+        developerSkipped = true;
+        if (reviewIndex >= 0) goNext();
+        else if (currentIndex === authoredSteps.length - 1) finishQuestions();
+        else { currentIndex += 1; renderCurrent(); }
+      },
+    });
+    if (reviewIndex >= 0) {
+      const heading = host.querySelector(".ui-lab-mcq > h1");
+      if (heading) heading.textContent = locale === "ar" ? "مراجعة الأخطاء" : "Mistake review";
+    }
+    destroyStep = () => { questionController.abort(); destroyQuestion(); };
     const stepBackButton = host.querySelector("[data-template-back]");
-    stepBackButton.disabled = currentIndex === 0;
-    stepBackButton.hidden = currentIndex === 0;
+    stepBackButton.disabled = currentIndex === 0 || reviewIndex >= 0;
+    stepBackButton.hidden = currentIndex === 0 || reviewIndex >= 0;
     focusHost();
   };
 
@@ -423,6 +507,7 @@ export function renderAuthoredInteractiveLesson(
   else renderCurrent();
   return () => {
     shell.classList.remove("lesson-shell--completion");
+    shell.classList.remove("lesson-shell--pre-quiz");
     testPass?.remove();
     destroyStep();
     controller.abort();

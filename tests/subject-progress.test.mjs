@@ -37,7 +37,7 @@ test("retries and repeated completions cannot decrease or inflate unit progress"
   assert.deepEqual(store.get(key), { completedStepIds:steps, completed:true });
   const unit = getSubjectRoadmap("ict").units[0];
   const progress = getUnitPartProgress(unit, (lesson, part) => store.get({ ...key, lessonId:lesson.id, partId:part.id }));
-  assert.deepEqual(progress, { completed:1, total:14, percent:7 });
+  assert.deepEqual(progress, { completed:1, total:16, percent:6 });
 });
 
 test("progress is isolated by learner, lesson, and part", async () => {
@@ -49,8 +49,9 @@ test("progress is isolated by learner, lesson, and part", async () => {
 });
 
 test("unpublished parts cannot create unit completion and empty units have zero progress", async () => {
-  const unit = getSubjectRoadmap("ict").units[0];
-  assert.deepEqual(getUnitPartProgress(unit, () => ({ completed:true })), { completed:7, total:14, percent:50 });
+  const roadmap = getSubjectRoadmap("ict");
+  assert.deepEqual(getUnitPartProgress(roadmap.units[0], () => ({ completed:true })), { completed:16, total:16, percent:100 });
+  assert.deepEqual(getUnitPartProgress(roadmap.units[1], () => ({ completed:true })), { completed:0, total:10, percent:0 });
   assert.deepEqual(getUnitPartProgress({ lessons:[] }), { completed:0, total:0, percent:0 });
 });
 

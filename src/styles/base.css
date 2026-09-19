@@ -251,3 +251,4 @@ body:is(.product-flow-active,.ui-lab-open,.rocky-lesson-open,.playground-open)>.
   .nav-resources img { width:28px; height:28px; }
   .nav-resource { font-size:12px; }
 }
+body[data-expanded-components="hidden"] [data-expanded-component] { display:none !important; }
