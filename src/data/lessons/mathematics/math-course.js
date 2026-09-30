@@ -1144,7 +1144,7 @@ export const MATHEMATICS_LESSONS = Object.freeze([
     "id": "extrema-applications",
     "label": "تطبيقات عملية على القيم القصوى",
     "unit": 2,
-    "pages": "52–55",
+    "pages": "52–57",
     "bookPdfPages": [
       54,
       57
@@ -1157,17 +1157,35 @@ export const MATHEMATICS_LESSONS = Object.freeze([
       "math-kamel-u2-p051-r1",
       "math-kamel-u2-p051-r3",
       "math-kamel-u2-p051-r4",
-      "math-kamel-u2-p051-r6"
+      "math-kamel-u2-p051-r6",
+      "math-kamel-u2-p052-r1",
+      "math-kamel-u2-p052-r2",
+      "math-kamel-u2-p052-r3",
+      "math-kamel-u2-p052-r4",
+      "math-kamel-u2-p052-r5",
+      "math-kamel-u2-p052-r6",
+      "math-kamel-u2-p052-r7",
+      "math-kamel-u2-p053-r4",
+      "math-kamel-u2-p053-r5",
+      "math-kamel-u2-p053-r6",
+      "math-kamel-u2-p054-r7",
+      "math-kamel-u2-p054-r8",
+      "math-kamel-u2-p054-r9",
+      "math-kamel-u2-p054-r10",
+      "math-kamel-u2-p054-r11",
+      "math-kamel-u2-p054-r12",
+      "math-kamel-u2-p055-r13",
+      "math-kamel-u2-p055-r14",
+      "math-kamel-u2-p056-r15",
+      "math-kamel-u2-p056-r17",
+      "math-kamel-u2-p056-r18",
+      "math-kamel-u2-p057-r21",
+      "math-kamel-u2-p057-r22",
+      "math-kamel-u2-p057-r23"
     ],
     "questionDifficulties": [
-      2,
-      2,
-      2,
-      3,
-      3,
-      3,
-      3,
-      3
+      2, 2, 2, 3, 3, 3, 3, 3,
+3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
     ]
   },
   {
