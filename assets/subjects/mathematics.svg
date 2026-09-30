@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" fill="none" stroke="#947600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Shared drawing weights: contour 3, structure 2, detail 1.25. Tonal fills matched to the subject card. -->
+  <style>
+    .detail { stroke-width:2; }
+    .fine { stroke-width:1.25; }
+    .wash { fill:#e6b800; }
+    .paper { fill:#f5c400; }
+    .accent { fill:#cca300; }
+    .tint { fill:#cca300; stroke:none; }
+    .ink { fill:#947600; stroke:none; }
+  </style>
+  <g data-motif="integral" transform="translate(68 13) rotate(-8 24 24)">
+    <path class="ink" d="M31 7c-6-3-9 0-10 8l-2 17c-1 9-6 13-13 9l1-4c4 3 7 0 7-6l2-17C17 4 23 0 32 3Z"/>
+    <path class="fine" d="m36 6 2-2v7m-2 0h4"/>
+    <ellipse class="fine" cx="9" cy="46" rx="2" ry="2"/>
+    <path class="detail" d="M31 24c3-2 4 1 5 4s2 6 5 4m-1-8-10 9"/>
+  </g>
+  <g data-motif="summation" transform="translate(244 133) rotate(6 24 24)">
+    <path class="accent" stroke-width="2" d="M38 6H10l15 18-15 18h28v-6H22l10-12-10-12h16Z"/>
+    <path class="fine" d="M13 9h21m-21 30h21"/>
+  </g>
+  <g data-motif="square-root" transform="translate(420 13) rotate(8 24 24)">
+    <path stroke-width="3.5" d="m3 27 7-3 7 16L27 8h18"/>
+    <path class="detail" d="m31 22 10 12m0-12L31 34"/>
+    <path class="fine" d="M31 13h13"/>
+  </g>
+  <g data-motif="infinity" transform="translate(596 133) rotate(-6 24 24)">
+    <path stroke-width="4" d="M24 24c-5-7-8-10-13-10a10 10 0 0 0 0 20c5 0 8-3 13-10s8-10 13-10a10 10 0 0 1 0 20c-5 0-8-3-13-10Z"/>
+  </g>
+</svg>

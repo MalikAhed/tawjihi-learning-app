@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" fill="none" stroke="#066694" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Shared drawing weights: contour 3, structure 2, detail 1.25. Tonal fills matched to the subject card. -->
+  <style>
+    .detail { stroke-width:2; }
+    .fine { stroke-width:1.25; }
+    .wash { fill:#099ee6; }
+    .paper { fill:#0aa8f5; }
+    .accent { fill:#088ccc; }
+    .tint { fill:#088ccc; stroke:none; }
+    .ink { fill:#066694; stroke:none; }
+  </style>
+  <g data-motif="laptop" transform="translate(68 13) rotate(-8 24 24)">
+    <rect class="wash" x="6" y="5" width="36" height="27" rx="3"/>
+    <rect class="paper fine" x="10" y="9" width="28" height="19" rx="1.5"/>
+    <path class="wash" d="M6 32 2 40q-1 3 3 3h38q4 0 3-3l-4-8Z"/>
+    <path class="detail" d="m19 14-4 4 4 4m10-8 4 4-4 4"/>
+    <path class="fine" d="m25 13-2 10M11 35h26M19 38h10l1 2H18Z"/>
+  </g>
+  <g data-motif="processor" transform="translate(244 133) rotate(6 24 24)">
+    <path class="detail" d="M17 4v7m7-7v7m7-7v7M17 37v7m7-7v7m7-7v7M4 17h7m-7 7h7m-7 7h7m26-14h7m-7 7h7m-7 7h7"/>
+    <rect class="wash" x="11" y="11" width="26" height="26" rx="4"/>
+    <rect class="accent detail" x="18" y="18" width="12" height="12" rx="2"/>
+    <path class="fine" d="M22 22h4v4h-4Z"/>
+    <circle class="ink" cx="15" cy="15" r="1"/>
+  </g>
+  <g data-motif="code-braces" transform="translate(420 13) rotate(8 24 24)">
+    <path d="M17 5h-3c-4 0-6 2-6 6v6c0 5-1 7-5 7 4 0 5 2 5 7v6c0 4 2 6 6 6h3M31 5h3c4 0 6 2 6 6v6c0 5 1 7 5 7-4 0-5 2-5 7v6c0 4-2 6-6 6h-3"/>
+    <path class="detail" d="m28 15-8 18"/>
+  </g>
+  <g data-motif="circuit-traces" transform="translate(596 133) rotate(-6 24 24)">
+    <path class="detail" d="M8 10v12q0 2 2 2h12q2 0 2 2v12M24 10v4q0 2 2 2h12q2 0 2 2v20M8 38v-6"/>
+    <path class="fine" d="M13 16v2q0 2 2 2h11q2 0 2 2v10M32 6h6q2 0 2 2v1"/>
+    <g class="accent"><circle cx="8" cy="6" r="4"/><circle cx="24" cy="6" r="4"/><circle cx="8" cy="42" r="4"/><circle cx="24" cy="42" r="4"/><circle cx="40" cy="42" r="4"/></g>
+    <g class="ink"><circle cx="8" cy="6" r="1"/><circle cx="24" cy="6" r="1"/><circle cx="8" cy="42" r="1"/><circle cx="24" cy="42" r="1"/><circle cx="40" cy="42" r="1"/></g>
+  </g>
+</svg>
