@@ -1,0 +1,50 @@
+@font-face {
+  font-family:"Lesson Math";
+  src:url("../../../assets/fonts/math/xits-math.woff2") format("woff2");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face {
+  font-family:"Amiri";
+  src:url("../../../assets/fonts/math/amiri-regular.woff2") format("woff2");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+.lesson-shell[data-subject="mathematics"] {
+  --font-ui:"Amiri", serif;
+  font-family:var(--font-ui);
+}
+.lesson-shell[data-subject="mathematics"] * {
+  font-family:"Amiri", "Lesson Math", serif !important;
+}
+.lesson-math {
+  font-family:"Amiri", "Lesson Math", serif;
+  font-size:1.35em;
+  font-weight:400;
+  font-style:normal;
+  color:inherit;
+  unicode-bidi:isolate;
+}
+.lesson-math :is(mi, mn, mo, mtext) { font-family:"Amiri", "Lesson Math", serif; }
+/* Amiri supplies text and numbers; the math font supplies stretching glyphs. */
+.lesson-shell[data-subject="mathematics"] .lesson-math mo:is([stretchy="true"], [largeop="true"]) {
+  font-family:"Lesson Math", "Amiri", serif !important;
+}
+.lesson-math-sample {
+  min-width:0;
+  margin:0;
+  padding:16px;
+  border:1px solid var(--stroke, #e2e8ee);
+  border-radius:16px;
+  background:#fff;
+  color:var(--ink, #273746);
+}
+.lesson-math-sample figcaption { margin-bottom:12px; font:700 14px/1.6 var(--font-ui); }
+.lesson-math-scroll { max-width:100%; overflow-x:auto; padding:8px 2px 12px; }
+.lesson-math-scroll .lesson-math { width:max-content; min-width:100%; font-size:30px; }
+.lesson-math-error { color:#a3263d; font:700 14px/1.6 var(--font-ui); }
+@media (max-width:760px) {
+  .lesson-math-sample { padding:14px; }
+}

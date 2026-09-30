@@ -1,0 +1,50 @@
+.media-pending {
+  position: relative;
+  min-height: 160px;
+}
+
+.media-pending > :not([data-media-status]) {
+  visibility: hidden;
+}
+
+.media-pending > :not([data-media-status]),
+.media-pending > :not([data-media-status]) * {
+  animation-play-state: paused !important;
+}
+
+.media-status {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  color: var(--system-ink);
+  font:
+    700 15px/1.6 Arial,
+    sans-serif;
+  text-align: center;
+}
+
+.media-status p {
+  margin: 0;
+}
+.media-status button {
+  padding: 10px 18px;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  background: #fff;
+  color: inherit;
+  cursor: pointer;
+}
+.media-status button:focus-visible {
+  outline: 3px solid var(--system-blue);
+  outline-offset: 3px;
+}
+.media-fallback {
+  display: block;
+  padding: 24px;
+  color: var(--system-muted);
+}

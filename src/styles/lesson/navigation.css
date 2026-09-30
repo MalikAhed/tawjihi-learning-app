@@ -1,0 +1,166 @@
+/* The shared footer owns navigation size, layout and states for every lesson type. */
+.level-layout-actions {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr) 240px;
+  align-items: center;
+  gap: var(--space-4, 16px);
+  min-height: 92px;
+  padding: 14px clamp(24px, 7vw, 100px);
+  border-top: 0;
+  background: var(--system-surface, #fff);
+  direction: ltr;
+  transition: min-height 240ms ease, background-color 240ms ease;
+}
+.level-layout-action-group { display: contents; }
+.level-layout-actions > .level-feedback { grid-column: 2; grid-row: 1; min-width: 0; margin: 0; text-align: start; font: var(--type-helper); }
+.level-layout-actions > .level-feedback:empty { display: none; }
+.level-layout-actions > .level-feedback:not(.is-correct):not(.is-wrong) { display: none; }
+.level-layout-actions > .level-feedback:is(.is-correct, .is-wrong) {
+  overflow: hidden;
+  animation: level-feedback-reveal 260ms cubic-bezier(.2,.8,.2,1) both;
+}
+.level-layout-actions [data-template-back] { grid-column: 1; grid-row: 1; }
+.level-layout-actions [data-template-primary] { grid-column: 3; grid-row: 1; }
+.level-action {
+  --action-edge: var(--system-border, #c5c9cc);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--control-height-prominent, 52px);
+  padding: 6px 16px;
+  border: 2px solid var(--system-border, #d9dcde);
+  border-radius: 17px;
+  background: var(--system-surface, #fff);
+  color: var(--system-muted, #526170);
+  box-shadow: 0 var(--control-edge, 4px) 0 var(--action-edge);
+  font: var(--type-control);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 120ms, box-shadow 120ms;
+}
+.level-action[hidden] { display: none; }
+.level-action--primary { --action-edge: var(--system-green-action-edge); border-color: var(--system-green-action); background: var(--system-green-action); color: var(--system-action-ink); }
+@media (hover:hover) {
+  .level-action--primary:hover:not(:disabled) { background: var(--system-green-action-hover); border-color: var(--system-green-action-hover); }
+}
+.level-action:active:not(:disabled) { transform: translateY(var(--control-press, 3px)); box-shadow: 0 1px 0 var(--action-edge); }
+.level-action:disabled { --action-edge: #c5c9cc; border-color: #d7dce0; background: #e7ebee; color: #63717d; cursor: not-allowed; }
+.level-action:focus-visible { outline: 3px solid var(--system-focus); outline-offset: 4px; }
+.level-action--check > span { min-width: 0; flex: 1; white-space: normal; overflow-wrap: anywhere; }
+.level-layout-actions:has(.level-feedback.is-correct) { background: var(--system-green-soft, #d7ffb8); }
+.level-layout-actions:has(.level-feedback.is-wrong) { background: var(--system-red-soft, #ffdfe0); }
+.level-layout-actions .level-feedback.is-correct { color: #46a302; }
+.level-layout-actions .level-feedback.is-wrong { color: #d93636; }
+.ui-lab-mcq-open .level-layout-actions:has(> .level-feedback.is-wrong) [data-template-primary] {
+  --action-edge:#d93636;
+  border-color:#ff4b4b;
+  background:#ff4b4b;
+}
+@media (hover:hover) {
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback.is-wrong) [data-template-primary]:hover:not(:disabled) {
+    border-color:#ff6868;
+    background:#ff6868;
+  }
+}
+.level-layout-actions[dir="rtl"] > .level-feedback { direction: rtl; }
+@media (min-width: 761px) {
+  .level-layout-actions:has(.level-feedback:is(.is-correct, .is-wrong)) { grid-template-rows:auto auto; }
+  .level-layout-actions:has(.level-feedback:is(.is-correct, .is-wrong)) > .level-feedback { grid-column:3; grid-row:1; justify-self:stretch; text-align:start; }
+  .level-layout-actions:has(.level-feedback:is(.is-correct, .is-wrong)) [data-template-back] { grid-row:2; }
+  .level-layout-actions:has(.level-feedback:is(.is-correct, .is-wrong)) [data-template-primary] { grid-row:2; }
+}
+@media (max-width: 760px) {
+  .level-layout-actions { grid-template-columns: minmax(0, 1fr); gap: 12px; min-height: 0; padding: 14px max(16px, env(safe-area-inset-right, 0px)) calc(20px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+  .level-layout-actions > .level-feedback { grid-column: 1; grid-row: 1; }
+  .level-layout-actions [data-template-primary] { grid-column: 1; grid-row: 2; }
+  .level-layout-actions [data-template-back] { grid-column: 1; grid-row: 3; }
+  .level-action { min-height: var(--control-height, 48px); }
+  .level-action--check kbd { display: none; }
+}
+/* Reviewed MCQs place the result, difficulty rating, and Continue in separate areas. */
+.ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) [data-template-back] { display:none; }
+@media (min-width:1080px) {
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) {
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+    grid-template-rows:auto;
+    min-height:130px;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) > .level-feedback {
+    grid-column:1;
+    grid-row:1;
+    justify-self:start;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) > .level-question-rating-panel { grid-column:2; grid-row:1; justify-self:center; }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) [data-template-primary] { grid-column:3; grid-row:1; justify-self:end; width:min(100%,240px); }
+}
+@media (max-width: 1079px) {
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-rows:auto auto auto;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) > .level-feedback {
+    grid-column:1 / -1;
+    grid-row:1;
+    justify-self:start;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) > .level-question-rating-panel { grid-column:1 / -1; grid-row:2; justify-self:center; }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) [data-template-primary] {
+    grid-column:2;
+    grid-row:3;
+    justify-self:end;
+    width:min(100%,240px);
+  }
+}
+@media (max-width: 760px) {
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) {
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto auto auto;
+    gap:10px;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) > .level-feedback {
+    grid-column:1;
+    grid-row:1;
+    justify-self:end;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) > .level-question-rating-panel {
+    grid-column:1;
+    grid-row:2;
+    justify-self:stretch;
+    width:100%;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) [data-template-primary] {
+    grid-column:1;
+    grid-row:3;
+    width:100%;
+    min-height:var(--control-height-prominent, 52px);
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) .level-result-icon { display:none; }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback.is-correct) {
+    grid-template-rows:auto auto;
+  }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback.is-correct) > .level-feedback { display:none; }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback.is-correct) > .level-question-rating-panel { grid-row:1; }
+  .ui-lab-mcq-open .level-layout-actions:has(> .level-feedback.is-correct) [data-template-primary] { grid-row:2; }
+}
+.ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) > .level-feedback {
+  width:fit-content;
+  max-width:100%;
+  direction:rtl;
+  flex-direction:row;
+  text-align:right;
+}
+.ui-lab-mcq-open .level-layout-actions:has(> .level-feedback:is(.is-correct, .is-wrong)) .level-result-copy { direction:rtl; }
+@keyframes level-feedback-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .level-layout-actions, .level-action { transition: none; }
+  .level-layout-actions > .level-feedback:is(.is-correct, .is-wrong) { animation: none; }
+  .level-action:active:not(:disabled) { transform: none; }
+}

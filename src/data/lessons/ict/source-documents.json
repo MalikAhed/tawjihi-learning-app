@@ -1,0 +1,40 @@
+{
+  "note": "Original reference PDFs are preserved in the separate source library, outside the deployed website. Classified question references use the reviewed lightweight page images.",
+  "documents": {
+    "ict": {
+      "file": "books/ict.pdf",
+      "pageCount": 62,
+      "sha256": "4c9fbe32f1b76d840d213badacfb5b7830722d0e3569595a4f2b224544c64aba",
+      "bytes": 7455568,
+      "archived": true
+    },
+    "summary": {
+      "file": "books/summary.pdf",
+      "pageCount": 115,
+      "sha256": "51d3885f88b6f0fb9cb55ae081c9da941cd9a265ff345efaedc45bc504af8e6b",
+      "bytes": 6762495,
+      "archived": true
+    },
+    "exams": {
+      "file": "books/exams.pdf",
+      "pageCount": 86,
+      "sha256": "4fdff8b18d8ce8c9dedec604e7e8738ad99b722397fe8ad7490f95a4f8c22ec1",
+      "bytes": 16891100,
+      "archived": true
+    },
+    "ict-past-papers-selected": {
+      "file": "books/ict-past-papers-selected.pdf",
+      "pageCount": 17,
+      "sha256": "fef4e1ff58dc15258839f178e7f8469d6cc4f14a63d29e584b420e50818e3b58",
+      "bytes": 869606,
+      "archived": true
+    },
+    "ict-classified-2023": {
+      "file": "books/ict-classified-2023.pdf",
+      "pageCount": 142,
+      "sha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "bytes": 3998442,
+      "archived": true
+    }
+  }
+}

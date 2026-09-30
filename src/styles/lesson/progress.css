@@ -1,0 +1,14 @@
+/* Shared progress appearance; each controller keeps its own progress calculation. */
+.lesson-shell,.subject-completion {
+  --lesson-progress-fill:#ffc800;
+  --lesson-progress-highlight:#fff0a3;
+  --lesson-progress-track:#edf1f3;
+}
+.lesson-shell--ui-lab .lesson-top-title { position:relative; height:18px; border-radius:999px; overflow:hidden; background:var(--lesson-progress-track); color:transparent; font-size:0; box-shadow:none; }
+.lesson-shell--ui-lab .lesson-top-title::after { content:""; position:absolute; z-index:1; inset:0 0 0 auto; width:var(--lesson-progress,0%); border-radius:inherit; background:var(--lesson-progress-fill); transition:width 180ms ease; }
+.lesson-shell--ui-lab .lesson-top-title::before { content:""; position:absolute; z-index:2; top:3px; right:7px; width:max(0px,calc(var(--lesson-progress,0%) - 14px)); height:3px; border-radius:999px; background:var(--lesson-progress-highlight); transition:width 180ms ease; }
+.lesson-shell--ui-lab .lesson-top-title[hidden] { display:none; }
+@media (max-width:760px) { .lesson-shell--ui-lab .lesson-top-title { height:14px; } }
+@media (prefers-reduced-motion:reduce) {
+ .lesson-shell--ui-lab .lesson-top-title::after,.lesson-shell--ui-lab .lesson-top-title::before { transition:none; }
+}

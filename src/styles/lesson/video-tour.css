@@ -1,0 +1,80 @@
+.lesson-video-tour {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  color: var(--system-text);
+}
+.lesson-video-tour::backdrop { background: transparent; }
+.lesson-video-tour-focus {
+  position: absolute;
+  border-radius: 12px;
+  outline: 3px solid #28bcf4;
+  box-shadow: 0 0 0 100vmax rgb(10 22 35 / 76%);
+  pointer-events: none;
+}
+.lesson-video-tour-guide {
+  --tour-rocky-size: 300px;
+  position: absolute;
+  display: grid;
+  grid-template-areas: "bubble rocky" "actions rocky";
+  grid-template-columns: minmax(0, 1fr) var(--tour-rocky-size);
+  gap: 14px 26px;
+  align-items: center;
+  width: min(720px, calc(100% - 32px));
+  text-align: start;
+  font-family: var(--font-ui);
+}
+.lesson-video-tour-guide[data-side="left"] { grid-template-areas:"rocky bubble" "rocky actions"; grid-template-columns:var(--tour-rocky-size) minmax(0,1fr); }
+.lesson-video-tour-bubble { grid-area:bubble; position:relative; padding:14px 22px 20px; border:2px solid #d7eef8; border-radius:34px; background:#fff; box-shadow:0 8px 28px rgb(0 0 0 / 18%); }
+.lesson-video-tour-bubble::before,
+.lesson-video-tour-bubble::after { content:""; position:absolute; border:2px solid #d7eef8; border-radius:50%; background:#fff; }
+.lesson-video-tour-bubble::before { width:22px; height:18px; right:-27px; bottom:38px; }
+.lesson-video-tour-bubble::after { width:12px; height:10px; right:-49px; bottom:22px; }
+[data-side="left"] .lesson-video-tour-bubble::before { right:auto; left:-27px; }
+[data-side="left"] .lesson-video-tour-bubble::after { right:auto; left:-49px; }
+.lesson-video-tour-rocky { grid-area:rocky; width:100%; height:auto; object-fit:contain; }
+/* Let every highlighted section reach the top, even on tall tablets. */
+[data-video-tour-active] .lesson-video-intro::after { content:""; display:block; width:100%; height:calc(100cqh / var(--lesson-content-zoom, 1)); }
+.lesson-video-tour-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:#546575; font-size:12px; font-weight:750; }
+.lesson-video-tour button { font:800 15px var(--font-ui); cursor:pointer; }
+.lesson-video-tour [data-tour-skip] { min-height:36px; padding:4px 8px; border:0; border-radius:8px; background:transparent; color:#546575; font-size:12px; }
+.lesson-video-tour-message { margin-top:8px; }
+.lesson-video-tour-message h2 { margin:0 0 6px; color:#1e526d; font-size:20px; font-weight:850; line-height:1.4; }
+.lesson-video-tour-message p { margin:0; font-size:16px; line-height:1.8; }
+.lesson-video-tour-actions { grid-area:actions; display:flex; align-items:center; justify-content:center; gap:12px; }
+.lesson-video-tour-actions button { min-height:44px; padding:8px 22px; border:2px solid #d6dfe5; border-radius:12px; background:#fff; color:#526675; }
+.lesson-video-tour-actions [data-tour-next] { min-width:140px; border-color:var(--system-green-action); background:var(--system-green-action); color:#fff; box-shadow:0 3px 0 var(--system-green-action-edge); }
+.lesson-video-tour-actions [data-tour-next]:hover:not(:disabled) { border-color:var(--system-green-action-hover); background:var(--system-green-action-hover); }
+.lesson-video-tour-actions [data-tour-next]:active { transform:translateY(3px); box-shadow:none; }
+.lesson-video-tour-actions button:disabled { visibility:hidden; }
+.lesson-video-tour button:focus-visible { outline:3px solid var(--system-focus); outline-offset:3px; }
+@media (max-width:600px) and (min-height:501px) {
+  .lesson-video-tour-guide { --tour-rocky-size:160px; grid-template-areas:"bubble bubble" "actions rocky"; gap:16px 4px; }
+  .lesson-video-tour-guide[data-side="left"] { grid-template-areas:"bubble bubble" "rocky actions"; }
+  .lesson-video-tour-bubble { padding:10px 18px 16px; border-radius:28px; }
+  .lesson-video-tour-bubble::before { right:60px; bottom:-23px; }
+  .lesson-video-tour-bubble::after { right:68px; bottom:-42px; }
+  [data-side="left"] .lesson-video-tour-bubble::before { left:60px; }
+  [data-side="left"] .lesson-video-tour-bubble::after { left:68px; }
+  .lesson-video-tour-actions { flex-direction:column-reverse; gap:8px; }
+  .lesson-video-tour-actions button { width:140px; }
+  .lesson-video-tour-message h2 { font-size:18px; }
+  .lesson-video-tour-message p { font-size:15px; }
+}
+@media (max-height:500px) {
+  .lesson-video-tour-guide { --tour-rocky-size:170px; width:min(650px, calc(100% - 32px)); gap:10px 20px; }
+  .lesson-video-tour-bubble { padding:6px 16px 12px; border-radius:24px; }
+  .lesson-video-tour-top { height:28px; }
+  .lesson-video-tour-message { margin:2px 0 0; }
+  .lesson-video-tour-message h2 { font-size:17px; margin-bottom:2px; }
+  .lesson-video-tour-message p { font-size:14px; line-height:1.6; }
+  .lesson-video-tour-actions button { min-height:38px; padding:6px 18px; }
+}

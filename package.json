@@ -1,0 +1,57 @@
+{
+  "name": "tawjihi-learning-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "map": "node scripts/project-map.mjs",
+    "dev": "node dev-server.mjs",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser/browser-smoke.mjs",
+    "test:navigation": "node tests/browser/browser-navigation.mjs",
+    "test:ui-fixes": "node tests/browser/browser-home-layout.mjs && node tests/browser/browser-question-layout.mjs && node tests/browser/browser-routes.mjs",
+    "test:math": "node tests/browser/browser-math.mjs",
+    "test:render": "node tests/browser/browser-render-sequence.mjs",
+    "test:assets": "node tests/browser/browser-assets.mjs",
+    "test:splash": "node tests/browser/browser-splash.mjs",
+    "audit:manageability": "node scripts/audit-manageability.mjs",
+    "build": "node scripts/validate-app.mjs",
+    "ci": "npm run release",
+    "check": "npm run check:syntax && npm run check:types && npm test && npm run build && npm run audit:manageability",
+    "verify": "node scripts/run-gate.mjs verify",
+    "check:types": "tsc -p jsconfig.json",
+    "test:progress-storage": "node tests/browser/browser-progress.mjs && node tests/browser/browser-progress-sync.mjs",
+    "package:preview": "node scripts/package-app.mjs",
+    "test:preview": "node tests/browser/browser-preview.mjs",
+    "release": "node scripts/run-gate.mjs release",
+    "test:accounts": "BROWSER_ACCOUNTS_ONLY=1 node tests/browser/browser-smoke.mjs",
+    "test:progress": "BROWSER_ROADMAP_ONLY=1 node tests/browser/browser-smoke.mjs",
+    "test:motion": "BROWSER_MOTION_ONLY=1 node tests/browser/browser-smoke.mjs",
+    "test:a11y": "BROWSER_A11Y=1 node tests/browser/browser-smoke.mjs",
+    "test:compat": "node tests/browser/browser-compat.mjs",
+    "start": "node server.mjs",
+    "database:backup": "node scripts/database-maintenance.mjs backup",
+    "database:restore-check": "node scripts/database-maintenance.mjs restore-check",
+    "database:migrate-check": "node scripts/database-maintenance.mjs migrate-check",
+    "test:capacity": "node scripts/measure-capacity.mjs",
+    "test:recovery": "node --test tests/database-recovery.test.mjs",
+    "measure:browser": "node scripts/measure-browser.mjs",
+    "test:webkit": "BROWSER_WEBKIT_ONLY=1 node tests/browser/browser-compat.mjs",
+    "package:server": "node scripts/package-app.mjs --server"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "@highlightjs/cdn-assets": "11.11.1",
+    "dompurify": "3.4.14",
+    "marked": "18.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "axe-core": "^4.13.0",
+    "playwright": "^1.63.0",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,133 @@
+function shell(content, { landing = false } = {}) {
+  return `<div class="visitor-shell${landing ? " visitor-shell--landing" : ""}">
+    <div class="visitor-main" role="main">${content}</div>
+  </div>`;
+}
+
+function field(name, label, attributes = "", hideLabel = false) {
+  const errorId = `auth-${name}-error`;
+  return `<label class="auth-field"><span${hideLabel ? ' class="visually-hidden"' : ""}>${label}</span><input name="${name}" aria-describedby="${errorId}" ${attributes}/><small class="visitor-field-error" id="${errorId}" data-field-error="${name}" aria-live="polite" hidden></small></label>`;
+}
+
+function backControl(label, attribute) {
+  return `<button class="auth-back system-action system-action--secondary system-action--compact" type="button" ${attribute} aria-label="العودة إلى ${label}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg><span data-back-label>${label}</span></button>`;
+}
+
+function selectionMarker() {
+  return '<span class="onboarding-choice__marker" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span>';
+}
+
+function rocky(animation, label, { trackPointer = false, defer = false } = {}) {
+  return `<div class="onboarding-mascot onboarding-mascot--rocky"${animation === "wave" ? ' data-rocky-repeat="2400"' : ""}${trackPointer ? ` data-rocky-pointer-track data-rocky-label="${label}"` : ""}>
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="assets/mascot/rocky-standing-still-reduced.svg"/>
+      <img${defer ? ' loading="lazy" data-onboarding-image' : ""} src="assets/mascot/rocky-${animation}.svg" alt="${label}"/>
+    </picture>
+  </div>`;
+}
+
+function authShell(title, intro, form, alternate) {
+  return shell(`<section class="auth-page">
+    ${backControl("الرئيسية", 'data-flow="entry"')}
+    <div class="auth-card">
+      <header class="auth-card__hero"><h1 id="visitor-title" tabindex="-1">${title}</h1><p>${intro}</p></header>
+      <div class="auth-card__body">${form}<div class="auth-links">${alternate}</div></div>
+    </div>
+  </section>`);
+}
+
+export function entryMarkup() {
+  return shell(`<section class="visitor-landing" aria-labelledby="visitor-title">
+    <div class="visitor-landing__illustration"><picture>
+      <source type="image/webp" media="(max-width:760px)" srcset="assets/mascot/hero-options/rocky-beach-mobile-01.webp" width="864" height="1152"/>
+      <source type="image/webp" srcset="assets/mascot/hero-options/rocky-beach-desktop-01.webp" width="1672" height="941"/>
+      <img src="assets/mascot/hero-options/rocky-beach-desktop-01.webp" alt="روكي على شاطئ ذهبي: يبحر بقارب، ويكتب على ورقة، ويسترخي بنظارة شمسية تحت نخلة" width="1672" height="941" fetchpriority="high" decoding="async" data-decorative-image/>
+    </picture></div>
+    <div class="visitor-landing__content">
+      <h1 id="visitor-title" tabindex="-1">أكثر طريقة ممتعة للتعلّم والاستعداد للتوجيهي!</h1>
+      <div class="visitor-landing__actions">
+        <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-flow="register">ابدأ</button>
+        <button class="visitor-secondary system-action system-action--secondary system-action--prominent" type="button" data-flow="sign-in">لدي حساب بالفعل</button>
+      </div>
+      <a class="visitor-live-preview" href="https://malikahed.github.io/tawjihi-learning-app/">فتح المعاينة المباشرة</a>
+    </div>
+  </section>`, { landing:true });
+}
+
+export function registerMarkup() {
+  return shell(`<section class="auth-page onboarding-page" aria-label="إنشاء حساب">
+    <div class="onboarding-nav">
+      ${backControl("الرئيسية", "data-onboarding-back")}
+      <div class="onboarding-progress" role="progressbar" aria-label="تقدّم إنشاء الحساب" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" data-onboarding-progress>${Array.from({ length:5 }, (_, index) => `<span${index === 0 ? ' class="is-complete"' : ""}></span>`).join("")}</div>
+    </div>
+    <form class="auth-form onboarding-form" data-register-form novalidate>
+      <section class="onboarding-step onboarding-step--hello" data-onboarding-step="intro">
+        ${rocky("wave", "روكي يلوّح مرحبًا")}
+        <h1 id="visitor-title" tabindex="-1">مرحبًا! أنا روكي</h1>
+        <p>أُشبه حجارة ركام البيوت في غزة، وسأكون معك خطوة بخطوة.</p>
+        <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-step-next>متابعة</button>
+        <button class="onboarding-guest system-action system-action--secondary system-action--prominent" type="button" data-guest-start>تجربة التطبيق كضيف</button>
+      </section>
+      <section class="onboarding-step" data-onboarding-step="0" hidden>
+        ${rocky("standing-still", "روكي يتابع حركة المؤشر", { trackPointer:true, defer:true })}
+        <h1 tabindex="-1">بماذا تحب أن نناديك؟</h1>
+        ${field("username", "اسمك", 'autocomplete="username" maxlength="30" placeholder="مثال: أحمد" required', true)}
+        <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-step-next>متابعة</button>
+      </section>
+      <section class="onboarding-step onboarding-step--picker" data-onboarding-step="1" hidden>
+        ${rocky("standing-still", "روكي ينظر إلى اختيار المنهاج", { trackPointer:true, defer:true })}
+        <h1 id="curriculum-question" tabindex="-1">أي منهاج تدرس؟</h1>
+        <div class="onboarding-choice-grid onboarding-choice-grid--maps" role="radiogroup" aria-labelledby="curriculum-question">
+          <label class="onboarding-choice"><input type="radio" name="curriculum" value="gaza"/>${selectionMarker()}<span class="onboarding-choice__visual"><img loading="lazy" data-onboarding-image src="assets/maps/gaza-map.svg" alt=""/></span><strong>غزة</strong></label>
+          <label class="onboarding-choice"><input type="radio" name="curriculum" value="full-palestinian"/>${selectionMarker()}<span class="onboarding-choice__visual"><img loading="lazy" data-onboarding-image src="assets/maps/palestine-map.svg" alt=""/></span><strong>فلسطين</strong></label>
+        </div>
+        <small class="visitor-field-error" data-field-error="curriculum" hidden></small>
+        <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-step-next>متابعة</button>
+      </section>
+      <section class="onboarding-step onboarding-step--picker" data-onboarding-step="2" hidden>
+        ${rocky("standing-still", "روكي ينظر إلى اختيار الفرع", { trackPointer:true, defer:true })}
+        <h1 id="path-question" tabindex="-1">ما هو فرعك؟</h1>
+        <div class="onboarding-choice-grid" role="radiogroup" aria-labelledby="path-question">
+          <label class="onboarding-choice onboarding-choice--path onboarding-choice--scientific"><input type="radio" name="path" value="scientific"/>${selectionMarker()}<span class="path-choice__visual" aria-hidden="true"><img loading="lazy" data-onboarding-image class="path-choice__art path-choice__art--pale" src="assets/paths/generated-scientific-light.webp" alt=""/><img loading="lazy" data-onboarding-image class="path-choice__art path-choice__art--saturated" src="assets/paths/generated-scientific.webp" alt=""/></span><strong>العلمي</strong></label>
+          <label class="onboarding-choice onboarding-choice--path onboarding-choice--literary"><input type="radio" name="path" value="literary"/>${selectionMarker()}<span class="path-choice__visual" aria-hidden="true"><img loading="lazy" data-onboarding-image class="path-choice__art path-choice__art--pale" src="assets/paths/generated-literary-light.webp" alt=""/><img loading="lazy" data-onboarding-image class="path-choice__art path-choice__art--saturated" src="assets/paths/generated-literary.webp" alt=""/></span><strong>الأدبي</strong></label>
+        </div>
+        <small class="visitor-field-error" data-field-error="path" hidden></small>
+        <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-step-next>متابعة</button>
+      </section>
+      <section class="onboarding-step onboarding-step--compact" data-onboarding-step="3" hidden>
+        ${rocky("standing-still", "روكي يتابع حركة المؤشر", { trackPointer:true, defer:true })}
+        <h1 tabindex="-1">ما بريدك الإلكتروني؟</h1>
+        ${field("email", "البريد الإلكتروني", 'type="email" autocomplete="email" maxlength="254" inputmode="email" dir="ltr" placeholder="name@example.com" required', true)}
+        <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-step-next>متابعة</button>
+      </section>
+      <section class="onboarding-step onboarding-step--compact" data-onboarding-step="4" hidden>
+        <div data-rocky-password>${rocky("standing-still", "روكي يغطي عينيه ويختلس نظرة مرحة", { defer:true })}</div>
+        <h1 tabindex="-1">اختر كلمة مرور</h1>
+        <p class="onboarding-password-hint">8 أحرف على الأقل، بينها حرف ورقم.</p>
+        ${field("password", "كلمة المرور", 'type="password" autocomplete="new-password" maxlength="128" required', true)}
+        <button class="visitor-primary system-action system-action--primary system-action--prominent" type="submit">إنشاء الحساب</button>
+      </section>
+      <div class="visitor-callout visitor-callout--error" data-auth-error role="alert" hidden></div>
+    </form>
+    <div class="auth-links"><span>لديك حساب؟</span><button type="button" data-flow="sign-in">تسجيل الدخول</button></div>
+  </section>`);
+}
+
+export function accountCompleteMarkup() {
+  return shell(`<section class="auth-page onboarding-page onboarding-complete" aria-labelledby="onboarding-complete-title">
+    ${rocky("happy-jump", "روكي يقفز فرحًا")}
+    <h1 id="onboarding-complete-title" tabindex="-1">رائع! أصبح كل شيء جاهزًا</h1>
+    <button class="visitor-primary system-action system-action--primary system-action--prominent" type="button" data-registration-continue>متابعة إلى المواد</button>
+  </section>`);
+}
+
+export function signInMarkup() {
+  const form = `<form class="auth-form" data-sign-in-form novalidate>
+    ${field("identifier", "اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف", 'autocomplete="username" maxlength="254" required')}
+    ${field("password", "كلمة المرور", 'type="password" autocomplete="current-password" maxlength="128" required')}
+    <button class="visitor-primary system-action system-action--primary system-action--prominent" type="submit">تسجيل الدخول</button>
+    <div class="visitor-callout visitor-callout--error" data-auth-error role="alert" hidden></div>
+  </form>`;
+  return authShell("تسجيل الدخول", "مرحبًا بعودتك. أدخل بيانات حسابك للمتابعة.", form,
+    '<span>ليس لديك حساب؟</span><button type="button" data-flow="register">إنشاء حساب</button>');
+}
