@@ -16,6 +16,7 @@ export const subjectLessonRegistry = new Map([
   [lessonKey("mathematics", "extreme-values"), () => import("./mathematics/extreme-values.js")],
   [lessonKey("mathematics", "concavity-inflection"), () => import("./mathematics/concavity-inflection.js")],
   [lessonKey("mathematics", "extrema-applications"), () => import("./mathematics/extrema-applications.js")],
+  [lessonKey("mathematics", "unit2-source-review"), () => import("./mathematics/unit2-source-review.js")],
   [lessonKey("mathematics", "matrices"), () => import("./mathematics/matrices.js")],
   [lessonKey("mathematics", "matrix-operations"), () => import("./mathematics/matrix-operations.js")],
   [lessonKey("mathematics", "determinants"), () => import("./mathematics/determinants.js")],
