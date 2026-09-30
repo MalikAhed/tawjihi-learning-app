@@ -4,9 +4,8 @@ node_modules/
 .env.*
 !.env.example
 coverage/
-data/*.sqlite
-data/*.sqlite-shm
-data/*.sqlite-wal
+data/
+!/src/data/
 *.log
 artifacts/
 codex screen shots/
@@ -17,3 +16,4 @@ design-system-clone/
 design-system-clone.zip
 
 _site/
+_server/
