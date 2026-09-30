@@ -1,0 +1,80 @@
+{
+  "source": "assets/books/ict-past-papers-selected.pdf",
+  "sourceSha256": "fef4e1ff58dc15258839f178e7f8469d6cc4f14a63d29e584b420e50818e3b58",
+  "pageCount": 17,
+  "collectionUrl": "https://www.sh-pal.com/2022/12/2023.html",
+  "downloadUrl": "https://drive.google.com/uc?export=download&id=1Syc0NfZBXpku5tSr5VrAOm6nLtX8SfeL",
+  "reviewedOn": "2026-09-25",
+  "description": "Ministry-supervised classified collection of scientific-branch national exams (2019–2022) and explicitly labelled 2022 mocks. Hosting mirror title: 2023; not a 2023 national exam.",
+  "figures": [
+    {
+      "file": "assets/lessons/ict/exams/past-p73-set.webp",
+      "sourcePage": 8,
+      "renderSize": [
+        1061,
+        1500
+      ],
+      "rectPixels": [
+        472,
+        349,
+        739,
+        395
+      ],
+      "sha256": "0406dcad3bf0d9e504e1f2c1d75beea0f2f3a972a3ef8003f9d85e94415acbd4",
+      "originalSourcePage": 73
+    },
+    {
+      "file": "assets/lessons/ict/exams/past-p125-duplex.webp",
+      "sourcePage": 13,
+      "renderSize": [
+        1061,
+        1500
+      ],
+      "rectPixels": [
+        464,
+        751,
+        731,
+        860
+      ],
+      "sha256": "5a67055d3fdc9d66605576f7d59b5746df3a8b498212f50a8fc8bdbbac0a9914",
+      "originalSourcePage": 125
+    },
+    {
+      "file": "assets/lessons/ict/exams/past-p136-duplex-answer.webp",
+      "sourcePage": 16,
+      "renderSize": [
+        1061,
+        1500
+      ],
+      "rectPixels": [
+        138,
+        236,
+        826,
+        384
+      ],
+      "sha256": "fb16b9f6b3fe46a88e8b5bdc82c0e4139009f19a1488e2d88a3e4ae02e682b75",
+      "originalSourcePage": 136
+    }
+  ],
+  "originalSha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+  "originalPageCount": 142,
+  "originalPages": [
+    1,
+    2,
+    6,
+    17,
+    36,
+    37,
+    63,
+    73,
+    74,
+    89,
+    91,
+    124,
+    125,
+    126,
+    135,
+    136,
+    137
+  ]
+}

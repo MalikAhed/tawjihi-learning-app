@@ -1,0 +1,1348 @@
+{
+  "sourcePDF": {
+    "documentId": "ict-classified-2023",
+    "filename": "ict-classified-2023.pdf",
+    "sha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685"
+  },
+  "renderDPI": 144,
+  "pageNumbers": "One-based original PDF page numbers; each image preserves the complete page.",
+  "encoding": {
+    "format": "WebP",
+    "strategy": "Smallest file of pixel-exact lossless WebP and quality-90 WebP with sharp YUV; every page stays at 144 DPI.",
+    "losslessPageCount": 48
+  },
+  "pages": [
+    {
+      "page": 6,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p006.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 77526,
+      "sha256": "db28ba3bb3328ad45711c8338054a6382ad9888e21902fe55459b0ccd84add19",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 7,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p007.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 78218,
+      "sha256": "6c9112d13a290882dd0868d9d65c59cdaff0aba67e65a0ea6f340b0b83484dd7",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 8,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p008.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 83004,
+      "sha256": "73b313acf3919cf68e7cd56d508e8545f0c40f05b84cebf654a27d0eecb048c2",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 9,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p009.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 80188,
+      "sha256": "8c4780002774edea407e104b7b5f807075eb54ac2bd3e885c011ec7748864ec0",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 10,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p010.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 72742,
+      "sha256": "ff2d3f075511d5de5b5b0e2ef742f22c837f0e83f27fcff9bb28dab6e7afc461",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 11,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p011.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 76270,
+      "sha256": "cf953f0b5b837621ba1dbbe2173f5860866f77480957e25dbacdcb4c13fe0401",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 12,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p012.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 71214,
+      "sha256": "028b0a67690e3ea3c80979126f67a16dd9cb8e0293a8443a706246af248bdb2d",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 15,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p015.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 53778,
+      "sha256": "ee9dbddb08f848e5389ae109c1e7d8d74af7b46a48673b1efee92571646c82a8",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 17,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p017.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 70306,
+      "sha256": "ec2589ff8a401b89dd247d3c26aabb99bff7171e7442e578583a4c03af10a1c7",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 18,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p018.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 68478,
+      "sha256": "3e5c6ba66f7c35c2d642e4b638a99b108fe6301f6b9f04c64dd3817ed717bafa",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 20,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p020.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 75152,
+      "sha256": "2da266e2acf40acf92617a747a9dfbc917c7a484c82ce439be1788e5f1afc250",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 21,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p021.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 60902,
+      "sha256": "8748dba82240f0ad069a4f1dfc5038eadae89fb0cfad8d941013ee3fcf6cf733",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 22,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p022.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 81138,
+      "sha256": "396c6f1152886e670117f8deb57d53078fa32e36be2b74f451eccb637f641cf0",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 25,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p025.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 90524,
+      "sha256": "c21d99effa84f5cd0b1669aacbad68efb757f9d62511b2818405ad4c49758e68",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 29,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p029.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 109444,
+      "sha256": "3b6aff200472979b96e7668ee8ea33e014d5d746261a86860efdeb067e039b12",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 30,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p030.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 132492,
+      "sha256": "20cfba9f2c23be77e62576c626b96a42ac6e91b75075a15f6c6666394516d5e3",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.3952,
+        "darkPixelMeanAbsoluteChannelError": 1.5654,
+        "p99AbsoluteChannelError": 6
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 36,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p036.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 27342,
+      "sha256": "b2890832120098c8876e614f2c1ebba9a669146c9888278ed11a22d4ae41c292",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 37,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p037.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 24460,
+      "sha256": "f0889fa9cf944cd154cb57b91654aba6ee5be9cba264e351bac2b70209d05e9f",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 38,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p038.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 32436,
+      "sha256": "978848dd6007192c1a1fd22f19d2a43ef0020301f128628398b4cf61fe2c1a84",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 39,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p039.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 74822,
+      "sha256": "0be32670778070b51e6fefb02bbfc72f7c26e9bea62cdbc935eba0ce849394f2",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 41,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p041.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 46982,
+      "sha256": "aeae74edc1d3e32b45258a454f4b023ff1e03b20fb8dd956aaf843edf279d2d2",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 42,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p042.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 72264,
+      "sha256": "82c33fcbdd639cb0dfdd8a047c93e8d4cf0690b17051e6d14aa7748793faa361",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.2473,
+        "darkPixelMeanAbsoluteChannelError": 1.1299,
+        "p99AbsoluteChannelError": 4
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 46,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p046.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 57150,
+      "sha256": "3031a48d627bdb99c5058281c5f5899cb3edf0d76f24d6e1a730d6dfbc147a1f",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.2169,
+        "darkPixelMeanAbsoluteChannelError": 1.0622,
+        "p99AbsoluteChannelError": 4
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 48,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p048.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 62902,
+      "sha256": "5e2e3e33b0c05abff29ef6fcd50efcf690b5ef9fcd553fbe333376444c43b70c",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 49,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p049.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 70680,
+      "sha256": "a636ff2bd173b2f63427a5f58e9c7aa518b196ca036afdd9869ef090240c5027",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 52,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p052.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 65718,
+      "sha256": "ad4988876c58ef888b24f072062b96360b6f58101db83428550aee6ddeefc817",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 56,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p056.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 53242,
+      "sha256": "c00ab20043552c0fade63befd2b7f79a646b81719d46e770c2c89423957473c1",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 63,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p063.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 61386,
+      "sha256": "f068688b7bb7265ecbafe4615519a87a0243c85c65be5ca48cee5db55c562487",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 64,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p064.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 59376,
+      "sha256": "fea4bf24b1fe2a210f57940af344de065ccc5d31721e5427855ff0773d6d095d",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 66,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p066.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 56268,
+      "sha256": "e6989459bfb4b80c711a6126528eb223f7afada410e82bc5795a1abe5c448c67",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 67,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p067.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 58200,
+      "sha256": "425c26f0d80b9ad885e6da4edaf93c309310292909c827a20ad6cc3f35837dd0",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 70,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p070.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 63800,
+      "sha256": "507a805cf068cd4705ca1a62a915568ae965210ed376290faef65b2072a34705",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 72,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p072.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 90464,
+      "sha256": "4b302004c3be53cb8d3f7bd569fe8280286ca986ef30d2f7af1aadd113c5cd82",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 73,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p073.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 129410,
+      "sha256": "ea4e4de21229f269e405cee48db72b873324cdc8f9d92b33d01f49cdb55161a2",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.6783,
+        "darkPixelMeanAbsoluteChannelError": 1.4777,
+        "p99AbsoluteChannelError": 12
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 74,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p074.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 99082,
+      "sha256": "f06bfc16eb7f3b6d6442cbf4c500c4a6ad1b385a31ec9c92b8c7e65c5e7acbb0",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 75,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p075.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 78928,
+      "sha256": "ee550b8ccd0060b6564616840d405ff31f4d6319f9d158234dfb8f66fbea7770",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 76,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p076.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 108836,
+      "sha256": "ae929172f0a08caa045a5e3bfe112082f3c4574c14dab1af85f0b33c320812e3",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.6651,
+        "darkPixelMeanAbsoluteChannelError": 1.5224,
+        "p99AbsoluteChannelError": 12
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 77,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p077.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 111500,
+      "sha256": "60c72d45348b887958794e125f7ebfeda002d1cc27db02bc7ed970d70827b1b6",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 1.0022,
+        "darkPixelMeanAbsoluteChannelError": 3.2137,
+        "p99AbsoluteChannelError": 17
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 78,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p078.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 89954,
+      "sha256": "8f423ec27060739896e22a3dd03b9e3846daa08d8a5c0c3bce66937312f0f032",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.5777,
+        "darkPixelMeanAbsoluteChannelError": 1.8796,
+        "p99AbsoluteChannelError": 9
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 79,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p079.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 111426,
+      "sha256": "d16dee2561f8f4ac693310889241f3fe2b5a5b271c2672acc7276f844f9721e0",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.9028,
+        "darkPixelMeanAbsoluteChannelError": 2.0553,
+        "p99AbsoluteChannelError": 13
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 80,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p080.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 120212,
+      "sha256": "1424a8adf8a28e19c892926a811096a333ea858324c4fcce7d1c1cea03a9a3ae",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.8697,
+        "darkPixelMeanAbsoluteChannelError": 1.9087,
+        "p99AbsoluteChannelError": 12
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 81,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p081.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 124446,
+      "sha256": "d0dae78614577abe590f3131b2d2ef41207d22220d5b52235807f8805e693d5b",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.7383,
+        "darkPixelMeanAbsoluteChannelError": 1.5303,
+        "p99AbsoluteChannelError": 10
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 82,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p082.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 114644,
+      "sha256": "9a7bc37854814f072f88e675eb5fd3ae79234b1c7305e11f135fdd7f2fb77736",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.6689,
+        "darkPixelMeanAbsoluteChannelError": 1.541,
+        "p99AbsoluteChannelError": 6
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 83,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p083.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 109598,
+      "sha256": "965de21d40634bda937e1ab7793b1d4453a9b61bf86a48fadbde3335654232ec",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.5649,
+        "darkPixelMeanAbsoluteChannelError": 1.4301,
+        "p99AbsoluteChannelError": 6
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 84,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p084.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 126018,
+      "sha256": "8580327140180f027d6d0db508b3a2f5e5e71970364b249eaeec67ac0a954a8b",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.7675,
+        "darkPixelMeanAbsoluteChannelError": 1.9563,
+        "p99AbsoluteChannelError": 10
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 85,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p085.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 154216,
+      "sha256": "b37ab14c64a90616df94173a8933e1ad59f7e5c549fb6c084967f38f13013dc3",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.9286,
+        "darkPixelMeanAbsoluteChannelError": 2.2477,
+        "p99AbsoluteChannelError": 13
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 86,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p086.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 120722,
+      "sha256": "dc6e98f47d15fba799d644b640024574e655e0dd8d3df372b26669a11b54cea9",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.5448,
+        "darkPixelMeanAbsoluteChannelError": 1.3742,
+        "p99AbsoluteChannelError": 6
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 87,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p087.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 61946,
+      "sha256": "123e00195107ee6535a34b07420076bf5d578fb3dffbbdb996ef61b4264a31ba",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.5137,
+        "darkPixelMeanAbsoluteChannelError": 1.9946,
+        "p99AbsoluteChannelError": 8
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 89,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p089.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 35992,
+      "sha256": "915d880612f295040c5e0d86e7c769bc2538a52d8abdd21d723c68503dc09f9d",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 90,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p090.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 31668,
+      "sha256": "e51efcfb2fdbdfaa053892097f6de5333ef87f68c7ea64cc1c5cf86a9d9160b9",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 91,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p091.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 27258,
+      "sha256": "e6c286bea6f14cdd70c737df54aa86b9c917b4d837a48dcd17e15548a9070559",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 92,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p092.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 68110,
+      "sha256": "55979c637113c0bc399cc2b2a1a6b20881206877fc33009c1cff5e03eee16849",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 93,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p093.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 70712,
+      "sha256": "a62129f28574778fd910a2253cb0279123ca4c712ccf0e7a15905a6e5f612f43",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 94,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p094.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 73514,
+      "sha256": "a5c18f1a140c8678207029f29e8e2fd45b7bed34eed3b2f1786358ee5f5c1f94",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 96,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p096.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 85200,
+      "sha256": "d7cd0cd3c3b4e2f78d2cc5f1f7bd34b571a9eae3a7b537bc6493d145d8990e2a",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.4776,
+        "darkPixelMeanAbsoluteChannelError": 1.3947,
+        "p99AbsoluteChannelError": 8
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 97,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p097.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 43928,
+      "sha256": "2a10aace895772ad95ab299e46c86a8b5cc07efcfb61fc501e667e39cf9ec97b",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 98,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p098.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 44698,
+      "sha256": "fa155419b3f73f01b3be9afef5319097bb4889251fc89d3df0d96582b7c6c2bf",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 99,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p099.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 66080,
+      "sha256": "755041aa48c5f3baebd4b5ec2cb6cfbda0a3ddaf9d66fc20e0c2f46833116d6e",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 100,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p100.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 46396,
+      "sha256": "3f0e54ea9466c43b7192e6049e461dd7594e4c503a94f83678ada30bb1996f02",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 101,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p101.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 72380,
+      "sha256": "697785f32f52c18eda5ef4453743c628e52347d354b32c998cf120b06b3f1856",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 102,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p102.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 69002,
+      "sha256": "33b0c682e897fbd34ad08004744f0049bb77d1ad3cd20863aedc40372867e537",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 103,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p103.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 45010,
+      "sha256": "a57187d9aacd9dd0a169628395eea86c86d326625654ee8901ba8b189492e131",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 125,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p125.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 126116,
+      "sha256": "a8835e957ef04b3636f3b53d6430c8254bf7a0c2449b46560edb52d94a6d8f8e",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 126,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p126.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 78360,
+      "sha256": "7ece992d37a701a1d3dafd52aca56b6c489a07bb458fedfa4bd6c8492718de8d",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    },
+    {
+      "page": 127,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p127.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 66762,
+      "sha256": "6a2f9fa8d7cf837cb00e2d240bdc5e4cc5f02d754afd134b4da061a9562c2bd3",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.2832,
+        "darkPixelMeanAbsoluteChannelError": 1.5342,
+        "p99AbsoluteChannelError": 6
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 136,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p136.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 132646,
+      "sha256": "39aaee27a587588ad50384d5cf3e47101eb4d93d11582c1ebc40dcd50b440ac6",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.5062,
+        "darkPixelMeanAbsoluteChannelError": 1.8795,
+        "p99AbsoluteChannelError": 7
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 137,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p137.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 178710,
+      "sha256": "686c1af051087d2c988a13a51d838c0a1dcaa187bca0af14085040e1b76006e7",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0.6194,
+        "darkPixelMeanAbsoluteChannelError": 1.9571,
+        "p99AbsoluteChannelError": 10
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": false,
+        "quality": 90,
+        "sharpYUV": true
+      }
+    },
+    {
+      "page": 138,
+      "file": "assets/lessons/ict/exams/source-pages/classified-p138.webp",
+      "width": 1191,
+      "height": 1685,
+      "renderDPI": 144,
+      "bytes": 69028,
+      "sha256": "266d2fd538c2030ffd4acfd5093e20b4733e1a29e9b7334803db178bbbb1e9dc",
+      "sourcePDFsha256": "f98a49d719f0f7b5d26524ee7f6116b59d0c4bd3761163045abd635af2ce7685",
+      "fidelity": {
+        "meanAbsoluteChannelError": 0,
+        "darkPixelMeanAbsoluteChannelError": 0,
+        "p99AbsoluteChannelError": 0
+      },
+      "encoding": {
+        "format": "WebP",
+        "lossless": true
+      }
+    }
+  ]
+}

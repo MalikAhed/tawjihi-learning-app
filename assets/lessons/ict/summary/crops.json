@@ -1,0 +1,1405 @@
+{
+  "source": "assets/books/summary.pdf",
+  "sourceSha256": "51d3885f88b6f0fb9cb55ae081c9da941cd9a265ff345efaedc45bc504af8e6b",
+  "crops": [
+    {
+      "file": "assets/lessons/ict/summary/access-p002-dbms.webp",
+      "page": 2,
+      "rect": [
+        20,
+        220,
+        570,
+        394
+      ],
+      "scale": 2,
+      "width": 1100,
+      "height": 348,
+      "parts": [
+        "access-basics"
+      ],
+      "caption": "مهام برامج إدارة قواعد البيانات ولغة SQL",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 21848,
+      "dpi": 144,
+      "sha256": "370a124b53b175af20aac3518411552b60bf39bdd643c639f43bd8ddb3294b26"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p003-relational.webp",
+      "page": 3,
+      "rect": [
+        20,
+        52,
+        570,
+        87
+      ],
+      "scale": 2,
+      "width": 1100,
+      "height": 70,
+      "parts": [
+        "access-basics"
+      ],
+      "caption": "تعريف قاعدة البيانات العلائقية",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 5866,
+      "dpi": 144,
+      "sha256": "12526449a856bd0d69fe27d25ee77635af7231bbf31db68250917a30122646bb"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p003-components.webp",
+      "page": 3,
+      "rect": [
+        20,
+        300,
+        570,
+        640
+      ],
+      "scale": 2,
+      "width": 1100,
+      "height": 680,
+      "parts": [
+        "access-basics"
+      ],
+      "caption": "الجداول والاستعلامات والنماذج والتقارير",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 66018,
+      "dpi": 144,
+      "sha256": "77a07c6e107be96b32de664ffdcdb9059b842673f9f0845331226cfea190515f"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p004-create.webp",
+      "page": 4,
+      "rect": [
+        20,
+        232,
+        570,
+        758
+      ],
+      "scale": 2,
+      "width": 1100,
+      "height": 1052,
+      "parts": [
+        "tables-and-types"
+      ],
+      "caption": "إنشاء ملف القاعدة ومناطق نافذة Access",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 124794,
+      "dpi": 144,
+      "sha256": "11534f9079487f704ee33afc29931cfe620f9a8321861671d4198b207436aa0b"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p005-field-types.webp",
+      "page": 5,
+      "rect": [
+        20,
+        52,
+        570,
+        472
+      ],
+      "scale": 2,
+      "width": 1100,
+      "height": 840,
+      "parts": [
+        "tables-and-types"
+      ],
+      "caption": "تصميم الجدول واختيار نوع بيانات الحقل",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 109054,
+      "dpi": 144,
+      "sha256": "776dafd52ec414d240d3b825e5f2c8352aa61fd693f4878f3afb42933b2aeef4"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p006-table-design.webp",
+      "page": 6,
+      "rect": [
+        20,
+        52,
+        570,
+        412
+      ],
+      "scale": 2,
+      "width": 1100,
+      "height": 720,
+      "parts": [
+        "tables-and-types"
+      ],
+      "caption": "تصميم الجدول وتعيين المفتاح الأساسي",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 90782,
+      "dpi": 144,
+      "sha256": "0fb926e0f97e62a9fb8152b853fb99b4f722b33a19377c71a63d60ebfbb328f5"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p007-primary-key.webp",
+      "page": 7,
+      "rect": [
+        20,
+        90,
+        575,
+        315
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 450,
+      "parts": [
+        "keys-and-relations"
+      ],
+      "caption": "المفتاح الأساسي البسيط والمركب",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 30484,
+      "dpi": 144,
+      "sha256": "1d1b47a90765cfb64030234687ac55982320dad44181e59ffde905160f3a53d4"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p007-key-link-example.webp",
+      "page": 7,
+      "rect": [
+        20,
+        542,
+        570,
+        730
+      ],
+      "scale": 2,
+      "width": 1100,
+      "height": 376,
+      "parts": [
+        "keys-and-relations",
+        "build-and-integrity",
+        "access-basics"
+      ],
+      "caption": "مثال على المفتاح الأساسي والأجنبي وقيم الربط",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 78636,
+      "dpi": 144,
+      "sha256": "99dd4ec278967efd27691708c9b728062c1d69bfec33b181df7e0629f6a9ea46",
+      "originalSha256": "fb5a091934922118817543344555b53cdd702eb0ad52d2531ac087fb8952d91c"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p008-relationship-types.webp",
+      "page": 8,
+      "rect": [
+        20,
+        265,
+        575,
+        755
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 980,
+      "parts": [
+        "keys-and-relations"
+      ],
+      "caption": "أنواع العلاقات بين الجداول",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 163496,
+      "dpi": 144,
+      "sha256": "ae42391e8206bc90f10875789667456a28f70aebb7b94738cda0aa129f80989b"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p009-junction-diagram.webp",
+      "page": 9,
+      "rect": [
+        20,
+        190,
+        575,
+        522
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 664,
+      "parts": [
+        "keys-and-relations",
+        "education-center",
+        "access-basics"
+      ],
+      "caption": "تحويل متعدد إلى متعدد إلى جدول وسيط",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 32632,
+      "dpi": 144,
+      "sha256": "cb813c3e4c1321dbefb9173ddcedd7a22af060bc74bcec9ffeea7616fdf8a154"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p011-erd-notation.webp",
+      "page": 11,
+      "rect": [
+        20,
+        52,
+        575,
+        210
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 316,
+      "parts": [
+        "education-center",
+        "practice-and-review"
+      ],
+      "caption": "رموز الكيان والصفة والعلاقة في ERD",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 18282,
+      "dpi": 144,
+      "sha256": "0359f1f68c6109a33bb0aa0ffb714f9b066fdd924f43e799f827f9f6f7a5bcd0"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p011-erd-example.webp",
+      "page": 11,
+      "rect": [
+        20,
+        210,
+        575,
+        577
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 734,
+      "parts": [
+        "education-center"
+      ],
+      "caption": "مثال مخطط ERD بجدول وسيط",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 51522,
+      "dpi": 144,
+      "sha256": "4c679785d0fddd0170c3e1a3d409437e96924995b747302f7fb3c4c6aea54474"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p006-relationships.webp",
+      "page": 6,
+      "rect": [
+        20,
+        413,
+        575,
+        654
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 482,
+      "parts": [
+        "build-and-integrity"
+      ],
+      "caption": "إظهار الجداول وفتح نافذة العلاقات في Access",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 29046,
+      "dpi": 144,
+      "sha256": "3810ca623e41da5eacd520f22198dd80593ad49042938874f6ab9cea480b497c"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p017-key-errors.webp",
+      "page": 17,
+      "rect": [
+        20,
+        52,
+        575,
+        253
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 402,
+      "parts": [
+        "build-and-integrity"
+      ],
+      "caption": "تحدي اكتشاف أخطاء المفاتيح في جدولين",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 31972,
+      "dpi": 144,
+      "sha256": "dcfc82fcc988ad751f470b55b6a158255b304bf7e1b265f0a779821428c3c42c"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p014-analysis-workflow.webp",
+      "page": 14,
+      "rect": [
+        20,
+        52,
+        575,
+        188
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 272,
+      "parts": [
+        "engineering-office"
+      ],
+      "caption": "خطوات تحليل النظام ورسم ERD",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 17712,
+      "dpi": 144,
+      "sha256": "d14c76686b5d0d8d9fc70671b4f92a6095f792630098e5b289b9c51a0cb42305"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p012-office-tables.webp",
+      "page": 12,
+      "rect": [
+        20,
+        52,
+        575,
+        358
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 612,
+      "parts": [
+        "engineering-office"
+      ],
+      "caption": "جداول مشروع وقسم وعامل في تطبيق التحليل",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 158786,
+      "dpi": 144,
+      "sha256": "546ccca54f72322145c648fbe31f30662b78bf0cf4159acf17f18caeac28e928"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p012-office-links.webp",
+      "page": 12,
+      "rect": [
+        20,
+        358,
+        575,
+        815
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 914,
+      "parts": [
+        "engineering-office"
+      ],
+      "caption": "مفاتيح وعلاقات المشروع والقسم والعامل",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 47776,
+      "dpi": 144,
+      "sha256": "d28ef4ef3b46e4b69e925fa68e4e5977365aaf1170004737621c2f674cc2813e"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p019-hospital-answers.webp",
+      "page": 19,
+      "rect": [
+        20,
+        52,
+        575,
+        241
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 378,
+      "parts": [
+        "practice-and-review"
+      ],
+      "caption": "مفاتيح وعلاقات حالة المستشفى",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 18594,
+      "dpi": 144,
+      "sha256": "bb487646c417e87a2b8d3322e41339c5b00987ca1a2c46afe54b39c6063a5e2f"
+    },
+    {
+      "file": "assets/lessons/ict/summary/access-p052-normalization.webp",
+      "page": 52,
+      "rect": [
+        20,
+        617,
+        575,
+        735
+      ],
+      "scale": 2,
+      "width": 1110,
+      "height": 236,
+      "parts": [
+        "practice-and-review"
+      ],
+      "caption": "أهمية تطبيع قواعد البيانات",
+      "renderer": "fitz.get_pixmap",
+      "bytes": 15258,
+      "dpi": 144,
+      "sha256": "be35094ca581f8db5c7c18529fde4268726bae60f809f65e8fe2ee4246e95feb"
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p020-purpose.webp",
+      "page": 20,
+      "rect": [
+        35,
+        312,
+        562,
+        523
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1054,
+      "height": 422,
+      "parts": [
+        "sql-introduction"
+      ],
+      "caption": "ما هي لغة SQL؟",
+      "sha256": "9d0fc52fe9df5b9dd859d139dce3aecf31fc40d69f2b02067d5ef1d9ace7aa07",
+      "bytes": 31904
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p020-families.webp",
+      "page": 20,
+      "rect": [
+        45,
+        530,
+        562,
+        711
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1034,
+      "height": 362,
+      "parts": [
+        "sql-introduction"
+      ],
+      "caption": "أقسام لغة SQL",
+      "sha256": "504c50b5fa5c53f83c1fb9f46908761fa68ab870237186bd8ac5f777694c5a10",
+      "bytes": 20540
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p021-commands.webp",
+      "page": 21,
+      "rect": [
+        390,
+        66,
+        562,
+        178
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 344,
+      "height": 224,
+      "parts": [
+        "sql-introduction",
+        "sql-questions"
+      ],
+      "caption": "أنواع الاستعلامات",
+      "sha256": "98033300c9f040e7b89c35ac6369aa2b6b69a7c959aa05afbd9cc0b7d07b5837",
+      "bytes": 13954
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p027-select-form.webp",
+      "page": 27,
+      "rect": [
+        119,
+        260,
+        562,
+        451
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 886,
+      "height": 382,
+      "parts": [
+        "select-order"
+      ],
+      "caption": "صيغة استعلام التحديد",
+      "sha256": "b577ac6805b3673a83007e3647c4516c2e6bf710edb17e178817de6deaf98065",
+      "bytes": 10464
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p027-select-star.webp",
+      "page": 27,
+      "rect": [
+        30,
+        696,
+        562,
+        789
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1064,
+      "height": 186,
+      "parts": [
+        "select-order"
+      ],
+      "caption": "اختيار جميع الحقول",
+      "sha256": "33e129280174dfcd56e366bbc7eb97f40f5d89e8fd3a2987bd2bc81df75d37d7",
+      "bytes": 9294
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p028-where-form.webp",
+      "page": 28,
+      "rect": [
+        32,
+        108,
+        562,
+        262
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 308,
+      "parts": [
+        "where-conditions",
+        "sql-practical"
+      ],
+      "caption": "صيغة شرط WHERE",
+      "sha256": "de083956bb5a705fdf9539dc21e7bad3a248b43a64a9b9c43370ba2fa9574209",
+      "bytes": 13132
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p029-and-or.webp",
+      "page": 29,
+      "rect": [
+        33,
+        431,
+        562,
+        600
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1058,
+      "height": 338,
+      "parts": [
+        "where-conditions"
+      ],
+      "caption": "الجمع بين الشروط",
+      "sha256": "ae8ebb9849abd147c4dc6b3d89f21aa22e9f07fe1bb35ab89ad6420787fc498d",
+      "bytes": 16278
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p030-parameter.webp",
+      "page": 30,
+      "rect": [
+        32,
+        62,
+        562,
+        205
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 286,
+      "parts": [
+        "count-parameters"
+      ],
+      "caption": "المعيار الذي يدخله المستخدم",
+      "sha256": "229b3afd6479d6d5ac89dad843fd3587a9540fb9f4d76069c772f02b0a66b7b7",
+      "bytes": 15546
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p031-count.webp",
+      "page": 31,
+      "rect": [
+        32,
+        244,
+        562,
+        398
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 308,
+      "parts": [
+        "count-parameters",
+        "sql-questions"
+      ],
+      "caption": "حساب عدد السجلات",
+      "sha256": "277b4d2b70f0e0084cd3981ec1ae3cfcf18a166497048d825e4638f9e817b0fa",
+      "bytes": 12076
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p031-sort-rules.webp",
+      "page": 31,
+      "rect": [
+        37,
+        438,
+        562,
+        571
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1050,
+      "height": 266,
+      "parts": [
+        "order-practice"
+      ],
+      "caption": "اتجاه الفرز وترتيبه",
+      "sha256": "8253a64ad346b89c5224e648a706f5914d0843c7f8a67ea329a0f2cc7cc94726",
+      "bytes": 15858
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p032-sort-example.webp",
+      "page": 32,
+      "rect": [
+        32,
+        247,
+        562,
+        426
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 358,
+      "parts": [
+        "select-order",
+        "order-practice"
+      ],
+      "caption": "مثال ترتيب النتائج",
+      "sha256": "7ff86a4e07a8972e099eecf39d72d9b8de4e7a1401c91ac3092a4ededf7b92c5",
+      "bytes": 12728
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p033-join-explain.webp",
+      "page": 33,
+      "rect": [
+        33,
+        63,
+        562,
+        416
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1058,
+      "height": 706,
+      "parts": [
+        "related-tables"
+      ],
+      "caption": "الربط بين جدولين",
+      "sha256": "dd385692e083a3d81cd20b1bea4234df93cf14c22b6776b3047739e38832790f",
+      "bytes": 35860
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p033-join-query.webp",
+      "page": 33,
+      "rect": [
+        33,
+        421,
+        562,
+        575
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1058,
+      "height": 308,
+      "parts": [
+        "related-tables",
+        "sql-practical"
+      ],
+      "caption": "استعلام المهندسين والأقسام",
+      "sha256": "254109a35686d3d9f2cd1f2ed67517227c0545ffb930ee46a238e632bf0a6b17",
+      "bytes": 13162
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p035-update-form.webp",
+      "page": 35,
+      "rect": [
+        30,
+        62,
+        562,
+        343
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1064,
+      "height": 562,
+      "parts": [
+        "update-queries"
+      ],
+      "caption": "صيغة استعلام التحديث",
+      "sha256": "6e332cb844c5ab7248bebe2c33ee6c9b72ec950af810a203465c3f5d93eccb07",
+      "bytes": 23074
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p037-update-percent.webp",
+      "page": 37,
+      "rect": [
+        32,
+        64,
+        562,
+        388
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 648,
+      "parts": [
+        "update-queries"
+      ],
+      "caption": "تحديث الأجرة بنسبة مئوية",
+      "sha256": "df897b5abd08e1a8e5ca67cc230437ad4c662f9eebcbbf2b27c978f3145db732",
+      "bytes": 25726
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p039-delete-form.webp",
+      "page": 39,
+      "rect": [
+        160,
+        62,
+        562,
+        245
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 804,
+      "height": 366,
+      "parts": [
+        "delete-review",
+        "sql-practical"
+      ],
+      "caption": "صيغة استعلام الحذف",
+      "sha256": "0cc3a42bc15e9ea277ee489c8f47543a6867f02dfe48d7d9e9707ff246efed6c",
+      "bytes": 10658
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p039-delete-all.webp",
+      "page": 39,
+      "rect": [
+        36,
+        541,
+        562,
+        633
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1052,
+      "height": 184,
+      "parts": [
+        "delete-review"
+      ],
+      "caption": "حذف جميع سجلات الجدول",
+      "sha256": "69dec539d21d27169e07d295765266a26c605390554a3dfe6b8851cac49545ed",
+      "bytes": 7076
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p039-delete-parameter.webp",
+      "page": 39,
+      "rect": [
+        36,
+        661,
+        562,
+        792
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1052,
+      "height": 262,
+      "parts": [
+        "delete-review"
+      ],
+      "caption": "حذف سجل يختاره المستخدم",
+      "sha256": "c7b8be3984750915d816cefbc4fad6e1edc7455ea0d6ea2033b8b85acebb3d87",
+      "bytes": 13458
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p041-insert-value.webp",
+      "page": 41,
+      "rect": [
+        32,
+        65,
+        562,
+        245
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 360,
+      "parts": [
+        "insert-queries",
+        "sql-practical"
+      ],
+      "caption": "صيغة إلحاق سجل جديد",
+      "sha256": "683663d164c56d6bd68dd09423350866df91cb840775d06dda54b2d3497a0bdc",
+      "bytes": 10082
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p041-insert-example.webp",
+      "page": 41,
+      "rect": [
+        32,
+        320,
+        562,
+        465
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 290,
+      "parts": [
+        "insert-queries"
+      ],
+      "caption": "مثال إلحاق قسم جديد",
+      "sha256": "3274220c4035a80fa701ea2170b9d967f77aa13a1ed02d81468e2b4121e703e2",
+      "bytes": 23738
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p042-insert-select.webp",
+      "page": 42,
+      "rect": [
+        32,
+        64,
+        562,
+        447
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 766,
+      "parts": [
+        "insert-queries"
+      ],
+      "caption": "إلحاق سجلات من جدول آخر",
+      "sha256": "3abdb1a45dc47410e6b10cbb6bd5c2e7268a5a037236aeb99a38758ffaa4b13e",
+      "bytes": 25072
+    },
+    {
+      "file": "assets/lessons/ict/summary/sql-p043-interpret-query.webp",
+      "page": 43,
+      "rect": [
+        32,
+        79,
+        562,
+        292
+      ],
+      "scale": 2,
+      "renderer": "PyMuPDF",
+      "width": 1060,
+      "height": 426,
+      "parts": [
+        "sql-questions"
+      ],
+      "caption": "تفسير استعلام SQL",
+      "sha256": "7e9b02d66605701255c1f043edcdf3695298ffed3a783cc0caefc3e35d2de4aa",
+      "bytes": 26482
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p056-android-features.webp",
+      "page": 56,
+      "rect": [
+        25,
+        255,
+        570,
+        810
+      ],
+      "dpi": 126,
+      "sha256": "fe0fb847153779b0eec3e1db47e321f382a6ee840b89a4da5207f7c72938aa53",
+      "parts": [
+        "android-features"
+      ],
+      "caption": "أندرويد: الميزات ونقل الملفات",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 972,
+      "bytes": 100300
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p057-android-vr.webp",
+      "page": 57,
+      "rect": [
+        25,
+        52,
+        570,
+        700
+      ],
+      "dpi": 126,
+      "sha256": "d1e597141de7b249ba35696f47b2059a00c3e9b9937b8d178b8fa20eaaa959a8",
+      "parts": [
+        "android-features"
+      ],
+      "caption": "الواقع الافتراضي والمجسات",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 1134,
+      "bytes": 179798
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p058-android-ar.webp",
+      "page": 58,
+      "rect": [
+        25,
+        52,
+        570,
+        490
+      ],
+      "dpi": 126,
+      "sha256": "9eaae6fef2ba6af6a98820a8a47cf94002b4286c7edcc1cbb1f9bf860ab3fc5c",
+      "parts": [
+        "android-features"
+      ],
+      "caption": "الواقع المعزز",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 767,
+      "bytes": 106800
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p059-ios-features.webp",
+      "page": 59,
+      "rect": [
+        25,
+        52,
+        570,
+        537
+      ],
+      "dpi": 126,
+      "sha256": "833b51258516a1c441901de6940db8b3c74dc0a0f39561e47427384034c809df",
+      "parts": [
+        "ios-files"
+      ],
+      "caption": "نظام iOS ونقل الملفات",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 849,
+      "bytes": 110402
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p060-app-types.webp",
+      "page": 60,
+      "rect": [
+        25,
+        52,
+        570,
+        235
+      ],
+      "dpi": 126,
+      "sha256": "3cf38805a89dbb33c8cf19a4d510b48d8bcba2059cef5c8d0916a277f0c077f5",
+      "parts": [
+        "ios-files"
+      ],
+      "caption": "التطبيقات الأصيلة والهجينة",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 321,
+      "bytes": 20274
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p060-app-extensions.webp",
+      "page": 60,
+      "rect": [
+        25,
+        408,
+        570,
+        585
+      ],
+      "dpi": 126,
+      "sha256": "f6f5dfe10349b323d31b6f6e78f6e21f4c80a9a11ff7a30ae159568053d8a49c",
+      "parts": [
+        "ios-files"
+      ],
+      "caption": "لغات التطبيقات وامتداداتها",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 310,
+      "bytes": 32230
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p062-inventor-tools.webp",
+      "page": 62,
+      "rect": [
+        25,
+        150,
+        570,
+        421
+      ],
+      "dpi": 126,
+      "sha256": "4c811a46e99fca50b3d0eb58dfdeec5c65ef079df83819bad50135e885218ae3",
+      "parts": [
+        "app-inventor-tools"
+      ],
+      "caption": "أدوات واجهة App Inventor",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 475,
+      "bytes": 51150
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p062-inventor-properties.webp",
+      "page": 62,
+      "rect": [
+        25,
+        580,
+        570,
+        810
+      ],
+      "dpi": 126,
+      "sha256": "25c99d49e8b96c69834713669c50c5d8c4aad9949c0f3296ce83373fe29f6a7d",
+      "parts": [
+        "app-inventor-tools"
+      ],
+      "caption": "خصائص أدوات الواجهة والجدول",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 403,
+      "bytes": 24908
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p065-inventor-names.webp",
+      "page": 65,
+      "rect": [
+        25,
+        150,
+        570,
+        265
+      ],
+      "dpi": 126,
+      "sha256": "abcb989dcb888136675d3257d5bfb6ad5d5e5ed529d7d40989dcd9dd5030d4f1",
+      "parts": [
+        "app-inventor-tools"
+      ],
+      "caption": "الاسم البرمجي والنص الظاهر",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 202,
+      "bytes": 11730
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p064-inventor-math-blocks.webp",
+      "page": 64,
+      "rect": [
+        25,
+        52,
+        570,
+        482.5
+      ],
+      "dpi": 126,
+      "sha256": "5322111edecc4954e7a62d22102303b622648458311d9343e670dcb41ec4f648",
+      "parts": [
+        "app-inventor-blocks"
+      ],
+      "caption": "لبنات التحكم والحساب",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 754,
+      "bytes": 44646
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p064-inventor-variables.webp",
+      "page": 64,
+      "rect": [
+        25,
+        481,
+        570,
+        750
+      ],
+      "dpi": 126,
+      "sha256": "7453a053859888c89dccbaba28ea7ddd18580a11c85a8610a86ae8695e6d65d6",
+      "parts": [
+        "app-inventor-blocks"
+      ],
+      "caption": "لبنات المنطق والمتغيرات",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 472,
+      "bytes": 63834
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p067-inventor-events.webp",
+      "page": 67,
+      "rect": [
+        25,
+        52,
+        570,
+        380
+      ],
+      "dpi": 126,
+      "sha256": "8d15cf3c5cfd39eed8534d5563ba49d90adb55f6ef43f417b773813315b881e0",
+      "parts": [
+        "app-inventor-blocks"
+      ],
+      "caption": "حدث النقر وتهيئة الشاشة",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 574,
+      "bytes": 49916
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p068-bmi-input-variable.webp",
+      "page": 68,
+      "rect": [
+        25,
+        622,
+        570,
+        790
+      ],
+      "dpi": 126,
+      "sha256": "9bc053af1ee0d19f361f6afe8988cff2510386f1d2f92879360d61d230b7c614",
+      "parts": [
+        "bmi-interface"
+      ],
+      "caption": "متغير معامل السمنة ولبنة الإدخال",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 295,
+      "bytes": 30094
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p069-bmi-conditions.webp",
+      "page": 69,
+      "rect": [
+        25,
+        351,
+        570,
+        808
+      ],
+      "dpi": 126,
+      "sha256": "dd4dd2cdf635e0316ec8b86083a452924409ee120e0d10eca64a8706e5d68c87",
+      "parts": [
+        "bmi-interface"
+      ],
+      "caption": "شروط معامل السمنة ونتائجها",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 800,
+      "bytes": 265794,
+      "originalSha256": "370a0d2067244b6f62e6a1bca24365c777d9cfef8da1fac7b6d37ba05ec2e576"
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p071-calculator-controls.webp",
+      "page": 71,
+      "rect": [
+        25,
+        305,
+        570,
+        590
+      ],
+      "dpi": 126,
+      "sha256": "e444d9574c3976dcabad31e82d4f1c9afc0107301b6539b939413152fdcd0818",
+      "parts": [
+        "calculator-interface"
+      ],
+      "caption": "خصائص أدوات الحاسبة",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 500,
+      "bytes": 35258
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p073-calculator-sin.webp",
+      "page": 73,
+      "rect": [
+        25,
+        157,
+        570,
+        315
+      ],
+      "dpi": 126,
+      "sha256": "88f1f0885466dba7d8e404b3992d9e9920fa825714cef6a6fa058d2f42d0ddc2",
+      "parts": [
+        "calculator-interface"
+      ],
+      "caption": "قراءة المدخل وعرض ناتج الدالة",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 278,
+      "bytes": 28536
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p078-calculator-root-floor.webp",
+      "page": 78,
+      "rect": [
+        25,
+        60,
+        570,
+        130
+      ],
+      "dpi": 126,
+      "sha256": "3b75ebae217ec3a4fe19dd8b55618e312646aedf19e3b200da95188625c1f9a2",
+      "parts": [
+        "calculator-events"
+      ],
+      "caption": "الجذر التربيعي وfloor في تتبع اللبنات",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 123,
+      "bytes": 21718
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p079-calculator-digits.webp",
+      "page": 79,
+      "rect": [
+        25,
+        52,
+        570,
+        245
+      ],
+      "dpi": 126,
+      "sha256": "7761b96342df0c2c6e5ec21af33920ce9dec906be2dda489e4e54d641f7d2469",
+      "parts": [
+        "calculator-events"
+      ],
+      "caption": "إضافة خانة رقمية عند النقر",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 338,
+      "bytes": 42540
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p078-practice-admission.webp",
+      "page": 78,
+      "rect": [
+        25,
+        597,
+        570,
+        697
+      ],
+      "dpi": 126,
+      "sha256": "f5695a6b4d5c9ba60910e2a941a6c9920ff02409caadb25bca07bb03a0d92d9d",
+      "parts": [
+        "app-practice"
+      ],
+      "caption": "شرط قبول الطالب وحد العمر",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 176,
+      "bytes": 34606
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p086-practice-bmi-answers.webp",
+      "page": 86,
+      "rect": [
+        25,
+        52,
+        570,
+        165
+      ],
+      "dpi": 126,
+      "sha256": "0c471358dc17feaecd947cf1ecb072474aa6de64831d3cf15bcba3b52faab5cd",
+      "parts": [
+        "app-practice"
+      ],
+      "caption": "إجابات سؤال معامل السمنة",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 198,
+      "bytes": 8938
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p096-osi-layers.webp",
+      "page": 96,
+      "rect": [
+        25,
+        285,
+        570,
+        735
+      ],
+      "dpi": 126,
+      "sha256": "2c859d799197da720d0776eefc27a95996b181388d2f2d2fdbc408c57f902168",
+      "parts": [
+        "upper-layers"
+      ],
+      "caption": "ترتيب طبقات OSI والطبقات العليا",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 789,
+      "bytes": 99832
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p097-session-duplex.webp",
+      "page": 97,
+      "rect": [
+        25,
+        260,
+        570,
+        725
+      ],
+      "dpi": 126,
+      "sha256": "41d7db11bede706002f55a13aba8c0347fbfbfe4dfa3b5f68bad7599c9c0f004",
+      "parts": [
+        "upper-layers"
+      ],
+      "caption": "طبقة الجلسة ونوعا التخاطب",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 814,
+      "bytes": 109854
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p098-session-services.webp",
+      "page": 98,
+      "rect": [
+        25,
+        222,
+        570,
+        415
+      ],
+      "dpi": 126,
+      "sha256": "91bb59b19e128ae1340170fd21d6759f9599c28ff0fa2947f322c19ca7128fd4",
+      "parts": [
+        "upper-layers"
+      ],
+      "caption": "خدمات طبقة الجلسة وبروتوكولاتها",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 339,
+      "bytes": 25462
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p099-presentation-definition.webp",
+      "page": 99,
+      "rect": [
+        25,
+        52,
+        570,
+        148
+      ],
+      "dpi": 126,
+      "sha256": "3229a1666a58d3643465c0ef1cd36ecd711690448d190389e35a996aaa3beaaa",
+      "parts": [
+        "presentation-layer"
+      ],
+      "caption": "تعريف طبقة التقديم",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 168,
+      "bytes": 11428
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p099-presentation-tasks.webp",
+      "page": 99,
+      "rect": [
+        25,
+        263,
+        570,
+        500
+      ],
+      "dpi": 126,
+      "sha256": "32620deadc82f37788ebeacb294b54fead853ce75de066abba4bc204d0ab1b4c",
+      "parts": [
+        "presentation-layer"
+      ],
+      "caption": "الترميز والضغط والتشفير",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 415,
+      "bytes": 26338
+    },
+    {
+      "file": "assets/lessons/ict/summary/mobile-p100-application-services.webp",
+      "page": 100,
+      "rect": [
+        25,
+        218,
+        570,
+        700
+      ],
+      "dpi": 126,
+      "sha256": "f2d5bbf7bbd827d436bf9a54431a3f16d000422690d33fbe812839cd81ce6f68",
+      "parts": [
+        "presentation-layer"
+      ],
+      "caption": "طبقة التطبيقات وخدماتها وبروتوكولاتها",
+      "scale": 1.75,
+      "renderer": "PyMuPDF",
+      "width": 955,
+      "height": 844,
+      "bytes": 29632
+    }
+  ]
+}

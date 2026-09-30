@@ -1,0 +1,893 @@
+{
+  "reviewedOn": "2026-09-24",
+  "scope": "The user-supplied 62-page textbook defines scope. No assertion of a separate official Gaza cancellation list.",
+  "sources": {
+    "book": {
+      "file": "assets/books/ict.pdf",
+      "pageCount": 62,
+      "sha256": "4c9fbe32f1b76d840d213badacfb5b7830722d0e3569595a4f2b224544c64aba"
+    },
+    "exams": {
+      "file": "assets/books/exams.pdf",
+      "pageCount": 86,
+      "sha256": "4fdff8b18d8ce8c9dedec604e7e8738ad99b722397fe8ad7490f95a4f8c22ec1"
+    }
+  },
+  "reviewMethod": "All 86 PDF pages were rendered and visually opened by assigned reviewers, including answer keys. Crops preserve original pixels using lossless WebP; handwritten answers and unreadable figures are not reconstructed.",
+  "limits": [
+    "The collection is first-semester mock papers from several directorates, not a Gaza final-exam blueprint.",
+    "No OSI questions occur in the supplied exam collection; those exercises come from the textbook.",
+    "Only selected in-scope question items enter the active course; repeated and out-of-book material remains in the unchanged source PDF.",
+    "Written responses and diagrams use self-review, not automated grading."
+  ],
+  "excludedTopics": [
+    "Detailed forms/report creation, grouping and layout workflows",
+    "SQL GROUP BY/HAVING, aggregate functions other than COUNT, and subquery exercises beyond the supplied book",
+    "CREATE/DROP/GRANT/REVOKE syntax exercises; DDL/DCL definitions remain in scope",
+    "Query Design View assessment beyond familiarization required by printed textbook page 12",
+    "Unrelated wider-edition projects and illegible or answer-marked figures"
+  ],
+  "questionCount": 117,
+  "pages": [
+    {
+      "page": 1,
+      "reviewedVisually": true,
+      "disposition": "Collection cover: first-semester 2024–2025 technology mocks, scientific/industrial. No question.",
+      "questionIds": []
+    },
+    {
+      "page": 2,
+      "reviewedVisually": true,
+      "disposition": "North Hebron 2024/12/24 answer paper: MCQ answer-only table and Course–Classroom–Student schema. Schema/key/type/junction/relationship questions are in scope; unanswered MCQ stems absent, so those answers cannot become questions. Schema not separately selected because other bank coverage exists.",
+      "questionIds": []
+    },
+    {
+      "page": 3,
+      "reviewedVisually": true,
+      "disposition": "Same paper: Android transfer selected; normalization term selected; hybrid applications in scope. Form layouts and report grouping excluded. SQL descending-order stem continues to p4; not selected separately.",
+      "questionIds": [
+        "exam-p03-q1-c",
+        "exam-p03-q2-b-normalization"
+      ]
+    },
+    {
+      "page": 4,
+      "reviewedVisually": true,
+      "disposition": "SELECT/order, parameter DELETE, two-table join in scope. Root-program event/output/input/variable questions in scope but original block figure would be required; not selected. Get/set answer reversal flagged below. MCQ answer-only row unusable as original prompts.",
+      "questionIds": []
+    },
+    {
+      "page": 5,
+      "reviewedVisually": true,
+      "disposition": "DCL versus DML selected. Addition-program trace/input/output/Math questions and trader/order setup in scope but not selected. Forms-operation MCQ answers have no stems and are not used. DCL caption typo flagged.",
+      "questionIds": [
+        "exam-p05-q3-d"
+      ]
+    },
+    {
+      "page": 6,
+      "reviewedVisually": true,
+      "disposition": "Trader/order many-to-many relation, junction ERD, relationship tab, referential integrity, Android/report/AR definitions. Definitions and relationships in scope; key's cascade claim flagged. Diagram-dependent prompts not selected.",
+      "questionIds": []
+    },
+    {
+      "page": 7,
+      "reviewedVisually": true,
+      "disposition": "Native/hybrid comparison and all three project SQL commands selected. iOS features/report/AR definitions in scope but redundant. SQL answer-key mistakes flagged below.",
+      "questionIds": [
+        "exam-p07-q5-c",
+        "exam-p07-q5-d1",
+        "exam-p07-q5-d2",
+        "exam-p07-q5-d3"
+      ]
+    },
+    {
+      "page": 8,
+      "reviewedVisually": true,
+      "disposition": "Android-memory/iOS-security justifications are textbook-era topics but keys overstate claims; not selected. Report sections and Access query icons excluded from assessed selection. SQL design-grid translation reference only under book p12.",
+      "questionIds": []
+    },
+    {
+      "page": 9,
+      "reviewedVisually": true,
+      "disposition": "South Hebron 2024/12/22 answer paper. Seven exact MCQs selected: textbook licensing comparison, relationship tab, conditional DELETE, quoted text type, CSS/hybrid, iOS restrictions, multiwindow. Table-design icon question in scope but not selected. Report grouping and blank-form creation icon excluded.",
+      "questionIds": [
+        "exam-p09-q1-1",
+        "exam-p09-q1-2",
+        "exam-p09-q1-3",
+        "exam-p09-q1-4",
+        "exam-p09-q1-7",
+        "exam-p09-q1-8",
+        "exam-p09-q1-9"
+      ]
+    },
+    {
+      "page": 10,
+      "reviewedVisually": true,
+      "disposition": "Sensors with functions and AND/OR comparison selected. DDL/AR/DBMS definitions and sales/purchase keys/schema in scope but redundant. Complex invoice-key assumptions should not be generalized beyond the paper.",
+      "questionIds": [
+        "exam-p10-q2-b1",
+        "exam-p10-q2-b2"
+      ]
+    },
+    {
+      "page": 11,
+      "reviewedVisually": true,
+      "disposition": "Form/report functional comparison selected. OS language/developer comparison and AR-camera justification in scope but redundant. Add-buttons-to-forms workflow excluded. Sales/purchase ERD not selected.",
+      "questionIds": [
+        "exam-p11-q3-a1-components"
+      ]
+    },
+    {
+      "page": 12,
+      "reviewedVisually": true,
+      "disposition": "Employee conditional DELETE and fixed-amount UPDATE selected. Query-grid interpretation reference only; key contains ambiguous/unqualified Size_id. Car/rental tables supply context for p13 COUNT.",
+      "questionIds": [
+        "exam-p12-q3-b1",
+        "exam-p12-q3-b2"
+      ]
+    },
+    {
+      "page": 13,
+      "reviewedVisually": true,
+      "disposition": "COUNT cars and SQL categories selected. Car/rental keys/junction and phone transfer/native-language facts in scope but redundant. Cascade claim and native executable extensions treated as source-era facts.",
+      "questionIds": [
+        "exam-p13-q4-a5",
+        "exam-p13-q4-b2"
+      ]
+    },
+    {
+      "page": 14,
+      "reviewedVisually": true,
+      "disposition": "Integer versus Single byte-size comparison selected. Employee/department SELECT join, INSERT, date UPDATE and WHERE function in scope but redundant. SELECT answer omits EmpTbl from FROM and does not qualify ambiguous Dep_no; not imported.",
+      "questionIds": [
+        "exam-p14-q5-b1"
+      ]
+    },
+    {
+      "page": 15,
+      "reviewedVisually": true,
+      "disposition": "INSERT failure cases selected. Primary-key, phone-feature and Access-file tradeoff facts in scope but redundant. Key says a table cannot exist without a primary key; inaccurate generalization. Android/iOS memory and virus-immunity assertions require correction; not selected.",
+      "questionIds": [
+        "exam-p15-q6-b1"
+      ]
+    },
+    {
+      "page": 16,
+      "reviewedVisually": true,
+      "disposition": "Three Access components with functions selected. INSERT error-diagnosis stem lacks declared table schema/type, so asserted missing-primary-key error is not uniquely demonstrable; not imported. Parameter DELETE grid is reference only. Data-entry methods in scope but redundant.",
+      "questionIds": [
+        "exam-p16-q6-c2"
+      ]
+    },
+    {
+      "page": 17,
+      "reviewedVisually": true,
+      "disposition": "Hebron 2025/1/15 question page, answers p23. AR/report-function/Components MCQs, ERD/App Inventor definitions, insert failures in scope but redundant. Report grouping/form layouts excluded; mixed property table includes Ball/ImageSprite speed outside book, so whole table not imported.",
+      "questionIds": []
+    },
+    {
+      "page": 18,
+      "reviewedVisually": true,
+      "disposition": "Answers p24. Rotation sensor; four Product SQL commands; nonnumeric types; transfers; label versus textbox output in scope. ImageSprite Heading and form background workflow excluded. Other prompts not selected because bank coverage already exists.",
+      "questionIds": []
+    },
+    {
+      "page": 19,
+      "reviewedVisually": true,
+      "disposition": "Answers p25. SELECT temporary result, Image.Picture, default Access key, record/DDL/VR definitions, database-creation screenshot and root conditional blocks in scope; no new selection. Query/form interface icons reference/excluded as appropriate.",
+      "questionIds": []
+    },
+    {
+      "page": 20,
+      "reviewedVisually": true,
+      "disposition": "Answers p26. Memo >255, Raise to Wake, arrangements, emulator and library ERD/keys in scope; not selected. Query-design grid is reference only. Project-naming/extra interface details not promoted without book confirmation.",
+      "questionIds": []
+    },
+    {
+      "page": 21,
+      "reviewedVisually": true,
+      "disposition": "Answers p27. Build menu and license MCQs; data-entry methods; area-program event/output/trace use in-scope arithmetic/condition skills. No new selection. Report logo/form title/button wizard workflows excluded.",
+      "questionIds": []
+    },
+    {
+      "page": 22,
+      "reviewedVisually": true,
+      "disposition": "Answers p28. HTML5, Windows Phone language, phone comparison, many-to-many decomposition, volume arithmetic/conditional trace, and INSERT SELECT/UPDATE purposes are in scope. Detailed form sections excluded. Mixed report/sort MCQ not selected.",
+      "questionIds": []
+    },
+    {
+      "page": 23,
+      "reviewedVisually": true,
+      "disposition": "Answer page to p17 fully reviewed. Contains AR/reports/Components answers, ERD/App Inventor definitions, key/type/null insertion failures. Form layouts and Ball/ImageSprite properties excluded.",
+      "questionIds": []
+    },
+    {
+      "page": 24,
+      "reviewedVisually": true,
+      "disposition": "Answer page to p18 fully reviewed. Product UPDATE/ORDER/DELETE/INSERT key, sensor/transfer/type facts and label output justification. Query values/types and 8% discount are coherent. ImageSprite and form-background answers excluded.",
+      "questionIds": []
+    },
+    {
+      "page": 25,
+      "reviewedVisually": true,
+      "disposition": "Answer page to p19 fully reviewed: SELECT, Picture, default key, definitions, create-file name/location, Control/comparison/TextBox.Text. Query-wizard interface icons not assessed.",
+      "questionIds": []
+    },
+    {
+      "page": 26,
+      "reviewedVisually": true,
+      "disposition": "Answer page to p20 fully reviewed: Memo, Raise to Wake, arrangements/emulator and library ERD. Query-grid OR condition and 6% UPDATE are coherent. No new selection.",
+      "questionIds": []
+    },
+    {
+      "page": 27,
+      "reviewedVisually": true,
+      "disposition": "Answer page to p21 fully reviewed: area formula yields 16 and rectangle for 4,4,4; events/output correct. Form/report workflows excluded.",
+      "questionIds": []
+    },
+    {
+      "page": 28,
+      "reviewedVisually": true,
+      "disposition": "Answer page to p22 fully reviewed: native skills, many-to-many, volume trace result ordinary for 3,3, INSERT SELECT and fixed UPDATE. Form sections excluded.",
+      "questionIds": []
+    },
+    {
+      "page": 29,
+      "reviewedVisually": true,
+      "disposition": "Nablus 2025/1/6 photographed paper, key p35. Single size and SET command in scope; Access table creation/iOS features in scope. Canvas group and tangent block exercise outside confirmed book operations; not selected.",
+      "questionIds": []
+    },
+    {
+      "page": 30,
+      "reviewedVisually": true,
+      "disposition": "Key p35–36. DCL MCQ, referential integrity/AR, library schema and native-app comparison in scope. Icon/form material excluded. Modulo MCQ block small/unclear, so not transcribed.",
+      "questionIds": []
+    },
+    {
+      "page": 31,
+      "reviewedVisually": true,
+      "disposition": "Key p36. Rotation sensor, transfers, sales-table SQL, floor trace in scope; no new selection. Form layouts excluded. Several small scan labels prevent confident verbatim transcription without additional enlargements.",
+      "questionIds": []
+    },
+    {
+      "page": 32,
+      "reviewedVisually": true,
+      "disposition": "Key p36–37. AR, composite-key action, table/query comparison, normalization, Pythagorean block trace, engineer parameter SELECT, COUNT and OR UPDATE in scope; no new selection. Questions are available as future source-faithful additions with original figure crops.",
+      "questionIds": []
+    },
+    {
+      "page": 33,
+      "reviewedVisually": true,
+      "disposition": "Key p37. iCloud and Memo type in scope. Form wizard/report sections and ball animation (speed/heading/coordinates/out-of-bounds) excluded. Absolute iOS immunity justification inaccurate.",
+      "questionIds": []
+    },
+    {
+      "page": 34,
+      "reviewedVisually": true,
+      "disposition": "Key p37. One-to-one relation, forms-as-input definition, iTunes/SQL/foreign-key purposes, initialization/click/visibility program in scope. Query-design screenshot reference only. No new selection.",
+      "questionIds": []
+    },
+    {
+      "page": 35,
+      "reviewedVisually": true,
+      "disposition": "Nablus answer page for questions 1–2 fully reviewed. Get/set explanations here are correct. Integrity wording again conflates cascades with basic integrity. Excluded canvas/tangent answers retained only in source, not imported.",
+      "questionIds": []
+    },
+    {
+      "page": 36,
+      "reviewedVisually": true,
+      "disposition": "Nablus answer page for questions 2–4 fully reviewed. Native extension/transfer/floor/normalization/Pythagorean answers. Three-table SELECT key presents either one of two joins as alternative complete answers; each alone leaves a missing join. Not imported.",
+      "questionIds": []
+    },
+    {
+      "page": 37,
+      "reviewedVisually": true,
+      "disposition": "Nablus final key fully reviewed. Parameter SELECT/COUNT/OR UPDATE, iCloud and initialization/click visibility answers. Form/report/ball-answer sections excluded.",
+      "questionIds": []
+    },
+    {
+      "page": 38,
+      "reviewedVisually": true,
+      "disposition": "Birzeit photographed first page, answers pp45–46 (reviewed by second agent). Android openness/set assignment in scope. Ceiling+floor block uses an additional ceiling operation not confirmed in supplied book; not selected.",
+      "questionIds": []
+    },
+    {
+      "page": 39,
+      "reviewedVisually": true,
+      "disposition": "Birzeit second page, answers pp46–48. Permissions, form definition, AR/iCloud/scroll/native-hybrid/transfers/INSERT SELECT in scope but redundant. GROUP BY/HAVING absent supplied book, detailed report icons, extra screen-navigation property questions excluded from selection.",
+      "questionIds": []
+    },
+    {
+      "page": 40,
+      "reviewedVisually": true,
+      "disposition": "Birzeit third page, answers pp48–49. Text versus Memo, DB definition, * selection in scope. UPDATE design-grid conversion reference only. Chart insertion/detail-report interface excluded.",
+      "questionIds": []
+    },
+    {
+      "page": 41,
+      "reviewedVisually": true,
+      "disposition": "Birzeit fourth page, answers pp49–52. Educational-center schema with duplicate training serial, ERD/keys/junction, SQL commands, INSERT failures, Number/AutoNumber and build steps in scope. SQL ASC/DDL/<> MCQs in scope. Not selected because covered by B/book originals.",
+      "questionIds": []
+    },
+    {
+      "page": 42,
+      "reviewedVisually": true,
+      "disposition": "Birzeit fifth page, answers pp53–54. Visibility/Enabled and condition tracing, Designer/Blocks, Logic false and mutator; key/integrity/junction justifications in scope. Would require clean original block crop; not selected in this handoff.",
+      "questionIds": []
+    },
+    {
+      "page": 43,
+      "reviewedVisually": true,
+      "disposition": "Birzeit sixth page, answers pp54–55. Hospital INSERT duplicate key and field-order/type errors, Memo length in scope. Detailed report-layout and query-icon prompts excluded. No new selection.",
+      "questionIds": []
+    },
+    {
+      "page": 44,
+      "reviewedVisually": true,
+      "disposition": "End of unanswered Birzeit paper: engineer update-design screenshot, key/type/SQL/delete and reasons. Shared answer mapping with agent A; do not duplicate its bank.",
+      "questionIds": []
+    },
+    {
+      "page": 45,
+      "reviewedVisually": true,
+      "disposition": "Answered Birzeit p1: Android, design icon, set; calculator ceiling/floor blocks. Answer evidence for earlier original.",
+      "questionIds": []
+    },
+    {
+      "page": 46,
+      "reviewedVisually": true,
+      "disposition": "Birzeit calculator continuation and definitions. Exclude GROUP BY/HAVING, report grouping; open-new-screen item outside mapped source instruction. Retain form/AR/iCloud/scroll meanings in A bank.",
+      "questionIds": []
+    },
+    {
+      "page": 47,
+      "reviewedVisually": true,
+      "disposition": "Birzeit native/hybrid and transfer comparison; append order; report icon excluded. Answer evidence shared with A.",
+      "questionIds": []
+    },
+    {
+      "page": 48,
+      "reviewedVisually": true,
+      "disposition": "Birzeit rounded shape, wage update screenshot, forms/report definitions, text/memo. Original wage screenshot is meaningful SQL support, but detailed report workflows are not.",
+      "questionIds": []
+    },
+    {
+      "page": 49,
+      "reviewedVisually": true,
+      "disposition": "Birzeit database definition, key/asterisk, educational schema error. Drawing insertion menu excluded. Answer evidence shared with A.",
+      "questionIds": []
+    },
+    {
+      "page": 50,
+      "reviewedVisually": true,
+      "disposition": "Birzeit ERD, relation/key answers, SQL multimedia course join. SQL printed missing Boolean connectors is defective; use corrected answer transparently.",
+      "questionIds": []
+    },
+    {
+      "page": 51,
+      "reviewedVisually": true,
+      "disposition": "Birzeit fees query, insertion, course deletion, insertion-failure reasons. Fees query selects unnecessary fields and missing AND; INSERT key ordering inconsistent; do not copy as executable code.",
+      "questionIds": []
+    },
+    {
+      "page": 52,
+      "reviewedVisually": true,
+      "disposition": "Birzeit foreign-key role, Number/AutoNumber, build order; ASC, DDL, <>. Retain via A.",
+      "questionIds": []
+    },
+    {
+      "page": 53,
+      "reviewedVisually": true,
+      "disposition": "Birzeit answered Visible/Enabled branch, Designer/Blocks, tools, Logic, conditional expansion. Diagram is clean but A has unanswered equivalent.",
+      "questionIds": []
+    },
+    {
+      "page": 54,
+      "reviewedVisually": true,
+      "disposition": "Birzeit integrity/keys/junction justifications and two rejected INSERT examples. Answer evidence shared with A.",
+      "questionIds": []
+    },
+    {
+      "page": 55,
+      "reviewedVisually": true,
+      "disposition": "Birzeit memo, update screenshot and key/types/deletion. Exclude report layout and query-action icon recall. Critical wrong printed SQL answer documented below.",
+      "questionIds": []
+    },
+    {
+      "page": 56,
+      "reviewedVisually": true,
+      "disposition": "Birzeit reasons for English table names and using Access. Answers for p44, shared with A.",
+      "questionIds": []
+    },
+    {
+      "page": 57,
+      "reviewedVisually": true,
+      "disposition": "Ramallah/Bireh 2024/25 scientific/industrial paper p1. Comparison, hybrid languages, form definition, floor, types, query fields, report purpose, AR, library ERD selected. GUI append warning and button workflow omitted.",
+      "questionIds": [
+        "exam-p57-q1-a",
+        "exam-p57-q1-b1",
+        "exam-p57-q1-b2",
+        "exam-p57-q1-b3",
+        "exam-p57-q1-b4",
+        "exam-p57-q1-c1",
+        "exam-p57-q1-d1",
+        "exam-p57-q2-a-forms",
+        "exam-p57-q2-a-ar",
+        "exam-p57-q2-b"
+      ]
+    },
+    {
+      "page": 58,
+      "reviewedVisually": true,
+      "disposition": "Ramallah p2. Calculator operation event, layout, OR, integrity, hospital schema and four SQL queries selected. Delete icon recall omitted.",
+      "questionIds": [
+        "exam-p58-q2-c",
+        "exam-p58-q2-d2",
+        "exam-p58-q2-d3",
+        "exam-p58-q2-d4",
+        "exam-p58-q3-a1",
+        "exam-p58-q3-a2",
+        "exam-p58-q3-a3",
+        "exam-p58-q3-b1",
+        "exam-p58-q3-b2",
+        "exam-p58-q3-b3",
+        "exam-p58-q3-b4"
+      ]
+    },
+    {
+      "page": 59,
+      "reviewedVisually": true,
+      "disposition": "Ramallah p3. COUNT/INSERT/DELETE result tracing, iTunes, key tab, scroll, reports, iOS features/extensions, Designer components selected. Report grouping excluded; HTML logo figure omitted as redundant.",
+      "questionIds": [
+        "exam-p59-q3-c1",
+        "exam-p59-q3-c2",
+        "exam-p59-q3-c3",
+        "exam-p59-q3-d1",
+        "exam-p59-q3-d2",
+        "exam-p59-q4-a-scroll",
+        "exam-p59-q4-b2",
+        "exam-p59-q4-c1",
+        "exam-p59-q4-c2",
+        "exam-p59-q4-d"
+      ]
+    },
+    {
+      "page": 60,
+      "reviewedVisually": true,
+      "disposition": "Ramallah p4. Math root/power trace and DCL selected. Report wizard/button workflows excluded.",
+      "questionIds": [
+        "exam-p60-q5-c",
+        "exam-p60-q5-d3"
+      ]
+    },
+    {
+      "page": 61,
+      "reviewedVisually": true,
+      "disposition": "Ramallah p5. MySQL wording correction, modulo, Access properties, Picture, Layout, initialization and VR sensors selected. Form closure menu excluded; standalone max block not required by provided book's calculator exercises. iOS immunity-to-virus wording not republished as absolute fact.",
+      "questionIds": [
+        "exam-p61-q6-a2",
+        "exam-p61-q6-a3",
+        "exam-p61-q6-b",
+        "exam-p61-q6-c2",
+        "exam-p61-q6-c3",
+        "exam-p61-q6-c4",
+        "exam-p61-q6-d3"
+      ]
+    },
+    {
+      "page": 62,
+      "reviewedVisually": true,
+      "disposition": "Ramallah answer key p1: confirms questions from 57. iOS memory simplification recorded.",
+      "questionIds": []
+    },
+    {
+      "page": 63,
+      "reviewedVisually": true,
+      "disposition": "Ramallah answer key p2: definitions/library ERD/calculator and MCQs; confirms 57–58.",
+      "questionIds": []
+    },
+    {
+      "page": 64,
+      "reviewedVisually": true,
+      "disposition": "Ramallah answer key p3: full hospital SQL, types, COUNT4, duplicate4, deletion, iTunes/key tab; confirms 58–59.",
+      "questionIds": []
+    },
+    {
+      "page": 65,
+      "reviewedVisually": true,
+      "disposition": "Ramallah answer key p4: scroll, report grouping (excluded), iOS list/extensions and Designer UI; confirms 59.",
+      "questionIds": []
+    },
+    {
+      "page": 66,
+      "reviewedVisually": true,
+      "disposition": "Ramallah answer key p5: report workflows (excluded), Pythagoras5 and DCL; confirms 60.",
+      "questionIds": []
+    },
+    {
+      "page": 67,
+      "reviewedVisually": true,
+      "disposition": "Ramallah answer key p6: modulo3, MySQL, Access, App Inventor, historical phone/VR reasons; confirms 61.",
+      "questionIds": []
+    },
+    {
+      "page": 68,
+      "reviewedVisually": true,
+      "disposition": "Jenin 2025/01/14 paper p1. Source has handwriting including wrong selected answers. Food sales schema selected; repeated phone and extension items omitted. Report grouping excluded.",
+      "questionIds": [
+        "exam-p68-q1-c"
+      ]
+    },
+    {
+      "page": 69,
+      "reviewedVisually": true,
+      "disposition": "Jenin p2. File-one tradeoff, accelerometer, four SQL tasks selected. Default-sort MCQ is ambiguous (source implies implicit order) and excluded; DROP/DDL actual command questions outside book excluded. Form categories excluded.",
+      "questionIds": [
+        "exam-p69-q2-b",
+        "exam-p69-q3-a2",
+        "exam-p69-q3-d1",
+        "exam-p69-q3-d2",
+        "exam-p69-q3-d3",
+        "exam-p69-q3-d4"
+      ]
+    },
+    {
+      "page": 70,
+      "reviewedVisually": true,
+      "disposition": "Jenin p3. VR requirement and Memo rationale selected. App Inventor circle figure handwritten/unclear: not reused. Repeated modulo/key/field-purpose tasks omitted.",
+      "questionIds": [
+        "exam-p70-q4-b1",
+        "exam-p70-q4-b2"
+      ]
+    },
+    {
+      "page": 71,
+      "reviewedVisually": true,
+      "disposition": "Jenin p4. Rename, Book/Subject key/type/relations/COUNT/UPDATE/SELECT, set/get, Label, file suffix selected. GUI query icons omitted. Handwritten annotations not used as answer authority.",
+      "questionIds": [
+        "exam-p71-q5-a3",
+        "exam-p71-q5-b1",
+        "exam-p71-q5-b4",
+        "exam-p71-q5-b5",
+        "exam-p71-q5-b6",
+        "exam-p71-q5-c",
+        "exam-p71-q6-a1",
+        "exam-p71-q6-a3"
+      ]
+    },
+    {
+      "page": 72,
+      "reviewedVisually": true,
+      "disposition": "Jenin p5. Report sections excluded; small App Inventor figure and dialog too degraded/annotated for robust exact transcription, so omitted. AR application name is redundant.",
+      "questionIds": []
+    },
+    {
+      "page": 73,
+      "reviewedVisually": true,
+      "disposition": "Tubas 2025/01/12 p1. Double size, one-many relation, multiple windows selected. Repeated MySQL/file suffix omitted; form tab excluded; obscure photographed icon and marked/obscured AR choice omitted.",
+      "questionIds": [
+        "exam-p73-q1-4",
+        "exam-p73-q1-5",
+        "exam-p73-q1-8"
+      ]
+    },
+    {
+      "page": 74,
+      "reviewedVisually": true,
+      "disposition": "Tubas p2. Travel ERD, DBMS popularity, Android source, doctor insertion/deletion/join selected. Form buttons excluded. The original doctor relationship drawing has no example data; schema transcribed into field lists.",
+      "questionIds": [
+        "exam-p74-q2-b",
+        "exam-p74-q2-d1",
+        "exam-p74-q2-d2",
+        "exam-p74-q3-b1",
+        "exam-p74-q3-b2",
+        "exam-p74-q3-b3"
+      ]
+    },
+    {
+      "page": 75,
+      "reviewedVisually": true,
+      "disposition": "Tubas p3. Original BMI figure and three subquestions selected; verified final label «زيادة مفرطة» with enlarged render. Report wizard excluded; repeated sensor/source language/definition fragments omitted.",
+      "questionIds": [
+        "exam-p75-q4-b"
+      ]
+    },
+    {
+      "page": 76,
+      "reviewedVisually": true,
+      "disposition": "Tubas p4. SQL categories, insertion failures, date-sort and COUNT selected. Product multi-field UPDATE screenshot ultimately excluded because assessment depends on reading the Design View grid, reference-only under book p12. Comparison block has handwritten variable names and unclear literal spelling; omitted. Query GUI procedure beyond SQL excluded.",
+      "questionIds": [
+        "exam-p76-q5-a1",
+        "exam-p76-q5-b1",
+        "exam-p76-q5-b2a",
+        "exam-p76-q5-b2b"
+      ]
+    },
+    {
+      "page": 77,
+      "reviewedVisually": true,
+      "disposition": "Tubas p5. Interpret SELECT and append SELECT; Text, Label and integrity uses selected. Report section workflow excluded; repeated AR definition omitted.",
+      "questionIds": [
+        "exam-p77-q6-b1a",
+        "exam-p77-q6-b1b",
+        "exam-p77-q6-c2a",
+        "exam-p77-q6-c2b",
+        "exam-p77-q6-c2c"
+      ]
+    },
+    {
+      "page": 78,
+      "reviewedVisually": true,
+      "disposition": "Qabatiya 2024/12/31 p1. Append, TextBox and arithmetic-expression figure selected. Form-close workflow excluded. Repeated file suffix/multitasking/iOS transfer MCQs omitted.",
+      "questionIds": [
+        "exam-p78-q1-2",
+        "exam-p78-q1-4",
+        "exam-p78-q1-5"
+      ]
+    },
+    {
+      "page": 79,
+      "reviewedVisually": true,
+      "disposition": "Qabatiya p2. Visible/Columns/Picture and parameter SELECT/join/UPDATE/INSERT selected. Repeated append/delete tasks omitted.",
+      "questionIds": [
+        "exam-p79-q1-8",
+        "exam-p79-q1-9",
+        "exam-p79-q1-10",
+        "exam-p79-q2-1a",
+        "exam-p79-q2-1b",
+        "exam-p79-q2-1c",
+        "exam-p79-q2-1d"
+      ]
+    },
+    {
+      "page": 80,
+      "reviewedVisually": true,
+      "disposition": "Qabatiya p3. App creation steps selected. AR/report/Android definitions redundant. Aurasma detailed properties outside supplied pages omitted. Query GUI screenshot same SQL concepts already represented; omitted to avoid excess screenshot trivia.",
+      "questionIds": [
+        "exam-p80-q2-4"
+      ]
+    },
+    {
+      "page": 81,
+      "reviewedVisually": true,
+      "disposition": "Qabatiya p4. Report wizard and GUI icon recall excluded; historical app extension/language table redundant.",
+      "questionIds": []
+    },
+    {
+      "page": 82,
+      "reviewedVisually": true,
+      "disposition": "Yatta scientific/industrial p1 (2024/12/24). SQL categories selected. Report grouping excluded. Repeated query definition, keys, insertion-failure/transfer/VR/glossary items omitted. Small update screenshot can be read but other clean equivalent retained.",
+      "questionIds": [
+        "exam-p82-q1-c1"
+      ]
+    },
+    {
+      "page": 83,
+      "reviewedVisually": true,
+      "disposition": "Yatta p2. APK format MCQ selected. Form wizard, duplicated native/hybrid/set-get questions omitted. Programming and schema figure text too faint for exact transcription without stronger image; not invented.",
+      "questionIds": [
+        "exam-p83-q3-a2"
+      ]
+    },
+    {
+      "page": 84,
+      "reviewedVisually": true,
+      "disposition": "Yatta p3. OR, largest integer type, negative floor figure selected. Form actions excluded. SQL above-all-other-records query requires subquery outside supplied book and excluded. Clean equivalent SQL update/select/append items already retained.",
+      "questionIds": [
+        "exam-p84-q4-a2",
+        "exam-p84-q5-a1",
+        "exam-p84-q5-a3"
+      ]
+    },
+    {
+      "page": 85,
+      "reviewedVisually": true,
+      "disposition": "Yatta p4. Single size selected. Report workflow excluded. Other repeated/low-legibility diagram/icon questions omitted; images not silently reconstructed.",
+      "questionIds": [
+        "exam-p85-q6-a3"
+      ]
+    },
+    {
+      "page": 86,
+      "reviewedVisually": true,
+      "disposition": "Publisher advertisement/QR/social links only; no curriculum or exam questions.",
+      "questionIds": []
+    }
+  ],
+  "figures": [
+    {
+      "file": "assets/lessons/ict/exams/exam-p57-q1-b3.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 57,
+      "rect": [
+        198.0,
+        369.33,
+        300.67,
+        393.33
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 308,
+      "height": 72,
+      "sha256": "dbe40332e85d281367c5a9f1faaecb6c3fc1c1a63a826e7f7b7b94c280dae2a0"
+    },
+    {
+      "file": "assets/lessons/ict/exams/exam-p58-q2-c.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 58,
+      "rect": [
+        68.0,
+        100.67,
+        330.67,
+        209.33
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 788,
+      "height": 326,
+      "sha256": "364c432ab92dee640d057f54e66445d02259e54d8d5a4734fba4d31355820ede"
+    },
+    {
+      "file": "assets/lessons/ict/exams/exam-p59-q4-d.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 59,
+      "rect": [
+        96.0,
+        548.0,
+        247.33,
+        714.67
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 454,
+      "height": 500,
+      "sha256": "089285c8b9822f0aa2fa4aad6d668475fcd61a4c6d7bab1ababb969395631a38",
+      "originalSha256": "a78de5b33fda62a54b72d5703bf73d1d551c6145108dd61b2668d54433ce826b"
+    },
+    {
+      "file": "assets/lessons/ict/exams/exam-p60-q5-c.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 60,
+      "rect": [
+        58.0,
+        425.33,
+        512.67,
+        497.33
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 1364,
+      "height": 216,
+      "sha256": "ff18db8f2b3fa7b3817fc6e003457504c8c65a9e85608a9e7dac9378940f3901",
+      "originalSha256": "e884b96c1eaa3af65bf21315948571ac52feb355e42bd1ab9ea4ed60463db316"
+    },
+    {
+      "file": "assets/lessons/ict/exams/exam-p61-q6-a3.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 61,
+      "rect": [
+        54.67,
+        204.67,
+        262.67,
+        230.0
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 624,
+      "height": 76,
+      "sha256": "0e0ce9abdbe19b097f6be89977e07b77d326609605b1d01da13b9ee9cec3f8c7"
+    },
+    {
+      "file": "assets/lessons/ict/exams/exam-p75-q4-b.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 75,
+      "rect": [
+        57.33,
+        337.33,
+        457.33,
+        528.0
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 1200,
+      "height": 572,
+      "sha256": "fd8643fde542bd5673c120099fbc59345d0c9c2856d677021debb3a915e490d0"
+    },
+    {
+      "file": "assets/lessons/ict/exams/exam-p78-q1-5.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 78,
+      "rect": [
+        86.67,
+        497.33,
+        398.0,
+        542.67
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 934,
+      "height": 136,
+      "sha256": "4c83e84875e33027a6d6bd62f2a7259305ff667d88388eb78000a81f3f7a617f"
+    },
+    {
+      "file": "assets/lessons/ict/exams/exam-p84-q5-a3.webp",
+      "sourceDocument": "exams",
+      "sourcePage": 84,
+      "rect": [
+        292.67,
+        680.0,
+        423.33,
+        707.33
+      ],
+      "units": "pdf-points",
+      "renderDpi": 216,
+      "width": 392,
+      "height": 82,
+      "sha256": "0aabce1d2f355e3584188733f365fbdbd138ca095bdbcea7476209f3c65e3549"
+    },
+    {
+      "file": "assets/lessons/ict/exams/book-p12-center-solution.webp",
+      "sourceDocument": "book",
+      "sourcePage": 12,
+      "rect": [
+        198,
+        386,
+        1028,
+        679
+      ],
+      "units": "rendered-pixels",
+      "renderDpi": 150,
+      "width": 830,
+      "height": 293,
+      "sha256": "3bbb35af7e8a5019bac5f0aad4c650390817f09e29ea5b50b57b9f87175c76a6"
+    },
+    {
+      "file": "assets/lessons/ict/exams/book-p54-bmi-conditions.webp",
+      "sourceDocument": "book",
+      "sourcePage": 54,
+      "rect": [
+        363,
+        259,
+        808,
+        529
+      ],
+      "units": "rendered-pixels",
+      "renderDpi": 140,
+      "width": 445,
+      "height": 270,
+      "sha256": "bacb25bc04839f8cb8144152b914b450d75cd1d873cbd653b7d0820f5f52b3b4",
+      "originalSha256": "ee89ad2f944bee8882149b65b754aa007786dfcb448ad9b66e848f95956e9bd2"
+    },
+    {
+      "file": "assets/lessons/ict/exams/book-p54-bmi-formula.webp",
+      "sourceDocument": "book",
+      "sourcePage": 54,
+      "rect": [
+        417,
+        680,
+        855,
+        744
+      ],
+      "units": "rendered-pixels",
+      "renderDpi": 140,
+      "width": 438,
+      "height": 64,
+      "sha256": "8f37ac6f5fd7365db13470217597ee55e7458bff22339e836835f2a8071b1e0e"
+    }
+  ],
+  "answerKeyNotes": [
+    "PDF pp4–5 reverse the descriptions under `get global root` and `set global root to`. Correct: get reads, set assigns. Do not reproduce the printed key as authoritative.",
+    "PDF p5 prints `DDL – Data Control Language` in an answer caption. The question correctly asks DCL. Imported comparison explicitly flags the typo.",
+    "PDF pp6,13,35 describe cascading updates/deletes as inherent to referential integrity. Integrity prevents orphan references; cascades require their own enabled options.",
+    "PDF p7 Q5/d2 key uses `project_tbl` although table is `project`, and `<=1500` although prompt says less than 1500. Corrected solution and exact conflict recorded in selected entry.",
+    "PDF p7 Q5/d3 key selects `proj_no` although names `proj_name` are requested, and uses `>=` instead of `>`. Corrected and visibly identified in selected entry.",
+    "PDF p9 quoted-value MCQ contains malformed `SELECT FROM ...` without a projection. Original stem retained, and limitation disclosed; item assesses quoted value type only.",
+    "PDF p14 employee/department key omits one source table from FROM and leaves common field Dep_no unqualified. Do not use its text as a model answer.",
+    "PDF p15 says there cannot be a database table without a primary key. A primary key is essential to the relational design expected here, but Access can store a table without one; avoid universal software claim.",
+    "PDF p16 claims INSERT fails because no primary-key value is supplied, but the prompt declares neither table schema nor whether the key is AutoNumber. Not enough context for a uniquely justified error; no question imported.",
+    "PDF p36 supplies alternative incomplete joins for a three-table query. A correct query needs both relationships together.",
+    "Phone security and memory keys use historical simplifications. App-store checks do not guarantee immunity to viruses, and iOS does free memory. Do not expand these claims into current technical guarantees."
+  ],
+  "delivery": "Runtime crops preserve their original dimensions; selected files are compressed after visual/error-bound checks. originalSha256 records the archived original when encoding changes."
+}

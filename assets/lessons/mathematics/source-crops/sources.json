@@ -1,0 +1,7890 @@
+[
+  {
+    "file": "math-book-p005-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          40.741,
+          457.037,
+          529.63,
+          508.148
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p005-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          40.741,
+          571.111,
+          529.63,
+          612.593
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p005-ex1-b-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          40.741,
+          457.037,
+          529.63,
+          532.593
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p005-ex1-b-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          40.741,
+          594.074,
+          529.63,
+          638.519
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p005-ex1-c-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          40.741,
+          457.037,
+          529.63,
+          555.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p005-ex1-c-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          40.741,
+          623.704,
+          529.63,
+          674.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p006-ex2-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          40.741,
+          357.037,
+          529.63,
+          427.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p006-ex2-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          40.741,
+          468.148,
+          529.63,
+          585.926
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p006-ex2-b-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          40.741,
+          357.037,
+          529.63,
+          451.111
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p006-ex2-b-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          40.741,
+          602.963,
+          529.63,
+          637.778
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p009-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          40.741,
+          276.296,
+          529.63,
+          311.852
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p009-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          40.741,
+          308.889,
+          529.63,
+          345.926
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p009-ex1-b-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          40.741,
+          276.296,
+          529.63,
+          311.852
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p009-ex1-b-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          40.741,
+          328.148,
+          529.63,
+          364.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p009-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          40.741,
+          510.37,
+          529.63,
+          537.778
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p009-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          40.741,
+          537.037,
+          529.63,
+          574.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p010-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 10,
+        "rect": [
+          40.741,
+          117.778,
+          529.63,
+          145.926
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p010-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 10,
+        "rect": [
+          40.741,
+          153.333,
+          529.63,
+          227.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p012-ex9-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 12,
+        "rect": [
+          40.741,
+          211.111,
+          529.63,
+          304.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p012-ex9-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 12,
+        "rect": [
+          40.741,
+          317.778,
+          529.63,
+          486.667
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p015-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          40.741,
+          211.852,
+          529.63,
+          243.704
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p015-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          40.741,
+          246.667,
+          529.63,
+          344.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p015-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          40.741,
+          407.407,
+          529.63,
+          451.852
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p015-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          40.741,
+          446.667,
+          529.63,
+          548.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p016-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 16,
+        "rect": [
+          40.741,
+          114.074,
+          529.63,
+          152.593
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p016-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 16,
+        "rect": [
+          40.741,
+          165.185,
+          529.63,
+          245.926
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p017-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 17,
+        "rect": [
+          40.741,
+          374.815,
+          529.63,
+          422.963
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p017-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 17,
+        "rect": [
+          40.741,
+          428.889,
+          529.63,
+          507.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p017-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 17,
+        "rect": [
+          40.741,
+          500.741,
+          529.63,
+          540.741
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p017-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 17,
+        "rect": [
+          40.741,
+          549.63,
+          529.63,
+          633.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p018-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 18,
+        "rect": [
+          40.741,
+          163.704,
+          529.63,
+          203.704
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p018-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 18,
+        "rect": [
+          40.741,
+          210.37,
+          529.63,
+          357.778
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p020-ex5-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 20,
+        "rect": [
+          40.741,
+          47.407,
+          529.63,
+          93.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p020-ex5-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 20,
+        "rect": [
+          40.741,
+          97.037,
+          529.63,
+          215.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p022-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 22,
+        "rect": [
+          40.741,
+          392.593,
+          529.63,
+          442.963
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p022-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 22,
+        "rect": [
+          40.741,
+          460,
+          529.63,
+          517.778
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p022-ex1-b-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 22,
+        "rect": [
+          40.741,
+          392.593,
+          529.63,
+          442.963
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p022-ex1-b-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 22,
+        "rect": [
+          40.741,
+          502.963,
+          529.63,
+          594.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p022-ex1-c-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 22,
+        "rect": [
+          40.741,
+          392.593,
+          529.63,
+          442.963
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p022-ex1-c-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 22,
+        "rect": [
+          40.741,
+          578.519,
+          529.63,
+          682.222
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p023-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 23,
+        "rect": [
+          40.741,
+          385.926,
+          529.63,
+          442.963
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p023-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 23,
+        "rect": [
+          40.741,
+          448.148,
+          529.63,
+          610.37
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p027-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          40.741,
+          425.185,
+          529.63,
+          475.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p027-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          40.741,
+          481.481,
+          529.63,
+          593.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p027-ex1-b-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          40.741,
+          425.185,
+          529.63,
+          475.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p027-ex1-b-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          40.741,
+          597.037,
+          529.63,
+          654.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p028-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 28,
+        "rect": [
+          40.741,
+          45.926,
+          529.63,
+          88.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p028-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 28,
+        "rect": [
+          40.741,
+          86.667,
+          529.63,
+          213.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p030-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 30,
+        "rect": [
+          40.741,
+          190.37,
+          529.63,
+          234.074
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p030-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 30,
+        "rect": [
+          40.741,
+          236.296,
+          529.63,
+          369.63
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p030-ex1-b-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 30,
+        "rect": [
+          40.741,
+          190.37,
+          529.63,
+          234.074
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p030-ex1-b-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 30,
+        "rect": [
+          40.741,
+          236.296,
+          529.63,
+          369.63
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p031-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 31,
+        "rect": [
+          40.741,
+          47.407,
+          529.63,
+          95.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p031-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 31,
+        "rect": [
+          40.741,
+          114.815,
+          529.63,
+          261.481
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p037-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 37,
+        "rect": [
+          237.037,
+          280.741,
+          529.63,
+          334.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p037-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 37,
+        "rect": [
+          237.037,
+          350.37,
+          529.63,
+          437.778
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p037-ex1-figure.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 37,
+        "rect": [
+          65.185,
+          273.333,
+          229.63,
+          388.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p039-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          40.741,
+          49.63,
+          529.63,
+          75.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p039-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          40.741,
+          87.407,
+          529.63,
+          225.185
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p041-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 41,
+        "rect": [
+          40.741,
+          357.037,
+          529.63,
+          451.852
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p041-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 41,
+        "rect": [
+          40.741,
+          448.148,
+          529.63,
+          674.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p046-ex8-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 46,
+        "rect": [
+          40.741,
+          140,
+          529.63,
+          174.074
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p046-ex8-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 46,
+        "rect": [
+          40.741,
+          194.074,
+          529.63,
+          464.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p049-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 49,
+        "rect": [
+          40.741,
+          462.963,
+          529.63,
+          497.037
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p049-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 49,
+        "rect": [
+          40.741,
+          505.926,
+          529.63,
+          677.778
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p050-ex4-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 50,
+        "rect": [
+          40.741,
+          49.63,
+          529.63,
+          82.963
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p050-ex4-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 50,
+        "rect": [
+          40.741,
+          91.852,
+          529.63,
+          292.593
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p054-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 54,
+        "rect": [
+          40.741,
+          96.296,
+          529.63,
+          128.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p054-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 54,
+        "rect": [
+          40.741,
+          145.926,
+          529.63,
+          367.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p055-ex4-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 55,
+        "rect": [
+          40.741,
+          560,
+          529.63,
+          590.37
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p055-ex4-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 55,
+        "rect": [
+          40.741,
+          605.185,
+          529.63,
+          677.778
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p055-ex4-answer-2.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 56,
+        "rect": [
+          40.741,
+          47.407,
+          529.63,
+          185.926
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p055-ex4-figure.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 55,
+        "rect": [
+          67.407,
+          591.111,
+          189.63,
+          669.63
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p058-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 58,
+        "rect": [
+          40.741,
+          465.185,
+          529.63,
+          569.63
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p058-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 58,
+        "rect": [
+          40.741,
+          568.889,
+          529.63,
+          625.185
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p058-ex1-a-figure.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 58,
+        "rect": [
+          67.407,
+          471.111,
+          466.667,
+          537.037
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p059-ex2-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 59,
+        "rect": [
+          40.741,
+          391.852,
+          529.63,
+          488.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p059-ex2-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 59,
+        "rect": [
+          40.741,
+          551.111,
+          529.63,
+          596.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p059-ex2-a-figure.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 59,
+        "rect": [
+          101.481,
+          397.778,
+          466.667,
+          464.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p063-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          40.741,
+          168.889,
+          529.63,
+          225.185
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p063-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          40.741,
+          226.667,
+          529.63,
+          328.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p063-ex4-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          40.741,
+          437.037,
+          529.63,
+          490.37
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p063-ex4-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          40.741,
+          491.852,
+          529.63,
+          615.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p069-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          40.741,
+          166.667,
+          529.63,
+          232.593
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p069-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          40.741,
+          230.37,
+          529.63,
+          307.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p069-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          40.741,
+          324.444,
+          529.63,
+          391.852
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p069-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          40.741,
+          391.852,
+          529.63,
+          525.185
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p073-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 73,
+        "rect": [
+          40.741,
+          50.37,
+          529.63,
+          96.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p073-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 73,
+        "rect": [
+          40.741,
+          101.481,
+          529.63,
+          234.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p074-ex5-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 74,
+        "rect": [
+          40.741,
+          452.593,
+          529.63,
+          502.963
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p074-ex5-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 74,
+        "rect": [
+          40.741,
+          517.037,
+          529.63,
+          605.185
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p077-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 77,
+        "rect": [
+          40.741,
+          46.667,
+          529.63,
+          74.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p077-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 77,
+        "rect": [
+          40.741,
+          77.778,
+          529.63,
+          285.185
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p078-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 78,
+        "rect": [
+          40.741,
+          48.889,
+          529.63,
+          77.037
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p078-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 78,
+        "rect": [
+          40.741,
+          83.704,
+          529.63,
+          235.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p084-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 84,
+        "rect": [
+          40.741,
+          487.407,
+          529.63,
+          520
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p084-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 84,
+        "rect": [
+          40.741,
+          531.852,
+          529.63,
+          594.074
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p085-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 85,
+        "rect": [
+          40.741,
+          313.333,
+          529.63,
+          366.667
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p085-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 85,
+        "rect": [
+          40.741,
+          373.333,
+          529.63,
+          459.259
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p089-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 89,
+        "rect": [
+          40.741,
+          177.037,
+          529.63,
+          235.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p089-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 89,
+        "rect": [
+          40.741,
+          288.889,
+          529.63,
+          335.556
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p089-ex1-c-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 89,
+        "rect": [
+          40.741,
+          233.333,
+          529.63,
+          269.63
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p089-ex1-c-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 89,
+        "rect": [
+          40.741,
+          418.519,
+          529.63,
+          465.185
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p091-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 91,
+        "rect": [
+          40.741,
+          271.111,
+          529.63,
+          320.741
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p091-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 91,
+        "rect": [
+          40.741,
+          341.481,
+          529.63,
+          616.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p092-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 92,
+        "rect": [
+          40.741,
+          45.185,
+          529.63,
+          94.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p092-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 92,
+        "rect": [
+          40.741,
+          98.519,
+          529.63,
+          324.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p093-ex4-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 93,
+        "rect": [
+          40.741,
+          134.815,
+          529.63,
+          207.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p093-ex4-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 93,
+        "rect": [
+          40.741,
+          225.185,
+          529.63,
+          443.704
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p093-ex4-figure.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 93,
+        "rect": [
+          65.926,
+          136.296,
+          205.185,
+          334.074
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p095-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 95,
+        "rect": [
+          40.741,
+          48.148,
+          529.63,
+          81.481
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p095-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 95,
+        "rect": [
+          40.741,
+          97.778,
+          529.63,
+          234.074
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p098-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 98,
+        "rect": [
+          40.741,
+          496.296,
+          529.63,
+          536.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p098-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 98,
+        "rect": [
+          40.741,
+          542.963,
+          529.63,
+          667.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p099-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 99,
+        "rect": [
+          40.741,
+          118.519,
+          529.63,
+          153.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p099-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 99,
+        "rect": [
+          40.741,
+          169.63,
+          529.63,
+          288.148
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p103-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 103,
+        "rect": [
+          40.741,
+          45.185,
+          529.63,
+          78.519
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p103-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 103,
+        "rect": [
+          40.741,
+          82.222,
+          529.63,
+          177.037
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p104-ex4-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 104,
+        "rect": [
+          40.741,
+          157.037,
+          529.63,
+          188.148
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p104-ex4-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 104,
+        "rect": [
+          40.741,
+          201.481,
+          529.63,
+          268.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p104-ex5-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 104,
+        "rect": [
+          40.741,
+          337.037,
+          529.63,
+          372.593
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p104-ex5-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 104,
+        "rect": [
+          40.741,
+          383.704,
+          529.63,
+          459.259
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p108-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 108,
+        "rect": [
+          40.741,
+          48.148,
+          529.63,
+          109.63
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p108-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 108,
+        "rect": [
+          40.741,
+          114.074,
+          529.63,
+          442.222
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p109-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 109,
+        "rect": [
+          40.741,
+          45.185,
+          529.63,
+          121.481
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p109-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 109,
+        "rect": [
+          40.741,
+          124.444,
+          529.63,
+          260.741
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p111-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 111,
+        "rect": [
+          40.741,
+          44.444,
+          529.63,
+          124.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p111-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 111,
+        "rect": [
+          40.741,
+          240.741,
+          529.63,
+          349.63
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p111-ex2-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 111,
+        "rect": [
+          40.741,
+          503.704,
+          529.63,
+          588.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p111-ex2-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 111,
+        "rect": [
+          40.741,
+          599.259,
+          529.63,
+          676.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p114-ex1-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 114,
+        "rect": [
+          40.741,
+          400,
+          529.63,
+          484.444
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p114-ex1-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 114,
+        "rect": [
+          40.741,
+          485.185,
+          529.63,
+          527.407
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p115-ex3-a-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 115,
+        "rect": [
+          40.741,
+          186.667,
+          529.63,
+          280
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p115-ex3-a-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 115,
+        "rect": [
+          40.741,
+          278.519,
+          529.63,
+          328.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p115-ex3-b-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 115,
+        "rect": [
+          40.741,
+          186.667,
+          529.63,
+          280
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p115-ex3-b-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 115,
+        "rect": [
+          40.741,
+          322.222,
+          529.63,
+          376.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p120-ex1-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 120,
+        "rect": [
+          40.741,
+          245.926,
+          529.63,
+          296.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p120-ex1-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 120,
+        "rect": [
+          40.741,
+          314.815,
+          529.63,
+          468.889
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p120-ex1-figure.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 120,
+        "rect": [
+          60.741,
+          353.333,
+          166.667,
+          454.815
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p121-ex3-question.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 121,
+        "rect": [
+          40.741,
+          235.556,
+          529.63,
+          265.926
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p121-ex3-answer.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 121,
+        "rect": [
+          40.741,
+          280.741,
+          529.63,
+          496.296
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p121-ex3-figure.webp",
+    "source": "needed books and sumaries/math/mathbook.pdf",
+    "clips": [
+      {
+        "page": 121,
+        "rect": [
+          37.037,
+          373.333,
+          233.333,
+          478.519
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          131.429,
+          145.714,
+          487.857,
+          200.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          39.286,
+          145.714,
+          128.571,
+          200.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          131.429,
+          202.857,
+          487.857,
+          278.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          39.286,
+          202.857,
+          128.571,
+          278.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          131.429,
+          373.571,
+          487.857,
+          437.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          39.286,
+          373.571,
+          128.571,
+          437.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          131.429,
+          518.571,
+          487.857,
+          590
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p004-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          39.286,
+          518.571,
+          128.571,
+          590
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p005-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          132.143,
+          178.571,
+          502.143,
+          271.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p005-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          39.286,
+          178.571,
+          128.571,
+          271.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p003-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          131.333,
+          418,
+          497.333,
+          642.667
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p003-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          36.667,
+          418,
+          128.667,
+          642.667
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          121.429,
+          193.571,
+          496.429,
+          267.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          39.286,
+          193.571,
+          128.571,
+          267.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p003-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          107.333,
+          164.667,
+          511.333,
+          268.667
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p003-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          36.667,
+          164.667,
+          120,
+          268.667
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p003-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          107.333,
+          270.667,
+          511.333,
+          343.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p003-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          36.667,
+          270.667,
+          120,
+          343.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p003-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          107.333,
+          484.667,
+          511.333,
+          631.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p003-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          36.667,
+          484.667,
+          120,
+          631.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p004-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          100,
+          599.286,
+          495.714,
+          737.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p004-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          39.286,
+          599.286,
+          128.571,
+          737.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p004-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          119.286,
+          169.286,
+          502.143,
+          279.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p004-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          39.286,
+          169.286,
+          128.571,
+          279.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p005-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          140.714,
+          303.571,
+          502.857,
+          423.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p005-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          39.286,
+          303.571,
+          128.571,
+          423.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p015-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          134.286,
+          150.714,
+          493.571,
+          235.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p015-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          42.857,
+          150.714,
+          130,
+          235.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p015-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          134.286,
+          369.286,
+          493.571,
+          427.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p015-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          42.857,
+          369.286,
+          130,
+          427.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p015-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          134.286,
+          540.714,
+          493.571,
+          591.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p015-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          42.857,
+          540.714,
+          130,
+          591.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          134.286,
+          162.857,
+          493.571,
+          259.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          42.857,
+          162.857,
+          130,
+          259.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          134.286,
+          265,
+          493.571,
+          343.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          42.857,
+          265,
+          130,
+          343.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          134.286,
+          350,
+          493.571,
+          434.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          42.857,
+          350,
+          130,
+          434.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          134.286,
+          440.714,
+          493.571,
+          519.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          42.857,
+          440.714,
+          130,
+          519.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          134.286,
+          525.714,
+          493.571,
+          590
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p027-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          42.857,
+          525.714,
+          130,
+          590
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          134.286,
+          149.286,
+          493.571,
+          228.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          42.857,
+          149.286,
+          130,
+          228.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          134.286,
+          235,
+          493.571,
+          314.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          42.857,
+          235,
+          130,
+          314.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          134.286,
+          320.714,
+          493.571,
+          390.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          42.857,
+          320.714,
+          130,
+          390.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          134.286,
+          396.429,
+          493.571,
+          470
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          42.857,
+          396.429,
+          130,
+          470
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          134.286,
+          475.714,
+          493.571,
+          566.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          42.857,
+          475.714,
+          130,
+          566.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          134.286,
+          572.857,
+          493.571,
+          660.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p033-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          42.857,
+          572.857,
+          130,
+          660.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          134.286,
+          150.714,
+          493.571,
+          209.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          42.857,
+          150.714,
+          130,
+          209.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          134.286,
+          215.714,
+          493.571,
+          300.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          42.857,
+          215.714,
+          130,
+          300.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          134.286,
+          303.571,
+          493.571,
+          387.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          42.857,
+          306.429,
+          130,
+          384.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          134.286,
+          390.714,
+          493.571,
+          447.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          42.857,
+          390.714,
+          130,
+          447.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          134.286,
+          510.714,
+          493.571,
+          568.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          42.857,
+          510.714,
+          130,
+          568.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r7-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          134.286,
+          574.286,
+          493.571,
+          660.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r7-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          42.857,
+          574.286,
+          130,
+          660.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r8-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          134.286,
+          667.143,
+          493.571,
+          724.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p051-r8-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          42.857,
+          667.143,
+          130,
+          724.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          134.286,
+          236.429,
+          493.571,
+          302.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          42.857,
+          236.429,
+          130,
+          302.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          134.286,
+          308.571,
+          493.571,
+          391.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          42.857,
+          308.571,
+          130,
+          391.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          134.286,
+          397.857,
+          493.571,
+          485.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          42.857,
+          397.857,
+          130,
+          485.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          134.286,
+          492.143,
+          493.571,
+          582.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p063-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          42.857,
+          492.143,
+          130,
+          582.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          122.857,
+          138.571,
+          493.571,
+          188.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          42.857,
+          138.571,
+          118.571,
+          188.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          122.857,
+          384.286,
+          493.571,
+          470.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          42.857,
+          384.286,
+          118.571,
+          470.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          122.857,
+          476.429,
+          493.571,
+          556.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          42.857,
+          476.429,
+          118.571,
+          556.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          122.857,
+          562.143,
+          493.571,
+          688.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p004-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          42.857,
+          562.143,
+          118.571,
+          688.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p005-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          122.857,
+          157.143,
+          495,
+          257.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p005-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          42.857,
+          157.143,
+          118.571,
+          257.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p005-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          122.857,
+          264.286,
+          495,
+          316.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p005-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          42.857,
+          264.286,
+          118.571,
+          316.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p006-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          116.429,
+          602.857,
+          495,
+          682.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p006-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          42.857,
+          602.857,
+          112.143,
+          682.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p015-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          134.286,
+          82.143,
+          493.571,
+          174.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p015-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          42.857,
+          82.143,
+          130,
+          174.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p015-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          134.286,
+          285,
+          493.571,
+          427.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p015-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          42.857,
+          285,
+          130,
+          427.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p027-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          109.286,
+          416.429,
+          507.143,
+          494.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p027-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          30.714,
+          419.286,
+          105,
+          491.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p027-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          109.286,
+          661.429,
+          507.143,
+          753.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p027-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          30.714,
+          661.429,
+          105,
+          753.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p033-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          87.857,
+          200,
+          493.571,
+          276.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p033-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          30.714,
+          200,
+          83.571,
+          276.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p033-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          87.857,
+          398.571,
+          493.571,
+          474.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p033-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          30.714,
+          398.571,
+          83.571,
+          474.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p005-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          102.857,
+          278.571,
+          490,
+          408.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p005-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          39.286,
+          278.571,
+          98.571,
+          408.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p005-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          102.857,
+          417.143,
+          490,
+          487.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p005-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          39.286,
+          417.143,
+          98.571,
+          487.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p005-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          102.857,
+          495,
+          490,
+          588.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p005-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          39.286,
+          495,
+          98.571,
+          588.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p006-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          110,
+          172.143,
+          490,
+          309.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p006-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          39.286,
+          172.143,
+          105.714,
+          309.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p006-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          110,
+          466.429,
+          490,
+          607.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p006-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          39.286,
+          466.429,
+          105.714,
+          607.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p009-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          110,
+          174.286,
+          490,
+          306.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p009-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          39.286,
+          174.286,
+          105.714,
+          306.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p009-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          110,
+          445.714,
+          490,
+          543.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p009-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          39.286,
+          445.714,
+          105.714,
+          543.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p009-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          110,
+          644.286,
+          490,
+          728.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p009-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          39.286,
+          644.286,
+          105.714,
+          728.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p006-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          142.857,
+          308.571,
+          497.143,
+          427.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p006-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          57.857,
+          308.571,
+          138.571,
+          427.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p006-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          142.857,
+          566.429,
+          497.143,
+          701.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p006-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          57.857,
+          566.429,
+          138.571,
+          701.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p007-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 7,
+        "rect": [
+          142.857,
+          168.571,
+          497.143,
+          281.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p007-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 7,
+        "rect": [
+          57.857,
+          168.571,
+          138.571,
+          281.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p009-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          150.714,
+          377.143,
+          497.143,
+          485.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p009-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          58.571,
+          377.143,
+          146.429,
+          485.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          134.286,
+          165.714,
+          493.571,
+          217.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          42.857,
+          165.714,
+          130,
+          217.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          134.286,
+          223.571,
+          493.571,
+          283.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          42.857,
+          223.571,
+          130,
+          283.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          134.286,
+          290,
+          493.571,
+          376.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          42.857,
+          290,
+          130,
+          376.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          134.286,
+          382.143,
+          493.571,
+          472.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          42.857,
+          382.143,
+          130,
+          472.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          134.286,
+          478.571,
+          493.571,
+          566.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          42.857,
+          478.571,
+          130,
+          566.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          134.286,
+          569.286,
+          493.571,
+          639.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p024-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          42.857,
+          572.143,
+          130,
+          636.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p039-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          143.571,
+          182.857,
+          498.571,
+          307.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p039-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          58.571,
+          182.857,
+          139.286,
+          307.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p039-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          143.571,
+          409.286,
+          498.571,
+          491.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p039-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          58.571,
+          409.286,
+          139.286,
+          491.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p039-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          143.571,
+          592.143,
+          498.571,
+          675.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p039-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          58.571,
+          592.143,
+          139.286,
+          675.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p027-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          136.429,
+          598.571,
+          498.571,
+          697.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p027-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          57.857,
+          598.571,
+          132.143,
+          697.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p021-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          188.571,
+          171.429,
+          497.857,
+          242.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p021-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          39.286,
+          171.429,
+          184.286,
+          242.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p021-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          188.571,
+          395.714,
+          497.857,
+          472.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p021-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          39.286,
+          395.714,
+          184.286,
+          472.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p021-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          188.571,
+          481.429,
+          497.857,
+          607.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p021-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          39.286,
+          481.429,
+          184.286,
+          607.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p027-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          160,
+          544.286,
+          493.571,
+          627.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p027-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          39.286,
+          544.286,
+          155.714,
+          627.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          130,
+          334.286,
+          500,
+          385
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          24.286,
+          334.286,
+          125.714,
+          385
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          130,
+          593.571,
+          500,
+          653.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          24.286,
+          593.571,
+          125.714,
+          653.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          150,
+          111.429,
+          491.429,
+          180
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          57.857,
+          111.429,
+          145.714,
+          180
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          150,
+          188.571,
+          491.429,
+          259.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          57.857,
+          188.571,
+          145.714,
+          259.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          150,
+          339.286,
+          491.429,
+          415.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          57.857,
+          339.286,
+          145.714,
+          415.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          150,
+          424.286,
+          491.429,
+          492.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          57.857,
+          424.286,
+          145.714,
+          492.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          150,
+          501.429,
+          491.429,
+          571.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          57.857,
+          501.429,
+          145.714,
+          571.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r7-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          150,
+          579.286,
+          491.429,
+          642.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p063-r7-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 63,
+        "rect": [
+          57.857,
+          579.286,
+          145.714,
+          642.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          143.571,
+          238.571,
+          493.571,
+          313.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          25,
+          241.429,
+          139.286,
+          310.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          143.571,
+          316.429,
+          493.571,
+          370
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          25,
+          319.286,
+          139.286,
+          367.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          143.571,
+          375.714,
+          493.571,
+          430.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          25,
+          375.714,
+          139.286,
+          430.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          143.571,
+          435.714,
+          493.571,
+          490
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          25,
+          438.571,
+          139.286,
+          487.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          143.571,
+          495.714,
+          493.571,
+          544.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          25,
+          495.714,
+          139.286,
+          544.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r7-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          143.571,
+          552.143,
+          493.571,
+          622.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r7-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          25,
+          552.143,
+          139.286,
+          622.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r8-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          143.571,
+          630,
+          493.571,
+          743.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p006-r8-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          25,
+          630,
+          139.286,
+          743.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          135,
+          167.857,
+          492.857,
+          250
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          25,
+          170.714,
+          130.714,
+          247.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          135,
+          255.714,
+          492.857,
+          325
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          25,
+          255.714,
+          130.714,
+          325
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          135,
+          333.571,
+          492.857,
+          417.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          25,
+          333.571,
+          130.714,
+          417.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          135,
+          425,
+          492.857,
+          495.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          23.571,
+          425,
+          130.714,
+          495.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          135,
+          501.429,
+          492.857,
+          585.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          25,
+          504.286,
+          130.714,
+          582.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          135,
+          591.429,
+          492.857,
+          662.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p015-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          25,
+          591.429,
+          130.714,
+          662.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          110,
+          249.286,
+          492.857,
+          339.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          32.143,
+          249.286,
+          105.714,
+          339.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          110,
+          347.857,
+          492.857,
+          431.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          32.143,
+          347.857,
+          105.714,
+          431.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          110,
+          439.286,
+          492.857,
+          516.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          32.143,
+          439.286,
+          105.714,
+          516.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          110,
+          525,
+          492.857,
+          645
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          32.143,
+          525,
+          105.714,
+          645
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          110,
+          653.571,
+          492.857,
+          744.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p021-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          32.143,
+          653.571,
+          105.714,
+          744.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          115.714,
+          345,
+          508.571,
+          415.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          2.857,
+          345,
+          111.429,
+          415.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          115.714,
+          424.286,
+          508.571,
+          508.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          2.857,
+          424.286,
+          111.429,
+          508.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          115.714,
+          517.143,
+          508.571,
+          620.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          5,
+          517.143,
+          111.429,
+          620.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          115.714,
+          629.286,
+          508.571,
+          714.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p033-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          5,
+          629.286,
+          111.429,
+          714.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          117.143,
+          98.571,
+          487.857,
+          224.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          32.143,
+          98.571,
+          112.857,
+          224.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          117.143,
+          232.857,
+          487.857,
+          338.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          32.143,
+          232.857,
+          112.857,
+          338.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          117.143,
+          346.429,
+          487.857,
+          500.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          32.143,
+          346.429,
+          112.857,
+          500.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          117.143,
+          509.286,
+          487.857,
+          663.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u3-p039-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثالثة/الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          32.143,
+          509.286,
+          112.857,
+          663.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          197.143,
+          164.286,
+          492.857,
+          250
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          30.714,
+          164.286,
+          192.857,
+          250
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          197.143,
+          256.429,
+          492.857,
+          412.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          30.714,
+          256.429,
+          192.857,
+          412.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          159.286,
+          419.286,
+          492.857,
+          527.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          30.714,
+          419.286,
+          155,
+          527.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          159.286,
+          534.286,
+          492.857,
+          603.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          30.714,
+          534.286,
+          155,
+          603.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          159.286,
+          610,
+          492.857,
+          750
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p021-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          30.714,
+          610,
+          155,
+          750
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p045-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          222.143,
+          79.286,
+          513.571,
+          186.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p045-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          45,
+          79.286,
+          217.857,
+          186.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p045-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          222.143,
+          192.857,
+          513.571,
+          518.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p045-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          45,
+          192.857,
+          217.857,
+          518.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p047-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 47,
+        "rect": [
+          194.286,
+          79.286,
+          507.143,
+          158.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p047-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 47,
+        "rect": [
+          37.857,
+          79.286,
+          190,
+          158.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p047-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 47,
+        "rect": [
+          194.286,
+          164.286,
+          507.143,
+          292.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p047-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 47,
+        "rect": [
+          37.857,
+          164.286,
+          190,
+          292.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p047-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 47,
+        "rect": [
+          194.286,
+          497.143,
+          507.143,
+          652.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p047-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 47,
+        "rect": [
+          37.857,
+          497.143,
+          190,
+          652.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          130,
+          152.143,
+          500,
+          331.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          24.286,
+          152.143,
+          125.714,
+          328.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          130,
+          390.714,
+          500,
+          481.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          24.286,
+          390.714,
+          125.714,
+          481.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          130,
+          487.143,
+          500,
+          587.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          24.286,
+          487.143,
+          125.714,
+          587.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          130,
+          659.286,
+          500,
+          752.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u2-p051-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الثانية/الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025.pdf",
+    "clips": [
+      {
+        "page": 51,
+        "rect": [
+          24.286,
+          659.286,
+          125.714,
+          752.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          259.286,
+          172.143,
+          499.286,
+          236.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          22.143,
+          172.143,
+          255,
+          236.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          259.286,
+          351.429,
+          499.286,
+          407.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          39.286,
+          351.429,
+          255,
+          407.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          259.286,
+          415.714,
+          499.286,
+          460
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          39.286,
+          415.714,
+          255,
+          460
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          257.857,
+          468.571,
+          499.286,
+          508.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          39.286,
+          468.571,
+          253.571,
+          508.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          259.286,
+          516.429,
+          499.286,
+          573.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          39.286,
+          516.429,
+          255,
+          573.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r7-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          259.286,
+          582.143,
+          499.286,
+          630.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r7-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          39.286,
+          582.143,
+          255,
+          630.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r8-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          259.286,
+          639.286,
+          499.286,
+          686.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r8-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          22.143,
+          639.286,
+          255,
+          686.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r9-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          259.286,
+          695,
+          499.286,
+          732.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p033-r9-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          39.286,
+          695,
+          255,
+          732.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          269.286,
+          132.857,
+          485,
+          252.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          46.429,
+          132.857,
+          265,
+          252.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          269.286,
+          260.714,
+          485,
+          322.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          46.429,
+          260.714,
+          265,
+          322.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          269.286,
+          331.429,
+          485,
+          401.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          46.429,
+          331.429,
+          265,
+          401.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          269.286,
+          409.286,
+          485,
+          480
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          46.429,
+          409.286,
+          265,
+          480
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          269.286,
+          487.857,
+          485,
+          558.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u4-p039-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الرابعة/الكامل في الرياضيات توجيهي علمي (الوحدة الرابعة) 2025.pdf",
+    "clips": [
+      {
+        "page": 39,
+        "rect": [
+          46.429,
+          487.857,
+          265,
+          558.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p033-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          250,
+          185.714,
+          491.429,
+          394.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p033-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          58.571,
+          185.714,
+          245.714,
+          394.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p033-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          250,
+          402.143,
+          491.429,
+          522.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p033-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          58.571,
+          402.143,
+          245.714,
+          522.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p033-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          250,
+          530,
+          491.429,
+          642.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p033-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 33,
+        "rect": [
+          58.571,
+          530,
+          245.714,
+          642.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p069-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          175,
+          190,
+          494.286,
+          345.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p069-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          65.714,
+          190,
+          170.714,
+          345.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p069-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          175,
+          353.571,
+          494.286,
+          437.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p069-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          65.714,
+          353.571,
+          170.714,
+          437.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p069-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          175,
+          445,
+          494.286,
+          550.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p069-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 69,
+        "rect": [
+          65.714,
+          445,
+          170.714,
+          550.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p057-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          142.857,
+          195,
+          497.857,
+          273.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p057-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          50.714,
+          195,
+          138.571,
+          273.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p057-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          142.857,
+          281.429,
+          497.857,
+          423.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p057-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          50.714,
+          281.429,
+          138.571,
+          423.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p057-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          142.857,
+          432.143,
+          497.857,
+          481.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p057-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الخامسة/الكامل في الرياضيات توجيهي علمي (الوحدة الخامسة) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          50.714,
+          432.143,
+          138.571,
+          481.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          134.286,
+          462.143,
+          485.714,
+          506.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          42.857,
+          462.143,
+          130,
+          506.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r7-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          134.286,
+          512.143,
+          485.714,
+          560
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r7-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          42.857,
+          512.143,
+          130,
+          560
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r8-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          134.286,
+          565.714,
+          485.714,
+          655
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r8-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          42.857,
+          565.714,
+          130,
+          655
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r9-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          134.286,
+          660.714,
+          485.714,
+          734.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p057-r9-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 57,
+        "rect": [
+          42.857,
+          660.714,
+          130,
+          734.286
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          152.143,
+          156.429,
+          495,
+          208.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          42.857,
+          156.429,
+          147.857,
+          208.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          152.143,
+          452.857,
+          495,
+          530.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          42.857,
+          452.857,
+          147.857,
+          530.714
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r7-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          152.143,
+          537.143,
+          495,
+          633.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r7-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          42.857,
+          537.143,
+          147.857,
+          633.571
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r8-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          152.143,
+          637.143,
+          495,
+          705
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p021-r8-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 21,
+        "rect": [
+          42.857,
+          640,
+          147.857,
+          705
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r1-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          149.286,
+          157.143,
+          487.143,
+          237.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r1-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          42.857,
+          157.143,
+          145,
+          237.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r2-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          149.286,
+          242.857,
+          487.143,
+          355
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r2-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          42.857,
+          242.857,
+          145,
+          355
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r3-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          149.286,
+          360.714,
+          487.143,
+          427.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r3-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          42.857,
+          360.714,
+          145,
+          427.143
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r4-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          149.286,
+          433.571,
+          487.143,
+          491.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r4-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          42.857,
+          433.571,
+          145,
+          491.429
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r5-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          149.286,
+          497.143,
+          487.143,
+          572.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r5-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          42.857,
+          497.143,
+          145,
+          572.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r6-question.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          149.286,
+          578.571,
+          487.143,
+          727.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u1-p045-r6-key.webp",
+    "source": "needed books and sumaries/math/الوحدة الأولى/الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025.pdf",
+    "clips": [
+      {
+        "page": 45,
+        "rect": [
+          42.857,
+          578.571,
+          145,
+          727.857
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  }
+]

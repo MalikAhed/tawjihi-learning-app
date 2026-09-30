@@ -1,0 +1,9 @@
+{
+  "sourceFile": "ict-classified-2023.pdf",
+  "sourcePage": 127,
+  "pdfImageObject": 578,
+  "extraction": "pdfimages -f 127 -l 127 -j",
+  "file": "classified-p127-nic.jpg",
+  "pixelSize": [375, 418],
+  "sha256": "f9d5e7f17d6cedd8f8d8c722f55ae6f93ee29704a8bc573c82926240a6605852"
+}
