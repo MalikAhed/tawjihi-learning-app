@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 360" role="img" aria-labelledby="title desc">
+<title id="title">المماس والمثلث أ و ب</title><desc id="desc">رسم توضيحي: المماس عند (١،٣)، والمثلث أ و ب قائم عند و ومتساوي الساقين. المنحنى المتقطع تخطيطي.</desc>
+<rect width="580" height="360" rx="16" fill="#fff"/>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7" fill="#334155"/></marker></defs>
+<style>text {font-family:Arial,sans-serif;font-size:20px;fill:#0f172a} .axis {stroke:#334155;stroke-width:2;marker-end:url(#arrow)} .tangent {stroke:#d97706;stroke-width:3} .curve {fill:none;stroke:#2563eb;stroke-width:3;stroke-dasharray:6 4} .guide {fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:5 4}</style>
+
+<path class="axis" d="M55 295 H490"/><path class="axis" d="M130 330 V25"/>
+<text x="504" y="302">س</text><text x="121" y="21">ص</text><text x="106" y="315">و</text>
+<path d="M130 55 V295 H370 Z" fill="#fef3c7" fill-opacity=".7" stroke="#d97706" stroke-width="2"/>
+<path class="tangent" d="M110 35 L390 315"/>
+<path class="curve" d="M145 170 C162 145 180 125 190 115 S240 80 280 82"/>
+<path class="guide" d="M190 295 V115 H130"/>
+<circle cx="190" cy="115" r="5" fill="#2563eb"/>
+<text x="210" y="116" direction="ltr">(١،٣)</text><text x="181" y="319">١</text><text x="104" y="122">٣</text>
+<text x="105" y="60">أ</text><text x="375" y="317">ب</text>
+<path d="M130 278 H147 V295" fill="none" stroke="#334155" stroke-width="1.5"/>
+<path d="M122 163 H138 M240 287 V303" stroke="#334155" stroke-width="2"/>
+<text x="365" y="185">المماس</text><text x="290" y="88">ق(س)</text>
+
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 360" role="img" aria-labelledby="title desc">
+<title id="title">ق(س) والمماس عند (١،٢)</title><desc id="desc">رسم توضيحي من وصف الشكل: نقطة التماس (١،٢) وزاوية ميل المماس ٤٥ درجة. المنحنى المتقطع تخطيطي ولا يحدد قاعدة الاقتران.</desc>
+<rect width="580" height="360" rx="16" fill="#fff"/>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7" fill="#334155"/></marker></defs>
+<style>text {font-family:Arial,sans-serif;font-size:20px;fill:#0f172a} .axis {stroke:#334155;stroke-width:2;marker-end:url(#arrow)} .tangent {stroke:#d97706;stroke-width:3} .curve {fill:none;stroke:#2563eb;stroke-width:3;stroke-dasharray:6 4} .guide {fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:5 4}</style>
+
+<path class="axis" d="M40 280 H520"/><path class="axis" d="M160 330 V30"/>
+<text x="532" y="287">س</text><text x="151" y="23">ص</text><text x="140" y="302">و</text>
+<path class="tangent" d="M58 322 L350 30"/>
+<path class="curve" d="M145 218 C165 208 189 187 220 160 S300 78 346 80"/>
+<path class="guide" d="M220 280 V160 H160"/>
+<circle cx="220" cy="160" r="5" fill="#2563eb"/>
+<text x="235" y="166" direction="ltr">(١،٢)</text><text x="211" y="306">١</text><text x="136" y="168">٢</text>
+<path d="M134 280 A34 34 0 0 0 124 256" fill="none" stroke="#d97706" stroke-width="2"/>
+<text x="138" y="254">٤٥°</text><text x="365" y="60">المماس</text><text x="344" y="106">ق(س)</text>
+
+</svg>

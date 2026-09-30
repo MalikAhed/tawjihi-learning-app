@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 360" role="img" aria-labelledby="title desc">
+<title id="title">المماس عند س=٢</title><desc id="desc">رسم توضيحي من وصف الشكل: المماس عند س=٢ يقطع محور السينات عند ٥/٣. المنحنى المتقطع تخطيطي، وارتفاع نقطة التماس غير موسوم بقيمة مفترضة.</desc>
+<rect width="580" height="360" rx="16" fill="#fff"/>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7" fill="#334155"/></marker></defs>
+<style>text {font-family:Arial,sans-serif;font-size:20px;fill:#0f172a} .axis {stroke:#334155;stroke-width:2;marker-end:url(#arrow)} .tangent {stroke:#d97706;stroke-width:3} .curve {fill:none;stroke:#2563eb;stroke-width:3;stroke-dasharray:6 4} .guide {fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:5 4}</style>
+
+<path class="axis" d="M45 290 H520"/><path class="axis" d="M100 330 V25"/>
+<text x="530" y="297">س</text><text x="91" y="20">ص</text><text x="75" y="313">و</text>
+<path class="tangent" d="M225 340 L277 28"/>
+<path class="curve" d="M238 230 C247 225 250 190 260 130 S273 72 285 49"/>
+<path class="guide" d="M260 290 V130 H100"/>
+<circle cx="260" cy="130" r="5" fill="#2563eb"/>
+<text x="257" y="315">٢</text><text x="218" y="341">٥/٣</text>
+<text x="285" y="146" direction="ltr">(٢،ق(٢))</text>
+<text x="290" y="35">المماس</text><text x="297" y="80">ق(س)</text>
+
+</svg>
