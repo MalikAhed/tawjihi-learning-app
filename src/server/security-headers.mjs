@@ -6,8 +6,8 @@ const CONTENT_SECURITY_POLICY = [
   "frame-ancestors 'none'",
   "frame-src 'self' https://www.youtube-nocookie.com",
   "img-src 'self' data:",
-  "font-src 'self' https://fonts.gstatic.com",
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
   "script-src 'self' https://www.youtube.com",
   "connect-src 'self'",
 ].join("; ");

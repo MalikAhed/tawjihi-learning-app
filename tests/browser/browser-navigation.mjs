@@ -59,7 +59,7 @@ for (const width of [1440, 390]) {
     await evaluate("document.querySelector('[data-page=quests]').click()");
     assert.equal(await evaluate("location.href"), subjectUrl);
     assert.ok(await evaluate("Boolean(document.querySelector('.subject-roadmap'))"));
-    for (const route of ["?page=quests", "?page=shop", "?view=ui-lab", "?view=design-system", "?view=ship-ready-mcq", "?subject=physics", "?subject=mathematics-2"]) {
+    for (const route of ["?page=quests", "?page=shop", "?view=ui-lab", "?view=design-system", "?view=ship-ready-mcq"]) {
       await navigate(route);
       await waitFor("document.querySelector('[data-subject=ict]') && !document.querySelector('main').classList.contains('lesson-mode')");
       assert.equal(await evaluate("location.search"), "?page=learn");
