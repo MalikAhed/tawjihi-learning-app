@@ -1,5 +1,4 @@
 import { getCourseSubject } from "../data/course.js";
-import { loadSubjectLesson, loadSubjectLessonPart } from "../data/lessons/subject-lesson-registry.js";
 import { getSubjectRoadmap } from "../data/subject-roadmaps.js";
 import { getIctPartQuestionIds } from "../data/lessons/ict/question-index.js";
 import { getSubjectPartAccess } from "../domain/subject-access.js";
@@ -46,7 +45,7 @@ export function createSubjectLearningController({
   async function openSubject(
     nextSubjectId,
     nextOpener = null,
-    { historyMode = "push", focusContent = false, restoreMap = false, lessonId:targetLessonId = null, partId:targetPartId = null, explainPart = null } = {},
+    { historyMode = "push", focusContent = false, restoreMap = false, lessonId:targetLessonId = null, partId:targetPartId = null, reviewStepId = null, explainPart = null } = {},
   ) {
     const subject = getCourseSubject(nextSubjectId);
     if (!subject) return;
@@ -56,7 +55,7 @@ export function createSubjectLearningController({
       historyMode = "replace";
     }
     if (targetLessonId && targetPartId) {
-      return openLesson({ subjectId:subject.id, lessonId:targetLessonId, partId:targetPartId, historyMode });
+      return openLesson({ subjectId:subject.id, lessonId:targetLessonId, partId:targetPartId, reviewStepId, historyMode });
     }
     const operation = viewLifecycle.begin();
     if (nextOpener) {
@@ -177,10 +176,11 @@ export function createSubjectLearningController({
     subjectId = nextSubjectId;
     lessonId = nextLessonId;
     selectedPartId = partId;
-    writeRoute({ subject:nextSubjectId, lesson:nextLessonId, part:partId }, historyMode);
+    writeRoute({ subject:nextSubjectId, lesson:nextLessonId, part:partId, ...(reviewStepId ? { question:reviewStepId } : {}) }, historyMode);
 
     const load = async () => {
       try {
+        const { loadSubjectLesson, loadSubjectLessonPart } = await import("../data/lessons/subject-lesson-registry.js");
         await store.ready(ownerId);
         if (!operation.isCurrent() || ownerId !== productService.getLearnerProgressOwner()) return;
         const access = getSubjectPartAccess(roadmap, {

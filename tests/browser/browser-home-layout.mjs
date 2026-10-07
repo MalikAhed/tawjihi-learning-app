@@ -1,0 +1,297 @@
+import assert from "node:assert/strict";
+import { mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { withBrowserPage } from "./browser-page.mjs";
+
+const output = process.env.BROWSER_SCREENSHOT_DIR || "/tmp/learn-ui-fixes";
+await mkdir(output, { recursive:true });
+const evidence = { widths:[], popups:[], stress:[] };
+const widths = [320,390,600,700,760,761,820,1024,1180,1181,1280,1320,1366,1440];
+
+await withBrowserPage(async ({ base, send, evaluate, waitFor, onEvent }) => {
+  const startupWarnings = [];
+  onEvent(({method,params}) => {
+    if(method === "Runtime.consoleAPICalled" && ["warning","error"].includes(params.type)) startupWarnings.push(params.args.map(argument=>argument.value || argument.description || argument.type).join(" "));
+  });
+  const settleLayout = () => evaluate("new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))");
+  const viewport = async (width, height = 844, scale = 1) => {
+    await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor:scale, mobile:false });
+    await waitFor(`innerWidth === ${width} && innerHeight === ${height} && matchMedia("(width: ${width}px)").matches`);
+    await settleLayout();
+  };
+  const screenshot = async name => {
+    const image = await send("Page.captureScreenshot", { format:"png", captureBeyondViewport:false });
+    await writeFile(path.join(output, name), Buffer.from(image.data, "base64"));
+  };
+  const homeReady = async () => { try { await waitFor("!document.body.hasAttribute('data-startup') && !document.querySelector('.media-pending') && document.querySelector('.subject-card[data-subject=ict]')?.getBoundingClientRect().width > 0 && !document.querySelector('.course-units').classList.contains('media-pending') && !document.querySelector('.subject-map').inert && !document.querySelector('main').classList.contains('lesson-mode') && !document.querySelector('main').classList.contains('coming-mode') && [...document.querySelectorAll('.course-units img')].every(image=>image.complete && image.naturalWidth>0)"); } catch(error) { throw new Error(error.message + "; startup warnings: " + startupWarnings.slice(-5).join(" | ")); } };
+  const navigate = async url => {
+    await evaluate("window.layoutOldDocument=true");
+    await send("Page.navigate", { url });
+    await waitFor("!window.layoutOldDocument && document.readyState==='complete'");
+  };
+  const reload = async () => {
+    await evaluate("window.layoutOldDocument=true");
+    await send("Page.reload");
+    await waitFor("!window.layoutOldDocument && document.readyState==='complete'");
+  };
+  const key = async value => {
+    const windowsVirtualKeyCode = { Enter:13, Escape:27, Tab:9 }[value];
+    await send("Input.dispatchKeyEvent", { type:"keyDown", key:value, code:value, windowsVirtualKeyCode, ...(value === "Enter" ? { text:"\r", unmodifiedText:"\r" } : {}) });
+    await send("Input.dispatchKeyEvent", { type:"keyUp", key:value, code:value, windowsVirtualKeyCode });
+  };
+  const checkCard = async label => {
+    await homeReady();
+    await settleLayout();
+    const result = await evaluate(`(() => {
+      const card = document.querySelector('.subject-card[data-subject=ict]');
+      const rect = element => { const r=element.getBoundingClientRect(); return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}; };
+      const selectors = ['h2','.subject-card__details','.subject-card__progress-track','[data-subject-count]'];
+      return {card:rect(card),items:selectors.map(selector => {
+        const element=card.querySelector(selector), range=document.createRange(); range.selectNodeContents(element);
+        return {selector,rect:rect(element),text:rect(range),visible:getComputedStyle(element).visibility!=='hidden'};
+      }),action:card.getAttribute('aria-label').split('، ')[1],scrollWidth:document.documentElement.scrollWidth,viewport:innerWidth,overflow:[...document.querySelectorAll('body *')].map(element=>({element:element.tagName+'.'+element.className,right:element.getBoundingClientRect().right,left:element.getBoundingClientRect().left})).filter(item=>item.right>innerWidth+1||item.left < -1).slice(0,12)};
+    })()`);
+    for (const item of result.items) {
+      assert.ok(item.visible, `${label}: ${item.selector} is visible`);
+      for (const rect of [item.rect,item.text]) {
+        assert.ok(rect.left >= result.card.left - 1 && rect.right <= result.card.right + 1, `${label}: ${item.selector} stays inside the card horizontally: ${JSON.stringify(result)}`);
+        assert.ok(rect.top >= result.card.top - 1 && rect.bottom <= result.card.bottom + 1, `${label}: ${item.selector} stays inside the card vertically`);
+      }
+    }
+    assert.ok(result.action.includes("خريطة الدروس"), `${label}: the card exposes its navigation action to assistive technology`);
+    assert.ok(result.scrollWidth <= result.viewport + 1, `${label}: no horizontal page overflow: ${JSON.stringify(result.overflow)}`);
+    return result;
+  };
+  const checkSubjectGrid = async label => {
+    const result = await evaluate(`(() => {
+      const map=document.querySelector('.subject-map'),cards=[...map.querySelectorAll(':scope>.subject-card')].filter(card=>card.getBoundingClientRect().width>0);
+      const mapRect=map.getBoundingClientRect();
+      return {columns:getComputedStyle(map).gridTemplateColumns.split(' ').length,map:{left:mapRect.left,right:mapRect.right},mainWidth:document.querySelector('main.page').getBoundingClientRect().width,columnWidth:document.querySelector('.column').getBoundingClientRect().width,hasSidebar:Boolean(document.querySelector('.dashboard-side-rail')),locked:cards.filter(card=>card.disabled).map(card=>({subject:card.dataset.subject,count:card.querySelector('[data-subject-count]').textContent,lock:Boolean(card.querySelector('.subject-card__lock'))})),cards:cards.map(card=>({subject:card.dataset.subject,left:card.getBoundingClientRect().left,right:card.getBoundingClientRect().right,top:card.getBoundingClientRect().top}))};
+    })()`);
+    assert.equal(result.columns, result.map.right-result.map.left <= 560 ? 1 : 2, `${label}: narrow subject grids use one column and wider grids use two`);
+    assert.deepEqual(result.cards.map(card=>card.subject), ["ict", "mathematics", "mathematics-2", "physics", "biology", "chemistry", "english", "arabic", "islamic-education"], `${label}: every subject is visible`);
+    assert.equal(result.locked.length, 7, `${label}: unpublished subjects are locked`);
+    assert.ok(result.locked.every(card=>card.count === "0 / 0" && card.lock), `${label}: locked subjects show zero progress and a lock`);
+    assert.equal(result.hasSidebar, false, `${label}: no experimental sidebar is mounted`);
+    assert.ok(Math.abs(result.mainWidth - result.columnWidth) <= 1, `${label}: subjects occupy the full main content width`);
+    assert.ok(Math.abs(result.cards[0].left-result.map.left) <= 1 && Math.abs(result.cards[0].right-result.map.right) <= 1, `${label}: ICT spans the full row`);
+    const subjects=result.cards.slice(1);
+    for (let index=0; index<subjects.length; index+=2) {
+      const row=subjects.slice(index,index+2);
+      if (result.columns === 2 && row.length === 2) assert.ok(Math.abs(row[0].top-row[1].top) <= 1, `${label}: each pair shares a row`);
+    }
+    return result;
+  };
+  const checkNavigation = async label => {
+    const result = await evaluate(`(() => {
+      const buttons=[...document.querySelectorAll('.nav-item'),...document.querySelectorAll(document.body.dataset.accountType==='guest'?'.topbar-auth-guest button':'[data-auth-sign-out]')].filter(button=>getComputedStyle(button).display!=='none');
+      return buttons.map(button=>{const r=button.getBoundingClientRect();const hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);return {name:button.getAttribute('aria-label')||button.textContent.trim(),width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom,hit:hit===button||button.contains(hit),current:button.getAttribute('aria-current'),page:button.dataset.page};});
+    })()`);
+    for (const button of result) {
+      assert.ok(button.name, `${label}: each navigation/account action has a name`);
+      assert.ok(button.width >= 44 && button.height >= 44, `${label}: ${button.name} has a 44px target: ${JSON.stringify(button)}`);
+      assert.ok(button.hit, `${label}: ${button.name} can be hit at its center: ${JSON.stringify(button)}`);
+    }
+    assert.equal(result.find(button => button.page === "learn").current, "page");
+    return result;
+  };
+  const checkResponsiveSignOut = async (label,width) => {
+    const display = await evaluate("getComputedStyle(document.querySelector('[data-auth-sign-out]')).display");
+    assert.equal(display === "none", width <= 760, `${label}: sign-out visibility matches the navigation layout`);
+  };
+  const checkHeaderResources = async label => {
+    const result = await evaluate(`(() => {
+      const rect=element=>{const r=element.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}};
+      return {viewport:innerWidth,hidden:getComputedStyle(document.querySelector('.nav-resources')).display==='none',signOut:rect(document.querySelector('[data-auth-sign-out]')),resources:[...document.querySelectorAll('.nav-resource')].map(element=>({rect:rect(element),source:element.querySelector('img').getAttribute('src'),image:rect(element.querySelector('img')),text:element.textContent.trim(),color:getComputedStyle(element).color}))};
+    })()`);
+    assert.deepEqual(result.resources.map(resource => resource.source), ["assets/icons/nav-gem.svg","assets/icons/nav-heart.svg","assets/icons/streak-freeze.svg"], `${label}: all three navigation SVGs are present`);
+    assert.deepEqual(result.resources.slice(0,2).map(resource => resource.text), ["0","0"], `${label}: gem and heart balances start at zero`);
+    assert.deepEqual(result.resources.slice(0,2).map(resource => resource.color), ["rgb(28, 176, 246)","rgb(255, 75, 75)"], `${label}: balance text matches its SVG color`);
+    assert.equal(result.hidden, true, `${label}: unreleased resource balances stay hidden`);
+    for (const resource of result.resources) {
+      assert.equal(resource.rect.height, 0, `${label}: hidden balances reserve no shell space`);
+    }
+    return result;
+  };
+  const checkExpandedHeaderResources = async label => {
+    await evaluate("document.querySelector('.nav-resources').removeAttribute('data-expanded-component')");
+    await settleLayout();
+    const result = await evaluate(`(() => {
+      const rect=element=>{const r=element.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}};
+      return {viewport:innerWidth,signOut:rect(document.querySelector('[data-auth-sign-out]')),resources:[...document.querySelectorAll('.nav-resource')].map(element=>({rect:rect(element),image:rect(element.querySelector('img'))}))};
+    })()`);
+    for (const resource of result.resources) {
+      assert.ok(resource.image.width >= 28 && resource.image.height >= 28, `${label}: the original resource artwork is visible`);
+      assert.ok(resource.rect.left >= 0 && resource.rect.right <= result.viewport, `${label}: the resource stays inside the viewport`);
+      const overlap = resource.rect.left < result.signOut.right && resource.rect.right > result.signOut.left && resource.rect.top < result.signOut.bottom && resource.rect.bottom > result.signOut.top;
+      assert.equal(overlap, false, `${label}: navigation artwork and the account action do not overlap: ${JSON.stringify(result)}`);
+    }
+    await evaluate("document.querySelector('.nav-resources').setAttribute('data-expanded-component','')");
+    await settleLayout();
+    return result;
+  };
+
+  await send("Emulation.setEmulatedMedia", { features:[{ name:"prefers-reduced-motion", value:"reduce" }] });
+  await navigate(base + "?page=learn");
+  await homeReady();
+  await evaluate("document.fonts.ready");
+  for (const width of widths) {
+    await viewport(width);
+    await evaluate("scrollTo(0,0)");
+    const card = await checkCard(`guest ${width}`);
+    await checkSubjectGrid(`guest ${width}`);
+    const navigation = await checkNavigation(`guest ${width}`);
+    evidence.widths.push({ account:"guest", width, card, navigation });
+    if ([320,390].includes(width)) await screenshot(`guest-home-after-${width}.png`);
+  }
+  assert.equal(await evaluate("document.querySelector('.nav-resources').getBoundingClientRect().height"), 0, "Guest shell has no sample resource balances");
+
+  const register = async (username, phone) => {
+    const result = await evaluate(`fetch('/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:${JSON.stringify(username)},phone:${JSON.stringify(phone)},email:${JSON.stringify(username + "@example.test")},password:'Learning123',curriculum:'gaza',path:'scientific'})}).then(async response=>({status:response.status,body:await response.json()}))`);
+    assert.equal(result.status, 201, JSON.stringify(result));
+    await navigate(base + "?page=learn");
+    await homeReady();
+    await waitFor("document.body.dataset.accountType === 'free' && !document.querySelector('[data-learner-streak-freeze]')?.hidden");
+    await waitFor("[...document.querySelectorAll('.nav-resources img')].every(image=>image.complete && image.naturalWidth>0)");
+    await evaluate("document.fonts.ready");
+    return result.body.account;
+  };
+  const account = await register("LayoutLearner", "+972598000004");
+  for (const width of widths) {
+    await viewport(width);
+    await evaluate("scrollTo(0,0)");
+    const card = await checkCard(`member ${width}`);
+    await checkSubjectGrid(`member ${width}`);
+    const navigation = await checkNavigation(`member ${width}`);
+    const resources = await checkHeaderResources(`member ${width}`);
+    await checkExpandedHeaderResources(`expanded member ${width}`);
+    await checkResponsiveSignOut(`member ${width}`,width);
+    assert.equal(card.action, "ابدأ من خريطة الدروس");
+    evidence.widths.push({ account:"member", width, card, navigation, resources });
+    if (width === 390) {
+      const bounds = await evaluate("import('/src/ui/app-shell.js').then(module=>module.getShellViewportBounds())");
+      assert.ok(card.items[1].rect.bottom < bounds.bottom, "Fresh learner sees the ICT action in the first usable viewport");
+    }
+    if ([320,390,761,1280,1440].includes(width)) await screenshot(`member-home-after-${width}.png`);
+  }
+  await send("DOM.enable");
+  await send("CSS.enable");
+  const { root } = await send("DOM.getDocument");
+  const { nodeId } = await send("DOM.querySelector", { nodeId:root.nodeId, selector:".subject-card[data-subject=ict] h2" });
+  evidence.fonts = (await send("CSS.getPlatformFontsForNode", { nodeId })).fonts;
+  assert.ok(evidence.fonts.some(font => font.familyName.includes("Noto Sans Arabic")), "The supplied Arabic UI font is actually rendered");
+  const expectedFills = {
+    mathematics:"rgb(255, 204, 0)", "mathematics-2":"rgb(255, 204, 0)", physics:"rgb(166, 107, 255)", biology:"rgb(88, 204, 2)", chemistry:"rgb(255, 120, 79)",
+    ict:"rgb(10, 141, 234)", english:"rgb(255, 92, 159)", arabic:"rgb(255, 159, 26)", "islamic-education":"rgb(13, 204, 170)",
+    level:"rgb(255, 202, 40)", streak:"rgb(255, 133, 51)",
+  };
+  evidence.colors = await evaluate(`(() => {
+    return [...document.querySelectorAll('.subject-card'),...document.querySelectorAll('.dashboard-stat')].map(element=>({
+      name:element.dataset.subject || (element.classList.contains('dashboard-stat--level')?'level':'streak'),
+      background:getComputedStyle(element).backgroundColor,
+      color:getComputedStyle(element.querySelector('h2,.dashboard-stat__heading strong')).color,
+    }));
+  })()`);
+  for (const card of evidence.colors) {
+    assert.equal(card.background, expectedFills[card.name], `${card.name}: the original vibrant fill is preserved`);
+    assert.equal(card.color, "rgb(255, 255, 255)", `${card.name}: colored cards retain the requested white text`);
+  }
+  evidence.contrast = await evaluate(`(() => {
+    const channel=value=>{value/=255;return value<=.04045?value/12.92:((value+.055)/1.055)**2.4};
+    const luminance=color=>{const values=color.match(/[\\d.]+/g).slice(0,3).map(Number).map(channel);return values[0]*.2126+values[1]*.7152+values[2]*.0722};
+    return ['.subject-card[data-subject=ict] h2','.subject-card__progress-count','.dashboard-stat--streak .dashboard-stat__heading>span'].map(selector=>{
+      const element=document.querySelector(selector),color=getComputedStyle(element).color;
+      let parent=element,background;while(parent){background=getComputedStyle(parent).backgroundColor;if(background!=='rgba(0, 0, 0, 0)'&&background!=='transparent')break;parent=parent.parentElement;}
+      const a=luminance(color),b=luminance(background);return {selector,color,background,ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
+    });
+  })()`);
+  // Record contrast honestly: the user explicitly chose the original bright fills with white text.
+
+  for (const width of [320,761,1280]) {
+    await viewport(width);
+    await evaluate(`window.layoutText=[...document.querySelectorAll('.subject-card[data-subject=ict] h2,[data-subject-count]')].map(element=>[element,element.textContent]);layoutText[0][0].textContent='تكنولوجيا المعلومات وتطبيقاتها في حياتنا اليومية';layoutText[1][0].textContent='999999999 / 999999999';document.querySelector('#learner-dashboard-title bdi').textContent='متعلم باسم عربي طويل لاختبار التفاف النص';`);
+    await settleLayout();
+    evidence.stress.push({ width, kind:"long labels and counts", card:await checkCard(`long copy ${width}`) });
+    await evaluate("layoutText.forEach(([element,text])=>element.textContent=text)");
+  }
+  await viewport(720,450,2);
+  evidence.stress.push({ kind:"200 percent desktop zoom equivalent", card:await checkCard("200 percent layout") });
+  await viewport(390);
+
+  const answer = await evaluate(`(async()=>{
+    const {getIctPartQuestions}=await import('/src/data/lessons/ict/exam-lessons.js');
+    const response=await fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json','X-Progress-Owner':${JSON.stringify("account:" + account.id)}},body:JSON.stringify({id:crypto.randomUUID(),type:'answer',subjectId:'ict',lessonId:'database-management',partId:'access-basics',stepId:getIctPartQuestions('access-basics')[0].id,correct:true})});
+    document.dispatchEvent(new Event('visibilitychange'));
+    return response.status;
+  })()`);
+  assert.equal(answer, 200);
+  await waitFor("document.querySelector('[data-subject=ict] [data-subject-count]').textContent.startsWith('1 /')");
+  await checkCard("saved question progress subscription");
+  await navigate(base + "?page=learn");
+  await homeReady();
+  await waitFor("document.querySelector('[data-subject=ict] [data-subject-count]').textContent.startsWith('1 /')");
+  await viewport(844);
+  await evaluate("document.querySelector('[data-auth-sign-out]').focus()");
+  await key("Enter");
+  await waitFor("document.body.dataset.accountType==='guest'");
+  await register("OtherLayoutLearner", "+972598000005");
+  assert.ok(await evaluate("document.querySelector('[data-subject=ict] [data-subject-count]').textContent.startsWith('0 /')"), "Account switch shows the new account's own question progress");
+  // Failed font requests exercise the documented platform fallback without changing account data.
+  await send("Network.setCacheDisabled", { cacheDisabled:true });
+  await send("Network.setBlockedURLs", { urls:["*assets/fonts/*","*fonts.googleapis.com*","*fonts.gstatic.com*"] });
+  await reload();
+  await homeReady();
+  evidence.stress.push({ kind:"blocked font fallback", card:await checkCard("blocked Arabic font") });
+  await evaluate("document.fonts.ready");
+  const fallbackDocument = await send("DOM.getDocument");
+  const fallbackNode = await send("DOM.querySelector", { nodeId:fallbackDocument.root.nodeId, selector:".subject-card[data-subject=ict] h2" });
+  evidence.fallbackFonts = (await send("CSS.getPlatformFontsForNode", { nodeId:fallbackNode.nodeId })).fonts;
+  await screenshot("member-home-after-font-blocked-390.png");
+  await send("Network.setBlockedURLs", { urls:["*fonts.googleapis.com*","*fonts.gstatic.com*"] });
+  await send("Network.setCacheDisabled", { cacheDisabled:false });
+  await reload();
+  await homeReady();
+
+  const popupGeometry = async label => {
+    // Opening/scrolling schedules placement for the next frame. Measure the
+    // painted position, keeping the same bounds and hit-testing assertions.
+    await settleLayout();
+    const result = await evaluate(`(async()=>{
+      const {getShellViewportBounds}=await import('/src/ui/app-shell.js');
+      const bubble=document.querySelector('[data-roadmap-bubble]:not([hidden])');
+      const rect=element=>{const r=element.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}};
+      const buttons=[...bubble.querySelectorAll('button')].filter(button=>!button.hidden);
+      return {bounds:getShellViewportBounds(),bubble:rect(bubble),scrollable:bubble.querySelector('.roadmap-bubble-copy').scrollHeight>bubble.querySelector('.roadmap-bubble-copy').clientHeight,buttons:buttons.map(button=>({text:button.textContent,rect:rect(button),hits:[[.5,.5],[.1,.1],[.9,.9]].map(([x,y])=>{const r=button.getBoundingClientRect(),hit=document.elementFromPoint(r.left+r.width*x,r.top+r.height*y);return hit===button||button.contains(hit);})}))};
+    })()`);
+    assert.ok(result.bubble.top >= result.bounds.top - 1 && result.bubble.bottom <= result.bounds.bottom + 1, `${label}: popup is within usable vertical bounds: ${JSON.stringify(result)}`);
+    assert.ok(result.bubble.left >= result.bounds.left - 1 && result.bubble.right <= result.bounds.right + 1, `${label}: popup is within usable horizontal bounds`);
+    for (const button of result.buttons) assert.ok(button.hits.every(Boolean), `${label}: ${button.text} stays reachable at its center and edges: ${JSON.stringify(result)}`);
+    evidence.popups.push({ label,...result });
+    return result;
+  };
+  await navigate(base + "?subject=ict");
+  await waitFor("document.querySelector('[data-roadmap-lesson]') && !document.querySelector('.media-pending')");
+  for (const [width,height] of [[390,844],[760,390],[844,390]]) {
+    await viewport(width,height);
+    for (const id of ["database-management", "sql-queries", "my-mobile-app"]) {
+      await evaluate(`(()=>{const button=document.querySelector('[data-roadmap-lesson="${id}"]');button.scrollIntoView({block:'center',behavior:'instant'});button.click()})()`);
+      await waitFor("document.querySelector('[data-roadmap-bubble]:not([hidden])')");
+      await popupGeometry(`${width}x${height} ${id}`);
+      await key("Escape");
+      assert.equal(await evaluate("document.activeElement.dataset.roadmapLesson"), id, "Escape returns focus to the lesson node");
+    }
+    await screenshot(`roadmap-popup-after-${width}x${height}.png`);
+  }
+  await evaluate("document.querySelector('[data-page=learn]').click()");
+  await homeReady();
+  assert.equal(await evaluate("Boolean(document.querySelector('[data-roadmap-bubble]:not([hidden])'))"), false, "Navigation removes the lesson popup");
+  await viewport(844,390);
+  await evaluate("document.querySelector('[data-auth-sign-out]').focus()");
+  const shortAccount = await evaluate(`(()=>{const button=document.querySelector('[data-auth-sign-out]'),r=button.getBoundingClientRect(),hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);return {top:r.top,bottom:r.bottom,hit:hit===button||button.contains(hit),sidebarScroll:document.querySelector('.topbar').scrollTop};})()`);
+  assert.ok(shortAccount.top >= 0 && shortAccount.bottom <= 390 && shortAccount.hit, "Keyboard focus reveals reachable sign-out in a short sidebar");
+  evidence.shortAccount = shortAccount;
+  await key("Enter");
+  await waitFor("document.body.dataset.accountType==='guest'");
+});
+await writeFile(path.join(output, "home-layout-measurements.json"), JSON.stringify(evidence, null, 2));
+console.log("Home/shell browser checks passed: all widths, actual card contents, fonts/fallback, large text/counts, account/progress updates, keyboard sign-out, and measured popup hit tests.");

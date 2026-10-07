@@ -8,7 +8,7 @@ export function highlightEnglishText(root) {
   const nodes = [];
   while (walker.nextNode()) {
     const node = walker.currentNode;
-    if (/[A-Za-z]/.test(node.textContent) && !node.parentElement?.closest("code, pre, kbd, samp, a, svg, .lesson-english-term")) nodes.push(node);
+    if (/[A-Za-z]/.test(node.textContent) && !node.parentElement?.closest("code, pre, kbd, samp, a, svg, math, .lesson-english-term")) nodes.push(node);
   }
   for (const node of nodes) {
     const text = node.textContent;

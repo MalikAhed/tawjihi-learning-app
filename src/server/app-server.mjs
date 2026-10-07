@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { createAccountStore } from "./account-store.mjs";
-import { createAuthApi } from "./auth-api.mjs";
+import { createAuthApi, getSessionToken, sessionCookie } from "./auth-api.mjs";
 import { createProgressApi } from "./progress-api.mjs";
 import { createLiveReload, LIVE_RELOAD_MARKUP } from "./live-reload.mjs";
 import { applySecurityHeaders } from "./security-headers.mjs";
@@ -27,6 +27,16 @@ export async function createAppServer({root,config,logger=record=>console.log(JS
       policy.clientAddress(request);
       if(pathname==='/healthz'||pathname==='/readyz') {sendJson(response,closing?503:200,{status:closing?'closing':'ready'});return;}
       if(closing){sendJson(response,503,{error:'Server is shutting down.'});return;}
+      if(pathname==='/__codex_dev_ready' && config.devAutoLogin) {response.writeHead(204).end();return;}
+      if(config.devAutoLogin && pathname==='/' && !getSessionToken(request)) {
+        const account = await accountStore.ensureDeveloperAccount();
+        const session = accountStore.createSession(account.id);
+        response.writeHead(302, {
+          Location:'/',
+          'Set-Cookie':sessionCookie(session.token, session.expiresAt, false),
+        }).end();
+        return;
+      }
       if(pathname.startsWith('/api/auth/')) {await handleAuth(request,response,pathname);return;}
       if(pathname==='/api/progress') {await handleProgress(request,response);return;}
       if(pathname.startsWith('/api/')) {sendJson(response,404,{error:'Not found'});return;}

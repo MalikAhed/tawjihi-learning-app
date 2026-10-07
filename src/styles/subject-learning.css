@@ -42,6 +42,11 @@
 .roadmap-unit { min-width:0; }
 /* The unit card follows the reference path and keeps its guide action separate. */
 .roadmap-unit-header { display:flex; align-items:stretch; justify-content:space-between; gap:0; min-height:94px; margin-top:15px; padding:0; border-radius:15px; background:#1cb0f6; color:#fff; box-shadow:inset 0 -4px 0 #158fc9; overflow:hidden; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-unit-header,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-unit-header,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-unit-header,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-unit-header { background:#58cc02; box-shadow:inset 0 -4px 0 #46a302; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-unit-header { background:#ff4b5c; box-shadow:inset 0 -4px 0 #d93636; }
 .roadmap-unit-title { display:flex; flex-direction:column; justify-content:center; min-width:0; padding:13px 16px 17px; }
 .roadmap-unit-title>span { display:flex; align-items:center; gap:6px; color:#e2f6ff; font-size:13px; font-weight:800; line-height:1.28; }
 .roadmap-unit-title h2 { margin:4px 0 0; color:#fff; font-size:17px; font-weight:800; line-height:1.35; overflow-wrap:anywhere; }
@@ -106,6 +111,16 @@
 .roadmap-stop[data-part-state="in-progress"] .roadmap-part { outline:4px solid #c7eaf9; outline-offset:5px; }
 .roadmap-part[data-part-available="false"],.roadmap-part[data-account-locked="true"] { --stop-top:#c3cdd6; --stop-base:#a1afbb; }
 .roadmap-part[data-path-locked="true"] { --stop-top:#c3cdd6; --stop-base:#a1afbb; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-part,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-part,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-part,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-part { --stop-top:#58cc02; --stop-base:#46a302; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-part { --stop-top:#ff4b5c; --stop-base:#d93636; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-part[aria-expanded="true"],
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-part[aria-expanded="true"],
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-part[aria-expanded="true"],
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-part[aria-expanded="true"] { outline-color:#b9ed99; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-part[aria-expanded="true"] { outline-color:#ffc1c7; }
 .subject-roadmap .roadmap-part-number .roadmap-lock { width:36px; height:36px; transform:scaleY(.82); color:#f8fafc; }
 /* ICT lesson levels and their question progress. */
 .roadmap-parts--questions { width:100%; padding:16px 0 0; }
@@ -125,6 +140,21 @@
 .roadmap-parts--questions .roadmap-level-cap { transform:translateY(var(--travel)); transition:transform 140ms cubic-bezier(.2,.75,.25,1); }
 .roadmap-parts--questions .roadmap-level-face { fill:#1cb0f6; }
 .roadmap-parts--questions .roadmap-level-shine { fill:#66cfff; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-level-base,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-level-base,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-level-base,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-level-base { fill:#46a302; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-level-face,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-level-face,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-level-face,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-level-face { fill:#58cc02; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-level-shine,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-level-shine,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-level-shine,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-level-shine { fill:#9bea70; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-level-base { fill:#d93636; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-level-face { fill:#ff4b5c; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-level-shine { fill:#ff9ca5; }
 .roadmap-parts--questions .roadmap-part-number { inset:0 0 11px; border:0; background:none; font-size:34px; transform:translateY(var(--travel)); transition:transform 140ms cubic-bezier(.2,.75,.25,1); }
 @media (hover:hover) and (pointer:fine) { .roadmap-parts--questions .roadmap-part:hover { --travel:5px; } }
 .roadmap-parts--questions .roadmap-part:active { --travel:11px; }
@@ -137,6 +167,16 @@
 .roadmap-question-track { stroke:var(--lesson-progress-track,#edf1f3); }
 .roadmap-question-fill { stroke:#1cb0f6; }
 .roadmap-question-shine { stroke:#b3e9ff; stroke-width:3; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-question-fill,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-question-fill,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-question-fill,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-question-fill { stroke:#58cc02; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-question-fill { stroke:#ff4b5c; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-1"] .roadmap-question-shine,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-2"] .roadmap-question-shine,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-3"] .roadmap-question-shine,
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-4"] .roadmap-question-shine { stroke:#b8ee96; }
+.subject-roadmap[data-subject="biology"] .roadmap-unit[data-unit="biology-unit-5"] .roadmap-question-shine { stroke:#ff9ca5; }
 .roadmap-parts--questions .roadmap-part-copy { width:100%; padding:0; }
 .roadmap-parts--questions .roadmap-part-copy strong { display:block; color:#526477; font-size:14px; line-height:1.5; white-space:normal; }
 .roadmap-parts--questions .roadmap-part-copy small { display:block; margin-top:3px; color:#77818c; font-size:11px; line-height:1.4; }

@@ -70,6 +70,12 @@ export function createAccountStore({ databasePath } = {}) {
     JOIN accounts ON accounts.id = account_identifiers.account_id
     WHERE account_identifiers.alias IN (?, ?, ?)
   `);
+  const findAccountByAliasRow = database.prepare(`
+    SELECT accounts.* FROM account_identifiers
+    JOIN accounts ON accounts.id = account_identifiers.account_id
+    WHERE account_identifiers.alias = ?
+    LIMIT 1
+  `);
   const findAccountByAlias = database.prepare(`
     SELECT 1 FROM account_identifiers
     WHERE alias IN (?, ?, ?)
@@ -168,6 +174,24 @@ export function createAccountStore({ databasePath } = {}) {
     }
   }
 
+  async function ensureDeveloperAccount() {
+    const alias = normalizeUsername("developer");
+    const existing = findAccountByAliasRow.get(alias);
+    if (existing) return publicAccount(existing);
+    const created = await createAccount({
+      username:"developer",
+      email:null,
+      phone:null,
+      curriculum:"gaza",
+      path:"scientific",
+      password:randomBytes(48).toString("base64url"),
+    });
+    if (created.status === "created") return created.account;
+    const raced = findAccountByAliasRow.get(alias);
+    if (raced) return publicAccount(raced);
+    throw new Error("The developer account could not be created.");
+  }
+
   async function authenticate(identifier, password) {
     const rows = findAccountsByIdentifier.all(...paddedAliases(identifier));
     const candidates = rows.length ? rows : [{ password_salt:DUMMY_PASSWORD_SALT, password_hash:DUMMY_PASSWORD_HASH }];
@@ -196,6 +220,7 @@ export function createAccountStore({ databasePath } = {}) {
   return Object.freeze({
     progress,
     createAccount,
+    ensureDeveloperAccount,
     authenticate,
     isIdentifierAvailable(field, value) {
       if (!isAccountIdentifierField(field)) throw new RangeError("unsupported account identifier field");

@@ -4,6 +4,7 @@ import { renderTemplateShell, renderTemplateFooter } from "../template-shell.js"
 import { mountQuestionRating, renderQuestionRatingControls } from "../question-rating.js";
 import { highlightEnglishText } from "./english-text.js";
 import { mountSummaryScans } from "./summary-scans.js";
+import { renderQuestionSourceTag } from "./shared.js";
 
 function layoutWrittenPrompt(source) {
   let text = source.trim();
@@ -35,6 +36,7 @@ export function renderExamQuestion(container, step, { locale = "ar", onBack, onC
         <section class="lesson-flashcard-face" data-exam-front aria-hidden="false">
           <div class="lesson-flashcard-scroll" tabindex="0" role="region" aria-label="${ar ? "السؤال" : "Question"}" aria-keyshortcuts="Enter Space" aria-description="${ar ? "اضغط Enter أو مسافة لقلب البطاقة" : "Press Enter or Space to flip the card"}">
             <div class="lesson-flashcard-copy">
+              ${renderQuestionSourceTag(content)}
               <h1 id="${escapeHtml(titleId)}">${renderMarkdownInline(question, { locale })}</h1>
               ${body ? `<div class="markdown-rendered lesson-exam-body">${renderMarkdownDocument(body, { locale })}</div>` : ""}
             </div>

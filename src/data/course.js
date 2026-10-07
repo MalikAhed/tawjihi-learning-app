@@ -1,13 +1,13 @@
 export const COURSE_SUBJECTS = Object.freeze([
   { id:"ict", name:"تكنولوجيا المعلومات", status:"available" },
   { id:"mathematics", name:"الرياضيات 1", status:"available", artwork:"mathematics" },
-  { id:"mathematics-2", name:"الرياضيات 2", status:"unpublished", artwork:"mathematics" },
-  { id:"physics", name:"الفيزياء", status:"unpublished" },
-  { id:"biology", name:"الأحياء", status:"unpublished" },
-  { id:"chemistry", name:"الكيمياء", status:"unpublished" },
+  { id:"mathematics-2", name:"الرياضيات 2", status:"available", artwork:"mathematics" },
+  { id:"physics", name:"الفيزياء", status:"available" },
+  { id:"biology", name:"الأحياء", status:"available" },
+  { id:"chemistry", name:"الكيمياء", status:"available", artwork:"chemistry" },
   { id:"english", name:"اللغة الإنجليزية", status:"unpublished" },
   { id:"arabic", name:"اللغة العربية", status:"unpublished" },
-  { id:"islamic-education", name:"التربية الإسلامية", status:"unpublished" },
+  { id:"islamic-education", name:"التربية الإسلامية", status:"available" },
 ]);
 
 export const TOTAL_SUBJECTS = COURSE_SUBJECTS.length;

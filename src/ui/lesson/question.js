@@ -5,6 +5,7 @@ import { renderQuestionLayout } from "./question-layout.js";
 import { mountQuestionRating, renderQuestionRatingControls } from "../question-rating.js";
 import { highlightEnglishText } from "./english-text.js";
 import { mountSummaryScans } from "./summary-scans.js";
+import { mountTemplateScrollIndicator } from "../template-shell.js";
 
 const CHECK_ACTION = Object.freeze({ CHECK:"check", RETRY:"retry", CONTINUE:"continue" });
 
@@ -38,22 +39,9 @@ export function renderQuestion(container, { definition, onBack, onContinue, onAn
   mountSummaryScans(container.querySelector(".ui-lab-mcq"), { titleId:definition.id || "mcq", locale, signal, exam:true });
   const closeTemplate = () => onContinue?.();
   container.querySelector("[data-template-back]").addEventListener("click", () => onBack?.(), { signal });
-  let contentOverflowObserver;
-  const surface = container.querySelector(".level-layout-task");
-  const scrollButton = container.querySelector("[data-content-scroll]");
-  if (scrollButton) {
-    const updateOverflow = () => surface.classList.toggle("has-more-content",
-      surface.scrollHeight > surface.clientHeight + 2 && surface.scrollTop + surface.clientHeight < surface.scrollHeight - 2);
-    scrollButton.addEventListener("click", () => surface.scrollBy({ top:Math.max(140, surface.clientHeight * .58), behavior:"smooth" }), { signal });
-    surface.addEventListener("scroll", updateOverflow, { signal, passive:true });
-    contentOverflowObserver = new ResizeObserver(updateOverflow);
-    contentOverflowObserver.observe(surface);
-    [...surface.children].forEach(child => contentOverflowObserver.observe(child));
-    window.requestAnimationFrame(() => { if (!signal.aborted) updateOverflow(); });
-  }
+  mountTemplateScrollIndicator(container, { signal });
   const destroy = () => {
     controller.abort();
-    contentOverflowObserver?.disconnect();
     document.querySelector(".ui-lab-pinata")?.remove();
     container.classList.remove("ui-lab-template-open", "ui-lab-mcq-open");
   };

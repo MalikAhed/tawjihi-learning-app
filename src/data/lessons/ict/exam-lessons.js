@@ -11,11 +11,15 @@ const QUESTIONS = [
   ...ICT_CLASSIFIED_UNIT1_QUESTIONS, ...ICT_CLASSIFIED_UNIT2_QUESTIONS, ...ICT_CLASSIFIED_OSI_QUESTIONS,
 ];
 
-// Book topic order first; short original MCQs before written applications in each topic.
+// Keep exam and classified questions in topic order, then append every official textbook question.
+// Within each source group, short MCQs stay before written applications.
 export function getIctPartQuestions(partId) {
-  return QUESTIONS.filter(item => item.partId === partId).sort((a, b) =>
-    Number(Boolean(b.choices) && !b.figureNeeded)
-    - Number(Boolean(a.choices) && !a.figureNeeded));
+  return QUESTIONS.filter(item => item.partId === partId).sort((a, b) => {
+    const bookOrder = Number(a.sourceDocument === "book") - Number(b.sourceDocument === "book");
+    if (bookOrder) return bookOrder;
+    return Number(Boolean(b.choices) && !b.figureNeeded)
+      - Number(Boolean(a.choices) && !a.figureNeeded);
+  });
 }
 
 function sourceLabel(item) {

@@ -1,0 +1,143 @@
+{
+  "subject": "biology",
+  "cohort": "Gaza Tawjihi 2026 scientific stream",
+  "approvedScope": "Official Gaza reduced educational pack, 2024 edition currently linked by the Ministry portal; no newer 2026 reduction notice was found. The bank is prepared for the current Gaza Tawjihi 2026 scientific-stream request and should be rechecked if the Ministry publishes a new cohort pack.",
+  "sources": [
+    {
+      "id": "gaza-pack-2024",
+      "title": "رزمة العلوم الحياتية 12 متمازجة غزة",
+      "url": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+      "pages": 70,
+      "review": "all 70 pages rendered and visually reviewed; PDF pages 4–67 content, 68 worksheet, 69–70 test"
+    },
+    {
+      "id": "ministry-index",
+      "title": "وزارة التربية والتعليم العالي: الرزم التعليمية",
+      "url": "https://moe.edu.ps/gaza/subjects",
+      "review": "official subject index lists الصف الثاني عشر/علمي/العلوم الحياتية"
+    },
+    {
+      "id": "exam-archive",
+      "title": "البوابة التعليمية الفلسطينية: أسئلة الثانوية العامة",
+      "url": "https://elearn.edu.ps/exams12/",
+      "review": "past-paper archive and exam format research"
+    },
+    {
+      "id": "exam-analysis",
+      "title": "2025 Palestinian biology paper and topic review",
+      "url": "https://www.alquds.com/ar/posts/165189",
+      "review": "used for skill and topic-frequency blueprint; Gaza electronic cohort format is tracked separately"
+    },
+    {
+      "id": "biology-800-mcq",
+      "title": "المتفوق في الأحياء: 800 سؤال اختيار من متعدد",
+      "url": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+      "review": "61-page answer-key-backed enrichment collection; 597 clean MCQs transcribed into the app and all 61 pages retained as WebP for audit."
+    },
+    {
+      "id": "tasnif-2023",
+      "title": "تصنيف نماذج امتحانات الثانوية العامة 2023: أحياء",
+      "url": "https://drive.google.com/file/d/1Ih0eyqTk1KLgCnfuagrtBJw3SZ80CeqL/view?usp=drivesdk",
+      "review": "Ministry-follow-up classification booklet with previous questions and model answers; 40 written prompts adapted as flashcards and all 136 pages retained as WebP."
+    },
+    {
+      "id": "gaza-2026-official-exam-cycle",
+      "title": "وزارة التربية والتعليم: إطلاق امتحانات الثانوية العامة 2026",
+      "url": "https://www.moe.edu.ps/c/30744",
+      "review": "Official 20 June 2026 notice confirms Gaza exams were fully electronic for the third consecutive year; it does not publish a Biology deletion list."
+    },
+    {
+      "id": "gaza-2026-format-report",
+      "title": "نمط امتحان غزة 2026: أربعون سؤال اختيار من متعدد",
+      "url": "https://alresalah.news/post/312361",
+      "review": "Secondary report quoting the Ministry notice: ordinary Gaza subjects use 40 four-choice, one-answer items in 60 minutes, with Wise School electronic delivery and paper fallback where needed."
+    }
+  ],
+  "includedChapters": [
+    {
+      "id": "energy-flow",
+      "printedPages": "4–13",
+      "topics": [
+        "photosynthesis",
+        "light and dark reactions",
+        "Calvin cycle",
+        "aerobic respiration",
+        "anaerobic respiration"
+      ]
+    },
+    {
+      "id": "gene-to-protein",
+      "printedPages": "14–23",
+      "topics": [
+        "genetic code",
+        "mRNA/tRNA/rRNA",
+        "transcription",
+        "translation"
+      ]
+    },
+    {
+      "id": "inheritance",
+      "printedPages": "24–41",
+      "topics": [
+        "Mendel laws",
+        "incomplete dominance",
+        "codominance",
+        "multiple alleles",
+        "sex determination",
+        "sex-linked traits",
+        "sex-influenced traits",
+        "linkage and crossing over",
+        "genetic disorders"
+      ]
+    },
+    {
+      "id": "human-systems",
+      "printedPages": "42–57",
+      "topics": [
+        "skeleton",
+        "bone shapes and tissue",
+        "circulatory system",
+        "heart and vessels",
+        "immune systems",
+        "active and passive immunity"
+      ]
+    },
+    {
+      "id": "microbes",
+      "printedPages": "58–67 plus worksheet/test 68–70",
+      "topics": [
+        "prokaryote classification",
+        "bacterial shapes and structure",
+        "viruses structure and shapes",
+        "virus classification",
+        "virus reproduction"
+      ]
+    }
+  ],
+  "excludedScope": [
+    "full-book biotechnology chapter",
+    "lethal and polygenic sections absent from the Gaza pack contents",
+    "full-book antibody-isotype, immune-disorder and organ-donation sections",
+    "full-book energy-importance and biotechnology examples outside the reduced pack"
+  ],
+  "totals": {
+    "questionItems": 798,
+    "mcq": 714,
+    "examQuestionFlashcards": 84,
+    "figureCrops": 45,
+    "figureCropsReferencedByBank": 36
+  },
+  "format": {
+    "mcq": "single-choice interactive MCQ; source MCQs stay MCQs",
+    "written": "written, diagram, calculation and multi-part source items become exam-question flashcards",
+    "gaza2025Electronic": "Earlier Gaza electronic format evidence also described 40 four-option MCQs in one hour; it is retained as historical context, not the current cohort scope.",
+    "gaza2026Electronic": "The 2026 Gaza cohort uses 40 four-choice, one-correct-answer MCQs in 60 minutes according to a secondary report quoting the Ministry notice; the Ministry launch page confirms the electronic Gaza cycle. The larger archive lesson is enrichment for coverage, not a simulation of the exact 40-item paper."
+  },
+  "questionLedger": "The active bank contains 798 stable question IDs: 714 single-choice MCQs and 84 exam-question flashcards. The original Gaza-pack items remain in source order; the answer-key-backed 800-question collection contributes 596 cleanly transcribed active MCQs after page-break repairs, with one ambiguous neurodegeneration item held in the source archive, and the 2023 Ministry classification booklet contributes 40 written-response flashcards. Source pages and reviewed WebP crops are retained for audit. Items with unresolved or malformed source text remain visible in the archive rather than silently publishing a guessed answer.",
+  "blockedItems": [
+    {
+      "sourceQuestion": "800 collection q731",
+      "reason": "Wording says both Huntington and Krabbe cause neurodegeneration while the source key selects Huntington; kept in the WebP/source archive until independently verified."
+    }
+  ]
+}

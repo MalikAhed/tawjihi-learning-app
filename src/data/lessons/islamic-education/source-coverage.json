@@ -1,0 +1,61 @@
+{
+  "subject": "التربية الإسلامية",
+  "grade": "الثاني عشر / توجيهي غزة",
+  "scopeSource": {
+    "title": "اسلامية ١٢ رزم متمازجة.pdf",
+    "archivePath": "../source-archives/اسلامية ١٢ رزم متمازجة.pdf",
+    "pdfPages": 91,
+    "reviewStatus": "the contents pages and lesson ranges define the active five-unit, 18-lesson catalog"
+  },
+  "questionSource": {
+    "title": "islamic-education-mcq-2022-no-webp-pages.zip + official textbook review",
+    "archivePath": "../source-archives/islamic-education-mcq-2022-no-webp-pages.zip",
+    "readyMcqs": 646,
+    "blockedRecords": 1,
+    "filter": "ZIP sections are matched to the canonical book; official textbook review MCQs fill lessons absent from the ZIP"
+  },
+  "includedUnits": [
+    { "unit": 1, "title": "الوحدة الأولى: القرآن الكريم", "lessons": 8, "pages": "3–40", "questionCount": 242 },
+    { "unit": 2, "title": "الوحدة الثانية: العقيدة الإسلامية", "lessons": 2, "pages": "42–50", "questionCount": 71 },
+    { "unit": 3, "title": "الوحدة الثالثة: الحديث الشريف", "lessons": 2, "pages": "51–58", "questionCount": 58 },
+    { "unit": 4, "title": "الوحدة الرابعة: السير والتراجم", "lessons": 2, "pages": "60–67", "questionCount": 34 },
+    { "unit": 5, "title": "الوحدة الخامسة: الفقه الإسلامي", "lessons": 4, "pages": "68–86", "questionCount": 15 }
+  ],
+  "lessonLedger": [
+    { "lesson": 1, "sourceLesson": 1, "title": "منهج التعامل مع القرآن الكريم والسنة النبوية الشريفة", "pages": "3–8", "questionCount": 38 },
+    { "lesson": 2, "sourceLesson": 3, "title": "منهج القرآن الكريم في التربية", "pages": "9–13", "questionCount": 30 },
+    { "lesson": 3, "sourceLesson": 4, "title": "التحاكم لشرع الله تعالى", "pages": "14–17", "questionCount": 28 },
+    { "lesson": 4, "sourceLesson": 5, "title": "الاعتصام بالله تعالى", "pages": "18–22", "questionCount": 26 },
+    { "lesson": 5, "sourceLesson": 7, "title": "سنن الله تعالى في المجتمعات", "pages": "23–27", "questionCount": 43 },
+    { "lesson": 6, "sourceLesson": 8, "title": "سورة إبراهيم (1–12)", "pages": "28–31", "questionCount": 21 },
+    { "lesson": 7, "sourceLesson": 9, "title": "سورة إبراهيم (13–34)", "pages": "32–36", "questionCount": 30 },
+    { "lesson": 8, "sourceLesson": 10, "title": "سورة إبراهيم (35–52)", "pages": "37–40", "questionCount": 26 },
+    { "lesson": 9, "sourceLesson": 12, "title": "أثر الإيمان في المجتمع البشري", "pages": "42–45", "questionCount": 30 },
+    { "lesson": 10, "sourceLesson": 13, "title": "الشرك بالله تعالى ظاهر وخفي", "pages": "46–50", "questionCount": 41 },
+    { "lesson": 11, "sourceLesson": 16, "title": "الأعمال التي لا ينقطع ثوابها", "pages": "51–54", "questionCount": 29 },
+    { "lesson": 12, "sourceLesson": 17, "title": "موقف الإسلام من البدع", "pages": "55–58", "questionCount": 29 },
+    { "lesson": 13, "sourceLesson": 20, "title": "القائد الفاتح صلاح الدين الأيوبي", "pages": "60–63", "questionCount": 34 },
+    { "lesson": 14, "sourceLesson": 21, "title": "من أعلام المسلمين: العز بن عبد السلام", "pages": "64–67", "questionCount": 3 },
+    { "lesson": 15, "sourceLesson": 22, "title": "فقه الدعوة والجهاد", "pages": "68–73", "questionCount": 4 },
+    { "lesson": 16, "sourceLesson": 23, "title": "الأيمان والنذور", "pages": "74–77", "questionCount": 3 },
+    { "lesson": 17, "sourceLesson": 24, "title": "الربا", "pages": "78–81", "questionCount": 2 },
+    { "lesson": 18, "sourceLesson": 26, "title": "قضايا معاصرة: تنظيم النسل وتحديده", "pages": "82–86", "questionCount": 3 }
+  ],
+  "activeQuestions": 420,
+  "activeQuestionType": "mcq",
+  "excludedZipSections": [
+    "قصة آدم عليه السلام",
+    "قصة موسى مع العبد الصالح",
+    "منهج القرآن الكريم في ترسيخ حقائق الإيمان",
+    "جهود العلماء في الحفاظ على السنة النبوية الشريفة",
+    "فضل التفقه في الدين",
+    "التفقه في الدين",
+    "مواقف من سيرة الرسول ﷺ",
+    "عائشة أم المؤمنين رضي الله عنها",
+    "غير محدد"
+  ],
+  "notes": [
+    "The ZIP's source-marked deleted questions remain available when their topic is part of a required book lesson, because the current book itself contains those topics.",
+    "The five book lessons absent from the ZIP are filled from the official textbook review sections; only those printed MCQs are included."
+  ]
+}

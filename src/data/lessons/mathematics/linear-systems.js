@@ -398,6 +398,264 @@ body:
 solution:
 \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">١٤</mn></math>\`
 :::
+
+:::mcq
+id: math-kamel-u3-p038-r1
+title: الكامل، الوحدة الثالثة · ص ٣٧ · البند ١
+kicker: الكامل، الوحدة الثالثة · ص ٣٧ · البند ١
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-38.webp · الصورة ٣٨ من ٤٧ · الصفحة المطبوعة ٣٧ · البند ١ · ٢٠٢٢
+question: عند حل نظام من معادلتين خطيتين بالمتغيرين \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\` بطريقة كريمر وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>⋅</mo><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١٣</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥٠</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١١</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، فما قيمة / قيم \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><mi mathvariant="normal">أ</mi></mrow><mo stretchy="true">|</mo></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٣</mn><mo>،</mo><mn dir="ltr">٣</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٨١</mn></mrow></math>\`
+- [x] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٩</mn><mo>،</mo><mn dir="ltr">٩</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (د) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٩</mn><mo>،</mo><mn dir="ltr">٩</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p038-r2
+title: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٢
+kicker: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٢
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-38.webp · الصورة ٣٨ من ٤٧ · الصفحة المطبوعة ٣٧ · البند ٢ · ٢٠٢٣ دور أول
+question: استخدم أحمد طريقة كريمر لحل نظام مكون من معادلتين خطيتين في المتغيرين \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\`، فوجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow><mo>=</mo><mrow><mo stretchy="true">|</mo><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">أ</mi></mrow><mo stretchy="true">|</mo></mrow><mo>=</mo><mo>−</mo><mn dir="ltr">٢</mn><mrow><mo stretchy="true">|</mo><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow></mrow></math>\`، علمًا بأن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><mi mathvariant="normal">أ</mi></mrow><mo stretchy="true">|</mo></mrow><mo>≠</mo><mn dir="ltr">٠</mn></mrow></math>\`، جد مجموعة حل النظام؟
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mrow><mrow><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">٤</mn><mo>،</mo><mo>−</mo><mn dir="ltr">٢</mn></mrow><mo stretchy="true">)</mo></mrow></mrow></mrow><mo stretchy="true">}</mo></mrow></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mrow><mrow><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">٢</mn><mo>،</mo><mo>−</mo><mn dir="ltr">٤</mn></mrow><mo stretchy="true">)</mo></mrow></mrow></mrow><mo stretchy="true">}</mo></mrow></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mrow><mrow><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">٤</mn><mo>،</mo><mo>−</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true">)</mo></mrow></mrow></mrow><mo stretchy="true">}</mo></mrow></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mrow><mrow><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">١</mn><mo>،</mo><mo>−</mo><mn dir="ltr">٤</mn></mrow><mo stretchy="true">)</mo></mrow></mrow></mrow><mo stretchy="true">}</mo></mrow></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (أ) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mrow><mrow><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">٤</mn><mo>،</mo><mo>−</mo><mn dir="ltr">٢</mn></mrow><mo stretchy="true">)</mo></mrow></mrow></mrow><mo stretchy="true">}</mo></mrow></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p038-r3
+title: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٣
+kicker: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٣
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-38.webp · الصورة ٣٨ من ٤٧ · الصفحة المطبوعة ٣٧ · البند ٣ · ٢٠٢٣ دور ثانٍ
+question: عند استخدام قاعدة كريمر في حل نظام مكون من معادلتين خطيتين إحداهما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٤</mn><mo>−</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></math>\`، وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><mrow><mo stretchy="true">|</mo><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow><mo>+</mo><mn dir="ltr">٣</mn><mrow><mo stretchy="true">|</mo><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow><mo>=</mo><mn dir="ltr">٨</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><mi mathvariant="normal">أ</mi></mrow><mo stretchy="true">|</mo></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤</mn></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ب) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p038-r4
+title: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٤
+kicker: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٤
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-38.webp · الصورة ٣٨ من ٤٧ · الصفحة المطبوعة ٣٧ · البند ٤ · ٢٠٢٤ دور ثانٍ
+question: ما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi></mrow></math>\` عند حل نظام من معادلتين خطيتين بمتغيرين \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\` بطريقة كريمر، علمًا بأن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>⋅</mo><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٦</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>⋅</mo><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٨</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`؟
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢٠</mn></mrow><mrow><mn dir="ltr">٢٤</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢٤</mn></mrow><mrow><mn dir="ltr">٢٠</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (أ) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p038-r5
+title: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٥
+kicker: الكامل، الوحدة الثالثة · ص ٣٧ · البند ٥
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-38.webp · الصورة ٣٨ من ٤٧ · الصفحة المطبوعة ٣٧ · البند ٥ · تجريبي ضواحي القدس ٢٠٢٤
+question: إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣٦</mn><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٢</mn><msup><mi mathvariant="normal">ج</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mi mathvariant="normal">ج</mi></mrow></math>\`، إحدى المعادلتين الخطيتين بمتغيرين، وقد استخدم طريقة كريمر لحل النظام وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><mn dir="ltr">٢</mn><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow><mo>=</mo><mn dir="ltr">١</mn><mo>−</mo><mrow><mo stretchy="true">|</mo><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><msup><mi mathvariant="normal">أ</mi><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></msup></mrow><mo stretchy="true">|</mo></mrow><mo>=</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`، جد قيمة / قيم الثابت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ج</mi></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac><mo>،</mo><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
+- [x] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac><mo>،</mo><mn dir="ltr">١</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (د) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac><mo>،</mo><mn dir="ltr">١</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r1
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ١
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ١ · ٢٠١٩
+answer-label: الإجابة المطبوعة في الكامل
+body:
+استخدم طريقة جاوس لحل النظام: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">س</mi><mo>−</mo><mi mathvariant="normal">ص</mi><mo>+</mo><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ص</mi><mo>−</mo><mi mathvariant="normal">ع</mi><mo>−</mo><mn dir="ltr">٧</mn><mo>=</mo><mn dir="ltr">٠</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">ع</mi><mo>−</mo><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r2
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ٢
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ٢ · ٢٠١٩ دور ثانٍ
+answer-label: الإجابة المطبوعة في الكامل
+body:
+حل النظام \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٤</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\` باستخدام طريقة جاوس.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r3
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ٣
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ٣ · ٢٠٢٠
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١٢</mn></mrow></math>\` إحدى المعادلتين الخطيتين بمتغيرين، وعند استخدام طريقة كريمر للحل، وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><mn dir="ltr">٢</mn><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow><mo>=</mo><mn dir="ltr">٨</mn><mo>−</mo><mn dir="ltr">٨</mn><mrow><mo stretchy="true">|</mo><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub></mrow><mo stretchy="true">|</mo></mrow></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><mi mathvariant="normal">أ</mi></mrow><mo stretchy="true">|</mo></mrow></mrow></math>\` حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">|</mo><mrow><mi mathvariant="normal">أ</mi></mrow><mo stretchy="true">|</mo></mrow><mo>≠</mo><mn dir="ltr">٠</mn></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٦</mn></mrow></mfrac></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r4
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ٤
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ٤ · ٢٠٢٠ دور ثانٍ
+answer-label: الإجابة المطبوعة في الكامل
+body:
+استخدم طريقة جاوس لحل نظام المعادلات الخطية التالية: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>−</mo><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">ص</mi><mo>−</mo><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٤</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mi mathvariant="normal">ص</mi><mo>+</mo><mi mathvariant="normal">ع</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٣</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r5
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ٥
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ٥ · ٢٠٢٠ دور ثانٍ
+answer-label: الإجابة المطبوعة في الكامل
+body:
+عند حل نظام يتكون من معادلتين خطيتين بالمتغيرين \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\` بطريقة كريمر وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٠</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٠</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، أوجد قيمتي \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r6
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ٦
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ٦ · ٢٠٢١
+answer-label: الإجابة المطبوعة في الكامل
+body:
+حل النظام التالي من المعادلات الخطية بطريقة النظير الضربي: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">ص</mi><mo>−</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">١٩</mn><mo>=</mo><mn dir="ltr">٠</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١٢</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٥</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r7
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ٧
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ٧ · ٢٠٢١
+answer-label: الإجابة المطبوعة في الكامل
+body:
+حل النظام التالي من المعادلات الخطية بطريقة كريمر: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٠</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">م</mi><mi mathvariant="normal">س</mi><mo>−</mo><mi mathvariant="normal">ك</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٤</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\`، علمًا بأن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">م</mi><mo>−</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">ك</mi><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p040-r8
+title: الكامل، الوحدة الثالثة · ص ٣٩ · البند ٨
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-40.webp · الصورة ٤٠ من ٤٧ · الصفحة المطبوعة ٣٩ · البند ٨ · ٢٠٢١ دور ثانٍ
+answer-label: الإجابة المطبوعة في الكامل
+body:
+حل نظام المعادلات الآتي بطريقة النظير الضربي: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">ص</mi><mo>+</mo><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٥</mn><mo>=</mo><mn dir="ltr">٠</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p041-r1
+title: الكامل، الوحدة الثالثة · ص ٤٠ · البند ١
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-41.webp · الصورة ٤١ من ٤٧ · الصفحة المطبوعة ٤٠ · البند ١ · ٢٠٢١ دور ثانٍ
+answer-label: الإجابة المطبوعة في الكامل
+body:
+عند حل معادلتين خطيتين بالمتغيرين \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\` بطريقة كريمر وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>⋅</mo><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١١</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">١٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١٠</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub><mo>⋅</mo><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢١</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٧</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢٨</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١٤</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة المتغير \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p041-r2
+title: الكامل، الوحدة الثالثة · ص ٤٠ · البند ٢
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-41.webp · الصورة ٤١ من ٤٧ · الصفحة المطبوعة ٤٠ · البند ٢ · ٢٠٢١ الدورة الثالثة
+answer-label: الإجابة المطبوعة في الكامل
+body:
+عند حل نظام من المعادلات الخطية بمتغيرين \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\` بطريقة كريمر وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٦</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٦</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة المتغيرين \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p041-r3
+title: الكامل، الوحدة الثالثة · ص ٤٠ · البند ٣
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-41.webp · الصورة ٤١ من ٤٧ · الصفحة المطبوعة ٤٠ · البند ٣ · ٢٠٢٢
+answer-label: الإجابة المطبوعة في الكامل
+body:
+استخدم طريقة جاوس في حل النظام الآتي: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">س</mi><mo>−</mo><mi mathvariant="normal">ص</mi><mo>+</mo><mn dir="ltr">٤</mn><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٩</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>+</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>−</mo><mi mathvariant="normal">ع</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٤</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p041-r4
+title: الكامل، الوحدة الثالثة · ص ٤٠ · البند ٤
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-41.webp · الصورة ٤١ من ٤٧ · الصفحة المطبوعة ٤٠ · البند ٤ · ٢٠٢٢ دور ثانٍ
+answer-label: الإجابة المطبوعة في الكامل
+body:
+عند استخدام طريقة النظير الضربي في حل نظام المعادلات الخطية التالي: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">ن</mi></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">ك</mi></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow><mo>⋅</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">س</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">ص</mi></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١٠</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></math>\`، فإذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ن</mi><mo>+</mo><mi mathvariant="normal">ك</mi><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`، فما قيم كل من \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ن</mi><mo>،</mo><mi mathvariant="normal">ك</mi></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ن</mi><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ك</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p041-r5-1
+title: الكامل، الوحدة الثالثة · ص ٤٠ · البند ٥-١
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-41.webp · الصورة ٤١ من ٤٧ · الصفحة المطبوعة ٤٠ · البند ٥-١ · ٢٠٢٣ دور أول
+answer-label: الإجابة المطبوعة في الكامل
+body:
+عند حل النظام \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">ك</mi><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ن</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mi mathvariant="normal">ب</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">ل</mi><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ع</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mi mathvariant="normal">ج</mi></mrow></mtd></mtr></mtable></mrow></mrow></math>\` بطريقة كريمر، وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub><mo>⋅</mo><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٠</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ك</mi><mi mathvariant="normal">ع</mi><mo>−</mo><mi mathvariant="normal">ن</mi><mi mathvariant="normal">ل</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، جد قيم \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p041-r5-2
+title: الكامل، الوحدة الثالثة · ص ٤٠ · البند ٥-٢
+question: حل أنظمة المعادلات باستخدام المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-41.webp · الصورة ٤١ من ٤٧ · الصفحة المطبوعة ٤٠ · البند ٥-٢ · ٢٠٢٣ دور أول
+answer-label: الإجابة المطبوعة في الكامل
+body:
+عند حل النظام \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">ك</mi><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ن</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mi mathvariant="normal">ب</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">ل</mi><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ع</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mi mathvariant="normal">ج</mi></mrow></mtd></mtr></mtable></mrow></mrow></math>\` بطريقة كريمر، وجد أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">ص</mi></mrow></msub><mo>⋅</mo><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">أ</mi><mrow><mi mathvariant="normal">س</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٠</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ك</mi><mi mathvariant="normal">ع</mi><mo>−</mo><mi mathvariant="normal">ن</mi><mi mathvariant="normal">ل</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، اكتب نظام المعادلات المذكور في السؤال بعد إيجاد جميع الثوابت؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٤</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٠</mn></mrow></mtd></mtr></mtable></mrow></mrow></math>\`.
+
+:::
+
 `;
 
 export default defineMarkdownLesson({

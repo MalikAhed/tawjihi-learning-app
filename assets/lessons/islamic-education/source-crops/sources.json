@@ -1,0 +1,17 @@
+[
+  {
+    "file": "assets/lessons/islamic-education/source-crops/islamic-tasnif-2025-p019-madd-rules.webp",
+    "source": "https://upload.rwnq-alhaya.com/P5S3Sh1NVAqzJju/file",
+    "clips": [
+      {
+        "page": 19,
+        "rect": [100, 100, 2290, 3305],
+        "coordinateSpace": "rendered-pixels",
+        "renderDpi": 300
+      }
+    ],
+    "encoding": "lossless WebP (VP8L)",
+    "review": "Rendered at 300 dpi, cropped from the original page, visually checked, and pixel-compared against the source crop. Contains the original madd-letter and madd-type diagrams; use it only with the Tajwid visual flashcard.",
+    "questionIds": []
+  }
+]

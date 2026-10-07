@@ -17,3 +17,7 @@ design-system-clone.zip
 
 _site/
 _server/
+
+source-archives/
+inspect.mjs
+tmp-*.mjs

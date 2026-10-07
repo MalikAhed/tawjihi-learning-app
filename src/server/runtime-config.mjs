@@ -18,7 +18,8 @@ export function readRuntimeConfig(environment,{root,production=false}) {
   if([...trustedProxies].some(address=>!isIP(address)))throw new Error('TRUSTED_PROXY_ADDRESSES must list explicit IP addresses.');
   return {port,publicOrigin,trustedProxies,secureCookies:publicOrigin?.startsWith('https:')||false,
     databasePath:environment.ACCOUNTS_DATABASE_PATH||path.join(root,'data/accounts.sqlite'),
-    liveReload:!production&&environment.LIVE_RELOAD!=='0',production};
+    liveReload:!production&&environment.LIVE_RELOAD!=='0',
+    devAutoLogin:!production&&environment.DEV_AUTO_LOGIN==='1',production};
 }
 
 export function createRequestPolicy({publicOrigin,trustedProxies,production=false}) {

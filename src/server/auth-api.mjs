@@ -17,7 +17,7 @@ function parseCookies(header = "") {
 
 export const getSessionToken = (request) => parseCookies(request.headers.cookie)[SESSION_COOKIE];
 
-function sessionCookie(token, expiresAt, secure = false) {
+export function sessionCookie(token, expiresAt, secure = false) {
   const parts = [
     `${SESSION_COOKIE}=${encodeURIComponent(token)}`,
     "Path=/",

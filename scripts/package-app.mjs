@@ -57,8 +57,10 @@ export async function packageApp({ server = false } = {}) {
   const entries = await readdir(outputDirectory, { recursive:true, withFileTypes:true });
   const files = entries.filter(entry => entry.isFile());
   for (const file of files) bytes += (await stat(path.join(file.parentPath, file.name))).size;
-  // Original documents stay in the source archive; student delivery stays small.
-  if (bytes > 25 * 1024 * 1024) throw new Error("Packaged app exceeds the 25 MiB lightweight budget. Review asset use before deliberately adjusting the budget.");
+  // The current question course spans seven published subject paths and ships the
+  // lightweight figures required for source-grounded review. Source ledgers
+  // and original PDFs stay excluded from the browser artifact.
+  if (bytes > 64 * 1024 * 1024) throw new Error("Packaged app exceeds the 64 MiB question-course budget. Review asset use before deliberately adjusting the budget.");
   console.log(`Packaged ${mode} app: ${outputDirectory} (${files.length} files, ${(bytes / 1024 / 1024).toFixed(2)} MiB)`);
   return outputDirectory;
 }

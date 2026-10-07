@@ -37,7 +37,7 @@ async function collectJavaScript(directory, result = []) {
 assert(TOTAL_SUBJECTS > 0, "the subject catalog must not be empty");
 assert(new Set(COURSE_SUBJECTS.map(({ id }) => id)).size === TOTAL_SUBJECTS, "every subject must have a unique id");
 assert(COURSE_SUBJECTS.every(({ name, status }) => name && ["available", "unpublished"].includes(status)), "every subject must have a name and an explicit publication status");
-assert(COURSE_SUBJECTS.filter(({ status }) => status === "available").map(({ id }) => id).join() === "ict,mathematics", "only ICT and Mathematics have published courses");
+assert(COURSE_SUBJECTS.filter(({ status }) => status === "available").map(({ id }) => id).join() === "ict,mathematics,mathematics-2,physics,biology,chemistry,islamic-education", "published question courses are available");
 
 const indexHtml = await readFile(path.join(projectRoot, "index.html"), "utf8");
 for (const match of indexHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {

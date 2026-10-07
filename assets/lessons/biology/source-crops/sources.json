@@ -1,0 +1,785 @@
+[
+  {
+    "file": "assets/lessons/biology/source-crops/photosynthesis-overview.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 5,
+        "rect": [
+          66,
+          282,
+          270,
+          210
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/photosystem.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 6,
+        "rect": [
+          63,
+          456,
+          420,
+          189
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/noncyclic-flow.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 7,
+        "rect": [
+          105,
+          81,
+          390,
+          240
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/calvin-cycle.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          63,
+          81,
+          300,
+          279
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/glycolysis.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 10,
+        "rect": [
+          45,
+          420,
+          258,
+          228
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/gene-to-protein.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 16,
+        "rect": [
+          45,
+          33,
+          300,
+          372
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/trna.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 16,
+        "rect": [
+          45,
+          405,
+          309,
+          270
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/transcription.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 17,
+        "rect": [
+          63,
+          258,
+          456,
+          342
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/dihybrid-cross.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 25,
+        "rect": [
+          105,
+          159,
+          372,
+          273
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/incomplete-dominance.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 28,
+        "rect": [
+          48,
+          318,
+          468,
+          267
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/sex-linked.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 32,
+        "rect": [
+          162,
+          420,
+          243,
+          258
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/vertebral-column.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 44,
+        "rect": [
+          48,
+          78,
+          267,
+          270
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/heart.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 49,
+        "rect": [
+          63,
+          201,
+          459,
+          279
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/cardiac-conduction.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 50,
+        "rect": [
+          87,
+          210,
+          390,
+          216
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/immune-systems.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 54,
+        "rect": [
+          48,
+          93,
+          486,
+          261
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/archaea.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 59,
+        "rect": [
+          63,
+          240,
+          213,
+          162
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/virus-shapes.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 66,
+        "rect": [
+          126,
+          450,
+          306,
+          210
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/hiv-replication.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 67,
+        "rect": [
+          54,
+          234,
+          246,
+          243
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p007-photosystem-noncyclic.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 7,
+        "rect": [
+          105,
+          81,
+          390,
+          240
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p009-calvin-cycle.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 9,
+        "rect": [
+          63,
+          81,
+          300,
+          279
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p025-punnett-square.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 25,
+        "rect": [
+          105,
+          159,
+          372,
+          273
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p037-karyotypes.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 37,
+        "rect": [
+          63,
+          180,
+          430,
+          300
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p049-heart-figure.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 49,
+        "rect": [
+          63,
+          201,
+          459,
+          279
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p054-immune-response.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 54,
+        "rect": [
+          48,
+          93,
+          486,
+          261
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p062-bacterial-cell.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 62,
+        "rect": [
+          63,
+          180,
+          420,
+          430
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p067-hiv-structure.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 67,
+        "rect": [
+          54,
+          234,
+          246,
+          243
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/biology-book-p070-heart-question.webp",
+    "source": "https://elearnps.blob.core.windows.net/public/ElearnPs/edu-pack-gaza/12/12scientific/%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%A1%D9%A2%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9%20%D8%BA%D8%B2%D8%A9.pdf",
+    "clips": [
+      {
+        "page": 70,
+        "rect": [
+          40,
+          100,
+          500,
+          650
+        ]
+      }
+    ],
+    "encoding": "lossless WebP",
+    "review": "visually checked against rendered source page"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q006.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 2,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 6 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q023.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 23 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q026.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 3,
+        "rect": [
+          0,
+          0,
+          679,
+          225
+        ],
+        "note": "قصاصة WebP للسؤال 26 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q042.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 4,
+        "rect": [
+          0,
+          0,
+          679,
+          143
+        ],
+        "note": "قصاصة WebP للسؤال 42 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q076.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 7,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 76 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q105.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 8,
+        "rect": [
+          0,
+          0,
+          679,
+          217
+        ],
+        "note": "قصاصة WebP للسؤال 105 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q204.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 14,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 204 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q219.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 15,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 219 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q329.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 23,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 329 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q454.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 30,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 454 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q487.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 32,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 487 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q529.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 35,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 529 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q625.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 41,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 625 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q648.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 43,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 648 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q723.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 48,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 723 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q725.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 48,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 725 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q747.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 50,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 747 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  },
+  {
+    "file": "assets/lessons/biology/source-crops/tasnif-800/biology-800-q780.webp",
+    "source": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+    "clips": [
+      {
+        "page": 52,
+        "rect": [
+          0,
+          0,
+          679,
+          330
+        ],
+        "note": "قصاصة WebP للسؤال 780 مع الجدول أو الشكل المرافق"
+      }
+    ],
+    "encoding": "lossy WebP",
+    "review": "generated from the answer-key-backed 800-question PDF; inspect the retained source page for full context"
+  }
+]

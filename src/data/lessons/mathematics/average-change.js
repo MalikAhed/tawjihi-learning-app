@@ -2,6 +2,32 @@ import { defineMarkdownLesson } from "../../../markdown/lesson-model.js";
 
 export const lessonSource = `
 :::exam-question
+id: math-book-p005-activity1
+title: الكتاب، ص 3 · نشاط ١
+question: متوسط التغير
+reference: [الكتاب، PDF ص 5](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=5)
+answer-label: تفسير محسوب من معطيات النشاط
+body:
+عائلة فلسطينية مكوّنة من: أم أحمد وولديها التوأمين محمد وخالد. كانت كتلة محمد قبل عشر سنوات ٣٢ كغم، وأصبحت اليوم ٦٢ كغم، أما كتلة خالد فكانت ٢٩ كغم، ولكنها اليوم ٥٢ كغم. ارتاحت أم أحمد للتغير في كتلة محمد، بينما ذهبت بابنها خالد إلى الطبيب… برأيك لماذا؟
+solution:
+زادَت كتلة محمد ٣٠ كغم خلال عشر سنوات، فمتوسط التغير ٣ كغم في السنة. وزادت كتلة خالد ٢٣ كغم، فمتوسط التغير ٢٫٣ كغم في السنة. التغير في كتلة خالد أقل من التغير في كتلة توأمه محمد؛ وهذا يفسر المقارنة التي أجرتها الأم في النشاط.
+:::
+
+:::exam-question
+id: math-book-p007-activity2-worked
+title: الكتاب، ص 5 · نشاط ٢، المثال المحلول
+question: متوسط التغير
+reference: [الكتاب، PDF ص 7](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=7)
+answer-label: الحل المطبوع في الكتاب
+body:
+يمثل منحنى الاقتران ص = ق(س) في الشكل المجاور مبيع شركة سيارات؛ حيث ص: المبيع بالملايين خلال س شهرًا. أوجد من الرسم متوسط التغير في المبيع عندما تتغير س من ١ إلى ٣.
+
+![الرسم الأصلي لمبيع الشركة بالملايين خلال الأشهر](assets/lessons/mathematics/source-crops/u1-book-p007-activity2-figure.webp)
+solution:
+متوسط التغير = (٥ − ٢) ÷ (٣ − ١) = ٣ ÷ ٢ = ١٫٥ مليون في الشهر.
+:::
+
+:::exam-question
 id: math-book-p005-ex1-a
 title: الكتاب، ص 3 · مثال ١، الفرع ١
 question: متوسط التغير

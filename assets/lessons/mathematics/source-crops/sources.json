@@ -7886,5 +7886,1411 @@
     ],
     "visualReview": "passed",
     "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-kamel-u5-p049-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p049-r3-figure.webp",
+    "clips": [
+      {
+        "page": 49,
+        "rect": [
+          0,
+          0,
+          1029,
+          622
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-049.webp",
+      "rect": [
+        804,
+        2096,
+        1833,
+        2718
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p058-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p058-r1-figure.webp",
+    "clips": [
+      {
+        "page": 58,
+        "rect": [
+          0,
+          0,
+          368,
+          368
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-058.webp",
+      "rect": [
+        596,
+        756,
+        964,
+        1124
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p058-r2-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p058-r2-question.webp",
+    "clips": [
+      {
+        "page": 58,
+        "rect": [
+          44,
+          126,
+          665,
+          551
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-058.webp",
+      "rect": [
+        589,
+        1272,
+        2095,
+        1996
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p058-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p058-r3-figure.webp",
+    "clips": [
+      {
+        "page": 58,
+        "rect": [
+          0,
+          0,
+          715,
+          506
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-058.webp",
+      "rect": [
+        598,
+        2125,
+        1313,
+        2631
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p059-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p059-r1-figure.webp",
+    "clips": [
+      {
+        "page": 59,
+        "rect": [
+          0,
+          0,
+          688,
+          417
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-059.webp",
+      "rect": [
+        620,
+        836,
+        1308,
+        1253
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p059-r2-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p059-r2-figure.webp",
+    "clips": [
+      {
+        "page": 59,
+        "rect": [
+          0,
+          0,
+          543,
+          392
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-059.webp",
+      "rect": [
+        605,
+        1798,
+        1148,
+        2190
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p059-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p059-r3-figure.webp",
+    "clips": [
+      {
+        "page": 59,
+        "rect": [
+          0,
+          0,
+          749,
+          511
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-059.webp",
+      "rect": [
+        622,
+        2386,
+        1371,
+        2897
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p060-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p060-r1-figure.webp",
+    "clips": [
+      {
+        "page": 60,
+        "rect": [
+          0,
+          0,
+          567,
+          347
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-060.webp",
+      "rect": [
+        627,
+        586,
+        1194,
+        933
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p060-r2-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p060-r2-figure.webp",
+    "clips": [
+      {
+        "page": 60,
+        "rect": [
+          0,
+          0,
+          695,
+          395
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-060.webp",
+      "rect": [
+        598,
+        1105,
+        1293,
+        1500
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p060-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p060-r3-figure.webp",
+    "clips": [
+      {
+        "page": 60,
+        "rect": [
+          0,
+          0,
+          637,
+          533
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-060.webp",
+      "rect": [
+        753,
+        2246,
+        1390,
+        2779
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p061-r2-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p061-r2-figure.webp",
+    "clips": [
+      {
+        "page": 61,
+        "rect": [
+          10,
+          11,
+          690,
+          532
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-061.webp",
+      "rect": [
+        678,
+        2374,
+        1376,
+        2914
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p064-r7-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p064-r7-figure.webp",
+    "clips": [
+      {
+        "page": 64,
+        "rect": [
+          0,
+          0,
+          886,
+          482
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-064.webp",
+      "rect": [
+        637,
+        2539,
+        1523,
+        3021
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p065-r2-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p065-r2-figure.webp",
+    "clips": [
+      {
+        "page": 65,
+        "rect": [
+          8,
+          6,
+          741,
+          467
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-065.webp",
+      "rect": [
+        644,
+        829,
+        1393,
+        1303
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p066-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p066-r1-figure.webp",
+    "clips": [
+      {
+        "page": 66,
+        "rect": [
+          0,
+          0,
+          838,
+          565
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-066.webp",
+      "rect": [
+        562,
+        586,
+        1400,
+        1151
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u5-p072-r6-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit-05-question-set.zip",
+    "sourceMember": "kamel-unit-05-complete/assets/lessons/mathematics/source-crops/math-kamel-u5-p072-r6-figure.webp",
+    "clips": [
+      {
+        "page": 72,
+        "rect": [
+          10,
+          9,
+          746,
+          557
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "sources/page-072.webp",
+      "rect": [
+        610,
+        2510,
+        1366,
+        3077
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u1-p042-r03-figure.webp",
+    "source": "source-archives/full kamel content/kamel-question-set-unit-1.zip",
+    "sourceMember": "kamel-question-set/assets/lessons/mathematics/source-crops/math-kamel-u1-p042-r03-figure.webp",
+    "clips": [
+      {
+        "page": 42,
+        "rect": [
+          0,
+          0,
+          522,
+          391
+        ],
+        "excludeRects": [
+          [
+            132,
+            18,
+            181,
+            76
+          ]
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025-42.webp",
+      "rect": [
+        478,
+        1154,
+        1000,
+        1545
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded. The source screenshot's floating Word layout icon is outside the diagram crop and filled white; diagram pixels are unchanged."
+  },
+  {
+    "file": "math-kamel-u1-p044-r05-figure.webp",
+    "source": "source-archives/full kamel content/kamel-question-set-unit-1.zip",
+    "sourceMember": "kamel-question-set/assets/lessons/mathematics/source-crops/math-kamel-u1-p044-r05-figure.webp",
+    "clips": [
+      {
+        "page": 44,
+        "rect": [
+          0,
+          0,
+          625,
+          558
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025-44.webp",
+      "rect": [
+        466,
+        2030,
+        1091,
+        2588
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u1-p046-r01-figure.webp",
+    "source": "source-archives/full kamel content/kamel-question-set-unit-1.zip",
+    "sourceMember": "kamel-question-set/assets/lessons/mathematics/source-crops/math-kamel-u1-p046-r01-figure.webp",
+    "clips": [
+      {
+        "page": 46,
+        "rect": [
+          0,
+          0,
+          731,
+          512
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025-46.webp",
+      "rect": [
+        545,
+        863,
+        1276,
+        1375
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u1-p060-r03-figure.webp",
+    "source": "source-archives/full kamel content/kamel-question-set-unit-1.zip",
+    "sourceMember": "kamel-question-set/assets/lessons/mathematics/source-crops/math-kamel-u1-p060-r03-figure.webp",
+    "clips": [
+      {
+        "page": 60,
+        "rect": [
+          0,
+          0,
+          556,
+          324
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025-60.webp",
+      "rect": [
+        545,
+        1273,
+        1101,
+        1597
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u1-p076-r15-figure.webp",
+    "source": "source-archives/full kamel content/kamel-question-set-unit-1.zip",
+    "sourceMember": "kamel-question-set/assets/lessons/mathematics/source-crops/math-kamel-u1-p076-r15-figure.webp",
+    "clips": [
+      {
+        "page": 76,
+        "rect": [
+          4,
+          4,
+          791,
+          481
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025-76.webp",
+      "rect": [
+        839,
+        1574,
+        1636,
+        2062
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u1-p078-r31-figure.webp",
+    "source": "source-archives/full kamel content/kamel-question-set-unit-1.zip",
+    "sourceMember": "kamel-question-set/assets/lessons/mathematics/source-crops/math-kamel-u1-p078-r31-figure.webp",
+    "clips": [
+      {
+        "page": 78,
+        "rect": [
+          7,
+          8,
+          908,
+          564
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الأولى) 2025-78.webp",
+      "rect": [
+        704,
+        1685,
+        1623,
+        2261
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p013-r4-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p013-r4-figure.webp",
+    "clips": [
+      {
+        "page": 13,
+        "rect": [
+          0,
+          0,
+          581,
+          383
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-13.webp",
+      "rect": [
+        557,
+        2018,
+        1138,
+        2401
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p020-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p020-r1-figure.webp",
+    "clips": [
+      {
+        "page": 20,
+        "rect": [
+          0,
+          0,
+          486,
+          497
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-20.webp",
+      "rect": [
+        727,
+        349,
+        1213,
+        846
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p024-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p024-r3-figure.webp",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          0,
+          0,
+          603,
+          419
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-24.webp",
+      "rect": [
+        441,
+        1446,
+        1044,
+        1865
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p024-r6-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p024-r6-figure.webp",
+    "clips": [
+      {
+        "page": 24,
+        "rect": [
+          0,
+          0,
+          649,
+          600
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-24.webp",
+      "rect": [
+        441,
+        2520,
+        1090,
+        3120
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p025-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p025-r1-figure.webp",
+    "clips": [
+      {
+        "page": 25,
+        "rect": [
+          0,
+          0,
+          763,
+          463
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-25.webp",
+      "rect": [
+        407,
+        613,
+        1170,
+        1076
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p025-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p025-r3-figure.webp",
+    "clips": [
+      {
+        "page": 25,
+        "rect": [
+          0,
+          0,
+          770,
+          296
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-25.webp",
+      "rect": [
+        431,
+        1698,
+        1201,
+        1994
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p025-r5-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p025-r5-figure.webp",
+    "clips": [
+      {
+        "page": 25,
+        "rect": [
+          0,
+          0,
+          753,
+          470
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-25.webp",
+      "rect": [
+        385,
+        2648,
+        1138,
+        3118
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p026-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p026-r1-figure.webp",
+    "clips": [
+      {
+        "page": 26,
+        "rect": [
+          0,
+          0,
+          768,
+          523
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-26.webp",
+      "rect": [
+        683,
+        749,
+        1451,
+        1272
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p027-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p027-r1-figure.webp",
+    "clips": [
+      {
+        "page": 27,
+        "rect": [
+          0,
+          0,
+          743,
+          583
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-27.webp",
+      "rect": [
+        458,
+        703,
+        1201,
+        1286
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p028-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p028-r3-figure.webp",
+    "clips": [
+      {
+        "page": 28,
+        "rect": [
+          0,
+          0,
+          685,
+          451
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-28.webp",
+      "rect": [
+        463,
+        1560,
+        1148,
+        2011
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p028-r5-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p028-r5-figure.webp",
+    "clips": [
+      {
+        "page": 28,
+        "rect": [
+          0,
+          0,
+          766,
+          467
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-28.webp",
+      "rect": [
+        443,
+        2435,
+        1209,
+        2902
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p029-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p029-r1-figure.webp",
+    "clips": [
+      {
+        "page": 29,
+        "rect": [
+          0,
+          0,
+          836,
+          621
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-29.webp",
+      "rect": [
+        557,
+        644,
+        1393,
+        1265
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p030-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p030-r3-figure.webp",
+    "clips": [
+      {
+        "page": 30,
+        "rect": [
+          0,
+          0,
+          923,
+          446
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-30.webp",
+      "rect": [
+        838,
+        2137,
+        1761,
+        2583
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p031-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p031-r1-figure.webp",
+    "clips": [
+      {
+        "page": 31,
+        "rect": [
+          0,
+          0,
+          673,
+          342
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-31.webp",
+      "rect": [
+        368,
+        654,
+        1041,
+        996
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p035-r5-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p035-r5-figure.webp",
+    "clips": [
+      {
+        "page": 35,
+        "rect": [
+          0,
+          0,
+          947,
+          458
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-35.webp",
+      "rect": [
+        1041,
+        2059,
+        1988,
+        2517
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p041-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p041-r1-figure.webp",
+    "clips": [
+      {
+        "page": 41,
+        "rect": [
+          0,
+          0,
+          688,
+          530
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-41.webp",
+      "rect": [
+        828,
+        434,
+        1516,
+        964
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p044-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p044-r3-figure.webp",
+    "clips": [
+      {
+        "page": 44,
+        "rect": [
+          0,
+          0,
+          823,
+          570
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-44.webp",
+      "rect": [
+        1100,
+        2427,
+        1923,
+        2997
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p046-r4-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p046-r4-figure.webp",
+    "clips": [
+      {
+        "page": 46,
+        "rect": [
+          0,
+          0,
+          869,
+          671
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-46.webp",
+      "rect": [
+        867,
+        2425,
+        1736,
+        3096
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p049-r3-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p049-r3-figure.webp",
+    "clips": [
+      {
+        "page": 49,
+        "rect": [
+          0,
+          0,
+          429,
+          278
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-49.webp",
+      "rect": [
+        683,
+        1018,
+        1112,
+        1296
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p055-r2-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p055-r2-figure.webp",
+    "clips": [
+      {
+        "page": 55,
+        "rect": [
+          0,
+          0,
+          663,
+          506
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-55.webp",
+      "rect": [
+        618,
+        705,
+        1281,
+        1211
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p056-r1-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p056-r1-figure.webp",
+    "clips": [
+      {
+        "page": 56,
+        "rect": [
+          0,
+          0,
+          904,
+          657
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-56.webp",
+      "rect": [
+        954,
+        1095,
+        1858,
+        1752
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded."
+  },
+  {
+    "file": "math-kamel-u2-p058-r4-figure.webp",
+    "source": "source-archives/full kamel content/kamel-unit2-complete-333-items.zip",
+    "sourceMember": "kamel-unit2-complete/assets/lessons/mathematics/source-crops/math-kamel-u2-p058-r4-question.webp",
+    "clips": [
+      {
+        "page": 58,
+        "rect": [
+          0,
+          91,
+          640,
+          459
+        ],
+        "polygon": [
+          [
+            0,
+            91
+          ],
+          [
+            173,
+            91
+          ],
+          [
+            173,
+            163
+          ],
+          [
+            260,
+            163
+          ],
+          [
+            260,
+            190
+          ],
+          [
+            370,
+            190
+          ],
+          [
+            370,
+            207
+          ],
+          [
+            472,
+            207
+          ],
+          [
+            472,
+            267
+          ],
+          [
+            640,
+            267
+          ],
+          [
+            640,
+            300
+          ],
+          [
+            472,
+            300
+          ],
+          [
+            472,
+            459
+          ],
+          [
+            0,
+            459
+          ]
+        ]
+      }
+    ],
+    "coordinateUnits": "archive-image-pixels",
+    "originalSource": {
+      "file": "الكامل في الرياضيات توجيهي علمي (الوحدة الثانية) 2025-58.webp",
+      "rect": [
+        710,
+        2016,
+        2187,
+        2662
+      ]
+    },
+    "visualReview": "passed",
+    "reviewNotes": "Original diagram pixels inspected at native size; axes, labels and arrows retained; question text excluded. A stepped crop excludes the adjacent stem; pixels outside the crop are white."
+  },
+  {
+    "file": "math-book-p010-ex4-figure.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 10,
+        "rect": [
+          54.545,
+          243.03,
+          200.606,
+          362.424
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p010-ex5-figure.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 10,
+        "rect": [
+          54.545,
+          504.848,
+          215.152,
+          623.636
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p042-ex2-figure.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 42,
+        "rect": [
+          54.545,
+          46.061,
+          157.576,
+          178.182
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p084-activity1-tables.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 84,
+        "rect": [
+          54.545,
+          118.788,
+          456.364,
+          286.667
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p088-activity1-table.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 88,
+        "rect": [
+          59.394,
+          196.364,
+          456.97,
+          336.364
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p093-ex4-figure.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 93,
+        "rect": [
+          67.273,
+          147.273,
+          184.848,
+          321.818
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p085-ex3-figure.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 85,
+        "rect": [
+          68.485,
+          516.97,
+          215.152,
+          664.242
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
+  },
+  {
+    "file": "math-book-p105-ex7-figure.webp",
+    "source": "../source-archives/math-gaza-book.pdf",
+    "clips": [
+      {
+        "page": 106,
+        "rect": [
+          55.152,
+          49.697,
+          201.212,
+          153.333
+        ]
+      }
+    ],
+    "visualReview": "passed",
+    "coordinateUnits": "pdf-points"
   }
 ]

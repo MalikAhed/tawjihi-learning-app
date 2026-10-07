@@ -1,7 +1,27 @@
 import DOMPurify from "../../node_modules/dompurify/dist/purify.es.mjs";
+import katex from "../../assets/vendor/katex/katex.mjs";
 
 const MATH_TAGS = ["math", "mrow", "mi", "mn", "mo", "mtext", "mspace", "ms", "mfrac", "msqrt", "mroot", "msub", "msup", "msubsup", "munder", "mover", "munderover", "mmultiscripts", "mprescripts", "none", "mtable", "mtr", "mtd", "mstyle", "mpadded", "mphantom", "semantics", "annotation"];
-const MATH_ATTRIBUTES = ["xmlns", "dir", "display", "aria-label", "mathvariant", "stretchy", "largeop", "movablelimits", "fence", "separator", "accent", "accentunder", "linethickness", "lspace", "rspace", "width", "height", "depth", "rowspacing", "columnspacing", "columnalign", "rowalign", "encoding"];
+const MATH_ATTRIBUTES = ["xmlns", "dir", "display", "aria-label", "mathvariant", "stretchy", "largeop", "movablelimits", "fence", "separator", "accent", "accentunder", "linethickness", "lspace", "rspace", "width", "height", "depth", "rowspacing", "columnspacing", "columnalign", "rowalign", "encoding", "displaystyle", "scriptlevel"];
+
+// LaTeX compiles to the same sanitized native MathML used by every question view.
+export function renderLatex(source, { display = false } = {}) {
+  try {
+    const markup = katex.renderToString(source, {
+      output:"mathml", displayMode:display, throwOnError:true, trust:false,
+      strict:"error", maxExpand:1000, maxSize:20,
+    });
+    const math = /<math\b[\s\S]*?<\/math>/.exec(markup)?.[0];
+    if (!math) throw new Error("Missing MathML output");
+    // The outer Markdown sanitizer strips semantics/annotation elements. Remove
+    // the TeX annotation first so its source cannot become visible formula text.
+    const formula = math.replace(/<annotation\b[\s\S]*?<\/annotation>/g, "")
+      .replace(/<\/?semantics>/g, "");
+    return renderMathML(formula.replace("<math", '<math dir="ltr"'), { display });
+  } catch {
+    return '<span class="lesson-math-error" role="alert">صيغة LaTeX غير صالحة</span>';
+  }
+}
 
 // One MathML path for lesson blocks, inline copy, answer choices and explanations.
 export function renderMathML(source, { display = false } = {}) {

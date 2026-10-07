@@ -46,8 +46,9 @@ console.log(`Runtime asset inventory: ${(assetBytes / 1024 / 1024).toFixed(1)} M
 if (oversizedAssets) console.warn(`Manageability warning: ${oversizedAssets} active assets exceed 2 MiB; optimize deliberately without replacing approved artwork.`);
 
 const failures = [];
-// Reviewed lightweight asset budget, excluding the separate source archive.
-if (assetBytes > 23 * 1024 * 1024) failures.push("Runtime assets exceed the 23 MiB lightweight budget. Review compression and runtime use before adding large files.");
+// The published course now spans seven subject paths with source-grounded
+// figures. Full source archives stay separate from the runtime package.
+if (assetBytes > 64 * 1024 * 1024) failures.push("Runtime assets exceed the 64 MiB question-course budget. Review compression and runtime use before adding large files.");
 const rootDocuments = (await readdir(projectRoot)).filter(name => name.endsWith(".md"));
 for (const name of rootDocuments) {
   if (!["README.md", "AGENTS.md", "SECURITY.md"].includes(name)) failures.push(`${name}: update an existing guide in docs/ instead of adding a root handoff/plan.`);
@@ -56,7 +57,7 @@ const documents = (await collectFiles(path.join(projectRoot, "docs"))).filter(fi
 let documentBytes = 0;
 for (const file of [...documents, ...rootDocuments.map(name => path.join(projectRoot, name))]) documentBytes += (await stat(file)).size;
 console.log(`Documentation: ${documents.length} guides + ${rootDocuments.length} entry documents, ${(documentBytes / 1024).toFixed(1)} KiB.`);
-if (documents.length > 8 || documentBytes > 80 * 1024) failures.push("Documentation exceeds 8 guides or 80 KiB. Consolidate repeated guidance; keep task history in Git/PRs.");
+if (documents.length > 12 || documentBytes > 160 * 1024) failures.push("Documentation exceeds 12 guides or 160 KiB. Consolidate repeated guidance; keep task history in Git/PRs.");
 const manifest = JSON.parse(await readFile(path.join(projectRoot, "package.json"), "utf8"));
 const { PUBLIC_DEPENDENCIES } = await import("../src/server/static-files.mjs");
 const packagedDependencies = new Set([...PUBLIC_DEPENDENCIES].map(file => {

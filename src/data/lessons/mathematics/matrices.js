@@ -414,6 +414,155 @@ question: إذا كانت \`mathml: <math xmlns="http://www.w3.org/1998/Math/Mat
 explanation: الإجابة النهائية: ٤.
 hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
 :::
+
+:::mcq
+id: math-kamel-u3-p003-r1
+title: الكامل، الوحدة الثالثة · ص ٢ · البند ١
+kicker: الكامل، الوحدة الثالثة · ص ٢ · البند ١
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-3.webp · الصورة ٣ من ٤٧ · الصفحة المطبوعة ٢ · البند ١ · ٢٠١٩ دور أول
+question: إذا علمت أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٣</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٧</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msub><mrow><mi mathvariant="normal">س</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">١</mn></mrow></mrow></msub><mo>+</mo><mn dir="ltr">٥</mn><msub><mrow><mi mathvariant="normal">س</mi></mrow><mrow><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mrow></msub></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١٤</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٦</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ج) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p003-r2
+title: الكامل، الوحدة الثالثة · ص ٢ · البند ٢
+kicker: الكامل، الوحدة الثالثة · ص ٢ · البند ٢
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-3.webp · الصورة ٣ من ٤٧ · الصفحة المطبوعة ٢ · البند ٢ · ٢٠١٩ دور ثانٍ
+question: إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، ما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mrow></msub><mo>−</mo><mn dir="ltr">٢</mn><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">١</mn></mrow></mrow></msub></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ب) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p003-r5
+title: الكامل، الوحدة الثالثة · ص ٢ · البند ٥
+kicker: الكامل، الوحدة الثالثة · ص ٢ · البند ٥
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-3.webp · الصورة ٣ من ٤٧ · الصفحة المطبوعة ٢ · البند ٥ · ٢٠٢١ دور ثانٍ
+question: إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٦</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٣</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٩</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٧</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة المقدار \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mrow></msub></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١٦</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٦</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ج) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p003-r6
+title: الكامل، الوحدة الثالثة · ص ٢ · البند ٦
+kicker: الكامل، الوحدة الثالثة · ص ٢ · البند ٦
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-3.webp · الصورة ٣ من ٤٧ · الصفحة المطبوعة ٢ · البند ٦ · ٢٠٢١ دور ثالث
+question: إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٦</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٠</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ب</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mrow></msub><mo>−</mo><mn dir="ltr">٢</mn><msub><mrow><mi mathvariant="normal">ب</mi></mrow><mrow><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mrow></msub></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٧</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+- [x] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٧</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (د) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٧</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p004-r1
+title: الكامل، الوحدة الثالثة · ص ٣ · البند ١
+kicker: الكامل، الوحدة الثالثة · ص ٣ · البند ١
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-4.webp · الصورة ٤ من ٤٧ · الصفحة المطبوعة ٣ · البند ١ · ٢٠٢٢ دور أول
+question: ما المصفوفة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">ج</mi><mrow><mn dir="ltr">٢</mn><mo>×</mo><mn dir="ltr">٢</mn></mrow></msub></mrow></math>\` بحيث تحقق \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mi mathvariant="normal">ج</mi><mrow><mi mathvariant="normal">ي</mi><mo>×</mo><mi mathvariant="normal">و</mi></mrow></msub><mo>=</mo><msup><mrow><mo stretchy="true">(</mo><mrow><mi mathvariant="normal">ي</mi></mrow><mo stretchy="true">)</mo></mrow><mrow><mo>−</mo><mi mathvariant="normal">و</mi></mrow></msup></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ب) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p004-r2
+title: الكامل، الوحدة الثالثة · ص ٣ · البند ٢
+kicker: الكامل، الوحدة الثالثة · ص ٣ · البند ٢
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-4.webp · الصورة ٤ من ٤٧ · الصفحة المطبوعة ٣ · البند ٢ · ٢٠٢٣ دور أول
+question: إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٠</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">٩</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١٥</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٨</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٦</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١٢</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mrow></msub><mo>−</mo><mn dir="ltr">٢</mn><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mrow></msub></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٣٥</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٨</mn></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٨</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣٥</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ج) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٨</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p004-r3
+title: الكامل، الوحدة الثالثة · ص ٣ · البند ٣
+kicker: الكامل، الوحدة الثالثة · ص ٣ · البند ٣
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-4.webp · الصورة ٤ من ٤٧ · الصفحة المطبوعة ٣ · البند ٣ · ٢٠٢٣ دور ثانٍ
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mrow><mi mathvariant="normal">ك</mi></mrow><mrow><mrow><mi mathvariant="normal">ي</mi></mrow><mrow><mtext dir="rtl">هـ</mtext></mrow></mrow></msub><mo>=</mo><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><mi mathvariant="normal">ي</mi><mo>+</mo><mtext dir="rtl">هـ</mtext></mrow></mtd><mtd><mrow><mi mathvariant="normal">ي</mi><mo>&gt;</mo><mtext dir="rtl">هـ</mtext></mrow></mtd></mtr><mtr><mtd><mrow><mtext dir="rtl">هـ</mtext><mo>−</mo><mi mathvariant="normal">ي</mi></mrow></mtd><mtd><mrow><mi mathvariant="normal">ي</mi><mo>&lt;</mo><mtext dir="rtl">هـ</mtext></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mrow><mi mathvariant="normal">ي</mi></mrow><mrow><mtext dir="rtl">هـ</mtext><mo>+</mo><mi mathvariant="normal">ي</mi></mrow></mfrac></mrow></mtd><mtd><mrow><mi mathvariant="normal">ي</mi><mo>=</mo><mtext dir="rtl">هـ</mtext></mrow></mtd></mtr></mtable></mrow></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><munderover><mo>∑</mo><mrow><mtext dir="rtl">هـ</mtext><mo>=</mo><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></munderover><mrow><msub><mrow><mrow><mo stretchy="true">(</mo><mrow><mi mathvariant="normal">ك</mi></mrow><mo stretchy="true">)</mo></mrow></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mtext dir="rtl">هـ</mtext></mrow></mrow></msub></mrow></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٧</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٩</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١٥</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ج) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٩</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p005-r3
+title: الكامل، الوحدة الثالثة · ص ٤ · البند ٣
+kicker: الكامل، الوحدة الثالثة · ص ٤ · البند ٣
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-5.webp · الصورة ٥ من ٤٧ · الصفحة المطبوعة ٤ · البند ٣ · تجريبي رام الله والبيرة ٢٠٢٤
+question: إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٣</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٥</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٩</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true">(</mo><mrow><mrow><munderover><mo>∑</mo><mrow><mtext dir="rtl">هـ</mtext><mo>=</mo><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></munderover><mrow><msub><mrow><mrow><mo stretchy="true">(</mo><mrow><mi mathvariant="normal">أ</mi></mrow><mo stretchy="true">)</mo></mrow></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mtext dir="rtl">هـ</mtext></mrow></mrow></msub></mrow></mrow></mrow><mo stretchy="true">)</mo></mrow><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢٨٩</mn></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣٦</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٧</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٦</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ب) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣٦</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u3-p005-r6
+title: الكامل، الوحدة الثالثة · ص ٤ · البند ٦
+kicker: الكامل، الوحدة الثالثة · ص ٤ · البند ٦
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-5.webp · الصورة ٥ من ٤٧ · الصفحة المطبوعة ٤ · البند ٦ · خارجي
+question: ليكن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ب</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">٢٥</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٠</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٧</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">١٦</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٩</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true">(</mo><mrow><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mrow></msub><mo>−</mo><msqrt><mrow><msub><mrow><mi mathvariant="normal">ب</mi></mrow><mrow><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">١</mn></mrow></mrow></msub></mrow></msqrt></mrow><mo stretchy="true">)</mo></mrow><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">١</mn></mrow></mrow></msub></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mrow><mi mathvariant="normal">ب</mi></mrow><mrow><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mrow></msub></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">١</mn></mrow></mrow></msub></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mrow><mi mathvariant="normal">ب</mi></mrow><mrow><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mrow></msub></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: (ج) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">١</mn></mrow></mrow></msub></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::exam-question
+id: math-kamel-u3-p006-r1
+title: الكامل، الوحدة الثالثة · ص ٥ · البند ١
+question: المصفوفات
+reference: الكامل في الرياضيات توجيهي علمي (الوحدة الثالثة) 2025-6.webp · الصورة ٦ من ٤٧ · الصفحة المطبوعة ٥ · البند ١ · خارجي
+answer-label: الإجابة المطبوعة في الكامل
+body:
+اكتب المصفوفة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi></mrow></math>\` من الرتبة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><mo>×</mo><mn dir="ltr">٤</mn></mrow></math>\` بحيث: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msub><mrow><mi mathvariant="normal">أ</mi></mrow><mrow><mrow><mi mathvariant="normal">ي</mi></mrow><mrow><mtext dir="rtl">هـ</mtext></mrow></mrow></msub><mo>=</mo><mrow><mo stretchy="true">{</mo><mtable><mtr><mtd><mrow><msup><mn dir="ltr">٢</mn><mrow><mi mathvariant="normal">ي</mi></mrow></msup></mrow></mtd><mtd><mrow><mi mathvariant="normal">ي</mi><mo>&gt;</mo><mtext dir="rtl">هـ</mtext></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mi mathvariant="normal">ي</mi><mo>=</mo><mtext dir="rtl">هـ</mtext></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٥</mn><mtext dir="rtl">هـ</mtext></mrow></mtd><mtd><mrow><mi mathvariant="normal">ي</mi><mo>&lt;</mo><mtext dir="rtl">هـ</mtext></mrow></mtd></mtr></mtable></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mrow><mo stretchy="true">[</mo><mtable><mtr><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١٠</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١٥</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٢٠</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٤</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">١٥</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٢٠</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn dir="ltr">٨</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٨</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></mtd><mtd><mrow><mn dir="ltr">٢٠</mn></mrow></mtd></mtr></mtable><mo stretchy="true">]</mo></mrow></mrow></math>\`.
+
+:::
+
 `;
 
 export default defineMarkdownLesson({

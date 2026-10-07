@@ -274,6 +274,638 @@ question: إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathM
 explanation: الإجابة النهائية: \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">١</mn></math>\`.
 hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
 :::
+
+:::mcq
+id: math-kamel-u1-p062-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ١
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ١ · ٢٠١٧ دور ثاني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r01-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mtext dir="rtl">جتا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ص</mi><mo stretchy="false">′′</mo></msup></mrow></math>\` تساوي:
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msup><mtext dir="rtl">قتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mtext dir="rtl">قتا</mtext><mi mathvariant="normal">ص</mi><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mtext dir="rtl">قتا</mtext><mi mathvariant="normal">ص</mi><msup><mtext dir="rtl">ظتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">قتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: أ — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msup><mtext dir="rtl">قتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p062-r2
+title: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٢
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٢ · ٢٠١٨
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r02-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r02-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">س</mi><mrow><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></msup><mo>+</mo><msup><mi mathvariant="normal">ص</mi><mrow><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></msup><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` تساوي:
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mfrac><mrow><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></msup></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mfrac><mrow><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></msup></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mfrac><mrow><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></msup></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mfrac><mrow><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></msup></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mfrac><mrow><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></msup></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p062-r3
+title: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٣
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٣ · ٢٠١٩
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r03-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r03-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mtext dir="rtl">ظا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">قا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">جتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">قا</mtext><mi mathvariant="normal">ص</mi><mtext dir="rtl">ظا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">جا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">جتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p062-r4
+title: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٤
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٤ · ٢٠١٩ إكمال
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r04-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r04-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mtext dir="rtl">جا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>∈</mo><mo stretchy="true" fence="true">]</mo><mn dir="ltr">٠</mn><mo>،</mo><mfrac><mrow><mi mathvariant="normal">π</mi></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac><mo stretchy="true" fence="true">[</mo></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">س</mi></mrow><mrow><msqrt><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><msqrt><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mi mathvariant="normal">س</mi></mrow><mrow><msqrt><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><msqrt><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><msqrt><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p062-r5
+title: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٥
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٥ · ٢٠٢٠
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r05-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r05-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>−</mo><mi mathvariant="normal">س</mi><mi mathvariant="normal">ص</mi><mo>+</mo><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>،</mo><mo>−</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ج — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p062-r6
+title: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٦
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٦ · ٢٠٢٠
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r06-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt><mo>+</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٥</mn><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، علماً أن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>&gt;</mo><mn dir="ltr">٠</mn></mrow></math>\`؟
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٠</mn><msqrt><mrow><mn dir="ltr">٢</mn></mrow></msqrt></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٥</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٠</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: أ — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p062-r7
+title: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٧
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٢ · البند ٧ · ٢٠٢٠ دور ثاني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r07-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p062-r07-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mo>=</mo><mn dir="ltr">٤</mn><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٤</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`؟
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | صفر
+explanation: الإجابة حسب مفتاح الكامل: أ — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p063-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٣ · البند ١
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٣ · البند ١ · ٢٠٢١
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p063-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p063-r01-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢</mn><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٤</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p063-r6
+title: الكامل، الوحدة الأولى · WebP ص ٦٣ · البند ٦
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٣ · البند ٦ · ٢٠٢٢
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p063-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p063-r06-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac><mrow><mo stretchy="true" fence="true">(</mo><mrow><mfrac><mrow><mi mathvariant="normal">س</mi></mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ب</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`، حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>،</mo><mi mathvariant="normal">س</mi><mo>≠</mo><mn dir="ltr">٠</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`، فما قيمة الثابت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ب</mi></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٦</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p064-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ١
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ١ · ٢٠٢٢
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r01-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">جا</mtext><mi mathvariant="normal">س</mi><mo>=</mo><msup><mtext dir="rtl">هـ</mtext><mrow><mi mathvariant="normal">ص</mi></mrow></msup></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><msup><mi mathvariant="normal">د</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`؟
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msup><mtext dir="rtl">قتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">س</mi></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">قتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">س</mi></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mtext dir="rtl">قتا</mtext><mi mathvariant="normal">س</mi><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">قا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">س</mi></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: أ — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><msup><mtext dir="rtl">قتا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">س</mi></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p064-r3
+title: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٣
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٣ · ٢٠٢٣
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r03-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r03-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">س</mi><mo>×</mo><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٢</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢٤</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">هـ</mtext><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣٦</mn></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢٠</mn></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٨</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٠</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ج — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٨</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p064-r4
+title: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٤
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٤ · ٢٠٢٣
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r04-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r04-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">ص</mi></mrow></msup><mo>=</mo><mtext dir="rtl">جا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [x] option-3 | صفر
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ج — صفر.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p064-r5
+title: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٥
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٥ · ٢٠٢٣ الدورة الثانية
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r05-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r05-key.webp)
+question: ما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><munder><mtext dir="rtl">نها</mtext><mrow><mrow><mi mathvariant="normal">س</mi></mrow><mo>→</mo><mrow><mtext dir="rtl">هـ</mtext></mrow></mrow></munder><mrow><mfrac><mrow><mrow><msub><mtext dir="rtl">لو</mtext><mrow><mtext dir="rtl">هـ</mtext></mrow></msub><mrow><mo stretchy="true" fence="true">(</mo><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow><mrow><mrow><msub><mtext dir="rtl">لو</mtext><mrow><mtext dir="rtl">هـ</mtext></mrow></msub><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mrow><msub><mtext dir="rtl">لو</mtext><mrow><mtext dir="rtl">هـ</mtext></mrow></msub><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></mrow></mrow></mfrac></mrow></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">هـ</mtext></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mtext dir="rtl">هـ</mtext></mrow></mfrac></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ج — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p064-r6
+title: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٦
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٤ · البند ٦ · ٢٠٢٤ دور أول
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p064-r06-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mtext dir="rtl">جا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>−</mo><mn dir="ltr">١</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">س</mi></mrow><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p065-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ١
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ١ · تجريبي خانيونس ٢٠٢١
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r01-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>−</mo><mroot><mrow><mi mathvariant="normal">ص</mi></mrow><mrow><mn dir="ltr">٣</mn></mrow></mroot></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>+</mo><mroot><mrow><mi mathvariant="normal">ص</mi></mrow><mrow><mn dir="ltr">٣</mn></mrow></mroot><mo>+</mo><mroot><mrow><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow><mrow><mn dir="ltr">٣</mn></mrow></mroot></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>+</mo><mi mathvariant="normal">ص</mi><mo>+</mo><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` تساوي:
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ج — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p065-r2
+title: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٢
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٢ · تجريبي خانيونس ٢٠٢٠
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r02-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r02-key.webp)
+question: إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>=</mo><mrow><msub><mtext dir="rtl">لو</mtext><mrow><mtext dir="rtl">هـ</mtext></mrow></msub><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi><mi mathvariant="normal">ص</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi><mo>&gt;</mo><mn dir="ltr">٠</mn></mrow></math>\`، فأوجد قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>،</mo><mtext dir="rtl">هـ</mtext></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mtext dir="rtl">هـ</mtext></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><mtext dir="rtl">هـ</mtext></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mtext dir="rtl">هـ</mtext></mrow></math>\`
+- [x] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">هـ</mtext></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: د — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">هـ</mtext></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p065-r3
+title: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٣
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٣ · تجريبي الخليل ٢٠١٩
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r03-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r03-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٦</mn></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn><msqrt><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></msqrt><mo>·</mo><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` تساوي:
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤٩</mn></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤٩</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤٧</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٥٠</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤٩</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p065-r4
+title: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٤
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٤ · تجريبي جنين ٢٠١٩
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r04-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r04-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mtext dir="rtl">قا</mtext><mi mathvariant="normal">ص</mi></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` تساوي:
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mtext dir="rtl">ظا</mtext><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mi mathvariant="normal">س</mi><mtext dir="rtl">قا</mtext><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mi mathvariant="normal">س</mi><mtext dir="rtl">جتا</mtext><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: أ — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mtext dir="rtl">ظتا</mtext><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p065-r5
+title: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٥
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٥ · تجريبي طوباس ٢٠١٩
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r05-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r05-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac><mrow><mo stretchy="true" fence="true">(</mo><mrow><msup><mi mathvariant="normal">ق</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>−</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">١٠</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٢</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\` حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>&gt;</mo><mn dir="ltr">٠</mn></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` تساوي:
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١١</mn></mrow><mrow><mn dir="ltr">١٦</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١٦</mn></mrow><mrow><mn dir="ltr">١١</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: أ — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١١</mn></mrow><mrow><mn dir="ltr">١٦</mn></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p065-r6
+title: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٦
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٦ · تجريبي قباطية ٢٠١٩
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r06-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` تساوي:
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow><msup><mtext dir="rtl">قا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn><mtext dir="rtl">قتا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">ظتا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow><msup><mtext dir="rtl">قا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p065-r7
+title: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٧
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٥ · البند ٧ · خارجي
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r07-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p065-r07-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac><mo>=</mo><msqrt><mrow><mi mathvariant="normal">ب</mi><mi mathvariant="normal">ص</mi></mrow></msqrt></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><msup><mi mathvariant="normal">د</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، فما قيمة الثابت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ب</mi></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٦</mn></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٦</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٦</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p066-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٦ · البند ١
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٦ · البند ١ · خارجي
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p066-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p066-r01-key.webp)
+question: إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt><mo>+</mo><msqrt><mrow><mi mathvariant="normal">ص</mi></mrow></msqrt><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>،</mo><mi mathvariant="normal">ص</mi><mo>&gt;</mo><mn dir="ltr">٠</mn></mrow></math>\`، فإن \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` تساوي:
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt></mrow><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt><mo>+</mo><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn><mo>−</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt></mrow></mfrac><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt></mrow><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt><mo>−</mo><mn dir="ltr">١</mn></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn><mo>−</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p066-r2
+title: الكامل، الوحدة الأولى · WebP ص ٦٦ · البند ٢
+kicker: الكامل، الوحدة الأولى · WebP ص ٦٦ · البند ٢ · خارجي
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p066-r02-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p066-r02-key.webp)
+question: إذا كان الاقتران \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">جا</mtext><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">هـ</mtext><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mtext dir="rtl">جا</mtext><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+- [x] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">قا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">قتا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">جتا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">قا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: أ — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mtext dir="rtl">قا</mtext><mi mathvariant="normal">س</mi></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p067-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٧ · البند ١
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r01-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ص</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mn dir="ltr">٥</mn></mrow></msup><mo>=</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mo>+</mo><mn dir="ltr">٣١</mn></mrow></math>\`، فأوجد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>،</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٧٨</mn></mrow><mrow><mn dir="ltr">٧٧</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p067-r2
+title: الكامل، الوحدة الأولى · WebP ص ٦٧ · البند ٢
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r02-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r02-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٥</mn><mi mathvariant="normal">ص</mi><mo>−</mo><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٨</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>=</mo><mi mathvariant="normal">س</mi><mi mathvariant="normal">ص</mi><mo>+</mo><mn dir="ltr">٢</mn></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ع</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p067-r3
+title: الكامل، الوحدة الأولى · WebP ص ٦٧ · البند ٣
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r03-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r03-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١٨</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٥</mn><mi mathvariant="normal">ص</mi><mo>−</mo><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٨</mn></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ع</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٦</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٤</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p067-r4
+title: الكامل، الوحدة الأولى · WebP ص ٦٧ · البند ٤
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r04-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r04-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+جد معادلة المماس المرسوم لمنحنى العلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi><mo>−</mo><mi mathvariant="normal">ص</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٦</mn></mrow></math>\` عند نقطة/نقاط تقاطع منحناها مع المستقيم \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>−</mo><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">١</mn><mo>=</mo><mn dir="ltr">٠</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mfrac><mrow><mn dir="ltr">٤</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac><mi mathvariant="normal">س</mi><mo>−</mo><mfrac><mrow><mn dir="ltr">٧</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p067-r6
+title: الكامل، الوحدة الأولى · WebP ص ٦٧ · البند ٦
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r06-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ل</mi><mo>=</mo><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٤</mn><mi mathvariant="normal">ص</mi><mo>−</mo><mn dir="ltr">٥</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>+</mo><mi mathvariant="normal">س</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٦</mn></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ل</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١٦</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p067-r7
+title: الكامل، الوحدة الأولى · WebP ص ٦٧ · البند ٧
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r07-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r07-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>+</mo><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ع</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\` أو \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p067-r8
+title: الكامل، الوحدة الأولى · WebP ص ٦٧ · البند ٨
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r08-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p067-r08-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+أوجد معادلتي المماس والعمودي على المماس لمنحنى القطع الذي معادلته \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>−</mo><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>=</mo><mn dir="ltr">٥</mn></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn><mo>،</mo><mo>−</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+المماس: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mn dir="ltr">٤</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac><mi mathvariant="normal">س</mi><mo>+</mo><mfrac><mrow><mn dir="ltr">٥</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`. العمودي: \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac><mi mathvariant="normal">س</mi><mo>−</mo><mfrac><mrow><mn dir="ltr">٥</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p068-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٨ · البند ١
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r01-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></msup><mo>=</mo><mrow><msub><mtext dir="rtl">لو</mtext><mrow><mtext dir="rtl">هـ</mtext></mrow></msub><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></mrow></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٠</mn><mo>،</mo><mfrac><mrow><mtext dir="rtl">هـ</mtext></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢</mn><mtext dir="rtl">هـ</mtext><mo>−</mo><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p068-r5
+title: الكامل، الوحدة الأولى · WebP ص ٦٨ · البند ٥
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r05-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r05-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt><mo>+</mo><msqrt><mrow><mi mathvariant="normal">ص</mi></mrow></msqrt><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn><mo>،</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p068-r6
+title: الكامل، الوحدة الأولى · WebP ص ٦٨ · البند ٦
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r06-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><msqrt><mrow><mi mathvariant="normal">ع</mi></mrow></msqrt><mo>+</mo><mtext dir="rtl">هـ</mtext></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mn dir="ltr">٣</mn></mrow></msup></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mo>=</mo><msup><mtext dir="rtl">هـ</mtext><mrow><mo>−</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></msup></mrow></math>\`، حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">هـ</mtext></mrow></math>\` العدد النيبيري، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١٢</mn><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٣</mn></mrow></msup></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p068-r10
+title: الكامل، الوحدة الأولى · WebP ص ٦٨ · البند ١٠
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r10-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p068-r10-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>−</mo><mtext dir="rtl">جتا</mtext><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>=</mo><mn dir="ltr">٥</mn><mi mathvariant="normal">ص</mi><mo>−</mo><msup><mtext dir="rtl">جا</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">س</mi></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢</mn><mtext dir="rtl">جا</mtext><mi mathvariant="normal">س</mi></mrow><mrow><mn dir="ltr">٥</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p069-r1
+title: الكامل، الوحدة الأولى · WebP ص ٦٩ · البند ١
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r01-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><munder><mtext dir="rtl">نها</mtext><mrow><mrow><mi mathvariant="normal">س</mi></mrow><mo>→</mo><mrow><mn dir="ltr">١</mn></mrow></mrow></munder><mrow><mfrac><mrow><mn dir="ltr">٢</mn><msup><mi mathvariant="normal">ق</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>−</mo><mn dir="ltr">١</mn></mrow></mfrac></mrow></mrow><mo>=</mo><mn dir="ltr">٦</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mroot><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mrow><mn dir="ltr">٣</mn></mrow></mroot></mrow></math>\`، و\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` كثير حدود موجب، فجد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mtext dir="rtl">هـ</mtext><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p069-r5
+title: الكامل، الوحدة الأولى · WebP ص ٦٩ · البند ٥
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r05-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r05-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mo>+</mo><mn dir="ltr">٥</mn><mo>=</mo><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٤</mn><mi mathvariant="normal">س</mi><mo>−</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mo>−</mo><mn dir="ltr">٦</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p069-r6
+title: الكامل، الوحدة الأولى · WebP ص ٦٩ · البند ٦
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r06-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mrow><msub><mtext dir="rtl">لو</mtext><mrow><mtext dir="rtl">هـ</mtext></mrow></msub><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></mrow></mrow><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>&gt;</mo><mn dir="ltr">٠</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mtext dir="rtl">هـ</mtext></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">م</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac><mtext dir="rtl">هـ</mtext></mrow></math>\`، فجد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٤</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p069-r7
+title: الكامل، الوحدة الأولى · WebP ص ٦٩ · البند ٧
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r07-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p069-r07-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ك</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">ق</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>×</mo><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٣</mn></mrow></msup></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، وكانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ك</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢٧</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ق</mi><mo>×</mo><mtext dir="rtl">هـ</mtext></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٥</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ك</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٣٥</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p070-r4
+title: الكامل، الوحدة الأولى · WebP ص ٧٠ · البند ٤
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p070-r04-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p070-r04-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></msup><mo>+</mo><mfrac><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mrow><msup><mi mathvariant="normal">ع</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></mfrac></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٥</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٦</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ع</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ع</mi><mo stretchy="false">′′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mo>−</mo><mn dir="ltr">٣</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">م</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٦٫٥</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p070-r6
+title: الكامل، الوحدة الأولى · WebP ص ٧٠ · البند ٦
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p070-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p070-r06-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١٢</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ع</mi><mo>=</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>−</mo><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">٥</mn></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ع</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p070-r7
+title: الكامل، الوحدة الأولى · WebP ص ٧٠ · البند ٧
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p070-r07-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p070-r07-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+جد النقاط على منحنى العلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msqrt><mrow><mi mathvariant="normal">س</mi></mrow></msqrt><mo>+</mo><msqrt><mrow><mi mathvariant="normal">ص</mi></mrow></msqrt><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\` التي يكون عندها \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mn dir="ltr">٢</mn></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>،</mo><mn dir="ltr">٤</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p071-r1
+title: الكامل، الوحدة الأولى · WebP ص ٧١ · البند ١
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r01-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mo>−</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><mn dir="ltr">١</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><munder><mtext dir="rtl">نها</mtext><mrow><mrow><mtext dir="rtl">هـ</mtext></mrow><mo>→</mo><mrow><mn dir="ltr">٠</mn></mrow></mrow></munder><mrow><mfrac><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٧</mn><mo>+</mo><mn dir="ltr">٣</mn><mtext dir="rtl">هـ</mtext></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>−</mo><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٧</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mrow><mtext dir="rtl">هـ</mtext></mrow></mfrac></mrow></mrow></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p071-r8
+title: الكامل، الوحدة الأولى · WebP ص ٧١ · البند ٨
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r08-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r08-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+جد معادلة المماس المرسوم لمنحنى العلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mo>+</mo><msup><mi mathvariant="normal">π</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mtext dir="rtl">جتا</mtext><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٠</mn></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>،</mo><mi mathvariant="normal">π</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">π</mi></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac><mi mathvariant="normal">س</mi><mo>+</mo><mfrac><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">π</mi></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p071-r9
+title: الكامل، الوحدة الأولى · WebP ص ٧١ · البند ٩
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r09-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r09-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><msup><mi mathvariant="normal">ص</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٥</mn><msup><mi mathvariant="normal">س</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mo>+</mo><mn dir="ltr">٣</mn></mrow></math>\`، وكانت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`، وأيضاً \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٥</mn></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mfrac></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">١</mn><mo>،</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٨</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p071-r10
+title: الكامل، الوحدة الأولى · WebP ص ٧١ · البند ١٠
+question: الاشتقاق الضمني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r10-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p071-r10-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+يتحرك جسم وفق العلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ع</mi><mrow><mn dir="ltr">٢</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">ف</mi><mrow><mn dir="ltr">٣</mn></mrow></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، فجد تسارع الجسم في حالة السكون اللحظي.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+
+:::
+
 `;
 
 export default defineMarkdownLesson({

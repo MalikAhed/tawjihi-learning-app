@@ -1141,18 +1141,14 @@ solution:
 id: math-kamel-u1-p042-r3
 title: الكامل، الوحدة الأولى · PDF ص 42 · البند 3
 question: تطبيقات هندسية وفيزيائية
-reference: الكامل في الرياضيات توجيهي علمي، الوحدة الأولى، ٢٠٢٥ · PDF ص 42 · البند 3 · تفريغ مستعاد من المستخدم · الرسم أعيد بناؤه من الوصف المرفق، وليس صورة المصدر الأصلية
+reference: الكامل في الرياضيات توجيهي علمي، الوحدة الأولى، ٢٠٢٥ · PDF ص 42 · البند 3 · تفريغ مستعاد من المستخدم · الرسم الأصلي من المصدر
 answer-label: الإجابة المطبوعة في المصدر
 body:
 إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow><mo>،</mo><msup><mi mathvariant="normal">هـ</mi><mo>′</mo></msup><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></math>\` اقترانين قابلين للاشتقاق بحيث \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow><mo>×</mo><msup><mi mathvariant="normal">هـ</mi><mo>′</mo></msup><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢٠</mn></mrow></math>\`، بالاعتماد على الشكل المجاور أوجد قيمة \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">هـ</mi><mo>″</mo></msup><mrow><mo stretchy="true">(</mo><mn dir="ltr">١</mn><mo stretchy="true">)</mo></mrow></mrow></math>\`.
 
-![مماس منحنى ق(س) عند النقطة (١،٢) وزاوية ميل ٤٥°](assets/lessons/mathematics/recovered-figures/math-kamel-u1-p042-r3.svg)
-
-رسم توضيحي أعيد بناؤه من وصف الشكل المرفق؛ لا يحدد قاعدة ق(س).
+![مماس منحنى ق(س) عند النقطة (١،٢) وزاوية ميل ٤٥°](assets/lessons/mathematics/source-crops/math-kamel-u1-p042-r03-figure.webp)
 solution:
 \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">٥</mn></math>\`
-
-تنبيه بشأن المصدر: وصف الشكل المعطى يبين نقطة (١،٢) وزاوية ميل ٤٥°، فتكون قيمة هـ″(١) = −٥، بينما الإجابة المطبوعة هي ٥. حُفظت الإجابة المطبوعة مع التنبيه إلى تعارضها مع وصف الشكل، ولم تُغيّر زاوية الرسم لتوافقها.
 :::
 
 :::exam-question
@@ -1355,14 +1351,12 @@ solution:
 id: math-kamel-u1-p044-r5
 title: الكامل، الوحدة الأولى · PDF ص 44 · البند 5
 question: تطبيقات هندسية وفيزيائية
-reference: الكامل في الرياضيات توجيهي علمي، الوحدة الأولى، ٢٠٢٥ · PDF ص 44 · البند 5 · تفريغ مستعاد من المستخدم · الرسم أعيد بناؤه من الوصف المرفق، وليس صورة المصدر الأصلية
+reference: الكامل في الرياضيات توجيهي علمي، الوحدة الأولى، ٢٠٢٥ · PDF ص 44 · البند 5 · تفريغ مستعاد من المستخدم · الرسم الأصلي من المصدر
 answer-label: الإجابة المطبوعة في المصدر
 body:
 الشكل المجاور يمثل منحنى الاقتران \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></math>\` والمماس له عند \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">١</mn></mrow></math>\`، فإذا كان المثلث \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mi mathvariant="normal">و</mi><mi mathvariant="normal">ب</mi></mrow></math>\` قائم الزاوية في \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mi mathvariant="normal">و</mi></math>\` ومتساوي الساقين، فجد \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ل</mi><mo>′</mo></msup><mrow><mo stretchy="true">(</mo><mn dir="ltr">١</mn><mo stretchy="true">)</mo></mrow></mrow></math>\` إذا كان الاقتران \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ل</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">ق</mi><mn dir="ltr">٢</mn></msup><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow><mo>−</mo><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo stretchy="true">)</mo></mrow></mrow></math>\`.
 
-![المماس عند النقطة (١،٣) والمثلث أ و ب القائم والمتساوي الساقين](assets/lessons/mathematics/recovered-figures/math-kamel-u1-p044-r5.svg)
-
-رسم توضيحي أعيد بناؤه من وصف الشكل المرفق؛ لا يحدد قاعدة ق(س).
+![المماس عند النقطة (١،٣) والمثلث أ و ب القائم والمتساوي الساقين](assets/lessons/mathematics/source-crops/math-kamel-u1-p044-r05-figure.webp)
 solution:
 \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٤</mn></mrow></math>\`
 :::
@@ -1371,14 +1365,12 @@ solution:
 id: math-kamel-u1-p046-r1
 title: الكامل، الوحدة الأولى · PDF ص 46 · البند 1
 question: تطبيقات هندسية وفيزيائية
-reference: الكامل في الرياضيات توجيهي علمي، الوحدة الأولى، ٢٠٢٥ · PDF ص 46 · البند 1 · تفريغ مستعاد من المستخدم · الرسم أعيد بناؤه من الوصف المرفق، وليس صورة المصدر الأصلية
+reference: الكامل في الرياضيات توجيهي علمي، الوحدة الأولى، ٢٠٢٥ · PDF ص 46 · البند 1 · تفريغ مستعاد من المستخدم · الرسم الأصلي من المصدر
 answer-label: الإجابة المطبوعة في المصدر
 body:
 يبين الشكل المجاور منحنى \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></math>\` والمماس المرسوم له عند \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، فإذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mn dir="ltr">٢</mn><mo stretchy="true">)</mo></mrow><mo>+</mo><msup><mi mathvariant="normal">ق</mi><mo>′</mo></msup><mrow><mo stretchy="true">(</mo><mn dir="ltr">٢</mn><mo stretchy="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٨</mn></mrow></math>\`، جد معادلة العمودي على المماس عند \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`.
 
-![المماس عند س=٢ ومقطعه مع محور السينات ٥/٣](assets/lessons/mathematics/recovered-figures/math-kamel-u1-p046-r1.svg)
-
-رسم توضيحي أعيد بناؤه من وصف الشكل المرفق؛ لا يحدد قاعدة ق(س).
+![المماس عند س=٢ ومقطعه مع محور السينات ٥/٣](assets/lessons/mathematics/source-crops/math-kamel-u1-p046-r01-figure.webp)
 solution:
 \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mo>−</mo><mfrac><mn dir="ltr">١</mn><mn dir="ltr">٦</mn></mfrac><mi mathvariant="normal">س</mi><mo>+</mo><mfrac><mn dir="ltr">٧</mn><mn dir="ltr">٣</mn></mfrac></mrow></math>\`
 :::
@@ -1598,6 +1590,169 @@ body:
 solution:
 \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">١٥</mn></math>\`
 :::
+
+:::mcq
+id: math-kamel-u1-p035-r5
+title: الكامل، الوحدة الأولى · WebP ص ٣٥ · البند ٥
+kicker: الكامل، الوحدة الأولى · WebP ص ٣٥ · البند ٥ · ٢٠١٧ دور ثاني
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p035-r05-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p035-r05-key.webp)
+question: تحرك جسم على خط مستقيم وفق العلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi><mo>=</mo><mn dir="ltr">٣٠</mn><mi mathvariant="normal">ن</mi><mo>−</mo><mn dir="ltr">٥</mn><msup><mi mathvariant="normal">ن</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`، فإن أقصى ارتفاع يصل إليه الجسم يساوي:
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤٠</mn></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤٥</mn></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٩٠</mn></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٨٠</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤٥</mn></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p036-r6
+title: الكامل، الوحدة الأولى · WebP ص ٣٦ · البند ٦
+kicker: الكامل، الوحدة الأولى · WebP ص ٣٦ · البند ٦ · ٢٠٢٠ دور ثالث
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p036-r06-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p036-r06-key.webp)
+question: إذا كان المماس لمنحنى \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn><mo>،</mo><mo>−</mo><mn dir="ltr">١</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` يصنع زاوية قياسها \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٣٥</mn><mo>°</mo></mrow></math>\` مع الاتجاه الموجب لمحور السينات، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><munder><mtext dir="rtl">نها</mtext><mrow><mrow><mi mathvariant="normal">س</mi></mrow><mo>→</mo><mrow><mn dir="ltr">٢</mn></mrow></mrow></munder><mrow><mfrac><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>−</mo><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٤</mn></mrow></mfrac></mrow></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
+- [x] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١</mn></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ب — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">١</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::mcq
+id: math-kamel-u1-p037-r1
+title: الكامل، الوحدة الأولى · WebP ص ٣٧ · البند ١
+kicker: الكامل، الوحدة الأولى · WebP ص ٣٧ · البند ١ · ٢٠٢٠ الاستكمالية
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p037-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p037-r01-key.webp)
+question: إذا كانت معادلة العمودي على منحنى الاقتران \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` عند النقطة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn><mo>،</mo><mn dir="ltr">٠</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` هي \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٦</mn></mrow></math>\`، فما قيمة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٣</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`؟
+- [ ] option-1 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-2 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+- [x] option-3 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`
+- [ ] option-4 | \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٢</mn></mrow><mrow><mn dir="ltr">٣</mn></mrow></mfrac></mrow></math>\`
+explanation: الإجابة حسب مفتاح الكامل: ج — \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mfrac><mrow><mn dir="ltr">٣</mn></mrow><mrow><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`.
+hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخيارات.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p040-r7-b
+title: الكامل، الوحدة الأولى · WebP ص ٤٠ · البند ٧b
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p040-r7b-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p040-r7b-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+قذف جسم رأسياً للأعلى فكانت العلاقة بين ارتفاعه \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ف</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` بالأمتار عن نقطة قذفه وزمن حركته \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` هي \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi><mo>=</mo><mn dir="ltr">٥٠</mn><mi mathvariant="normal">ن</mi><mo>−</mo><mn dir="ltr">٥</mn><msup><mi mathvariant="normal">ن</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`. جد المسافة التي يقطعها الجسم في الثواني الست الأولى.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">١٣٠</mn></mrow></math>\` متراً.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p040-r10
+title: الكامل، الوحدة الأولى · WebP ص ٤٠ · البند ١٠
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p040-r10-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p040-r10-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان المستقيم \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٤</mn></mrow></math>\` مماساً لمنحنى \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ل</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">س</mi><mo>×</mo><mi mathvariant="normal">ل</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، جد \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">ق</mi><mo stretchy="false">′</mo></msup><mrow><mo stretchy="true" fence="true">(</mo><mrow><mn dir="ltr">٢</mn></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٨</mn></mrow></math>\`
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p042-r4-a
+title: الكامل، الوحدة الأولى · WebP ص ٤٢ · البند ٤a
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p042-r4a-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p042-r4a-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+قذف جسم رأسياً إلى أعلى من نقطة على سطح أرض أفقية حسب العلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٦٤</mn><mi mathvariant="normal">ن</mi><mo>−</mo><mn dir="ltr">١٦</mn><msup><mi mathvariant="normal">ن</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`، حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi></mrow></math>\` المسافة بالأمتار و\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ن</mi></mrow></math>\` الزمن بالثواني. ما أقصى ارتفاع يصل إليه الجسم؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٦٤</mn></mrow></math>\` م.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p044-r4
+title: الكامل، الوحدة الأولى · WebP ص ٤٤ · البند ٤
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p044-r04-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p044-r04-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+قذف جسم رأسياً للأعلى من نقطة على سطح الأرض بحيث يتحدد بعده عن سطح الأرض بالعلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢٠</mn><mi mathvariant="normal">ن</mi><mo>−</mo><mn dir="ltr">٥</mn><msup><mi mathvariant="normal">ن</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`، حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi></mrow></math>\` ارتفاع الجسم بالأمتار و\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ن</mi></mrow></math>\` الزمن بالثواني. جد: (١) أقصى ارتفاع يصله الجسم. (٢) سرعة الجسم عندما يكون قد قطع مسافة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢٥</mn></mrow></math>\` متراً.
+solution:
+(١) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢٠</mn></mrow></math>\` م. (٢) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١٠</mn></mrow></math>\` م/ث.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p046-r2
+title: الكامل، الوحدة الأولى · WebP ص ٤٦ · البند ٢
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p046-r02-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p046-r02-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+قذف جسم رأسياً إلى أعلى من نقطة على سطح الأرض بحيث أن بعده عن سطح الأرض يتحدد بالعلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٣٠</mn><mi mathvariant="normal">ن</mi><mo>−</mo><mn dir="ltr">٥</mn><msup><mi mathvariant="normal">ن</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`، حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi></mrow></math>\` ارتفاع الجسم بالأمتار و\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ن</mi></mrow></math>\` الزمن بالثواني. (١) احسب أقصى ارتفاع يصله الجسم. (٢) متى يكون الجسم على ارتفاع \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤٠</mn></mrow></math>\` متراً من سطح الأرض؟
+solution:
+(١) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤٥</mn></mrow></math>\` م. (٢) \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn></mrow></math>\` ث صعوداً و\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٤</mn></mrow></math>\` ث هبوطاً.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p046-r4
+title: الكامل، الوحدة الأولى · WebP ص ٤٦ · البند ٤
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p046-r04-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p046-r04-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان المستقيم \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٦</mn><mi mathvariant="normal">ص</mi><mo>=</mo><mi mathvariant="normal">أ</mi><mo>−</mo><mi mathvariant="normal">س</mi></mrow></math>\` يمس منحنى الاقتران \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi></mrow><mrow><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٢</mn></mrow></mfrac></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>≠</mo><mn dir="ltr">٢</mn></mrow></math>\`، فما قيمة الثابت \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mn dir="ltr">٨</mn></mrow></math>\` أو \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">أ</mi><mo>=</mo><mn dir="ltr">٣٢</mn></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p047-r7
+title: الكامل، الوحدة الأولى · WebP ص ٤٧ · البند ٧
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p047-r07-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p047-r07-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+قذف جسم رأسياً للأعلى من نقطة على سطح الأرض بحيث يتحدد ارتفاعه عن سطح الأرض بالعلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٣٠</mn><mi mathvariant="normal">ن</mi><mo>−</mo><mn dir="ltr">٥</mn><msup><mi mathvariant="normal">ن</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`، حيث \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi></mrow></math>\` ارتفاع الجسم بالأمتار و\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ن</mi></mrow></math>\` الزمن بالثواني. جد المسافة التي قطعها الجسم خلال \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٥</mn></mrow></math>\` ثوانٍ من بدء الحركة؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٦٥</mn></mrow></math>\` م.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p048-r5
+title: الكامل، الوحدة الأولى · WebP ص ٤٨ · البند ٥
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p048-r05-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p048-r05-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+من نقطة على سطح الأرض قذف جسم رأسياً لأعلى بحيث يتحدد بعده عن سطح الأرض بالعلاقة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ف</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">ن</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٤٠</mn><mi mathvariant="normal">ن</mi><mo>−</mo><mi mathvariant="normal">أ</mi><msup><mi mathvariant="normal">ن</mi><mrow><mn dir="ltr">٢</mn></mrow></msup></mrow></math>\`. إذا علمت أن الجسم سقط على سطح عمارة ترتفع \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٦٠</mn></mrow></math>\` م عن سطح الأرض، جد سرعة ارتطام الجسم بسطح العمارة، علماً بأن أقصى ارتفاع وصله الجسم عن سطح الأرض هو \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٨٠</mn></mrow></math>\` م؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٢٠</mn></mrow></math>\` م/ث.
+
+:::
+
+:::exam-question
+id: math-kamel-u1-p049-r1
+title: الكامل، الوحدة الأولى · WebP ص ٤٩ · البند ١
+question: التطبيقات الهندسية والفيزيائية للمشتقة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u1-p049-r01-question.webp) · [المفتاح / الحل](assets/lessons/mathematics/source-crops/math-kamel-u1-p049-r01-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><munder><mtext dir="rtl">نها</mtext><mrow><mrow><mi mathvariant="normal">س</mi></mrow><mo>→</mo><mrow><mn dir="ltr">٢</mn></mrow></mrow></munder><mrow><mfrac><mrow><mi mathvariant="normal">ل</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow><mrow><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٢</mn></mrow></mfrac></mrow></mrow><mo>=</mo><mo>−</mo><mn dir="ltr">٤</mn></mrow></math>\`، و\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><munder><mtext dir="rtl">نها</mtext><mrow><mrow><mi mathvariant="normal">س</mi></mrow><mo>→</mo><mrow><mn dir="ltr">٢</mn></mrow></mrow></munder><mrow><mfrac><mrow><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>−</mo><mn dir="ltr">٣</mn></mrow><mrow><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٢</mn></mrow></mfrac></mrow></mrow><mo>=</mo><mn dir="ltr">٤</mn></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ل</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` متصلين على \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ح</mi></mrow></math>\`، وكان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>×</mo><mi mathvariant="normal">ل</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>=</mo><mn dir="ltr">٢</mn><mtext dir="rtl">هـ</mtext><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow><mo>−</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></math>\`، جد معادلة المماس لمنحنى الاقتران \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true" fence="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true" fence="true">)</mo></mrow></mrow></math>\` عندما \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>=</mo><mn dir="ltr">٢</mn></mrow></math>\`؟
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ص</mi><mo>=</mo><mn dir="ltr">٥</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٩</mn></mrow></math>\`
+
+:::
+
 `;
 
 export default defineMarkdownLesson({

@@ -1,5 +1,6 @@
 // @ts-check
-import { applyProgressUpdate, emptyPart, homeLearningSummary, localDateKey, partKey, summarizeParts } from "../domain/subject-progress.js";
+import { applyProgressUpdate, emptyPart, homeLearningSummary, localDateKey, partKey, progressSubjectId, summarizeParts } from "../domain/subject-progress.js";
+import { getSubjectRoadmap } from "../data/subject-roadmaps.js";
 import { getIctPartQuestionIds } from "../data/lessons/ict/question-index.js";
 import { createSessionProgressAdapter } from "./session-progress.js";
 export { getUnitPartProgress, localDateKey } from "../domain/subject-progress.js";
@@ -89,6 +90,9 @@ export function createSubjectProgressStore({ storage = null, onError = console.w
   };
   /** @param {ProgressUpdate} update */
   function write(update) {
+    update = { ...update };
+    update.value = { ...update.value };
+    update.value.subjectId = progressSubjectId(update.value.subjectId);
     if (!update.id) {
       // getRandomValues also works on local HTTP addresses outside localhost.
       const bytes = crypto.getRandomValues(new Uint8Array(16));
@@ -121,7 +125,10 @@ export function createSubjectProgressStore({ storage = null, onError = console.w
     getReview:(key) => structuredClone(recordsFor(key.ownerId).get(partKey(key))?.review || []),
     /** @param {ProgressKey & {totalParts:number, date?:string}} options */
     getOutcome({ ownerId, subjectId, totalParts, date = localDateKey() }) {
-      const records = [...recordsFor(ownerId)].filter(([key]) => JSON.parse(key)[0] === subjectId).map(([, record]) => record);
+      const roadmap = subjectId === "mathematics" || subjectId === "mathematics-2" ? getSubjectRoadmap(subjectId) : null;
+      const keys = roadmap ? new Set(roadmap.units.flatMap(unit => unit.lessons.flatMap(lesson =>
+        lesson.parts.map(part => partKey({ subjectId, lessonId:lesson.id, partId:part.id }))))) : null;
+      const records = [...recordsFor(ownerId)].filter(([key]) => keys ? keys.has(key) : JSON.parse(key)[0] === subjectId).map(([, record]) => record);
       return summarizeParts(records, totalParts, date);
     },
     /** @param {string} ownerId @param {import('../domain/subject-progress.js').ProgressRoadmap[]} roadmaps */

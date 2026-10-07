@@ -268,6 +268,7 @@ function applyCurrentRoute({ restorePath = false } = {}) {
       focusContent: true,
       lessonId:route.lesson,
       partId:route.part,
+      reviewStepId:route.question,
       restoreMap:restorePath && !route.lesson && subjectLearning.getState().subjectId === route.subject,
       explainPart:mapExplanation?.subjectId === route.subject ? mapExplanation : null,
     });

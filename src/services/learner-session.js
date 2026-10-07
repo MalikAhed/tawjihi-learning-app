@@ -153,7 +153,7 @@ export function createLearnerSession({
     getLearnerHomeSnapshot:() => {
       if (!activeAccount || activeAccount.type === "banned") return null;
       const learning = progressStore ? progressStore.getHomeLearning(activeAccount.progressOwner,
-        [getSubjectRoadmap("ict"), getSubjectRoadmap("mathematics")].filter(roadmap => roadmap !== null)) : {
+        [getSubjectRoadmap("ict"), getSubjectRoadmap("mathematics"), getSubjectRoadmap("mathematics-2"), getSubjectRoadmap("physics"), getSubjectRoadmap("biology")].filter(roadmap => roadmap !== null)) : {
         activity:"none", completion:"not-started", progress:0, mastery:"no-evidence",
         requiredLessonsCompleted:0, requiredLessonsTotal:0, mustReviewCount:0, xp:0, level:1,
         levelXpGoal:200, rank:null, rankTotal:16, questionsSolved:0, dailyStreak:0, curriculumLessonsTotal:72,

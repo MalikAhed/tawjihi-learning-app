@@ -11,8 +11,11 @@ import { getLessonQuestionProgress } from "./subject-question-progress.js";
 
 /** @returns {PartRecord} */
 export const emptyPart = () => ({ completedStepIds:[], completed:false, review:[], completedDate:null, rewardXp:0 });
+// Math 2 uses the original persisted subject identity after the catalog split.
+/** @param {string} subjectId */
+export const progressSubjectId = subjectId => subjectId === "mathematics-2" ? "mathematics" : subjectId;
 /** @param {Pick<ProgressKey, 'subjectId'|'lessonId'|'partId'>} key */
-export const partKey = ({ subjectId, lessonId, partId }) => JSON.stringify([subjectId, lessonId, partId]);
+export const partKey = ({ subjectId, lessonId, partId }) => JSON.stringify([progressSubjectId(subjectId), lessonId, partId]);
 
 /** @param {unknown} value @returns {ReviewItem[]} */
 export function validReview(value) {

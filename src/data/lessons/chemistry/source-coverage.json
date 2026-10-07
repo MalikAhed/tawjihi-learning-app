@@ -1,0 +1,75 @@
+{
+  "subject": "chemistry",
+  "cohort": "غزة · الصف الثاني عشر · الفرع العلمي",
+  "source": {
+    "id": "al-tasnif-chemistry-2022",
+    "title": "تصنيف نماذج امتحانات الثانوية العامة لعام 2022 · الكيمياء",
+    "provider": "Al Tasnif / تصنيف",
+    "url": "https://tawjihipal.b-cdn.net/%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%D8%A7%D8%AA/%D8%A7%D9%84%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A/%D8%AA%D8%B5%D9%86%D9%8A%D9%81%D8%A7%D8%AA%20-%20%D8%A7%D9%84%D9%83%D9%8A%D9%85%D9%8A%D8%A7%D8%A1.pdf",
+    "pdf": "source-archives/chemistry/al-tasnif/al-tasnif-chemistry.pdf",
+    "pages": 174,
+    "webp": "source-archives/chemistry/al-tasnif/webp/",
+    "webpEncoding": "WebP q86 at 144 dpi"
+  },
+  "questionBank": {
+    "lessons": 6,
+    "items": 628,
+    "mcq": 105,
+    "flashcards": 523,
+    "visualCropReferences": 44,
+    "visualCrops": 7,
+    "answerPolicy": "MCQ keys come from the printed answer pages at the end of each unit. Written prompts are flashcards that point to the correct unit answer page; no answer is invented when the source is a diagram or table.",
+    "latexPolicy": "English symbols, numbers, exponents, charges and chemical formulae are emitted with the lesson inline LaTeX delimiters.",
+    "sizeCheck": "628 chemistry items is below the 2,040 items in the two mathematics subjects combined."
+  },
+  "units": [
+    {
+      "unit": 1,
+      "title": "البناء الإلكتروني والعدد الكمي",
+      "pages": "7–19",
+      "answerPage": 51,
+      "items": 124
+    },
+    {
+      "unit": 2,
+      "title": "الجدول الدوري ورابطة التكافؤ",
+      "pages": "33–50",
+      "answerPage": 46,
+      "items": 136
+    },
+    {
+      "unit": 3,
+      "title": "الحموض والقواعد",
+      "pages": "62–88",
+      "answerPage": 84,
+      "items": 183
+    },
+    {
+      "unit": 4,
+      "title": "الديناميكا الحرارية وحركية التفاعل",
+      "pages": "104–123",
+      "answerPage": 119,
+      "items": 45
+    },
+    {
+      "unit": 5,
+      "title": "الكيمياء العضوية",
+      "pages": "128–142",
+      "answerPage": 138,
+      "items": 74
+    },
+    {
+      "unit": 6,
+      "title": "الخلايا والتحليل الكهربائي",
+      "pages": "149–164",
+      "answerPage": 160,
+      "items": 66
+    }
+  ],
+  "review": {
+    "pageInventory": "source-archives/chemistry/al-tasnif/inventory.json",
+    "cropInventory": "assets/lessons/chemistry/source-crops/al-tasnif/manifest.json",
+    "fullPageCropsRemoved": true,
+    "pageReview": "All 174 rendered WebP pages have a review record. Twelve pages with tables, molecular drawings, orbital figures, graphs or reaction schemes have item-level crops; no full page is attached to a question."
+  }
+}

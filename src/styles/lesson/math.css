@@ -12,12 +12,15 @@
   font-style:normal;
   font-display:swap;
 }
-.lesson-shell[data-subject="mathematics"] {
+.lesson-shell:is([data-subject="mathematics"], [data-subject="mathematics-2"])
+  :is(.lesson-flashcard-copy, .ui-lab-mcq > h1, .lesson-question-example) {
   --font-ui:"Amiri", serif;
-  font-family:var(--font-ui);
+  font-family:"Amiri", "Lesson Math", serif;
 }
-.lesson-shell[data-subject="mathematics"] * {
-  font-family:"Amiri", "Lesson Math", serif !important;
+.lesson-shell:is([data-subject="mathematics"], [data-subject="mathematics-2"])
+  :is(.lesson-flashcard-copy button, .lesson-question-example button, .lesson-question-source) {
+  --font-ui:"Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  font-family:var(--font-ui);
 }
 .lesson-math {
   font-family:"Amiri", "Lesson Math", serif;
@@ -29,8 +32,8 @@
 }
 .lesson-math :is(mi, mn, mo, mtext) { font-family:"Amiri", "Lesson Math", serif; }
 /* Amiri supplies text and numbers; the math font supplies stretching glyphs. */
-.lesson-shell[data-subject="mathematics"] .lesson-math mo:is([stretchy="true"], [largeop="true"]) {
-  font-family:"Lesson Math", "Amiri", serif !important;
+.lesson-math mo:is([stretchy="true"], [largeop="true"]) {
+  font-family:"Lesson Math", "Amiri", serif;
 }
 .lesson-math-sample {
   min-width:0;

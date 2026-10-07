@@ -85,26 +85,12 @@ hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخي
 id: math-book-p084-activity1-table
 title: الكتاب، ص 82 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 84](assets/lessons/mathematics/sources/mathbook.pdf#page=84)
+reference: [الكتاب، PDF ص 84](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=84)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 من خلال ما تعلمته في التفاضل، أكمل الجدولين الآتيين.
 
-| ق(س) في الجدول (أ) |
-| --- |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mi mathvariant="normal">س</mi></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٥</mn></mrow></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">جا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo>+</mo><mn dir="ltr">٤</mn></mrow></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><msup><mtext dir="rtl">هـ</mtext><mi mathvariant="normal">س</mi></msup></math>\` |
-
-| قَ(س) في الجدول (ب) |
-| --- |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">٧</mn></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><msup><mrow><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mn dir="ltr">٢</mn></msup></math>\` |
-| \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mfrac><mn dir="ltr">١</mn><mi mathvariant="normal">س</mi></mfrac></math>\` |
+![الجدول الأصلي بجميع المعطيات والخانات المطلوب إكمالها](assets/lessons/mathematics/source-crops/math-book-p084-activity1-tables.webp)
 solution:
 الجدول (أ)، المشتقات بالترتيب: \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">١</mn></math>\`، \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">١</mn></math>\`، \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mtext dir="rtl">جتا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></math>\`، \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></math>\`، \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><msup><mtext dir="rtl">هـ</mtext><mi mathvariant="normal">س</mi></msup></math>\`.
 
@@ -115,10 +101,12 @@ solution:
 id: math-book-p084-activity1-q1
 title: الكتاب، ص 82 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 84](assets/lessons/mathematics/sources/mathbook.pdf#page=84)
+reference: [الكتاب، PDF ص 84](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=84)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 تسمى العملية في الجدول (أ) عملية اشتقاق. اقترح اسمًا للعملية في الجدول (ب).
+
+![الجدول الأصلي بجميع المعطيات والخانات المطلوب إكمالها](assets/lessons/mathematics/source-crops/math-book-p084-activity1-tables.webp)
 solution:
 إيجاد الاقتران الأصلي، أو التكامل.
 :::
@@ -127,10 +115,12 @@ solution:
 id: math-book-p084-activity1-q2
 title: الكتاب، ص 82 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 84](assets/lessons/mathematics/sources/mathbook.pdf#page=84)
+reference: [الكتاب، PDF ص 84](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=84)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 ما العلاقة بين العمليتين في الجدولين (أ)، (ب)؟
+
+![الجدول الأصلي بجميع المعطيات والخانات المطلوب إكمالها](assets/lessons/mathematics/source-crops/math-book-p084-activity1-tables.webp)
 solution:
 إيجاد الاقتران الأصلي عملية عكسية للاشتقاق.
 :::
@@ -139,10 +129,12 @@ solution:
 id: math-book-p084-activity1-q3
 title: الكتاب، ص 82 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 84](assets/lessons/mathematics/sources/mathbook.pdf#page=84)
+reference: [الكتاب، PDF ص 84](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=84)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 هل الاقتران ق(س) يكون وحيدًا لكل حالة في الجدول (ب)؟ أعط أمثلة.
+
+![الجدول الأصلي بجميع المعطيات والخانات المطلوب إكمالها](assets/lessons/mathematics/source-crops/math-book-p084-activity1-tables.webp)
 solution:
 لا؛ مثلًا \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٧</mn><mi mathvariant="normal">س</mi></mrow></math>\` و\`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٧</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">١</mn></mrow></math>\` لهما المشتقة نفسها: \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mn dir="ltr">٧</mn></math>\`.
 :::
@@ -151,7 +143,7 @@ solution:
 id: math-book-p085-activity2-main
 title: الكتاب، ص 83 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 85](assets/lessons/mathematics/sources/mathbook.pdf#page=85)
+reference: [الكتاب، PDF ص 85](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=85)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 جد اقترانًا أصليًا للاقتران \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></mrow></math>\`.
@@ -163,7 +155,7 @@ solution:
 id: math-book-p085-activity2-q1
 title: الكتاب، ص 83 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 85](assets/lessons/mathematics/sources/mathbook.pdf#page=85)
+reference: [الكتاب، PDF ص 85](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=85)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 هل \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mn dir="ltr">١</mn><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo>−</mo><mn dir="ltr">٢</mn></mrow></mrow></math>\` و\`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mn dir="ltr">٢</mn><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo>+</mo><mn dir="ltr">٥</mn></mrow></mrow></math>\` اقترانان أصليان آخران للاقتران ق(س) = ٢س؟
@@ -175,7 +167,7 @@ solution:
 id: math-book-p085-activity2-q2
 title: الكتاب، ص 83 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 85](assets/lessons/mathematics/sources/mathbook.pdf#page=85)
+reference: [الكتاب، PDF ص 85](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=85)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 هل يوجد عدد محدد من الاقترانات الأصلية للاقتران ق(س) = ٢س؟ ما العلاقة بينها؟
@@ -187,19 +179,21 @@ solution:
 id: math-book-p085-ex3
 title: الكتاب، ص 83 · مثال محلول
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 85](assets/lessons/mathematics/sources/mathbook.pdf#page=85)
+reference: [الكتاب، PDF ص 85](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=85)
 answer-label: الحل المطبوع في الكتاب
 body:
 بيّن أن مجموعة الاقترانات الأصلية للاقتران \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mn dir="ltr">٣</mn></mrow></math>\` هي مجموعة من الاقترانات التي منحنياتها مستقيمات متوازية.
 solution:
 \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi><mo>+</mo><mi mathvariant="normal">ج</mi></mrow></mrow></math>\`؛ جميع المستقيمات لها الميل نفسه ٣.
+
+![منحنيات الاقترانات الأصلية المتوازية](assets/lessons/mathematics/source-crops/math-book-p085-ex3-figure.webp)
 :::
 
 :::exam-question
 id: math-book-p086-ex4
 title: الكتاب، ص 84 · مثال محلول
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 86](assets/lessons/mathematics/sources/mathbook.pdf#page=86)
+reference: [الكتاب، PDF ص 86](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=86)
 answer-label: الحل المطبوع في الكتاب
 body:
 بيّن فيما إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٣</mn></msup><mo>−</mo><mn dir="ltr">١</mn></mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mfrac></mrow></math>\` اقترانًا أصليًا للاقتران \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mn dir="ltr">١</mn><mo>+</mo><mfrac><mn dir="ltr">٢</mn><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٣</mn></msup></mfrac></mrow></mrow></math>\`، س ≠ ٠.
@@ -211,7 +205,7 @@ solution:
 id: math-book-p086-activity3-q1
 title: الكتاب، ص 84 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 86](assets/lessons/mathematics/sources/mathbook.pdf#page=86)
+reference: [الكتاب، PDF ص 86](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=86)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 أكمل: \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>∫</mo><msup><mi mathvariant="normal">ص</mi><mrow><mo>−</mo><mn dir="ltr">٢</mn></mrow></msup><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow></math>\` = −١/ص + ج، لأن ...
@@ -223,7 +217,7 @@ solution:
 id: math-book-p086-activity3-q2
 title: الكتاب، ص 84 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 86](assets/lessons/mathematics/sources/mathbook.pdf#page=86)
+reference: [الكتاب، PDF ص 86](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=86)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 أكمل: \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>∫</mo><mrow><mtext dir="rtl">جتا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></math>\` = جا س + ج، وذلك لأن ...
@@ -235,7 +229,7 @@ solution:
 id: math-book-p086-ex5
 title: الكتاب، ص 84 · مثال محلول
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 86](assets/lessons/mathematics/sources/mathbook.pdf#page=86)
+reference: [الكتاب، PDF ص 86](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=86)
 answer-label: الحل المطبوع في الكتاب
 body:
 إذا كان ق(س) اقترانًا متصلًا، وكان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo>∫</mo><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow><mo>=</mo><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٣</mn></msup><mo>−</mo><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٥</mn></mrow></mrow></math>\`، جد قَ(٢)، قً(٢).
@@ -247,7 +241,7 @@ solution:
 id: math-book-p087-ex6
 title: الكتاب، ص 85 · مثال محلول
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 87](assets/lessons/mathematics/sources/mathbook.pdf#page=87)
+reference: [الكتاب، PDF ص 87](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=87)
 answer-label: الحل المطبوع في الكتاب
 body:
 إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mo>∫</mo><msup><mtext dir="rtl">هـ</mtext><mi mathvariant="normal">س</mi></msup><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mrow></math>\`، وكان ق(٠) = ٣، فجد ق(١).
@@ -259,7 +253,7 @@ solution:
 id: math-book-p087-q1-a
 title: الكتاب، ص 85 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 87](assets/lessons/mathematics/sources/mathbook.pdf#page=87)
+reference: [الكتاب، PDF ص 87](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=87)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 بيّن أن \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn dir="ltr">١</mn><mn dir="ltr">٣</mn></mfrac><msup><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">٢</mn><mo>+</mo><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow><mo stretchy="true">)</mo></mrow><mfrac><mn dir="ltr">٣</mn><mn dir="ltr">٢</mn></mfrac></msup></mrow></mrow></math>\` اقتران أصلي لـ \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mi mathvariant="normal">س</mi><msqrt><mrow><mn dir="ltr">٢</mn><mo>+</mo><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow></msqrt></mrow></mrow></math>\`.
@@ -271,7 +265,7 @@ solution:
 id: math-book-p087-q1-b
 title: الكتاب، ص 85 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 87](assets/lessons/mathematics/sources/mathbook.pdf#page=87)
+reference: [الكتاب، PDF ص 87](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=87)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 بيّن أن \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><msup><mrow><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mn dir="ltr">٢</mn></msup></mrow></math>\` اقتران أصلي لـ \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mn dir="ltr">٢</mn><msup><mrow><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mn dir="ltr">٢</mn></msup><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></mrow></mrow></math>\`.
@@ -283,7 +277,7 @@ solution:
 id: math-book-p087-q1-c
 title: الكتاب، ص 85 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 87](assets/lessons/mathematics/sources/mathbook.pdf#page=87)
+reference: [الكتاب، PDF ص 87](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=87)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 بيّن أن \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mtext dir="rtl">لو</mtext><mtext dir="rtl">هـ</mtext></msub><mrow><mo stretchy="true">(</mo><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٣</mn></msup><mo>+</mo><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></msup></mrow><mo stretchy="true">)</mo></mrow></mrow></mrow></math>\` اقتران أصلي لـ \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo>+</mo><mn dir="ltr">٢</mn><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></msup></mrow><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٣</mn></msup><mo>+</mo><msup><mtext dir="rtl">هـ</mtext><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi></mrow></msup></mrow></mfrac></mrow></math>\`.
@@ -295,7 +289,7 @@ solution:
 id: math-book-p087-q2
 title: الكتاب، ص 85 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 87](assets/lessons/mathematics/sources/mathbook.pdf#page=87)
+reference: [الكتاب، PDF ص 87](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=87)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان م(س)، هـ(س) اقترانين أصليين لق(س)، وكان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo>−</mo><mn dir="ltr">٤</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">٦</mn></mrow></mrow></math>\`، وهـ(٣) = ٤، فجد هـ(١).
@@ -307,7 +301,7 @@ solution:
 id: math-book-p087-q3
 title: الكتاب، ص 85 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 87](assets/lessons/mathematics/sources/mathbook.pdf#page=87)
+reference: [الكتاب، PDF ص 87](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=87)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان م(س)، هـ(س) اقترانين أصليين للاقتران المتصل ق(س)، وكان ق(٤) = ٧، قَ(٤) = ١٠، فما قيمة (٣م − هـ)َ(٤)؟
@@ -319,7 +313,7 @@ solution:
 id: math-book-p087-q4
 title: الكتاب، ص 85 · نشاط أو تمرين
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 87](assets/lessons/mathematics/sources/mathbook.pdf#page=87)
+reference: [الكتاب، PDF ص 87](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=87)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mn dir="ltr">٢</mn><mrow><mtext dir="rtl">ظا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>−</mo><mn dir="ltr">٢</mn><mrow><mtext dir="rtl">قا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></mrow></mrow></math>\` أحد الاقترانات الأصلية للاقتران \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mfrac><mi mathvariant="normal">أ</mi><mrow><mn dir="ltr">١</mn><mo>+</mo><mrow><mtext dir="rtl">جا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></mrow></mfrac></mrow></math>\`، \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>∈</mo><mrow><mo stretchy="true">[</mo><mrow><mn dir="ltr">٠</mn><mo>،</mo><mfrac><mi>π</mi><mn dir="ltr">٤</mn></mfrac></mrow><mo stretchy="true">]</mo></mrow></mrow></math>\`، احسب أ.
@@ -331,7 +325,7 @@ solution:
 id: math-book-p124-unit-q1-a
 title: الكتاب، ص 122 · اختبار الوحدة
 kicker: اختبار الوحدة
-reference: [الكتاب، PDF ص 124](assets/lessons/mathematics/sources/mathbook.pdf#page=124)
+reference: [الكتاب، PDF ص 124](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=124)
 question: إذا كان م(س)، هـ(س) اقترانين أصليين مختلفين لق(س)، فماذا يمثل ∫ (م(س) − هـ(س)) دس؟
 - [ ] option-1 | اقترانًا ثابتًا
 - [ ] option-2 | اقترانًا تربيعيًا
@@ -345,7 +339,7 @@ hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخي
 id: math-book-p124-unit-q1-b
 title: الكتاب، ص 122 · اختبار الوحدة
 kicker: اختبار الوحدة
-reference: [الكتاب، PDF ص 124](assets/lessons/mathematics/sources/mathbook.pdf#page=124)
+reference: [الكتاب، PDF ص 124](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=124)
 question: إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mo>∫</mo><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo>−</mo><mn dir="ltr">٢</mn></mrow><mo stretchy="true">)</mo></mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">س</mi></mrow></mrow></math>\`، وق(٢) = ٩، فما قيمة ق(−٢)؟
 - [x] option-1 | \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">١</mn></mrow></math>\`
 - [ ] option-2 | \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo>−</mo><mn dir="ltr">٩</mn></mrow></math>\`
@@ -359,7 +353,7 @@ hint: اقرأ المعطيات وحدد المطلوب، ثم قارن الخي
 id: math-book-p125-unit-q2
 title: الكتاب، ص 123 · اختبار الوحدة
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 125](assets/lessons/mathematics/sources/mathbook.pdf#page=125)
+reference: [الكتاب، PDF ص 125](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=125)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 أثبت أن \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">م</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><msqrt><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow></msqrt></mrow></math>\` هو اقتران أصلي لـ \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mo>−</mo><mi mathvariant="normal">س</mi></mrow><msqrt><mrow><mn dir="ltr">١</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow></msqrt></mfrac></mrow></math>\`.
@@ -371,7 +365,7 @@ solution:
 id: math-book-p126-unit-q9
 title: الكتاب، ص 124 · اختبار الوحدة
 question: التكامل غير المحدود
-reference: [الكتاب، PDF ص 126](assets/lessons/mathematics/sources/mathbook.pdf#page=126)
+reference: [الكتاب، PDF ص 126](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=126)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان ق(س) متصلًا على مجاله، وكان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mo>∫</mo><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">ص</mi><mo stretchy="true">)</mo></mrow></mrow><mi mathvariant="normal">د</mi><mi mathvariant="normal">ص</mi></mrow><mo>=</mo><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup><mo>−</mo><mn dir="ltr">٢</mn><msqrt><mi mathvariant="normal">س</mi></msqrt></mrow></mrow></math>\`، فجد ق(٤)، قَ(٤).

@@ -77,10 +77,12 @@ solution:
 id: math-book-p093-ex4
 title: الكتاب، ص 91 · مثال محلول
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 93](assets/lessons/mathematics/sources/mathbook.pdf#page=93)
+reference: [الكتاب، PDF ص 93](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=93)
 answer-label: الحل المطبوع في الكتاب
 body:
 قذفت كرة للأعلى بسرعة ابتدائية قدرها ٦٤ قدم/ث من قمة برج ارتفاعه ٨٠ قدمًا. جد أقصى ارتفاع عن سطح الأرض تصله الكرة، علمًا بأن تسارعها يساوي −٣٢ قدم/ث².
+
+![قذف الكرة من برج ارتفاعه ٨٠ قدمًا](assets/lessons/mathematics/source-crops/math-book-p093-ex4-figure.webp)
 solution:
 ١٤٤ قدمًا؛ وتصل الكرة أقصى ارتفاع بعد ثانيتين.
 :::
@@ -89,7 +91,7 @@ solution:
 id: math-book-p091-activity1-q1
 title: الكتاب، ص 89 · نشاط أو تمرين
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 91](assets/lessons/mathematics/sources/mathbook.pdf#page=91)
+reference: [الكتاب، PDF ص 91](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=91)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 يسير رجل على طريق منحني، بحيث يكون ميل المماس عند أية نقطة أ(س، ص) على الطريق يساوي \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mn dir="ltr">٢</mn><mi mathvariant="normal">س</mi><mo>+</mo><mn dir="ltr">١</mn></mrow></math>\`. الاقتران الذي يمثل معادلة الطريق هو اقتران تربيعي قاعدته ص = ...
@@ -101,7 +103,7 @@ solution:
 id: math-book-p091-activity1-q2
 title: الكتاب، ص 89 · نشاط أو تمرين
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 91](assets/lessons/mathematics/sources/mathbook.pdf#page=91)
+reference: [الكتاب، PDF ص 91](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=91)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كانت النقطة (٠، ٢) تقع على الطريق السابق، فما قاعدة الاقتران ص؟
@@ -113,7 +115,7 @@ solution:
 id: math-book-p092-ex3
 title: الكتاب، ص 90 · مثال محلول
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 92](assets/lessons/mathematics/sources/mathbook.pdf#page=92)
+reference: [الكتاب، PDF ص 92](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=92)
 answer-label: الحل المطبوع في الكتاب
 body:
 بدأ جسم التحرك في خط مستقيم من نقطة الأصل ومبتعدًا عنها، فإذا كانت سرعته في أي لحظة \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">ع</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">ن</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">ن</mi><mn dir="ltr">٢</mn></msup><mo>+</mo><mn dir="ltr">٢</mn><mi mathvariant="normal">ن</mi></mrow></mrow></math>\`، فما بعد الجسم عن نقطة الأصل بعد ثانيتين من بدء الحركة؟
@@ -125,7 +127,7 @@ solution:
 id: math-book-p093-q1
 title: الكتاب، ص 91 · نشاط أو تمرين
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 93](assets/lessons/mathematics/sources/mathbook.pdf#page=93)
+reference: [الكتاب، PDF ص 93](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=93)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان ميل المماس لمنحنى ق(س) عند أي نقطة عليه يساوي \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mrow><mo stretchy="true">(</mo><mrow><mn dir="ltr">٣</mn><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٢</mn></mrow><mo stretchy="true">)</mo></mrow></mrow></math>\`، فجد قاعدة ق(س)، علمًا بأن ق(٢) = ٥.
@@ -137,7 +139,7 @@ solution:
 id: math-book-p093-q2
 title: الكتاب، ص 91 · نشاط أو تمرين
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 93](assets/lessons/mathematics/sources/mathbook.pdf#page=93)
+reference: [الكتاب، PDF ص 93](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=93)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">قَ</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mi mathvariant="normal">أ</mi><mi mathvariant="normal">س</mi><mo>−</mo><mn dir="ltr">٣</mn><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow></mrow></math>\`، فجد قاعدة ق(س)، علمًا بأن المستقيم س + ص = ٤ مماس لمنحناه عند النقطة (١، ق(١)).
@@ -149,7 +151,7 @@ solution:
 id: math-book-p093-q3
 title: الكتاب، ص 91 · نشاط أو تمرين
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 93](assets/lessons/mathematics/sources/mathbook.pdf#page=93)
+reference: [الكتاب، PDF ص 93](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=93)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">قً</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><mtext dir="rtl">جتا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></mrow></math>\`، وق(π) = ٢، قَ(π) = ١، فجد قاعدة ق(س).
@@ -161,7 +163,7 @@ solution:
 id: math-book-p093-q4
 title: الكتاب، ص 91 · نشاط أو تمرين
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 93](assets/lessons/mathematics/sources/mathbook.pdf#page=93)
+reference: [الكتاب، PDF ص 93](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=93)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 تحرك جسم في خط مستقيم من نقطة الأصل ومبتعدًا عنها، بسرعة ابتدائية مقدارها ٣ م/ث. إذا كان تسارعه في أي لحظة يساوي ن م/ث²، فما سرعته بعد ٥ ثوان من بدء الحركة، وما المسافة التي قطعها خلال هذه الثواني؟
@@ -173,7 +175,7 @@ solution:
 id: math-book-p125-unit-q3
 title: الكتاب، ص 123 · اختبار الوحدة
 question: تطبيقات التكامل غير المحدود
-reference: [الكتاب، PDF ص 125](assets/lessons/mathematics/sources/mathbook.pdf#page=125)
+reference: [الكتاب، PDF ص 125](https://moe.edu.ps/storage/app/gaza/subjects/12v/%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA%20%D8%B9%D9%84%D9%85%D9%8A%20%D9%A1%D9%A2%20%D8%BA%D8%B2%D8%A9%20%D9%85%D8%AA%D9%85%D8%A7%D8%B2%D8%AC%D8%A9.pdf#page=125)
 answer-label: إجابة محسوبة من معطيات السؤال وقواعد الكتاب
 body:
 إذا كان \`mathml: <math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mrow><mi mathvariant="normal">قً</mi><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٣</mn></msup><mo>+</mo><mn dir="ltr">٣</mn><mrow><mtext dir="rtl">جا</mtext><mrow><mo stretchy="true">(</mo><mi mathvariant="normal">س</mi><mo stretchy="true">)</mo></mrow></mrow></mrow></mrow></math>\`، وقَ(٠) = ٣، وق(٠) = ٢، فجد ق(س).

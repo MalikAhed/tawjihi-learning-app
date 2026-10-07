@@ -60,12 +60,48 @@ export function mountTemplateContentZoom(container, { signal } = {}) {
   signal?.addEventListener("abort", () => container.style.removeProperty("--lesson-content-zoom"), { once:true });
 }
 
+/** Reveal remaining reading content without moving it until the learner asks. */
+export function mountTemplateScrollIndicator(container, { signal } = {}) {
+  const surface = container.querySelector(".level-layout-task");
+  const button = container.querySelector("[data-content-scroll]");
+  if (!surface || !button) return;
+  let frame = 0;
+  const update = () => {
+    if (signal?.aborted) return;
+    const zoom = Number(getComputedStyle(surface).zoom) || 1;
+    const overflow = surface.scrollHeight > surface.parentElement.clientHeight / zoom + 2;
+    surface.dataset.scrollable = String(overflow);
+    const moreBelow = overflow && surface.scrollHeight - surface.clientHeight - surface.scrollTop > 2;
+    surface.tabIndex = overflow ? 0 : -1;
+    if (!moreBelow && button === document.activeElement) surface.focus({ preventScroll:true });
+    button.hidden = !moreBelow;
+  };
+  const scheduleUpdate = () => {
+    if (frame || signal?.aborted) return;
+    frame = window.requestAnimationFrame(() => { frame = 0; update(); });
+  };
+  button.addEventListener("click", () => surface.scrollBy({
+    top:Math.max(120, surface.clientHeight * .75),
+    behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+  }), { signal });
+  surface.addEventListener("scroll", scheduleUpdate, { signal, passive:true });
+  const observer = new ResizeObserver(scheduleUpdate);
+  observer.observe(surface);
+  [...surface.children].forEach(child => observer.observe(child));
+  scheduleUpdate();
+  signal?.addEventListener("abort", () => {
+    observer.disconnect();
+    window.cancelAnimationFrame(frame);
+  }, { once:true });
+}
+
 export function renderTemplateShell({ content, footer, showScrollIndicator = true, titleId = "ui-lab-content-title", locale = "en" }) {
   const copy = getLessonUiCopy(locale);
+  const scrollId = `${titleId}-scroll`;
   return `<div class="level-layout-preview" lang="${locale}" dir="${locale === "ar" ? "rtl" : "ltr"}">
     <div class="level-layout-content">
-      <section class="level-layout-task" aria-labelledby="${escapeHtml(titleId)}">${content}</section>
-      ${showScrollIndicator ? `<button class="ui-lab-content-scroll" type="button" data-content-scroll aria-label="${escapeHtml(copy.showMoreContent)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 9.5 5.5 5 5.5-5"/></svg></button>` : ""}
+      <section class="level-layout-task" id="${escapeHtml(scrollId)}" aria-labelledby="${escapeHtml(titleId)}">${content}</section>
+      ${showScrollIndicator ? `<button class="lesson-scroll-cue" type="button" data-content-scroll hidden aria-controls="${escapeHtml(scrollId)}" aria-label="${escapeHtml(`${copy.moreBelow}: ${copy.showMoreContent}`)}"><span>${escapeHtml(copy.moreBelow)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6"/></svg></button>` : ""}
     </div>
     ${footer}
   </div>`;

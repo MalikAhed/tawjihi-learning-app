@@ -1,0 +1,41 @@
+{
+  "source": "source-archives/chemistry/al-tasnif/webp/",
+  "policy": "item-level crops only; no full-page crop is used in a question",
+  "crops": [
+    {
+      "page": 41,
+      "file": "p041-visual.webp",
+      "kind": "table-or-figure"
+    },
+    {
+      "page": 44,
+      "file": "p044-visual.webp",
+      "kind": "molecular-diagram"
+    },
+    {
+      "page": 45,
+      "file": "p045-visual.webp",
+      "kind": "orbital-diagram"
+    },
+    {
+      "page": 119,
+      "file": "p119-visual.webp",
+      "kind": "kinetics-graph"
+    },
+    {
+      "page": 121,
+      "file": "p121-visual.webp",
+      "kind": "kinetics-graph"
+    },
+    {
+      "page": 140,
+      "file": "p140-visual.webp",
+      "kind": "structure-table"
+    },
+    {
+      "page": 141,
+      "file": "p141-visual.webp",
+      "kind": "reaction-table"
+    }
+  ]
+}

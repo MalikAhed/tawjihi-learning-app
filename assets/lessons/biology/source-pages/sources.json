@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "id": "biology-800-mcq",
+      "title": "المتفوق في الأحياء: مجموعة 800 سؤال اختيار من متعدد",
+      "url": "https://xgyehfpvdpwhbpxmybxi.supabase.co/storage/v1/object/public/tawjihi-pdfs/content/palcurr/5620332ddb08089d.pdf",
+      "pages": 61,
+      "directory": "assets/lessons/biology/source-pages/biology-800-mcq",
+      "format": "WebP",
+      "questionPages": "PDF ص 2–53",
+      "answerPages": "PDF ص 54–61"
+    },
+    {
+      "id": "tasnif-2023",
+      "title": "تصنيف نماذج امتحانات الثانوية العامة 2023: أحياء",
+      "url": "https://drive.google.com/file/d/1Ih0eyqTk1KLgCnfuagrtBJw3SZ80CeqL/view?usp=drivesdk",
+      "pages": 136,
+      "directory": "assets/lessons/biology/source-pages/tasnif-2023",
+      "format": "WebP",
+      "questionPages": "الصفحات المطبوعة 5–85",
+      "answerPages": "الصفحات المطبوعة 86–136"
+    }
+  ]
+}

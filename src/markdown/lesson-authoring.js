@@ -18,6 +18,10 @@ function field(source, name, fallback = "") {
   return match?.[1]?.trim() || fallback;
 }
 
+function stripChoiceMarker(text) {
+  return String(text).replace(/^\s*(?:[([«]?\s*)[أاابجد](?:\s*[)\]».:：]|\s*[-–—ـ])\s*/u, "").trim();
+}
+
 function section(source, name, boundaries = null) {
   const lines = source.split("\n");
   const start = lines.findIndex((line) => new RegExp(`^${name}:[ \\t]*$`, "i").test(line));
@@ -34,13 +38,14 @@ function section(source, name, boundaries = null) {
   return result;
 }
 
-function checkboxItems(source) {
+function checkboxItems(source, { preserveChoiceMarkers = false } = {}) {
   return source.split("\n").map((line) => {
     const match = /^\s*-\s+\[([ xX])\]\s+(.+)$/.exec(line);
     if (!match) return null;
     const text = match[2].trim();
     const explicitId = /^([a-z0-9]+(?:-[a-z0-9]+)*)\s*\|\s*(.+)$/i.exec(text);
-    return { checked:match[1].toLowerCase() === "x", id:explicitId?.[1] || "", text:explicitId?.[2]?.trim() || text };
+    const answerText = explicitId?.[2]?.trim() || text;
+    return { checked:match[1].toLowerCase() === "x", id:explicitId?.[1] || "", text:preserveChoiceMarkers ? answerText : stripChoiceMarker(answerText) };
   }).filter(Boolean);
 }
 
@@ -136,7 +141,7 @@ function parseMcq(source, type, index, issues) {
   if (example) config.example = example;
   config.phase = "practice";
   config.critical = false;
-  let choices = checkboxItems(source);
+  let choices = checkboxItems(source, { preserveChoiceMarkers:Boolean(reference) });
   if (type === "true-false") {
     if (choices.length > 0) issues.push(`Step ${index + 1} (true-false) must use answer: true or answer: false instead of checkbox choices.`);
     const answer = field(source, "answer").toLowerCase();

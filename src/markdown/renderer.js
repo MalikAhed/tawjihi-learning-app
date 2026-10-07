@@ -4,7 +4,7 @@ import { Marked } from "../../node_modules/marked/lib/marked.esm.js";
 import { escapeHtml } from "../lib/dom.js";
 import { getLessonUiCopy } from "../ui/lesson-ui-copy.js";
 import { LESSON_CONTENT_DIRECTIVES } from "./lesson-authoring.js";
-import { renderMathML } from "./math.js";
+import { renderMathML, renderLatex } from "./math.js";
 
 const GLOSSARY = new Map([
   ["api", "A defined way for software systems to request data or actions from each other."],
@@ -133,13 +133,48 @@ const youtubeVideoExtension = {
   },
 };
 
+const latexInlineExtension = {
+  name:"latexInline",
+  level:"inline",
+  start(source) {
+    const index = source.indexOf("\\(");
+    return index >= 0 ? index : undefined;
+  },
+  tokenizer(source) {
+    const match = /^\\\(([\s\S]*?)\\\)/.exec(source);
+    return match ? { type:"latexInline", raw:match[0], text:match[1] } : undefined;
+  },
+  renderer(token) { return renderLatex(token.text); },
+};
+
+const latexBlockExtension = {
+  name:"latexBlock",
+  level:"block",
+  start(source) {
+    const match = /(?:^|\n)[ \t]*(?:\\\[|\$\$)/.exec(source);
+    return match ? match.index : undefined;
+  },
+  tokenizer(source) {
+    const match = /^[ \t]*\\\[([\s\S]*?)\\\][ \t]*(?:\n|$)/.exec(source)
+      || /^[ \t]*\$\$([\s\S]*?)\$\$[ \t]*(?:\n|$)/.exec(source);
+    return match ? { type:"latexBlock", raw:match[0], text:match[1] } : undefined;
+  },
+  renderer(token) {
+    return `<figure class="lesson-math-sample"><div class="lesson-math-scroll" dir="ltr" tabindex="0" role="region" aria-label="معادلة">${renderLatex(token.text, { display:true })}</div></figure>`;
+  },
+};
+
 const codeRenderer = {
   codespan({ text }) {
     if (text.startsWith("mathml:")) return renderMathML(text.slice(7).trim());
+    if (text.startsWith("latex:")) return renderLatex(text.slice(6).trim());
     return `<code>${escapeHtml(text)}</code>`;
   },
   code({ text, lang }) {
     const { language, title, highlightedLines } = parseCodeMeta(lang);
+    if (language === "latex") {
+      return `<figure class="lesson-math-sample">${title ? `<figcaption>${escapeHtml(title)}</figcaption>` : ""}<div class="lesson-math-scroll" dir="ltr" tabindex="0" role="region" aria-label="معادلة">${renderLatex(text, { display:true })}</div></figure>`;
+    }
     if (language === "mathml") {
       const caption = title ? `<figcaption>${escapeHtml(title)}</figcaption>` : "";
       return `<figure class="lesson-math-sample">${caption}<div class="lesson-math-scroll">${renderMathML(text, { display:true })}</div></figure>`;
@@ -168,7 +203,7 @@ function markdownFor(locale = "en") {
   const markdown = new Marked({
   async:false,
   breaks:false,
-  extensions:[{ ...technicalTermExtension, renderer(token) { return technicalTermExtension.renderer(token, copy); } }, lessonDirectiveExtension, youtubeVideoExtension],
+  extensions:[latexInlineExtension, latexBlockExtension, { ...technicalTermExtension, renderer(token) { return technicalTermExtension.renderer(token, copy); } }, lessonDirectiveExtension, youtubeVideoExtension],
   gfm:true,
   pedantic:false,
   renderer:codeRenderer,

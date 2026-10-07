@@ -83,7 +83,8 @@
   grid-template-columns: minmax(0, 1fr);
 }
 @media (min-width:761px) {
-  .ui-lab-mcq-open .ui-lab-mcq.lesson-question--compact-options:not(.lesson-question-with-rocky) .level-answer-list:is([data-answer-count="2"], [data-answer-count="4"]) {
+  .ui-lab-mcq-open .ui-lab-mcq .level-answer-list[data-answer-count="4"],
+  .ui-lab-mcq-open .ui-lab-mcq.lesson-question--compact-options:not(.lesson-question-with-rocky) .level-answer-list[data-answer-count="2"] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .ui-lab-mcq-open .ui-lab-mcq.lesson-question--with-example.lesson-question--compact-options .level-answer-list[data-answer-count="3"] {

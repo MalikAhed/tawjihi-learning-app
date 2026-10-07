@@ -538,6 +538,33 @@ body:
 solution:
 ق متزايد في ]−∞، −١/٢]، [١، ∞[؛ وق متناقص في [−١/٢، ١].
 :::
+
+:::exam-question
+id: math-kamel-u2-p008-r6
+title: الكامل، الوحدة الثانية · WebP ٨ · ص ٧ · البند ٦ · ٢٠٢٣ دور ثانٍ
+question: التزايد والتناقص والنقاط الحرجة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u2-p008-r6-question.webp) · [الحل](assets/lessons/mathematics/source-crops/math-kamel-u2-p008-r6-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+جد فترات التزايد والتناقص للاقتران \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true">)</mo></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mn dir="ltr">٤</mn><mo>−</mo><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow><mo>|</mo></mrow></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">س</mi><mo>∈</mo><mi mathvariant="normal">ح</mi></mrow></math>\`.
+solution:
+متزايد على \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo stretchy="true">[</mo><mo>−</mo><mn dir="ltr">٢</mn><mo>،</mo><mn dir="ltr">٠</mn><mo stretchy="true">]</mo></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo stretchy="true">[</mo><mn dir="ltr">٢</mn><mo>،</mo><mo>∞</mo><mo stretchy="true">[</mo></mrow></math>\`. متناقص على \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo stretchy="true">]</mo><mo>−</mo><mo>∞</mo><mo>،</mo><mo>−</mo><mn dir="ltr">٢</mn><mo stretchy="true">]</mo></mrow></math>\`، \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo stretchy="true">[</mo><mn dir="ltr">٠</mn><mo>،</mo><mn dir="ltr">٢</mn><mo stretchy="true">]</mo></mrow></math>\`.
+
+:::
+
+:::exam-question
+id: math-kamel-u2-p010-r2
+title: الكامل، الوحدة الثانية · WebP ١٠ · ص ٩ · البند ٢ · خارجي
+question: التزايد والتناقص والنقاط الحرجة
+reference: [السؤال، WebP](assets/lessons/mathematics/source-crops/math-kamel-u2-p010-r2-question.webp) · [الحل](assets/lessons/mathematics/source-crops/math-kamel-u2-p010-r2-key.webp)
+answer-label: الإجابة المطبوعة في الكامل
+body:
+إذا كان \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">س</mi></mrow><mrow><mn dir="ltr">١</mn><mo>+</mo><msup><mi mathvariant="normal">س</mi><mn dir="ltr">٢</mn></msup></mrow></mfrac></mrow></math>\` معرفاً على \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo stretchy="true">[</mo><mo>−</mo><mn dir="ltr">١</mn><mo>،</mo><mn dir="ltr">١</mn><mo stretchy="true">]</mo></mrow></math>\`، جد مجالات التزايد والتناقص للاقتران \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi><mrow><mo stretchy="true">(</mo><mrow><mi mathvariant="normal">س</mi></mrow><mo stretchy="true">)</mo></mrow></mrow></math>\`.
+solution:
+\`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mi mathvariant="normal">ق</mi></mrow></math>\` متزايد في الفترة \`mathml:<math xmlns="http://www.w3.org/1998/Math/MathML" dir="rtl"><mrow><mo stretchy="true">[</mo><mo>−</mo><mn dir="ltr">١</mn><mo>،</mo><mn dir="ltr">١</mn><mo stretchy="true">]</mo></mrow></math>\`.
+
+:::
+
 `;
 
 export default defineMarkdownLesson({

@@ -1,13 +1,13 @@
 const ENGLISH_COPY = Object.freeze({
   back:"BACK", continue:"CONTINUE", answerChoices:"Answer choices",
-  lessonNavigation:"Lesson navigation", showMoreContent:"Show more content", closeLesson:"Close lesson",
+  lessonNavigation:"Lesson navigation", moreBelow:"More below", showMoreContent:"Show more content", closeLesson:"Close lesson",
   excellent:"Excellent!", wrongAnswer:"Wrong answer",
   glossaryLabel:"TECH TERM", scrollableTable:"Scrollable table", videoPlayer:"YouTube video player",
 });
 
 const ARABIC_COPY = Object.freeze({
   back:"السابق", continue:"متابعة", answerChoices:"خيارات الإجابة",
-  lessonNavigation:"التنقل داخل الدرس", showMoreContent:"عرض المزيد من المحتوى", closeLesson:"إغلاق الدرس",
+  lessonNavigation:"التنقل داخل الدرس", moreBelow:"المزيد بالأسفل", showMoreContent:"عرض المزيد من المحتوى", closeLesson:"إغلاق الدرس",
   excellent:"ممتاز!", wrongAnswer:"إجابة خاطئة",
   glossaryLabel:"مصطلح تقني", scrollableTable:"جدول قابل للتمرير", videoPlayer:"مشغّل فيديو يوتيوب",
 });

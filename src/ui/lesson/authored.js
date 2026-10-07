@@ -14,6 +14,7 @@ import { getLessonUiCopy } from "../lesson-ui-copy.js";
 import {
   mountTemplateEnterShortcut,
   mountTemplateContentZoom,
+  mountTemplateScrollIndicator,
   renderTemplateFooter,
   renderTemplateShell,
 } from "../template-shell.js";
@@ -426,6 +427,7 @@ export function renderAuthoredInteractiveLesson(
         signal: stepController.signal,
         scrollSurface: host.querySelector(".level-layout-task"),
       });
+      mountTemplateScrollIndicator(host, { signal:stepController.signal });
       mountRockyDialogues(container, stepController.signal);
       revealWhenReady(host, {
         signal: stepController.signal,
