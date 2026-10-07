@@ -70,7 +70,7 @@ await withBrowserPage(async ({ base, send, evaluate, waitFor, onEvent }) => {
     })()`);
     assert.equal(result.columns, result.map.right-result.map.left <= 560 ? 1 : 2, `${label}: narrow subject grids use one column and wider grids use two`);
     assert.deepEqual(result.cards.map(card=>card.subject), ["ict", "mathematics", "mathematics-2", "physics", "biology", "chemistry", "english", "arabic", "islamic-education"], `${label}: every subject is visible`);
-    assert.equal(result.locked.length, 7, `${label}: unpublished subjects are locked`);
+    assert.equal(result.locked.length, 2, `${label}: unpublished subjects are locked`);
     assert.ok(result.locked.every(card=>card.count === "0 / 0" && card.lock), `${label}: locked subjects show zero progress and a lock`);
     assert.equal(result.hasSidebar, false, `${label}: no experimental sidebar is mounted`);
     assert.ok(Math.abs(result.mainWidth - result.columnWidth) <= 1, `${label}: subjects occupy the full main content width`);
