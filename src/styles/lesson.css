@@ -54,8 +54,8 @@ body.ready-lesson-open main.page.lesson-mode { width:100%; max-width:none; min-h
 .level-layout-preview { height:100%; min-height:0; display:grid; grid-template-rows:minmax(0,1fr) auto; overflow:hidden; background:#fff; }
 .lesson-shell--ui-lab .level-layout-preview { min-height:0; }
 .level-layout-content { position:relative; min-height:0; overflow:hidden; background:#fff; }
-.level-layout-content:has(> .level-layout-task[data-scrollable="true"]) { padding-block-end:54px; }
-.lesson-scroll-cue { position:absolute; z-index:2; inset-inline:0; bottom:5px; display:flex; align-items:center; justify-content:center; gap:8px; width:max-content; max-width:calc(100% - 32px); min-height:44px; margin-inline:auto; padding:8px 15px; border:1px solid #b6cad7; border-radius:999px; background:#fff; color:#244d65; box-shadow:0 3px 12px #193c4a1f; font:700 14px/1.4 var(--font-ui); cursor:pointer; }
+.level-layout-content:has(> .level-layout-task[data-scrollable="true"]) { display:grid; grid-template-rows:minmax(0,1fr) 54px; }
+.lesson-scroll-cue { position:static; z-index:2; align-self:center; display:flex; align-items:center; justify-content:center; gap:8px; width:max-content; max-width:calc(100% - 32px); min-height:44px; margin:5px auto; padding:8px 15px; border:1px solid #b6cad7; border-radius:999px; background:#fff; color:#244d65; box-shadow:0 3px 12px #193c4a1f; font:700 14px/1.4 var(--font-ui); cursor:pointer; }
 .lesson-scroll-cue[hidden] { display:none; }
 .lesson-scroll-cue svg { flex:none; width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 .lesson-scroll-cue:hover { border-color:#6a91ab; background:#f0f7fb; }
@@ -74,6 +74,10 @@ body.ready-lesson-open main.page.lesson-mode { width:100%; max-width:none; min-h
 .level-layout-kicker { margin:0 0 10px; color:var(--system-muted); font:700 12px var(--font-ui); letter-spacing: 0; }
 .level-layout-task h1 { margin:0 0 14px; color:#3f464d; font:700 clamp(30px,5vw,48px)/1.12 var(--font-ui); }
 .level-lesson-copy>p:not(.level-layout-kicker):not(.level-feedback):not(.lesson-code-overflow-hint) { max-width:680px; margin:0; color:#68717a; font:600 18px/1.65 var(--font-ui); }
+.markdown-callout { display:block; margin:16px 0; padding:12px 16px; border-inline-start:5px solid #3472b8; border-radius:4px; background:#f1f7fd; color:#30475a; }
+.markdown-callout--warning,.markdown-callout--mistake { border-inline-start-color:#ba425d; background:#fff4f6; }
+.markdown-callout--tip { border-inline-start-color:#167868; background:#f0faf7; }
+.markdown-callout > strong { display:block; color:#24566b; font-weight:800; }
 .level-answer-list { display:grid; gap:14px; margin-top:clamp(28px,5vw,42px); }
 .ui-lab-mcq .level-answer-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
 .ui-lab-mcq .level-answer-list button { min-height:76px; grid-template-columns:40px 1fr; gap:15px; padding:14px 18px; border-radius:17px; font-size:clamp(15px,1.5vw,18px); }
