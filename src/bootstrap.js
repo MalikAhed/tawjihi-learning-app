@@ -27,17 +27,19 @@ function stylesheetReady(link) {
   return new Promise((resolve, reject) => {
     const cleanup = () => {
       clearTimeout(timer);
+      clearInterval(poll);
       link.removeEventListener("load", ready);
       link.removeEventListener("error", failed);
     };
     const ready = () => { cleanup(); link.media = "all"; resolve(); };
     const failed = () => { cleanup(); reject(new Error(`Stylesheet failed: ${link.href}`)); };
     const timer = setTimeout(failed, 15000);
+    let poll = 0;
     link.addEventListener("load", ready, { once:true });
     link.addEventListener("error", failed, { once:true });
     let hasLoadedRules = false;
     if (link.sheet) {
-      try { hasLoadedRules = link.sheet.cssRules.length > 0; } catch { hasLoadedRules = true; }
+      try { hasLoadedRules = link.sheet.cssRules.length > 0; } catch { hasLoadedRules = false; }
     }
     if (hasLoadedRules) ready();
     else if (link.dataset.startupAttempt) {
@@ -45,6 +47,10 @@ function stylesheetReady(link) {
       link.removeAttribute("href");
       link.href = href;
     }
+    poll = setInterval(() => {
+      if (!link.sheet) return;
+      try { if (link.sheet.cssRules.length > 0) ready(); } catch { failed(); }
+    }, 50);
     link.dataset.startupAttempt = "true";
   });
 }
