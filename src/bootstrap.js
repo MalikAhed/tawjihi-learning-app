@@ -35,7 +35,11 @@ function stylesheetReady(link) {
     const timer = setTimeout(failed, 15000);
     link.addEventListener("load", ready, { once:true });
     link.addEventListener("error", failed, { once:true });
-    if (link.sheet) ready();
+    let hasLoadedRules = false;
+    if (link.sheet) {
+      try { hasLoadedRules = link.sheet.cssRules.length > 0; } catch { hasLoadedRules = true; }
+    }
+    if (hasLoadedRules) ready();
     else if (link.dataset.startupAttempt) {
       const href = link.href;
       link.removeAttribute("href");
